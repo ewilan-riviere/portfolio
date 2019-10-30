@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -44,7 +45,9 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+	'@nuxtjs/router',
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Axios module configuration
