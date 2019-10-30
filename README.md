@@ -50,17 +50,7 @@ $ yarn generate
 
 ## **3. Documentation**
 
-### ***a. Admin account***
-**E-mail:** *admin@example.com*  
-**Password :** *password*
-
-### ***b. Routes***
-
-Routes list is also available on server, tab Routes
-```bash
-# List of users
-api/users
-```
+This is a [**NuxtJS**](https://nuxtjs.org/) web app, check out the [**Wiki**](#https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front/wiki) to learn more about documentation.
 
 ---
 
