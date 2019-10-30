@@ -48,9 +48,11 @@ $ yarn start
 $ yarn generate
 ```
 
+---
+
 ## **3. Documentation**
 
-This is a [**NuxtJS**](https://nuxtjs.org/) web app, check out the [**Wiki**](#https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front/wiki) to learn more about documentation.
+This is a [**NuxtJS**](https://nuxtjs.org/) web app, check out the [**Wiki**](https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front/wiki) to learn more about documentation.
 
 ---
 
