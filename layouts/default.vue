@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <nuxt />
+    <nuxt class="parrallax" />
   </v-app>
 </template>
 
@@ -31,3 +31,22 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .parrallax {
+    /* The image used */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.2)),
+        url('/images/background.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
