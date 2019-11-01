@@ -15,6 +15,11 @@
 export default {
     props: {
         anim: Boolean
+    },
+    data() {
+        return {
+            show: ''
+        }
     }
 }
 </script>
@@ -41,7 +46,7 @@ export default {
     0% {}
 
     50% {
-        background-image: url('~static/images/logos/ewilan-photo.png');
+        background-image: url('~static/images/logos/ewilan-photo-reverse.png');
         background-color: rgba(206, 206, 206, 0.397);
         -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg);

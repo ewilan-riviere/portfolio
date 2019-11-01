@@ -1,40 +1,28 @@
 export const state = () => ({
-  formations: [],
-  services: [],
-  tools: [],
-  agencies: [],
+  technologies: [],
   users: []
 })
 
 export const mutations = {
-  setFormations(state, formations) {
-    state.formations = formations
+  setTechnologies(state, technologies) {
+    state.technologies = technologies
   },
-  setServices(state, services) {
-    state.services = services
-  },
-  setTools(state, tools) {
-    state.tools = tools
-  },
-  setAgencies(state, agencies) {
-    state.agencies = agencies
+  setUsers(state, users) {
+    state.users = users
   }
 }
 
 export const actions = {
   async getUsers({ commit }) {
-    const [users] = await Promise.all([this.$axios.$get(`/users`)])
+    let [
+      technologies,
+      users
+    ]
+    = await Promise.all([
+      this.$axios.$get(`technologies`),
+      this.$axios.$get(`users`)
+    ])
+    commit('setTechnologies', technologies)
     commit('setUsers', users)
-    // let [formations,services,tools,agencies]
-    // = await Promise.all([
-    //     this.$axios.$get(`/formations`),
-    //     this.$axios.$get(`/service-categories`),
-    //     this.$axios.$get(`/tools`),
-    //     this.$axios.$get(`/agencies`)
-    // ])
-    // commit('setFormations', formations),
-    // commit('setServices', services),
-    // commit('setTools', tools),
-    // commit('setAgencies', agencies)
   }
 }

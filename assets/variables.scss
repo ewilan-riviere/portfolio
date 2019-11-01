@@ -2,3 +2,14 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+$white: #ffffff;
+$black: #000000;
+$gray: rgb(189, 189, 189);
+
+.white-text {
+    color: $white;
+}
+.black-text {
+    color: $black;
+}
