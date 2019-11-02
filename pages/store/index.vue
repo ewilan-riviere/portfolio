@@ -1,19 +1,24 @@
 <template>
-    <div>
+    <div id="store">
         <StoreData />
     </div>
 </template>
 
 <script>
-import StoreData from '@/components/subcomponents/StoreData.vue'
+import StoreData from '@/components/pages/store/StoreData.vue'
 
 export default {
     components: {
         StoreData
-    }
+    },
+    async asyncData({ app, query, error }) {
+        await app.$axios.get('users')
+    },
 }
 </script>
 
 <style lang="scss">
+#store {
 
+}
 </style>

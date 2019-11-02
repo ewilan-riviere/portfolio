@@ -1,61 +1,102 @@
 <template>
-  <v-app>
-    <NavigationDrawer />
-    <nuxt class="parrallax padding" />
-  </v-app>
+	<v-app class="">
+		<div class="parrallax">
+			<div id="top"></div>
+			<GitHubRibbon />
+			<NavigationDrawer />
+			<nuxt class="padding" />
+			<ReturnToTop :returnToTop="returnToTop" :target="target" />
+		</div>
+	</v-app>
 </template>
 
 <script>
-import NavigationDrawer from '@/components/NavigationDrawer.vue'
+import * as easings from 'vuetify/es5/services/goto/easing-patterns'
+
+import GitHubRibbon from '@/components/layouts/GitHubRibbon.vue'
+import NavigationDrawer from '@/components/layouts/NavigationDrawer.vue'
+import ReturnToTop from '@/components/layouts/ReturnToTop.vue'
 
 export default {
-  components: {
-    NavigationDrawer
-  },
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
+	components: {
+		NavigationDrawer,
+		GitHubRibbon,
+		ReturnToTop
+	},
+	methods: {
+		handleScroll () {
+			if (window.scrollY > 30) {
+				this.returnToTop=true
+			} else {
+				this.returnToTop=false
+			}
+		}
+	},
+	created () {
+		if (process.browser) {
+			window.addEventListener('scroll', this.handleScroll);
+		}
+	},
+	destroyed () {
+		if (process.browser) {
+			window.removeEventListener('scroll', this.handleScroll);
+		}
+	},
+	data() {
+		return {
+			target: '#top',
+			duration: 300,
+			offset: 0,
+			easing: 'easeInOutCubic',
+			easings: Object.keys(easings),
+
+			returnToTop: false
+		}
+	},
 }
 </script>
 
 <style lang="scss">
-  .parrallax {
-    /* The image used */
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.3),
-            rgba(0, 0, 0, 0.2)),
-        url('/images/background.jpg');
-
-    /* Full height */
-    height: 100%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.view {
+  // height: 100vh;
+  // position: absolute;
+  background-color: transparent;
+  transition: opacity .5s;
+  .return-to-top {
+    color: $white;
+    position: fixed;
+    bottom: 1rem;
+    right: 1.5rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    background-color: rgba($gray, 0.6);
+    &:hover {
+      background-color: rgba($gray, 0.4);
+    }
+    .icon {
+      font-size: 3rem;
+      color: $black;
+    }
   }
-  .padding {
-    padding: 0 5rem;
-  }
+}
+.parrallax {
+  /* The image used */
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.3),
+  rgba(0, 0, 0, 0.2)),
+  url('/images/background.jpg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.padding {
+  padding: 0 5.5rem;
+}
 </style>

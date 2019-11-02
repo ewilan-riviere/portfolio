@@ -2,7 +2,7 @@
     <div class="ewilan-intro">
         <div class="ewilan-intro-center">
             <div class="ewilan-intro-sub white-text">
-                <EwilanLogo class="ewilan-intro-logo" logoRoute="/store" :anim="true" />
+                <EwilanLogo class="ewilan-intro-logo" logoRoute="/portfolio" :anim="true" />
                 <h1 class="intro-title font-morpheus background-ewilan" v-html="name"></h1>
                 <div class="intro-details font-lautre mb-5">
                     <div>
@@ -10,26 +10,50 @@
                         <div class="background_back" v-html="jobDetails"></div>
                     </div>
                 </div>
+                <Social />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import EwilanLogo from '@/components/subcomponents/EwilanLogo.vue'
+import EwilanLogo from '@/components/sub/EwilanLogo.vue'
+import Social from '@/components/pages/home/Social.vue'
 
 export default {
     components: {
-        EwilanLogo
+        EwilanLogo,
+        Social
     },
     props: {
-    },
+	},
+	beforeMount() {
+		this.dataApi()
+	},
+	methods: {
+		dataApi() {
+			let dataApiInfo
+			dataApiInfo=this.$store.state.api.informations.data
+			for (let index = 0; index < dataApiInfo.length; index++) {
+				const element = dataApiInfo[index];
+				if (element.slug=='dev_name') {
+					this.name=element.text
+				}
+				if (element.slug=='dev_title') {
+					this.job=element.text
+				}
+				if (element.slug=='dev_spec') {
+					this.jobDetails=element.text.replace(':', '<br>')
+				}
+			}
+		}
+	},
     data() {
         return {
-            name: "Ewilan<br>Rivière",
-            job: "Développeuse web, web mobile",
-            jobDetails: "Orientée back-end<br>PHP",
-            env: process.env.baseUrl,
+            name: "",
+            job: "",
+            jobDetails: "",
+			env: process.env.baseUrl
         }
     }
 }
@@ -38,9 +62,9 @@ export default {
 <style lang="scss">
 .ewilan-intro {
     .ewilan-intro-center {
-        display: table-cell; 
-        vertical-align: middle; 
-        text-align: center; 
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
         padding: 10rem 0;
         .ewilan-intro-sub {
             // width: 50%;

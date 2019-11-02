@@ -21,50 +21,47 @@
 
         <v-navigation-drawer
             v-model="drawer"
-            absolute
             temporary
         >
-            <v-list-item>
-                <v-list-item-avatar>
-                    <v-img src="images/logos/ewilan-photo.png"></v-img>
-                </v-list-item-avatar>
+            <div>
+                <v-list-item>
+                    <v-list-item-avatar>
+                        <v-img src="images/logos/ewilan-photo.png"></v-img>
+                    </v-list-item-avatar>
 
-                <v-list-item-content>
-                    <v-list-item-title>
-                        {{ name }}
-                    </v-list-item-title>
-                </v-list-item-content>
-            </v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title>
+                            {{ name }}
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
 
-            <v-divider></v-divider>
+                <v-divider></v-divider>
 
-            <v-list dense>
+                <v-list dense>
 
-                <router-link
-                    v-for="item in items"
-                    :key="item.title"
-                    link
-                    class="black-text"
-                    :to="item.link"
-                >
-                    <v-list-item
-                        
+                    <router-link
+                        v-for="item in items"
+                        :key="item.title"
+                        link
+                        class="black-text"
+                        :to="item.link"
                     >
-                        <v-list-item-icon>
-                            <v-icon>mdi-{{ item.icon }}</v-icon>
-                        </v-list-item-icon>
-
-                        
+                        <v-list-item>
+                            <v-list-item-icon>
+                                <v-icon>mdi-{{ item.icon }}</v-icon>
+                            </v-list-item-icon>
                             <v-list-item-content>
                                 <v-list-item-title>
                                     {{ item.title }}
                                 </v-list-item-title>
                             </v-list-item-content>
-                        
-                    </v-list-item>
-                </router-link>
+                            
+                        </v-list-item>
+                    </router-link>
 
-            </v-list>
+                </v-list>
+            </div>
         </v-navigation-drawer>
     </v-sheet>
 </template>
@@ -87,14 +84,24 @@ export default {
             name: "Ewilan Rivière",
             items: [
                 {
-                    title: 'Home',
-                    icon: 'dashboard',
+                    title: 'Accueil',
+                    icon: 'home',
                     link: '/'
                 },
                 {
-                    title: 'About',
-                    icon: 'question_answer',
+                    title: 'Portfolio',
+                    icon: 'folder-open',
+                    link: '/portfolio'
+                },
+                {
+                    title: 'Store',
+                    icon: 'database-check',
                     link: '/store'
+                },
+                {
+                    title: 'À propos',
+                    icon: 'information',
+                    link: '/about'
                 },
             ],
         }
@@ -103,6 +110,10 @@ export default {
 </script>
 
 <style lang="scss">
+.v-navigation-drawer {
+    position: fixed;
+    top: 0 !important;
+}
 .navigation-drawer-container {
     background-color: transparent !important;
     .navigation-drawer-toggle {
@@ -114,6 +125,9 @@ export default {
 
     a {
         text-decoration: none;
+        .v-list-item:hover {
+            background-color: $light-gray;
+        }
     }
     .nuxt-link-exact-active {
         .v-list-item {
