@@ -49,10 +49,10 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // '@nuxtjs/router',
+    '@nuxtjs/router',
     // Doc: https://axios.nuxtjs.org/usage
     ['@nuxtjs/axios', { baseURL: process.env.BASE_URL }],
-    '@nuxtjs/dotenv',
+    '@nuxtjs/dotenv'
   ],
   env: {
     baseURL: process.env.BASE_URL

@@ -1,6 +1,8 @@
 <template>
-    <div>
-        {{ users }}
+    <div class="white-text">
+        <pre>
+            {{ $store.state }}
+        </pre>
     </div>
 </template>
 

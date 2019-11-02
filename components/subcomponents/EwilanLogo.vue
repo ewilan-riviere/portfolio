@@ -2,7 +2,12 @@
     <div class="d-flex justify-content-center">
         <v-tooltip v-model="show" top>
             <template v-slot:activator="{ on }">
-                <a href="" v-on="on" class="logo-ewilan-anim" :class="anim ? 'animation' : ''"></a>
+                <nuxt-link
+                    v-on="on"
+                    class="logo-ewilan-anim"
+                    :class="anim ? 'animation' : ''"
+                    :to="logoRoute"
+                ></nuxt-link>
             </template>
             <span>
                 <b>Portfolio</b>
@@ -14,7 +19,8 @@
 <script>
 export default {
     props: {
-        anim: Boolean
+        anim: Boolean,
+        logoRoute: String
     },
     data() {
         return {

@@ -40,20 +40,30 @@
 
             <v-list dense>
 
-                <v-list-item
+                <router-link
                     v-for="item in items"
                     :key="item.title"
                     link
                     class="black-text"
+                    :to="item.link"
                 >
-                    <v-list-item-icon>
-                        <v-icon>mdi-{{ item.icon }}</v-icon>
-                    </v-list-item-icon>
+                    <v-list-item
+                        
+                    >
+                        <v-list-item-icon>
+                            <v-icon>mdi-{{ item.icon }}</v-icon>
+                        </v-list-item-icon>
 
-                    <v-list-item-content>
-                        <v-list-item-title>{{ item.title }}</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
+                        
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    {{ item.title }}
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        
+                    </v-list-item>
+                </router-link>
+
             </v-list>
         </v-navigation-drawer>
     </v-sheet>
@@ -76,8 +86,16 @@ export default {
             drawer: false,
             name: "Ewilan Rivière",
             items: [
-                { title: 'Home', icon: 'dashboard' },
-                { title: 'About', icon: 'question_answer' },
+                {
+                    title: 'Home',
+                    icon: 'dashboard',
+                    link: '/'
+                },
+                {
+                    title: 'About',
+                    icon: 'question_answer',
+                    link: '/store'
+                },
             ],
         }
     },
@@ -92,6 +110,15 @@ export default {
     }
     .v-navigation-drawer__content {
         // margin-top: 4rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    .nuxt-link-exact-active {
+        .v-list-item {
+            background-color: $light-gray;
+        }
     }
     
     .hamburger {

@@ -36,6 +36,6 @@
 
 <style lang="scss">
 .index-height {
-// height: 150vh;
+	height: 150vh;
 }
 </style>

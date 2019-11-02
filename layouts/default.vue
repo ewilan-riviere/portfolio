@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <NavigationDrawer />
-    <nuxt class="parrallax" />
+    <nuxt class="parrallax padding" />
   </v-app>
 </template>
 
@@ -54,5 +54,8 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .padding {
+    padding: 0 5rem;
   }
 </style>

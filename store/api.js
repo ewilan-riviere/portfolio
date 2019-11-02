@@ -4,21 +4,20 @@ export const state = () => ({
 })
 
 export const mutations = {
-  setTechnologies(state, technologies) {
+  setTechnologies (state, technologies) {
     state.technologies = technologies
   },
-  setUsers(state, users) {
+  setUsers (state, users) {
     state.users = users
   }
 }
 
 export const actions = {
-  async getUsers({ commit }) {
-    let [
+  async getApiData ({ commit }) {
+    const [
       technologies,
       users
-    ]
-    = await Promise.all([
+    ] = await Promise.all([
       this.$axios.$get(`technologies`),
       this.$axios.$get(`users`)
     ])
