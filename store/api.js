@@ -3,7 +3,9 @@ export const state = () => ({
 	projects: [],
 	formations: [],
 	technologies: [],
-	informations: []
+	texts: [],
+	medias: [],
+	socials: []
 })
 
 export const mutations = {
@@ -19,8 +21,14 @@ export const mutations = {
 	setTechnologies (state, technologies) {
 		state.technologies = technologies
 	},
-	setInformations (state, informations) {
-		state.informations = informations
+	setTexts (state, texts) {
+		state.texts = texts
+	},
+	setMedias (state, medias) {
+		state.medias = medias
+	},
+	setSocials (state, socials) {
+		state.socials = socials
 	}
 }
 
@@ -31,18 +39,24 @@ export const actions = {
 			projects,
 			formations,
 			technologies,
-			informations
+			texts,
+			medias,
+			socials
 		] = await Promise.all([
 			this.$axios.$get(`skills`),
 			this.$axios.$get(`projects`),
 			this.$axios.$get(`formations`),
 			this.$axios.$get(`technologies`),
-			this.$axios.$get(`informations`)
+			this.$axios.$get(`texts`),
+			this.$axios.$get(`medias`),
+			this.$axios.$get(`socials`)
 		])
 		commit('setSkills', skills)
 		commit('setProjects', projects)
 		commit('setFormations', formations)
 		commit('setTechnologies', technologies)
-		commit('setInformations', informations)
+		commit('setTexts', texts)
+		commit('setMedias', medias)
+		commit('setSocials', socials)
 	}
 }

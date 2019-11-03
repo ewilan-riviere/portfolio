@@ -1,10 +1,15 @@
 <template>
     <div>
-        <a :href="checkLink()" target="_blank">
-            <v-icon :class="addClass" large color="white darken-2">
-                mdi-{{ icon }}
-            </v-icon>
-        </a>
+		<v-tooltip bottom>
+			<template v-slot:activator="{ on }">
+				<a :href="checkLink()" target="_blank" v-on="on">
+					<v-icon :class="addClass" large color="white darken-2">
+						mdi-{{ icon }}
+					</v-icon>
+				</a>
+			</template>
+			<span>{{ name }}</span>
+		</v-tooltip>
     </div>
 </template>
 
@@ -12,7 +17,7 @@
 export default {
     data() {
         return {
-            
+
         }
     },
     methods: {
@@ -25,6 +30,7 @@ export default {
         }
     },
     props: {
+		name: String,
         addClass: String,
         color: String,
         link: String,

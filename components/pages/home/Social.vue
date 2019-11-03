@@ -2,7 +2,7 @@
     <div id="social">
         <ul class="social-list">
             <li v-for="item in social" :key="item.id" class="social-list-item">
-                <Icon :icon="item.icon" :link="item.link" color="" addClass="icon"/>
+                <Icon :icon="item.icon" :link="item.link" :name="item.name" color="" addClass="icon"/>
             </li>
         </ul>
     </div>
@@ -14,28 +14,7 @@ import Icon from '@/components/sub/Icon.vue'
 export default {
     data() {
         return {
-            social: [
-                {
-                    name: 'GitHub',
-                    link: 'https://github.com/ewilan-riviere',
-                    icon: 'github-circle'
-                },
-                {
-                    name: 'LinkedIn',
-                    link: 'https://www.linkedin.com/in/ewilan-riviere/',
-                    icon: 'linkedin-box'
-                },
-                {
-                    name: 'E-mail',
-                    link: 'ewilan@dotslashplay.it',
-                    icon: 'email'
-                },
-                {
-                    name: 'CV',
-                    link: 'http://portfolio-api.ewilan-riviere.tech/documents/cv.pdf',
-                    icon: 'school'
-                }
-            ]
+            social: this.$store.state.api.socials.data
         }
     },
     components: {

@@ -56,7 +56,7 @@
                                     {{ item.title }}
                                 </v-list-item-title>
                             </v-list-item-content>
-                            
+
                         </v-list-item>
                     </router-link>
 
@@ -134,7 +134,7 @@ export default {
             background-color: $light-gray;
         }
     }
-    
+
     .hamburger {
         position: fixed;
         top: 1rem;
@@ -147,7 +147,7 @@ export default {
         -ms-transition: all 1s ease;
         transition: all 1s ease;
         .hamburger-background {
-            background-color: $gray;
+			background-color: rgba($gray, 0.6);
             position: absolute;
             height: 4rem;
             width: 4rem;

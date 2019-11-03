@@ -33,7 +33,7 @@ export default {
 	methods: {
 		dataApi() {
 			let dataApiInfo
-			dataApiInfo=this.$store.state.api.informations.data
+			dataApiInfo=this.$store.state.api.texts.data
 			for (let index = 0; index < dataApiInfo.length; index++) {
 				const element = dataApiInfo[index];
 				if (element.slug=='dev_name') {

@@ -2,9 +2,14 @@
 	<v-layout id="home" column justify-center align-center>
 		<div id="ewilanIntro">
 			<EwilanIntro />
-			<div class="go-down-container">
-				<v-icon x-large color="white" class="go-down">mdi-chevron-down</v-icon>
-			</div>
+
+			<transition name="fade">
+				<div class="view" v-if="noScroll">
+					<div class="go-down-container">
+						<v-icon x-large color="white" class="go-down">mdi-chevron-down</v-icon>
+					</div>
+				</div>
+			</transition>
 		</div>
 		<div id="informations">
 			<Informations />
@@ -24,14 +29,32 @@
 			EwilanIntro,
 			Informations
 		},
+		methods: {
+			handleScroll () {
+				if (window.scrollY > 30) {
+					this.noScroll=false
+				} else {
+					this.noScroll=true
+				}
+			}
+		},
+		created () {
+			if (process.browser) {
+				window.addEventListener('scroll', this.handleScroll);
+			}
+		},
+		destroyed () {
+			if (process.browser) {
+				window.removeEventListener('scroll', this.handleScroll);
+			}
+		},
 		data() {
 			return {
 				title: 'NuxtJS',
 				subtitle: 'Ewilan Rivière Portfolio',
-			}
-		},
-		methods: {
 
+				noScroll: true
+			}
 		}
 	}
 </script>
@@ -40,9 +63,14 @@
 #home {
 	#ewilanIntro {
 		min-height: 100vh;
+		position: relative;
 
 		.go-down-container {
 			display: flex;
+			position: absolute;
+			bottom: 5rem;
+			left: 50%;
+			transform: translate(-50%);
 			.go-down {
 				font-size: 5rem !important;
 				margin: auto;

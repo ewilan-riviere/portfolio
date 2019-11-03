@@ -1,30 +1,30 @@
 <template>
 	<div id="informations">
-		<div class="informations-container">
-			text
-			<div>
+		<div class="white-text" v-for="item in $store.state.api.formations.data" :key="item.id">
+			{{ item.title }}
+		</div>
+		<div class="informations-container" v-html="infoData">
 
-			</div>
 		</div>
 		<div>
 			<ul class="informations-list">
 				<li class="informations-list-item">
-					<v-icon large color="white darken-2">
+					<v-icon large @click="devDesc()" :color="devDescActivate ? 'grey' : 'white'">
 						mdi-text-subject
 					</v-icon>
 				</li>
 				<li class="informations-list-item">
-					<v-icon large color="white darken-2">
+					<v-icon large @click="devFormations()" :color="devFormationsActivate ? 'grey' : 'white'">
 						mdi-school
 					</v-icon>
 				</li>
 				<li class="informations-list-item">
-					<v-icon large color="white darken-2">
+					<v-icon large @click="devDesc()" :color="devDescActivate ? 'grey' : 'white'">
 						mdi-xml
 					</v-icon>
 				</li>
 				<li class="informations-list-item">
-					<v-icon large color="white darken-2">
+					<v-icon large @click="devDesc()" :color="devDescActivate ? 'grey' : 'white'">
 						mdi-library-books
 					</v-icon>
 				</li>
@@ -35,7 +35,38 @@
 
 <script>
 export default {
-
+	beforeMount() {
+		this.devDesc()
+	},
+	methods: {
+		devDesc() {
+			let dataApiInfo
+			dataApiInfo=this.$store.state.api.texts.data
+			for (let index = 0; index < dataApiInfo.length; index++) {
+				const element = dataApiInfo[index];
+				if (element.slug=='dev_resume') {
+					this.infoData=element.text
+				}
+			}
+		},
+		devFormations() {
+			let dataApiInfo
+			dataApiInfo=this.$store.state.api.texts.data
+			for (let index = 0; index < dataApiInfo.length; index++) {
+				const element = dataApiInfo[index];
+				if (element.slug=='dev_resume') {
+					this.infoData=element.text
+				}
+			}
+		}
+	},
+	data() {
+		return {
+			devDescActivate: true,
+			devFormationsActivate: false,
+			infoData: ""
+		}
+	}
 }
 </script>
 

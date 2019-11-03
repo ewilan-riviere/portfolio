@@ -11,6 +11,11 @@ export default {
     components: {
         StoreData
     },
+	head () {
+		return {
+			title: "Store · Ewilan Rivière · Portfolio"
+		}
+	},
     async asyncData({ app, query, error }) {
         await app.$axios.get('users')
     },
