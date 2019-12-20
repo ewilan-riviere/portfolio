@@ -1,111 +1,108 @@
 <template>
-    <v-sheet class="navigation-drawer-container">
-        <v-container class="navigation-drawer-toggle">
-            <v-row
-                align="center"
-                justify="start"
-            >
-                <div
-                    class="hamburger  hamburger--collapse"
-                    @click="hamburgerActivate()"
-                    @click.stop="drawer = !drawer"
-                    :class="drawer ? 'is-active' : ''"
-                >
-                    <div class="hamburger-background"></div>
-                    <div class="hamburger-box">
-                        <div class="hamburger-inner"></div>
-                    </div>
-                </div>
-            </v-row>
-        </v-container>
-
-        <v-navigation-drawer
-            v-model="drawer"
-            temporary
+  <v-sheet class="navigation-drawer-container">
+    <v-container class="navigation-drawer-toggle">
+      <v-row
+        align="center"
+        justify="start"
+      >
+        <div
+          class="hamburger  hamburger--collapse"
+          :class="drawer ? 'is-active' : ''"
+          @click="hamburgerActivate()"
+          @click.stop="drawer = !drawer"
         >
-            <div>
-                <v-list-item>
-                    <v-list-item-avatar>
-                        <v-img src="images/logos/ewilan-photo.png"></v-img>
-                    </v-list-item-avatar>
+          <div class="hamburger-background" />
+          <div class="hamburger-box">
+            <div class="hamburger-inner" />
+          </div>
+        </div>
+      </v-row>
+    </v-container>
 
-                    <v-list-item-content>
-                        <v-list-item-title>
-                            {{ name }}
-                        </v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+    >
+      <div>
+        <v-list-item>
+          <v-list-item-avatar>
+            <v-img src="images/logos/ewilan-photo.png" />
+          </v-list-item-avatar>
 
-                <v-divider></v-divider>
+          <v-list-item-content>
+            <v-list-item-title>
+              {{ name }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
 
-                <v-list dense>
+        <v-divider />
 
-                    <router-link
-                        v-for="item in items"
-                        :key="item.title"
-                        link
-                        class="black-text"
-                        :to="item.link"
-                    >
-                        <v-list-item>
-                            <v-list-item-icon>
-                                <v-icon>mdi-{{ item.icon }}</v-icon>
-                            </v-list-item-icon>
-                            <v-list-item-content>
-                                <v-list-item-title>
-                                    {{ item.title }}
-                                </v-list-item-title>
-                            </v-list-item-content>
-
-                        </v-list-item>
-                    </router-link>
-
-                </v-list>
-            </div>
-        </v-navigation-drawer>
-    </v-sheet>
+        <v-list dense>
+          <router-link
+            v-for="item in items"
+            :key="item.title"
+            link
+            class="black-text"
+            :to="item.link"
+          >
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>mdi-{{ item.icon }}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>
+                  {{ item.title }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </router-link>
+        </v-list>
+      </div>
+    </v-navigation-drawer>
+  </v-sheet>
 </template>
 
 <script>
 export default {
-    methods: {
-        hamburgerActivate() {
-            if (this.hamburgerActive==true) {
-                this.hamburgerActive=false
-            } else {
-                this.hamburgerActive=true
-            }
+  data () {
+    return {
+      hamburgerActive: false,
+      drawer: false,
+      name: 'Ewilan Rivière',
+      items: [
+        {
+          title: 'Accueil',
+          icon: 'home',
+          link: '/'
+        },
+        {
+          title: 'Portfolio',
+          icon: 'folder-open',
+          link: '/portfolio'
+        },
+        {
+          title: 'Store',
+          icon: 'database-check',
+          link: '/store'
+        },
+        {
+          title: 'À propos',
+          icon: 'information',
+          link: '/about'
         }
-    },
-    data () {
-        return {
-            hamburgerActive: false,
-            drawer: false,
-            name: "Ewilan Rivière",
-            items: [
-                {
-                    title: 'Accueil',
-                    icon: 'home',
-                    link: '/'
-                },
-                {
-                    title: 'Portfolio',
-                    icon: 'folder-open',
-                    link: '/portfolio'
-                },
-                {
-                    title: 'Store',
-                    icon: 'database-check',
-                    link: '/store'
-                },
-                {
-                    title: 'À propos',
-                    icon: 'information',
-                    link: '/about'
-                },
-            ],
-        }
-    },
+      ]
+    }
+  },
+  methods: {
+    hamburgerActivate () {
+      if (this.hamburgerActive === true) {
+        this.hamburgerActive = false
+      } else {
+        this.hamburgerActive = true
+      }
+    }
+  }
 }
 </script>
 
@@ -147,7 +144,7 @@ export default {
         -ms-transition: all 1s ease;
         transition: all 1s ease;
         .hamburger-background {
-			background-color: rgba($gray, 0.6);
+background-color: rgba($gray, 0.6);
             position: absolute;
             height: 4rem;
             width: 4rem;

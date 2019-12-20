@@ -1,20 +1,20 @@
 <template>
-    <div id="appInProgress">
-        <a :href="appInProgressUrl" target="_blank" class="font-lautre">
-            {{ appInProgressName }}
-        </a>
-    </div>
+  <div id="appInProgress">
+    <a :href="appInProgressUrl" target="_blank" class="font-lautre">
+      {{ appInProgressName }}
+    </a>
+  </div>
 </template>
 
 <script>
 export default {
-    components: {},
-    data() {
-        return {
-            appInProgressUrl: "https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front",
-            appInProgressName: "En développement"
-        }
+  components: {},
+  data () {
+    return {
+      appInProgressUrl: 'https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front',
+      appInProgressName: 'En développement'
     }
+  }
 }
 </script>
 

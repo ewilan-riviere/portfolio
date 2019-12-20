@@ -1,25 +1,25 @@
 <template>
-    <div id="social">
-        <ul class="social-list">
-            <li v-for="item in social" :key="item.id" class="social-list-item">
-                <Icon :icon="item.icon" :link="item.link" :name="item.name" color="" addClass="icon"/>
-            </li>
-        </ul>
-    </div>
+  <div id="social">
+    <ul class="social-list">
+      <li v-for="item in social" :key="item.id" class="social-list-item">
+        <Icon :icon="item.icon" :link="item.link" :name="item.name" color="" add-class="icon" />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 import Icon from '@/components/sub/Icon.vue'
 
 export default {
-    data() {
-        return {
-            social: this.$store.state.api.socials.data
-        }
-    },
-    components: {
-        Icon
+  components: {
+    Icon
+  },
+  data () {
+    return {
+      social: this.$store.state.api.socials.data
     }
+  }
 }
 </script>
 

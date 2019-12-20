@@ -1,13 +1,13 @@
 <template>
-	<v-app class="">
-		<div class="parrallax">
-			<div id="top"></div>
-			<GitHubRibbon />
-			<NavigationDrawer />
-			<nuxt class="padding" />
-			<ReturnToTop :returnToTop="returnToTop" :target="target" />
-		</div>
-	</v-app>
+  <v-app class="">
+    <div class="parrallax">
+      <div id="top" />
+      <GitHubRibbon />
+      <NavigationDrawer />
+      <nuxt class="padding" />
+      <ReturnToTop :return-to-top="returnToTop" :target="target" />
+    </div>
+  </v-app>
 </template>
 
 <script>
@@ -18,41 +18,42 @@ import NavigationDrawer from '@/components/layouts/NavigationDrawer.vue'
 import ReturnToTop from '@/components/layouts/ReturnToTop.vue'
 
 export default {
-	components: {
-		NavigationDrawer,
-		GitHubRibbon,
-		ReturnToTop
-	},
-	methods: {
-		handleScroll () {
-			if (window.scrollY > 30) {
-				this.returnToTop=true
-			} else {
-				this.returnToTop=false
-			}
-		}
-	},
-	created () {
-		if (process.browser) {
-			window.addEventListener('scroll', this.handleScroll);
-		}
-	},
-	destroyed () {
-		if (process.browser) {
-			window.removeEventListener('scroll', this.handleScroll);
-		}
-	},
-	data() {
-		return {
-			target: '#top',
-			duration: 300,
-			offset: 0,
-			easing: 'easeInOutCubic',
-			easings: Object.keys(easings),
+  components: {
+    NavigationDrawer,
+    GitHubRibbon,
+    ReturnToTop
+  },
+  data () {
+    return {
+      target: '#top',
+      duration: 300,
+      offset: 0,
+      easing: 'easeInOutCubic',
+      easings: Object.keys(easings),
 
-			returnToTop: false
-		}
-	},
+      returnToTop: false
+    }
+  },
+  created () {
+    if (process.browser) {
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  destroyed () {
+    if (process.browser) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+  },
+  methods: {
+    handleScroll () {
+      if (window.scrollY > 30) {
+        this.returnToTop = true
+      } else {
+        this.returnToTop = false
+      }
+    }
+  }
 }
 </script>
 
