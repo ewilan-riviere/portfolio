@@ -1,16 +1,16 @@
 <template>
   <div>
     <v-expansion-panels focusable>
-      <v-expansion-panel v-for="(apiItem,i) in $store.state.api" :key="i">
+      <v-expansion-panel v-for="(apiItem, i) in $store.state.api" :key="i">
         <v-expansion-panel-header>
           {{ i }}
         </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <div v-for="(apiSubItem,iSub) in apiItem.data" :key="iSub">
-            <div v-if="i=='skills'">
+        <v-expansion-panel-content v-if="apiItem !== undefined">
+          <div v-for="(apiSubItem, iSub) in apiItem.data" :key="iSub">
+            <div v-if="i == 'skills'">
               {{ apiSubItem.title }}
             </div>
-            <div v-if="i=='projects'">
+            <div v-if="i == 'projects'">
               <div class="my-3">
                 {{ apiSubItem.title }}
                 <ul>
@@ -29,7 +29,7 @@
                 </ul>
               </div>
             </div>
-            <div v-if="i=='formations'">
+            <div v-if="i == 'formations'">
               <div class="my-3">
                 {{ apiSubItem.title }}
                 <ul>
@@ -69,7 +69,7 @@
                 </ul>
               </div>
             </div>
-            <div v-if="i=='technologies'">
+            <div v-if="i == 'technologies'">
               <div class="my-3">
                 {{ apiSubItem.name }}
                 <ul>
@@ -85,7 +85,7 @@
                 </ul>
               </div>
             </div>
-            <div v-if="i=='informations'">
+            <div v-if="i == 'informations'">
               <div class="my-3">
                 {{ apiSubItem.slug }}
                 <ul>
@@ -116,6 +116,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

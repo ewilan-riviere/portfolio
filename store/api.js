@@ -9,31 +9,31 @@ export const state = () => ({
 })
 
 export const mutations = {
-  setSkills (state, skills) {
+  setSkills(state, skills) {
     state.skills = skills
   },
-  setProjects (state, projects) {
+  setProjects(state, projects) {
     state.projects = projects
   },
-  setFormations (state, formations) {
+  setFormations(state, formations) {
     state.formations = formations
   },
-  setTechnologies (state, technologies) {
+  setTechnologies(state, technologies) {
     state.technologies = technologies
   },
-  setTexts (state, texts) {
+  setTexts(state, texts) {
     state.texts = texts
   },
-  setMedias (state, medias) {
+  setMedias(state, medias) {
     state.medias = medias
   },
-  setSocials (state, socials) {
+  setSocials(state, socials) {
     state.socials = socials
   }
 }
 
 export const actions = {
-  async getApiData ({ commit }) {
+  async getApiData({ commit }) {
     const [
       skills,
       projects,

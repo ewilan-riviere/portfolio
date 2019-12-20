@@ -2,7 +2,13 @@
   <div id="social">
     <ul class="social-list">
       <li v-for="item in social" :key="item.id" class="social-list-item">
-        <Icon :icon="item.icon" :link="item.link" :name="item.name" color="" add-class="icon" />
+        <Icon
+          :icon="item.icon"
+          :link="item.link"
+          :name="item.name"
+          color=""
+          add-class="icon"
+        />
       </li>
     </ul>
   </div>
@@ -15,7 +21,7 @@ export default {
   components: {
     Icon
   },
-  data () {
+  data() {
     return {
       social: this.$store.state.api.socials.data
     }
@@ -25,17 +31,17 @@ export default {
 
 <style lang="scss">
 #social {
-    color: $black;
-    .icon {
-        font-size: 5rem;
+  color: $black;
+  .icon {
+    font-size: 5rem;
+  }
+  .social-list {
+    padding-left: 0;
+    list-style: none;
+    .social-list-item {
+      display: inline-block;
+      margin: 0 0.3rem;
     }
-    .social-list {
-        padding-left: 0;
-        list-style: none;
-        .social-list-item {
-            display: inline-block;
-            margin: 0 0.3rem;
-        }
-    }
+  }
 }
 </style>

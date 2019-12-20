@@ -1,8 +1,12 @@
 {
-  "name": "ewilan-riviere-portfolio-front",
+  "name": "ewilan-riviere-portfolio",
   "version": "1.0.0",
-  "description": "My awe-inspiring Nuxt.js project",
-  "author": "Ewilan Rivière",
+  "description": "Portfolio d'Ewilan Rivière en NuxtJS.",
+  "author": {
+    "name": "Ewilan Rivière",
+    "email": "ewilan.riviere@gmail.com",
+    "url": "https://ewilan-riviere.tech"
+  },
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -12,16 +16,24 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
+  "lint-staged": {
+    "*.{js,vue}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/router": "^1.5.0",
+    "@nuxtjs/dotenv": "^1.4.0",
     "nuxt": "^2.0.0",
-    "vuetify-loader": "^1.4.3"
+    "nuxt-sass-resources-loader": "^2.0.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^3.1.0",
     "@nuxtjs/vuetify": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
@@ -30,8 +42,11 @@
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.6.0",
     "jest": "^24.1.0",
+    "lint-staged": "^8.2.1",
     "prettier": "^1.16.4",
+    "stylelint": "^10.1.0",
     "vue-jest": "^4.0.0-0"
   }
 }

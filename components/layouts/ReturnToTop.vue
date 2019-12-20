@@ -2,10 +2,7 @@
   <div>
     <transition name="fade">
       <div v-if="returnToTop" class="view">
-        <div
-          class="return-to-top"
-          @click="$vuetify.goTo(target)"
-        >
+        <div @click="$vuetify.goTo(target)" class="return-to-top">
           <v-icon class="icon">
             mdi-chevron-up
           </v-icon>
@@ -21,14 +18,10 @@ export default {
     target: String,
     returnToTop: Boolean
   },
-  data () {
-    return {
-
-    }
+  data() {
+    return {}
   }
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

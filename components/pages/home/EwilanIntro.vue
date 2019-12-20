@@ -2,15 +2,19 @@
   <div class="ewilan-intro">
     <div class="ewilan-intro-center">
       <div class="ewilan-intro-sub white-text">
-        <EwilanLogo class="ewilan-intro-logo" logo-route="/portfolio" :anim="true" />
-        <h1 class="intro-title font-morpheus background-ewilan" v-html="name" />
+        <EwilanLogo
+          :anim="true"
+          class="ewilan-intro-logo"
+          logo-route="/portfolio"
+        />
+        <h1 v-html="name" class="intro-title font-morpheus background-ewilan" />
         <div class="intro-details font-lautre mb-5">
           <div>
-            <div class="background_developpeuse" v-html="job" />
-            <div class="background_back" v-html="jobDetails" />
+            <div v-html="job" class="background_developpeuse" />
+            <div v-html="jobDetails" class="background_back" />
           </div>
         </div>
-        <Social />
+        <Social v-if="$store.state.api.formations !== undefined" />
       </div>
     </div>
   </div>
@@ -25,9 +29,8 @@ export default {
     EwilanLogo,
     Social
   },
-  props: {
-  },
-  data () {
+  props: {},
+  data() {
     return {
       name: '',
       job: '',
@@ -35,22 +38,24 @@ export default {
       env: process.env.baseUrl
     }
   },
-  beforeMount () {
+  beforeMount() {
     this.dataApi()
   },
   methods: {
-    dataApi () {
-      const dataApiInfo = this.$store.state.api.texts.data
-      for (let index = 0; index < dataApiInfo.length; index++) {
-        const element = dataApiInfo[index]
-        if (element.slug === 'dev_name') {
-          this.name = element.text
-        }
-        if (element.slug === 'dev_title') {
-          this.job = element.text
-        }
-        if (element.slug === 'dev_spec') {
-          this.jobDetails = element.text.replace(':', '<br>')
+    dataApi() {
+      if (this.$store.state.api.texts !== undefined) {
+        const dataApiInfo = this.$store.state.api.texts.data
+        for (let index = 0; index < dataApiInfo.length; index++) {
+          const element = dataApiInfo[index]
+          if (element.slug === 'dev_name') {
+            this.name = element.text
+          }
+          if (element.slug === 'dev_title') {
+            this.job = element.text
+          }
+          if (element.slug === 'dev_spec') {
+            this.jobDetails = element.text.replace(':', '<br>')
+          }
         }
       }
     }
@@ -60,25 +65,25 @@ export default {
 
 <style lang="scss">
 .ewilan-intro {
-    .ewilan-intro-center {
-        display: table-cell;
-        vertical-align: middle;
-        text-align: center;
-        padding: 10rem 0;
-        .ewilan-intro-sub {
-            // width: 50%;
-            .ewilan-intro-logo {
-                display: flex;
-                justify-content: center;
-                margin-bottom: 2rem;
-            }
-        }
+  .ewilan-intro-center {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10rem 0;
+    .ewilan-intro-sub {
+      // width: 50%;
+      .ewilan-intro-logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
     }
+  }
 }
 .intro-title {
-margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .intro-details {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 </style>

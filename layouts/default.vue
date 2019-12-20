@@ -23,7 +23,7 @@ export default {
     GitHubRibbon,
     ReturnToTop
   },
-  data () {
+  data() {
     return {
       target: '#top',
       duration: 300,
@@ -34,19 +34,19 @@ export default {
       returnToTop: false
     }
   },
-  created () {
+  created() {
     if (process.browser) {
       // eslint-disable-next-line nuxt/no-globals-in-created
       window.addEventListener('scroll', this.handleScroll)
     }
   },
-  destroyed () {
+  destroyed() {
     if (process.browser) {
       window.removeEventListener('scroll', this.handleScroll)
     }
   },
   methods: {
-    handleScroll () {
+    handleScroll() {
       if (window.scrollY > 30) {
         this.returnToTop = true
       } else {
@@ -62,7 +62,7 @@ export default {
   // height: 100vh;
   // position: absolute;
   background-color: transparent;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   .return-to-top {
     color: $white;
     position: fixed;
@@ -83,10 +83,8 @@ export default {
 }
 .parrallax {
   /* The image used */
-  background-image:
-  linear-gradient(rgba(0, 0, 0, 0.3),
-  rgba(0, 0, 0, 0.2)),
-  url('/images/background.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+    url('/images/background.jpg');
 
   /* Full height */
   height: 100%;

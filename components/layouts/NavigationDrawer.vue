@@ -1,14 +1,11 @@
 <template>
   <v-sheet class="navigation-drawer-container">
     <v-container class="navigation-drawer-toggle">
-      <v-row
-        align="center"
-        justify="start"
-      >
+      <v-row align="center" justify="start">
         <div
-          class="hamburger  hamburger--collapse"
           :class="drawer ? 'is-active' : ''"
           @click="hamburgerActivate()"
+          class="hamburger  hamburger--collapse"
           @click.stop="drawer = !drawer"
         >
           <div class="hamburger-background" />
@@ -19,10 +16,7 @@
       </v-row>
     </v-container>
 
-    <v-navigation-drawer
-      v-model="drawer"
-      temporary
-    >
+    <v-navigation-drawer v-model="drawer" temporary>
       <div>
         <v-list-item>
           <v-list-item-avatar>
@@ -42,9 +36,9 @@
           <router-link
             v-for="item in items"
             :key="item.title"
+            :to="item.link"
             link
             class="black-text"
-            :to="item.link"
           >
             <v-list-item>
               <v-list-item-icon>
@@ -65,7 +59,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       hamburgerActive: false,
       drawer: false,
@@ -95,7 +89,7 @@ export default {
     }
   },
   methods: {
-    hamburgerActivate () {
+    hamburgerActivate() {
       if (this.hamburgerActive === true) {
         this.hamburgerActive = false
       } else {
@@ -108,57 +102,57 @@ export default {
 
 <style lang="scss">
 .v-navigation-drawer {
-    position: fixed;
-    top: 0 !important;
+  position: fixed;
+  top: 0 !important;
 }
 .navigation-drawer-container {
-    background-color: transparent !important;
-    .navigation-drawer-toggle {
-        position: absolute;
-    }
-    .v-navigation-drawer__content {
-        // margin-top: 4rem;
-    }
+  background-color: transparent !important;
+  .navigation-drawer-toggle {
+    position: absolute;
+  }
+  .v-navigation-drawer__content {
+    // margin-top: 4rem;
+  }
 
-    a {
-        text-decoration: none;
-        .v-list-item:hover {
-            background-color: $light-gray;
-        }
+  a {
+    text-decoration: none;
+    .v-list-item:hover {
+      background-color: $light-gray;
     }
-    .nuxt-link-exact-active {
-        .v-list-item {
-            background-color: $light-gray;
-        }
+  }
+  .nuxt-link-exact-active {
+    .v-list-item {
+      background-color: $light-gray;
     }
+  }
 
-    .hamburger {
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        z-index: 10;
-        transition: all 3s;
-        -webkit-transition: all 1s ease;
-        -moz-transition: all 1s ease;
-        -o-transition: all 1s ease;
-        -ms-transition: all 1s ease;
-        transition: all 1s ease;
-        .hamburger-background {
-background-color: rgba($gray, 0.6);
-            position: absolute;
-            height: 4rem;
-            width: 4rem;
-            top: -0.2rem;
-            left: 0.2rem;
-            border-radius: 2rem;
-        }
+  .hamburger {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+    transition: all 3s;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    .hamburger-background {
+      background-color: rgba($gray, 0.6);
+      position: absolute;
+      height: 4rem;
+      width: 4rem;
+      top: -0.2rem;
+      left: 0.2rem;
+      border-radius: 2rem;
     }
-    .is-active {
-        top: 0;
-        left: 11.5rem;
-        .hamburger-background {
-            background-color: transparent;
-        }
+  }
+  .is-active {
+    top: 0;
+    left: 11.5rem;
+    .hamburger-background {
+      background-color: transparent;
     }
+  }
 }
 </style>

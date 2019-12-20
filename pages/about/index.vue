@@ -21,7 +21,7 @@ export default {
   components: {
     Logo
   },
-  data () {
+  data() {
     return {
       title: 'À propos',
       text: 'text'
@@ -32,15 +32,15 @@ export default {
 
 <style lang="scss">
 #about {
-    .center {
-        padding: 10rem 0;
-        margin: auto;
-        float: none;
-        display: table;
-        .about-title {
-            font-size: 4rem;
-            font-weight: bold;
-        }
+  .center {
+    padding: 10rem 0;
+    margin: auto;
+    float: none;
+    display: table;
+    .about-title {
+      font-size: 4rem;
+      font-weight: bold;
     }
+  }
 }
 </style>
