@@ -10,8 +10,11 @@
         <h1 v-html="name" class="intro-title font-morpheus background-ewilan" />
         <div class="intro-details font-lautre mb-5">
           <div>
-            <div v-html="job" class="background_developpeuse" />
-            <div v-html="jobDetails" class="background_back" />
+            <div>
+              <span v-html="title"></span> (<span v-html="level"></span>)
+            </div>
+            <div v-html="spec" />
+            <div v-html="professional" class="white-link"></div>
           </div>
         </div>
         <social v-if="$store.state.api.formations !== undefined" />
@@ -32,32 +35,11 @@ export default {
   props: {},
   data() {
     return {
-      name: '',
-      job: '',
-      jobDetails: '',
-      env: process.env.baseUrl
-    }
-  },
-  beforeMount() {
-    this.dataApi()
-  },
-  methods: {
-    dataApi() {
-      if (this.$store.state.api.texts !== undefined) {
-        const dataApiInfo = this.$store.state.api.texts.data
-        for (let index = 0; index < dataApiInfo.length; index++) {
-          const element = dataApiInfo[index]
-          if (element.slug === 'dev_name') {
-            this.name = element.text
-          }
-          if (element.slug === 'dev_title') {
-            this.job = element.text
-          }
-          if (element.slug === 'dev_spec') {
-            this.jobDetails = element.text.replace(':', '<br>')
-          }
-        }
-      }
+      name: this.$textContent('dev_name'),
+      title: this.$textContent('dev_title'),
+      spec: this.$textContent('dev_spec'),
+      level: this.$textContent('dev_level'),
+      professional: this.$textContent('dev_professional')
     }
   }
 }
@@ -85,5 +67,13 @@ export default {
 }
 .intro-details {
   font-size: 2rem;
+  .white-link {
+    color: white !important;
+    a {
+      font-weight: bold;
+      color: white !important;
+      text-decoration: none;
+    }
+  }
 }
 </style>

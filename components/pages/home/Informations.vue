@@ -1,14 +1,16 @@
 <template>
   <div id="informations" v-if="$store.state.api.formations !== undefined">
-    <div class="informations-container">
-      <div v-html="info.data" v-if="info.type === 'global'"></div>
-      <formations
-        v-if="info.type === 'formations'"
-        :data="info.data"
-      ></formations>
-      <skills v-if="info.type === 'skills'" :data="info.data"></skills>
-      <projects v-if="info.type === 'projects'" :data="info.data"></projects>
-    </div>
+    <client-only>
+      <div class="informations-container">
+        <div v-html="info.data" v-if="info.type === 'global'"></div>
+        <formations
+          v-if="info.type === 'formations'"
+          :data="info.data"
+        ></formations>
+        <skills v-if="info.type === 'skills'" :data="info.data"></skills>
+        <projects v-if="info.type === 'projects'" :data="info.data"></projects>
+      </div>
+    </client-only>
     <div>
       <ul class="informations-list">
         <li
@@ -103,7 +105,7 @@ export default {
   .informations-container {
     background-color: $white;
     padding: 2rem 5rem;
-    height: 20rem;
+    height: 30rem;
     overflow: auto;
     width: 100%;
   }

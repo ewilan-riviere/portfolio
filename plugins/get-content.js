@@ -15,6 +15,12 @@ function getTextContent(slug) {
   return null
 }
 
+function getApiAddress() {
+  const apiAddress = process.env.BASE_URL.replace('api/', '')
+  return apiAddress
+}
+
 // this is to help Webstorm with autocomplete
 
 Vue.prototype.$textContent = getTextContent
+Vue.prototype.$apiAddress = getApiAddress
