@@ -96,6 +96,6 @@ export default {
   background-size: cover;
 }
 .padding {
-  padding: 0 5.5rem;
+  // padding: 0 5.5rem;
 }
 </style>

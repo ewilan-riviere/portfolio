@@ -2,7 +2,7 @@
   <div class="ewilan-intro">
     <div class="ewilan-intro-center">
       <div class="ewilan-intro-sub white-text">
-        <EwilanLogo
+        <ewilanlogo
           :anim="true"
           class="ewilan-intro-logo"
           logo-route="/portfolio"
@@ -14,20 +14,20 @@
             <div v-html="jobDetails" class="background_back" />
           </div>
         </div>
-        <Social v-if="$store.state.api.formations !== undefined" />
+        <social v-if="$store.state.api.formations !== undefined" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import EwilanLogo from '@/components/sub/EwilanLogo.vue'
-import Social from '@/components/pages/home/Social.vue'
+import ewilanlogo from '@/components/sub/EwilanLogo.vue'
+import social from '@/components/pages/home/Social.vue'
 
 export default {
   components: {
-    EwilanLogo,
-    Social
+    ewilanlogo,
+    social
   },
   props: {},
   data() {

@@ -16,11 +16,26 @@
 <script>
 export default {
   props: {
-    name: String,
-    addClass: String,
-    color: String,
-    link: String,
-    icon: String
+    name: {
+      type: String,
+      default: ''
+    },
+    addClass: {
+      type: String,
+      default: ''
+    },
+    color: {
+      type: String,
+      default: ''
+    },
+    link: {
+      type: String,
+      default: ''
+    },
+    icon: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {}

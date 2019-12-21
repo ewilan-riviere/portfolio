@@ -5,8 +5,8 @@
         <div
           :class="drawer ? 'is-active' : ''"
           @click="hamburgerActivate()"
-          class="hamburger  hamburger--collapse"
           @click.stop="drawer = !drawer"
+          class="hamburger  hamburger--collapse"
         >
           <div class="hamburger-background" />
           <div class="hamburger-box">
@@ -117,12 +117,12 @@ export default {
   a {
     text-decoration: none;
     .v-list-item:hover {
-      background-color: $light-gray;
+      background-color: $pink-custom-dark;
     }
   }
   .nuxt-link-exact-active {
     .v-list-item {
-      background-color: $light-gray;
+      background-color: $pink-custom-dark;
     }
   }
 

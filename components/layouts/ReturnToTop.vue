@@ -15,8 +15,14 @@
 <script>
 export default {
   props: {
-    target: String,
-    returnToTop: Boolean
+    target: {
+      type: String,
+      default: ''
+    },
+    returnToTop: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {}

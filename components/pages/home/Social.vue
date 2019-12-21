@@ -2,7 +2,7 @@
   <div id="social">
     <ul class="social-list">
       <li v-for="item in social" :key="item.id" class="social-list-item">
-        <Icon
+        <icon
           :icon="item.icon"
           :link="item.link"
           :name="item.name"
@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import Icon from '@/components/sub/Icon.vue'
+import icon from '@/components/sub/Icon.vue'
 
 export default {
   components: {
-    Icon
+    icon
   },
   data() {
     return {

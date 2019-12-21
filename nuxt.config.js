@@ -21,9 +21,9 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
-   ** Customize the progress-bar color
+   ** Customize the progress bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#f3c9d7' },
   /*
    ** Global CSS
    */
@@ -32,7 +32,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/get-content.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -50,6 +50,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/router',
     // Doc: https://axios.nuxtjs.org/usage
     ['@nuxtjs/axios', { baseURL: process.env.BASE_URL }],
     // Doc: https://github.com/nuxt-community/dotenv-module
@@ -70,7 +71,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/scss/_variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,

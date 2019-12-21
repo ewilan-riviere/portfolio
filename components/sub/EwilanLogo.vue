@@ -18,9 +18,16 @@
 
 <script>
 export default {
+  name: 'EwilanLogo',
   props: {
-    anim: Boolean,
-    logoRoute: String
+    anim: {
+      type: Boolean,
+      default: false
+    },
+    logoRoute: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {

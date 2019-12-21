@@ -1,50 +1,30 @@
 <template>
   <div id="informations" v-if="$store.state.api.formations !== undefined">
-    <div
-      v-for="item in $store.state.api.formations.data"
-      :key="item.id"
-      class="white-text"
-    >
-      {{ item.title }}
+    <div class="informations-container">
+      <div v-html="info.data" v-if="info.type === 'global'"></div>
+      <formations
+        v-if="info.type === 'formations'"
+        :data="info.data"
+      ></formations>
+      <skills v-if="info.type === 'skills'" :data="info.data"></skills>
+      <projects v-if="info.type === 'projects'" :data="info.data"></projects>
     </div>
-    <div v-html="infoData" class="informations-container" />
     <div>
       <ul class="informations-list">
-        <li class="informations-list-item">
-          <v-icon
-            :color="devDescActivate ? 'grey' : 'white'"
-            @click="devDesc()"
-            large
-          >
-            mdi-text-subject
-          </v-icon>
-        </li>
-        <li class="informations-list-item">
-          <v-icon
-            :color="devFormationsActivate ? 'grey' : 'white'"
-            @click="devFormations()"
-            large
-          >
-            mdi-school
-          </v-icon>
-        </li>
-        <li class="informations-list-item">
-          <v-icon
-            :color="devDescActivate ? 'grey' : 'white'"
-            @click="devDesc()"
-            large
-          >
-            mdi-xml
-          </v-icon>
-        </li>
-        <li class="informations-list-item">
-          <v-icon
-            :color="devDescActivate ? 'grey' : 'white'"
-            @click="devDesc()"
-            large
-          >
-            mdi-library-books
-          </v-icon>
+        <li
+          v-for="(item, id) in selectInfoMenu"
+          :key="id"
+          class="informations-list-item"
+        >
+          <div @click="displayInfo(item.request, item.method, item.type, id)">
+            <v-icon
+              :class="id == selectedItem ? '' : 'pointer'"
+              :color="id == selectedItem ? 'white' : 'grey'"
+              large
+            >
+              {{ item.icon }}
+            </v-icon>
+          </div>
         </li>
       </ul>
     </div>
@@ -52,38 +32,65 @@
 </template>
 
 <script>
+import formations from '@/components/pages/home/informations/Formations.vue'
+import skills from '@/components/pages/home/informations/Skills.vue'
+import projects from '@/components/pages/home/informations/Projects.vue'
+
 export default {
+  components: {
+    formations,
+    skills,
+    projects
+  },
   data() {
     return {
-      devDescActivate: true,
-      devFormationsActivate: false,
-      infoData: ''
+      selectedItem: '',
+      info: { type: '', data: '' },
+      list: [],
+      selectInfoMenu: [
+        {
+          method: 'slug',
+          request: 'dev_resume',
+          type: 'global',
+          icon: 'mdi-text-subject'
+        },
+        {
+          method: 'api',
+          request: this.$store.state.api.formations,
+          type: 'formations',
+          icon: 'mdi-school'
+        },
+        {
+          method: 'api',
+          request: this.$store.state.api.skills,
+          type: 'skills',
+          icon: 'mdi-xml'
+        },
+        {
+          method: 'api',
+          request: this.$store.state.api.projects,
+          type: 'projects',
+          icon: 'mdi-library-books'
+        }
+      ]
     }
   },
   beforeMount() {
-    this.devDesc()
+    this.devDescInit()
   },
   methods: {
-    devDesc() {
-      if (this.$store.state.api.texts !== undefined) {
-        const dataApiInfo = this.$store.state.api.texts.data
-        for (let index = 0; index < dataApiInfo.length; index++) {
-          const element = dataApiInfo[index]
-          if (element.slug === 'dev_resume') {
-            this.infoData = element.text
-          }
-        }
-      }
+    devDescInit() {
+      this.info.data = this.$textContent('dev_resume')
+      this.info.type = 'global'
     },
-    devFormations() {
-      if (this.$store.state.api.texts !== undefined) {
-        const dataApiInfo = this.$store.state.api.texts.data
-        for (let index = 0; index < dataApiInfo.length; index++) {
-          const element = dataApiInfo[index]
-          if (element.slug === 'dev_resume') {
-            this.infoData = element.text
-          }
-        }
+    displayInfo(request, method, type, id) {
+      this.selectedItem = id
+      if (method === 'api') {
+        this.info.data = request.data
+        this.info.type = type
+      } else if (method === 'slug') {
+        this.info.data = this.$textContent(request)
+        this.info.type = type
       }
     }
   }
@@ -92,25 +99,24 @@ export default {
 
 <style lang="scss">
 #informations {
-  // position: relative;
-  // margin: 5rem 0;
-  // height: 20rem;
+  width: 100%;
   .informations-container {
     background-color: $white;
-    // margin: 5rem 0;
-    // position: absolute;
-    // bottom: 2rem;
-    // left: 0rem;
     padding: 2rem 5rem;
-    // height: 5rem;
-    width: 100vw;
+    height: 20rem;
+    overflow: auto;
+    width: 100%;
   }
   .informations-list {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
     padding-left: 0;
     list-style: none;
     .informations-list-item {
       display: inline-block;
       margin: 0 0.3rem;
+      padding: 0 1rem;
     }
   }
 }
