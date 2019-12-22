@@ -44,13 +44,13 @@ export default {
     '@nuxtjs/vuetify'
   ],
   styleResources: {
-    scss: ['./assets/scss/_variables.scss', './assets/scss/_fonts.scss']
+    scss: ['@/assets/scss/_variables.scss', '@/assets/scss/_fonts.scss']
   },
   /*
    ** Nuxt.js modules
    */
   modules: [
-    '@nuxtjs/router',
+    // '@nuxtjs/router',
     // Doc: https://axios.nuxtjs.org/usage
     ['@nuxtjs/axios', { baseURL: process.env.BASE_URL }],
     // Doc: https://github.com/nuxt-community/dotenv-module
