@@ -26,6 +26,9 @@ $ribbon-color-bg: #000;
 $ribbon-color-bg-hover: rgb(144, 30, 148);
 $ribbon-color: #fff;
 #appInProgress {
+  @media screen and (max-width: 920px) {
+    display: none;
+  }
   position: fixed;
   top: 0rem;
   right: -2rem;

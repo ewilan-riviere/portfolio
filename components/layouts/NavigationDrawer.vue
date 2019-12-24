@@ -2,17 +2,23 @@
   <v-sheet class="navigation-drawer-container">
     <v-container class="navigation-drawer-toggle">
       <v-row align="center" justify="start">
-        <div
-          :class="drawer ? 'is-active' : ''"
-          @click="hamburgerActivate()"
-          @click.stop="drawer = !drawer"
-          class="hamburger  hamburger--collapse"
-        >
-          <div class="hamburger-background" />
-          <div class="hamburger-box">
-            <div class="hamburger-inner" />
-          </div>
-        </div>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <div
+              :class="drawer ? 'is-active' : ''"
+              @click="hamburgerActivate()"
+              @click.stop="drawer = !drawer"
+              v-on="on"
+              class="hamburger  hamburger--collapse"
+            >
+              <div class="hamburger-background" />
+              <div class="hamburger-box">
+                <div class="hamburger-inner" />
+              </div>
+            </div>
+          </template>
+          <span>Tooltip</span>
+        </v-tooltip>
       </v-row>
     </v-container>
 
@@ -87,6 +93,13 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    window.addEventListener('keyup', (event) => {
+      if (event.keyCode === 27) {
+        this.drawer = !this.drawer
+      }
+    })
   },
   methods: {
     hamburgerActivate() {

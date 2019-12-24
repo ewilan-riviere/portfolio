@@ -7,8 +7,9 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    // titleTemplate: '%s - ' + process.env.npm_package_name,
+    // title: process.env.npm_package_name || '',
+    title: 'Ewilan Rivière - Portfolio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,12 +28,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/scss/global.scss'],
+  css: ['@/assets/scss/global.scss', '@/assets/scss/_fonts.scss'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/get-content.js'],
+  plugins: ['~/plugins/get-content.js', '~/plugins/slugify.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -44,7 +45,7 @@ export default {
     '@nuxtjs/vuetify'
   ],
   styleResources: {
-    scss: ['@/assets/scss/_variables.scss', '@/assets/scss/_fonts.scss']
+    scss: ['@/assets/scss/_variables.scss']
   },
   /*
    ** Nuxt.js modules

@@ -1,44 +1,116 @@
 @font-face {
-    font-family: "booterz";
-    src: url("~static/fonts/booterz.ttf");
+  font-family: "booterz";
+  src: url("~static/fonts/booterz.ttf");
 }
 
 @font-face {
-    font-family: "caslon-antique";
-    src: url("~static/fonts/caslon-antique.ttf");
+  font-family: "caslon-antique";
+  src: url("~static/fonts/caslon-antique.ttf");
 }
 
 @font-face {
-    font-family: "immortal";
-    src: url("~static/fonts/immortal.ttf");
+  font-family: "triforce";
+  src: url("~static/fonts/triforce.ttf");
 }
 
 @font-face {
-    font-family: "magic-card";
-    src: url("~static/fonts/magic-card.ttf");
+  font-family: "immortal";
+  src: url("~static/fonts/immortal.ttf");
 }
 
 @font-face {
-    font-family: "morpheus";
-    src: url("~static/fonts/morpheus.ttf");
+  font-family: "magic-card";
+  src: url("~static/fonts/magic-card.ttf");
+}
+
+@font-face {
+  font-family: "morpheus";
+  src: url("~static/fonts/morpheus.ttf");
+}
+
+@font-face {
+  font-family: "koverwatch";
+  src: url("~static/fonts/koverwatch.ttf");
+}
+
+@font-face {
+  font-family: "permanent-marker";
+  src: url("~static/fonts/permanent-marker-regular.ttf");
+}
+
+@font-face {
+  font-family: "pokemon-hollow";
+  src: url("~static/fonts/pokemon-hollow.ttf");
+}
+
+@font-face {
+  font-family: "pokemon-solid";
+  src: url("~static/fonts/pokemon-solid.ttf");
+}
+
+@font-face {
+  font-family: "starcraft";
+  src: url("~static/fonts/starcraft-normal.ttf");
+}
+
+@font-face {
+  font-family: "kraftstoff-regular";
+  src: url("~static/fonts/kraftstoff-regular.otf");
+}
+
+@font-face {
+  font-family: "source-code-pro-regular";
+  src: url("~static/fonts/source-code-pro-regular.ttf");
 }
 
 .font-lautre {
-    font-family: 'booterz';
+  font-family: 'booterz';
 }
 
 .font-ewilan {
-    font-family: 'caslon-antique';
+  font-family: 'caslon-antique';
+}
+
+.font-fantasy-battle {
+  font-family: 'triforce';
 }
 
 .font-ames-croisees {
-    font-family: 'immortal';
+  font-family: 'immortal';
 }
 
 .font-morrowind {
-    font-family: 'magic-card';
+  font-family: 'magic-card';
 }
 
 .font-morpheus {
-    font-family: 'morpheus';
+  font-family: 'morpheus';
+}
+
+.font-overwatch-memory {
+  font-family: 'koverwatch';
+}
+
+.font-pomodoro {
+  font-family: 'permanent-marker';
+}
+
+.font-quizz-pokemon-alt {
+  font-family: 'pokemon-hollow';
+}
+
+.font-quizz-pokemon {
+  font-family: 'pokemon-solid';
+}
+
+.font-zergling-evolution {
+  font-family: 'starcraft';
+}
+
+.font-promo-03--code-academie {
+  font-family: 'kraftstoff-regular';
+}
+
+.font-playit {
+  font-family: 'source-code-pro-regular';
 }

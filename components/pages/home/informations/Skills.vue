@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="item in data" :key="item.id">
+      <li v-for="item in data.data" :key="item.id">
         {{ item }}
       </li>
     </ul>
@@ -13,8 +13,8 @@ export default {
   name: 'Skills',
   props: {
     data: {
-      type: Array,
-      default: () => []
+      type: Object,
+      default: () => {}
     }
   }
 }
