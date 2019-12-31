@@ -1,7 +1,7 @@
 <template>
   <div id="social">
     <ul class="social-list">
-      <li v-for="item in social" :key="item.id" class="social-list-item">
+      <li v-for="item in socials" :key="item.id" class="social-list-item">
         <icon
           :icon="item.icon"
           :link="item.link"
@@ -9,21 +9,35 @@
           color=""
           add-class="icon"
         />
+        <fa :icon="social(item.icon)" />
+        {{ item }}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import icon from '@/components/sub/Icon.vue'
 
 export default {
   components: {
     icon
   },
-  data() {
-    return {
-      social: this.$store.state.api.socials.data
+  props: {
+    socials: {
+      type: Array,
+      default: () => []
+    }
+  },
+  computed: {
+    fas() {
+      return fas
+    }
+  },
+  methods: {
+    social(icon) {
+      // icon
     }
   }
 }

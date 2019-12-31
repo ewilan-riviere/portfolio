@@ -56,6 +56,12 @@ export default {
     skills,
     projects
   },
+  props: {
+    texts: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
     return {
       selectedItem: '',
@@ -99,7 +105,7 @@ export default {
   methods: {
     devDescInit(selectInfoMenu) {
       this.info.name = selectInfoMenu[0].name
-      this.info.data = this.$textContent(selectInfoMenu[0].request)
+      this.info.data = this.$textContent(selectInfoMenu[0].request, this.texts)
       this.info.type = selectInfoMenu[0].type
     },
     displayInfo(item, id) {
@@ -110,7 +116,7 @@ export default {
         this.info.type = item.type
       } else if (item.method === 'slug') {
         this.info.name = item.name
-        this.info.data = this.$textContent(item.request)
+        this.info.data = this.$textContent(item.request, this.texts)
         this.info.type = item.type
       }
     }

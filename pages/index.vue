@@ -1,7 +1,7 @@
 <template>
   <v-layout id="home" column justify-center align-center>
     <div id="ewilanIntro">
-      <EwilanIntro />
+      <ewilan-intro :texts="texts" :socials="socials" />
 
       <transition name="fade">
         <div v-if="noScroll" class="view">
@@ -14,19 +14,19 @@
       </transition>
     </div>
     <div id="informations">
-      <Informations />
+      <informations :texts="texts" :formations="formations" />
     </div>
   </v-layout>
 </template>
 
 <script>
-import EwilanIntro from '@/components/pages/home/EwilanIntro.vue'
-import Informations from '@/components/pages/home/Informations.vue'
+import ewilanIntro from '@/components/pages/home/EwilanIntro.vue'
+import informations from '@/components/pages/home/Informations.vue'
 
 export default {
   components: {
-    EwilanIntro,
-    Informations
+    ewilanIntro,
+    informations
   },
   data() {
     return {
@@ -37,7 +37,16 @@ export default {
     }
   },
   async asyncData({ app, query, error }) {
-    await app.$axios.get('users')
+    const [formationsApi, textsApi, socialsApi] = await Promise.all([
+      app.$axios.get('formations'),
+      app.$axios.get('texts'),
+      app.$axios.get('socials')
+    ])
+    return {
+      formations: formationsApi.data,
+      texts: textsApi.data.data,
+      socials: socialsApi.data.data
+    }
   },
   created() {
     if (process.browser) {

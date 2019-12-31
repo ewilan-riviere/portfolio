@@ -1,9 +1,9 @@
 import Vue from 'vue'
 
-function getTextContent(slug) {
-  if (this.$store.state.api.texts !== undefined) {
+function getTextContent(slug, data) {
+  if (data !== undefined) {
     let infoData = ''
-    const dataApiInfo = this.$store.state.api.texts.data
+    const dataApiInfo = data
     if (dataApiInfo !== undefined) {
       for (let index = 0; index < dataApiInfo.length; index++) {
         const element = dataApiInfo[index]

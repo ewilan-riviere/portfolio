@@ -2,7 +2,7 @@
   <div>
     <v-tooltip bottom>
       <template v-slot:activator="{ on }">
-        <a :href="checkLink()" v-on="on" target="_blank">
+        <a :href="link" v-on="on" target="_blank">
           <v-icon :class="addClass" large color="white darken-2">
             mdi-{{ icon }}
           </v-icon>
@@ -39,15 +39,6 @@ export default {
   },
   data() {
     return {}
-  },
-  methods: {
-    checkLink() {
-      if (this.link.includes('@')) {
-        return 'mailto:' + this.link
-      } else {
-        return this.link
-      }
-    }
   }
 }
 </script>

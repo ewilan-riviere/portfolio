@@ -13,11 +13,11 @@
             <div>
               <span v-html="title"></span> (<span v-html="level"></span>)
             </div>
-            <div v-html="spec" />
             <div v-html="professional" class="white-link"></div>
+            <div v-html="spec" class="mt-4" />
           </div>
         </div>
-        <social v-if="$store.state.api.formations !== undefined" />
+        <social :socials="socials" v-if="socials !== undefined" />
       </div>
     </div>
   </div>
@@ -32,14 +32,23 @@ export default {
     ewilanlogo,
     social
   },
-  props: {},
+  props: {
+    texts: {
+      type: Array,
+      default: () => []
+    },
+    socials: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
     return {
-      name: this.$textContent('dev_name'),
-      title: this.$textContent('dev_title'),
-      spec: this.$textContent('dev_spec'),
-      level: this.$textContent('dev_level'),
-      professional: this.$textContent('dev_professional')
+      name: this.$textContent('dev_name', this.texts),
+      title: this.$textContent('dev_title', this.texts),
+      spec: this.$textContent('dev_spec', this.texts),
+      level: this.$textContent('dev_level', this.texts),
+      professional: this.$textContent('dev_professional', this.texts)
     }
   }
 }
