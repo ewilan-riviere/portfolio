@@ -60,6 +60,18 @@ export default {
     texts: {
       type: Array,
       default: () => []
+    },
+    formations: {
+      type: Array,
+      default: () => []
+    },
+    skills: {
+      type: Array,
+      default: () => []
+    },
+    projects: {
+      type: Array,
+      default: () => []
     }
   },
   data() {
@@ -70,28 +82,28 @@ export default {
       selectInfoMenu: [
         {
           method: 'slug',
-          request: 'dev_resume',
+          request: 'dev-resume',
           type: 'global',
           name: 'Mon histoire',
           icon: 'mdi-text-subject'
         },
         {
           method: 'api',
-          request: this.$store.state.api.formations,
+          request: this.formations,
           type: 'formations',
           name: 'Mes formations',
           icon: 'mdi-school'
         },
         {
           method: 'api',
-          request: this.$store.state.api.skills,
+          request: this.skills,
           type: 'skills',
           name: 'Mes compétences',
           icon: 'mdi-xml'
         },
         {
           method: 'api',
-          request: this.$store.state.api.projects,
+          request: this.projects,
           type: 'projects',
           name: 'Mes projets',
           icon: 'mdi-library-books'
@@ -112,7 +124,7 @@ export default {
       this.selectedItem = id
       if (item.method === 'api') {
         this.info.name = item.name
-        this.info.data = item.request.data
+        this.info.data = item.request
         this.info.type = item.type
       } else if (item.method === 'slug') {
         this.info.name = item.name

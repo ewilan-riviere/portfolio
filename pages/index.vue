@@ -14,7 +14,12 @@
       </transition>
     </div>
     <div id="informations">
-      <informations :texts="texts" :formations="formations" />
+      <informations
+        :texts="texts"
+        :formations="formations"
+        :skills="skills"
+        :projects="projects"
+      />
     </div>
   </v-layout>
 </template>
@@ -37,13 +42,23 @@ export default {
     }
   },
   async asyncData({ app, query, error }) {
-    const [formationsApi, textsApi, socialsApi] = await Promise.all([
+    const [
+      formationsApi,
+      skillsApi,
+      projectsApi,
+      textsApi,
+      socialsApi
+    ] = await Promise.all([
       app.$axios.get('formations'),
+      app.$axios.get('skills'),
+      app.$axios.get('projects'),
       app.$axios.get('texts'),
       app.$axios.get('socials')
     ])
     return {
-      formations: formationsApi.data,
+      formations: formationsApi.data.data,
+      skills: skillsApi.data.data,
+      projects: projectsApi.data.data,
       texts: textsApi.data.data,
       socials: socialsApi.data.data
     }

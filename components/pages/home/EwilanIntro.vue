@@ -44,11 +44,11 @@ export default {
   },
   data() {
     return {
-      name: this.$textContent('dev_name', this.texts),
-      title: this.$textContent('dev_title', this.texts),
-      spec: this.$textContent('dev_spec', this.texts),
-      level: this.$textContent('dev_level', this.texts),
-      professional: this.$textContent('dev_professional', this.texts)
+      name: this.$textContent('dev-name', this.texts),
+      title: this.$textContent('dev-title', this.texts),
+      spec: this.$textContent('dev-spec', this.texts),
+      level: this.$textContent('dev-level', this.texts),
+      professional: this.$textContent('dev-professional', this.texts)
     }
   }
 }

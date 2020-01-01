@@ -4,20 +4,17 @@
       <li v-for="item in socials" :key="item.id" class="social-list-item">
         <icon
           :icon="item.icon"
-          :link="item.link"
+          :link="item.link ? item.link : $apiAddress() + item.file"
           :name="item.name"
           color=""
           add-class="icon"
         />
-        <fa :icon="social(item.icon)" />
-        {{ item }}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { fas } from '@fortawesome/free-solid-svg-icons'
 import icon from '@/components/sub/Icon.vue'
 
 export default {
@@ -28,16 +25,6 @@ export default {
     socials: {
       type: Array,
       default: () => []
-    }
-  },
-  computed: {
-    fas() {
-      return fas
-    }
-  },
-  methods: {
-    social(icon) {
-      // icon
     }
   }
 }

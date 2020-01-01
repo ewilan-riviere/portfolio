@@ -1,13 +1,11 @@
 <template>
   <div>
     <ul>
-      <li v-for="item in data.data" :key="item.id">
+      <li v-for="category in data.data" :key="category.id">
+        {{ category.category }}
         <ul>
-          <li>
-            {{ item.title }}
-          </li>
-          <li>
-            {{ item.category.category }}
+          <li v-for="skill in category.skills" :key="skill.id">
+            {{ skill.title }}
           </li>
         </ul>
       </li>

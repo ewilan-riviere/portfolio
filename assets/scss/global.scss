@@ -23,3 +23,9 @@
   -ms-hyphens: auto !important;
   hyphens: auto !important;
 }
+
+.invisible-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit !important;
+}
