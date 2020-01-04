@@ -7,6 +7,7 @@
       <nuxt class="padding" />
       <ReturnToTop :return-to-top="returnToTop" :target="target" />
     </div>
+    <Footer></Footer>
   </v-app>
 </template>
 

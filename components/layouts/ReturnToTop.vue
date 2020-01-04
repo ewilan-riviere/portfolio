@@ -37,6 +37,7 @@ export default {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  z-index: 10;
   &:hover {
     color: lightgray;
     bottom: 1.5rem;

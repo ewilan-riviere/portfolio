@@ -33,7 +33,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/get-content.js', '~/plugins/slugify.js'],
+  plugins: [
+    '~/plugins/get-content.js',
+    '~/plugins/slugify.js',
+    { src: '@/plugins/global-components-loader' },
+    { src: '@/plugins/vue-icons-loader', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
