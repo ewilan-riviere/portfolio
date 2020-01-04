@@ -1,0 +1,385 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200104.132028.24987.0.001.json",
+    "dumpEventTime": "2020-01-04T13:20:28Z",
+    "dumpEventTimeStamp": "1578140428815",
+    "processId": 24987,
+    "cwd": "/var/www/portfolio-front",
+    "commandLine": [
+      "/home/ewilan/.nvm/versions/node/v11.15.0/bin/node",
+      "/var/www/portfolio-front/node_modules/.bin/nuxt"
+    ],
+    "nodejsVersion": "v11.15.0",
+    "glibcVersionRuntime": "2.27",
+    "glibcVersionCompiler": "2.12",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "11.15.0",
+      "v8": "7.0.276.38-node.19",
+      "uv": "1.27.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.37.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "34.0",
+      "icu": "63.1",
+      "tz": "2018e",
+      "unicode": "11.0"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "5.0.0-37-generic",
+    "osVersion": "#40~18.04.1-Ubuntu SMP Thu Nov 14 12:06:39 UTC 2019",
+    "osMachine": "x86_64",
+    "host": "oestrobian-shiny"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000a702fd",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x000000000095ccb3",
+      "symbol": "node::OnFatalError(char const*, char const*) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b3dbde",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b3de14",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f3ce52",
+      "symbol": " [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f3cf58",
+      "symbol": "v8::internal::Heap::CheckIneffectiveMarkCompact(unsigned long, double) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f49678",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f4a18b",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f4cec1",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f170f4",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationSpace) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x00000000011cd3fe",
+      "symbol": "v8::internal::Runtime_AllocateInNewSpace(int, v8::internal::Object**, v8::internal::Isolate*) [/home/ewilan/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000226de13cfc5d",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1485238272,
+    "totalCommittedMemory": 1483397704,
+    "usedMemory": 1383626032,
+    "availableMemory": 42992664,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 42224,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 2097152,
+        "committedMemory": 1325192,
+        "capacity": 1031168,
+        "used": 259248,
+        "available": 771920
+      },
+      "old_space": {
+        "memorySize": 1241714688,
+        "committedMemory": 1241616656,
+        "capacity": 1160933152,
+        "used": 1160674152,
+        "available": 259000
+      },
+      "code_space": {
+        "memorySize": 8388608,
+        "committedMemory": 8244448,
+        "capacity": 7313408,
+        "used": 7313408,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 103297024,
+        "committedMemory": 102952672,
+        "capacity": 87991040,
+        "used": 87991040,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 129216512,
+        "committedMemory": 129216512,
+        "capacity": 168834344,
+        "used": 127354664,
+        "available": 41479680
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 128.736,
+    "kernelCpuSeconds": 3.11763,
+    "cpuConsumptionPercent": 235.453,
+    "maxRss": 1834754048,
+    "pageFaults": {
+      "IORequired": 0,
+      "IONotRequired": 1499403
+    },
+    "fsActivity": {
+      "reads": 0,
+      "writes": 376
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 53.0864,
+    "kernelCpuSeconds": 2.10587,
+    "cpuConsumptionPercent": 98.5576,
+    "fsActivity": {
+      "reads": 0,
+      "writes": 0
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "KDE_FULL_SESSION": "true",
+    "PROFILEHOME": "",
+    "npm_package_dependencies__nuxtjs_auth": "^4.8.5",
+    "GS_LIB": "/home/ewilan/.fonts",
+    "SPACESHIP_ROOT": "/home/ewilan/.oh-my-zsh/custom/themes/spaceship-prompt",
+    "npm_package_devDependencies__nuxtjs_eslint_module": "^1.0.0",
+    "LANGUAGE": "fr",
+    "LC_TIME": "fr_FR.UTF-8",
+    "PAM_KWALLET5_LOGIN": "/run/user/1000/kwallet5.socket",
+    "USER": "ewilan",
+    "npm_package_devDependencies_jest": "^24.1.0",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_user_agent": "yarn/1.21.1 npm/? node/v11.15.0 linux x64",
+    "XDG_SEAT": "seat0",
+    "npm_config_bin_links": "true",
+    "SSH_AGENT_PID": "1444",
+    "XDG_SESSION_TYPE": "x11",
+    "npm_node_execpath": "/home/ewilan/.nvm/versions/node/v11.15.0/bin/node",
+    "npm_package_devDependencies_vue_jest": "^4.0.0-0",
+    "npm_config_init_version": "1.0.0",
+    "SHLVL": "1",
+    "npm_package_dependencies__nuxtjs_router": "^1.5.0",
+    "HOME": "/home/ewilan",
+    "OLDPWD": "/var/www",
+    "LESS": "-R",
+    "npm_package_devDependencies_eslint_plugin_nuxt": ">=0.4.2",
+    "DESKTOP_SESSION": "plasma",
+    "NVM_BIN": "/home/ewilan/.nvm/versions/node/v11.15.0/bin",
+    "npm_package_devDependencies_eslint_config_prettier": "^4.1.0",
+    "ZSH": "/home/ewilan/.oh-my-zsh",
+    "LSCOLORS": "Gxfxcxdxbxegedabagacad",
+    "npm_config_init_license": "MIT",
+    "GTK_MODULES": "gail:atk-bridge",
+    "GTK_RC_FILES": "/etc/gtk/gtkrc:/home/ewilan/.gtkrc:/home/ewilan/.config/gtkrc",
+    "KDE_SESSION_VERSION": "5",
+    "SHELL_SESSION_ID": "554d5ea2cf8c4d5e8e8170657f19aeea",
+    "XDG_SEAT_PATH": "/org/freedesktop/DisplayManager/Seat0",
+    "PAGER": "less",
+    "YARN_WRAP_OUTPUT": "false",
+    "npm_package_devDependencies__nuxtjs_vuetify": "^1.0.0",
+    "npm_config_version_tag_prefix": "v",
+    "KONSOLE_DBUS_SESSION": "/Sessions/5",
+    "LC_MONETARY": "fr_FR.UTF-8",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "npm_package_devDependencies_husky": "^2.6.0",
+    "COLORTERM": "truecolor",
+    "KONSOLE_DBUS_WINDOW": "/Windows/1",
+    "npm_package_description": "Portfolio d'Ewilan Rivière en NuxtJS.",
+    "NVM_DIR": "/home/ewilan/.nvm",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_dependencies_nuxt": "^2.0.0",
+    "MANDATORY_PATH": "/usr/share/gconf/plasma.mandatory.path",
+    "npm_package_devDependencies_prettier": "^1.16.4",
+    "npm_package_devDependencies_babel_jest": "^24.1.0",
+    "npm_package_scripts_dev": "nuxt",
+    "LOGNAME": "ewilan",
+    "QT_AUTO_SCREEN_SCALE_FACTOR": "0",
+    "WINDOWID": "50331654",
+    "_": "/usr/bin/yarn",
+    "npm_package_private": "true",
+    "COLORFGBG": "15;0",
+    "DEFAULTS_PATH": "/usr/share/gconf/plasma.default.path",
+    "KONSOLE_PROFILE_NAME": "Profile 1",
+    "XDG_SESSION_CLASS": "user",
+    "npm_package_scripts_lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "TERM": "xterm-256color",
+    "XDG_SESSION_ID": "3",
+    "npm_package_devDependencies_stylelint": "^10.1.0",
+    "npm_package_dependencies_nuxt_sass_resources_loader": "^2.0.5",
+    "npm_package_scripts_start": "nuxt start",
+    "npm_config_ignore_scripts": "",
+    "GTK2_RC_FILES": "/etc/gtk-2.0/gtkrc:/home/ewilan/.gtkrc-2.0:/home/ewilan/.config/gtkrc-2.0",
+    "npm_package_author_email": "ewilan.riviere@gmail.com",
+    "PATH": "/tmp/yarn--1578140372526-0.5074040631561345:/var/www/portfolio-front/node_modules/.bin:/home/ewilan/.config/yarn/link/node_modules/.bin:/home/ewilan/.yarn/bin:/home/ewilan/.nvm/versions/node/v11.15.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/ewilan/.nvm/versions/node/v11.15.0/lib/node_modules/npm/bin/node-gyp-bin:/home/ewilan/.nvm/versions/node/v11.15.0/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/share/npm/bin:/home/ewilan/.composer/vendor/bin:/home/ewilan/.nvm/versions/node/v11.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games",
+    "NODE": "/home/ewilan/.nvm/versions/node/v11.15.0/bin/node",
+    "SESSION_MANAGER": "local/oestrobian-shiny:@/tmp/.ICE-unix/1515,unix/oestrobian-shiny:/tmp/.ICE-unix/1515",
+    "npm_package_name": "ewilan-riviere-portfolio",
+    "LC_ADDRESS": "fr_FR.UTF-8",
+    "XCURSOR_THEME": "breeze_cursors",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "XDG_SESSION_PATH": "/org/freedesktop/DisplayManager/Session1",
+    "DISPLAY": ":0",
+    "LANG": "fr_FR.UTF-8",
+    "LC_TELEPHONE": "fr_FR.UTF-8",
+    "XDG_CURRENT_DESKTOP": "KDE",
+    "npm_package_devDependencies_eslint": "^6.1.0",
+    "npm_package_devDependencies__vue_test_utils": "^1.0.0-beta.27",
+    "npm_package_devDependencies__nuxtjs_eslint_config": "^1.0.1",
+    "XAUTHORITY": "/tmp/xauth-1000-_0",
+    "XDG_SESSION_DESKTOP": "KDE",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "npm_lifecycle_script": "nuxt",
+    "npm_package_lint_staged____js_vue_": "eslint",
+    "SSH_AUTH_SOCK": "/tmp/ssh-FLj7ipAxZ6sh/agent.1399",
+    "npm_package_scripts_test": "jest",
+    "npm_config_version_git_message": "v%s",
+    "LC_NAME": "fr_FR.UTF-8",
+    "PAM_KWALLET_LOGIN": "/run/user/1000/kwallet.socket",
+    "SHELL": "/usr/bin/zsh",
+    "npm_lifecycle_event": "dev",
+    "npm_package_dependencies__nuxtjs_dotenv": "^1.4.0",
+    "npm_package_husky_hooks_pre_commit": "lint-staged",
+    "npm_package_version": "1.0.0",
+    "QT_ACCESSIBILITY": "1",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"dev\"],\"original\":[\"dev\"]}",
+    "npm_package_devDependencies_lint_staged": "^8.2.1",
+    "npm_package_scripts_build": "nuxt build",
+    "KONSOLE_DBUS_SERVICE": ":1.35",
+    "LC_MEASUREMENT": "fr_FR.UTF-8",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_git_sign": "",
+    "GPG_AGENT_INFO": "/run/user/1000/gnupg/S.gpg-agent:0:1",
+    "LC_IDENTIFICATION": "fr_FR.UTF-8",
+    "npm_package_scripts_generate": "nuxt generate",
+    "npm_config_strict_ssl": "true",
+    "XDG_VTNR": "1",
+    "SPACESHIP_VERSION": "3.11.2",
+    "npm_package_devDependencies_eslint_plugin_prettier": "^3.0.1",
+    "PWD": "/var/www/portfolio-front",
+    "npm_execpath": "/usr/share/yarn/bin/yarn.js",
+    "XDG_CONFIG_DIRS": "/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings",
+    "XDG_DATA_DIRS": "/usr/share/plasma:/usr/local/share/:/usr/share/",
+    "NVM_CD_FLAGS": "-q",
+    "npm_package_devDependencies__nuxtjs_stylelint_module": "^3.1.0",
+    "npm_package_author_url": "https://ewilan-riviere.tech",
+    "npm_package_author_name": "Ewilan Rivière",
+    "LC_NUMERIC": "fr_FR.UTF-8",
+    "npm_config_save_prefix": "^",
+    "npm_config_ignore_optional": "",
+    "KDE_SESSION_UID": "1000",
+    "LC_PAPER": "fr_FR.UTF-8",
+    "npm_package_devDependencies_babel_eslint": "^10.0.1",
+    "npm_package_dependencies__nuxtjs_axios": "^5.9.2",
+    "INIT_CWD": "/var/www/portfolio-front",
+    "NODE_ENV": "development",
+    "BASE_URL": "http://api.portfolio.localhost/api/",
+    "_AXIOS_BASE_URL_": "http://localhost:3000/",
+    "VUE_ENV": "server"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 16777216,
+      "hard": 16777216
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 63338,
+      "hard": 63338
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/lib/x86_64-linux-gnu/librt.so.1",
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2",
+    "/lib/x86_64-linux-gnu/libnss_files.so.2",
+    "/var/www/portfolio-front/node_modules/fibers/bin/linux-x64-67-glibc/fibers.node"
+  ]
+}

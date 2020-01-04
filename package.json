@@ -25,7 +25,8 @@
     }
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/auth": "^4.8.5",
+    "@nuxtjs/axios": "^5.9.2",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/router": "^1.5.0",
     "nuxt": "^2.0.0",

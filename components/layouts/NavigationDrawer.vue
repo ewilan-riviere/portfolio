@@ -89,7 +89,7 @@ export default {
         {
           title: 'À propos',
           icon: 'information',
-          link: '/about'
+          link: '/a-propos'
         }
       ]
     }
