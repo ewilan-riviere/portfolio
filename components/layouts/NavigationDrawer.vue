@@ -2,23 +2,17 @@
   <v-sheet class="navigation-drawer-container">
     <v-container class="navigation-drawer-toggle">
       <v-row align="center" justify="start">
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on }">
-            <div
-              :class="drawer ? 'is-active' : ''"
-              @click="hamburgerActivate()"
-              @click.stop="drawer = !drawer"
-              v-on="on"
-              class="hamburger  hamburger--collapse"
-            >
-              <div class="hamburger-background" />
-              <div class="hamburger-box">
-                <div class="hamburger-inner" />
-              </div>
-            </div>
-          </template>
-          <span>Tooltip</span>
-        </v-tooltip>
+        <div
+          :class="drawer ? 'is-active' : ''"
+          @click="hamburgerActivate()"
+          @click.stop="drawer = !drawer"
+          class="hamburger hamburger--squeeze"
+        >
+          <div class="hamburger-background" />
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
+        </div>
       </v-row>
     </v-container>
 
@@ -82,14 +76,14 @@ export default {
           link: '/portfolio'
         },
         {
-          title: 'Store',
-          icon: 'database-check',
-          link: '/store'
-        },
-        {
           title: 'À propos',
           icon: 'information',
           link: '/a-propos'
+        },
+        {
+          title: 'Se connecter',
+          icon: 'database-check',
+          link: '/login'
         }
       ]
     }

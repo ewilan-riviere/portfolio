@@ -1,6 +1,10 @@
 @import "variables";
-@import "_fonts.scss";
-@import "hamburgers";
+@import "fonts";
+@import "misc/hamburgers";
+
+// Swiper scss
+@import "~swiper/swiper";
+@import "~swiper/components/pagination/pagination";
 
 .v-navigation-drawer {
   background-color: $pink-custom !important;

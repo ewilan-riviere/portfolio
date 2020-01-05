@@ -87,6 +87,9 @@ export default {
 </script>
 
 <style lang="scss">
+.bg-swiper {
+  width: 40rem;
+}
 #home {
   #ewilanIntro {
     min-height: 100vh;
@@ -107,7 +110,7 @@ export default {
     }
   }
   #informations {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 
   @keyframes scrollToBottom {

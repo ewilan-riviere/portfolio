@@ -144,11 +144,11 @@ export default {
     background-color: $white;
     padding: 2rem 5rem;
     @media screen and (max-width: 920px) {
-      padding: 2rem;
+      padding: 0;
     }
     // height: 30rem;
-    max-height: 80vh;
-    overflow: auto;
+    // max-height: 80vh;
+    // overflow: auto;
     width: 100%;
     .global-info {
       width: 50%;

@@ -2,10 +2,13 @@
   <v-app class="">
     <div class="parrallax">
       <div id="top" />
-      <GitHubRibbon />
-      <NavigationDrawer />
+      <github-ribbon></github-ribbon>
+      <navigation-drawer></navigation-drawer>
       <nuxt class="padding" />
-      <ReturnToTop :return-to-top="returnToTop" :target="target" />
+      <return-to-top
+        :return-to-top="returnToTop"
+        :target="target"
+      ></return-to-top>
     </div>
     <Footer></Footer>
   </v-app>
@@ -14,16 +17,7 @@
 <script>
 import * as easings from 'vuetify/es5/services/goto/easing-patterns'
 
-import GitHubRibbon from '@/components/layouts/GitHubRibbon.vue'
-import NavigationDrawer from '@/components/layouts/NavigationDrawer.vue'
-import ReturnToTop from '@/components/layouts/ReturnToTop.vue'
-
 export default {
-  components: {
-    NavigationDrawer,
-    GitHubRibbon,
-    ReturnToTop
-  },
   data() {
     return {
       target: '#top',

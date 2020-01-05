@@ -1,4 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
+import bodyParser from 'body-parser'
+import session from 'express-session'
 require('dotenv').config()
 
 export default {
@@ -28,7 +30,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/scss/global.scss', '@/assets/scss/_fonts.scss'],
+  css: ['@/assets/scss/main.scss'],
 
   /*
    ** Plugins to load before mounting the App
@@ -47,7 +49,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     // '@nuxtjs/stylelint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/style-resources'
   ],
   styleResources: {
     scss: ['@/assets/scss/_variables.scss']
@@ -56,13 +59,13 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // '@nuxtjs/router',
+    '@nuxtjs/router',
     // Doc: https://axios.nuxtjs.org/usage
     ['@nuxtjs/axios', { baseURL: process.env.BASE_URL }],
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    '@nuxtjs/svg'
   ],
   env: {
     baseURL: process.env.BASE_URL
@@ -100,6 +103,32 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    },
+    extractCSS: process.env.NODE_ENV === 'production',
+    transpile: ['swiper']
+  },
+  serverMiddleware: [
+    // body-parser middleware
+    bodyParser.json(),
+    // session middleware
+    session({
+      secret: 'super-secret-key',
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 }
+    }),
+    // Api middleware
+    // We add /api/login & /api/logout routes
+    '~/api'
+  ]
 }

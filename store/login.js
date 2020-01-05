@@ -1,10 +1,3 @@
-// export const actions = {
-//   // eslint-disable-next-line require-await
-//   async nuxtServerInit({ dispatch }) {
-//     dispatch('api/getApiData', 'login/login')
-//   }
-// }
-
 import axios from 'axios'
 
 export const state = () => ({

@@ -4,8 +4,9 @@ import Router from 'vue-router'
 import Home from '~/pages/index'
 import About from '~/pages/about/index'
 import Portfolio from '~/pages/portfolio/index'
-import Store from '~/pages/store/index'
 import Subdomains from '~/pages/subdomains/index'
+
+import Login from '~/pages/login/index'
 
 Vue.use(Router)
 
@@ -26,12 +27,12 @@ export function createRouter() {
         component: Portfolio
       },
       {
-        path: '/store',
-        component: Store
-      },
-      {
         path: '/sous-domaines',
         component: Subdomains
+      },
+      {
+        path: '/login',
+        component: Login
       }
     ]
   })
