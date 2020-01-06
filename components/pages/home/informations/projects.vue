@@ -16,7 +16,7 @@
               class="white--text project-img align-end"
               width="150"
             />
-            <!-- <style type="text/css">
+            <style type="text/css">
               @font-face {
                 font-family: '{{ $slugify(item.title) }}';
                 src: url({{item.font}});
@@ -25,9 +25,9 @@
                 color: blue;
                 font-family: '{{ $slugify(item.title) }}';
               }
-            </style> -->
+            </style>
             <div class="text-center mt-5">
-              <h2 :class="`font-${$slugify(item.title)}'`">
+              <h2 :class="`font-` + $slugify(item.title)">
                 {{ item.title }}
               </h2>
             </div>
