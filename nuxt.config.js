@@ -1,6 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-import bodyParser from 'body-parser'
-import session from 'express-session'
 require('dotenv').config()
 
 export default {
@@ -116,19 +114,5 @@ export default {
     },
     extractCSS: process.env.NODE_ENV === 'production',
     transpile: ['swiper']
-  },
-  serverMiddleware: [
-    // body-parser middleware
-    bodyParser.json(),
-    // session middleware
-    session({
-      secret: 'super-secret-key',
-      resave: false,
-      saveUninitialized: false,
-      cookie: { maxAge: 60000 }
-    }),
-    // Api middleware
-    // We add /api/login & /api/logout routes
-    '~/api'
-  ]
+  }
 }

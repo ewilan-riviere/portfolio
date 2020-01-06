@@ -46,16 +46,7 @@
 </template>
 
 <script>
-import formations from '@/components/pages/home/informations/Formations.vue'
-import skills from '@/components/pages/home/informations/Skills.vue'
-import projects from '@/components/pages/home/informations/Projects.vue'
-
 export default {
-  components: {
-    formations,
-    skills,
-    projects
-  },
   props: {
     texts: {
       type: Array,

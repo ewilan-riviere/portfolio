@@ -22,7 +22,7 @@
         :target="target"
       ></return-to-top>
     </div>
-    <footer></footer>
+    <Footer></Footer>
   </v-layout>
 </template>
 
