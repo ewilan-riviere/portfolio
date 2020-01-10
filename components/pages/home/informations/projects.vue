@@ -16,23 +16,6 @@
               class="white--text project-img align-end"
               width="150"
             />
-            <style type="text/css">
-              <!-- @font-face {
-                font-family: '{{ $slugify(item.title) }}';
-                src: url({{item.font}});
-              }
-              .font-{{ $slugify(item.title) }} {
-                color: blue;
-                font-family: '{{ $slugify(item.title) }}';
-              }
-
-              @import url('http://api.portfolio.localhost/css/_fonts.css');
-
-              .font-{{ $slugify(item.title) }} {
-                color: blue;
-                font-family: 'play-it', cursive;
-              } -->
-            </style>
             <div class="text-center mt-5">
               <h2 :class="`font-` + $slugify(item.title)">
                 {{ item.title }}
