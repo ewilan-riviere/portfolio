@@ -18,6 +18,7 @@
 import icon from '@/components/sub/Icon.vue'
 
 export default {
+  name: 'SocialLink',
   components: {
     icon
   },

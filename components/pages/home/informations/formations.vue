@@ -36,9 +36,6 @@
 
           <v-card-text class="text--primary">
             <div>
-              {{ formation.resume }}
-            </div>
-            <div>
               <span v-if="formation.type === 'vocational'">
                 École :
               </span>
@@ -76,9 +73,13 @@
                 {{ formation.vocational_title }}
               </a>
             </div>
+            <div
+              v-html="formation.resume"
+              class="resume mt-3 font-italic word-wraping"
+              lang="fr"
+            ></div>
           </v-card-text>
           <div v-if="formation.project_title" class="formation-actions">
-            <hr />
             <div class="card-footer pt-4 pb-2 font-weight-bold">
               Réalisation majeure :
             </div>
@@ -96,6 +97,13 @@
               >
                 {{ formation.project_title }}
               </v-btn>
+
+              <custom-dialog
+                v-if="formation.project_resume"
+                :title="`Détails sur le projet : ${formation.project_title}`"
+                :image="formation.project_image"
+                :text="formation.project_resume"
+              ></custom-dialog>
             </v-card-actions>
           </div>
         </v-card>
@@ -137,7 +145,15 @@ export default {
             slidesPerGroup: 2
           }
         }
-      }
+      },
+      selectedProject: '',
+      projectResume: false
+    }
+  },
+  methods: {
+    showDialog(id) {
+      this.selectedProject = ''
+      this.selectedProject = id
     }
   }
 }
@@ -145,18 +161,28 @@ export default {
 
 <style lang="scss" scoped>
 .formations {
+  .resume {
+    padding-right: 1rem;
+    max-width: 90%;
+    max-height: 10rem;
+    overflow: auto;
+  }
   .card-footer {
     padding-right: 16px;
     padding-left: 16px;
   }
   .formation-card {
-    height: 32rem;
+    height: 38rem;
     padding-bottom: 1rem;
     .formation-actions {
       position: absolute;
       bottom: 0;
       width: 100%;
     }
+  }
+  .v-card__actions {
+    display: flex;
+    justify-content: space-between;
   }
 }
 </style>

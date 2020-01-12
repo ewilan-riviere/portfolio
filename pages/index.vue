@@ -1,7 +1,7 @@
 <template>
   <v-layout id="home" column justify-center align-center>
     <div id="ewilanIntro">
-      <ewilan-intro :texts="texts" :socials="socials" />
+      <introduction :texts="texts" :socials="socials"></introduction>
 
       <transition name="fade">
         <div v-if="noScroll" class="view">
@@ -14,24 +14,24 @@
       </transition>
     </div>
     <div id="informations">
-      <informations
+      <details-informations
         :texts="texts"
         :formations="formations"
         :skills="skills"
         :projects="projects"
-      />
+      ></details-informations>
     </div>
   </v-layout>
 </template>
 
 <script>
-import ewilanIntro from '@/components/pages/home/EwilanIntro.vue'
-import informations from '@/components/pages/home/Informations.vue'
+import introduction from '@/components/pages/home/introduction.vue'
+import detailsInformations from '@/components/pages/home/details-informations.vue'
 
 export default {
   components: {
-    ewilanIntro,
-    informations
+    introduction,
+    detailsInformations
   },
   data() {
     return {

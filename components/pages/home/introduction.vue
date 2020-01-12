@@ -2,11 +2,11 @@
   <div class="ewilan-intro">
     <div class="ewilan-intro-center">
       <div class="ewilan-intro-sub white-text">
-        <ewilanlogo
+        <ewilan-logo
           :anim="true"
           class="ewilan-intro-logo"
           logo-route="/portfolio"
-        />
+        ></ewilan-logo>
         <h1 v-html="name" class="intro-title font-morpheus background-ewilan" />
         <div class="intro-details font-lautre mb-5">
           <div>
@@ -17,20 +17,24 @@
             <div v-html="spec" class="mt-4" />
           </div>
         </div>
-        <social :socials="socials" v-if="socials !== undefined" />
+        <social-link
+          :socials="socials"
+          v-if="socials !== undefined"
+        ></social-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ewilanlogo from '@/components/sub/EwilanLogo.vue'
-import social from '@/components/pages/home/Social.vue'
+import ewilanLogo from '@/components/sub/ewilan-logo.vue'
+import socialLink from '@/components/pages/home/social-link.vue'
 
 export default {
+  name: 'Introduction',
   components: {
-    ewilanlogo,
-    social
+    ewilanLogo,
+    socialLink
   },
   props: {
     texts: {

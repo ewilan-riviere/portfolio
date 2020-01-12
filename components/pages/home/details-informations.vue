@@ -35,12 +35,7 @@
     </div>
     <client-only>
       <div class="informations-container">
-        <div v-if="info.type === 'global'" class="word-wraping global-info">
-          <h1 class="font-ames-croisees mb-4">
-            {{ info.name }}
-          </h1>
-          <span v-html="info.data"></span>
-        </div>
+        <about v-if="info.type === 'global'" :data="info"></about>
         <formations v-if="info.type === 'formations'" :data="info"></formations>
         <skills v-if="info.type === 'skills'" :data="info"></skills>
         <projects v-if="info.type === 'projects'" :data="info"></projects>
@@ -51,6 +46,7 @@
 
 <script>
 export default {
+  name: 'Informations',
   props: {
     texts: {
       type: Array,
@@ -164,13 +160,6 @@ export default {
     // max-height: 80vh;
     // overflow: auto;
     width: 100%;
-    .global-info {
-      width: 50%;
-      margin: auto;
-      @media screen and (max-width: 920px) {
-        width: 90%;
-      }
-    }
   }
   .information-navbar-bg {
     background-color: rgba(black, 0.6);
