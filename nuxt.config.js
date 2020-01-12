@@ -19,7 +19,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css'
+      }
+    ]
   },
   /*
    ** Customize the progress bar color
@@ -35,6 +42,7 @@ export default {
    */
   plugins: [
     '~/plugins/get-content.js',
+    '~/plugins/vuetify.js',
     '~/plugins/slugify.js',
     { src: '@/plugins/global-components-loader' },
     { src: '@/plugins/vue-icons-loader', mode: 'client' }
@@ -65,20 +73,10 @@ export default {
     '@nuxtjs/auth',
     '@nuxtjs/svg',
     [
-      '@nuxtjs/google-gtag',
+      '@nuxtjs/google-tag-manager',
       {
-        'google-gtag': {
-          id: 'UA-90411452-3',
-          config: {
-            anonymize_ip: true, // anonymize IP
-            send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-            linker: {
-              domains: ['ewilan-riviere.com']
-            }
-          },
-          debug: true, // enable to track in dev mode
-          disableAutoPageTrack: false // disable if you don't want to track each page route with router.afterEach
-        }
+        id: 'UA-90411452-3',
+        pageTracking: true
       }
     ]
   ],

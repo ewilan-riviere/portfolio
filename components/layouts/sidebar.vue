@@ -79,12 +79,12 @@ export default {
           title: 'À propos',
           icon: 'information',
           link: '/a-propos'
-        },
-        {
-          title: 'Se connecter',
-          icon: 'database-check',
-          link: '/login'
         }
+        // {
+        //   title: 'Se connecter',
+        //   icon: 'database-check',
+        //   link: '/login'
+        // }
       ]
     }
   },

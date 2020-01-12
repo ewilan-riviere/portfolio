@@ -6,13 +6,11 @@
         <div class="dirty-unicorn"></div>
       </div>
       <!-- <Logo /> -->
-      <div class="white-text">
+      <div class="white-text main mx-auto">
         <p class="font-morpheus about-title">
           {{ title }}
         </p>
-        <p>
-          {{ text }}
-        </p>
+        <p v-html="text"></p>
       </div>
     </div>
   </div>
@@ -28,13 +26,16 @@ export default {
   data() {
     return {
       title: 'À propos',
-      text: 'text'
+      text:
+        "Ce portfolio a été réalisé avec <a href='https://nuxtjs.org/' target='_blank' class='invisible-link'>NuxtJS</a> pour sa partie front-end et en <a href='https://laravel.com/' target='_blank' class='invisible-link'>Laravel</a> pour sa partie back-end. Afin de simplifier la mise en place du back-office <a href='https://backpackforlaravel.com/' target='_blank' class='invisible-link'>Backpack</a> a été choisi. Les langages qui ont été utilisés sont PHP, JavaScript (Vue) et SCSS."
     }
   }
 }
 </script>
 
 <style lang="scss">
+$unicorn-size: 10rem;
+
 #about {
   .center {
     padding: 10rem 0;
@@ -43,14 +44,12 @@ export default {
     display: table;
     .about-title {
       font-size: 4rem;
-      font-weight: bold;
     }
     .dirty-unicorn-loading {
       display: flex;
       justify-content: center;
-      $size: 20rem;
-      $unicorn-width: $size;
-      $unicorn-height: $size;
+      $unicorn-width: $unicorn-size;
+      $unicorn-height: $unicorn-size;
 
       .dirty-unicorn-circle {
         background-repeat: no-repeat;
@@ -82,6 +81,9 @@ export default {
         background-position-x: center;
         background-image: url('../../static/images/logos/dirty_unicorn_only.png');
       }
+    }
+    .main {
+      width: 50%;
     }
   }
 }

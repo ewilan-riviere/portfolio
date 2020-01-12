@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'Footer',
+  name: 'FooterContact',
   data() {
     return {
       footerLinks: [
@@ -40,8 +40,7 @@ export default {
         {
           icon: 'github-circle',
           content: 'GitHub',
-          link:
-            'https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front'
+          link: 'https://github.com/ewilan-riviere'
         }
       ]
     }

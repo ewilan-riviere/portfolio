@@ -1,6 +1,10 @@
 <template>
   <div id="informations" v-if="$store.state.api.formations !== undefined">
-    <div>
+    <!-- information navbar  -->
+    <div
+      :class="informationNavbar ? 'information-navbar-bg' : ''"
+      class="information-navbar"
+    >
       <ul class="informations-list">
         <li
           v-for="(item, id) in selectInfoMenu"
@@ -75,7 +79,7 @@ export default {
           method: 'slug',
           request: 'dev-resume',
           type: 'global',
-          name: 'Mon histoire',
+          name: 'À propos',
           icon: 'mdi-text-subject'
         },
         {
@@ -99,13 +103,32 @@ export default {
           name: 'Mes projets',
           icon: 'mdi-library-books'
         }
-      ]
+      ],
+      informationNavbar: true
+    }
+  },
+  created() {
+    if (process.browser) {
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  destroyed() {
+    if (process.browser) {
+      window.removeEventListener('scroll', this.handleScroll)
     }
   },
   beforeMount() {
     this.devDescInit(this.selectInfoMenu)
   },
   methods: {
+    handleScroll() {
+      if (window.scrollY > 950) {
+        // this.informationNavbar = true
+      } else {
+        // this.informationNavbar = false
+      }
+    },
     devDescInit(selectInfoMenu) {
       this.info.name = selectInfoMenu[0].name
       this.info.data = this.$textContent(selectInfoMenu[0].request, this.texts)
@@ -149,16 +172,29 @@ export default {
       }
     }
   }
-  .informations-list {
+  .information-navbar-bg {
+    background-color: rgba(black, 0.6);
+  }
+  .information-navbar {
+    position: sticky;
+    z-index: 5;
+    top: 0;
+    transition: all 0.5s;
+    padding: 0.5rem;
     margin-bottom: 1.6rem;
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
-    list-style: none;
-    .informations-list-item {
-      display: inline-block;
-      margin: 0 0.3rem;
-      padding: 0 1rem;
+    width: 20rem;
+    border-radius: 0.5rem;
+    margin: auto;
+    .informations-list {
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      list-style: none;
+      .informations-list-item {
+        display: inline-block;
+        margin: 0 0.3rem;
+        padding: 0 1rem;
+      }
     }
   }
 }

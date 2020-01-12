@@ -49,18 +49,18 @@ export default {
       textsApi,
       socialsApi
     ] = await Promise.all([
-      app.$axios.get('formations'),
-      app.$axios.get('skills'),
-      app.$axios.get('projects'),
-      app.$axios.get('texts'),
-      app.$axios.get('socials')
+      app.$axios.$get('formations'),
+      app.$axios.$get('skills'),
+      app.$axios.$get('projects'),
+      app.$axios.$get('texts'),
+      app.$axios.$get('socials')
     ])
     return {
-      formations: formationsApi.data.data,
-      skills: skillsApi.data.data,
-      projects: projectsApi.data.data,
-      texts: textsApi.data.data,
-      socials: socialsApi.data.data
+      formations: formationsApi.data,
+      skills: skillsApi.data,
+      projects: projectsApi.data,
+      texts: textsApi.data,
+      socials: socialsApi.data
     }
   },
   created() {

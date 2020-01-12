@@ -128,9 +128,10 @@ export default {
 <style lang="scss">
 .swiper-button-next {
   right: -3rem;
-  background-color: lightgray;
+  // background-color: lightgray;
+  animation: swiperThis 3s infinite;
   &:hover {
-    background-color: gray;
+    background-color: lightgray;
   }
 }
 .project-card {
@@ -157,6 +158,20 @@ export default {
       display: flex;
       justify-content: space-between;
     }
+  }
+}
+
+@keyframes swiperThis {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 </style>

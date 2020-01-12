@@ -186,15 +186,15 @@ export default {
   }
   .swiper-button-next {
     right: -25px;
-    :v-deep svg {
+    svg {
       transition: 0.5s transform;
     }
+  }
+}
 
-    &.is-end {
-      :v-deep svg {
-        transform: rotate(180deg);
-      }
-    }
+.is-end {
+  svg {
+    transform: rotate(180deg);
   }
 }
 </style>

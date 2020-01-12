@@ -3,14 +3,14 @@
     <div class="parrallax">
       <div id="top" />
       <github-ribbon></github-ribbon>
-      <navigation-drawer></navigation-drawer>
+      <sidebar></sidebar>
       <nuxt class="padding" />
       <return-to-top
         :return-to-top="returnToTop"
         :target="target"
       ></return-to-top>
     </div>
-    <Footer></Footer>
+    <footer-contact></footer-contact>
   </v-app>
 </template>
 
