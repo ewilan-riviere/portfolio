@@ -19,29 +19,7 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    __dangerouslyDisableSanitizers: ['script'],
-    metaInfo: {
-      script: [
-        {
-          hid: 'gtm-script1',
-          src: 'https://www.googletagmanager.com/gtag/js?id=UA-90411452-3',
-          async: true
-        },
-        {
-          hid: 'gtm-script2',
-          innerHTML: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'UA-90411452-3');
-          `,
-          type: 'text/javascript',
-          charset: 'utf-8'
-        }
-      ]
-    }
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Customize the progress bar color
@@ -85,7 +63,24 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/auth',
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+    [
+      '@nuxtjs/google-gtag',
+      {
+        'google-gtag': {
+          id: 'UA-90411452-3',
+          config: {
+            anonymize_ip: true, // anonymize IP
+            send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+            linker: {
+              domains: ['ewilan-riviere.com']
+            }
+          },
+          debug: true, // enable to track in dev mode
+          disableAutoPageTrack: false // disable if you don't want to track each page route with router.afterEach
+        }
+      }
+    ]
   ],
   env: {
     baseURL: process.env.BASE_URL

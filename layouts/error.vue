@@ -22,7 +22,6 @@
         :target="target"
       ></return-to-top>
     </div>
-    <Footer></Footer>
   </v-layout>
 </template>
 

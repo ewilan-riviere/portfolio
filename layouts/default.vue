@@ -26,7 +26,13 @@ export default {
       easing: 'easeInOutCubic',
       easings: Object.keys(easings),
 
-      returnToTop: false
+      returnToTop: false,
+      meta: { title: 'abc' }
+    }
+  },
+  head() {
+    return {
+      // title: this.meta.title
     }
   },
   created() {

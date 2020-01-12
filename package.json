@@ -28,6 +28,7 @@
     "@nuxtjs/auth": "^4.8.5",
     "@nuxtjs/axios": "^5.9.2",
     "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/google-gtag": "^1.0.4",
     "@nuxtjs/router": "^1.5.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/svg": "^0.1.6",
