@@ -19,7 +19,29 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    __dangerouslyDisableSanitizers: ['script'],
+    metaInfo: {
+      script: [
+        {
+          hid: 'gtm-script1',
+          src: 'https://www.googletagmanager.com/gtag/js?id=UA-90411452-3',
+          async: true
+        },
+        {
+          hid: 'gtm-script2',
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'UA-90411452-3');
+          `,
+          type: 'text/javascript',
+          charset: 'utf-8'
+        }
+      ]
+    }
   },
   /*
    ** Customize the progress bar color
@@ -28,7 +50,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/scss/main.scss'],
+  css: ['@/assets/scss/main.scss', '@/assets/scss/_fonts.scss'],
 
   /*
    ** Plugins to load before mounting the App
