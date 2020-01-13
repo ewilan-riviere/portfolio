@@ -11,7 +11,7 @@
           <v-icon :size="10" color="warning" class="pb-3">
             mdi-star
           </v-icon>
-          sont les compétences que j'apprécie
+          sont les domaines de compétences que j'apprécie
         </div>
       </div>
       <v-row>

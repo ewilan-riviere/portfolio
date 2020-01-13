@@ -39,6 +39,7 @@
         <formations v-if="info.type === 'formations'" :data="info"></formations>
         <skills v-if="info.type === 'skills'" :data="info"></skills>
         <projects v-if="info.type === 'projects'" :data="info"></projects>
+        <passions v-if="info.type === 'passions'" :passions="info"></passions>
       </div>
     </client-only>
   </div>
@@ -61,6 +62,10 @@ export default {
       default: () => []
     },
     projects: {
+      type: Array,
+      default: () => []
+    },
+    passions: {
       type: Array,
       default: () => []
     }
@@ -98,6 +103,13 @@ export default {
           type: 'projects',
           name: 'Mes projets',
           icon: 'mdi-library-books'
+        },
+        {
+          method: 'api',
+          request: this.passions,
+          type: 'passions',
+          name: 'Mes passions',
+          icon: 'mdi-heart'
         }
       ],
       informationNavbar: true
@@ -171,7 +183,7 @@ export default {
     transition: all 0.5s;
     padding: 0.5rem;
     margin-bottom: 1.6rem;
-    width: 20rem;
+    width: 25rem;
     border-radius: 0.5rem;
     margin: auto;
     .informations-list {

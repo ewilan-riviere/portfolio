@@ -75,7 +75,7 @@ export default {
 
 <style>
 .container {
-  padding: 100px;
+  /* padding: 100px; */
 }
 .error {
   color: red;
