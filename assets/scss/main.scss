@@ -6,6 +6,11 @@
 @import "~swiper/swiper";
 @import "~swiper/components/pagination/pagination";
 
+html,
+body {
+  color: white;
+}
+
 .v-navigation-drawer {
   background-color: $pink-custom !important;
 }

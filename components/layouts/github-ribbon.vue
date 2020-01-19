@@ -33,7 +33,7 @@ $ribbon-color: #fff;
   top: 0rem;
   right: -2rem;
   min-width: $ribbon-width;
-  z-index: 3;
+  z-index: 25;
   a {
     // Colors
     background: $ribbon-color-bg;

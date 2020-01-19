@@ -94,7 +94,7 @@ export default {
           method: 'api',
           request: this.skills,
           type: 'skills',
-          name: 'Mes compétences',
+          name: 'Mes compétences principales',
           icon: 'mdi-xml'
         },
         {
@@ -161,12 +161,17 @@ export default {
 <style lang="scss">
 #informations {
   width: 100%;
+  position: relative;
+  z-index: 20;
+  @media screen and (min-width: 920px) {
+    z-index: 5;
+  }
   .informations-container {
     box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
     background-color: $white;
     padding: 2rem 5rem;
     @media screen and (max-width: 920px) {
-      padding: 0;
+      padding: 2rem 1rem;
     }
     // height: 30rem;
     // max-height: 80vh;
@@ -183,9 +188,12 @@ export default {
     transition: all 0.5s;
     padding: 0.5rem;
     margin-bottom: 1.6rem;
-    width: 25rem;
+    width: 100vw;
     border-radius: 0.5rem;
     margin: auto;
+    @media screen and (min-width: 920px) {
+      width: 25rem;
+    }
     .informations-list {
       display: flex;
       justify-content: center;
@@ -194,7 +202,10 @@ export default {
       .informations-list-item {
         display: inline-block;
         margin: 0 0.3rem;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
+        @media screen and (min-width: 920px) {
+          padding: 0 1rem;
+        }
       }
     }
   }

@@ -17,7 +17,7 @@
       <details-informations
         :texts="texts"
         :formations="formations"
-        :skills="skills"
+        :skills="getFavoriteSkills()"
         :projects="projects"
         :passions="passions"
       ></details-informations>
@@ -33,6 +33,12 @@ export default {
   components: {
     introduction,
     detailsInformations
+  },
+  head() {
+    return {
+      title: '',
+      titleTemplate: 'Portfolio · Ewilan Rivière'
+    }
   },
   data() {
     return {
@@ -58,9 +64,30 @@ export default {
       app.$axios.$get('texts'),
       app.$axios.$get('socials')
     ])
+
+    // const skillsFavorites = []
+    // skillsApi.data.forEach((element) => {
+    //   if (
+    //     element.is_favorite &&
+    //     element.image !== null &&
+    //     element.category.data.category !== 'langues'
+    //   ) {
+    //     skillsFavorites.push(element)
+    //   }
+    // })
+
+    // const skillsFavSplit = []
+    // let skillsFavSub
+
+    // while (skillsFavorites.length > 0) {
+    //   skillsFavSub = skillsFavorites.splice(0, 8)
+    //   skillsFavSplit.push(skillsFavSub)
+    // }
+
     return {
       formations: formationsApi.data,
       skills: skillsApi.data,
+      // skillsFavSplit,
       projects: projectsApi.data,
       passions: passionsApi.data,
       texts: textsApi.data,
@@ -79,6 +106,19 @@ export default {
     }
   },
   methods: {
+    getFavoriteSkills() {
+      const skillsFavorites = []
+      this.skills.forEach((element) => {
+        if (
+          element.is_favorite &&
+          element.image !== null &&
+          element.category.data.slug !== 'langues'
+        ) {
+          skillsFavorites.push(element)
+        }
+      })
+      return skillsFavorites
+    },
     handleScroll() {
       if (window.scrollY > 30) {
         this.noScroll = false

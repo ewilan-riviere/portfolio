@@ -129,12 +129,18 @@ export default {
 <style lang="scss">
 .vue-swiper {
   position: relative;
+  padding: 1rem;
+  margin: 1rem;
 }
 .swiper-button-next-disabled,
 .swiper-button-next,
 .swiper-button-prev-disabled,
 .swiper-button-prev {
   // display: none;
+  transition: all 0.5s;
+  &:hover {
+    background-color: lightgray;
+  }
 }
 
 .swiper-pagination-bullet-active {

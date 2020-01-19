@@ -5,6 +5,7 @@
         <v-col
           v-for="link in footerLinks"
           :key="link.id"
+          :class="{ 'd-none d-md-block': link.responsive }"
           class="font-weight-bold text-center"
           cols="12"
           md="4"
@@ -30,17 +31,20 @@ export default {
         {
           icon: 'bag-personal',
           content: 'Backpack for Laravel',
-          link: 'https://backpackforlaravel.com/'
+          link: 'https://backpackforlaravel.com/',
+          responsive: true
         },
         {
           icon: 'creative-commons',
           content: 'Ewilan Rivière, ' + new Date().getFullYear(),
-          link: 'mailto:ewilan.riviere@gmail.com'
+          link: 'mailto:ewilan.riviere@gmail.com',
+          responsive: false
         },
         {
           icon: 'github-circle',
           content: 'GitHub',
-          link: 'https://github.com/ewilan-riviere'
+          link: 'https://github.com/ewilan-riviere',
+          responsive: true
         }
       ]
     }

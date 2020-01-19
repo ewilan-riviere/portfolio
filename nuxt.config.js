@@ -7,9 +7,9 @@ export default {
    ** Headers of the page
    */
   head: {
-    // titleTemplate: '%s - ' + process.env.npm_package_name,
     // title: process.env.npm_package_name || '',
-    title: 'Ewilan Rivière - Portfolio',
+    title: '',
+    titleTemplate: '%s - ' + 'Portfolio · Ewilan Rivière',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -65,7 +65,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    '@nuxtjs/router',
+    ['@nuxtjs/router', { keepDefaultRouter: true }],
     // Doc: https://axios.nuxtjs.org/usage
     ['@nuxtjs/axios', { baseURL: process.env.BASE_URL }],
     // Doc: https://github.com/nuxt-community/dotenv-module

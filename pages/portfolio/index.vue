@@ -1,35 +1,30 @@
 <template>
-  <div class="">
-    <swiper :config="swiperConfig" :with-pagination="false" class="">
-      <div v-for="i in 8" :key="i" class="swiper-slide">
-        a
-      </div>
-    </swiper>
-  </div>
+  <v-layout id="home" column justify-center align-center>
+    <div class="portfolio">
+      <skills-by-categories :categories="categories"></skills-by-categories>
+    </div>
+  </v-layout>
 </template>
 
 <script>
+import skillsByCategories from '@/components/pages/portfolio/skills-by-categories'
 export default {
-  data() {
+  components: {
+    skillsByCategories
+  },
+  head() {
     return {
-      swiperConfig: {
-        spaceBetween: 30,
-        speed: 600,
-        breakpoints: {
-          1600: {
-            slidesPerView: 2,
-            slidesPerGroup: 2
-          },
-          992: {
-            slidesPerView: 2,
-            slidesPerGroup: 2
-          },
-          768: {
-            slidesPerView: 2,
-            slidesPerGroup: 2
-          }
-        }
-      }
+      title: '',
+      titleTemplate: 'Portfolio · Ewilan Rivière'
+    }
+  },
+  data() {
+    return {}
+  },
+  async asyncData({ app, query, error }) {
+    const [categoriesApi] = await Promise.all([app.$axios.$get('categories')])
+    return {
+      categories: categoriesApi.data
     }
   }
 }
@@ -37,6 +32,5 @@ export default {
 
 <style lang="scss">
 .portfolio {
-  // max-width: 20rem !important;
 }
 </style>

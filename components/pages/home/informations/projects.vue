@@ -26,7 +26,7 @@
               {{ item.resume }}
             </v-card-text>
 
-            <div class="tags">
+            <!-- <div class="tags">
               <v-chip
                 v-for="(tag, tagId) in item.skills"
                 :key="tagId"
@@ -34,7 +34,7 @@
               >
                 {{ tag.title }}
               </v-chip>
-            </div>
+            </div> -->
           </div>
 
           <div class="project-actions-container">
@@ -138,7 +138,7 @@ export default {
 <style lang="scss">
 .projects {
   .swiper-button-next {
-    right: -3rem;
+    // right: -3rem;
     // background-color: lightgray;
     animation: swiperThis 3s infinite;
     &:hover {
@@ -158,9 +158,7 @@ export default {
     .project-img {
       // width: 100%;
       margin: auto;
-      -webkit-filter: drop-shadow(0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5));
-      -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-      filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+      filter: drop-shadow(0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5));
     }
     .v-card__text {
       width: inherit;

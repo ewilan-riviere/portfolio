@@ -23,7 +23,7 @@ export default {
 .global-info {
   width: 50%;
   margin: auto;
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 1200px) {
     width: 90%;
   }
 }
