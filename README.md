@@ -4,6 +4,15 @@
 [![NodeJS 11.15](https://img.shields.io/badge/NodeJS-11.15-green)](https://nodejs.org/en)
 [![Yarn 1.19](https://img.shields.io/badge/Yarn-1.19-blue)](https://nodejs.org/en)  
 
+
+[![NuxtJS 2.11](https://img.shields.io/badge/NuxtJS-2.11-green)](https://nuxtjs.org/)
+[![VueJS 2.6](https://img.shields.io/badge/VueJS-2.6-green)](https://vuejs.org/)
+[![NodeJS 10.16](https://img.shields.io/badge/NodeJS-10.16-green)](https://nodejs.org/en)
+[![Yarn 1.19](https://img.shields.io/badge/Yarn-1.19-blue)](https://yarnpkg.com/lang/en/)  
+[![Sass 4.13](https://img.shields.io/badge/Sass-4.13-cf649a)](https://sass-lang.com/)
+[![ESLint 6.8](https://img.shields.io/badge/ESLint-6.8-4b32c3)](https://eslint.org/)
+[![BootstrapVue 2.1](https://img.shields.io/badge/BootstrapVue-2.1-563d7c)](https://bootstrap-vue.js.org/)
+
 **Back-end : [Ewilan Rivière Portfolio · Back-end](https://github.com/ewilan-riviere/ewilan-riviere-portfolio-back)**  
 **Deploy on : [dev.ewilan-riviere.tech](http://dev.ewilan-riviere.tech)**
 

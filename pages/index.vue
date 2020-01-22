@@ -49,49 +49,62 @@ export default {
     }
   },
   async asyncData({ app, query, error }) {
-    const [
-      formationsApi,
-      skillsApi,
-      projectsApi,
-      passionsApi,
-      textsApi,
-      socialsApi
-    ] = await Promise.all([
-      app.$axios.$get('formations'),
-      app.$axios.$get('skills'),
-      app.$axios.$get('projects'),
-      app.$axios.$get('passions'),
-      app.$axios.$get('texts'),
-      app.$axios.$get('socials')
-    ])
+    try {
+      const [
+        formationsApi,
+        skillsApi,
+        projectsApi,
+        passionsApi,
+        textsApi,
+        socialsApi
+      ] = await Promise.all([
+        app.$axios.$get('formations'),
+        app.$axios.$get('skills'),
+        app.$axios.$get('projects'),
+        app.$axios.$get('passions'),
+        app.$axios.$get('texts'),
+        app.$axios.$get('socials')
+      ])
 
-    // const skillsFavorites = []
-    // skillsApi.data.forEach((element) => {
-    //   if (
-    //     element.is_favorite &&
-    //     element.image !== null &&
-    //     element.category.data.category !== 'langues'
-    //   ) {
-    //     skillsFavorites.push(element)
-    //   }
-    // })
+      // const skillsFavorites = []
+      // skillsApi.data.forEach((element) => {
+      //   if (
+      //     element.is_favorite &&
+      //     element.image !== null &&
+      //     element.category.data.category !== 'langues'
+      //   ) {
+      //     skillsFavorites.push(element)
+      //   }
+      // })
 
-    // const skillsFavSplit = []
-    // let skillsFavSub
+      // const skillsFavSplit = []
+      // let skillsFavSub
 
-    // while (skillsFavorites.length > 0) {
-    //   skillsFavSub = skillsFavorites.splice(0, 8)
-    //   skillsFavSplit.push(skillsFavSub)
-    // }
+      // while (skillsFavorites.length > 0) {
+      //   skillsFavSub = skillsFavorites.splice(0, 8)
+      //   skillsFavSplit.push(skillsFavSub)
+      // }
 
-    return {
-      formations: formationsApi.data,
-      skills: skillsApi.data,
-      // skillsFavSplit,
-      projects: projectsApi.data,
-      passions: passionsApi.data,
-      texts: textsApi.data,
-      socials: socialsApi.data
+      return {
+        formations: formationsApi.data,
+        skills: skillsApi.data,
+        projects: projectsApi.data,
+        passions: passionsApi.data,
+        texts: textsApi.data,
+        socials: socialsApi.data
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error)
+
+      return {
+        formations: [],
+        skills: [],
+        projects: [],
+        passions: [],
+        texts: [],
+        socials: []
+      }
     }
   },
   created() {
@@ -108,15 +121,17 @@ export default {
   methods: {
     getFavoriteSkills() {
       const skillsFavorites = []
-      this.skills.forEach((element) => {
-        if (
-          element.is_favorite &&
-          element.image !== null &&
-          element.category.data.slug !== 'langues'
-        ) {
-          skillsFavorites.push(element)
-        }
-      })
+      if (this.skills.length > 0) {
+        this.skills.forEach((element) => {
+          if (
+            element.is_favorite &&
+            element.image !== null &&
+            element.category.data.slug !== 'langues'
+          ) {
+            skillsFavorites.push(element)
+          }
+        })
+      }
       return skillsFavorites
     },
     handleScroll() {
