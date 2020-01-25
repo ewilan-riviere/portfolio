@@ -17,6 +17,7 @@
       ref="swiperButtonPrev"
       v-if="canPrev"
       @click="onPrevSlide"
+      :class="{ 'd-none': paginationWhenJustOne }"
       class="swiper-button-prev shadow-sm"
     >
       <icon-base
@@ -32,7 +33,8 @@
       ref="swiperButtonNext"
       v-if="canNext"
       :class="{
-        'is-end': endReached
+        'is-end': endReached,
+        'd-none': paginationWhenJustOne
       }"
       @click="onNextSlide"
       class="swiper-button-next shadow-sm"

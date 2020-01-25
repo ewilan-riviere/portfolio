@@ -1,12 +1,13 @@
 {
   "name": "ewilan-riviere-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio d'Ewilan Rivière en NuxtJS.",
+  "description": "Portfolio of Ewilan Rivière with VueJS and NuxtJS",
   "author": {
     "name": "Ewilan Rivière",
-    "email": "ewilan.riviere@gmail.com",
-    "url": "https://ewilan-riviere.tech"
+    "email": "ewilan@dotslashplay.it",
+    "url": "https://portfolio.ewilan-riviere.com"
   },
+  "homepage": "https://portfolio.ewilan-riviere.com",
   "private": true,
   "scripts": {
     "dev": "nuxt",

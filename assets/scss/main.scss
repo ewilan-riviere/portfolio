@@ -10,6 +10,36 @@ html,
 body {
   color: white;
 }
+.w-100 {
+  width: 100%;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.stackeditor {
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit !important;
+    text-decoration: underline;
+  }
+}
+.underline-white {
+  border-bottom: 0.1rem solid transparent;
+  transition: all 0.5s;
+  &:hover {
+    border-bottom: 0.1rem solid white;
+  }
+}
+.underline-black {
+  border-bottom: 0.1rem solid transparent;
+  transition: all 0.5s;
+  &:hover {
+    border-bottom: 0.1rem solid black;
+  }
+}
 
 .v-navigation-drawer {
   background-color: $pink-custom !important;

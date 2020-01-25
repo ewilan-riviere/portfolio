@@ -11,8 +11,7 @@ export default {
   name: 'GithubRibbon',
   data() {
     return {
-      appInProgressUrl:
-        'https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front',
+      appInProgressUrl: 'https://github.com/ewilan-riviere/portfolio-front',
       appInProgressName: 'En développement'
     }
   }

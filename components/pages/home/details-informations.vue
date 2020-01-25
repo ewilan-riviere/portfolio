@@ -189,10 +189,11 @@ export default {
     padding: 0.5rem;
     margin-bottom: 1.6rem;
     width: 100vw;
-    border-radius: 0.5rem;
+    border-radius: 0;
     margin: auto;
     @media screen and (min-width: 920px) {
       width: 25rem;
+      border-radius: 0.5rem;
     }
     .informations-list {
       display: flex;

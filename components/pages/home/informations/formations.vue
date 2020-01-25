@@ -136,7 +136,7 @@ export default {
             slidesPerView: 4,
             slidesPerGroup: 4
           },
-          992: {
+          1100: {
             slidesPerView: 3,
             slidesPerGroup: 3
           },

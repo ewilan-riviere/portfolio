@@ -10,7 +10,9 @@
         :target="target"
       ></return-to-top>
     </div>
-    <footer-contact></footer-contact>
+    <v-footer color="black">
+      <footer-contact class="w-100"></footer-contact>
+    </v-footer>
   </v-app>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless class="black white--text">
+  <div padless class="black white--text">
     <v-container class="footer-container pa-2">
       <v-row>
         <v-col
@@ -19,7 +19,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-footer>
+  </div>
 </template>
 
 <script>
