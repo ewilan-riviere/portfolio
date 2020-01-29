@@ -1,60 +1,74 @@
 <template>
   <div class="skills">
-    <v-container
-      v-for="(category, categoryId) in categories"
-      :key="categoryId"
-      fluid
-    >
-      <h2 class="font-weight-bold subtitle-1">
-        {{ category.display }}
-      </h2>
-      <v-row>
-        <v-col
-          v-for="skill in category.skills.data"
-          :key="skill.id"
-          cols="auto"
+    <v-card class="mx-auto" width="600">
+      <v-list>
+        <v-list-group
+          v-for="(category, categoryKey) in categories"
+          :key="categoryKey"
+          prepend-icon="mdi-home"
         >
-          <v-card dark>
-            <v-img
-              :src="skill.image"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              width="210px"
-            >
-              <v-card-title v-text="skill.title"></v-card-title>
-            </v-img>
+          <template v-slot:activator>
+            <v-list-item-title>
+              {{ category.display }}
+            </v-list-item-title>
+          </template>
 
-            <v-card-text>
-              <div>
-                {{ skill.subtitle }}
-              </div>
-              <div v-if="skill.version">Version {{ skill.version }}</div>
-              <div v-else>
-                &nbsp;
-              </div>
-            </v-card-text>
+          <v-list-group
+            v-for="(skill, skillKey) in category.skills.data"
+            :key="skillKey"
+            :color="skill.color"
+            :style="{ background: `rgba(${colorHexa(skill.color)},0.1)` }"
+            no-action
+            sub-group
+          >
+            <template v-slot:activator>
+              <v-list-item-avatar v-if="skill.image" class="mr-4">
+                <v-img :src="skill.image"></v-img>
+              </v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title class="font-weight-bold shadow-title">
+                  {{ skill.title }}
+                </v-list-item-title>
+                <v-list-item-subtitle
+                  v-html="skill.subtitle"
+                ></v-list-item-subtitle>
+              </v-list-item-content>
+              <v-list-item-content>
+                <v-list-item-icon>
+                  <v-icon>mdi-star</v-icon>
+                </v-list-item-icon>
+              </v-list-item-content>
+            </template>
 
-            <v-card-actions>
-              <v-spacer></v-spacer>
+            <v-list-item v-if="skill.version">
+              <v-list-item-subtitle>
+                Version : {{ skill.version }}
+              </v-list-item-subtitle>
+            </v-list-item>
 
-              <v-btn icon>
-                <v-icon :color="skill.is_favorite ? 'red' : ''"
-                  >mdi-heart</v-icon
-                >
-              </v-btn>
+            <v-list-item :color="skill.color">
+              <v-list-item-subtitle>
+                {{ skill.details }}
+              </v-list-item-subtitle>
+            </v-list-item>
+          </v-list-group>
 
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
+          <!-- <v-list-group sub-group no-action>
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title>Actions</v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <v-list-item v-for="(crud, i) in cruds" :key="i">
+              <v-list-item-title v-text="crud[0]"></v-list-item-title>
+              <v-list-item-action>
+                <v-icon v-text="crud[1]"></v-icon>
+              </v-list-item-action>
+            </v-list-item>
+          </v-list-group> -->
+        </v-list-group>
+      </v-list>
+    </v-card>
   </div>
 </template>
 
@@ -67,6 +81,21 @@ export default {
       required: false,
       default: () => []
     }
+  },
+  methods: {
+    colorHexa(hexaCode) {
+      const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
+      hexaCode = hexaCode.replace(shorthandRegex, function(m, r, g, b) {
+        return r + r + g + g + b + b
+      })
+
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexaCode)
+      // eslint-disable-next-line no-unused-vars
+      const rgb = `${parseInt(result[1], 16)},
+      ${parseInt(result[2], 16)},
+      ${parseInt(result[3], 16)}`
+      return result ? rgb : '0,0,0'
+    }
   }
 }
 </script>
@@ -75,8 +104,16 @@ export default {
 $card-width: 210px;
 .skills {
   padding: 5rem 2rem 2rem 2rem;
+  .v-list-item--active {
+    .shadow-title {
+      // text-shadow: 2px 2px 3px rgba(black, 0.8);
+    }
+  }
+  .v-avatar {
+    border-radius: initial;
+  }
   .v-card {
-    min-height: 25rem;
+    // min-height: 25rem;
     position: relative;
     &__text {
       width: $card-width;

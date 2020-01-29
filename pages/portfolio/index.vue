@@ -2,7 +2,7 @@
   <v-layout id="home" column justify-center align-center>
     <div class="portfolio">
       <formations-timeline :formations="formations"></formations-timeline>
-      <!-- <skills-by-categories :categories="categories"></skills-by-categories> -->
+      <skills-by-categories :categories="categories"></skills-by-categories>
     </div>
   </v-layout>
 </template>
@@ -34,7 +34,8 @@ export default {
       categories: categoriesApi.data,
       formations: formationsApi.data.reverse()
     }
-  }
+  },
+  methods: {}
 }
 </script>
 
