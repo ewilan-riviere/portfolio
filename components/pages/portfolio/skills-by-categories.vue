@@ -1,7 +1,7 @@
 <template>
   <div class="skills">
     <v-card class="mx-auto" width="600">
-      <v-list>
+      <v-list class="py-0">
         <v-list-group
           v-for="(category, categoryKey) in categories"
           :key="categoryKey"
@@ -17,7 +17,7 @@
             v-for="(skill, skillKey) in category.skills.data"
             :key="skillKey"
             :color="skill.color"
-            :style="{ background: `rgba(${colorHexa(skill.color)},0.1)` }"
+            :style="{ background: `rgba(${colorHexa(skill.color)},0.2)` }"
             no-action
             sub-group
           >
@@ -28,6 +28,7 @@
               <v-list-item-content>
                 <v-list-item-title class="font-weight-bold shadow-title">
                   {{ skill.title }}
+                  {{ skill.rating }}
                 </v-list-item-title>
                 <v-list-item-subtitle
                   v-html="skill.subtitle"
@@ -35,22 +36,34 @@
               </v-list-item-content>
               <v-list-item-content>
                 <v-list-item-icon>
-                  <v-icon>mdi-star</v-icon>
+                  <!-- <v-icon>mdi-star</v-icon> -->
+                  <v-rating
+                    v-model="skill.rating"
+                    half-increments
+                    full-icon="mdi-heart"
+                    empty-icon=""
+                    half-icon="mdi-heart-half"
+                    small
+                    color="red"
+                    background-color="red lighten-4"
+                  ></v-rating>
                 </v-list-item-icon>
               </v-list-item-content>
             </template>
 
-            <v-list-item v-if="skill.version">
-              <v-list-item-subtitle>
-                Version : {{ skill.version }}
-              </v-list-item-subtitle>
-            </v-list-item>
+            <div class="pt-1 pb-5">
+              <v-list-item v-if="skill.version">
+                <v-list-item-subtitle>
+                  Version : {{ skill.version }}
+                </v-list-item-subtitle>
+              </v-list-item>
 
-            <v-list-item :color="skill.color">
-              <v-list-item-subtitle>
-                {{ skill.details }}
-              </v-list-item-subtitle>
-            </v-list-item>
+              <v-list-item :color="skill.color">
+                <v-list-item-subtitle>
+                  {{ skill.details }}
+                </v-list-item-subtitle>
+              </v-list-item>
+            </div>
           </v-list-group>
 
           <!-- <v-list-group sub-group no-action>
