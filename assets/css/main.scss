@@ -1,0 +1,93 @@
+.center-it {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+// refactor
+
+@import "variables";
+
+$white: #ffffff;
+$black: #000000;
+$gray: rgb(189, 189, 189);
+$light-gray: rgb(241, 241, 241);
+$pink-custom-dark: #f3c9d7;
+$pink-custom: #fadae5;
+
+.white-text {
+    color: $white;
+}
+.black-text {
+    color: $black;
+}
+
+// @import "fonts";
+@import "misc/hamburgers";
+
+// Swiper scss
+@import "~swiper/swiper";
+@import "~swiper/components/pagination/pagination";
+
+html,
+body {
+  color: white;
+}
+.w-100 {
+  width: 100%;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.stackeditor {
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit !important;
+    text-decoration: underline;
+  }
+}
+.underline-white {
+  border-bottom: 0.1rem solid transparent;
+  transition: all 0.5s;
+  &:hover {
+    border-bottom: 0.1rem solid white;
+  }
+}
+.underline-black {
+  border-bottom: 0.1rem solid transparent;
+  transition: all 0.5s;
+  &:hover {
+    border-bottom: 0.1rem solid black;
+  }
+}
+
+.v-navigation-drawer {
+  background-color: $pink-custom !important;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.word-wraping {
+  text-align: justify !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  -ms-hyphens: auto !important;
+  hyphens: auto !important;
+}
+
+.invisible-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit !important;
+}
