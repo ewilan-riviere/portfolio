@@ -1,15 +1,15 @@
 <template>
-  <div class="absolute center-it">
+  <div class="">
     <div class="flex">
       <div
-        :class="anim ? '' : ''"
+        :class="anim ? 'animation' : ''"
         :to="logoRoute"
-        class="logo-ewilan-anim animation m-auto"
+        class="logo-ewilan-anim m-auto"
       ></div>
     </div>
-    <div class="font-morpheus text-center text-5xl text-black">
+    <!-- <div class="font-morpheus text-center text-5xl text-black">
       Portfolio
-    </div>
+    </div> -->
   </div>
 </template>
 

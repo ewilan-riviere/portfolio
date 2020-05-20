@@ -7,17 +7,17 @@ export default {
    */
   head: {
     title: '',
-    titleTemplate: '%s - ' + 'Portfolio · Ewilan Rivière',
+    // titleTemplate: '%s - ' + 'Portfolio · Ewilan Rivière',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -32,7 +32,8 @@ export default {
    */
   plugins: [
     { src: '@/plugins/global-components-loader' },
-    { src: '@/plugins/vue-icons-loader', mode: 'client' }
+    { src: '@/plugins/vue-icons-loader', mode: 'client' },
+    { src: '@/plugins/vue-helper' },
   ],
   /*
    ** Nuxt.js dev-modules
@@ -45,7 +46,7 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/style-resources-module
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
   ],
   /*
    ** Nuxt.js modules
@@ -57,7 +58,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
   ],
   /*
    ** Style resources module configuration
@@ -68,14 +69,14 @@ export default {
     sass: [],
     scss: ['./assets/css/_variables.scss'],
     less: [],
-    stylus: []
+    stylus: [],
   },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: process.env.API_URL
+    baseURL: process.env.API_URL,
   },
   /*
    ** Build configuration
@@ -91,11 +92,11 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
     },
     extractCSS: process.env.NODE_ENV === 'production',
-    transpile: ['swiper']
-  }
+    transpile: ['swiper'],
+  },
 }

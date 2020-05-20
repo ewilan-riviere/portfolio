@@ -27,7 +27,7 @@
     "nuxt": "^2.0.0",
     "qs": "^6.9.4",
     "sass-loader": "^8.0.2",
-    "swiper": "^5.4.0"
+    "swiper": "^5.4.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",

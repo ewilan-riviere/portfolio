@@ -1,6 +1,7 @@
 <template>
   <div id="portfolio">
     <div class="parrallax">
+      <github-ribbon></github-ribbon>
       <nuxt class="padding" />
     </div>
   </div>
