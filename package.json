@@ -34,6 +34,8 @@
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.2.0",
     "@tailwindcss/ui": "^0.7.2",
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.6",
     "qs": "^6.9.4",
     "tailwindcss": "^1.9.6",
     "v-tooltip": "^2.0.3",
