@@ -78,21 +78,21 @@
     <cloud-logos />
     <projects-list :projects="projects" />
     <formations :formations="formations" />
-    <!-- <reassurance /> -->
+    <reassurance />
     <contact />
   </div>
 </template>
 
 <script>
 import qs from 'qs'
-import ListProjects from '~/components/global/list-projects.vue'
-import Reassurance from '~/components/global/reassurance.vue'
 import Formations from '~/components/blocks/formations.vue'
-import Swiper from '~/components/blocks/swiper.vue'
+import ProjectsList from '~/components/blocks/list-projects.vue'
+import CloudLogos from '~/components/blocks/cloud-logos.vue'
+import Contact from '~/components/blocks/contact.vue'
+import Reassurance from '~/components/blocks/reassurance.vue'
 
 export default {
-  components: { ListProjects, Reassurance, Formations, Swiper },
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  components: { Formations, ProjectsList, CloudLogos, Contact, Reassurance },
   async asyncData({ app, query, error, $content }) {
     try {
       const [

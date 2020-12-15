@@ -1,21 +1,5 @@
 <template>
   <article>
-    <!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/typography'),
-    ]
-  }
-  ```
--->
     <div class="relative py-16 overflow-hidden bg-white">
       <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
         <div
@@ -161,7 +145,6 @@
 <script>
 export default {
   name: 'PrivacyPolicy',
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async asyncData({ $content, app, params }) {
     const page = await $content(`privacy-policy/${params.appName}`).fetch()
 

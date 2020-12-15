@@ -83,7 +83,6 @@ export default {
     }
   },
   watch: {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     name(newValue, oldValue) {
       this.icon() // if 'name' change, update component
     },

@@ -105,7 +105,7 @@ export default {
           link: 'https://www.mysql.com',
         },
         {
-          label: 'NGINXX',
+          label: 'NGINX',
           logo: 'techno-nginx',
           link: 'https://www.nginx.com',
         },

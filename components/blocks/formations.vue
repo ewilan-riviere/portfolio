@@ -30,7 +30,7 @@
           <div
             class="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-indigo-500 bg-indigo-100 rounded-full"
           >
-            <div class="formation-logo" v-html="formation.logo.image"></div>
+            <div class="formation-logo" v-html="formation.logo.svg"></div>
           </div>
           <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
             <div class="flex">

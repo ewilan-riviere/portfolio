@@ -1,91 +1,135 @@
 <template>
-  <section class="relative text-gray-700 body-font">
-    <div class="container flex flex-wrap px-5 py-24 mx-auto sm:flex-no-wrap">
+  <!--
+  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
+  Read the documentation to get started: https://tailwindui.com/documentation
+-->
+  <div class="relative bg-white">
+    <div class="absolute inset-0">
+      <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
       <div
-        class="relative flex items-end justify-start p-10 overflow-hidden bg-gray-300 rounded-lg lg:w-2/3 md:w-1/2 sm:mr-10"
+        class="px-4 py-16 bg-gray-50 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12"
       >
-        <!-- eslint-disable prettier/prettier -->
-        <iframe
-          class="absolute inset-0"
-          style="filter: grayscale(1) contrast(1.2) opacity(0.4)"
-          title="map"
-          marginheight="0"
-          marginwidth="0"
-          scrolling="no"
-          src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-          width="100%"
-          height="100%"
-          frameborder="0"
-        />
-        <div class="relative flex flex-wrap py-6 bg-white">
-          <div class="px-6 lg:w-1/2">
-            <h2
-              class="text-sm font-medium tracking-widest text-gray-900 title-font"
-            >
-              ADDRESS
-            </h2>
-            <p class="leading-relaxed">
-              Photo booth tattooed prism, portland taiyaki hoodie neutra
-              typewriter
-            </p>
-          </div>
-          <div class="px-6 mt-4 lg:w-1/2 lg:mt-0">
-            <h2
-              class="text-sm font-medium tracking-widest text-gray-900 title-font"
-            >
-              EMAIL
-            </h2>
-            <a class="leading-relaxed text-indigo-500">example@email.com</a>
-            <h2
-              class="mt-4 text-sm font-medium tracking-widest text-gray-900 title-font"
-            >
-              PHONE
-            </h2>
-            <p class="leading-relaxed">123-456-7890</p>
-          </div>
+        <div class="max-w-lg mx-auto">
+          <h2
+            class="text-2xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-3xl sm:leading-9"
+          >
+            Get in touch
+          </h2>
+          <p class="mt-3 text-lg leading-6 text-gray-500">
+            Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat
+            massa dictumst amet. Sapien tortor lacus arcu.
+          </p>
+          <dl class="mt-8 text-base leading-6 text-gray-500">
+            <div>
+              <dt class="sr-only">Postal address</dt>
+              <dd>
+                <p>742 Evergreen Terrace</p>
+                <p>Springfield, OR 12345</p>
+              </dd>
+            </div>
+            <div class="mt-6">
+              <dt class="sr-only">Phone number</dt>
+              <dd class="flex">
+                <icon
+                  name="phone-stroke"
+                  stroke
+                  class="flex-shrink-0 text-gray-400"
+                  :size="25"
+                />
+                <span class="ml-3"> +1 (555) 123-4567 </span>
+              </dd>
+            </div>
+            <div class="mt-3">
+              <dt class="sr-only">Email</dt>
+              <dd class="flex">
+                <icon
+                  name="mail-stroke"
+                  stroke
+                  class="flex-shrink-0 text-gray-400"
+                  :size="25"
+                />
+                <span class="ml-3"> support@example.com </span>
+              </dd>
+            </div>
+          </dl>
+          <p class="mt-6 text-base leading-6 text-gray-500">
+            Looking for careers?
+            <a href="#" class="font-medium text-gray-700 underline"
+              >View all job openings</a
+            >.
+          </p>
         </div>
       </div>
       <div
-        class="flex flex-col w-full mt-8 bg-white lg:w-1/3 md:w-1/2 md:ml-auto md:py-8 md:mt-0"
+        class="px-4 py-16 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12"
       >
-        <h2 class="mb-1 text-lg font-medium text-gray-900 title-font">
-          Feedback
-        </h2>
-        <p class="mb-5 leading-relaxed text-gray-600">
-          Post-ironic portland shabby chic echo park, banjo fashion axe
-        </p>
-        <input
-          class="px-4 py-2 mb-4 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-indigo-500"
-          placeholder="Name"
-          type="text"
-        />
-        <input
-          class="px-4 py-2 mb-4 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-indigo-500"
-          placeholder="Email"
-          type="email"
-        />
-        <textarea
-          class="h-32 px-4 py-2 mb-4 text-base bg-white border border-gray-400 rounded resize-none focus:outline-none focus:border-indigo-500"
-          placeholder="Message"
-        />
-        <button
-          class="px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600"
-        >
-          Button
-        </button>
-        <p class="mt-3 text-xs text-gray-500">
-          Chicharrones blog helvetica normcore iceland tousled brook viral
-          artisan.
-        </p>
+        <div class="max-w-lg mx-auto lg:max-w-none">
+          <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
+            <div>
+              <label for="full_name" class="sr-only">Full name</label>
+              <div class="relative rounded-md shadow-sm">
+                <input
+                  id="full_name"
+                  class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input"
+                  placeholder="Full name"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="email" class="sr-only">Email</label>
+              <div class="relative rounded-md shadow-sm">
+                <input
+                  id="email"
+                  type="email"
+                  class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="phone" class="sr-only">Phone</label>
+              <div class="relative rounded-md shadow-sm">
+                <input
+                  id="phone"
+                  class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input"
+                  placeholder="Phone"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="message" class="sr-only">Message</label>
+              <div class="relative rounded-md shadow-sm">
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+            </div>
+            <div class="">
+              <span class="inline-flex rounded-md shadow-sm">
+                <button
+                  type="submit"
+                  class="inline-flex justify-center px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700"
+                >
+                  Submit
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
-<script>
-export default {
-  name: 'Contact',
-}
-</script>
+<script lang="ts">
+import Vue from 'vue'
 
-<style lang="scss" scoped></style>
+export default Vue.extend({
+  name: 'Contact',
+})
+</script>

@@ -17,18 +17,9 @@
 </template>
 
 <script>
-import GithubRibbon from '~/components/global/GithubRibbon.vue'
-import AppFooter from '~/components/global/AppFooter.vue'
-import AppHeader from '~/components/blocks/app-header.vue'
-import ComingSoon from '~/components/blocks/coming-soon.vue'
-
+import comingSoon from '~/components/blocks/coming-soon.vue'
 export default {
-  components: {
-    AppFooter,
-    GithubRibbon,
-    AppHeader,
-    ComingSoon,
-  },
+  components: { comingSoon },
   data() {
     return {
       dev: true,
