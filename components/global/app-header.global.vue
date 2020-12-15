@@ -1,25 +1,5 @@
 <template>
   <div>
-    <!-- <div class="relative">
-      <div class="text-on-img-tailwind">
-        <div class="relative w-full">
-          <div class="source" style="z-index: -1">
-            <img
-              src="/images/background.jpg"
-              class="object-cover object-center w-full"
-              style="height: 40rem"
-            />
-            <div
-              class="absolute z-10 w-full text-center text-white center-it-header"
-            >
-              <span class="text-xl font-semibold">Portfolio</span>
-              <br />
-              <span class="text-5xl font-morpheus">Ewilan Rivière</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="relative">
       <img
         src="/images/background.jpg"
@@ -30,16 +10,24 @@
       <!-- <div class="absolute bottom-0 w-full h-48 gradient"></div> -->
       <div class="absolute z-10 w-full text-center text-black center-it">
         <div class="text-2xl font-pelagiad">Portfolio</div>
-        <div class="mb-2 text-5xl font-morpheus">Ewilan Rivière</div>
+        <div class="mb-4 text-5xl font-morpheus">Ewilan Rivière</div>
         <div class="text-2xl font-pelagiad">
           Développeuse web & mobile chez
+          <a
+            href="https://www.useweb.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border-black-after link-border fromLeft"
+          >
+            Useweb</a
+          >,
           <a
             href="https://goo.gl/maps/FZDAdEWE3LasCpxi6"
             target="_blank"
             rel="noopener noreferrer"
             class="border-black-after link-border fromLeft"
           >
-            Useweb, France</a
+            France</a
           >
         </div>
       </div>
