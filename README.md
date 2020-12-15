@@ -1,19 +1,56 @@
 # **Portfolio · Front**
 
-[![nuxtjs](https://img.shields.io/static/v1?label=NuxtJS&message=v2.14&color=00C58E&style=flat-square&logo=nuxt.js&logoColor=ffffff)](https://vuejs.org/)
-[![tailwindcss](https://img.shields.io/static/v1?label=Tailwind%20CSS&message=v1.9&color=38B2AC&style=flat-square&logo=tailwind-css&logoColor=ffffff)](https://tailwindcss.com/)
+[![nuxtjs](https://img.shields.io/static/v1?label=NuxtJS&message=v2.14&color=00C58E&style=flat-square&logo=nuxt.js&logoColor=ffffff)](https://nuxtjs.org/)
+[![tailwindcss](https://img.shields.io/static/v1?label=Tailwind%20CSS&message=v2.0&color=38B2AC&style=flat-square&logo=tailwind-css&logoColor=ffffff)](https://tailwindcss.com/)
 
-[![NodeJS](https://img.shields.io/static/v1?label=NodeJS&message=v12.16&color=339933&style=flat-square&logo=node.js&logoColor=ffffff)](https://nodejs.org/en)
-[![Yarn](https://img.shields.io/static/v1?label=Yarn&message=v1.22&color=2C8EBB&style=flat-square&logo=yarn&logoColor=ffffff)](https://classic.yarnpkg.com/lang/en/)
+[![NodeJS](https://img.shields.io/static/v1?label=NodeJS&message=v14.15&color=339933&style=flat-square&logo=node.js&logoColor=ffffff)](https://nodejs.org/en)
+[![Yarn](https://img.shields.io/static/v1?label=Yarn&message=v1.2&color=2C8EBB&style=flat-square&logo=yarn&logoColor=ffffff)](https://classic.yarnpkg.com/lang/en/)
 
-- 🌐 [**ewilan-riviere.com**](https://ewilan-riviere.com)  
+- 🌐 [**ewilan-riviere.com**](https://ewilan-riviere.com) : production
+- [**Portfolio · Back**](https://github.com/ewilan-riviere/portfolio-back) : back-end repository (Laravel framework)
+
+## **I. Setup**
+
+Create `.env`, you can change API used into this file
+
+```bash
+cp .env.example .env
+```
+
+Install Node.js dependencies
+
+``` bash
+yarn
+```
+
+Serve with hot reload at [localhost:3000](http://localhost:3000)
+
+```bash
+yarn dev
+```
+
+### *Production*
+
+Build for production
+
+```bash
+yarn build
+```
+
+Launch server with [pm2](https://pm2.keymetrics.io/)
+
+```bash
+yarn start
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 ## Todo
 
 - [ ] lateral menu social
 - [ ] improve readme with repos links
 - [ ] dark mode
-- [ ] fresh project nuxtjs without ts
+- [x] fresh project nuxtjs without ts
 
 Links:
 
@@ -34,44 +71,3 @@ Links:
   - <https://codepen.io/peterramsing/pen/jAxVBB>
   - <https://codepen.io/Chester/pen/KyJpoK>
   - <https://thinkshout.com/blog/2017/06/fade-to-black-responsive-css-gradients/>
-
-## **I. Setup**
-
-Create `.env`
-
-```bash
-cp .env.example .env
-```
-
-Use online API in `.env`
-
-```yml
-#...
-API_URL=https://ewilan-riviere.com/api/
-```
-
-Install Node.js dependencies
-
-``` bash
-yarn
-```
-
-Serve with hot reload at [localhost:3000](http://localhost:3000)
-
-```bash
-yarn dev
-```
-
-### *Production*
-
-Build for production and launch server
-
-```bash
-yarn build
-```
-
-```bash
-yarn start
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
