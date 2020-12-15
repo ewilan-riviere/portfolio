@@ -71,7 +71,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .formation-logo {
   @apply w-3/4 h-full;
 }

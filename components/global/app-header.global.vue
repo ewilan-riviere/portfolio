@@ -111,7 +111,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .text-on-img-tailwind .source::after {
   @apply absolute top-0 left-0 right-0 bottom-0 w-full max-w-full bg-black bg-opacity-40;
   content: '';

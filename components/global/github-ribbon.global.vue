@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .gh-ribbon {
   width: 600px;
   text-align: center;

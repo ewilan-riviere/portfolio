@@ -191,16 +191,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .swiper-container {
   @apply pb-10 pt-8 !important;
 }
+
 .swiper-pagination {
   @apply bottom-2.5;
 }
+
 .swiper-pagination-bullet {
   @apply bg-black bg-opacity-50 !important;
 }
+
 .swiper-pagination-bullet-active {
   @apply bg-black bg-opacity-25 !important;
 }

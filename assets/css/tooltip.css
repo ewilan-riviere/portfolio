@@ -5,8 +5,10 @@
   & .tooltip-inner {
     @apply px-3 py-1 font-semibold text-gray-700 bg-gray-300 bg-opacity-75 rounded-md shadow-md;
   }
+
   & .tooltip-arrow {
     @apply border-gray-300 shadow-md;
+
     width: 0;
     height: 0;
     border-style: solid;
@@ -14,6 +16,7 @@
     margin: 5px;
     z-index: 1;
   }
+
   & [x-placement^='top'] {
     margin-bottom: 5px;
   }

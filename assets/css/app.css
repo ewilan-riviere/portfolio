@@ -6,9 +6,11 @@
     -ms-hyphens: auto !important;
     hyphens: auto !important;
   }
+
   .w-max-content {
     width: max-content;
   }
+
   .center-it {
     top: 50%;
     left: 50%;
@@ -20,21 +22,28 @@
 .fade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
 .container {
   @apply px-5;
 }
+
 .badges-section img {
   @apply inline my-1 !important;
 }
+
 .badges-section a {
   @apply border-transparent !important;
 }
+
 .badges-section a:hover {
   @apply bg-transparent border-transparent !important;
 }
+
 body {
   @apply overflow-x-hidden;
 }
@@ -47,30 +56,37 @@ body {
   font-family: 'Roboto-Medium';
   src: url('../fonts/roboto/Roboto-Medium.ttf');
 }
+
 @font-face {
   font-family: 'PTSans-Regular';
   src: url('../fonts/pt-sans/PTSans-Regular.ttf');
 }
+
 @font-face {
   font-family: 'Quicksand';
   src: url('../fonts/quicksand/Quicksand-VariableFont_wght.ttf');
 }
+
 @font-face {
   font-family: 'Morpheus';
   src: url('../fonts/morpheus/morpheus-webfont.woff');
 }
+
 @font-face {
   font-family: 'Booter';
   src: url('../fonts/booter/booter.ttf');
 }
+
 @font-face {
   font-family: 'Caslon Antique';
   src: url('../fonts/caslon-antique/caslon-antique.ttf');
 }
+
 @font-face {
   font-family: 'Immortal';
   src: url('../fonts/immortal/immortal.ttf');
 }
+
 @font-face {
   font-family: 'Pelagiad';
   src: url('../fonts/pelagiad/Pelagiad.ttf');
