@@ -1,68 +1,158 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">portfolio-front-new</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <!-- <hero /> -->
+    <!-- <swiper /> -->
+    <div class="">
+      <div class="overflow-hidden bg-white">
+        <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div class="mx-auto text-base max-w-prose lg:max-w-none">
+            <h2
+              class="text-base font-semibold tracking-wide text-indigo-600 uppercase"
+            >
+              {{ homeMarkdown.subtitle }}
+            </h2>
+            <h3
+              class="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl"
+            >
+              {{ homeMarkdown.title }}
+            </h3>
+          </div>
+          <div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div class="relative lg:row-start-1 lg:col-start-2">
+              <svg
+                class="absolute top-0 right-0 hidden -mt-20 -mr-20 lg:block"
+                width="404"
+                height="384"
+                fill="none"
+                viewBox="0 0 404 384"
+                aria-hidden="true"
+              >
+                <defs>
+                  <pattern
+                    id="de316486-4a29-4312-bdfc-fbce2132a2c1"
+                    x="0"
+                    y="0"
+                    width="20"
+                    height="20"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <rect
+                      x="0"
+                      y="0"
+                      width="4"
+                      height="4"
+                      class="text-gray-200"
+                      fill="currentColor"
+                    />
+                  </pattern>
+                </defs>
+                <rect
+                  width="404"
+                  height="384"
+                  fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)"
+                />
+              </svg>
+              <div class="relative mx-auto text-base max-w-prose lg:max-w-none">
+                <figure>
+                  <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
+                    <img
+                      class="object-cover object-center mx-auto max-h-96"
+                      src="/images/laptop-woman.svg"
+                      alt="Laptop woman"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+            <div class="mt-8 lg:mt-0">
+              <div
+                class="mx-auto mt-5 prose-lg text-gray-500 prose-indigo lg:max-w-none lg:row-start-1 lg:col-start-1 word-wraping"
+              >
+                <nuxt-content :document="homeMarkdown" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <cloud-logos />
+    <projects-list :projects="projects" />
+    <formations :formations="formations" />
+    <!-- <reassurance /> -->
+    <contact />
   </div>
 </template>
 
 <script>
-export default {}
+import qs from 'qs'
+import ListProjects from '~/components/global/list-projects.vue'
+import Reassurance from '~/components/global/reassurance.vue'
+import Formations from '~/components/blocks/formations.vue'
+import Swiper from '~/components/blocks/swiper.vue'
+
+export default {
+  components: { ListProjects, Reassurance, Formations, Swiper },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  async asyncData({ app, query, error, $content }) {
+    try {
+      const [
+        formations,
+        homeMarkdown,
+        // skills,
+        projects,
+        // passionsApi,
+        // textsApi,
+        // socialsApi
+      ] = await Promise.all([
+        app.$axios.$get('formations'),
+        $content('home').fetch(),
+        // app.$axios.$get(
+        //   `skills?${qs.stringify({
+        //     categories:
+        //       'framework-librairies,langages-de-developpement,technologies-logiciels',
+        //     limit: '9',
+        //     shuffle: true,
+        //     favorite: true,
+        //   })}`
+        // ),
+        app.$axios.$get(
+          `projects?${qs.stringify({
+            // limit: '6',
+          })}`
+        ),
+        // app.$axios.$get('passions'),
+        // app.$axios.$get('texts'),
+        // app.$axios.$get('socials')
+      ])
+
+      return {
+        formations: formations.data,
+        homeMarkdown,
+        // skills: skills.data,
+        projects: projects.data,
+        // passions: passionsApi.data,
+        // texts: textsApi.data,
+        // socials: socialsApi.data
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error)
+
+      return {
+        formations: [],
+        homeMarkdown: '',
+        skills: [],
+        projects: [],
+        passions: [],
+        texts: [],
+        socials: [],
+      }
+    }
+  },
+  mounted() {
+    // if (typeof this.$redrawVueMasonry === 'function') {
+    //   this.$redrawVueMasonry()
+    // }
+  },
+}
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

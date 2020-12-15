@@ -1,7 +1,9 @@
+require('dotenv').config()
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'portfolio-front-new',
+    title: 'Ewilan Rivière · Portfolio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -11,13 +13,25 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['~/assets/css/app'],
+
+  loading: {
+    color: '#800080',
+    height: '5px',
+  },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/icons-loader', ssr: false },
+    { src: '~/plugins/vue-tailwind-screens', mode: 'client' },
+    { src: '~/plugins/v-tooltip', ssr: false },
+    { src: '~/plugins/vue-scrollto' },
+    { src: '~/plugins/swiper' },
+    { src: '~/plugins/vue-masonry', ssr: false },
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  components: false,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -25,7 +39,21 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://github.com/nuxt-community/global-components
+    '@nuxtjs/global-components',
+    // https://github.com/nuxt-community/dotenv-module#readme
+    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/router-module
+    ['@nuxtjs/router', { keepDefaultRouter: true }],
   ],
+
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+  },
+
+  dotenv: {},
+
+  globalComponents: {},
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -35,10 +63,14 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    baseURL: process.env.API_URL,
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},

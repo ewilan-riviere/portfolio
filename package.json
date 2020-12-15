@@ -1,7 +1,19 @@
 {
-  "name": "portfolio-front-new",
+  "name": "portfolio-front",
+  "description": "Front web application of Ewilan Rivière Portfolio",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Ewilan Rivière",
+    "email": "ewilan.Riviere@gmail.com",
+    "url": "https://ewilan-riviere.com"
+  },
+  "homepage": "https://github.com/ewilan-riviere/portfolio-front",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ewilan-riviere/portfolio-front"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -12,15 +24,29 @@
     "test": "jest"
   },
   "dependencies": {
+    "@headlessui/vue": "^0.2.0",
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.2",
-    "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "@nuxtjs/router": "^1.5.0",
+    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.2.0",
+    "@tailwindcss/ui": "^0.7.2",
+    "qs": "^6.9.4",
+    "tailwindcss": "^1.9.6",
+    "v-tooltip": "^2.0.3",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-masonry": "^0.12.0",
+    "vue-scrollto": "^2.20.0",
+    "vue-tailwind-screens-helper": "^0.1.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/global-components": "^0.6.1",
+    "@nuxtjs/svg": "^0.1.12",
     "@nuxtjs/tailwindcss": "^3.1.0",
     "@vue/test-utils": "^1.1.0",
     "babel-core": "7.0.0-bridge.0",
@@ -32,6 +58,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.5.0",
     "prettier": "^2.1.2",
+    "swiper": "^6.4.1",
     "vue-jest": "^3.0.4"
   }
 }

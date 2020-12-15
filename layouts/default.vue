@@ -1,55 +1,46 @@
 <template>
   <div>
-    <Nuxt />
+    <github-ribbon />
+    <div v-if="$store.state.inDev">
+      <coming-soon @toggle-dev="toggleDev" />
+    </div>
+    <div v-else>
+      <app-header />
+      <Nuxt class="min-h-screen" />
+    </div>
+    <back-to-top />
+    <client-only>
+      <tailwind-helper />
+    </client-only>
+    <app-footer />
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+import GithubRibbon from '~/components/global/GithubRibbon.vue'
+import AppFooter from '~/components/global/AppFooter.vue'
+import AppHeader from '~/components/blocks/app-header.vue'
+import ComingSoon from '~/components/blocks/coming-soon.vue'
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+export default {
+  components: {
+    AppFooter,
+    GithubRibbon,
+    AppHeader,
+    ComingSoon,
+  },
+  data() {
+    return {
+      dev: true,
+    }
+  },
+  methods: {
+    toggleDev() {
+      console.log('toggleInDev')
+      this.$store.commit('toggleInDev')
+    },
+  },
 }
+</script>
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>
+AppFooter
