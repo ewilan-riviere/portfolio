@@ -5,7 +5,6 @@
       <coming-soon @toggle-dev="toggleDev" />
     </div>
     <div v-else>
-      <app-header />
       <Nuxt class="min-h-screen" />
     </div>
     <back-to-top />

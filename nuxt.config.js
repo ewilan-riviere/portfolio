@@ -27,7 +27,7 @@ export default {
     { src: '~/plugins/v-tooltip', ssr: false },
     { src: '~/plugins/vue-scrollto' },
     { src: '~/plugins/swiper' },
-    { src: '~/plugins/vue-masonry', ssr: false },
+    { src: '~/plugins/i18n' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -65,6 +65,8 @@ export default {
     '@nuxt/content',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
+    // https://i18n.nuxtjs.org/
+    'nuxt-i18n',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -74,6 +76,15 @@ export default {
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
+
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'en',
+    messages: {
+      en: '~/plugins/locales/en',
+      fr: '~/plugins/locales/fr',
+    },
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},

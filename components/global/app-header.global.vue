@@ -35,33 +35,55 @@
     <!-- <div class="absolute text-6xl text-white center-it-header font-morpheus">
       Portfolio
     </div> -->
-    <div
+    <section
       :class="displayIfScrolled ? 'bg-black bg-opacity-65 h-16' : 'h-20'"
       class="fixed top-0 z-40 w-full text-white transition-all duration-300"
     >
-      <div class="absolute items-center px-5 py-3 ml-20">
-        <icon
-          name="logo"
-          :size="displayIfScrolled ? 40 : 56"
-          svg-inject="transition-all duration-300"
-        />
-      </div>
       <div
-        class="flex items-center h-full mx-auto font-sans text-lg font-semibold w-max-content"
+        :class="displayIfScrolled ? 'h-16' : 'h-20'"
+        class="container relative w-11/12 mx-auto transition-all duration-300 border-b border-white border-opacity-50"
       >
-        <a
-          v-for="nav in navigation"
-          :key="nav.id"
-          href=""
-          class="mx-5 transition-colors duration-300 hover:text-gray-200 fromLeft link-border"
+        <div
+          class="absolute items-center px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2 hover:text-gray-300"
         >
-          {{ nav.label }}
-        </a>
+          <nuxt-link to="/">
+            <icon
+              name="logo"
+              :size="displayIfScrolled ? 40 : 56"
+              svg-inject="transition-all duration-300"
+            />
+          </nuxt-link>
+        </div>
+        <div
+          class="flex items-center h-full mx-auto font-sans text-lg font-semibold w-max-content"
+        >
+          <nuxt-link
+            v-for="nav in navigation"
+            :key="nav.id"
+            :to="{ name: nav.route }"
+            class="mx-5 transition-colors duration-300 hover:text-gray-200 fromLeft link-border"
+          >
+            {{ nav.label }}
+          </nuxt-link>
+        </div>
+        <div
+          class="absolute right-0 items-center px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2"
+        >
+          <a
+            href="https://github.com/ewilan-riviere/portfolio-front"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gray-900"
+          >
+            <icon
+              name="github"
+              :size="displayIfScrolled ? 32 : 36"
+              class="transition-all duration-300"
+            />
+          </a>
+        </div>
       </div>
-      <div
-        class="w-11/12 mx-auto border-b border-white border-opacity-50"
-      ></div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -74,15 +96,15 @@ export default {
       navigation: [
         {
           label: 'Technologies',
-          route: '',
+          route: 'home',
         },
         {
-          label: 'Réalisations',
-          route: '',
+          label: 'Projets',
+          route: 'projects',
         },
         {
           label: 'À propos',
-          route: '',
+          route: 'home',
         },
       ],
     }
@@ -110,42 +132,3 @@ export default {
   },
 }
 </script>
-
-<style lang="postcss" scoped>
-.text-on-img-tailwind .source::after {
-  @apply absolute top-0 left-0 right-0 bottom-0 w-full max-w-full bg-black bg-opacity-40;
-  content: '';
-}
-.border-black-after:after {
-  @apply border-black !important;
-}
-.link-border {
-  @apply inline-block;
-}
-.link-border:after {
-  @apply border-b-2 block transform;
-  content: '';
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-}
-.link-border:hover:after {
-  transform: scaleX(1);
-}
-.link-border.fromRight:after {
-  transform-origin: 100% 50%;
-}
-.link-border.fromLeft:after {
-  transform-origin: 0% 50%;
-}
-.gradient {
-  /* background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(255, 255, 255, 0.3) 70%,
-    rgba(255, 255, 255, 0.2) 80%,
-    rgba(255, 255, 255, 0.1) 90%,
-    rgba(255, 255, 255, 0) 100%
-  ); */
-  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
-}
-</style>

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- <hero /> -->
-    <!-- <swiper /> -->
+    <app-header />
     <div class="">
       <div class="overflow-hidden bg-white">
         <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -76,7 +75,7 @@
       </div>
     </div>
     <cloud-logos />
-    <projects-list :projects="projects" />
+    <projects-list :projects="projects" limited />
     <formations :formations="formations" />
     <reassurance />
     <contact />
@@ -117,7 +116,7 @@ export default {
         // ),
         app.$axios.$get(
           `projects?${qs.stringify({
-            // limit: '6',
+            limit: '8',
           })}`
         ),
         // app.$axios.$get('passions'),

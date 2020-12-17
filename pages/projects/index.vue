@@ -1,0 +1,31 @@
+<template>
+  <div>
+    <list-projects :projects="projects" />
+  </div>
+</template>
+
+<script>
+import listProjects from '~/components/blocks/list-projects.vue'
+export default {
+  name: 'Projects',
+  components: { listProjects },
+  async asyncData({ app, query, error, $content }) {
+    try {
+      const [projects] = await Promise.all([app.$axios.$get('projects')])
+
+      return {
+        projects: projects.data,
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error)
+
+      return {
+        projects: [],
+      }
+    }
+  },
+}
+</script>
+
+<style lang="postcss" scoped></style>

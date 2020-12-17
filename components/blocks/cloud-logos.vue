@@ -9,30 +9,33 @@
         <h2 class="text-3xl font-bold leading-9 text-white">
           Des technologies solides et connues
         </h2>
-        <div
-          v-swiper:mySwiper="swiperOption"
-          :auto-update="true"
-          :auto-destroy="true"
-        >
+        <section v-if="showSwiper">
           <div
-            class="flex items-center flex-grow flex-shrink-0 mt-4 ml-8 swiper-wrapper lg:flex-grow-0 lg:ml-4"
+            v-swiper:mySwiper="swiperOption"
+            :auto-update="true"
+            :auto-destroy="true"
           >
-            <!-- <div v-for="banner in banners" :key="banner" class="swiper-slide">
-              <img :src="`/images${banner}`" />
-            </div> -->
-            <a
-              v-for="technology in technologiesRandom()"
-              :key="technology.id"
-              :href="technology.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="object-contain text-gray-300 text-opacity-50 swiper-slide"
+            <div
+              class="flex items-center flex-grow flex-shrink-0 mt-4 ml-8 swiper-wrapper lg:flex-grow-0 lg:ml-4"
             >
-              <icon :name="`${technology.logo}`" :size="160" ratio
-            /></a>
+              <div
+                v-for="technology in randomTechnologies"
+                :key="technology.id"
+                class="swiper-slide"
+              >
+                <a
+                  :href="technology.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="object-contain text-gray-300 text-opacity-50"
+                >
+                  <icon :name="`${technology.logo}`" :size="160" ratio />
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
+        </section>
       </div>
     </div>
   </div>
@@ -119,6 +122,11 @@ export default {
           logo: 'techno-typescript',
           link: 'https://www.typescriptlang.org',
         },
+        {
+          label: 'Markdown',
+          logo: 'techno-markdown',
+          link: 'https://en.wikipedia.org/wiki/Markdown',
+        },
       ],
       swiperOption: {
         autoplay: {
@@ -162,7 +170,15 @@ export default {
           slideShadows: false,
         },
       },
+      randomTechnologies: [],
+      showSwiper: false,
     }
+  },
+  created() {
+    this.randomTechnologies = this.shuffle(this.technologies)
+  },
+  mounted() {
+    this.showSwiper = true
   },
   methods: {
     shuffle(array) {
@@ -184,9 +200,6 @@ export default {
 
       return array
     },
-    technologiesRandom() {
-      return this.shuffle(this.technologies)
-    },
   },
 }
 </script>
@@ -200,11 +213,11 @@ export default {
   @apply bottom-2.5;
 }
 
-.swiper-pagination-bullet {
+/deep/ .swiper-pagination-bullet {
   @apply bg-black bg-opacity-50 !important;
 }
 
-.swiper-pagination-bullet-active {
+/deep/ .swiper-pagination-bullet-active {
   @apply bg-black bg-opacity-25 !important;
 }
 </style>

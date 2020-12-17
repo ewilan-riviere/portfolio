@@ -91,3 +91,40 @@ body {
   font-family: 'Pelagiad';
   src: url('../fonts/pelagiad/Pelagiad.ttf');
 }
+
+.text-on-img-tailwind .source::after {
+  @apply absolute top-0 bottom-0 left-0 right-0 w-full max-w-full bg-black bg-opacity-40;
+  content: '';
+}
+.border-black-after:after {
+  @apply border-black !important;
+}
+.link-border {
+  @apply inline-block;
+}
+.link-border:after {
+  @apply block transform border-b-2;
+  content: '';
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.link-border:hover:after {
+  transform: scaleX(1);
+}
+.link-border.fromRight:after {
+  transform-origin: 100% 50%;
+}
+.link-border.fromLeft:after {
+  transform-origin: 0% 50%;
+}
+.gradient {
+  /* background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.3) 70%,
+    rgba(255, 255, 255, 0.2) 80%,
+    rgba(255, 255, 255, 0.1) 90%,
+    rgba(255, 255, 255, 0) 100%
+  ); */
+  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
+}

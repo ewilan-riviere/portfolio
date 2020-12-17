@@ -38,7 +38,7 @@ module.exports = {
         xl: '1500px',
         lg: '1100px',
         md: '900px',
-        sm: '400px',
+        sm: '500px',
       },
       colors: {
         'blue-star-dark': '#002856',

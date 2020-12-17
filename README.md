@@ -45,12 +45,17 @@ yarn start
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+## Technical log
+
+- Use [**Masonry**](https://masonry.desandro.com): JavaScript cascading grid layout library
+
 ## Todo
 
 - [ ] lateral menu social
 - [ ] improve readme with repos links
 - [ ] dark mode
 - [x] fresh project nuxtjs without ts
+- [ ] i18n
 
 Links:
 
