@@ -17,6 +17,8 @@ Create `.env`, you can change API used into this file
 cp .env.example .env
 ```
 
+Udpate `.env` variables for production, `BASE_URL` for portfolio app and `API_URL` for API
+
 Install Node.js dependencies
 
 ``` bash
@@ -38,6 +40,41 @@ yarn build
 ```
 
 Launch server with [pm2](https://pm2.keymetrics.io/)
+
+```js
+// ecosystem.config.js
+module.exports = {
+  apps : [
+    // ...
+    {
+      name: 'portfolio',
+      script: 'npm',
+      cwd: '/home/ewilan/www/portfolio-front',
+      args: 'start',
+      env: {
+        PORT: 3002
+      },
+    }
+  ]
+};
+```
+
+```nginx
+# /etc/nginx/sites-available/ewilan-riviere.com
+server {
+  listen 80;
+  server_name ewilan-riviere.com www.ewilan-riviere.com;
+
+  location / {
+    include proxy_params;
+    proxy_pass http://localhost:3002;
+  }
+}
+```
+
+**OR**
+
+With manual command
 
 ```bash
 yarn start
