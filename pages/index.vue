@@ -106,13 +106,13 @@ export default {
         app.$axios.$get('formations'),
         $content('home').fetch(),
         // app.$axios.$get(
-        //   `skills?${qs.stringify({
-        //     categories:
-        //       'framework-librairies,langages-de-developpement,technologies-logiciels',
-        //     limit: '9',
-        //     shuffle: true,
-        //     favorite: true,
-        //   })}`
+        // `skills?${qs.stringify({
+        //   categories:
+        //     'framework-librairies,langages-de-developpement,technologies-logiciels',
+        //   limit: '9',
+        //   shuffle: true,
+        //   favorite: true,
+        // })}`
         // ),
         app.$axios.$get(
           `projects?${qs.stringify({
