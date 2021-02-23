@@ -3,11 +3,104 @@ require('dotenv').config()
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Ewilan Rivière · Portfolio',
+    title: 'Home',
+    titleTemplate: '%s · Bookshelves',
+    htmlAttrs: {
+      lang: 'en-US',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "Ewilan Riviere's portfolio to present my projects and my background in development.",
+      },
+      {
+        hid: 'author',
+        name: 'author',
+        content: 'Ewilan Riviere',
+      },
+      // Open Graph
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Ewilan Riviere',
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://ewilan-riviere.com/',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Ewilan Riviere · Portfolio',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          "Ewilan Riviere's portfolio to present my projects and my background in development.",
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `${process.env.BASE_URL}/open-graph.png`,
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: `${process.env.BASE_URL}/open-graph.png`,
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'Ewilan Riviere · Portfolio',
+      },
+      // Twitter Card
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'twitter:domain',
+        property: 'twitter:domain',
+        content: 'ewilan-riviere.com',
+      },
+      {
+        hid: 'twitter:url',
+        property: 'twitter:title',
+        content: 'https://ewilan-riviere.com/',
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Ewilan Riviere · Portfolio',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content:
+          "Ewilan Riviere's portfolio to present my projects and my background in development.",
+      },
+      {
+        hid: 'twitter:image',
+        property: 'twitter:image',
+        content: `${process.env.BASE_URL}/open-graph.png`,
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'Ewilan Riviere · Portfolio',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },

@@ -9,6 +9,10 @@
 - 🌐 [**ewilan-riviere.com**](https://ewilan-riviere.com) : production
 - [**Portfolio · Back**](https://github.com/ewilan-riviere/portfolio-back) : back-end repository (Laravel framework)
 
+## TODO
+
+- [ ] add bit.dev link into footer
+
 ## **I. Setup**
 
 Create `.env`, you can change API used into this file

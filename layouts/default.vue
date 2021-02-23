@@ -1,5 +1,6 @@
 <template>
   <div>
+    <app-header />
     <github-ribbon />
     <div v-if="$store.state.inDev">
       <coming-soon @toggle-dev="toggleDev" />
@@ -17,8 +18,9 @@
 
 <script>
 import comingSoon from '~/components/blocks/coming-soon.vue'
+import AppHeader from '~/components/global/app-header.global.vue'
 export default {
-  components: { comingSoon },
+  components: { comingSoon, AppHeader },
   data() {
     return {
       dev: true,

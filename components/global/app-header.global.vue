@@ -2,7 +2,7 @@
   <div>
     <div class="relative">
       <img
-        src="/images/background.jpg"
+        src="/images/background.webp"
         alt="header"
         class="object-cover w-full gradient"
         style="height: 30rem"
@@ -57,14 +57,14 @@
         <div
           class="flex items-center h-full mx-auto font-sans text-lg font-semibold w-max-content"
         >
-          <nuxt-link
+          <!-- <nuxt-link
             v-for="nav in navigation"
             :key="nav.id"
             :to="{ name: nav.route }"
             class="mx-5 transition-colors duration-300 hover:text-gray-200 fromLeft link-border"
           >
             {{ nav.label }}
-          </nuxt-link>
+          </nuxt-link> -->
         </div>
         <div
           class="absolute right-0 items-center px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2"

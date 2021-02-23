@@ -1,6 +1,5 @@
 <template>
   <div>
-    <app-header />
     <div class="">
       <div class="overflow-hidden bg-white">
         <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -77,8 +76,8 @@
     <cloud-logos />
     <projects-list :projects="projects" limited />
     <formations :formations="formations" />
-    <reassurance />
-    <contact />
+    <!-- <reassurance /> -->
+    <!-- <contact /> -->
   </div>
 </template>
 
@@ -91,6 +90,7 @@ import Contact from '~/components/blocks/contact.vue'
 import Reassurance from '~/components/blocks/reassurance.vue'
 
 export default {
+  // eslint-disable-next-line vue/no-unused-components
   components: { Formations, ProjectsList, CloudLogos, Contact, Reassurance },
   async asyncData({ app, query, error, $content }) {
     try {
