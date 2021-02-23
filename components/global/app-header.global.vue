@@ -7,7 +7,6 @@
         class="object-cover w-full gradient"
         style="height: 30rem"
       />
-      <!-- <div class="absolute bottom-0 w-full h-48 gradient"></div> -->
       <div class="absolute z-10 w-full text-center text-black center-it">
         <div class="text-2xl font-pelagiad">Portfolio</div>
         <div class="mb-4 text-5xl font-morpheus">Ewilan Rivière</div>

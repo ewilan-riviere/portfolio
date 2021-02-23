@@ -66,8 +66,8 @@
               >
                 <div class="flex flex-1 w-0 group">
                   <a
-                    v-if="project.links.repository"
-                    :href="project.links.repository"
+                    v-if="project.links"
+                    :href="project.links.back_repository"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg"
@@ -93,8 +93,8 @@
                 </div>
                 <div class="flex flex-1 w-0 -ml-px group">
                   <a
-                    v-if="project.links.project"
-                    :href="project.links.project"
+                    v-if="project.links"
+                    :href="project.links.front_project"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg"
