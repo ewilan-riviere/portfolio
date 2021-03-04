@@ -1,14 +1,5 @@
 <template>
   <section class="text-gray-700 body-font">
-    <!-- <div class="py-16 text-white bg-indigo-800">
-      <div class="container w-full text-left">
-        <h1 class="mb-2 text-2xl font-medium sm:text-3xl title-font">
-          Mes formations
-        </h1>
-        <div class="w-20 h-1 mr-auto bg-indigo-500 rounded" />
-      </div>
-    </div> -->
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="bg-indigo-800">
       <div
         class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ 'debug-screens': devMode }">
     <app-header />
     <github-ribbon />
     <div v-if="$store.state.inDev">
@@ -9,9 +9,6 @@
       <Nuxt class="min-h-screen" />
     </div>
     <back-to-top />
-    <client-only>
-      <tailwind-helper />
-    </client-only>
     <app-footer />
   </div>
 </template>
@@ -23,7 +20,7 @@ export default {
   components: { comingSoon, AppHeader },
   data() {
     return {
-      dev: true,
+      devMode: process.env.NODE_ENV !== 'production',
     }
   },
   methods: {

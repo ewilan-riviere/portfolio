@@ -56,6 +56,9 @@
         <div
           class="flex items-center h-full mx-auto font-sans text-lg font-semibold w-max-content"
         >
+          <h1 class="text-3xl font-normal font-morpheus">
+            &ndash; Ewilan Rivière &ndash;
+          </h1>
           <!-- <nuxt-link
             v-for="nav in navigation"
             :key="nav.id"

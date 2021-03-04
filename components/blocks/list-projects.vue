@@ -15,113 +15,120 @@
           professionnels, voici une sélection de mes projets.
         </p>
       </div>
-      <div class="m-2 mt-5 viewer m-md-5">
-        <div class="grid-sizer"></div>
-        <div
-          v-for="(project, projectId) in projects"
-          :key="projectId"
-          :data-index="projectId"
-          :class="`box-${projectId}`"
-          class="item"
-        >
-          <section
-            class="relative flex flex-col col-span-1 text-center bg-white divide-y divide-gray-200 rounded-lg shadow"
+      <div class="m-2 mt-5 m-md-5">
+        <client-only>
+          <masonry
+            :cols="{ default: 4, 1200: 3, 900: 2, 600: 1 }"
+            :gutter="{ default: '30px', 700: '15px' }"
           >
-            <nuxt-link
-              :to="{ name: 'projects-slug', params: { slug: project.slug } }"
-              class="pb-20 transition-colors duration-300 hover:bg-gray-50 bg-opacity-70"
+            <div
+              v-for="(project, projectId) in projects"
+              :key="projectId"
+              :data-index="projectId"
             >
-              <div class="flex flex-col flex-1 px-8 pt-8">
-                <img
-                  class="flex-shrink-0 w-32 h-32 mx-auto rounded-full"
-                  :src="project.assets.image"
-                  :alt="project.title"
-                />
-                <div class="">
-                  <img
-                    v-if="project.assets.imageTitle"
-                    :src="project.assets.imageTitle"
-                    :alt="project.title"
-                  />
-                  <h2 v-else class="mt-6 text-sm font-medium text-gray-900">
-                    {{ project.title }}
-                  </h2>
-                </div>
-                <dl class="flex flex-col justify-between flex-grow mt-1">
-                  <dt class="sr-only">{{ project.title }}</dt>
-                  <p class="mt-5 text-left" v-html="project.extract"></p>
-                  <dt class="sr-only">Role</dt>
-                  <dd class="mt-3">
-                    <span
-                      class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full"
-                      >Admin</span
-                    >
-                  </dd>
-                </dl>
-              </div>
-            </nuxt-link>
-            <section class="absolute bottom-0 w-full">
-              <div
-                class="flex -mt-px border-t border-gray-200 divide-x divide-gray-200"
+              <section
+                class="relative flex flex-col col-span-1 my-5 text-center bg-white divide-y divide-gray-200 rounded-lg shadow hover:bg-gray-100"
               >
-                <div class="flex flex-1 w-0 group">
-                  <a
-                    v-if="project.links"
-                    :href="project.links.back_repository"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg"
-                  >
-                    <div class="flex items-center">
-                      <icon
-                        name="git"
-                        :size="25"
-                        class="transition-colors duration-300 group-hover:icon-git-hover"
+                <nuxt-link
+                  :to="{
+                    name: 'projects-slug',
+                    params: { slug: project.slug },
+                  }"
+                  class="pb-20 transition-colors duration-300 hover:bg-gray-50 bg-opacity-70"
+                >
+                  <div class="flex flex-col flex-1 px-8 pt-8">
+                    <img
+                      class="flex-shrink-0 w-32 h-32 mx-auto rounded-full"
+                      :src="project.assets.image"
+                      :alt="project.title"
+                    />
+                    <div class="">
+                      <img
+                        v-if="project.assets.imageTitle"
+                        :src="project.assets.imageTitle"
+                        :alt="project.title"
                       />
-                      <span
-                        class="ml-1 font-semibold transition-colors duration-300 group-hover:text-gray-500"
-                        >Dépôt Git</span
-                      >
+                      <h2 v-else class="mt-6 text-sm font-medium text-gray-900">
+                        {{ project.title }}
+                      </h2>
                     </div>
-                  </a>
-                  <span
-                    v-else
-                    class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm italic font-medium text-gray-400 border border-transparent rounded-br-lg"
+                    <dl class="flex flex-col justify-between flex-grow mt-1">
+                      <dt class="sr-only">{{ project.title }}</dt>
+                      <p class="mt-5 text-left" v-html="project.extract"></p>
+                      <dt class="sr-only">Role</dt>
+                      <dd class="mt-3">
+                        <span
+                          class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full"
+                          >Admin</span
+                        >
+                      </dd>
+                    </dl>
+                  </div>
+                </nuxt-link>
+                <section class="absolute bottom-0 w-full">
+                  <div
+                    class="flex -mt-px border-t border-gray-200 divide-x divide-gray-200"
                   >
-                    Indisponible
-                  </span>
-                </div>
-                <div class="flex flex-1 w-0 -ml-px group">
-                  <a
-                    v-if="project.links"
-                    :href="project.links.front_project"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg"
-                  >
-                    <div class="flex items-center">
-                      <icon
-                        name="sparkles"
-                        :size="25"
-                        class="transition-colors duration-300 group-hover:text-yellow-300"
-                      />
-                      <span
-                        class="ml-1 font-semibold transition-colors duration-300 group-hover:text-gray-500"
-                        >Découvrir</span
+                    <div class="flex flex-1 w-0 group">
+                      <a
+                        v-if="project.links"
+                        :href="project.links.back_repository"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg"
                       >
+                        <div class="flex items-center">
+                          <icon
+                            name="git"
+                            :size="25"
+                            class="transition-colors duration-300 group-hover:icon-git-hover"
+                          />
+                          <span
+                            class="ml-1 font-semibold transition-colors duration-300 group-hover:text-gray-500"
+                            >Dépôt Git</span
+                          >
+                        </div>
+                      </a>
+                      <span
+                        v-else
+                        class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm italic font-medium text-gray-400 border border-transparent rounded-br-lg"
+                      >
+                        Indisponible
+                      </span>
                     </div>
-                  </a>
-                  <span
-                    v-else
-                    class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm italic font-medium text-gray-400 border border-transparent rounded-br-lg"
-                  >
-                    Indisponible
-                  </span>
-                </div>
-              </div>
-            </section>
-          </section>
-        </div>
+                    <div class="flex flex-1 w-0 -ml-px group">
+                      <a
+                        v-if="project.links"
+                        :href="project.links.front_project"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg"
+                      >
+                        <div class="flex items-center">
+                          <icon
+                            name="sparkles"
+                            :size="25"
+                            class="transition-colors duration-300 group-hover:text-yellow-300"
+                          />
+                          <span
+                            class="ml-1 font-semibold transition-colors duration-300 group-hover:text-gray-500"
+                            >Découvrir</span
+                          >
+                        </div>
+                      </a>
+                      <span
+                        v-else
+                        class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm italic font-medium text-gray-400 border border-transparent rounded-br-lg"
+                      >
+                        Indisponible
+                      </span>
+                    </div>
+                  </div>
+                </section>
+              </section>
+            </div>
+          </masonry>
+        </client-only>
       </div>
       <div v-if="limited" class="flex justify-center mt-8">
         <nuxt-link
@@ -151,40 +158,6 @@ export default {
     limited: {
       type: Boolean,
       default: false,
-    },
-  },
-  data() {
-    return {
-      selector: '.viewer',
-      options: {
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        gutter: 0,
-        itemSelector: '.item',
-      },
-    }
-  },
-  watch: {
-    data() {
-      this.loaded()
-    },
-  },
-  mounted() {
-    this.loaded()
-  },
-  methods: {
-    loaded() {
-      if (process.browser) {
-        const Masonry = require('masonry-layout')
-        const ImagesLoaded = require('imagesloaded')
-
-        // all images are loadedImages
-        ImagesLoaded(this.selector, () => {
-          this.$emit('masonry-images-loaded') // activate mansonry grid
-          const masonry = new Masonry(this.selector, this.options)
-          this.$emit('masonry-loaded', masonry)
-        })
-      }
     },
   },
 }

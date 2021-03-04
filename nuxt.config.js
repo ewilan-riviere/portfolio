@@ -116,11 +116,12 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/icons-loader', ssr: false },
-    { src: '~/plugins/vue-tailwind-screens', mode: 'client' },
     { src: '~/plugins/v-tooltip', ssr: false },
     { src: '~/plugins/vue-scrollto' },
     { src: '~/plugins/swiper' },
     { src: '~/plugins/i18n' },
+    // https://github.com/paulcollett/vue-masonry-css
+    { src: '~/plugins/vue-masonry-css', ssr: false },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -138,6 +139,8 @@ export default {
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/router-module
     ['@nuxtjs/router', { keepDefaultRouter: true }],
+    // https://color-mode.nuxtjs.org/#setup
+    '@nuxtjs/color-mode',
   ],
 
   tailwindcss: {
@@ -147,6 +150,10 @@ export default {
   dotenv: {},
 
   globalComponents: {},
+
+  colorMode: {
+    classSuffix: '',
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [

@@ -1554,6 +1554,14 @@
     consola "^2.15.0"
     defu "^3.2.2"
 
+"@nuxtjs/color-mode@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/color-mode/-/color-mode-2.0.3.tgz#6ba5ab0a6364c966b48386867f2660bf0dcd7b5d"
+  integrity sha512-yfTkUbXcq42YW7qCv66kqAttnjr+sLpxY+HIJq7nlLadDQeEyjl+QMR8AHKS2KQMVfMwd7rbJyE+jU2PKjwDcQ==
+  dependencies:
+    defu "^3.2.2"
+    lodash.template "^4.5.0"
+
 "@nuxtjs/dotenv@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@nuxtjs/dotenv/-/dotenv-1.4.1.tgz#dd5abb98e22cc7ae27139d3aa606151034293128"
@@ -1689,15 +1697,25 @@
   dependencies:
     mini-svg-data-uri "^1.2.3"
 
+"@tailwindcss/line-clamp@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.2.0.tgz#7f30f26ed3835d64d1eb5a9b0d60cf5291dd2a3b"
+  integrity sha512-+jXSdRK3/9V/BCPCr+iNpMMhxWMMv62vn/AS2b3/ClmueGuhCijW3bUwO1IiHnE7uCaF74Sli8jUCv9djwvpLg==
+
 "@tailwindcss/typography@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.2.0.tgz#b597c83502e3c3c6641a8aaabda223cd494ab349"
   integrity sha512-aPgMH+CjQiScLZculoDNOQUrrK2ktkbl3D6uCLYp1jgYRlNDrMONu9nMu8LfwAeetYNpVNeIGx7WzHSu0kvECg==
 
-"@tailwindcss/typography@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.3.1.tgz#253ce580c8e06b6163d9a288edd24f25e1d0dfee"
-  integrity sha512-HyZ+3Eay8SGaPq7kcFoANZLr4EjeXQ19yjjb9fp6B0PHHpvZoe00jdsnpnooMEbx9J5rQ93nxPUG3MQmXVxGMQ==
+"@tailwindcss/typography@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.4.0.tgz#b80974ad6af93df7b06e1981cb4d79698b6ad5c7"
+  integrity sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==
+  dependencies:
+    lodash.castarray "^4.4.0"
+    lodash.isplainobject "^4.0.6"
+    lodash.merge "^4.6.2"
+    lodash.uniq "^4.5.0"
 
 "@tailwindcss/ui@^0.7.2":
   version "0.7.2"
@@ -4455,11 +4473,6 @@ des.js@^1.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
-desandro-matches-selector@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/desandro-matches-selector/-/desandro-matches-selector-2.0.2.tgz#717beed4dc13e7d8f3762f707a6d58a6774218e1"
-  integrity sha1-cXvu1NwT59jzdi9wem1YpndCGOE=
-
 destr@^1.0.0, destr@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/destr/-/destr-1.0.1.tgz#d13db7f9d9c9ca4fcf24e86343d601217136ddc3"
@@ -5538,13 +5551,6 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-fizzy-ui-utils@^2.0.0:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/fizzy-ui-utils/-/fizzy-ui-utils-2.0.7.tgz#7df45dcc4eb374a08b65d39bb9a4beedf7330505"
-  integrity sha512-CZXDVXQ1If3/r8s0T+v+qVeMshhfcuq0rqIFgJnrtd+Bu8GmDmqMjntjUePypVtjHXKJ6V4sw9zeyox34n9aCg==
-  dependencies:
-    desandro-matches-selector "^2.0.0"
-
 flat-cache@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-3.0.4.tgz#61b0338302b2fe9f957dcc32fc2a87f1c3048b11"
@@ -5724,11 +5730,6 @@ get-port-please@^1.0.0:
   integrity sha512-C9adQpQ9uyboxURlYAVcqvKdnrZ0uIad6lAZzIr51G5shhUFcZUwl8rxY0B0hB6OJytBNzPB1Uj/S1CpP9aFzQ==
   dependencies:
     fs-memo "^1.2.0"
-
-get-size@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/get-size/-/get-size-2.0.3.tgz#54a1d0256b20ea7ac646516756202769941ad2ef"
-  integrity sha512-lXNzT/h/dTjTxRbm9BXb+SGxxzkm97h/PCIKtlN/CBCxxmkkIVV21udumMS93MuVTDX583gqc94v3RjuHmI+2Q==
 
 get-stream@^4.0.0:
   version "4.1.0"
@@ -7698,10 +7699,20 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
+lodash.castarray@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.castarray/-/lodash.castarray-4.4.0.tgz#c02513515e309daddd4c24c60cfddcf5976d9115"
+  integrity sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=
+
 lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
 
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
@@ -7712,6 +7723,11 @@ lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+
+lodash.merge@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -7851,14 +7867,6 @@ markdown-table@^2.0.0:
   integrity sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==
   dependencies:
     repeat-string "^1.0.0"
-
-masonry-layout@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/masonry-layout/-/masonry-layout-4.2.2.tgz#d57b44af13e601bfcdc423f1dd8348b5524de348"
-  integrity sha512-iGtAlrpHNyxaR19CvKC3npnEcAwszXoyJiI8ARV2ePi7fmYhIud25MHK8Zx4P0LCC4d3TNO9+rFa1KoK1OEOaA==
-  dependencies:
-    get-size "^2.0.2"
-    outlayer "^2.1.0"
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -8759,15 +8767,6 @@ os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
-
-outlayer@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/outlayer/-/outlayer-2.1.1.tgz#29863b6de10ea5dadfffcadfa0d728907387e9a2"
-  integrity sha1-KYY7beEOpdrf/8rfoNcokHOH6aI=
-  dependencies:
-    ev-emitter "^1.0.0"
-    fizzy-ui-utils "^2.0.0"
-    get-size "^2.0.2"
 
 p-each-series@^2.1.0:
   version "2.2.0"
@@ -11516,6 +11515,11 @@ tailwind-config-viewer@^1.4.0:
     vue "^2.6.10"
     vue-draggable-resizable "^2.2.0"
 
+tailwindcss-debug-screens@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-debug-screens/-/tailwindcss-debug-screens-2.0.0.tgz#81f9ec4d1f8aaf53c448a644e5923322f96df992"
+  integrity sha512-L8hvCJ+3D7IlZ2DE5zEzAJCEvSI92bH8aoAlRfJ5oILzsHT/G5oqvIBBuvt8t/NnhkIxzRl8xDDf405WI709RA==
+
 tailwindcss@^1.9.6:
   version "1.9.6"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.9.6.tgz#0c5089911d24e1e98e592a31bfdb3d8f34ecf1a0"
@@ -12347,6 +12351,11 @@ vue-loader@^15.9.5:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-masonry-css@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-masonry-css/-/vue-masonry-css-1.0.3.tgz#a5e7bb248570eeedcd358637d3f1f4fc7f0c5f86"
+  integrity sha512-viecHQiHVLez7HlYUQsv1wJb2MT/RDSzkDp6m3In41vPrk6OsBmT2qRE8LZqYIA4daIwrnx/Xm8h4fjOpuE3hw==
 
 vue-meta@^2.4.0:
   version "2.4.0"

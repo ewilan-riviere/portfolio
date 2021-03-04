@@ -1,39 +1,25 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: {
-    // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js',
-    ],
-  },
+  darkMode: 'class',
+  purge: [
+    'components/**/*.vue',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.js',
+    'nuxt.config.js',
+  ],
   theme: {
+    container: {
+      center: true,
+    },
+    screens: {
+      sm: '360px',
+      md: '600px',
+      lg: '900px',
+      xl: '1300px',
+      '2xl': '1536px',
+      '3xl': '1920px',
+    },
     extend: {
-      fontFamily: {
-        'ptsans-regular': ['PTSans-Regular'],
-        'roboto-medium': ['Roboto-Medium'],
-        quicksand: ['Quicksand'],
-        morpheus: ['Morpheus'], // a-la-croisee-des-mondes
-        booter: ['Booter'], // l-autre
-        'caslon-antique': ['Caslon Antique'], // ewilan
-        immortal: ['Immortal'], // les-ames-croisees
-        pelagiad: ['Pelagiad'], // morrowind
-        mono: [
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          'Liberation Mono',
-          'Courier New',
-          'monospace',
-        ],
-      },
       screens: {
         xl: '1500px',
         lg: '1100px',
@@ -52,23 +38,45 @@ module.exports = {
         65: '0.65',
         95: '0.95',
       },
+      fontFamily: {
+        'ptsans-regular': ['PTSans-Regular'],
+        'roboto-medium': ['Roboto-Medium'],
+        quicksand: ['Quicksand'],
+        morpheus: ['Morpheus'], // a-la-croisee-des-mondes
+        booter: ['Booter'], // l-autre
+        'caslon-antique': ['Caslon Antique'], // ewilan
+        immortal: ['Immortal'], // les-ames-croisees
+        pelagiad: ['Pelagiad'], // morrowind
+        mono: [
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          'Liberation Mono',
+          'Courier New',
+          'monospace',
+        ],
+      },
     },
   },
   variants: {
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
-    animation: [
-      'responsive',
-      'motion-safe',
-      'motion-reduce',
-      'hover',
-      'group-hover',
-    ],
-    translate: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+    extend: {
+      display: ['dark'],
+      opacity: ['dark'],
+      textColor: ['responsive', 'hover', 'focus', 'group-hover', 'dark'],
+      scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+      boxShadow: ['dark'],
+      translate: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+      backgroundColor: ['hover', 'focus', 'group-hover', 'dark'],
+      backgroundOpacity: ['dark'],
+      borderColor: ['hover', 'focus', 'group-hover'],
+      borderRadius: ['dark'],
+    },
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('tailwindcss-debug-screens'),
   ],
 }

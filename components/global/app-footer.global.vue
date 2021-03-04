@@ -114,12 +114,17 @@ export default {
         },
         {
           label: 'GitLab',
-          link: 'https://gitlab.com/EwieFairy',
+          link: 'https://gitlab.com/ewilan-riviere',
           icon: 'gitlab',
         },
         {
+          label: 'Bit.dev',
+          link: 'https://bit.dev/ewilan-riviere',
+          icon: 'bit',
+        },
+        {
           label: 'Twitter',
-          link: 'https://twitter.com/ewieSwitch',
+          link: 'https://twitter.com/ewilanriviere',
           icon: 'twitter',
         },
         {
@@ -129,12 +134,12 @@ export default {
         },
         {
           label: 'Portfolio',
-          link: 'http://ewilan-riviere.com',
+          link: 'https://ewilan-riviere.com',
           icon: 'briefcase',
         },
         {
           label: 'E-mail',
-          link: 'mailto:ewilan.riviere@gmail.com',
+          link: 'mailto:contact@ewilan-riviere.com',
           icon: 'mail',
         },
       ],
