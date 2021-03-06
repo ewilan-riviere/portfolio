@@ -70,8 +70,8 @@
               </a>
             </div>
             <div class="mb-1 italic">
-              {{ getDate(formation.date.begin) }} -
-              {{ getDate(formation.date.end) }}
+              {{ $getDate(formation.date.begin) }} -
+              {{ $getDate(formation.date.end) }}
             </div>
             <p
               class="leading-relaxed word-wraping"
@@ -128,26 +128,6 @@ export default {
   },
 
   methods: {
-    capitalize(s) {
-      if (typeof s !== 'string') return ''
-      return s.charAt(0).toUpperCase() + s.slice(1)
-    },
-    getDate(date) {
-      date = new Date(date)
-
-      let userLang = 'en'
-      if (process.client) {
-        userLang = navigator.language || navigator.userLanguage
-      }
-
-      // vendredi 16 octobre 2020
-      let dateToStringLocale = date.toLocaleString(userLang, {
-        year: 'numeric',
-        month: 'long',
-      })
-      dateToStringLocale = this.capitalize(dateToStringLocale)
-      return dateToStringLocale
-    },
     textOverflow(string) {
       if (string !== null && string !== undefined) {
         return `${string.replace(/^(.{80}[^\s]*).*/, '$1')}...`

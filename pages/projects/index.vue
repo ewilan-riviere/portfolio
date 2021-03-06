@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mx-auto max-w-7xl">
     <list-projects :projects="projects" />
   </div>
 </template>

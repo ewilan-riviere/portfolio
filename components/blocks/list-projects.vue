@@ -27,7 +27,7 @@
               :data-index="projectId"
             >
               <section
-                class="relative flex flex-col col-span-1 my-5 text-center transition-colors duration-100 bg-white divide-y divide-gray-200 rounded-lg shadow hover:bg-gray-100"
+                class="relative flex flex-col col-span-1 my-5 text-center transition-colors duration-100 divide-y divide-gray-200 rounded-lg shadow bg-gray-50 hover:bg-gray-100"
               >
                 <nuxt-link
                   :to="{
@@ -63,11 +63,11 @@
                         class="mt-5 text-sm italic text-left word-wraping"
                         v-html="$limitLength(project.description, 150)"
                       ></p>
-                      <dt class="sr-only">Role</dt>
+                      <dt class="sr-only">Type</dt>
                       <dd class="mt-3">
                         <span
-                          class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full"
-                          >Admin</span
+                          class="px-2 py-1 text-xs font-medium bg-green-200 rounded-full"
+                          >{{ project.formation.title }}</span
                         >
                       </dd>
                     </dl>
@@ -79,8 +79,8 @@
                   >
                     <div class="flex flex-1 w-0 group">
                       <a
-                        v-if="project.links"
-                        :href="project.links.back_repository"
+                        v-if="project.front && project.front.repository"
+                        :href="project.front.repository"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg"
@@ -88,7 +88,7 @@
                         <div class="flex items-center">
                           <icon
                             name="git"
-                            :size="25"
+                            :size="20"
                             class="transition-colors duration-300 group-hover:icon-git-hover"
                           />
                           <span
@@ -106,8 +106,8 @@
                     </div>
                     <div class="flex flex-1 w-0 -ml-px group">
                       <a
-                        v-if="project.links"
-                        :href="project.links.front_project"
+                        v-if="project.front && project.front.project"
+                        :href="project.front.project"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm font-medium text-gray-700 border border-transparent rounded-br-lg"
@@ -115,7 +115,7 @@
                         <div class="flex items-center">
                           <icon
                             name="sparkles"
-                            :size="25"
+                            :size="20"
                             class="transition-colors duration-300 group-hover:text-yellow-300"
                           />
                           <span
@@ -143,7 +143,7 @@
       ></div> -->
       <div
         v-if="limited"
-        class="absolute w-full bottom-32 h-96 bg-gradient-to-b from-transparent via-gray-50 to-white"
+        class="absolute w-full bottom-28 h-96 bg-gradient-to-b from-transparent via-gray-50 to-white"
       ></div>
       <div
         v-if="limited"

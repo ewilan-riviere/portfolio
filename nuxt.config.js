@@ -122,6 +122,7 @@ export default {
     { src: '~/plugins/i18n' },
     // https://github.com/paulcollett/vue-masonry-css
     { src: '~/plugins/vue-masonry-css', ssr: false },
+    { src: '~/plugins/sweetalert2', ssr: false },
     { src: '~/plugins/helpers' },
   ],
 
@@ -168,6 +169,8 @@ export default {
     '@nuxtjs/svg',
     // https://i18n.nuxtjs.org/
     'nuxt-i18n',
+    // https://github.com/nuxt-community/recaptcha-module
+    '@nuxtjs/recaptcha',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -185,6 +188,14 @@ export default {
       en: '~/plugins/locales/en',
       fr: '~/plugins/locales/fr',
     },
+  },
+
+  recaptcha: {
+    hideBadge: true,
+    // language: '',
+    siteKey: process.env.RECAPTCHA_SITE_KEY,
+    version: 3,
+    size: 'invisible',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

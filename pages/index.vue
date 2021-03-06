@@ -74,10 +74,10 @@
       </div>
     </div>
     <cloud-logos />
-    <projects-list :projects="projects" limited />
+    <projects-list class="mx-auto max-w-7xl" :projects="projects" limited />
     <formations :formations="formations" />
-    <!-- <reassurance /> -->
-    <!-- <contact /> -->
+    <reassurance />
+    <contact-form />
   </div>
 </template>
 
@@ -86,12 +86,17 @@ import qs from 'qs'
 import Formations from '~/components/blocks/formations.vue'
 import ProjectsList from '~/components/blocks/list-projects.vue'
 import CloudLogos from '~/components/blocks/cloud-logos.vue'
-import Contact from '~/components/blocks/contact.vue'
 import Reassurance from '~/components/blocks/reassurance.vue'
+import ContactForm from '~/components/form/contact-form.vue'
 
 export default {
-  // eslint-disable-next-line vue/no-unused-components
-  components: { Formations, ProjectsList, CloudLogos, Contact, Reassurance },
+  components: {
+    Formations,
+    ProjectsList,
+    CloudLogos,
+    Reassurance,
+    ContactForm,
+  },
   async asyncData({ app, query, error, $content }) {
     try {
       const [
@@ -99,9 +104,6 @@ export default {
         homeMarkdown,
         // skills,
         projects,
-        // passionsApi,
-        // textsApi,
-        // socialsApi
       ] = await Promise.all([
         app.$axios.$get('formations'),
         $content('home').fetch(),
@@ -120,9 +122,6 @@ export default {
             limit: 12,
           })}`
         ),
-        // app.$axios.$get('passions'),
-        // app.$axios.$get('texts'),
-        // app.$axios.$get('socials')
       ])
 
       return {
@@ -130,9 +129,6 @@ export default {
         homeMarkdown,
         // skills: skills.data,
         projects: projects.data,
-        // passions: passionsApi.data,
-        // texts: textsApi.data,
-        // socials: socialsApi.data
       }
     } catch (error) {
       // eslint-disable-next-line no-console
@@ -141,18 +137,10 @@ export default {
       return {
         formations: [],
         homeMarkdown: '',
-        skills: [],
+        // skills: [],
         projects: [],
-        passions: [],
-        texts: [],
-        socials: [],
       }
     }
-  },
-  mounted() {
-    // if (typeof this.$redrawVueMasonry === 'function') {
-    //   this.$redrawVueMasonry()
-    // }
   },
 }
 </script>
