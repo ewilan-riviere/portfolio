@@ -55,9 +55,9 @@
           </div>
           <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
             <div class="items-center mb-5 lg:mb-0 lg:flex">
-              <h2 class="mb-1 text-xl font-medium text-gray-900 title-font">
+              <h3 class="mb-1 text-xl font-medium text-gray-900 title-font">
                 {{ formation.title }}
-              </h2>
+              </h3>
               <span class="hidden mx-2 my-auto text-gray-900 lg:block">-</span>
               <a
                 v-if="formation.place"
@@ -92,9 +92,9 @@
                   >
                     <div class="flex-1 truncate">
                       <div class="flex items-center space-x-3">
-                        <h3 class="text-sm font-medium text-gray-900 truncate">
+                        <h4 class="text-sm font-medium text-gray-900 truncate">
                           {{ project.title }}
-                        </h3>
+                        </h4>
                       </div>
                       <p
                         class="mt-1 text-sm text-gray-500 truncate"

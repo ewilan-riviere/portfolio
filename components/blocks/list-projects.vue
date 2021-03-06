@@ -3,11 +3,11 @@
     <div class="relative px-5 py-24 mx-auto md:container">
       <div class="flex flex-wrap w-full mb-20">
         <div class="w-full mb-6 lg:w-1/2 lg:mb-0">
-          <h1
+          <h2
             class="mb-2 text-2xl font-medium text-gray-900 sm:text-3xl title-font"
           >
             Mes projets
-          </h1>
+          </h2>
           <div class="w-20 h-1 bg-indigo-500 rounded" />
         </div>
         <p class="w-full text-base leading-relaxed lg:w-1/2">
@@ -44,18 +44,18 @@
                     />
                     <div class="">
                       <div v-if="project.assets.imageTitle">
-                        <h2 class="sr-only">{{ project.title }}</h2>
+                        <h3 class="sr-only">{{ project.title }}</h3>
                         <img
                           :src="project.assets.imageTitle"
                           :alt="project.title"
                         />
                       </div>
-                      <h2
+                      <h3
                         v-else
                         class="mt-6 text-lg font-semibold text-gray-900"
                       >
                         {{ project.title }}
-                      </h2>
+                      </h3>
                     </div>
                     <dl class="flex flex-col justify-between flex-grow mt-1">
                       <dt class="sr-only">{{ project.title }}</dt>
