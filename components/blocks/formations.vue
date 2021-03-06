@@ -8,7 +8,7 @@
           <div class="mb-2">Mes formations</div>
           <div class="w-20 h-1 mr-auto bg-indigo-500 rounded" />
         </h2>
-        <div class="mt-8 lex lg:mt-0 lg:flex-shrink-0">
+        <!-- <div class="mt-8 lex lg:mt-0 lg:flex-shrink-0">
           <div class="inline-flex rounded-md shadow">
             <a
               href="#"
@@ -25,7 +25,7 @@
               Learn more
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
