@@ -1,0 +1,10 @@
+{
+    "projectName": "Ewilan Rivière · Portfolio",
+    "title": "Ewilan Rivière",
+    "titleTemplate": "%s · Portfolio",
+    "locale": "fr-FR",
+    "author": "Ewilan Rivière",
+    "description": "Portfolio d'Ewilan Rivière.",
+    "color": "#6C63FF",
+    "defaultOpenGraph": "open-graph.png"
+}
