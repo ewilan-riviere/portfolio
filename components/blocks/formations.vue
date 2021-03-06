@@ -51,7 +51,7 @@
           <div
             class="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-indigo-500 bg-indigo-100 rounded-full"
           >
-            <div class="formation-logo" v-html="formation.logo.svg"></div>
+            <div class="formation-logo" v-html="formation.image"></div>
           </div>
           <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
             <div class="items-center mb-5 lg:mb-0 lg:flex">
@@ -60,6 +60,7 @@
               </h2>
               <span class="hidden mx-2 my-auto text-gray-900 lg:block">-</span>
               <a
+                v-if="formation.place"
                 :href="formation.place.link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -68,13 +69,19 @@
                 {{ formation.place.name }}
               </a>
             </div>
+            <div class="mb-1 italic">
+              {{ getDate(formation.date.begin) }} -
+              {{ getDate(formation.date.end) }}
+            </div>
             <p
               class="leading-relaxed word-wraping"
               lang="fr"
               v-html="formation.resume"
             ></p>
             <div class="mt-8">
-              <ul class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <ul
+                class="grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
+              >
                 <li
                   v-for="project in formation.projects"
                   :key="project.id"
@@ -96,7 +103,7 @@
                     </div>
                     <img
                       class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-50"
-                      :src="project.assets.image"
+                      :src="project.image"
                       :alt="project.title"
                     />
                   </div>
@@ -121,8 +128,28 @@ export default {
   },
 
   methods: {
+    capitalize(s) {
+      if (typeof s !== 'string') return ''
+      return s.charAt(0).toUpperCase() + s.slice(1)
+    },
+    getDate(date) {
+      date = new Date(date)
+
+      let userLang = 'en'
+      if (process.client) {
+        userLang = navigator.language || navigator.userLanguage
+      }
+
+      // vendredi 16 octobre 2020
+      let dateToStringLocale = date.toLocaleString(userLang, {
+        year: 'numeric',
+        month: 'long',
+      })
+      dateToStringLocale = this.capitalize(dateToStringLocale)
+      return dateToStringLocale
+    },
     textOverflow(string) {
-      if (string !== null) {
+      if (string !== null && string !== undefined) {
         return `${string.replace(/^(.{80}[^\s]*).*/, '$1')}...`
       } else {
         return ''

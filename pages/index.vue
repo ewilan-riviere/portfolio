@@ -117,7 +117,7 @@ export default {
         app.$axios.$get(
           `projects?${qs.stringify({
             favorite: true,
-            limit: 8,
+            limit: 12,
           })}`
         ),
         // app.$axios.$get('passions'),

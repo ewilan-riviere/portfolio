@@ -211,5 +211,9 @@ export default {
   /deep/ .icon-mail:hover path {
     fill: #d14836;
   }
+
+  /deep/ .icon-bit:hover path {
+    fill: #73398d;
+  }
 }
 </style>

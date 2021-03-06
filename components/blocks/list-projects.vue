@@ -1,6 +1,6 @@
 <template>
   <section class="text-gray-700 body-font">
-    <div class="px-5 py-24 mx-auto md:container">
+    <div class="relative px-5 py-24 mx-auto md:container">
       <div class="flex flex-wrap w-full mb-20">
         <div class="w-full mb-6 lg:w-1/2 lg:mb-0">
           <h1
@@ -27,14 +27,14 @@
               :data-index="projectId"
             >
               <section
-                class="relative flex flex-col col-span-1 my-5 text-center bg-white divide-y divide-gray-200 rounded-lg shadow hover:bg-gray-100"
+                class="relative flex flex-col col-span-1 my-5 text-center transition-colors duration-100 bg-white divide-y divide-gray-200 rounded-lg shadow hover:bg-gray-100"
               >
                 <nuxt-link
                   :to="{
                     name: 'projects-slug',
                     params: { slug: project.slug },
                   }"
-                  class="pb-20 transition-colors duration-300 hover:bg-gray-50 bg-opacity-70"
+                  class="pb-20 bg-opacity-70"
                 >
                   <div class="flex flex-col flex-1 px-8 pt-8">
                     <img
@@ -43,18 +43,26 @@
                       :alt="project.title"
                     />
                     <div class="">
-                      <img
-                        v-if="project.assets.imageTitle"
-                        :src="project.assets.imageTitle"
-                        :alt="project.title"
-                      />
-                      <h2 v-else class="mt-6 text-sm font-medium text-gray-900">
+                      <div v-if="project.assets.imageTitle">
+                        <h2 class="sr-only">{{ project.title }}</h2>
+                        <img
+                          :src="project.assets.imageTitle"
+                          :alt="project.title"
+                        />
+                      </div>
+                      <h2
+                        v-else
+                        class="mt-6 text-lg font-semibold text-gray-900"
+                      >
                         {{ project.title }}
                       </h2>
                     </div>
                     <dl class="flex flex-col justify-between flex-grow mt-1">
                       <dt class="sr-only">{{ project.title }}</dt>
-                      <p class="mt-5 text-left" v-html="project.extract"></p>
+                      <p
+                        class="mt-5 text-sm italic text-left word-wraping"
+                        v-html="$limitLength(project.description, 150)"
+                      ></p>
                       <dt class="sr-only">Role</dt>
                       <dd class="mt-3">
                         <span
@@ -130,10 +138,20 @@
           </masonry>
         </client-only>
       </div>
-      <div v-if="limited" class="flex justify-center mt-8">
+      <!-- <div
+        class="absolute bottom-0 w-full h-96 bg-gradient-to-b from-white to-transparent"
+      ></div> -->
+      <div
+        v-if="limited"
+        class="absolute w-full bottom-32 h-96 bg-gradient-to-b from-transparent via-gray-50 to-white"
+      ></div>
+      <div
+        v-if="limited"
+        class="absolute flex justify-center mt-8 transform -translate-x-1/2 bottom-56 left-1/2"
+      >
         <nuxt-link
           :to="{ name: 'projects' }"
-          class="flex items-center justify-center px-5 py-3 text-base font-medium text-white transition-colors duration-300 bg-indigo-600 border border-transparent rounded-md shadow hover:bg-indigo-700 group"
+          class="flex items-center justify-center px-5 py-3 text-base font-semibold text-white transition-colors duration-300 bg-indigo-600 border border-transparent rounded-md shadow hover:bg-indigo-700 group"
         >
           <span>Découvrir davantage de projets</span>
           <icon

@@ -122,6 +122,7 @@ export default {
     { src: '~/plugins/i18n' },
     // https://github.com/paulcollett/vue-masonry-css
     { src: '~/plugins/vue-masonry-css', ssr: false },
+    { src: '~/plugins/helpers' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
