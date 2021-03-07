@@ -33,7 +33,7 @@
       <div
         v-for="(formation, id) in formations"
         :key="id"
-        class="relative flex w-full pt-10 pb-20 mx-auto sm:items-center lg:w-2/3"
+        class="relative flex w-full pt-10 pb-6 mx-auto lg:pb-20 sm:items-center lg:w-2/3"
       >
         <div
           class="absolute inset-0 flex items-center justify-center w-6 h-full"

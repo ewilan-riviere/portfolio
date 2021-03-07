@@ -6,7 +6,7 @@
       class="max-w-screen-xl px-4 py-6 mx-auto space-y-2 overflow-hidden sm:px-6 lg:px-8"
     >
       <div>
-        <div class="flex justify-center">
+        <div class="flex flex-wrap justify-center">
           <a
             v-for="social in socialLinks"
             :key="social.id"
@@ -24,12 +24,12 @@
       <div
         class="flex items-center justify-center text-base text-center text-gray-400"
       >
-        <div class="flex items-center w-max-content">
+        <div class="items-center block lg:flex w-max-content">
           <a
             href="https://creativecommons.org"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center justify-center px-1 py-2 text-base leading-6 text-center text-gray-400 transition-colors duration-300 rounded-md hover:text-gray-600"
+            class="flex flex-wrap items-center justify-center px-1 py-2 text-base leading-6 text-center text-gray-400 transition-colors duration-300 rounded-md hover:text-gray-600"
           >
             <icon
               v-for="icon in copyrights"

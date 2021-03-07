@@ -20,7 +20,7 @@
         </div>
       </div>
       <div
-        class="px-4 py-16 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12"
+        class="px-4 pb-8 bg-white sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12"
       >
         <div class="max-w-lg mx-auto lg:max-w-none">
           <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">

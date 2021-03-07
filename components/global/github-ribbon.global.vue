@@ -3,7 +3,7 @@
     :href="wipUrl"
     target="_blank"
     rel="noopener noreferrer"
-    class="github-ribbon github-ribbon__bg github-ribbon__right font-ptsans-regular"
+    class="hidden github-ribbon github-ribbon__bg github-ribbon__right font-ptsans-regular lg:block"
   >
     {{ wip }}
   </a>

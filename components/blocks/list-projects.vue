@@ -1,7 +1,7 @@
 <template>
-  <section class="text-gray-700 body-font">
+  <section class="overflow-hidden text-gray-700 body-font">
     <div class="relative px-5 py-24 mx-auto md:container">
-      <div class="flex flex-wrap w-full mb-20">
+      <div class="flex flex-wrap w-full mb-10">
         <div class="w-full mb-6 lg:w-1/2 lg:mb-0">
           <h2
             class="mb-2 text-2xl font-medium text-gray-900 sm:text-3xl title-font"
@@ -10,7 +10,7 @@
           </h2>
           <div class="w-20 h-1 bg-indigo-500 rounded" />
         </div>
-        <p class="w-full text-base leading-relaxed lg:w-1/2">
+        <p class="w-full text-base leading-relaxed text-right lg:w-1/2">
           Qu'ils soient personnels, réalisés seule ou en équipe, ou bien
           professionnels, voici une sélection de mes projets.
         </p>
@@ -151,7 +151,7 @@
       >
         <nuxt-link
           :to="{ name: 'projects' }"
-          class="flex items-center justify-center px-5 py-3 text-base font-semibold text-white transition-colors duration-300 bg-indigo-600 border border-transparent rounded-md shadow hover:bg-indigo-700 group"
+          class="flex items-center justify-center px-5 py-3 text-base font-semibold text-white transition-colors duration-300 bg-indigo-600 border border-transparent rounded-md shadow hover:bg-indigo-700 group w-max lg:w-auto"
         >
           <span>Découvrir davantage de projets</span>
           <icon

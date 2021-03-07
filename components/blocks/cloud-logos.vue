@@ -33,7 +33,7 @@
                 </a>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="hidden swiper-pagination lg:block"></div>
           </div>
         </section>
       </div>
