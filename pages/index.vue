@@ -72,8 +72,13 @@
       </div>
     </div>
     <cloud-logos />
-    <projects-list class="mx-auto max-w-7xl" :projects="projects" limited />
-    <formations :formations="formations" />
+    <projects-list
+      v-if="projects"
+      class="mx-auto max-w-7xl"
+      :projects="projects"
+      limited
+    />
+    <formations v-if="formations" :formations="formations" />
     <reassurance />
     <contact-form />
   </div>

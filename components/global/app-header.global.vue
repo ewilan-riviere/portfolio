@@ -7,7 +7,9 @@
         class="object-cover w-full gradient"
         style="height: 25rem"
       />
-      <div class="absolute z-10 w-full text-center text-black center-it">
+      <div
+        class="absolute z-10 w-full text-center text-black transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+      >
         <div class="text-xl lg:text-2xl font-pelagiad">
           {{ $store.state.header.subtitle }}
         </div>
@@ -39,19 +41,11 @@
           </nuxt-link>
         </div>
         <div
-          class="flex items-center h-full mx-auto font-sans text-lg font-semibold w-max-content"
+          class="flex items-center h-full mx-auto font-sans text-lg font-semibold w-max"
         >
           <h1 class="text-xl font-normal lg:text-3xl font-morpheus">
             &ndash; Ewilan Rivière &ndash;
           </h1>
-          <!-- <nuxt-link
-            v-for="nav in navigation"
-            :key="nav.id"
-            :to="{ name: nav.route }"
-            class="mx-5 transition-colors duration-300 hover:text-gray-200 fromLeft link-border"
-          >
-            {{ nav.label }}
-          </nuxt-link> -->
         </div>
         <div
           class="absolute right-0 items-center px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2"
