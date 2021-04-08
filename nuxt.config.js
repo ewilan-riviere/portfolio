@@ -1,8 +1,11 @@
 import settings from './static/settings.json'
 import { getRoutes, getProjectsRoutes } from './plugins/sitemaps/sitemap'
-require('dotenv').config()
 
 export default {
+  generate: {
+    crawler: true,
+  },
+  target: process.env.TARGET,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: settings.title,
@@ -151,10 +154,11 @@ export default {
     { src: '~/plugins/vue-masonry-css', ssr: false },
     { src: '~/plugins/sweetalert2', ssr: false },
     { src: '~/plugins/helpers' },
+    { src: '~/plugins/jsonld' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: false,
+  components: ['~/components/common'],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -162,28 +166,29 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    // https://github.com/nuxt-community/global-components
-    '@nuxtjs/global-components',
     // https://github.com/nuxt-community/dotenv-module#readme
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/router-module
-    ['@nuxtjs/router', { keepDefaultRouter: true }],
+    // ['@nuxtjs/router', { keepDefaultRouter: true }],
     // https://color-mode.nuxtjs.org/#setup
     '@nuxtjs/color-mode',
+    // https://google-fonts.nuxtjs.org
+    // '@nuxtjs/google-fonts',
   ],
-
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
     jit: true,
   },
-
-  dotenv: {},
-
-  globalComponents: {},
-
   colorMode: {
     classSuffix: '',
   },
+  // googleFonts: {
+  //   display: 'swap',
+  //   prefetch: true,
+  //   families: {
+  //     'PT+Sans': true,
+  //   },
+  // },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -196,7 +201,7 @@ export default {
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
     // https://i18n.nuxtjs.org/
-    'nuxt-i18n',
+    // 'nuxt-i18n',
     // https://github.com/nuxt-community/recaptcha-module
     '@nuxtjs/recaptcha',
     // https://www.npmjs.com/package/@nuxtjs/robots
@@ -204,12 +209,10 @@ export default {
     // https://sitemap.nuxtjs.org/guide/setup
     '@nuxtjs/sitemap',
   ],
-
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     baseURL: process.env.API_URL,
   },
-
   pwa: {
     meta: {
       name: settings.name,
@@ -218,19 +221,16 @@ export default {
       theme_color: settings.color,
     },
   },
-
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
-
-  i18n: {
-    locales: ['en', 'fr'],
-    defaultLocale: 'en',
-    messages: {
-      en: '~/plugins/locales/en',
-      fr: '~/plugins/locales/fr',
-    },
-  },
-
+  // i18n: {
+  //   locales: ['en', 'fr'],
+  //   defaultLocale: 'en',
+  //   messages: {
+  //     en: '~/plugins/locales/en',
+  //     fr: '~/plugins/locales/fr',
+  //   },
+  // },
   recaptcha: {
     hideBadge: true,
     // language: '',
@@ -238,7 +238,6 @@ export default {
     version: 3,
     size: 'invisible',
   },
-
   robots: {
     // Disallow: ['/sign-in', '/dashboard', '/admin'],
     Sitemap: `${process.env.BASE_URL}/sitemap.xml`,
@@ -253,7 +252,6 @@ export default {
       // Les pages qu'on a pas trop envie de voir atterrir sur Google.
       '**',
     ],
-
     sitemaps: [
       {
         path: '/sitemaps/sitemap.xml',

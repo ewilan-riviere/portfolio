@@ -39,22 +39,11 @@ module.exports = {
         95: '0.95',
       },
       fontFamily: {
-        'ptsans-regular': ['PTSans-Regular'],
-        'roboto-medium': ['Roboto-Medium'],
-        quicksand: ['Quicksand'],
         morpheus: ['Morpheus'], // a-la-croisee-des-mondes
         booter: ['Booter'], // l-autre
         'caslon-antique': ['Caslon Antique'], // ewilan
         immortal: ['Immortal'], // les-ames-croisees
         pelagiad: ['Pelagiad'], // morrowind
-        mono: [
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          'Liberation Mono',
-          'Courier New',
-          'monospace',
-        ],
       },
     },
   },

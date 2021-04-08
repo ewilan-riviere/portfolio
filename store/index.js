@@ -10,8 +10,8 @@ export const state = () => ({
 })
 
 export const mutations = {
-  setHeader(state) {
-    state.headerTitle = !state.headerTitle
+  setHeader(state, data) {
+    state.header = data
   },
   toggleInDev(state) {
     state.inDev = !state.inDev

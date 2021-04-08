@@ -2,7 +2,9 @@ import Vue from 'vue'
 
 const limitLength = (string, length = 150) => {
   if (string !== null && string !== undefined && string.length > length) {
-    return `${string.substring(0, length)}...`
+    string = string.substring(0, length)
+    string = string.trim()
+    return `${string}...`
   } else {
     return string
   }

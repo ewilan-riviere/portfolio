@@ -1,23 +1,19 @@
-@responsive {
-  .word-wraping {
-    text-align: justify !important;
-    -webkit-hyphens: auto !important;
-    -moz-hyphens: auto !important;
-    -ms-hyphens: auto !important;
-    hyphens: auto !important;
-  }
+@layer utilities {
+  @variants responsive {
+    .hyphenate {
+      text-align: justify !important;
+      -webkit-hyphens: auto !important;
+      -moz-hyphens: auto !important;
+      -ms-hyphens: auto !important;
+      hyphens: auto !important;
+    }
 
-  .w-max-content {
-    width: max-content;
-  }
-
-  .center-it {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    .text-columns {
+      columns: 2;
+      column-gap: 2.5rem;
+    }
   }
 }
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -50,21 +46,6 @@ body {
 
 [v-cloak] {
   display: none;
-}
-
-@font-face {
-  font-family: 'Roboto-Medium';
-  src: url('../fonts/roboto/Roboto-Medium.ttf');
-}
-
-@font-face {
-  font-family: 'PTSans-Regular';
-  src: url('../fonts/pt-sans/PTSans-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Quicksand';
-  src: url('../fonts/quicksand/Quicksand-VariableFont_wght.ttf');
 }
 
 @font-face {

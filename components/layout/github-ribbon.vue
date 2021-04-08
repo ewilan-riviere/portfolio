@@ -3,7 +3,7 @@
     :href="wipUrl"
     target="_blank"
     rel="noopener noreferrer"
-    class="hidden github-ribbon github-ribbon__bg github-ribbon__right font-ptsans-regular lg:block"
+    class="hidden github-ribbon github-ribbon__bg github-ribbon__right lg:block"
   >
     {{ wip }}
   </a>
@@ -23,7 +23,7 @@ export default {
 
 <style lang="postcss" scoped>
 .github-ribbon {
-  @apply text-center font-bold text-base p-3 fixed;
+  @apply text-center font-semibold text-base p-3 fixed;
   width: 600px;
   text-decoration: none;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);

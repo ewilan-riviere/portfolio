@@ -25,7 +25,12 @@ export default {
       }
     }
   },
+  created() {
+    this.$store.commit('setHeader', {
+      subtitle: 'Portfolio',
+      title: 'Projets',
+      abstract: 'La liste de mes projets personnels et profesionnels',
+    })
+  },
 }
 </script>
-
-<style lang="postcss" scoped></style>

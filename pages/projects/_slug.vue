@@ -312,9 +312,7 @@ export default {
   components: { iconServer, IconSwatch, IconCalendar, IconLocation },
   async asyncData({ app, query, error, params, $content }) {
     try {
-      const [project] = await Promise.all([
-        app.$axios.$get(`projects/${params.slug}`),
-      ])
+      const project = await app.$axios.$get(`projects/${params.slug}`)
 
       return {
         project: project.data,
@@ -327,6 +325,13 @@ export default {
         project: {},
       }
     }
+  },
+  created() {
+    this.$store.commit('setHeader', {
+      subtitle: 'Projets',
+      title: this.project.title,
+      abstract: this.$limitLength(this.project.description, 50),
+    })
   },
 }
 </script>

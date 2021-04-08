@@ -32,7 +32,7 @@
         <div
           class="absolute items-center px-5 py-3 transform -translate-y-1/2 lg:ml-10 top-1/2 hover:text-gray-300"
         >
-          <nuxt-link :to="{ name: 'home' }">
+          <nuxt-link to="/">
             <icon
               name="logo"
               :size="displayIfScrolled ? 40 : 56"

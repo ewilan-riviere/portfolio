@@ -67,7 +67,7 @@
           >
             built with
             <icon name="nuxt" :size="20" class="mx-1" />
-            <span class="font-medium font-quicksand">
+            <span class="font-medium">
               <span
                 class="transition-colors duration-300 group-hover:text-gray-nuxt"
                 >NUXT</span
@@ -117,11 +117,11 @@ export default {
           link: 'https://gitlab.com/ewilan-riviere',
           icon: 'gitlab',
         },
-        {
-          label: 'Bit.dev',
-          link: 'https://bit.dev/ewilan-riviere',
-          icon: 'bit',
-        },
+        // {
+        //   label: 'Bit.dev',
+        //   link: 'https://bit.dev/ewilan-riviere',
+        //   icon: 'bit',
+        // },
         {
           label: 'Twitter',
           link: 'https://twitter.com/ewilanriviere',
