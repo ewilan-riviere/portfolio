@@ -59,6 +59,24 @@
                 placeholder="Message"
               ></textarea>
             </div>
+            <div class="hidden">
+              <div class="relative flex items-start">
+                <div class="flex items-center h-5">
+                  <input
+                    id="send"
+                    v-model="form.send"
+                    name="send"
+                    type="checkbox"
+                    class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                  />
+                </div>
+                <div class="ml-3 text-sm">
+                  <label for="send" class="font-medium text-gray-700"
+                    >I accept conditions</label
+                  >
+                </div>
+              </div>
+            </div>
             <div class="flex justify-between space-x-1 w-max">
               <button
                 type="submit"
@@ -106,12 +124,14 @@ export default {
         name: '',
         email: '',
         message: '',
+        send: false,
       },
       formTesting: {
         name: 'Ewilan',
         email: 'ewilan@dotslashplay.it',
         message:
           'Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.',
+        send: false,
       },
     }
   },
@@ -133,13 +153,20 @@ export default {
     },
     async submit() {
       this.loading = true
-
+      const title = 'Message sended!'
+      const message = 'Thanks you for your message.'
+      if (!this.form.send) {
+        setTimeout(() => {
+          this.$swal(title, message, 'success')
+        }, 1500)
+        this.loading = false
+        return
+      }
       try {
         const token = await this.$recaptcha.execute('login')
         this.form['g-recaptcha-response'] = token
 
-        const res = await this.$axios.$post('/submission', this.form)
-        console.log(res)
+        await this.$axios.$post('/submission', this.form)
 
         this.success = true
         this.errors = false
@@ -148,9 +175,6 @@ export default {
           email: '',
           message: '',
         }
-
-        const title = 'Message sended!'
-        const message = 'Thanks you for your message.'
         this.$swal(title, message, 'success')
       } catch (e) {
         console.error(e)
