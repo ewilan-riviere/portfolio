@@ -63,15 +63,15 @@
               <div class="relative flex items-start">
                 <div class="flex items-center h-5">
                   <input
-                    id="send"
-                    v-model="form.send"
-                    name="send"
+                    id="conditions"
+                    v-model="form.honeypot"
+                    name="conditions"
                     type="checkbox"
                     class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
                   />
                 </div>
                 <div class="ml-3 text-sm">
-                  <label for="send" class="font-medium text-gray-700"
+                  <label for="conditions" class="font-medium text-gray-700"
                     >I accept conditions</label
                   >
                 </div>
@@ -124,26 +124,16 @@ export default {
         name: '',
         email: '',
         message: '',
-        send: false,
+        honeypot: false,
       },
       formTesting: {
         name: 'Ewilan',
         email: 'ewilan@dotslashplay.it',
         message:
           'Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.',
-        send: false,
+        honeypot: false,
       },
     }
-  },
-  async mounted() {
-    try {
-      await this.$recaptcha.init()
-    } catch (e) {
-      console.error(e)
-    }
-  },
-  beforeDestroy() {
-    this.$recaptcha.destroy()
   },
   methods: {
     fillForm() {
@@ -155,7 +145,7 @@ export default {
       this.loading = true
       const title = 'Message sended!'
       const message = 'Thanks you for your message.'
-      if (!this.form.send) {
+      if (this.form.honeypot) {
         setTimeout(() => {
           this.$swal(title, message, 'success')
         }, 1500)
@@ -163,9 +153,6 @@ export default {
         return
       }
       try {
-        const token = await this.$recaptcha.execute('login')
-        this.form['g-recaptcha-response'] = token
-
         await this.$axios.$post('/submission', this.form)
 
         this.success = true

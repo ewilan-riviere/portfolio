@@ -202,8 +202,6 @@ export default {
     '@nuxtjs/svg',
     // https://i18n.nuxtjs.org/
     // 'nuxt-i18n',
-    // https://github.com/nuxt-community/recaptcha-module
-    '@nuxtjs/recaptcha',
     // https://www.npmjs.com/package/@nuxtjs/robots
     '@nuxtjs/robots',
     // https://sitemap.nuxtjs.org/guide/setup
@@ -231,13 +229,6 @@ export default {
   //     fr: '~/plugins/locales/fr',
   //   },
   // },
-  recaptcha: {
-    hideBadge: true,
-    // language: '',
-    siteKey: process.env.RECAPTCHA_SITE_KEY,
-    version: 3,
-    size: 'invisible',
-  },
   robots: {
     // Disallow: ['/sign-in', '/dashboard', '/admin'],
     Sitemap: `${process.env.BASE_URL}/sitemap.xml`,
