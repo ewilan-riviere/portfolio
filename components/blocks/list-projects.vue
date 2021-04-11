@@ -73,15 +73,16 @@
                     </dl>
                   </div>
                 </nuxt-link>
-                <section class="absolute bottom-0 w-full">
+                <section v-if="project.links" class="absolute bottom-0 w-full">
                   <div
                     class="flex -mt-px border-t border-gray-200 divide-x divide-gray-200"
                   >
-                    <div class="flex flex-1 w-0 group">
+                    <div
+                      v-if="project.links.front"
+                      class="flex flex-1 w-0 group"
+                    >
                       <a
-                        v-if="
-                          project.links.front && project.links.front.repository
-                        "
+                        v-if="project.links.front.repository"
                         :href="project.links.front.repository"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -91,7 +92,7 @@
                           <icon
                             name="git"
                             :size="20"
-                            class="transition-colors duration-300 group-hover:icon-git-hover"
+                            class="transition-colors duration-300 group-hover:text-red-600"
                           />
                           <span
                             class="ml-1 font-semibold transition-colors duration-300 group-hover:text-gray-500"
@@ -103,14 +104,15 @@
                         v-else
                         class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm italic font-medium text-gray-400 border border-transparent rounded-br-lg"
                       >
-                        Indisponible
+                        Non open-source
                       </span>
                     </div>
-                    <div class="flex flex-1 w-0 -ml-px group">
+                    <div
+                      v-if="project.links.front"
+                      class="flex flex-1 w-0 -ml-px group"
+                    >
                       <a
-                        v-if="
-                          project.links.front && project.links.front.project
-                        "
+                        v-if="project.links.front.project"
                         :href="project.links.front.project"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -132,7 +134,7 @@
                         v-else
                         class="relative inline-flex items-center justify-center flex-1 w-0 py-4 text-sm italic font-medium text-gray-400 border border-transparent rounded-br-lg"
                       >
-                        Indisponible
+                        Bientôt disponible
                       </span>
                     </div>
                   </div>
@@ -142,9 +144,6 @@
           </masonry>
         </client-only>
       </div>
-      <!-- <div
-        class="absolute bottom-0 w-full h-96 bg-gradient-to-b from-white to-transparent"
-      ></div> -->
       <div
         v-if="limited"
         class="absolute w-full bottom-28 h-96 bg-gradient-to-b from-transparent via-gray-50 to-white"

@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="relative">
-      <img
-        src="/images/background.webp"
-        alt="header"
-        class="object-cover w-full gradient"
-        style="height: 25rem"
-      />
+      <div style="height: 25rem">
+        <img
+          src="/images/background.webp"
+          alt="header"
+          class="object-cover w-full h-full gradient"
+        />
+      </div>
       <div
         class="absolute z-10 w-full text-center text-black transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
       >
