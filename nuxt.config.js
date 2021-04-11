@@ -5,7 +5,7 @@ export default {
   generate: {
     crawler: true,
   },
-  target: process.env.TARGET,
+  target: process.env.TARGET || 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: settings.title,
