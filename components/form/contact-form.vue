@@ -60,13 +60,13 @@
                 name="message"
                 rows="4"
                 class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                minlength="125"
+                minlength="50"
                 maxlength="1500"
                 placeholder="Message*"
                 required
               ></textarea>
               <div class="flex justify-between ml-1 text-sm text-gray-400">
-                <span>Min. 125 characters</span>
+                <span>Min. 50 characters</span>
                 <span>Currently {{ form.message.length }}/1500</span>
               </div>
             </div>
