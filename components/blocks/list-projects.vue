@@ -27,7 +27,7 @@
               :data-index="projectId"
             >
               <section
-                class="relative flex flex-col col-span-1 my-5 text-center transition-colors duration-100 divide-y divide-gray-200 rounded-lg shadow bg-gray-50 hover:bg-gray-100"
+                class="relative flex flex-col col-span-1 my-5 text-center transition-colors duration-100 bg-white divide-y divide-gray-200 rounded-lg shadow hover:bg-gray-100"
               >
                 <nuxt-link
                   :to="{
