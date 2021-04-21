@@ -25,7 +25,7 @@
         <div class="max-w-lg mx-auto lg:max-w-none">
           <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">
             <div>
-              <label for="full_name" class="sr-only">Nom</label>
+              <label for="full_name" class="sr-only">Nom*</label>
               <input
                 id="name"
                 v-model="form.name"
@@ -35,10 +35,11 @@
                 maxlength="100"
                 class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                 placeholder="Nom"
+                required
               />
             </div>
             <div>
-              <label for="email" class="sr-only">Email</label>
+              <label for="email" class="sr-only">Email*</label>
               <input
                 id="email"
                 v-model="form.email"
@@ -48,10 +49,11 @@
                 maxlength="100"
                 class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                 placeholder="Email"
+                required
               />
             </div>
             <div>
-              <label for="message" class="sr-only">Message</label>
+              <label for="message" class="sr-only">Message*</label>
               <textarea
                 id="message"
                 v-model="form.message"
@@ -61,6 +63,7 @@
                 minlength="125"
                 maxlength="1500"
                 placeholder="Message"
+                required
               ></textarea>
               <div class="flex justify-between ml-1 text-sm text-gray-400">
                 <span>Min. 125 characters</span>
