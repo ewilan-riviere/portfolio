@@ -34,7 +34,7 @@
                 autocomplete="name"
                 maxlength="100"
                 class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="Nom"
+                placeholder="Nom*"
                 required
               />
             </div>
@@ -48,7 +48,7 @@
                 autocomplete="email"
                 maxlength="100"
                 class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                placeholder="Email"
+                placeholder="Email*"
                 required
               />
             </div>
@@ -62,7 +62,7 @@
                 class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                 minlength="125"
                 maxlength="1500"
-                placeholder="Message"
+                placeholder="Message*"
                 required
               ></textarea>
               <div class="flex justify-between ml-1 text-sm text-gray-400">
