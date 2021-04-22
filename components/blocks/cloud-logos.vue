@@ -29,7 +29,14 @@
                   rel="noopener noreferrer"
                   class="object-contain text-gray-300 text-opacity-50"
                 >
-                  <icon :name="`${technology.logo}`" :size="160" ratio />
+                  <icon
+                    :name="`${technology.logo}`"
+                    :size="160"
+                    ratio
+                    loading="lazy"
+                    width="200"
+                    height="200"
+                  />
                 </a>
               </div>
             </div>

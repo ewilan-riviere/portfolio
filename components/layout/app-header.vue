@@ -3,7 +3,7 @@
     <div class="relative">
       <div style="height: 25rem">
         <img
-          src="/images/background.webp"
+          src="/images/background-resize.jpg"
           alt="header"
           class="object-cover w-full h-full gradient"
         />

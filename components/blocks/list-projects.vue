@@ -41,6 +41,9 @@
                       class="flex-shrink-0 w-32 h-32 mx-auto rounded-full"
                       :src="project.assets.image"
                       :alt="project.title"
+                      loading="lazy"
+                      width="200"
+                      height="200"
                     />
                     <div class="">
                       <div v-if="project.assets.imageTitle">
