@@ -1,0 +1,80 @@
+<template>
+  <section
+    :class="displayIfScrolled ? 'bg-black bg-opacity-65 h-16' : 'h-20'"
+    class="fixed top-0 z-40 w-full text-white transition-all duration-300"
+  >
+    <div
+      :class="
+        displayIfScrolled ? 'h-16 border-transparent' : 'h-20 border-white'
+      "
+      class="relative mx-auto transition-all duration-300 border-b border-opacity-50 max-w-7xl"
+    >
+      <div
+        class="absolute items-center px-5 py-3 transform -translate-y-1/2 lg:ml-10 top-1/2 hover:text-gray-300"
+      >
+        <nuxt-link to="/">
+          <svg-icon
+            name="logo"
+            :class="displayIfScrolled ? 'w-10' : 'w-10 lg:w-12'"
+            class="transition-all duration-300"
+          />
+        </nuxt-link>
+      </div>
+      <div
+        class="flex items-center h-full mx-auto font-sans text-lg font-semibold w-max"
+      >
+        <h1 class="text-xl font-normal sm:text-2xl lg:text-3xl font-morpheus">
+          &ndash; Ewilan Rivière &ndash;
+        </h1>
+      </div>
+      <div
+        class="absolute right-0 items-center px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2"
+      >
+        <a
+          href="https://github.com/ewilan-riviere/portfolio-front"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-gray-900"
+        >
+          <svg-icon
+            name="social/github"
+            :class="displayIfScrolled ? 'w-10' : 'w-10 lg:w-12'"
+            class="transition-all duration-300"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'Navbar',
+  data () {
+    return {
+      displayIfScrolled: false
+    }
+  },
+  beforeMount () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    scrollTo () {
+      return window.scrollTo({
+        bottom: document.querySelector('#__nuxt'),
+        behavior: 'smooth'
+      })
+    },
+    handleScroll () {
+      if (window.scrollY > 50) {
+        this.displayIfScrolled = true
+      } else {
+        this.displayIfScrolled = false
+      }
+    }
+  }
+}
+</script>
