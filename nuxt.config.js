@@ -7,7 +7,7 @@ import metadataStatic from './plugins/metadata/metadata-static'
 export default {
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
-    apiURL: process.env.API_URL
+    apiURL: process.env.API_URL,
   },
 
   // Target: https://go.nuxtjs.dev/config-target
@@ -19,16 +19,16 @@ export default {
       title: metadata.tags.title,
       titleTemplate: metadata.tags.titleTemplate,
       htmlAttrs: {
-        lang: metadata.settings.locale
+        lang: metadata.settings.locale,
       },
       meta: [...metadataStatic(), ...metadataDynamic()],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-    }
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
   },
 
   loading: {
     color: metadata.settings.color,
-    height: '2px'
+    height: '2px',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -38,12 +38,13 @@ export default {
   plugins: [
     // global helper methods
     '~/plugins/utils/helpers',
+    // https://github.com/ymmooot/nuxt-jsonld
+    '~/plugins/utils/jsonld',
+    '~/plugins/utils/i18n',
     // https://github.com/ndelvalle/v-click-outside
     '~/plugins/v-click-outside',
-    // https://github.com/ymmooot/nuxt-jsonld
-    '~/plugins/jsonld',
     // https://splidejs.com/integration-vue-splide/
-    '~/plugins/splide.client.js'
+    '~/plugins/splide.client.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -58,11 +59,11 @@ export default {
     // https://github.com/nuxt-community/svg-sprite-module
     '@nuxtjs/svg-sprite',
     // https://google-fonts.nuxtjs.org/setup
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
   ],
 
   tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css'
+    cssPath: '~/assets/css/tailwind.css',
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -81,9 +82,11 @@ export default {
     [
       'nuxt-lazy-load',
       {
-        directiveOnly: true
-      }
-    ]
+        directiveOnly: true,
+      },
+    ],
+    // https://i18n.nuxtjs.org/setup/
+    'nuxt-i18n',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -92,9 +95,9 @@ export default {
     headers: {
       common: {
         'X-Requested-With': 'XMLHttpRequest',
-        'Access-Control-Allow-Origin': '*'
-      }
-    }
+        'Access-Control-Allow-Origin': '*',
+      },
+    },
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -111,35 +114,56 @@ export default {
       ogImage: `${process.env.BASE_URL}/default.jpg`,
       ogUrl: process.env.BASE_URL,
       twitterSite: metadata.twitter.site,
-      twitterCreator: metadata.twitter.creator
+      twitterCreator: metadata.twitter.creator,
     },
     manifest: {
       name: metadata.tags.title,
       short_name: metadata.og.siteName,
       description: metadata.tags.description,
       display: 'browser',
-      lang: metadata.settings.lang
-    }
+      lang: metadata.settings.lang,
+    },
   },
-
   robots: {
     Disallow: metadata.settings.disallow,
-    Sitemap: `${process.env.BASE_URL}/sitemap.xml`
+    Sitemap: `${process.env.BASE_URL}/sitemap.xml`,
   },
-
   sitemap: {
     path: '/sitemap.xml',
     hostname: process.env.BASE_URL,
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     exclude: metadata.settings.disallow,
-    sitemaps: sitemaps()
+    sitemaps: sitemaps(),
   },
-
   googleFonts: {
     families: {
-      Quicksand: true
-    }
+      Quicksand: true,
+    },
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en.js',
+        name: 'English',
+      },
+      {
+        code: 'fr',
+        file: 'fr.js',
+        name: 'Français',
+      },
+    ],
+    lazy: true,
+    defaultLocale: 'en',
+    langDir: 'lang/',
+    // vueI18n: {
+    //   fallbackLocale: 'en',
+    //   messages: {
+    //     en: './lang/en.js',
+    //     fr: './lang/fr.js'
+    //   }
+    // }
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -147,5 +171,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  transpile: ['splide']
+  transpile: ['splide'],
 }

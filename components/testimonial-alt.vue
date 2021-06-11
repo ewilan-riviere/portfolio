@@ -1,18 +1,44 @@
 <template>
   <div class="relative mt-20">
     <div
-      class=" lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start"
+      class="
+        lg:mx-auto
+        lg:max-w-7xl
+        lg:px-8
+        lg:grid
+        lg:grid-cols-2
+        lg:gap-24
+        lg:items-start
+      "
     >
       <div class="relative sm:py-16 lg:py-0">
         <div
           aria-hidden="true"
-          class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen"
+          class="
+            hidden
+            sm:block
+            lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen
+          "
         >
           <div
-            class="absolute inset-y-0 w-full right-1/2 bg-gray-50 rounded-r-3xl lg:right-72"
+            class="
+              absolute
+              inset-y-0
+              w-full
+              right-1/2
+              bg-gray-50
+              rounded-r-3xl
+              lg:right-72
+            "
           />
           <svg
-            class="absolute -ml-3 top-8 left-1/2 lg:-right-8 lg:left-auto lg:top-12"
+            class="
+              absolute
+              -ml-3
+              top-8
+              left-1/2
+              lg:-right-8 lg:left-auto lg:top-12
+            "
             width="404"
             height="392"
             fill="none"
@@ -45,7 +71,14 @@
           </svg>
         </div>
         <div
-          class="relative max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20"
+          class="
+            relative
+            max-w-md
+            px-4
+            mx-auto
+            sm:max-w-3xl sm:px-6
+            lg:px-0 lg:max-w-none lg:py-20
+          "
         >
           <!-- Testimonial card-->
           <div
@@ -55,10 +88,17 @@
               class="absolute inset-0 object-cover w-full h-full"
               src="/images/ewilan-riviere.jpg"
               alt=""
-            >
+            />
             <div class="absolute inset-0 bg-purple-500 mix-blend-multiply" />
             <div
-              class="absolute inset-0 opacity-40 bg-gradient-to-t from-purple-600 via-purple-600"
+              class="
+                absolute
+                inset-0
+                opacity-40
+                bg-gradient-to-t
+                from-purple-600
+                via-purple-600
+              "
             />
             <div class="relative px-8">
               <div>
@@ -66,14 +106,23 @@
                   class="h-12"
                   src="https://tailwindui.com/img/logos/workcation.svg?color=white"
                   alt="Workcation"
-                >
+                />
               </div>
               <blockquote class="mt-8">
                 <div
                   class="relative text-lg font-medium text-white md:flex-grow"
                 >
                   <svg
-                    class="absolute top-0 left-0 w-8 h-8 text-purple-400 transform -translate-x-3 -translate-y-2"
+                    class="
+                      absolute
+                      top-0
+                      left-0
+                      w-8
+                      h-8
+                      text-purple-400
+                      transform
+                      -translate-x-3 -translate-y-2
+                    "
                     fill="currentColor"
                     viewBox="0 0 32 32"
                     aria-hidden="true"
@@ -104,7 +153,13 @@
         <!-- Content area -->
         <div class="pt-12 sm:pt-16 lg:pt-20">
           <h2
-            class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+            class="
+              text-3xl
+              font-extrabold
+              tracking-tight
+              text-gray-900
+              sm:text-4xl
+            "
           >
             On a mission to empower teams
           </h2>
@@ -137,36 +192,28 @@
         <div class="mt-10">
           <dl class="grid grid-cols-2 gap-x-4 gap-y-8">
             <div class="pt-6 border-t-2 border-gray-100">
-              <dt class="text-base font-medium text-gray-500">
-                Founded
-              </dt>
+              <dt class="text-base font-medium text-gray-500">Founded</dt>
               <dd class="text-3xl font-extrabold tracking-tight text-gray-900">
                 2021
               </dd>
             </div>
 
             <div class="pt-6 border-t-2 border-gray-100">
-              <dt class="text-base font-medium text-gray-500">
-                Employees
-              </dt>
+              <dt class="text-base font-medium text-gray-500">Employees</dt>
               <dd class="text-3xl font-extrabold tracking-tight text-gray-900">
                 5
               </dd>
             </div>
 
             <div class="pt-6 border-t-2 border-gray-100">
-              <dt class="text-base font-medium text-gray-500">
-                Beta Users
-              </dt>
+              <dt class="text-base font-medium text-gray-500">Beta Users</dt>
               <dd class="text-3xl font-extrabold tracking-tight text-gray-900">
                 521
               </dd>
             </div>
 
             <div class="pt-6 border-t-2 border-gray-100">
-              <dt class="text-base font-medium text-gray-500">
-                Raised
-              </dt>
+              <dt class="text-base font-medium text-gray-500">Raised</dt>
               <dd class="text-3xl font-extrabold tracking-tight text-gray-900">
                 $25M
               </dd>
@@ -185,6 +232,6 @@
 
 <script>
 export default {
-  name: 'TestimonialAlt'
+  name: 'TestimonialAlt',
 }
 </script>

@@ -18,7 +18,7 @@
               class="h-12"
               src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg"
               alt="Tuple"
-            >
+            />
           </div>
           <div
             class="
@@ -32,7 +32,7 @@
               class="h-12"
               src="https://tailwindui.com/img/logos/mirage-logo-indigo-300.svg"
               alt="Mirage"
-            >
+            />
           </div>
           <div
             class="
@@ -46,7 +46,7 @@
               class="h-12"
               src="https://tailwindui.com/img/logos/statickit-logo-indigo-300.svg"
               alt="StaticKit"
-            >
+            />
           </div>
           <div
             class="
@@ -60,7 +60,7 @@
               class="h-12"
               src="https://tailwindui.com/img/logos/transistor-logo-indigo-300.svg"
               alt="Transistor"
-            >
+            />
           </div>
           <div
             class="
@@ -74,7 +74,7 @@
               class="h-12"
               src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg"
               alt="Workcation"
-            >
+            />
           </div>
         </div>
       </div>
@@ -84,6 +84,6 @@
 
 <script>
 export default {
-  name: 'Skills'
+  name: 'Skills',
 }
 </script>

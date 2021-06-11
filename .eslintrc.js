@@ -2,20 +2,20 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   extends: [
     '@nuxtjs',
     'plugin:nuxt/recommended',
-    'eslint:recommended' // <- add this line
-    // 'plugin:prettier/recommended', <- remove this line
+    // 'eslint:recommended'
+    'plugin:prettier/recommended',
   ],
   plugins: [
-    'prettier'
+    // 'prettier'
   ],
   // add your custom rules here
-  rules: {}
+  rules: {},
 }

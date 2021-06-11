@@ -12,15 +12,15 @@ export const getLanguage = (slug) => {
   const available = [
     {
       slug: 'fr',
-      label: 'French'
+      label: 'French',
     },
     {
       slug: 'en',
-      label: 'English'
-    }
+      label: 'English',
+    },
   ]
 
-  const language = available.find(lang => lang.slug === slug)
+  const language = available.find((lang) => lang.slug === slug)
   if (language) {
     return language.label
   }
@@ -31,16 +31,16 @@ export const getLanguageFlag = (slug) => {
     {
       slug: 'fr',
       id: 'fr',
-      label: 'French'
+      label: 'French',
     },
     {
       slug: 'en',
       id: 'gb',
-      label: 'English'
-    }
+      label: 'English',
+    },
   ]
 
-  const language = available.find(lang => lang.slug === slug)
+  const language = available.find((lang) => lang.slug === slug)
   if (language) {
     const lang = language.id
     return `https://www.countryflags.io/${lang}/flat/32.png`

@@ -4,7 +4,7 @@ module.exports = {
     disallow: ['/api'],
     color: '#6C63FF',
     locale: 'fr_FR',
-    lang: 'fr'
+    lang: 'fr',
   },
   tags: {
     title: "Portfolio d'Ewilan Rivière, développeuse web et mobile",
@@ -17,15 +17,15 @@ module.exports = {
     publisher: 'Ewilan Rivière',
     copyright: 'MIT license',
     language: 'french',
-    designer: 'Ewilan Rivière'
+    designer: 'Ewilan Rivière',
   },
   og: {
     type: 'website',
-    siteName: "Portfolio d'Ewilan Rivière"
+    siteName: "Portfolio d'Ewilan Rivière",
   },
   twitter: {
     creator: '@ewilanriviere',
     site: '@ewilanriviere',
-    link: 'https://twitter.com/ewilanriviere'
-  }
+    link: 'https://twitter.com/ewilanriviere',
+  },
 }

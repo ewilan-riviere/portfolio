@@ -7,10 +7,27 @@
       :class="
         displayIfScrolled ? 'h-16 border-transparent' : 'h-20 border-white'
       "
-      class="relative mx-auto transition-all duration-300 border-b border-opacity-50 max-w-7xl"
+      class="
+        relative
+        mx-auto
+        transition-all
+        duration-300
+        border-b border-opacity-50
+        max-w-7xl
+      "
     >
       <div
-        class="absolute items-center px-5 py-3 transform -translate-y-1/2 lg:ml-10 top-1/2 hover:text-gray-300"
+        class="
+          absolute
+          items-center
+          px-5
+          py-3
+          transform
+          -translate-y-1/2
+          lg:ml-10
+          top-1/2
+          hover:text-gray-300
+        "
       >
         <nuxt-link to="/">
           <svg-icon
@@ -21,14 +38,33 @@
         </nuxt-link>
       </div>
       <div
-        class="flex items-center h-full mx-auto font-sans text-lg font-semibold w-max"
+        class="
+          flex
+          items-center
+          h-full
+          mx-auto
+          font-sans
+          text-lg
+          font-semibold
+          w-max
+        "
       >
         <h1 class="text-xl font-normal sm:text-2xl lg:text-3xl font-morpheus">
           &ndash; Ewilan Rivière &ndash;
         </h1>
       </div>
       <div
-        class="absolute right-0 items-center px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2"
+        class="
+          absolute
+          right-0
+          items-center
+          px-5
+          py-3
+          ml-10
+          transform
+          -translate-y-1/2
+          top-1/2
+        "
       >
         <a
           href="https://github.com/ewilan-riviere/portfolio-front"
@@ -50,31 +86,31 @@
 <script>
 export default {
   name: 'Navbar',
-  data () {
+  data() {
     return {
-      displayIfScrolled: false
+      displayIfScrolled: false,
     }
   },
-  beforeMount () {
+  beforeMount() {
     window.addEventListener('scroll', this.handleScroll)
   },
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    scrollTo () {
+    scrollTo() {
       return window.scrollTo({
         bottom: document.querySelector('#__nuxt'),
-        behavior: 'smooth'
+        behavior: 'smooth',
       })
     },
-    handleScroll () {
+    handleScroll() {
       if (window.scrollY > 50) {
         this.displayIfScrolled = true
       } else {
         this.displayIfScrolled = false
       }
-    }
-  }
+    },
+  },
 }
 </script>

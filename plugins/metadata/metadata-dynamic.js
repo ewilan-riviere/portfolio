@@ -17,11 +17,11 @@ export default (meta) => {
     //
     // Twitter card
     //
-    ...getTwitterCard(meta)
+    ...getTwitterCard(meta),
   ]
 }
 
-function getMeta (meta) {
+function getMeta(meta) {
   let metaDesc = 'meta'
   metaDesc = (meta && meta.description) || metadata.tags.description
   const limit = 155
@@ -32,66 +32,66 @@ function getMeta (meta) {
     {
       hid: 'description',
       name: 'description',
-      content: metaDesc
-    }
+      content: metaDesc,
+    },
   ]
 }
-function getOpenGraph (meta) {
+function getOpenGraph(meta) {
   return [
     {
       hid: 'og:type',
       property: 'og:type',
-      content: (meta && meta.type) || metadata.og.type
+      content: (meta && meta.type) || metadata.og.type,
     },
     {
       hid: 'og:url',
       property: 'og:url',
-      content: (meta && meta.url) || url
+      content: (meta && meta.url) || url,
     },
     {
       hid: 'og:title',
       property: 'og:title',
-      content: (meta && meta.title) || metadata.tags.title
+      content: (meta && meta.title) || metadata.tags.title,
     },
     {
       hid: 'og:description',
       property: 'og:description',
-      content: (meta && meta.description) || metadata.tags.description
+      content: (meta && meta.description) || metadata.tags.description,
     },
     {
       hid: 'og:image',
       property: 'og:image',
-      content: (meta && meta.image) || image
+      content: (meta && meta.image) || image,
     },
     {
       hid: 'og:image:alt',
       property: 'og:image:alt',
-      content: (meta && meta.title) || metadata.tags.title
-    }
+      content: (meta && meta.title) || metadata.tags.title,
+    },
   ]
 }
 
-function getTwitterCard (meta) {
+function getTwitterCard(meta) {
   return [
     {
       hid: 'twitter:url',
       name: 'twitter:url',
-      content: (meta && meta.url) || url
+      content: (meta && meta.url) || url,
     },
     {
       hid: 'twitter:title',
       name: 'twitter:title',
-      content: (meta && meta.title) || metadata.tags.title
+      content: (meta && meta.title) || metadata.tags.title,
     },
     {
       hid: 'twitter:description',
       name: 'twitter:description',
-      content: (meta && meta.description) || metadata.tags.description
+      content: (meta && meta.description) || metadata.tags.description,
     },
     {
       hid: 'twitter:image',
       name: 'twitter:image',
-      content: (meta && meta.image) || image
-    }
+      content: (meta && meta.image) || image,
+    },
   ]
 }

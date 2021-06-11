@@ -1,13 +1,51 @@
 <template>
   <div class="overflow-hidden bg-white">
     <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="absolute top-0 bottom-0 hidden w-screen lg:block bg-gray-50 left-3/4" />
-      <div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
+      <div
+        class="
+          absolute
+          top-0
+          bottom-0
+          hidden
+          w-screen
+          lg:block
+          bg-gray-50
+          left-3/4
+        "
+      />
+      <div
+        class="
+          mx-auto
+          text-base
+          max-w-prose
+          lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none
+        "
+      >
         <div>
-          <h2 class="font-sans text-base font-semibold tracking-wide text-indigo-600 uppercase">
+          <h2
+            class="
+              font-sans
+              text-base
+              font-semibold
+              tracking-wide
+              text-indigo-600
+              uppercase
+            "
+          >
             {{ content.subtitle }}
           </h2>
-          <h3 class="mt-2 text-3xl font-semibold leading-8 tracking-tight text-gray-900 font-quicksand sm:text-4xl">
+          <h3
+            class="
+              mt-2
+              text-3xl
+              font-semibold
+              leading-8
+              tracking-tight
+              text-gray-900
+              font-quicksand
+              sm:text-4xl
+            "
+          >
             {{ content.title }}
           </h3>
         </div>
@@ -41,12 +79,19 @@
                 />
               </pattern>
             </defs>
-            <rect width="404" height="384" fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)" />
+            <rect
+              width="404"
+              height="384"
+              fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)"
+            />
           </svg>
           <div class="relative mx-auto text-base max-w-prose lg:max-w-none">
             <figure>
               <div class="aspect-w-2 lg:aspect-h-2 aspect-h-1">
-                <img class="object-contain object-center" src="/images/laptop-woman.svg">
+                <img
+                  class="object-contain object-center"
+                  src="/images/laptop-woman.svg"
+                />
               </div>
             </figure>
           </div>
@@ -54,10 +99,21 @@
         <div class="mt-8 lg:mt-0">
           <div class="mx-auto text-base max-w-prose lg:max-w-none">
             <p class="text-lg text-gray-500">
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
+              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
+              urna sed consectetur neque tristique pellentesque. Blandit amet,
+              sed aenean erat arcu morbi.
             </p>
           </div>
-          <div class="mx-auto mt-5 prose text-gray-500 prose-indigo lg:max-w-none lg:row-start-1 lg:col-start-1">
+          <div
+            class="
+              mx-auto
+              mt-5
+              prose
+              text-gray-500
+              prose-indigo
+              lg:max-w-none lg:row-start-1 lg:col-start-1
+            "
+          >
             <nuxt-content :document="content" />
           </div>
         </div>
@@ -69,23 +125,23 @@
 <script>
 export default {
   name: 'Intro',
-  data () {
+  data() {
     return {
       content: {
         title: '',
         subtitle: '',
-        body: ''
-      }
+        body: '',
+      },
     }
   },
-  created () {
+  created() {
     this.getContent()
   },
   methods: {
-    async getContent () {
-      const content = await this.$content('home').fetch()
+    async getContent() {
+      const content = await this.$content(`${this.$i18n.locale}/home`).fetch()
       this.content = content
-    }
-  }
+    },
+  },
 }
 </script>

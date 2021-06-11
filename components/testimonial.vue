@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-16 bg-white lg:py-24">
+  <div class="pt-16 bg-white lg:pt-24">
     <div class="pb-16 bg-indigo-600 lg:pb-0 lg:z-10 lg:relative">
       <div
         class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8"
@@ -13,19 +13,32 @@
             class="max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full"
           >
             <div
-              class="overflow-hidden shadow-xl  aspect-w-10 aspect-h-6 rounded-xl sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full"
+              class="
+                overflow-hidden
+                shadow-xl
+                aspect-w-10 aspect-h-6
+                rounded-xl
+                sm:aspect-w-16 sm:aspect-h-7
+                lg:aspect-none lg:h-full
+              "
             >
               <img
                 class="object-cover lg:h-full lg:w-full"
                 src="/images/ewilan-riviere.jpg"
                 alt=""
-              >
+              />
             </div>
           </div>
         </div>
         <div class="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
           <div
-            class="max-w-md px-4 mx-auto  sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none"
+            class="
+              max-w-md
+              px-4
+              mx-auto
+              sm:max-w-2xl sm:px-6
+              lg:px-0 lg:py-20 lg:max-w-none
+            "
           >
             <blockquote>
               <div>
@@ -46,9 +59,7 @@
                 </p>
               </div>
               <footer class="mt-6">
-                <p class="text-base font-medium text-white">
-                  Judith Black
-                </p>
+                <p class="text-base font-medium text-white">Judith Black</p>
                 <p class="text-base font-medium text-indigo-100">
                   CEO at PureInsights
                 </p>
@@ -63,6 +74,6 @@
 
 <script>
 export default {
-  name: 'Testimonial'
+  name: 'Testimonial',
 }
 </script>

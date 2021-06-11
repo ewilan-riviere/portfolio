@@ -7,15 +7,15 @@ export default (meta) => {
     {
       path: '/sitemap.xml',
       exclude: ['**'],
-      routes () {
+      routes() {
         return getRoutes()
-      }
-    }
+      },
+    },
   ]
 }
 
 // eslint-disable-next-line require-await
-async function getRoutes () {
+async function getRoutes() {
   const privacyPolicyRoutes = await getPrivacyPolicyRoutes()
   const projectsRoutes = await getEntityRoutes('projects', 'projects')
   return new Promise((resolve, reject) => {
@@ -24,13 +24,13 @@ async function getRoutes () {
       {
         url: '',
         changefreq: 'weekly',
-        priority: 1
+        priority: 1,
       },
       {
         url: 'projects',
         changefreq: 'weekly',
-        priority: 1
-      }
+        priority: 1,
+      },
     ]
     routes.push(...staticRoutes)
     routes.push(...privacyPolicyRoutes)
@@ -41,7 +41,7 @@ async function getRoutes () {
 }
 
 // eslint-disable-next-line no-unused-vars
-function getEntityRoutes (backEndpoint, frontEndpoint) {
+function getEntityRoutes(backEndpoint, frontEndpoint) {
   // eslint-disable-next-line no-async-promise-executor
   return new Promise(async (resolve, reject) => {
     const entities = await fetchEntities(backEndpoint)
@@ -51,7 +51,7 @@ function getEntityRoutes (backEndpoint, frontEndpoint) {
       const route = {
         url: `${frontEndpoint}/${entity.slug}`,
         // lastmodISO: post.meta.updatedAt,
-        priority: 0.6
+        priority: 0.6,
       }
       routes.push(route)
     }
@@ -74,7 +74,7 @@ export const getPrivacyPolicyRoutes = () => {
       const route = {
         url: `/privacy-policy/${page.slug}`,
         lastmodISO: pages.updated_at,
-        priority: 0.8
+        priority: 0.8,
       }
       routes.push(route)
     }

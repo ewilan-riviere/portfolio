@@ -8,11 +8,11 @@ module.exports = {
     'layouts/**/*.vue',
     'pages/**/*.vue',
     'plugins/**/*.js',
-    'nuxt.config.js'
+    'nuxt.config.js',
   ],
   theme: {
     container: {
-      center: true
+      center: true,
     },
     // screens: {
     // sm: '360px',
@@ -23,7 +23,7 @@ module.exports = {
     // },
     extend: {
       colors: {
-        rose: colors.rose
+        rose: colors.rose,
       },
       backgroundImage: {
         // logo: "url('/images/logo.svg')",
@@ -31,7 +31,7 @@ module.exports = {
       opacity: {
         40: '0.40',
         65: '0.65',
-        95: '0.95'
+        95: '0.95',
       },
       fontFamily: {
         morpheus: ['Morpheus'], // a-la-croisee-des-mondes
@@ -39,9 +39,9 @@ module.exports = {
         'caslon-antique': ['Caslon Antique'], // ewilan
         immortal: ['Immortal'], // les-ames-croisees
         pelagiad: ['Pelagiad'], // morrowind
-        quicksand: ['Quicksand'] // morrowind
-      }
-    }
+        quicksand: ['Quicksand'], // morrowind
+      },
+    },
   },
   variants: {
     extend: {
@@ -54,14 +54,14 @@ module.exports = {
       backgroundColor: ['hover', 'focus', 'group-hover', 'dark'],
       backgroundOpacity: ['dark'],
       borderColor: ['hover', 'focus', 'group-hover'],
-      borderRadius: ['dark']
-    }
+      borderRadius: ['dark'],
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
-    require('tailwindcss-debug-screens')
-  ]
+    require('tailwindcss-debug-screens'),
+  ],
 }
