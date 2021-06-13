@@ -6,8 +6,8 @@
         title="Language"
         type="button"
         class="
-          inline-flex
-          justify-center
+          flex
+          items-center
           px-4
           py-2
           text-sm
@@ -30,10 +30,12 @@
         aria-haspopup="true"
         aria-expanded="true"
         aria-label="Language"
-        @click="openedFilter = !openedFilter"
       >
         <svg-icon name="lang" class="w-6 h-6" />
-        <svg-icon name="arrow/chevron-right" class="w-5 h-5 ml-1" />
+        <svg-icon
+          name="arrow/chevron-right"
+          class="w-5 h-5 ml-1 transform rotate-90"
+        />
       </button>
     </template>
     <template #content>

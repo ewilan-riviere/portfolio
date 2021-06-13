@@ -15,10 +15,12 @@
     "
   >
     <nuxt-link
-      :to="{
-        name: 'projects-slug',
-        params: { slug: project.slug },
-      }"
+      :to="
+        localePath({
+          name: 'projects-slug',
+          params: { slug: project.slug },
+        })
+      "
       class="pb-20 bg-opacity-70"
     >
       <div class="flex flex-col flex-1 px-8 pt-8">

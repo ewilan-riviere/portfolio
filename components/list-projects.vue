@@ -58,7 +58,7 @@
       "
     >
       <nuxt-link
-        :to="{ name: 'projects' }"
+        :to="localePath('projects')"
         class="
           flex
           items-center

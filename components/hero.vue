@@ -15,7 +15,7 @@
               tracking-tight
               text-center
               sm:text-5xl
-              lg:text-6xl lg:font-morpheus
+              lg:font-morpheus
             "
           >
             <span class="block text-black">{{

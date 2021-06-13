@@ -44,7 +44,10 @@ async function getRoutes() {
 function getEntityRoutes(backEndpoint, frontEndpoint) {
   // eslint-disable-next-line no-async-promise-executor
   return new Promise(async (resolve, reject) => {
-    const entities = await fetchEntities(backEndpoint)
+    let entities = []
+    try {
+      entities = await fetchEntities(backEndpoint)
+    } catch (error) {}
     const routes = []
 
     for (const entity of entities.data) {
@@ -83,12 +86,12 @@ export const getPrivacyPolicyRoutes = () => {
 }
 
 const fetchEntities = async (endpoint) => {
-  console.log(`${process.env.API_URL}/${endpoint}`)
   try {
     const result = await axios.get(`${process.env.API_URL}/${endpoint}`)
     return result.data
   } catch (error) {
     console.error('Unable to catch API')
+    console.log(`${process.env.API_URL}/${endpoint}`)
     return []
   }
 }

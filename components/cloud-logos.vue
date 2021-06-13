@@ -64,7 +64,7 @@ export default {
         lazyLoad: 'nearby',
         pauseOnHover: false,
         arrows: 'slider',
-        pagination: false,
+        pagination: true,
         perPage: 5,
         breakpoints: {
           1300: {
@@ -80,10 +80,12 @@ export default {
           600: {
             perPage: 2,
             gap: '1rem',
+            pagination: false,
           },
           360: {
             perPage: 1,
             gap: '1rem',
+            pagination: false,
           },
         },
       },

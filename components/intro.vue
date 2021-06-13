@@ -97,13 +97,6 @@
           </div>
         </div>
         <div class="mt-8 lg:mt-0">
-          <div class="mx-auto text-base max-w-prose lg:max-w-none">
-            <p class="text-lg text-gray-500">
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum
-              urna sed consectetur neque tristique pellentesque. Blandit amet,
-              sed aenean erat arcu morbi.
-            </p>
-          </div>
           <div
             class="
               mx-auto

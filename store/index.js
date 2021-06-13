@@ -1,7 +1,7 @@
 export const state = () => ({
   header: {
-    title: 'portfolio',
-    abstract: 'currentTitle',
+    title: 'title',
+    abstract: 'currentAbtract',
   },
   inDev: false,
   sidebarOpened: false,

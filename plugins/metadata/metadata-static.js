@@ -22,6 +22,7 @@ export default () => {
 }
 
 function getSettings() {
+  console.log(metadata.settings.robots)
   return [
     {
       hid: 'robots',

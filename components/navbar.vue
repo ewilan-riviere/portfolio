@@ -79,6 +79,25 @@
           />
         </a>
       </div>
+      <svg-icon
+        v-if="dev"
+        name="router"
+        class="
+          w-8
+          h-8
+          rounded-md
+          hover:bg-gray-300
+          transition-colors
+          duration-300
+          fixed
+          top-4
+          right-4
+          cursor-pointer
+          bg-gray-100
+          text-black
+        "
+        @click="showRoutes"
+      />
     </div>
   </section>
 </template>
@@ -89,6 +108,7 @@ export default {
   data() {
     return {
       displayIfScrolled: false,
+      dev: process.env.NODE_ENV !== 'production',
     }
   },
   beforeMount() {
@@ -98,6 +118,16 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    showRoutes() {
+      const items = []
+      this.$router.options.routes.forEach((route) => {
+        items.push({
+          name: route.name,
+          path: route.path,
+        })
+      })
+      console.log(items)
+    },
     scrollTo() {
       return window.scrollTo({
         bottom: document.querySelector('#__nuxt'),

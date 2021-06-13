@@ -15,15 +15,13 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    head: {
-      title: metadata.tags.title,
-      titleTemplate: metadata.tags.titleTemplate,
-      htmlAttrs: {
-        lang: metadata.settings.locale,
-      },
-      meta: [...metadataStatic(), ...metadataDynamic()],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    title: metadata.tags.title,
+    titleTemplate: metadata.tags.titleTemplate,
+    htmlAttrs: {
+      lang: metadata.settings.locale,
     },
+    meta: [...metadataStatic(), ...metadataDynamic()],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   loading: {
