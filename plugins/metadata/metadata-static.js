@@ -22,7 +22,6 @@ export default () => {
 }
 
 function getSettings() {
-  console.log(metadata.settings.robots)
   return [
     {
       hid: 'robots',
@@ -33,6 +32,11 @@ function getSettings() {
     { name: 'theme-color', content: metadata.settings.color },
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    {
+      hid: 'google-site-verification',
+      name: 'google-site-verification',
+      content: metadata.settings.googleToken,
+    },
   ]
 }
 

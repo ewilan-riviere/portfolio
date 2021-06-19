@@ -5,6 +5,7 @@ module.exports = {
     color: '#6C63FF',
     locale: 'fr_FR',
     lang: 'fr',
+    googleToken: process.env.GOOGLE_SITE_VERIFICATION_TOKEN,
   },
   tags: {
     title: "Portfolio d'Ewilan Rivière, développeuse web et mobile",
