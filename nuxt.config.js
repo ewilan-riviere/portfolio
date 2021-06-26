@@ -57,6 +57,8 @@ export default {
     '@nuxtjs/svg-sprite',
     // https://color-mode.nuxtjs.org
     '@nuxtjs/color-mode',
+    // https://github.com/robcresswell/nuxt-compress
+    'nuxt-compress',
   ],
 
   tailwindcss: {
@@ -64,6 +66,14 @@ export default {
   },
   colorMode: {
     classSuffix: '',
+  },
+  'nuxt-compress': {
+    gzip: {
+      threshold: 8192,
+    },
+    brotli: {
+      threshold: 8192,
+    },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
