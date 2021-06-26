@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-indigo-700">
+  <div class="bg-primary-700">
     <div class="px-4 py-16 mx-auto max-w-7xl sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold text-white">
         The world's most innovative companies use Workflow
@@ -16,7 +16,7 @@
           >
             <img
               class="h-12"
-              src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg"
+              src="https://tailwindui.com/img/logos/tuple-logo-primary-300.svg"
               alt="Tuple"
             />
           </div>
@@ -30,7 +30,7 @@
           >
             <img
               class="h-12"
-              src="https://tailwindui.com/img/logos/mirage-logo-indigo-300.svg"
+              src="https://tailwindui.com/img/logos/mirage-logo-primary-300.svg"
               alt="Mirage"
             />
           </div>
@@ -44,7 +44,7 @@
           >
             <img
               class="h-12"
-              src="https://tailwindui.com/img/logos/statickit-logo-indigo-300.svg"
+              src="https://tailwindui.com/img/logos/statickit-logo-primary-300.svg"
               alt="StaticKit"
             />
           </div>
@@ -58,7 +58,7 @@
           >
             <img
               class="h-12"
-              src="https://tailwindui.com/img/logos/transistor-logo-indigo-300.svg"
+              src="https://tailwindui.com/img/logos/transistor-logo-primary-300.svg"
               alt="Transistor"
             />
           </div>
@@ -72,7 +72,7 @@
           >
             <img
               class="h-12"
-              src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg"
+              src="https://tailwindui.com/img/logos/workcation-logo-primary-300.svg"
               alt="Workcation"
             />
           </div>

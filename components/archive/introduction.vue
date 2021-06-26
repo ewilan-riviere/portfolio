@@ -10,7 +10,7 @@
                   font-semibold
                   leading-6
                   tracking-wide
-                  text-indigo-600
+                  text-primary-600
                   uppercase
                 "
               >
@@ -103,7 +103,7 @@
                 class="
                   prose prose-lg
                   text-gray-500
-                  prose-indigo
+                  prose-primary
                   lg:max-w-none
                   hyphenate
                   text-columns

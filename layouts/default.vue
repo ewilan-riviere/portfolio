@@ -5,6 +5,7 @@
       <hero />
       <Nuxt />
     </div>
+    <back-to-top />
     <app-footer />
   </div>
 </template>

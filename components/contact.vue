@@ -106,7 +106,7 @@
                     border-gray-300
                     rounded-md
                     shadow-sm
-                    focus:ring-indigo-500 focus:border-indigo-500
+                    focus:ring-primary-500 focus:border-primary-500
                   "
                   :placeholder="`${$t('fields.name')}*`"
                   required
@@ -132,7 +132,7 @@
                     border-gray-300
                     rounded-md
                     shadow-sm
-                    focus:ring-indigo-500 focus:border-indigo-500
+                    focus:ring-primary-500 focus:border-primary-500
                   "
                   :placeholder="`${$t('fields.email')}*`"
                   required
@@ -156,7 +156,7 @@
                     border-gray-300
                     rounded-md
                     shadow-sm
-                    focus:ring-indigo-500 focus:border-indigo-500
+                    focus:ring-primary-500 focus:border-primary-500
                   "
                   minlength="50"
                   maxlength="1500"
@@ -182,10 +182,10 @@
                       class="
                         w-4
                         h-4
-                        text-indigo-600
+                        text-primary-600
                         border-gray-300
                         rounded
-                        focus:ring-indigo-500
+                        focus:ring-primary-500
                       "
                     />
                   </div>

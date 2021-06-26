@@ -31,7 +31,7 @@
             >
               <img
                 class="object-cover lg:h-full lg:w-full"
-                src="/images/ewilan-riviere.jpg"
+                src="/images/ewilan-riviere.webp"
                 alt="Ewilan Rivière"
                 titl="Ewilan Rivière"
                 loading="lazy"

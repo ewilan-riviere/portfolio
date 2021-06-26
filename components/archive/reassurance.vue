@@ -3,7 +3,7 @@
     <div
       class="
         h-56
-        bg-indigo-600
+        bg-primary-600
         sm:h-72
         md:absolute md:left-0 md:h-full md:w-1/2
       "

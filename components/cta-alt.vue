@@ -7,7 +7,7 @@
           px-8
           py-24
           overflow-hidden
-          bg-indigo-500
+          bg-primary-500
           shadow-2xl
           rounded-xl
           lg:px-16 lg:grid lg:grid-cols-2 lg:gap-x-8

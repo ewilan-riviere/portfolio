@@ -16,8 +16,8 @@
               text-base
               font-semibold
               tracking-wide
-              text-indigo-600
-              dark:text-indigo-400
+              text-primary-600
+              dark:text-primary-400
               uppercase
             "
           >
@@ -91,7 +91,7 @@
             class="
               mx-auto
               mt-5
-              prose prose-indigo
+              prose prose-primary
               dark:prose-dark
               lg:max-w-none lg:row-start-1 lg:col-start-1
             "

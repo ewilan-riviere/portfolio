@@ -17,7 +17,7 @@
         flex-shrink-0
         w-24
         h-24
-        text-indigo-500
+        text-primary-500
         bg-gray-100
         dark:bg-gray-800
         rounded-full

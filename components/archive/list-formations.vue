@@ -1,10 +1,10 @@
 <template>
   <section class="text-gray-700 body-font">
-    <div class="bg-indigo-800">
+    <div class="bg-primary-800">
       <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-16 lg:px-8">
         <h2 class="text-2xl font-medium tracking-tight text-white sm:text-3xl">
           <div class="mb-2">Mes formations</div>
-          <div class="w-20 h-1 mr-auto bg-indigo-500 rounded" />
+          <div class="w-20 h-1 mr-auto bg-primary-500 rounded" />
         </h2>
         <p class="mt-6 text-white">
           Les formations pour lesquelles je suis passée, aussi bien scolaire que
@@ -48,7 +48,7 @@
             text-sm
             font-medium
             text-white
-            bg-indigo-500
+            bg-primary-500
             rounded-full
             sm:mt-0
             title-font
@@ -74,8 +74,8 @@
               flex-shrink-0
               w-24
               h-24
-              text-indigo-500
-              bg-indigo-100
+              text-primary-500
+              bg-primary-100
               rounded-full
             "
           >
@@ -204,6 +204,6 @@ export default {
   @apply w-3/4 h-full;
 }
 /deep/ svg {
-  @apply w-3/4 h-full mx-auto fill-current text-indigo-500;
+  @apply w-3/4 h-full mx-auto fill-current text-primary-500;
 }
 </style>

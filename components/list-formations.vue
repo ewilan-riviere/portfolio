@@ -37,7 +37,7 @@
             text-sm
             font-medium
             text-white
-            bg-indigo-500
+            bg-primary-500
             rounded-full
             sm:mt-0
             title-font
@@ -68,6 +68,6 @@ export default {
   @apply w-3/4 h-full;
 }
 /deep/ svg {
-  @apply w-3/4 h-full mx-auto fill-current text-indigo-500;
+  @apply w-3/4 h-full mx-auto fill-current text-primary-500;
 }
 </style>
