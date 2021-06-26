@@ -1,9 +1,9 @@
 <template>
   <div>
     <intro />
-    <occupation />
     <cloud-logos />
     <list-projects :projects="projects" :limited="true" />
+    <occupation />
     <statistics />
     <testimonial />
     <list-formations :formations="formations" />
