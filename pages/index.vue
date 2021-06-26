@@ -1,6 +1,7 @@
 <template>
   <div>
     <intro />
+    <occupation />
     <cloud-logos />
     <list-projects :projects="projects" :limited="true" />
     <statistics />

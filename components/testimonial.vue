@@ -3,7 +3,7 @@
     <div
       class="
         pb-16
-        bg-primary-600
+        bg-primary-700
         dark:bg-primary-800
         lg:pb-0 lg:z-10 lg:relative
       "

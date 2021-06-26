@@ -4,7 +4,7 @@ export default async (context, locale) => {
     pages: {
       home: {
         title: "Ewilan Rivière's Portfolio",
-        abstract: 'Web developer on Useweb, France',
+        abstract: 'Developer designer of applications',
       },
       projects: {
         title: 'Projects',
@@ -38,6 +38,11 @@ export default async (context, locale) => {
     contact: {
       title: "You've send a mail!",
       subtitle: "If you have a question or project proposal, don't hesitate!",
+    },
+    occupation: {
+      text: 'I am currently working at Useweb, a web agency creating custom websites with technologies such as NuxtJS, Laravel or Flutter.',
+      date: 'Since 2019',
+      location: 'Rennes in Bretagne, France',
     },
     fields: {
       name: 'Name',

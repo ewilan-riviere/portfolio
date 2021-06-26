@@ -4,7 +4,7 @@ export default async (context, locale) => {
     pages: {
       home: {
         title: "Portfolio d'Ewilan Rivière",
-        abstract: 'Développeuse web & mobile chez Useweb, France',
+        abstract: "Conceptrice développeuse d'applications",
       },
       projects: {
         title: 'Projets',
@@ -39,6 +39,11 @@ export default async (context, locale) => {
       title: 'Me contacter',
       subtitle:
         "Si vous avez une question ou des propositions de projets, n'hésitez pas !",
+    },
+    occupation: {
+      text: 'Je travaille actuellement chez Useweb, une agence web créant des sites sur mesure avec des technologies comme NuxtJS, Laravel ou Flutter.',
+      date: 'Depuis 2019',
+      location: 'Rennes en Bretagne, France',
     },
     fields: {
       name: 'Nom',

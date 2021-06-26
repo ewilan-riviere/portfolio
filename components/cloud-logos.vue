@@ -3,7 +3,7 @@
     <div
       v-cloak
       v-if="isLoad"
-      class="bg-primary-600 dark:bg-primary-800 cloud-logos"
+      class="bg-primary-700 dark:bg-primary-800 cloud-logos"
     >
       <div
         class="

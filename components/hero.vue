@@ -46,6 +46,26 @@
 <script>
 export default {
   name: 'Hero',
+  data() {
+    return {
+      displayIfScrolled: false,
+    }
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY > 50) {
+        this.displayIfScrolled = true
+      } else {
+        this.displayIfScrolled = false
+      }
+    },
+  },
 }
 </script>
 
