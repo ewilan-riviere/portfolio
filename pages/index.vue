@@ -31,7 +31,6 @@ export default {
         })}`
       ),
     ])
-    console.log(projects)
 
     return {
       formations: formations.data,

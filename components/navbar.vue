@@ -127,7 +127,6 @@ export default {
           path: route.path,
         })
       })
-      console.log(items)
     },
     scrollTo() {
       return window.scrollTo({
