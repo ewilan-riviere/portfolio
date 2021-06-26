@@ -34,6 +34,7 @@
             max-w-sm
             overflow-hidden
             bg-white
+            dark:bg-gray-900
             rounded-lg
             shadow-lg
             pointer-events-auto
@@ -74,6 +75,7 @@
                     inline-flex
                     text-gray-400
                     bg-white
+                    dark:bg-gray-900
                     rounded-md
                     hover:text-gray-500
                     focus:outline-none

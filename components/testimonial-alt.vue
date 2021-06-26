@@ -27,6 +27,7 @@
               w-full
               right-1/2
               bg-gray-50
+              dark:bg-gray-800
               rounded-r-3xl
               lg:right-72
             "
@@ -89,15 +90,15 @@
               src="/images/ewilan-riviere.jpg"
               alt=""
             />
-            <div class="absolute inset-0 bg-purple-500 mix-blend-multiply" />
+            <div class="absolute inset-0 bg-primary-500 mix-blend-multiply" />
             <div
               class="
                 absolute
                 inset-0
                 opacity-40
                 bg-gradient-to-t
-                from-purple-600
-                via-purple-600
+                from-primary-600
+                via-primary-600
               "
             />
             <div class="relative px-8">
@@ -119,7 +120,7 @@
                       left-0
                       w-8
                       h-8
-                      text-purple-400
+                      text-primary-400
                       transform
                       -translate-x-3 -translate-y-2
                     "

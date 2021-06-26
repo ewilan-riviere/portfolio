@@ -1,26 +1,37 @@
 <template>
   <div class="relative overflow-hidden">
-    <div class="container my-10">
-      <div class="flex justify-between mb-10">
-        <div class="w-full mb-6 lg:w-1/2 lg:mb-0">
+    <div class="container my-10 max-w-7xl">
+      <div class="mx-auto sm:px-6 lg:px-8 mb-16 mt-10">
+        <div class="text-center">
+          <p
+            class="
+              text-base
+              font-semibold
+              text-primary-600
+              tracking-wide
+              uppercase
+            "
+          >
+            {{ $t('projectsList.ontitle') }}
+          </p>
           <h2
             class="
-              mb-2
-              text-2xl
-              font-medium
+              mt-1
+              text-3xl
+              font-semibold
               text-gray-900
-              sm:text-3xl
+              dark:text-gray-100
+              sm:text-4xl sm:tracking-tight
+              lg:text-5xl
               title-font
             "
           >
-            Mes projets
+            {{ $t('projectsList.title') }}
           </h2>
-          <div class="w-20 h-1 bg-indigo-500 rounded" />
+          <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+            {{ $t('projectsList.subtitle') }}
+          </p>
         </div>
-        <p class="w-full text-base leading-relaxed text-right lg:w-1/2">
-          Qu'ils soient personnels, réalisés seule ou en équipe, ou bien
-          professionnels, voici une sélection de mes projets.
-        </p>
       </div>
       <section class="masonry-container">
         <project-card
@@ -41,7 +52,9 @@
         bg-gradient-to-b
         from-transparent
         via-gray-50
+        dark:via-gray-800
         to-white
+        dark:to-gray-900
       "
     />
     <div
@@ -57,32 +70,14 @@
         left-1/2
       "
     >
-      <nuxt-link
-        :to="localePath('projects')"
-        class="
-          flex
-          items-center
-          justify-center
-          px-5
-          py-3
-          text-base
-          font-semibold
-          text-white
-          transition-colors
-          duration-300
-          bg-indigo-600
-          border border-transparent
-          rounded-md
-          shadow
-          hover:bg-indigo-700
-          group
-          w-max
-          lg:w-auto
-        "
-      >
-        <span>Découvrir davantage de projets</span>
-        <svg-icon name="chevron-right" class="relative w-6 h-6 ml-1" />
-      </nuxt-link>
+      <app-button :to="localePath('projects')" color="white">
+        <div class="flex items-center">
+          <span>
+            {{ $t('projectsList.cta') }}
+          </span>
+          <svg-icon name="chevron-right" class="relative w-6 h-6 ml-1" />
+        </div>
+      </app-button>
     </div>
   </div>
 </template>

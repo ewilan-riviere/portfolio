@@ -1,7 +1,6 @@
 <template>
   <div class="relative sm:pb-16">
     <div aria-hidden="true" class="hidden sm:block">
-      <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50 rounded-r-3xl" />
       <svg
         class="absolute -ml-3 top-8 left-1/2"
         width="404"
@@ -28,11 +27,7 @@
             />
           </pattern>
         </defs>
-        <rect
-          width="404"
-          height="392"
-          fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)"
-        />
+        <rect width="404" height="392" />
       </svg>
     </div>
     <div class="max-w-3xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
@@ -42,7 +37,8 @@
           px-6
           py-10
           overflow-hidden
-          bg-purple-500
+          bg-primary-500
+          dark:bg-primary-700
           shadow-xl
           rounded-2xl
           sm:px-12 sm:py-20
@@ -60,12 +56,12 @@
             viewBox="0 0 1463 360"
           >
             <path
-              class="text-purple-400 text-opacity-40"
+              class="text-primary-400 dark:text-primary-500 text-opacity-40"
               fill="currentColor"
               d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
             />
             <path
-              class="text-purple-600 text-opacity-40"
+              class="text-primary-600 dark:text-primary-600 text-opacity-40"
               fill="currentColor"
               d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
             />
@@ -82,17 +78,18 @@
                 sm:text-4xl
               "
             >
-              Send a mail!
+              {{ $t('contact.title') }}
             </h2>
-            <p class="max-w-2xl mx-auto mt-6 text-lg text-purple-100">
-              Si vous avez une question sur mes projets ou sur mon parcours,
-              n'hésitez pas !
+            <p class="max-w-2xl mx-auto mt-6 text-lg text-primary-100">
+              {{ $t('contact.subtitle') }}
             </p>
           </div>
           <div class="max-w-xl pt-10 mx-auto">
             <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">
               <div>
-                <label for="full_name" class="sr-only">Nom*</label>
+                <label for="full_name" class="sr-only"
+                  >{{ $t('fields.name') }}*</label
+                >
                 <input
                   id="name"
                   v-model="form.name"
@@ -111,12 +108,14 @@
                     shadow-sm
                     focus:ring-indigo-500 focus:border-indigo-500
                   "
-                  placeholder="Nom*"
+                  :placeholder="`${$t('fields.name')}*`"
                   required
                 />
               </div>
               <div>
-                <label for="email" class="sr-only">Email*</label>
+                <label for="email" class="sr-only"
+                  >{{ $t('fields.email') }}*</label
+                >
                 <input
                   id="email"
                   v-model="form.email"
@@ -135,12 +134,14 @@
                     shadow-sm
                     focus:ring-indigo-500 focus:border-indigo-500
                   "
-                  placeholder="Email*"
+                  :placeholder="`${$t('fields.email')}*`"
                   required
                 />
               </div>
               <div>
-                <label for="message" class="sr-only">Message*</label>
+                <label for="message" class="sr-only"
+                  >{{ $t('fields.message') }}*</label
+                >
                 <textarea
                   id="message"
                   v-model="form.message"
@@ -159,12 +160,15 @@
                   "
                   minlength="50"
                   maxlength="1500"
-                  placeholder="Message*"
+                  :placeholder="`${$t('fields.message')}*`"
                   required
                 />
-                <div class="flex justify-between ml-1 text-sm text-gray-400">
-                  <span>Min. 25 characters</span>
-                  <span>Currently {{ form.message.length }}/1500</span>
+                <div class="flex justify-between ml-1 text-sm text-gray-100">
+                  <span>Min. 25 {{ $t('fields.characters') }}</span>
+                  <span
+                    >{{ $t('fields.currently') }}
+                    {{ form.message.length }}/1500</span
+                  >
                 </div>
               </div>
               <div class="hidden">
@@ -193,56 +197,19 @@
                 </div>
               </div>
               <div class="flex justify-between space-x-1 w-max">
-                <button
-                  type="submit"
-                  class="
-                    inline-flex
-                    justify-center
-                    px-6
-                    py-2
-                    text-base
-                    font-medium
-                    text-white
-                    bg-indigo-600
-                    border border-transparent
-                    rounded-md
-                    shadow-sm
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
+                <app-button type="submit" color="secondary">
                   <span v-if="!loading" class="flex items-center space-x-2">
                     <svg-icon name="airplane" class="w-4 h-4" />
-                    <span> Envoyer </span>
+                    <span> {{ $t('fields.send') }} </span>
                   </span>
                   <span v-else class="flex items-center space-x-2">
                     <loading class="w-4 h-4" />
-                    <span> Envoi en cours </span>
+                    <span> {{ $t('fields.sending') }} </span>
                   </span>
-                </button>
-                <button
-                  v-if="isDev"
-                  type="button"
-                  class="
-                    flex
-                    items-center
-                    px-3
-                    py-2
-                    font-semibold
-                    text-white
-                    transition-colors
-                    duration-100
-                    bg-indigo-600
-                    rounded-md
-                    hover:bg-indigo-700
-                  "
-                  @click="fillForm"
-                >
+                </app-button>
+                <app-button v-if="isDev" color="secondary" @click="fillForm">
                   <svg-icon name="test" class="w-4 h-4" />
-                </button>
+                </app-button>
               </div>
             </form>
           </div>

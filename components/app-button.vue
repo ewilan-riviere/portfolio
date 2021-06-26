@@ -22,7 +22,7 @@ export default {
     color: {
       type: String,
       default: 'secondary',
-      validator: (val) => ['secondary', 'purple', 'white'].includes(val),
+      validator: (val) => ['secondary', 'primary', 'white'].includes(val),
     },
     href: {
       type: String,
@@ -78,19 +78,19 @@ export default {
 
 <style lang="postcss" scoped>
 .btn {
-  @apply inline-flex items-center px-4 py-2 text-base font-semibold rounded-md transition-colors duration-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 border;
+  @apply inline-flex items-center px-4 py-2 text-base font-semibold rounded-md transition-colors duration-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 border;
 }
 .secondary {
-  @apply text-purple-600 bg-purple-100 border-transparent hover:bg-purple-200 hover:text-purple-600;
+  @apply text-primary-600 bg-primary-100 dark:bg-primary-200 dark:text-primary-700 dark:hover:bg-primary-300 border-transparent hover:bg-primary-300 hover:text-primary-600;
 }
-.purple {
-  @apply border-transparent shadow-sm text-white bg-purple-600 hover:bg-purple-600;
+.primary {
+  @apply border-transparent shadow-sm text-white bg-primary-500 dark:bg-primary-800 dark:hover:bg-primary-700 hover:bg-primary-700;
 }
 .white {
-  @apply border-gray-300 shadow-sm text-gray-700 bg-white dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 hover:bg-purple-100;
+  @apply border-gray-300 shadow-sm text-gray-700 bg-white dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 hover:bg-primary-100;
 }
 
-.purple-disabled {
-  @apply bg-purple-300 cursor-not-allowed !important;
+.primary-disabled {
+  @apply bg-primary-300 cursor-not-allowed !important;
 }
 </style>

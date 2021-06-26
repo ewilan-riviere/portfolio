@@ -8,8 +8,9 @@
       text-center
       transition-colors
       duration-100
-      bg-white
+      dark:bg-gray-800
       divide-y divide-gray-200
+      dark:divide-gray-700 dark:hover:bg-opacity-50
       rounded-lg
       shadow
     "
@@ -26,7 +27,7 @@
       <div class="flex flex-col flex-1 px-8 pt-8">
         <img
           v-lazy-load
-          class="flex-shrink-0 w-32 h-32 mx-auto rounded-full"
+          class="flex-shrink-0 w-32 h-32 mx-auto object-contain"
           :src="project.assets.image"
           :alt="project.title"
         />
@@ -37,7 +38,10 @@
             </h3>
             <img :src="project.assets.imageTitle" :alt="project.title" />
           </div>
-          <h3 v-else class="mt-6 text-lg font-semibold text-gray-900">
+          <h3
+            v-else
+            class="mt-6 text-lg font-semibold text-gray-900 dark:text-gray-100"
+          >
             {{ project.title }}
           </h3>
         </div>
@@ -46,13 +50,29 @@
             {{ project.title }}
           </dt>
           <p
-            class="mt-5 text-sm italic text-left word-wraping"
+            class="
+              mt-5
+              text-sm
+              italic
+              dark:text-gray-300
+              text-left
+              word-wraping
+            "
             v-html="limitLength(project.description, 150)"
           />
           <dt class="sr-only">Type</dt>
           <dd v-if="project.formation" class="mt-3">
             <span
-              class="px-2 py-1 text-xs font-medium bg-green-200 rounded-full"
+              class="
+                px-3
+                py-1
+                text-xs
+                font-medium
+                text-gray-700
+                bg-primary-100
+                dark:bg-primary-800 dark:text-white
+                rounded-full
+              "
               >{{ project.formation.title }}</span
             >
           </dd>
@@ -61,7 +81,14 @@
     </nuxt-link>
     <section v-if="project.links" class="absolute bottom-0 w-full">
       <div
-        class="flex -mt-px border-t border-gray-200 divide-x divide-gray-200"
+        class="
+          flex
+          -mt-px
+          border-t border-gray-200
+          dark:border-gray-700
+          divide-x divide-gray-200
+          dark:divide-gray-700
+        "
       >
         <div v-if="project.links.front" class="flex flex-1 w-0 group">
           <a
@@ -80,6 +107,7 @@
               text-sm
               font-medium
               text-gray-700
+              dark:text-gray-300
               border border-transparent
               rounded-br-lg
             "
@@ -145,6 +173,7 @@
               text-sm
               font-medium
               text-gray-700
+              dark:text-gray-300
               border border-transparent
               rounded-br-lg
             "
@@ -167,6 +196,7 @@
                   transition-colors
                   duration-300
                   group-hover:text-gray-500
+                  dark:group-hover:text-gray-200
                 "
                 >Découvrir</span
               >

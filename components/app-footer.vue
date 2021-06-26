@@ -25,40 +25,13 @@
         class="flex flex-wrap justify-center -mx-5 -my-2"
         aria-label="Footer"
       >
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-            About
-          </a>
-        </div>
-
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-            Blog
-          </a>
-        </div>
-
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-            Jobs
-          </a>
-        </div>
-
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-            Press
-          </a>
-        </div>
-
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-            Accessibility
-          </a>
-        </div>
-
-        <div class="px-5 py-2">
-          <a href="#" class="text-base text-gray-400 hover:text-gray-300">
-            Partners
-          </a>
+        <div v-for="link in footerLinks" :key="link.id" class="px-5 py-2">
+          <nuxt-link
+            :to="link.route"
+            class="text-base text-gray-400 hover:text-gray-300"
+          >
+            {{ link.label }}
+          </nuxt-link>
         </div>
       </nav>
       <div>
@@ -83,9 +56,6 @@
             <svg-icon :name="social.icon" class="w-5 h-5" />
           </a>
         </div>
-      </div>
-      <div class="flex">
-        <layout-language-switch class="mx-auto" />
       </div>
       <div
         class="
@@ -184,18 +154,18 @@ export default {
       packageJson,
       modes: ['system', 'light', 'dark', 'sepia'],
       footerLinks: [
-        {
-          label: 'About',
-          route: 'home',
-        },
-        {
-          label: 'Documentation',
-          route: 'home',
-        },
-        {
-          label: 'Articles',
-          route: 'home',
-        },
+        // {
+        //   label: 'About',
+        //   route: 'home',
+        // },
+        // {
+        //   label: 'Documentation',
+        //   route: 'home',
+        // },
+        // {
+        //   label: 'Articles',
+        //   route: 'home',
+        // },
       ],
       socialLinks: [
         {
@@ -210,7 +180,7 @@ export default {
         },
         {
           name: 'StackOverflow',
-          link: 'https://stackoverflow.com/users/11008206/ewilan-r?tab=profile',
+          link: 'https://stackoverflow.com/users/story/11008206',
           icon: 'social/stackoverflow',
         },
         // {
@@ -270,7 +240,7 @@ export default {
 </script>
 
 <style scoped>
-@variants hover {
+/* @variants hover {
   /deep/ path {
     @apply transition-colors duration-300;
   }
@@ -297,7 +267,7 @@ export default {
     fill: #0077b5;
   }
   /deep/ .icon-portfolio:hover path {
-    @apply text-purple-600;
+    @apply text-primary-600;
   }
   /deep/ .icon-mail:hover path {
     fill: #d14836;
@@ -306,5 +276,5 @@ export default {
   /deep/ .icon-bit:hover path {
     fill: #73398d;
   }
-}
+} */
 </style>

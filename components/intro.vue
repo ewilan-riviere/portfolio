@@ -1,18 +1,6 @@
 <template>
-  <div class="overflow-hidden bg-white">
+  <div class="overflow-hidden">
     <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div
-        class="
-          absolute
-          top-0
-          bottom-0
-          hidden
-          w-screen
-          lg:block
-          bg-gray-50
-          left-3/4
-        "
-      />
       <div
         class="
           mx-auto
@@ -29,6 +17,7 @@
               font-semibold
               tracking-wide
               text-indigo-600
+              dark:text-indigo-400
               uppercase
             "
           >
@@ -42,6 +31,7 @@
               leading-8
               tracking-tight
               text-gray-900
+              dark:text-gray-100
               font-quicksand
               sm:text-4xl
             "
@@ -74,7 +64,7 @@
                   y="0"
                   width="4"
                   height="4"
-                  class="text-gray-200"
+                  class="text-gray-200 dark:text-gray-600"
                   fill="currentColor"
                 />
               </pattern>
@@ -101,9 +91,8 @@
             class="
               mx-auto
               mt-5
-              prose
-              text-gray-500
-              prose-indigo
+              prose prose-indigo
+              dark:prose-dark
               lg:max-w-none lg:row-start-1 lg:col-start-1
             "
           >

@@ -8,17 +8,19 @@
             class="object-cover w-full h-full gradient"
           />
         </div>
-        <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+        <div
+          class="relative px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 lg:pb-32 pt-32"
+        >
           <h1
             class="
               text-3xl
               tracking-tight
               text-center
               sm:text-5xl
-              lg:font-morpheus
+              font-morpheus
             "
           >
-            <span class="block text-black">{{
+            <span class="block text-black dark:text-white">{{
               $t($store.state.header.title)
             }}</span>
           </h1>
@@ -28,6 +30,7 @@
               mx-auto
               mt-6
               text-xl text-center text-gray-800
+              dark:text-gray-200
               sm:max-w-3xl
               lg:font-pelagiad lg:text-2xl
             "

@@ -32,14 +32,13 @@
         <nuxt-link to="/">
           <svg-icon
             name="logo"
-            :class="displayIfScrolled ? 'w-10' : 'w-10 lg:w-12'"
+            :class="displayIfScrolled ? 'w-10' : 'w-10 lg:w-12 lg:h-12'"
             class="transition-all duration-300"
           />
         </nuxt-link>
       </div>
       <div
         class="
-          flex
           items-center
           h-full
           mx-auto
@@ -47,17 +46,19 @@
           text-lg
           font-semibold
           w-max
+          hidden
+          md:flex
         "
       >
         <h1 class="text-xl font-normal sm:text-2xl lg:text-3xl font-morpheus">
           &ndash; Ewilan Rivière &ndash;
         </h1>
       </div>
+
       <div
         class="
           absolute
           right-0
-          items-center
           px-5
           py-3
           ml-10
@@ -66,38 +67,38 @@
           top-1/2
         "
       >
-        <a
-          href="https://github.com/ewilan-riviere/portfolio-front"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-gray-900"
-        >
-          <svg-icon
-            name="social/github"
-            :class="displayIfScrolled ? 'w-10' : 'w-10 lg:w-12'"
-            class="transition-all duration-300"
+        <div class="flex items-center">
+          <layout-color-switch
+            :size="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-10 lg:h-10'"
           />
-        </a>
+          <layout-language-switch
+            class="ml-4"
+            :size="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-10 lg:h-10'"
+          />
+        </div>
       </div>
-      <svg-icon
-        v-if="dev"
-        name="router"
+      <div
         class="
-          w-8
-          h-8
+          p-1
           rounded-md
-          hover:bg-gray-300
+          hover:bg-gray-300 hover:bg-opacity-60
           transition-colors
           duration-300
           fixed
-          top-4
-          right-4
+          top-2
+          right-2
           cursor-pointer
-          bg-gray-100
-          text-black
+          hidden
+          2xl:block
         "
-        @click="showRoutes"
-      />
+      >
+        <svg-icon
+          v-if="dev"
+          name="router"
+          class="w-10 h-10 text-white"
+          @click="showRoutes"
+        />
+      </div>
     </div>
   </section>
 </template>

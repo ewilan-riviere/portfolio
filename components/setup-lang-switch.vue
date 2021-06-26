@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed z-50 bg-white">
+  <div class="fixed z-50 bg-white dark:bg-gray-800">
     <nuxt-link :to="switchLocalePath('en')"> English </nuxt-link>
     <nuxt-link :to="switchLocalePath('fr')"> Français </nuxt-link>
     <nuxt-link

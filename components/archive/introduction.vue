@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden bg-white">
+  <div class="overflow-hidden bg-white dark:bg-gray-900">
     <div class="relative px-4 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="py-0 lg:py-16">
         <div class="mx-auto max-w-max lg:max-w-7xl">

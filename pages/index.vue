@@ -22,12 +22,18 @@ import qs from 'qs'
 
 export default {
   name: 'PageIndex',
-  async asyncData({ app, $content }) {
+  async asyncData({ app, i18n }) {
     try {
       const [formations, projects] = await Promise.all([
-        app.$axios.$get('/formations'),
+        app.$axios.$get(
+          `/formations?${qs.stringify({
+            lang: i18n.locale,
+            color: '632ebe',
+          })}`
+        ),
         app.$axios.$get(
           `/projects?${qs.stringify({
+            lang: i18n.locale,
             favorite: true,
             limit: 12,
           })}`
@@ -58,8 +64,11 @@ export default {
       ],
     }
   },
-  mounted() {
-    console.log(this.$i18n.locale)
+  created() {
+    this.$store.commit('setHeader', {
+      title: 'pages.home.title',
+      abstract: 'pages.home.abstract',
+    })
   },
 }
 </script>

@@ -24,7 +24,21 @@ module.exports = {
     extend: {
       colors: {
         rose: colors.rose,
+        primary: {
+          100: '#e5d8fb',
+          200: '#cbb0f8',
+          300: '#b089f4',
+          400: '#9661f1',
+          500: '#7c3aed',
+          600: '#632ebe',
+          700: '#4a238e',
+          800: '#32175f',
+          900: '#190c2f',
+        },
       },
+      ringColor: (theme) => ({
+        primary: theme('colors.primary'),
+      }),
       backgroundImage: {
         // logo: "url('/images/logo.svg')",
       },
@@ -41,6 +55,32 @@ module.exports = {
         pelagiad: ['Pelagiad'], // morrowind
         quicksand: ['Quicksand'], // morrowind
       },
+      typography: (theme) => ({
+        light: {
+          css: [
+            {
+              p: {
+                color: theme('colors.gray.800'),
+              },
+            },
+          ],
+        },
+        dark: {
+          css: [
+            {
+              p: {
+                color: theme('colors.gray.300'),
+              },
+              strong: {
+                color: theme('colors.gray.200'),
+              },
+              a: {
+                color: theme('colors.primary.200'),
+              },
+            },
+          ],
+        },
+      }),
     },
   },
   variants: {
@@ -48,6 +88,8 @@ module.exports = {
       display: ['dark'],
       opacity: ['dark'],
       textColor: ['responsive', 'hover', 'focus', 'group-hover', 'dark'],
+      textOpacity: ['dark'],
+      typography: ['responsive', 'dark'],
       scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
       boxShadow: ['dark'],
       translate: ['responsive', 'hover', 'focus', 'active', 'group-hover'],

@@ -1,43 +1,67 @@
 <template>
   <transition name="fade">
-    <div v-cloak v-if="isLoad" class="bg-indigo-800">
+    <div
+      v-cloak
+      v-if="isLoad"
+      class="bg-primary-600 dark:bg-primary-800 cloud-logos"
+    >
       <div
-        class="max-w-screen-xl px-4 pt-4 pb-20 mx-auto sm:pt-8 sm:px-6 lg:px-8"
+        class="
+          max-w-screen-xl
+          px-4
+          pt-4
+          pb-4
+          md:pb-10
+          mx-auto
+          sm:pt-8 sm:px-6
+          lg:px-8
+        "
       >
         <div class="lg:space-y-6">
-          <h2 class="text-3xl font-bold leading-9 text-white">
-            Des technologies solides et connues
+          <h2 class="text-3xl font-semibold leading-9 text-white">
+            {{ $t('technologiesLogo') }}
           </h2>
-          <client-only>
-            <splide :options="options" class="grab">
-              <splide-slide
-                v-for="technology in randomTechnologies"
-                :key="technology.id"
-                class="flex"
+          <agile ref="thumbnails" class="thumbnails" :options="options">
+            <div
+              v-for="(technology, id) in randomTechnologies"
+              :key="id"
+              class="slide slide--thumbnails"
+              :class="`slide--${id}`"
+            >
+              <a
+                :href="technology.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mx-auto text-gray-300 text-opacity-50 zoom"
+                :title="technology.name"
               >
-                <a
-                  :href="technology.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mx-auto text-gray-300 text-opacity-50 zoom"
-                  :title="technology.name"
-                >
-                  <svg-icon
-                    :name="`${technology.logo}`"
-                    :alt="technology.name"
-                    class="w-40 h-28"
-                  />
-                </a>
-              </splide-slide>
-            </splide>
-          </client-only>
-          <!-- <div class="loop">
-          <div class="flex items-center space-x-16">
-            <a v-for="technology in randomTechnologies" :key="technology.id" :href="technology.link" target="_blank" rel="noopener noreferrer" class="text-gray-300 text-opacity-50 rounded-sm hover:bg-gray-50 hover:bg-opacity-10" :title="technology.name">
-              <svg-icon :name="`${technology.logo}`" :alt="technology.name" class="w-40" />
-            </a>
-          </div>
-        </div> -->
+                <svg-icon
+                  :name="`${technology.logo}`"
+                  :alt="technology.name"
+                  class="w-40 h-28"
+                />
+              </a>
+            </div>
+            <template slot="prevButton">
+              <svg-icon
+                name="arrow/chevron-right"
+                class="
+                  w-8
+                  h-8
+                  m-auto
+                  text-gray-400
+                  dark:text-gray-400
+                  arrow-rotate
+                "
+              />
+            </template>
+            <template slot="nextButton">
+              <svg-icon
+                name="arrow/chevron-right"
+                class="w-8 h-8 m-auto text-gray-400 dark:text-gray-400"
+              />
+            </template>
+          </agile>
         </div>
       </div>
     </div>
@@ -45,49 +69,54 @@
 </template>
 
 <script type="module">
-import '@splidejs/splide/dist/css/themes/splide-default.min.css'
+// https://github.com/lukaszflorczak/vue-agile
+import { VueAgile } from 'vue-agile'
 
 export default {
   name: 'CloudLogos',
+  components: {
+    agile: VueAgile,
+  },
   data() {
     return {
       isLoad: false,
       options: {
-        rewind: true,
-        // width: 800,
-        // type: 'fade',
-        // perPage: 1,
-        height: '12vh',
-        interval: 1500,
-        gap: '1rem',
         autoplay: false,
-        lazyLoad: 'nearby',
-        pauseOnHover: false,
-        arrows: 'slider',
-        pagination: true,
-        perPage: 5,
-        breakpoints: {
-          1300: {
-            perPage: 5,
-            gap: '1rem',
-            pagination: true,
+        centerMode: true,
+        dots: false,
+        navButtons: true,
+        infinite: true,
+        slidesToShow: 1,
+        responsive: [
+          {
+            breakpoint: 500,
+            settings: {
+              slidesToShow: 2,
+            },
           },
-          900: {
-            perPage: 3,
-            gap: '1rem',
-            pagination: true,
+          {
+            breakpoint: 700,
+            settings: {
+              dots: true,
+              slidesToShow: 3,
+            },
           },
-          600: {
-            perPage: 2,
-            gap: '1rem',
-            pagination: false,
+          {
+            breakpoint: 900,
+            settings: {
+              dots: true,
+              slidesToShow: 4,
+            },
           },
-          360: {
-            perPage: 1,
-            gap: '1rem',
-            pagination: false,
+          {
+            breakpoint: 1100,
+            settings: {
+              dots: true,
+              navButtons: true,
+              slidesToShow: 5,
+            },
           },
-        },
+        ],
       },
       technologies: [
         {
@@ -207,40 +236,39 @@ export default {
 </script>
 
 <style lang="postcss">
-.splide__arrow {
-  top: unset !important;
-  bottom: -2.5rem !important;
-  background-color: transparent !important;
-  transform: unset !important;
-  fill: gray !important;
-}
-.splide__pagination {
-  bottom: -2rem !important;
-}
-.splide__arrow--next {
-}
-.grab {
-  cursor: grab;
-}
-.zoom {
-  @apply transition-transform duration-300;
-}
-.zoom:hover {
-  transform: scale(1.1);
-}
-.loop {
-  @apply inline-block whitespace-nowrap;
-  animation: loop 50s infinite linear;
-  padding-left: 100%;
-}
-
-.loop:hover {
-  /* animation-play-state: paused; */
-}
-
-@keyframes loop {
-  to {
-    transform: translateX(-100%);
+.cloud-logos {
+  & .zoom {
+    @apply transition-transform duration-300;
+  }
+  & .zoom:hover {
+    transform: scale(1.1);
+  }
+  & .arrow-rotate {
+    transform: rotate(180deg);
+  }
+  & .agile {
+    & .slide {
+      display: flex !important;
+    }
+    & .agile__actions {
+      @apply mt-3 absolute md:relative w-full top-1/2 -translate-y-1/2 transform;
+      & .agile__dots {
+        @apply w-full flex-wrap justify-center;
+        & .agile__dot {
+          @apply mx-2 my-1;
+          & button {
+            @apply border border-solid border-gray-400 dark:border-gray-300 rounded-full bg-transparent cursor-pointer block h-3 w-3 duration-300;
+          }
+        }
+        & .agile__dot--current button,
+        & .agile__dot:hover button {
+          @apply bg-gray-400 dark:bg-gray-300;
+        }
+      }
+      & .agile__nav-button {
+        @apply hover:bg-gray-100 hover:bg-opacity-20 transition-colors duration-100 rounded-md;
+      }
+    }
   }
 }
 </style>

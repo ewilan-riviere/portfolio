@@ -38,11 +38,10 @@ export default {
     '~/plugins/utils/helpers',
     // https://github.com/ymmooot/nuxt-jsonld
     '~/plugins/utils/jsonld',
+    // https://i18n.nuxtjs.org
     '~/plugins/utils/i18n',
     // https://github.com/ndelvalle/v-click-outside
     '~/plugins/v-click-outside',
-    // https://splidejs.com/integration-vue-splide/
-    '~/plugins/splide.client.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -56,12 +55,15 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://github.com/nuxt-community/svg-sprite-module
     '@nuxtjs/svg-sprite',
-    // https://google-fonts.nuxtjs.org/setup
-    '@nuxtjs/google-fonts',
+    // https://color-mode.nuxtjs.org
+    '@nuxtjs/color-mode',
   ],
 
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
+  },
+  colorMode: {
+    classSuffix: '',
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -168,6 +170,7 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-  transpile: ['splide'],
+  build: {
+    transpile: ['vue-agile'],
+  },
 }

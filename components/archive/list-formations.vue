@@ -131,6 +131,7 @@
                   class="
                     col-span-1
                     bg-white
+                    dark:bg-gray-900
                     divide-y divide-gray-200
                     rounded-lg
                     shadow
@@ -158,7 +159,14 @@
                       />
                     </div>
                     <img
-                      class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-50"
+                      class="
+                        flex-shrink-0
+                        w-10
+                        h-10
+                        rounded-full
+                        bg-gray-50
+                        dark:bg-gray-800
+                      "
                       :src="project.image"
                       :alt="project.title"
                     />

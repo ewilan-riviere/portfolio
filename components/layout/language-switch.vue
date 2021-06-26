@@ -1,5 +1,5 @@
 <template>
-  <dropdown-template align="-right-16 -top-12" :width="48">
+  <dropdown-template align="right-0" :width="48">
     <template #trigger>
       <button
         id="language"
@@ -8,34 +8,30 @@
         class="
           flex
           items-center
-          px-4
-          py-2
+          p-1
           text-sm
           font-medium
           text-gray-100
-          transition-colors
+          transition-all
           duration-100
-          bg-gray-800
-          border border-gray-300
           rounded-md
           shadow-sm
-          focus:outline-none
-          focus:ring-2
-          focus:ring-offset-2
-          focus:ring-offset-gray-100
-          focus:ring-indigo-500
-          dark:bg-gray-800 dark:border-gray-700
-          hover:bg-gray-900
+          focus:outline-none focus:ring-2 focus:ring-offset-2
+          hover:bg-gray-400 hover:bg-opacity-50
         "
         aria-haspopup="true"
         aria-expanded="true"
         aria-label="Language"
       >
-        <svg-icon name="lang" class="w-6 h-6" />
         <svg-icon
+          name="lang"
+          :class="size"
+          class="text-gray-100 transition-all"
+        />
+        <!-- <svg-icon
           name="arrow/chevron-right"
           class="w-5 h-5 ml-1 transform rotate-90"
-        />
+        /> -->
       </button>
     </template>
     <template #content>
@@ -46,7 +42,7 @@
           class="
             block
             w-full
-            px-4
+            px-6
             py-2
             text-sm text-left text-gray-700
             hover:bg-gray-200 hover:text-gray-900
@@ -66,6 +62,12 @@ import dropdownTemplate from './dropdown-template.vue'
 export default {
   name: 'LanguageSwitch',
   components: { dropdownTemplate },
+  props: {
+    size: {
+      type: String,
+      default: 'w-10 h-10',
+    },
+  },
   computed: {
     availableLocales() {
       return this.$i18n.locales

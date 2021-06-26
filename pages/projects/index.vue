@@ -25,8 +25,8 @@ export default {
   },
   created() {
     this.$store.commit('setHeader', {
-      title: 'projectsTitle',
-      abstract: 'projectsAbstract',
+      title: 'pages.projects.title',
+      abstract: 'pages.projects.abstract',
     })
   },
 }
