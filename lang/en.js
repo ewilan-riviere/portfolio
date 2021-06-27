@@ -44,6 +44,32 @@ export default async (context, locale) => {
       date: 'Since 2019',
       location: 'Rennes in Bretagne, France',
     },
+    features: {
+      coding: {
+        title: 'Developement',
+        text: 'Always look back at what has been coded to see if it can be improved, comments and refactoring allow to always improve the code.',
+      },
+      'front-end': {
+        title: 'Front-end & design',
+        text: 'The front-end is the basis for mastering the integration of a model, either with a CSS framework or by hand.',
+      },
+      deployment: {
+        title: 'Deployments',
+        text: 'Deploy projects on VPS servers, in HTTPS, HTTP 2 on NGINX with databases are often in MySQL.',
+      },
+      framework: {
+        title: 'Frameworks',
+        text: 'Without a framework, coding is interesting but it takes time for basic things, mastering a framework allows to save time and productivity.',
+      },
+      seo: {
+        title: 'SEO',
+        text: "Whether it's setting up <head> metadata, open graph, redirects or traffic analysis, SEO is important in every project.",
+      },
+      'operating-system': {
+        title: 'Operating systems',
+        text: 'Preferring Linux for its flexibility, developing on other systems like OS X or Windows is quite possible if you have the tools to do it.',
+      },
+    },
     fields: {
       name: 'Name',
       email: 'Email',

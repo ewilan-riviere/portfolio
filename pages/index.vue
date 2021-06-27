@@ -1,13 +1,14 @@
 <template>
   <div>
-    <intro />
-    <cloud-logos />
-    <list-projects :projects="projects" :limited="true" />
-    <occupation />
-    <statistics />
-    <testimonial />
-    <list-formations :formations="formations" />
-    <contact />
+    <lazy-intro />
+    <lazy-features />
+    <lazy-cloud-logos />
+    <lazy-list-projects :projects="projects" :limited="true" />
+    <lazy-occupation />
+    <lazy-statistics />
+    <lazy-testimonial />
+    <lazy-list-formations :formations="formations" />
+    <lazy-contact />
   </div>
 </template>
 

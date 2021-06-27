@@ -45,6 +45,32 @@ export default async (context, locale) => {
       date: 'Depuis 2019',
       location: 'Rennes en Bretagne, France',
     },
+    features: {
+      coding: {
+        title: 'Développement',
+        text: 'Toujours revenir sur ce qui a été codé pour voir si cela peut être amélioré, commentaires et refactoring permettent de toujours améliorer le code.',
+      },
+      'front-end': {
+        title: 'Front-end & design',
+        text: "Le front-end est la base pour maîtriser l'intégration d'une maquette, que ce soit avec un framework CSS ou à la main.",
+      },
+      deployment: {
+        title: 'Déploiements',
+        text: 'Déployer des projets sur des serveurs VPS, en HTTPS, HTTP 2 sur NGINX avec des bases de données sont souvent en MySQL.',
+      },
+      framework: {
+        title: 'Frameworks',
+        text: 'Sans framework, coder est intéressant mais cela prend du temps pour des choses basiques, maîtriser un framework permet de gagner en temps et en productivité.',
+      },
+      seo: {
+        title: 'SEO',
+        text: "Que ce soit la mise en place des métadonnées <head>, l'open graph, les redirections ou l'analyse de la fréquentation, le SEO est important dans chaque projet.",
+      },
+      'operating-system': {
+        title: "Systèmes d'exploitation",
+        text: "Préférant Linux pour sa flexibilité, développer sur d'autres systèmes comme OS X ou Windows est tout à fait possible si on a les outils qui permettent de le faire.",
+      },
+    },
     fields: {
       name: 'Nom',
       email: 'Email',
