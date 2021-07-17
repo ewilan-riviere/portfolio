@@ -4,10 +4,10 @@
 [![tailwindcss](https://img.shields.io/static/v1?label=Tailwind%20CSS&message=v2.0&color=38B2AC&style=flat-square&logo=tailwind-css&logoColor=ffffff)](https://tailwindcss.com/)
 [![nuxtjs](https://img.shields.io/static/v1?label=Designed%20to%20be&message=SSG&color=00C58E&style=flat-square&logo=nuxt.js&logoColor=ffffff)](https://nuxtjs.org/docs/2.x/concepts/static-site-generation)
 
-[![NodeJS](https://img.shields.io/static/v1?label=NodeJS&message=v14.16&color=339933&style=flat-square&logo=node.js&logoColor=ffffff)](https://nodejs.org/en)
-[![Yarn](https://img.shields.io/static/v1?label=Yarn&message=v1.2&color=2C8EBB&style=flat-square&logo=yarn&logoColor=ffffff)](https://classic.yarnpkg.com/lang/en/)
+[![nodejs](https://img.shields.io/static/v1?label=NodeJS&message=v14.16&color=339933&style=flat-square&logo=node.js&logoColor=ffffff)](https://nodejs.org/en)
+[![yarn](https://img.shields.io/static/v1?label=Yarn&message=v1.2&color=2C8EBB&style=flat-square&logo=yarn&logoColor=ffffff)](https://classic.yarnpkg.com/lang/en/)
 
-- 🌐 [**ewilan-riviere.com**](https://ewilan-riviere.com) : production
+- 🌐 [**ewilan-riviere.com**](https://ewilan-riviere.com) : demo
 - [**Portfolio · Back**](https://github.com/ewilan-riviere/portfolio-back) : back-end repository (Laravel framework)
 
 ## **I. Setup**

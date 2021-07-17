@@ -84,9 +84,11 @@
 
 <script>
 import { limitLength } from '@/plugins/utils/methods'
+import projectCard from './project-card.vue'
 
 export default {
-  name: 'ListProjects',
+  name: 'ProjectsList',
+  components: { projectCard },
   props: {
     projects: {
       type: Array,

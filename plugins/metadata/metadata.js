@@ -1,28 +1,34 @@
+const app = "Portfolio d'Ewilan Rivière, développeuse web et mobile"
+const author = 'Ewilan Rivière'
+const tailwind = require('../../tailwind.config')
+const color = tailwind.theme.extend.colors.primary[600]
+const description =
+  "Portfolio d'Ewilan Rivière développeuse web front-end et back-end, spécialisée sur NuxtJS et Laravel mais aussi sur mobile sur Flutter."
+
 module.exports = {
   settings: {
     robots: 'index, follow',
-    disallow: ['/api'],
-    color: '#6C63FF',
-    locale: 'fr_FR',
-    lang: 'fr',
+    disallow: '/sign-in,/sign-up,/dashboard,/admin,/profile',
+    color,
+    locale: 'en_US',
+    lang: 'en',
     googleToken: process.env.GOOGLE_SITE_VERIFICATION_TOKEN,
   },
   tags: {
-    title: "Portfolio d'Ewilan Rivière, développeuse web et mobile",
-    titleTemplate: '%s · Ewilan Rivière',
-    description:
-      "Portfolio d'Ewilan Rivière développeuse web front-end et back-end, spécialisée sur NuxtJS et Laravel mais aussi sur mobile sur Flutter.",
+    title: app,
+    titleTemplate: `%s · ${author}`,
+    description,
     rating: 'general',
     keywords: ['developer', 'web', 'mobile'],
-    author: 'Ewilan Rivière',
-    publisher: 'Ewilan Rivière',
-    copyright: 'MIT license',
-    language: 'french',
-    designer: 'Ewilan Rivière',
+    author,
+    publisher: app,
+    copyright: 'MIT License',
+    language: 'english',
+    designer: author,
   },
   og: {
     type: 'website',
-    siteName: "Portfolio d'Ewilan Rivière",
+    siteName: app,
   },
   twitter: {
     creator: '@ewilanriviere',

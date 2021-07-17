@@ -52,8 +52,10 @@
 </template>
 
 <script>
+import formationCard from './formation-card.vue'
 export default {
-  name: 'ListFormations',
+  name: 'FormationsList',
+  components: { formationCard },
   props: {
     formations: {
       type: Array,

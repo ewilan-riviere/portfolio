@@ -106,7 +106,7 @@
 
 <script>
 export default {
-  name: 'Intro',
+  name: 'HomeIntro',
   data() {
     return {
       content: {

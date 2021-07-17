@@ -1,9 +1,9 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
   purge: [
-    'assets/**/*.css',
-    'assets/**/*.pcss',
     'components/**/*.vue',
     'layouts/**/*.vue',
     'pages/**/*.vue',
@@ -14,8 +14,16 @@ module.exports = {
     container: {
       center: true,
     },
+    // screens: {
+    // sm: '360px',
+    // md: '600px',
+    // lg: '900px',
+    // xl: '1300px',
+    // '2xl': '1536px',
+    // },
     extend: {
       colors: {
+        rose: colors.rose,
         primary: {
           100: '#e5d8fb',
           200: '#cbb0f8',
@@ -31,6 +39,9 @@ module.exports = {
       ringColor: (theme) => ({
         primary: theme('colors.primary'),
       }),
+      backgroundImage: {
+        // logo: "url('/images/logo.svg')",
+      },
       opacity: {
         40: '0.40',
         65: '0.65',
@@ -45,38 +56,29 @@ module.exports = {
         quicksand: ['Quicksand'], // morrowind
       },
       typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            h1: {
-              fontSize: '2rem',
-            },
-          },
-        },
         light: {
-          css: {
-            color: '#e5e7eb',
-            h1: {
-              color: '#f3f4f6',
-            },
-            h2: {
-              color: '#f3f4f6',
-            },
-            h3: {
-              color: '#f3f4f6',
-            },
-            strong: {
-              color: '#e5e7eb',
-            },
-            blockquote: {
-              color: '#e5e7eb',
-            },
-            a: {
-              color: '#3182ce',
-              '&:hover': {
-                color: '#2c5282',
+          css: [
+            {
+              p: {
+                color: theme('colors.gray.800'),
               },
             },
-          },
+          ],
+        },
+        dark: {
+          css: [
+            {
+              p: {
+                color: theme('colors.gray.300'),
+              },
+              strong: {
+                color: theme('colors.gray.200'),
+              },
+              a: {
+                color: theme('colors.primary.200'),
+              },
+            },
+          ],
         },
       }),
     },
@@ -85,8 +87,9 @@ module.exports = {
     extend: {
       display: ['dark'],
       opacity: ['dark'],
-      width: ['hover', 'focus'],
       textColor: ['responsive', 'hover', 'focus', 'group-hover', 'dark'],
+      textOpacity: ['dark'],
+      typography: ['responsive', 'dark'],
       scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
       boxShadow: ['dark'],
       translate: ['responsive', 'hover', 'focus', 'active', 'group-hover'],

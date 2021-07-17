@@ -67,45 +67,29 @@
           top-1/2
         "
       >
-        <div class="flex items-center">
-          <layout-color-switch
+        <div class="flex items-center space-x-4">
+          <color-switch
             :size="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-10 lg:h-10'"
           />
-          <layout-language-switch
-            class="ml-4"
+          <language-switch
             :size="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-10 lg:h-10'"
+          />
+          <routes-list
+            :class="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-10 lg:h-10'"
           />
         </div>
-      </div>
-      <div
-        class="
-          p-1
-          rounded-md
-          hover:bg-gray-300 hover:bg-opacity-60
-          transition-colors
-          duration-300
-          fixed
-          top-2
-          right-2
-          cursor-pointer
-          hidden
-          2xl:block
-        "
-      >
-        <svg-icon
-          v-if="dev"
-          name="router"
-          class="w-10 h-10 text-white"
-          @click="showRoutes"
-        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import colorSwitch from '../special/color-switch.vue'
+import LanguageSwitch from '../special/language-switch.vue'
+import RoutesList from '../special/routes-list.vue'
 export default {
-  name: 'Navbar',
+  name: 'AppNavbar',
+  components: { colorSwitch, LanguageSwitch, RoutesList },
   data() {
     return {
       displayIfScrolled: false,

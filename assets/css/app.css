@@ -1,24 +1,24 @@
 @import './fonts.css';
 
 .hyphenate {
-    text-align: justify !important;
-    -webkit-hyphens: auto !important;
-    -moz-hyphens: auto !important;
-    -ms-hyphens: auto !important;
-    hyphens: auto !important;
-  }
-  
+  text-align: justify !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  -ms-hyphens: auto !important;
+  hyphens: auto !important;
+}
+
+.text-columns {
+  columns: 1;
+  column-gap: 2.5rem;
+}
+@screen lg {
   .text-columns {
-    columns: 1;
+    columns: 2;
     column-gap: 2.5rem;
   }
-  @screen lg {
-    .text-columns {
-      columns: 2;
-      column-gap: 2.5rem;
-    }
-  }
-  /* 
+}
+/* 
   @layer utilities {
     @variants responsive {
       .text-columns {
@@ -27,68 +27,68 @@
       }
     }
   } */
-  
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.5s;
-  }
-  
-  .fade-enter,
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
     .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-  }
-  
-  .container {
-    @apply px-5;
-  }
-  
-  .badges-section img {
-    @apply inline my-1 !important;
-  }
-  
-  .badges-section a {
-    @apply border-transparent !important;
-  }
-  
-  .badges-section a:hover {
-    @apply bg-transparent border-transparent !important;
-  }
-  
-  body {
-    @apply overflow-x-hidden;
-  }
-  
-  [v-cloak] {
-    display: none;
-  }
-  
-  .text-on-img-tailwind .source::after {
-    @apply absolute top-0 bottom-0 left-0 right-0 w-full max-w-full bg-black bg-opacity-40;
-    content: '';
-  }
-  .border-black-after:after {
-    @apply border-black !important;
-  }
-  .link-border {
-    @apply inline-block;
-  }
-  .link-border:after {
-    @apply block transform border-b-2;
-    content: '';
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
-  }
-  .link-border:hover:after {
-    transform: scaleX(1);
-  }
-  .link-border.fromRight:after {
-    transform-origin: 100% 50%;
-  }
-  .link-border.fromLeft:after {
-    transform-origin: 0% 50%;
-  }
-  .gradient {
-    /* background: linear-gradient(
+  opacity: 0;
+}
+
+.container {
+  @apply px-5;
+}
+
+.badges-section img {
+  @apply inline my-1 !important;
+}
+
+.badges-section a {
+  @apply border-transparent !important;
+}
+
+.badges-section a:hover {
+  @apply bg-transparent border-transparent !important;
+}
+
+body {
+  @apply overflow-x-hidden;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.text-on-img-tailwind .source::after {
+  @apply absolute top-0 bottom-0 left-0 right-0 w-full max-w-full bg-black bg-opacity-40;
+  content: '';
+}
+.border-black-after:after {
+  @apply border-black !important;
+}
+.link-border {
+  @apply inline-block;
+}
+.link-border:after {
+  @apply block transform border-b-2;
+  content: '';
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.link-border:hover:after {
+  transform: scaleX(1);
+}
+.link-border.fromRight:after {
+  transform-origin: 100% 50%;
+}
+.link-border.fromLeft:after {
+  transform-origin: 0% 50%;
+}
+.gradient {
+  /* background: linear-gradient(
         to top,
         rgba(255, 255, 255, 1) 50%,
         rgba(255, 255, 255, 0.3) 70%,
@@ -96,11 +96,13 @@
         rgba(255, 255, 255, 0.1) 90%,
         rgba(255, 255, 255, 0) 100%
       ); */
-    mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
-  }
+  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
+}
 
 .nuxt-content {
-  & h1, h2, h3 {
+  & h1,
+  h2,
+  h3 {
     @apply font-morpheus;
   }
 }

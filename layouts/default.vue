@@ -1,17 +1,22 @@
 <template>
   <div :class="dev ? 'debug-screens' : ''" class="bg-white dark:bg-gray-900">
-    <navbar />
+    <app-navbar />
     <div class="min-h-screen">
-      <hero />
+      <app-hero />
       <Nuxt />
     </div>
-    <back-to-top />
+    <app-back-to-top />
     <app-footer />
   </div>
 </template>
 <script>
+import AppBackToTop from '~/components/layout/app-back-to-top.vue'
+import AppFooter from '~/components/layout/app-footer.vue'
+import AppHero from '~/components/layout/app-hero.vue'
+import appNavbar from '~/components/layout/app-navbar.vue'
 export default {
   name: 'LayoutDefault',
+  components: { appNavbar, AppHero, AppBackToTop, AppFooter },
   data() {
     return {
       dev: process.env.NODE_ENV !== 'production',

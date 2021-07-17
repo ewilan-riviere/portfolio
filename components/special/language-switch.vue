@@ -1,5 +1,5 @@
 <template>
-  <dropdown-template align="right-0" :width="48">
+  <dropdown align="right-0" :width="48">
     <template #trigger>
       <button
         id="language"
@@ -54,14 +54,14 @@
         </nuxt-link>
       </div>
     </template>
-  </dropdown-template>
+  </dropdown>
 </template>
 
 <script>
-import dropdownTemplate from './dropdown-template.vue'
+import dropdown from './dropdown.vue'
 export default {
   name: 'LanguageSwitch',
-  components: { dropdownTemplate },
+  components: { dropdown },
   props: {
     size: {
       type: String,
