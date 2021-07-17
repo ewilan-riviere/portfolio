@@ -115,8 +115,8 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     baseURL: process.env.API_URL,
-    credentials: true,
-    https: false,
+    // credentials: true,
+    // https: false,
     headers: {
       common: {
         'X-Requested-With': 'XMLHttpRequest',
@@ -187,13 +187,6 @@ export default {
     lazy: true,
     defaultLocale: 'en',
     langDir: 'lang/',
-    // vueI18n: {
-    //   fallbackLocale: 'en',
-    //   messages: {
-    //     en: './lang/en.js',
-    //     fr: './lang/fr.js'
-    //   }
-    // }
   },
 
   hooks: {

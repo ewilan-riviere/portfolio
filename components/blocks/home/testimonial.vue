@@ -14,7 +14,15 @@
         <div class="relative lg:-my-8">
           <div
             aria-hidden="true"
-            class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"
+            class="
+              absolute
+              inset-x-0
+              top-0
+              h-1/2
+              bg-white
+              dark:bg-gray-900
+              lg:hidden
+            "
           ></div>
           <div
             class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full"
@@ -31,7 +39,7 @@
             >
               <img
                 class="object-cover lg:h-full lg:w-full"
-                src="/images/ewilan-riviere.webp"
+                src="/images/author.webp"
                 alt="Ewilan Rivière"
                 titl="Ewilan Rivière"
                 loading="lazy"

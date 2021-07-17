@@ -77,7 +77,7 @@
           </svg>
           <div class="relative mx-auto text-base max-w-prose lg:max-w-none">
             <figure>
-              <div class="aspect-w-2 lg:aspect-h-2 aspect-h-1">
+              <div class="aspect-w-1 lg:aspect-h-2 aspect-h-1 lg:aspect-w-2">
                 <img
                   class="object-contain object-center"
                   src="/images/laptop-woman.svg"
@@ -92,7 +92,7 @@
               mx-auto
               mt-5
               prose prose-primary
-              dark:prose-dark
+              dark:prose-light
               lg:max-w-none lg:row-start-1 lg:col-start-1
             "
           >

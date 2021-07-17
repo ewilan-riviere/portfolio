@@ -30,7 +30,9 @@
           />
         </div>
         <div class="relative lg:col-span-1">
-          <h2 class="text-4xl text-white font-extrabold">Current occupation</h2>
+          <h2 class="text-4xl text-white font-extrabold">
+            {{ $t('occupation.title') }}
+          </h2>
           <blockquote class="mt-6 text-white">
             <p class="text-xl font-medium sm:text-2xl">
               {{ $t('occupation.text') }}

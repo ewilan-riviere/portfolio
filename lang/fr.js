@@ -15,7 +15,6 @@ export default async (context, locale) => {
     projects: 'Projets',
     training: 'Formation',
     bachelor: 'bac',
-    cat: 'Chat',
     years: 'années',
     experience: 'Expérience',
 
@@ -41,6 +40,7 @@ export default async (context, locale) => {
         "Si vous avez une question ou des propositions de projets, n'hésitez pas !",
     },
     occupation: {
+      title: 'Activité actuelle',
       text: 'Je travaille actuellement chez Useweb, une agence web créant des sites sur mesure avec des technologies comme NuxtJS, Laravel ou Flutter.',
       date: 'Depuis 2019',
       location: 'Rennes en Bretagne, France',
@@ -64,7 +64,7 @@ export default async (context, locale) => {
       },
       seo: {
         title: 'SEO',
-        text: "Que ce soit la mise en place des métadonnées <head>, l'open graph, les redirections ou l'analyse de la fréquentation, le SEO est important dans chaque projet.",
+        text: "Que ce soit la mise en place des métadonnées <head>, l'open graph, les redirections, l'analyse de la fréquentation ou l'éco-conception, le SEO est important dans chaque projet.",
       },
       'operating-system': {
         title: "Systèmes d'exploitation",

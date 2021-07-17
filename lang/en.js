@@ -40,6 +40,7 @@ export default async (context, locale) => {
       subtitle: "If you have a question or project proposal, don't hesitate!",
     },
     occupation: {
+      title: 'Current occupation',
       text: 'I am currently working at Useweb, a web agency creating custom websites with technologies such as NuxtJS, Laravel or Flutter.',
       date: 'Since 2019',
       location: 'Rennes in Bretagne, France',
@@ -63,7 +64,7 @@ export default async (context, locale) => {
       },
       seo: {
         title: 'SEO',
-        text: "Whether it's setting up <head> metadata, open graph, redirects or traffic analysis, SEO is important in every project.",
+        text: "Whether it's setting up <head> metadata, open graph, redirects, traffic analysis or ecodesign, SEO is important in every project.",
       },
       'operating-system': {
         title: 'Operating systems',

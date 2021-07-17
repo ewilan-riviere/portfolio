@@ -1,12 +1,14 @@
 <template>
   <div class="mx-auto max-w-7xl">
-    <list-projects :projects="projects" />
+    <projects-list :projects="projects" />
   </div>
 </template>
 
 <script>
+import projectsList from '~/components/blocks/projects-list.vue'
 export default {
   name: 'PageProjects',
+  components: { projectsList },
   async asyncData({ app, query, error, $content }) {
     try {
       const [projects] = await Promise.all([app.$axios.$get('projects')])

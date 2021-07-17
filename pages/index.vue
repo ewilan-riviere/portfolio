@@ -1,6 +1,5 @@
 <template>
   <div>
-    <app-button />
     <content-medium />
     <features />
     <cloud-logos />
@@ -67,8 +66,8 @@ export default {
   },
   created() {
     this.$store.commit('setHeader', {
-      title: 'pages.blocks/home.title',
-      abstract: 'pages.blocks/home.abstract',
+      title: 'pages.home.title',
+      abstract: 'pages.home.abstract',
     })
   },
 }

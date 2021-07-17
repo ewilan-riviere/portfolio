@@ -2,7 +2,7 @@
   <div class="relative">
     <img
       v-if="imageNotExist"
-      src="/images/no-cover.webp"
+      src="/icon.png"
       :alt="title"
       class="object-cover max-size"
     />
@@ -40,7 +40,7 @@ export default {
   props: {
     src: {
       type: String,
-      default: '/images/no-cover.webp',
+      default: '/icon.png',
     },
     color: {
       type: String,

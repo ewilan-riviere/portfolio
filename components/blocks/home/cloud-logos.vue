@@ -199,6 +199,11 @@ export default {
           logo: 'techno/markdown',
           link: 'https://en.wikipedia.org/wiki/Markdown',
         },
+        {
+          name: 'Strapi',
+          logo: 'techno/strapi',
+          link: 'https://strapi.io',
+        },
       ],
       randomTechnologies: [],
     }
