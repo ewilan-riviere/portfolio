@@ -29,7 +29,13 @@
           hover:text-gray-300
         "
       >
-        <nuxt-link to="/">
+        <nuxt-link
+          :to="
+            localePath({
+              name: 'index',
+            })
+          "
+        >
           <svg-icon
             name="logo"
             :class="displayIfScrolled ? 'w-10' : 'w-10 lg:w-12 lg:h-12'"

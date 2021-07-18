@@ -253,13 +253,29 @@ export default {
         this.form[key] = this.formTesting[key]
       }
     },
+    resetForm() {
+      this.form.name = ''
+      this.form.email = ''
+      this.form.message = ''
+      this.form.honeypot = false
+    },
     async submit() {
       this.loading = true
-      const title = 'Message sended!'
-      const message = 'Thanks you for your message.'
+      console.log(this.form.honeypot)
       if (this.form.honeypot) {
         setTimeout(() => {
-          this.$swal(title, message, 'success')
+          this.$store.commit('setNotification', {
+            icon: 'airplane',
+            title: 'success',
+            text: 'contact_success_text',
+            color: 'text-green-400',
+          })
+          this.$store.commit('toggleNotificationIsDisplay')
+          this.resetForm()
+
+          setTimeout(() => {
+            this.$store.commit('toggleNotificationIsDisplay')
+          }, 3000)
         }, 1500)
         this.loading = false
         return
@@ -269,21 +285,34 @@ export default {
 
         this.success = true
         this.errors = false
-        this.form = {
-          name: '',
-          email: '',
-          message: '',
-        }
-        this.message = {
-          title: 'Succès',
-          text: 'Votre message a bien été envoyé',
-        }
+
+        this.$store.commit('setNotification', {
+          icon: 'airplane',
+          title: 'success',
+          text: 'contact_success_text',
+          color: 'text-green-400',
+        })
+        this.$store.commit('toggleNotificationIsDisplay')
+        this.resetForm()
+
         setTimeout(() => {
-          this.success = false
-        }, 1500)
+          this.$store.commit('toggleNotificationIsDisplay')
+        }, 3000)
       } catch (e) {
         console.error(e)
         this.errors = true
+
+        this.$store.commit('setNotification', {
+          icon: 'airplane',
+          title: 'failed',
+          text: 'contact_failed_text',
+          color: 'text-red-400',
+        })
+        this.$store.commit('toggleNotificationIsDisplay')
+
+        setTimeout(() => {
+          this.$store.commit('toggleNotificationIsDisplay')
+        }, 3000)
       }
       this.loading = false
     },

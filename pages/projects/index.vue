@@ -5,13 +5,18 @@
 </template>
 
 <script>
+import qs from 'qs'
 import projectsList from '~/components/blocks/projects-list.vue'
 export default {
   name: 'PageProjects',
   components: { projectsList },
-  async asyncData({ app, query, error, $content }) {
+  async asyncData({ app, i18n }) {
     try {
-      const [projects] = await Promise.all([app.$axios.$get('projects')])
+      const projects = await app.$axios.$get(
+        `projects?${qs.stringify({
+          lang: i18n.locale,
+        })}`
+      )
 
       return {
         projects: projects.data,

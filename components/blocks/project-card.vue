@@ -6,12 +6,8 @@
       col-span-1
       my-5
       text-center
-      transition-colors
-      duration-100
-      dark:bg-gray-800
       divide-y divide-gray-200
-      dark:divide-gray-700 dark:hover:bg-opacity-50
-      rounded-lg
+      dark:divide-gray-700
       shadow
     "
   >
@@ -19,24 +15,31 @@
       :to="
         localePath({
           name: 'projects-slug',
-          params: { slug: project.slug },
+          params: { slug: project.meta.slug },
         })
       "
-      class="pb-20 bg-opacity-70"
+      class="
+        bg-opacity-70
+        transition-colors
+        duration-100
+        dark:bg-gray-800 dark:hover:bg-gray-700
+        hover:bg-gray-100
+        rounded-t-lg
+      "
     >
-      <div class="flex flex-col flex-1 px-8 pt-8">
+      <div class="flex flex-col flex-1 p-8">
         <img
           v-lazy-load
           class="flex-shrink-0 w-32 h-32 mx-auto object-contain"
-          :src="project.assets.image"
+          :src="project.picture.logo"
           :alt="project.title"
         />
         <div class="">
-          <div v-if="project.assets.imageTitle">
+          <div v-if="project.picture.title">
             <h3 class="sr-only">
               {{ project.title }}
             </h3>
-            <img :src="project.assets.imageTitle" :alt="project.title" />
+            <img :src="project.picture.title" :alt="project.title" />
           </div>
           <h3
             v-else
@@ -58,9 +61,9 @@
               text-left
               word-wraping
             "
-            v-html="limitLength(project.description, 150)"
+            v-html="limitLength(project.abstract, 150)"
           />
-          <dt class="sr-only">Type</dt>
+          <dt class="sr-only">Formation</dt>
           <dd v-if="project.formation" class="mt-3">
             <span
               class="
@@ -79,7 +82,7 @@
         </dl>
       </div>
     </nuxt-link>
-    <section v-if="project.links" class="absolute bottom-0 w-full">
+    <section class="w-full dark:bg-gray-800 group rounded-b-lg">
       <div
         class="
           flex
@@ -90,10 +93,10 @@
           dark:divide-gray-700
         "
       >
-        <div v-if="project.links.front" class="flex flex-1 w-0 group">
+        <div class="flex flex-1 w-0 -ml-px group">
           <a
-            v-if="project.links.front.repository"
-            :href="project.links.front.repository"
+            v-if="project.discover"
+            :href="project.discover"
             target="_blank"
             rel="noopener noreferrer"
             class="
@@ -109,73 +112,10 @@
               text-gray-700
               dark:text-gray-300
               border border-transparent
-              rounded-br-lg
-            "
-          >
-            <div class="flex items-center">
-              <svg-icon
-                name="git"
-                class="
-                  w-6
-                  h-6
-                  transition-colors
-                  duration-300
-                  group-hover:text-red-600
-                "
-              />
-              <span
-                class="
-                  ml-1
-                  font-semibold
-                  transition-colors
-                  duration-300
-                  group-hover:text-gray-500
-                "
-                >Dépôt Git</span
-              >
-            </div>
-          </a>
-          <span
-            v-else
-            class="
-              relative
-              inline-flex
-              items-center
-              justify-center
-              flex-1
-              w-0
-              py-4
-              text-sm
-              italic
-              font-medium
-              text-gray-400
-              border border-transparent
-              rounded-br-lg
-            "
-          >
-            Non open-source
-          </span>
-        </div>
-        <div v-if="project.links.front" class="flex flex-1 w-0 -ml-px group">
-          <a
-            v-if="project.links.front.project"
-            :href="project.links.front.project"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="
-              relative
-              inline-flex
-              items-center
-              justify-center
-              flex-1
-              w-0
-              py-4
-              text-sm
-              font-medium
-              text-gray-700
-              dark:text-gray-300
-              border border-transparent
-              rounded-br-lg
+              transition-colors
+              duration-100
+              dark:group-hover:bg-gray-700
+              hover:bg-gray-100
             "
           >
             <div class="flex items-center">
@@ -198,8 +138,9 @@
                   group-hover:text-gray-500
                   dark:group-hover:text-gray-200
                 "
-                >Découvrir</span
               >
+                {{ $t('project.discover') }}
+              </span>
             </div>
           </a>
           <span
@@ -217,10 +158,9 @@
               font-medium
               text-gray-400
               border border-transparent
-              rounded-br-lg
             "
           >
-            Bientôt disponible
+            {{ $t('project.coming_soon') }}
           </span>
         </div>
       </div>

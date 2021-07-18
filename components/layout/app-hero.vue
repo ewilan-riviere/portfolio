@@ -24,7 +24,7 @@
               $t($store.state.header.title)
             }}</span>
           </h1>
-          <p
+          <h2
             class="
               max-w-lg
               mx-auto
@@ -36,7 +36,7 @@
             "
           >
             {{ $t($store.state.header.abstract) }}
-          </p>
+          </h2>
         </div>
       </div>
     </div>

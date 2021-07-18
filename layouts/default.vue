@@ -1,6 +1,7 @@
 <template>
   <div :class="dev ? 'debug-screens' : ''" class="bg-white dark:bg-gray-900">
     <app-navbar />
+    <notification />
     <div class="min-h-screen">
       <app-hero />
       <Nuxt />
