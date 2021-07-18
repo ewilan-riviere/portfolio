@@ -18,7 +18,11 @@
       :title="social.name"
       :style="`background-color: ${social.color}`"
     >
-      <svg-icon :name="social.icon" class="w-5 h-5 text-gray-100" />
+      <svg-icon
+        :name="social.icon"
+        :class="social.textColorReverse ? 'text-gray-900' : 'text-gray-100'"
+        class="w-5 h-5"
+      />
     </a>
   </div>
 </template>
