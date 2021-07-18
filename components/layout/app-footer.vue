@@ -37,7 +37,7 @@
       <div>
         <div class="flex flex-wrap justify-center">
           <a
-            v-for="social in socialLinks"
+            v-for="social in $store.state.socialLinks"
             :key="social.id"
             class="
               p-3
@@ -166,43 +166,6 @@ export default {
         //   label: 'Articles',
         //   route: 'home',
         // },
-      ],
-      socialLinks: [
-        {
-          name: 'GitHub',
-          link: 'https://github.com/ewilan-riviere',
-          icon: 'social/github',
-        },
-        {
-          name: 'GitLab',
-          link: 'https://gitlab.com/ewilan-riviere',
-          icon: 'social/gitlab',
-        },
-        {
-          name: 'StackOverflow',
-          link: 'https://stackoverflow.com/users/story/11008206',
-          icon: 'social/stackoverflow',
-        },
-        // {
-        //   name: 'Bit.dev',
-        //   link: 'https://bit.dev/ewilan-riviere',
-        //   icon: 'social/bit',
-        // },
-        {
-          name: 'Twitter',
-          link: 'https://twitter.com/ewilanriviere',
-          icon: 'social/twitter',
-        },
-        {
-          name: 'LinkedIn',
-          link: 'https://www.linkedin.com/in/ewilan-riviere',
-          icon: 'social/linkedin',
-        },
-        {
-          name: 'E-mail',
-          link: 'mailto:contact@ewilan-riviere.com',
-          icon: 'social/mail',
-        },
       ],
       copyrights: [
         'creative-commons',

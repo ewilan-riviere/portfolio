@@ -4,6 +4,7 @@
       <div>
         <app-navbar />
         <notification />
+        <social-networks />
       </div>
     </lazy-hydrate>
     <div class="min-h-screen">
@@ -29,6 +30,7 @@ export default {
     AppFooter: () => import('~/components/layout/app-footer.vue'),
     AppHero: () => import('~/components/layout/app-hero.vue'),
     appNavbar: () => import('~/components/layout/app-navbar.vue'),
+    SocialNetworks: () => import('~/components/blocks/social-networks.vue'),
   },
   data() {
     return {
