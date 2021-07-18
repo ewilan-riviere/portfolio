@@ -54,26 +54,26 @@ module.exports = {
         },
         light: {
           css: {
-            color: '#e5e7eb',
+            color: theme('colors.gray.100'),
             h1: {
-              color: '#f3f4f6',
+              color: theme('colors.gray.100'),
             },
             h2: {
-              color: '#f3f4f6',
+              color: theme('colors.gray.100'),
             },
             h3: {
-              color: '#f3f4f6',
+              color: theme('colors.gray.100'),
             },
             strong: {
-              color: '#e5e7eb',
+              color: theme('colors.gray.200'),
             },
             blockquote: {
-              color: '#e5e7eb',
+              color: theme('colors.gray.200'),
             },
             a: {
-              color: '#3182ce',
+              color: theme('colors.primary.100'),
               '&:hover': {
-                color: '#2c5282',
+                color: theme('colors.primary.200'),
               },
             },
           },

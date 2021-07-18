@@ -17,7 +17,7 @@
       <div class="py-3 xl:pt-6 xl:pb-0">
         <h2 class="sr-only">Description</h2>
         <div
-          class="prose max-w-none hyphenate dark:text-gray-50"
+          class="prose dark:prose-light max-w-none hyphenate"
           v-html="project.description"
         ></div>
       </div>
