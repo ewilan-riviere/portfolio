@@ -8,7 +8,22 @@
     >
       <div class="xl:border-b xl:pb-6 mt-2">
         <div class="text-gray-500 dark:text-gray-200 italic">
-          {{ $t('project.context') }}: {{ project.experience }}
+          {{ $t('project.context') }}:
+          <span
+            class="
+              inline-flex
+              items-center
+              px-2.5
+              py-0.5
+              rounded-md
+              text-sm
+              font-medium
+              bg-green-100
+              text-green-800
+            "
+          >
+            {{ project.experience }}
+          </span>
         </div>
         <div class="text-gray-600 dark:text-gray-300">
           {{ project.abstract }}
