@@ -87,17 +87,6 @@ body {
 .link-border.fromLeft:after {
   transform-origin: 0% 50%;
 }
-.gradient {
-  /* background: linear-gradient(
-        to top,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0.3) 70%,
-        rgba(255, 255, 255, 0.2) 80%,
-        rgba(255, 255, 255, 0.1) 90%,
-        rgba(255, 255, 255, 0) 100%
-      ); */
-  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
-}
 
 .nuxt-content {
   & h1,

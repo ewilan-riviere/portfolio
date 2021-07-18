@@ -89,6 +89,7 @@
               class="absolute inset-0 object-cover w-full h-full"
               src="/images/ewilan-riviere.jpg"
               alt=""
+              loading="lazy"
             />
             <div class="absolute inset-0 bg-primary-500 mix-blend-multiply" />
             <div
@@ -107,6 +108,7 @@
                   class="h-12"
                   src="https://tailwindui.com/img/logos/workcation.svg?color=white"
                   alt="Workcation"
+                  loading="lazy"
                 />
               </div>
               <blockquote class="mt-8">

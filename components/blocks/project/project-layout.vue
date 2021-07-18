@@ -137,6 +137,7 @@
                     class="w-5 h-5 rounded-full"
                     :src="developer.image"
                     alt=""
+                    loading="lazy"
                   />
                 </div>
                 <div

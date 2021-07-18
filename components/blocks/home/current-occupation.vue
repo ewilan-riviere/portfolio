@@ -27,6 +27,7 @@
             src="/images/occupation.webp"
             alt=""
             class="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
         <div class="relative lg:col-span-1">

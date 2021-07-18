@@ -10,6 +10,11 @@ export default {
     apiURL: process.env.API_URL,
   },
 
+  generate: {
+    crawler: true,
+    // routes,
+  },
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 

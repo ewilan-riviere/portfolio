@@ -40,6 +40,7 @@
               "
               :src="skill.image"
               :style="`background: rgba(${hexToRgb(skill.color)}, 0.1)`"
+              loading="lazy"
             />
             <div class="flex-grow">
               <h2

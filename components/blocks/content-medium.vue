@@ -81,6 +81,7 @@
                 <img
                   class="object-contain object-center"
                   src="/images/laptop-woman.svg"
+                  loading="lazy"
                 />
               </div>
             </figure>

@@ -39,7 +39,11 @@
             <h3 class="sr-only">
               {{ project.title }}
             </h3>
-            <img :src="project.picture.title" :alt="project.title" />
+            <img
+              :src="project.picture.title"
+              :alt="project.title"
+              loading="lazy"
+            />
           </div>
           <h3
             v-else

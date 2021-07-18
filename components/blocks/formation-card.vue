@@ -28,6 +28,7 @@
           :src="formation.logo"
           :alt="formation.title"
           class="formation-logo mx-auto"
+          loading="lazy"
         />
       </div>
     </div>

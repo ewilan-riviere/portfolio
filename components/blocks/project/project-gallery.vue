@@ -30,6 +30,7 @@
             :src="picture.url"
             :alt="picture.name"
             class="object-cover pointer-events-none group-hover:opacity-75"
+            loading="lazy"
           />
           <button
             type="button"
