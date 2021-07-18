@@ -1,7 +1,7 @@
 <template>
   <div class="relative overflow-hidden">
     <div class="container my-10 max-w-7xl">
-      <div class="mx-auto sm:px-6 lg:px-8 mb-16 mt-10">
+      <div v-if="noTitle" class="mx-auto sm:px-6 lg:px-8 mb-16 mt-10">
         <div class="text-center">
           <p
             class="
@@ -97,6 +97,10 @@ export default {
     limited: {
       type: Boolean,
       default: false,
+    },
+    noTitle: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {

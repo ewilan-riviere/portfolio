@@ -1,41 +1,47 @@
 <template>
   <div>
-    <content-medium :document="content" picture="/images/laptop-woman.svg" />
-    <features />
-    <cloud-logos />
-    <projects-list :projects="projects" :limited="true" />
-    <current-occupation />
-    <statistics />
-    <testimonial />
-    <formations-list :formations="formations" />
-    <contact-form />
+    <lazy-hydrate when-idle>
+      <content-medium :document="content" picture="/images/laptop-woman.svg" />
+    </lazy-hydrate>
+    <lazy-hydrate when-idle>
+      <features />
+    </lazy-hydrate>
+    <lazy-hydrate on-interaction>
+      <cloud-logos />
+    </lazy-hydrate>
+    <lazy-hydrate when-idle>
+      <div>
+        <projects-list :projects="projects" :limited="true" />
+        <current-occupation />
+        <statistics />
+        <testimonial />
+        <formations-list :formations="formations" />
+      </div>
+    </lazy-hydrate>
+    <lazy-hydrate when-visible>
+      <contact-form />
+    </lazy-hydrate>
   </div>
 </template>
 
 <script>
 import qs from 'qs'
-import contentMedium from '~/components/blocks/content-medium.vue'
-import CurrentOccupation from '~/components/blocks/home/current-occupation.vue'
-import Statistics from '~/components/blocks/home/statistics.vue'
-import Testimonial from '~/components/blocks/home/testimonial.vue'
-import FormationsList from '~/components/blocks/formations-list.vue'
-import ContactForm from '~/components/forms/contact-form.vue'
-import CloudLogos from '~/components/blocks/home/cloud-logos.vue'
-import Features from '~/components/blocks/home/features.vue'
-import ProjectsList from '~/components/blocks/projects-list.vue'
+import LazyHydrate from 'vue-lazy-hydration'
 
 export default {
   name: 'PageIndex',
   components: {
-    contentMedium,
-    CurrentOccupation,
-    Statistics,
-    Testimonial,
-    FormationsList,
-    ContactForm,
-    CloudLogos,
-    Features,
-    ProjectsList,
+    LazyHydrate,
+    contentMedium: () => import('~/components/blocks/content-medium.vue'),
+    CurrentOccupation: () =>
+      import('~/components/blocks/home/current-occupation.vue'),
+    Statistics: () => import('~/components/blocks/home/statistics.vue'),
+    Testimonial: () => import('~/components/blocks/home/testimonial.vue'),
+    FormationsList: () => import('~/components/blocks/formations-list.vue'),
+    ContactForm: () => import('~/components/forms/contact-form.vue'),
+    CloudLogos: () => import('~/components/blocks/home/cloud-logos.vue'),
+    Features: () => import('~/components/blocks/home/features.vue'),
+    ProjectsList: () => import('~/components/blocks/projects-list.vue'),
   },
   async asyncData({ app, i18n, $content }) {
     try {

@@ -1,15 +1,21 @@
 <template>
   <div class="mx-auto max-w-7xl">
-    <projects-list :projects="projects" />
+    <lazy-hydrate when-idle>
+      <projects-list :projects="projects" :no-title="false" />
+    </lazy-hydrate>
   </div>
 </template>
 
 <script>
 import qs from 'qs'
-import projectsList from '~/components/blocks/projects-list.vue'
+import LazyHydrate from 'vue-lazy-hydration'
+
 export default {
   name: 'PageProjects',
-  components: { projectsList },
+  components: {
+    LazyHydrate,
+    projectsList: () => import('~/components/blocks/projects-list.vue'),
+  },
   async asyncData({ app, i18n }) {
     try {
       const projects = await app.$axios.$get(

@@ -1,23 +1,35 @@
 <template>
   <div :class="dev ? 'debug-screens' : ''" class="bg-white dark:bg-gray-900">
-    <app-navbar />
-    <notification />
+    <lazy-hydrate when-idle>
+      <div>
+        <app-navbar />
+        <notification />
+      </div>
+    </lazy-hydrate>
     <div class="min-h-screen">
       <app-hero />
       <Nuxt />
     </div>
-    <app-back-to-top />
-    <app-footer />
+    <lazy-hydrate when-idle>
+      <div>
+        <app-back-to-top />
+        <app-footer />
+      </div>
+    </lazy-hydrate>
   </div>
 </template>
 <script>
-import AppBackToTop from '~/components/layout/app-back-to-top.vue'
-import AppFooter from '~/components/layout/app-footer.vue'
-import AppHero from '~/components/layout/app-hero.vue'
-import appNavbar from '~/components/layout/app-navbar.vue'
+import LazyHydrate from 'vue-lazy-hydration'
+
 export default {
   name: 'LayoutDefault',
-  components: { appNavbar, AppHero, AppBackToTop, AppFooter },
+  components: {
+    LazyHydrate,
+    AppBackToTop: () => import('~/components/layout/app-back-to-top.vue'),
+    AppFooter: () => import('~/components/layout/app-footer.vue'),
+    AppHero: () => import('~/components/layout/app-hero.vue'),
+    appNavbar: () => import('~/components/layout/app-navbar.vue'),
+  },
   data() {
     return {
       dev: process.env.NODE_ENV !== 'production',

@@ -10,24 +10,32 @@
     "
     tabindex="-1"
   >
-    <div class="py-8 xl:py-10">
-      <project-layout :project="project" />
-      <project-gallery
-        v-if="project.picture"
-        :gallery="project.picture.gallery"
-      />
-    </div>
+    <lazy-hydrate when-idle>
+      <div class="py-8 xl:py-10">
+        <project-layout :project="project" />
+        <project-gallery
+          v-if="project.picture"
+          :gallery="project.picture.gallery"
+        />
+      </div>
+    </lazy-hydrate>
   </main>
 </template>
 
 <script>
 import { limitLength } from '@/plugins/utils/methods'
 import qs from 'qs'
-import projectLayout from '~/components/blocks/project/project-layout.vue'
-import ProjectGallery from '~/components/blocks/project/project-gallery.vue'
+import LazyHydrate from 'vue-lazy-hydration'
+
 export default {
   name: 'PageProjectsSlug',
-  components: { projectLayout, ProjectGallery },
+  components: {
+    LazyHydrate,
+    projectLayout: () =>
+      import('~/components/blocks/project/project-layout.vue'),
+    ProjectGallery: () =>
+      import('~/components/blocks/project/project-gallery.vue'),
+  },
   async asyncData({ app, params, i18n }) {
     const project = await app.$axios.$get(
       `projects/${params.slug}?${qs.stringify({
