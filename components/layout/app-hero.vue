@@ -4,7 +4,7 @@
       <div class="relative">
         <div class="absolute inset-0 h-96">
           <img
-            src="/images/hero.jpg"
+            :src="$store.state.header.image"
             class="object-cover w-full h-full gradient"
           />
         </div>
@@ -56,6 +56,9 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
+  },
+  mounted() {
+    console.log(this.$store.state.header.image)
   },
   methods: {
     handleScroll() {

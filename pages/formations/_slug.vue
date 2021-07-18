@@ -16,6 +16,7 @@ export default {
   },
   created() {
     this.$store.commit('setHeader', {
+      image: '/images/hero.jpg',
       subtitle: '',
       title: this.formation.title,
       abstract: `${this.$t('training')}, ${this.formation.level}`,
@@ -23,5 +24,3 @@ export default {
   },
 }
 </script>
-
-<style lang="postcss" scoped></style>

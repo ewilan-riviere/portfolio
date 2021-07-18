@@ -32,6 +32,7 @@ export default {
   },
   created() {
     this.$store.commit('setHeader', {
+      image: '/images/hero.jpg',
       title: 'pages.projects.title',
       abstract: 'pages.projects.abstract',
     })

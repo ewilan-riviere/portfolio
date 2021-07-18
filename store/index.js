@@ -1,5 +1,6 @@
 export const state = () => ({
   header: {
+    image: '/images/hero.jpg',
     title: 'title',
     abstract: 'currentAbtract',
   },

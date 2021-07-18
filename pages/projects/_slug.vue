@@ -45,8 +45,9 @@ export default {
     }
   },
   created() {
+    console.log(this.project.picture.banner)
     this.$store.commit('setHeader', {
-      subtitle: 'Projets',
+      image: this.project.picture.banner ?? '/images/hero.jpg',
       title: this.project.title,
       abstract: limitLength(this.project.subtitle),
     })
