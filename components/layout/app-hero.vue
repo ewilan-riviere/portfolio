@@ -4,7 +4,7 @@
       <div class="relative">
         <div class="absolute inset-0 h-96">
           <img
-            :src="$store.state.header.image"
+            :src="$store.state.header.image || '/images/hero.jpg'"
             class="object-cover w-full h-full gradient"
           />
         </div>
