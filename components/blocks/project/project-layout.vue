@@ -53,7 +53,7 @@
               :name="`links/${icon(type)}`"
               class="w-6 h-6 text-gray-400 dark:text-gray-300"
             />
-            <span class="dark:text-gray-100">{{ $capitalize(link.type) }}</span>
+            <span class="dark:text-gray-100">{{ link.type }}</span>
           </div>
           <div class="mt-1">
             <div v-if="link.project" class="text-sm dark:text-gray-100">
@@ -75,7 +75,10 @@
                 >{{ getHostname(link.project) }}</a
               >
             </div>
-            <div v-if="link.repository" class="text-sm dark:text-gray-100">
+            <div
+              v-if="link.repository && !project.isPrivate"
+              class="text-sm dark:text-gray-100"
+            >
               <span>{{ $t('project.repository') }}:</span
               ><a
                 :href="link.repository"
@@ -222,8 +225,8 @@ export default {
         FRONT: 'swatch',
         BACK: 'server',
         FRONT_BACK: 'swatch',
-        APP_ANDROID: 'swatch',
-        APP_IOS: 'swatch',
+        APP_ANDROID: 'android',
+        APP_IOS: 'ios',
         default: '',
       }
       return types[type.toUpperCase()] || types.default
