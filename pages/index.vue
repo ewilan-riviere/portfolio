@@ -38,25 +38,33 @@ export default {
     ProjectsList,
   },
   async asyncData({ app, i18n }) {
-    const [formations, projects] = await Promise.all([
-      app.$axios.$get(
-        `/formations?${qs.stringify({
-          lang: i18n.locale,
-          color: '632ebe',
-        })}`
-      ),
-      app.$axios.$get(
-        `/projects?${qs.stringify({
-          lang: i18n.locale,
-          favorite: true,
-          limit: 12,
-        })}`
-      ),
-    ])
+    try {
+      const [formations, projects] = await Promise.all([
+        app.$axios.$get(
+          `/formations?${qs.stringify({
+            lang: i18n.locale,
+            color: '632ebe',
+          })}`
+        ),
+        app.$axios.$get(
+          `/projects?${qs.stringify({
+            lang: i18n.locale,
+            favorite: true,
+            limit: 12,
+          })}`
+        ),
+      ])
 
-    return {
-      formations: formations.data,
-      projects: projects.data,
+      return {
+        formations: formations.data,
+        projects: projects.data,
+      }
+    } catch (error) {
+      console.error(error)
+      return {
+        formations: [],
+        projects: [],
+      }
     }
   },
   head() {
