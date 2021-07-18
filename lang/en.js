@@ -81,5 +81,21 @@ export default async (context, locale) => {
       currently: 'Currently',
       more: 'Read more',
     },
+    project: {
+      date_start: 'Start to',
+      team: 'Team',
+      experience: 'Experience',
+      discover: 'Discover',
+      demo: 'Demo',
+      repository: 'Repository',
+      technologies: 'Technologies',
+      coming_soon: 'Coming soon',
+    },
+    notification: {
+      success: 'Success',
+      failed: 'Error',
+      contact_success_text: "You've send your message!",
+      contact_failed_text: 'An error happened, try again in some hours.',
+    },
   })
 }

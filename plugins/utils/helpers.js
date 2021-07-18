@@ -1,8 +1,11 @@
 import Vue from 'vue'
 
 // Capitalize first character
-const capitalize = (string = '') =>
-  [...string].map((char, index) => (index ? char : char.toUpperCase())).join('')
+const capitalize = (s = '') => {
+  s = s.toLowerCase()
+  return s[0].toUpperCase() + s.slice(1)
+}
+
 Vue.prototype.$capitalize = capitalize
 
 // Format date from API

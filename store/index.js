@@ -6,6 +6,13 @@ export const state = () => ({
   inDev: false,
   sidebarOpened: false,
   layerVisible: false,
+  notificationIsDisplay: false,
+  notification: {
+    icon: 'airplane',
+    title: 'success',
+    text: 'contact_success_text',
+    color: 'text-green-400',
+  },
 })
 
 export const mutations = {
@@ -20,5 +27,11 @@ export const mutations = {
   },
   setLayerVisible(state, data) {
     state.layerVisible = data
+  },
+  toggleNotificationIsDisplay(state) {
+    state.notificationIsDisplay = !state.notificationIsDisplay
+  },
+  setNotification(state, data) {
+    state.notification = data
   },
 }
