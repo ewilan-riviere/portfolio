@@ -84,7 +84,7 @@ export default async (context, locale) => {
     project: {
       date_start: 'Débuté en',
       team: 'Équipe',
-      experience: 'Experience',
+      context: 'Contexte',
       discover: 'Découvrir',
       demo: 'Demo',
       repository: 'Dépôt',
