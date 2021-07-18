@@ -9,7 +9,7 @@
         z-20
         p-2
         mb-5
-        mr-5
+        mr-16
         transition-colors
         duration-300
         bg-gray-200 bg-opacity-50
@@ -48,7 +48,6 @@ export default {
       displayBackToTop: false,
     }
   },
-
   beforeMount() {
     window.addEventListener('scroll', this.handleScroll)
   },
@@ -56,12 +55,6 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    // scrollTo() {
-    //   return window.scrollTo({
-    //     bottom: document.querySelector('#__nuxt'),
-    //     behavior: 'smooth',
-    //   })
-    // },
     handleScroll() {
       if (window.scrollY > 150) {
         this.displayBackToTop = true
