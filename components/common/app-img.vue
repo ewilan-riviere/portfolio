@@ -1,36 +1,26 @@
 <template>
-  <div class="relative">
-    <img
-      v-if="imageNotExist"
-      src="/icon.png"
-      :alt="title"
-      class="object-cover max-size"
-    />
-    <transition name="fade">
-      <div
-        v-if="loading"
-        :style="`background-color: ${color}`"
-        :class="picture"
-        class="
-          absolute
-          inset-0
-          transition-transform
-          duration-300
-          blur-sm
-          max-size
-          img
-        "
-      ></div>
-    </transition>
-    <img
-      v-lazy-load
-      :class="[loading ? '' : '', picture]"
-      :data-src="src"
-      :alt="noAlt ? '' : title"
-      :title="title"
-      class="object-cover max-size img"
-      @load="onImgLoad"
-    />
+  <div id="img" ref="appImgWrapper">
+    <div class="relative h-full">
+      <img v-if="imageNotExist" src="/icon.png" :alt="title" />
+      <transition name="fade">
+        <div
+          v-if="loading"
+          :style="`background-color: ${color}`"
+          :class="picture"
+          class="absolute inset-0 transition-transform duration-300 blur-sm"
+        ></div>
+      </transition>
+      <img
+        ref="appImgPicture"
+        v-lazy-load
+        :class="[loading ? '' : '', picture]"
+        :data-src="$attrs['data-src']"
+        :alt="noAlt ? '' : title"
+        :title="title"
+        class="h-full object-cover"
+        @load="onImgLoad"
+      />
+    </div>
   </div>
 </template>
 
@@ -44,7 +34,7 @@ export default {
     },
     color: {
       type: String,
-      default: '#564fcc',
+      default: '#632ebe',
     },
     title: {
       type: String,
@@ -65,11 +55,6 @@ export default {
       imageNotExist: false,
     }
   },
-  watch: {
-    src(newValue, oldValue) {
-      this.loading = true
-    },
-  },
   created() {
     if (!this.src) {
       this.imageNotExist = true
@@ -82,10 +67,3 @@ export default {
   },
 }
 </script>
-
-<style lang="postcss" scoped>
-.max-size {
-  width: 98%;
-  height: 98%;
-}
-</style>

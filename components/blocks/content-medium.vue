@@ -21,7 +21,7 @@
               uppercase
             "
           >
-            {{ content.subtitle }}
+            {{ document.subtitle }}
           </h2>
           <h3
             class="
@@ -36,7 +36,7 @@
               sm:text-4xl
             "
           >
-            {{ content.title }}
+            {{ document.title }}
           </h3>
         </div>
       </div>
@@ -75,14 +75,13 @@
               fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)"
             />
           </svg>
-          <div class="relative mx-auto text-base max-w-prose lg:max-w-none">
+          <div
+            v-if="picture"
+            class="relative mx-auto text-base max-w-prose lg:max-w-none"
+          >
             <figure>
               <div class="aspect-w-1 lg:aspect-h-2 aspect-h-1 lg:aspect-w-2">
-                <img
-                  class="object-contain object-center"
-                  src="/images/laptop-woman.svg"
-                  loading="lazy"
-                />
+                <app-img class="object-contain object-center" :src="picture" />
               </div>
             </figure>
           </div>
@@ -97,7 +96,7 @@
               lg:max-w-none lg:row-start-1 lg:col-start-1
             "
           >
-            <nuxt-content :document="content" />
+            <nuxt-content :document="document" />
           </div>
         </div>
       </div>
@@ -108,22 +107,14 @@
 <script>
 export default {
   name: 'HomeIntro',
-  data() {
-    return {
-      content: {
-        title: '',
-        subtitle: '',
-        body: '',
-      },
-    }
-  },
-  created() {
-    this.getContent()
-  },
-  methods: {
-    async getContent() {
-      const content = await this.$content(`${this.$i18n.locale}/home`).fetch()
-      this.content = content
+  props: {
+    document: {
+      type: Object,
+      default: () => {},
+    },
+    picture: {
+      type: String,
+      default: null,
     },
   },
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <content-medium />
+    <content-medium :document="content" picture="/images/laptop-woman.svg" />
     <features />
     <cloud-logos />
     <projects-list :projects="projects" :limited="true" />
@@ -37,9 +37,9 @@ export default {
     Features,
     ProjectsList,
   },
-  async asyncData({ app, i18n }) {
+  async asyncData({ app, i18n, $content }) {
     try {
-      const [formations, projects] = await Promise.all([
+      const [formations, projects, content] = await Promise.all([
         app.$axios.$get(
           `/formations?${qs.stringify({
             lang: i18n.locale,
@@ -53,11 +53,13 @@ export default {
             limit: 12,
           })}`
         ),
+        $content(`${i18n.locale}/home`).fetch(),
       ])
 
       return {
         formations: formations.data,
         projects: projects.data,
+        content,
       }
     } catch (error) {
       console.error(error)

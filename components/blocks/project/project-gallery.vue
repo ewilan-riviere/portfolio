@@ -26,11 +26,10 @@
             overflow-hidden
           "
         >
-          <img
+          <app-img
             :src="picture.url"
-            :alt="picture.name"
+            :title="picture.name"
             class="object-cover pointer-events-none group-hover:opacity-75"
-            loading="lazy"
           />
           <button
             type="button"

@@ -74,6 +74,6 @@ export default {
 
 <style lang="postcss" scoped>
 .gradient {
-  mask-image: linear-gradient(to bottom, gray 0%, transparent 100%);
+  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
 }
 </style>

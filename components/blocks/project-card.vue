@@ -28,22 +28,17 @@
       "
     >
       <div class="flex flex-col flex-1 p-8">
-        <img
-          v-lazy-load
-          class="flex-shrink-0 w-32 h-32 mx-auto object-contain"
+        <app-img
           :src="project.picture.logo"
-          :alt="project.title"
+          :title="project.title"
+          class="flex-shrink-0 w-32 h-32 mx-auto object-contain"
         />
         <div class="">
           <div v-if="project.picture.title">
             <h3 class="sr-only">
               {{ project.title }}
             </h3>
-            <img
-              :src="project.picture.title"
-              :alt="project.title"
-              loading="lazy"
-            />
+            <app-img :src="project.picture.title" :title="project.title" />
           </div>
           <h3
             v-else
