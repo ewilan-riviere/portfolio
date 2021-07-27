@@ -30,12 +30,9 @@
                 class="w-12 h-12"
                 :style="`color: ${color}`"
               />
-              <h2
-                class="ml-3 text-3xl font-semibold tracking-tight font-handlee"
-                :style="`color: ${color}`"
-              >
-                {{ $t(title) }}
-              </h2>
+              <div class="flex items-center justify-between w-full">
+                <slot name="title" />
+              </div>
             </div>
             <p class="mt-4 text-lg text-gray-500">
               <slot name="text" />
@@ -113,10 +110,6 @@ export default {
       default: 'book',
     },
     image: {
-      type: String,
-      default: null,
-    },
-    title: {
       type: String,
       default: null,
     },

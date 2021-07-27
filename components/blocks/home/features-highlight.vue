@@ -10,11 +10,41 @@
       v-for="(feature, id) in features"
       :key="id"
       :image="feature.image"
-      :title="feature.title"
       :icon="feature.icon"
       :color="feature.color"
       :position-image="id % 2 !== 0 ? 'left' : 'right'"
     >
+      <template #title>
+        <h2
+          class="
+            ml-3
+            text-3xl
+            font-semibold
+            tracking-tight
+            dark:text-gray-100
+            font-handlee
+          "
+          :style="`color: ${color}`"
+        >
+          {{ $t(feature.title) }}
+        </h2>
+        <span
+          class="
+            inline-flex
+            items-center
+            px-2
+            py-0.5
+            rounded
+            text-xs
+            font-medium
+            text-gray-900
+            dark:text-gray-100
+          "
+          :style="`background-color: ${$hex2rgb(feature.color, 0.2)}`"
+        >
+          {{ $t(feature.badge) }}
+        </span>
+      </template>
       <template #text>
         {{ $t(feature.text) }}
       </template>
@@ -39,6 +69,7 @@ export default {
       features: [
         {
           title: 'featuresHighlight.one.title',
+          badge: 'featuresHighlight.one.badge',
           image: '/images/feature-1.webp',
           icon: 'features/feature-1',
           color: '#FF2D20',
@@ -49,6 +80,7 @@ export default {
         },
         {
           title: 'featuresHighlight.two.title',
+          badge: 'featuresHighlight.two.badge',
           image: '/images/feature-2.webp',
           icon: 'features/feature-2',
           color: '#00C58E',
@@ -59,6 +91,7 @@ export default {
         },
         {
           title: 'featuresHighlight.three.title',
+          badge: 'featuresHighlight.three.badge',
           image: '/images/feature-3.webp',
           icon: 'features/feature-3',
           color: '#02569B',

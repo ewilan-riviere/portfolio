@@ -54,3 +54,13 @@ const slugify = (text) => {
 }
 
 Vue.prototype.$slugify = slugify
+
+const hex2rgb = (c, o = 1) =>
+  `rgba(${c.match(/\w\w/g).map((x) => +`0x${x}`)},${o})`
+
+Vue.prototype.$hex2rgb = hex2rgb
+
+const rgb2hex = (c) =>
+  '#' + c.match(/\d+/g).map((x) => (+x).toString(16).padStart(2, 0)).join``
+
+Vue.prototype.$rgb2hex = rgb2hex

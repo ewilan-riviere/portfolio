@@ -79,14 +79,17 @@ export default async (context, locale) => {
       },
       one: {
         title: 'Laravel',
+        badge: 'Fonctionne avec PHP',
         text: "J'aime le PHP mais j'adore Laravel qui est un framework MVC pour PHP. Il est très rapide de créer une API avec une collection de données, des détails de données spécifiques ou même une recherche. J'aime les caractéristiques des modèles de Laravel, les ensemenceurs et la fabrique pour les fausses données. Blade pour le front-end intégré est vraiment ludique mais il est très facile d'ajouter Vue.js pour un front-end avancé.",
       },
       two: {
         title: 'NuxtJS',
+        badge: 'Fonctionne avec JS/TS',
         text: "Si j'aime beaucoup Vue.js, NuxtJS est tellement agréable à utiliser avec toutes les fonctionnalités de Vue.js embarquées dans un framework très facile à utiliser avec son routeur dynamique, son système SSR pour les projets importants ou statiques pour les plus modestes mais aussi une communauté très active proposant des modules pour la plupart des librairies utiles.",
       },
       three: {
         title: 'Flutter',
+        badge: 'Fonctionne avec Dart',
         text: "Je viens du web et j'ai toujours voulu entrer dans le monde mobile parce que tout y est différent. Flutter offre une framework très solide et très pratique pour atteindre les smartphone avec des applications qui ont des performances proches des applications natives et permettant d'utiliser la même base de code pour Android et iOS et même des applications pour Windows, Linux et macOS.",
       },
       discover: 'Découvrir',
