@@ -71,6 +71,26 @@ export default async (context, locale) => {
         text: 'Preferring Linux for its flexibility, developing on other systems like OS X or Windows is quite possible if you have the tools to do it.',
       },
     },
+    featuresHighlight: {
+      title: {
+        eyebrow: 'Features',
+        title: 'Highlight',
+        text: "I love some frameworks more than other, that's why.",
+      },
+      one: {
+        title: 'Laravel',
+        text: "I like PHP but I love Laravel which is an MVC framework for PHP. It's really fast to create an API with collection of data, details of specified data or even search. I love Laravel's models features, seeders & factory for fake data. Blade for embedded front-end is really playful but it's really easy to add Vue.js for advanced front-end.",
+      },
+      two: {
+        title: 'NuxtJS',
+        text: 'If I like Vue.js a lot, NuxtJS is so nice to use with all the Vue.js features embedded in a very easy to use framework with its dynamic router, its SSR system for big projects or static for small ones but also a very active community offering modules for most of the useful libraries.',
+      },
+      three: {
+        title: 'Flutter',
+        text: 'I come from the web and I always wanted to enter the mobile world because everything is different there. Flutter offers a very solid and practical framework to reach smartphones with applications that have performance close to native applications and allowing to use the same code base for Android and iOS and even applications for Windows, Linux and macOS.',
+      },
+      discover: 'Discover',
+    },
     fields: {
       name: 'Name',
       email: 'Email',
@@ -85,7 +105,7 @@ export default async (context, locale) => {
       date_start: 'Start to',
       team: 'Team',
       context: 'Context',
-      discover: 'Discover',
+      discover: 'Discover demo',
       demo: 'Demo',
       repository: 'Repository',
       technologies: 'Technologies',

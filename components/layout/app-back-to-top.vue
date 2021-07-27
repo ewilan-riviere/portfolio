@@ -9,7 +9,8 @@
         z-20
         p-2
         mb-5
-        mr-16
+        mr-5
+        lg:mr-16
         transition-colors
         duration-300
         bg-gray-200 bg-opacity-50

@@ -3,16 +3,17 @@
     <lazy-hydrate when-idle>
       <content-medium :document="content" picture="/images/laptop-woman.svg" />
     </lazy-hydrate>
-    <lazy-hydrate when-idle>
+    <lazy-hydrate when-visible>
       <features />
     </lazy-hydrate>
     <lazy-hydrate on-interaction>
       <cloud-logos />
     </lazy-hydrate>
-    <lazy-hydrate when-idle>
+    <lazy-hydrate when-visible>
       <div>
         <projects-list :projects="projects" :limited="true" />
         <current-occupation />
+        <features-highlight />
         <statistics />
         <testimonial />
         <formations-list :formations="formations" />
@@ -42,6 +43,8 @@ export default {
     CloudLogos: () => import('~/components/blocks/home/cloud-logos.vue'),
     Features: () => import('~/components/blocks/home/features.vue'),
     ProjectsList: () => import('~/components/blocks/projects-list.vue'),
+    FeaturesHighlight: () =>
+      import('~/components/blocks/home/features-highlight.vue'),
   },
   async asyncData({ app, i18n, $content }) {
     try {

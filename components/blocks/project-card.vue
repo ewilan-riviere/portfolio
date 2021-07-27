@@ -30,7 +30,6 @@
       <div class="flex flex-col flex-1 p-8">
         <app-img
           :src="project.picture.logo"
-          :title="project.title"
           class="flex-shrink-0 w-32 h-32 mx-auto object-contain"
         />
         <div class="">
@@ -38,7 +37,7 @@
             <h3 class="sr-only">
               {{ project.title }}
             </h3>
-            <app-img :src="project.picture.title" :title="project.title" />
+            <app-img :src="project.picture.title" />
           </div>
           <h3
             v-else
@@ -118,16 +117,6 @@
             "
           >
             <div class="flex items-center">
-              <svg-icon
-                name="sparkles"
-                class="
-                  w-6
-                  h-6
-                  transition-colors
-                  duration-300
-                  group-hover:text-yellow-300
-                "
-              />
               <span
                 class="
                   ml-1

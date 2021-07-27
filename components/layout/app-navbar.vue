@@ -1,6 +1,9 @@
 <template>
   <section
-    :class="displayIfScrolled ? 'bg-black bg-opacity-65 h-16' : 'h-20'"
+    :class="[
+      { 'bg-black bg-opacity-65': dark },
+      displayIfScrolled ? 'bg-black bg-opacity-65 h-16' : 'h-20',
+    ]"
     class="fixed top-0 z-40 w-full text-white transition-all duration-300"
   >
     <div
@@ -96,6 +99,12 @@ import RoutesList from '../special/routes-list.vue'
 export default {
   name: 'AppNavbar',
   components: { colorSwitch, LanguageSwitch, RoutesList },
+  props: {
+    dark: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       displayIfScrolled: false,

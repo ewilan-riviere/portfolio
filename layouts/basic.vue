@@ -2,18 +2,14 @@
   <div :class="dev ? 'debug-screens' : ''" class="bg-white dark:bg-gray-900">
     <lazy-hydrate when-idle>
       <div>
-        <app-navbar />
-        <notification />
-        <social-networks class="hidden lg:block" />
+        <app-navbar :dark="true" />
       </div>
     </lazy-hydrate>
     <div class="min-h-screen">
-      <app-hero />
       <Nuxt />
     </div>
     <lazy-hydrate when-idle>
       <div>
-        <app-back-to-top />
         <app-footer />
       </div>
     </lazy-hydrate>
@@ -23,14 +19,11 @@
 import LazyHydrate from 'vue-lazy-hydration'
 
 export default {
-  name: 'LayoutDefault',
+  name: 'LayoutBasic',
   components: {
     LazyHydrate,
-    AppBackToTop: () => import('~/components/layout/app-back-to-top.vue'),
     AppFooter: () => import('~/components/layout/app-footer.vue'),
-    AppHero: () => import('~/components/layout/app-hero.vue'),
     appNavbar: () => import('~/components/layout/app-navbar.vue'),
-    SocialNetworks: () => import('~/components/blocks/social-networks.vue'),
   },
   data() {
     return {

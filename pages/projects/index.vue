@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto max-w-7xl">
     <lazy-hydrate when-idle>
-      <projects-list :projects="projects" :no-title="false" />
+      <projects-list :projects="projects" :title="false" />
     </lazy-hydrate>
   </div>
 </template>

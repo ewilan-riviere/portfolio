@@ -24,11 +24,10 @@
       "
     >
       <div class="h-16 w-16 flex">
-        <img
+        <app-img
           :src="formation.logo"
           :alt="formation.title"
           class="formation-logo mx-auto"
-          loading="lazy"
         />
       </div>
     </div>
@@ -158,5 +157,3 @@ export default {
   },
 }
 </script>
-
-<style lang="postcss" scoped></style>

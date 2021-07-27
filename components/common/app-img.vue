@@ -5,9 +5,15 @@
       <transition name="fade">
         <div
           v-if="loading"
-          :style="`background-color: ${color}`"
           :class="picture"
-          class="absolute inset-0 transition-transform duration-300 blur-sm"
+          class="
+            absolute
+            inset-0
+            transition-transform
+            duration-300
+            blur-sm
+            bg-gray-50 bg-opacity-5
+          "
         ></div>
       </transition>
       <img
@@ -38,7 +44,7 @@ export default {
     },
     title: {
       type: String,
-      default: 'Image',
+      default: '',
     },
     picture: {
       type: String,

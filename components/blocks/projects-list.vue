@@ -1,38 +1,13 @@
 <template>
   <div class="relative overflow-hidden">
     <div class="container my-10 max-w-7xl">
-      <div v-if="noTitle" class="mx-auto sm:px-6 lg:px-8 mb-16 mt-10">
-        <div class="text-center">
-          <p
-            class="
-              text-base
-              font-semibold
-              text-primary-600
-              tracking-wide
-              uppercase
-            "
-          >
-            {{ $t('projectsList.ontitle') }}
-          </p>
-          <h2
-            class="
-              mt-1
-              text-3xl
-              font-semibold
-              text-gray-900
-              dark:text-gray-100
-              sm:text-4xl sm:tracking-tight
-              lg:text-5xl
-              title-font
-            "
-          >
-            {{ $t('projectsList.title') }}
-          </h2>
-          <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-            {{ $t('projectsList.subtitle') }}
-          </p>
-        </div>
-      </div>
+      <app-title
+        v-if="title"
+        :eyebrow="'projectsList.ontitle'"
+        :title="'projectsList.title'"
+        :text="'projectsList.subtitle'"
+        position="center"
+      />
       <section class="masonry-container">
         <project-card
           v-for="(project, projectId) in projects"
@@ -85,10 +60,11 @@
 <script>
 import { limitLength } from '@/plugins/utils/methods'
 import projectCard from './project-card.vue'
+import AppTitle from './app-title.vue'
 
 export default {
   name: 'ProjectsList',
-  components: { projectCard },
+  components: { projectCard, AppTitle },
   props: {
     projects: {
       type: Array,
@@ -98,7 +74,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    noTitle: {
+    title: {
       type: Boolean,
       default: true,
     },

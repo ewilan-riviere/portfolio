@@ -37,7 +37,7 @@
                 lg:aspect-none lg:h-full
               "
             >
-              <img
+              <app-img
                 class="object-cover lg:h-full lg:w-full"
                 src="/images/author.webp"
                 alt="Ewilan Rivière"

@@ -5,8 +5,7 @@
       w-full
       text-gray-100
       bg-gray-900
-      border-t
-      dark:border-gray-800
+      dark:border-t dark:border-gray-800
     "
   >
     <div
