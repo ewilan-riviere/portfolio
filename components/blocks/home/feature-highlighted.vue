@@ -84,7 +84,6 @@
               lg:absolute lg:h-full lg:w-auto lg:max-w-none
             "
             :src="image"
-            :alt="title"
           />
         </div>
       </div>

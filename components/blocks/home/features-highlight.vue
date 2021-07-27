@@ -24,7 +24,7 @@
             dark:text-gray-100
             font-handlee
           "
-          :style="`color: ${color}`"
+          :style="`color: ${$hex2rgb(feature.color)}`"
         >
           {{ $t(feature.title) }}
         </h2>
