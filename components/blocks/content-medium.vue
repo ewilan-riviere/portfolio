@@ -1,6 +1,9 @@
 <template>
   <div class="overflow-hidden">
-    <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div
+      v-if="document"
+      class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8"
+    >
       <div
         class="
           mx-auto
