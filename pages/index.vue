@@ -12,9 +12,9 @@
     <lazy-hydrate when-visible>
       <div>
         <projects-list :projects="projects" :limited="true" />
+        <statistics />
         <current-occupation />
         <features-highlight />
-        <statistics />
         <testimonial />
         <formations-list :formations="formations" />
       </div>

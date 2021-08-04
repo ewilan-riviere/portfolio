@@ -94,7 +94,7 @@
               {{ date(2019) }}
             </span>
           </a>
-          <span class="mx-1"> · </span>
+          <span class="mx-1 hidden lg:block"> · </span>
           <a
             :href="github"
             target="_blank"

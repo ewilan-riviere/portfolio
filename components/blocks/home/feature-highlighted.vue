@@ -1,5 +1,5 @@
 <template>
-  <div class="relative my-3 md:my-20">
+  <div class="relative my-3 lg:my-20">
     <div
       class="
         lg:mx-auto
@@ -14,13 +14,13 @@
       <div
         :class="[
           {
-            'max-w-xl px-4 lg:py-16': positionImage === 'right',
+            'lg:max-w-xl lg:px-4 lg:py-16': positionImage === 'right',
           },
           {
             'lg:py-32 lg:col-start-2': positionImage === 'left',
           },
         ]"
-        class="mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0"
+        class="px-6 lg:max-w-none lg:mx-0 lg:px-0"
       >
         <div class="py-20">
           <div>
@@ -63,7 +63,7 @@
         :class="{
           'lg:col-start-1': positionImage === 'left',
         }"
-        class="mt-12 sm:mt-16 lg:mt-0 hidden md:block"
+        class="mt-12 sm:mt-16 lg:mt-0 hidden lg:block"
       >
         <div
           class="

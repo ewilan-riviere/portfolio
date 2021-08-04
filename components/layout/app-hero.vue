@@ -13,7 +13,7 @@
         >
           <h1
             class="
-              text-3xl
+              text-4xl
               tracking-tight
               text-center
               sm:text-5xl
@@ -32,7 +32,7 @@
               text-xl text-center text-gray-800
               dark:text-gray-200
               sm:max-w-3xl
-              lg:font-pelagiad lg:text-2xl
+              lg:font-pelagiad lg:text-3xl
             "
           >
             {{ $t($store.state.header.abstract) }}

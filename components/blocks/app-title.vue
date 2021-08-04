@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto sm:px-6 lg:px-8 mb-16 mt-10">
+  <div class="mx-auto px-6 lg:px-8 mb-16 mt-10">
     <div :class="titlePosition">
       <p
         v-if="eyebrow"

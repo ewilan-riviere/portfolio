@@ -73,8 +73,8 @@ export default async (context, locale) => {
     },
     featuresHighlight: {
       title: {
-        eyebrow: 'Features',
-        title: 'Highlight',
+        eyebrow: 'Highlight',
+        title: 'Favorite features',
         text: "I love some frameworks more than other, that's why.",
       },
       one: {

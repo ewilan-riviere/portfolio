@@ -24,10 +24,11 @@
       "
     >
       <div class="h-16 w-16 flex">
-        <app-img
+        <img
           :src="formation.logo"
           :alt="formation.title"
           class="formation-logo mx-auto"
+          loading="lazy"
         />
       </div>
     </div>

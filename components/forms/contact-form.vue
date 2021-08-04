@@ -1,5 +1,5 @@
 <template>
-  <div class="relative sm:pb-16">
+  <div class="relative pb-16">
     <div aria-hidden="true" class="hidden sm:block">
       <svg
         class="absolute -ml-3 top-8 left-1/2"
