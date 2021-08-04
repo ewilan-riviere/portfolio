@@ -66,6 +66,11 @@ export default {
       this.imageNotExist = true
     }
   },
+  mounted() {
+    this.$refs.appImgWrapper.classList.forEach((classElement) => {
+      this.$refs.appImgPicture.classList.add(classElement)
+    })
+  },
   methods: {
     onImgLoad() {
       this.loading = false

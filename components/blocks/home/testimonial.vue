@@ -41,7 +41,7 @@
                 class="object-cover lg:h-full lg:w-full"
                 src="/images/author.webp"
                 alt="Ewilan Rivière"
-                titl="Ewilan Rivière"
+                title="Ewilan Rivière"
                 loading="lazy"
               />
             </div>

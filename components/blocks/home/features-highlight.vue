@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-7xl">
+  <div>
     <app-title
       :eyebrow="'featuresHighlight.title.eyebrow'"
       :title="'featuresHighlight.title.title'"
@@ -22,7 +22,7 @@
             font-semibold
             tracking-tight
             dark:text-gray-100
-            font-handlee
+            sr-only
           "
           :style="`color: ${$hex2rgb(feature.color)}`"
         >

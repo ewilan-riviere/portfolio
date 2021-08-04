@@ -24,13 +24,15 @@
       >
         <div class="py-20">
           <div>
-            <div class="flex items-center">
-              <svg-icon
-                :name="icon"
-                class="w-12 h-12"
-                :style="`color: ${color}`"
-              />
-              <div class="flex items-center justify-between w-full">
+            <div class="flex items-center justify-between">
+              <div>
+                <svg-icon
+                  :name="icon"
+                  class="w-44 h-16"
+                  :style="`color: ${color}`"
+                />
+              </div>
+              <div class="flex items-center justify-between w-max">
                 <slot name="title" />
               </div>
             </div>
@@ -81,7 +83,8 @@
             class="
               w-full
               rounded-xl
-              lg:absolute lg:h-full lg:w-auto lg:max-w-none
+              lg:absolute lg:w-[60rem] lg:h-full lg:max-w-none
+              object-cover
             "
             :src="image"
           />
