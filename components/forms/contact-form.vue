@@ -158,7 +158,7 @@
                     shadow-sm
                     focus:ring-primary-500 focus:border-primary-500
                   "
-                  minlength="50"
+                  minlength="25"
                   maxlength="1500"
                   :placeholder="`${$t('fields.message')}*`"
                   required
