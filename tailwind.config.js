@@ -42,7 +42,7 @@ module.exports = {
         'caslon-antique': ['Caslon Antique'], // ewilan
         immortal: ['Immortal'], // les-ames-croisees
         pelagiad: ['Pelagiad'], // morrowind
-        quicksand: ['Quicksand'], // morrowind
+        quicksand: ['Quicksand'], // Quicksand
       },
       typography: (theme) => ({
         DEFAULT: {

@@ -22,3 +22,8 @@
   font-family: 'Pelagiad';
   src: url('../fonts/pelagiad/Pelagiad.ttf');
 }
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/quicksand/Quicksand-VariableFont_wght.ttf');
+}
