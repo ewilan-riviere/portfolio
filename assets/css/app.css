@@ -1,5 +1,10 @@
 @import './fonts.css';
 
+.dark {
+  color-scheme: dark;
+  scrollbar-color: theme('colors.gray.600') theme('colors.gray.900');
+}
+
 .hyphenate {
   text-align: justify !important;
   -webkit-hyphens: auto !important;
