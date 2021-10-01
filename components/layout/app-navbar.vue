@@ -78,13 +78,13 @@
       >
         <div class="flex items-center space-x-4">
           <color-switch
-            :size="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-10 lg:h-10'"
+            :size="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-8 lg:h-8'"
           />
           <language-switch
-            :size="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-10 lg:h-10'"
+            :size="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-8 lg:h-8'"
           />
           <routes-list
-            :class="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-10 lg:h-10'"
+            :class="displayIfScrolled ? 'w-8 h-8' : 'w-8 h-8 lg:w-8 lg:h-8'"
           />
         </div>
       </div>

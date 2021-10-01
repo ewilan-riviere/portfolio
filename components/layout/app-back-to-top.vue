@@ -24,7 +24,7 @@
       @click="scrollToTop"
     >
       <svg-icon
-        name="chevron-right"
+        name="arrow-chevron-right"
         class="
           block
           w-8

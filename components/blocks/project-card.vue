@@ -29,18 +29,11 @@
     >
       <div class="flex flex-col flex-1 p-8">
         <app-img
-          :src="project.picture.logo"
+          :src="`/data/projects/logo/${project.logo}`"
           class="flex-shrink-0 w-32 h-32 mx-auto object-contain"
         />
         <div class="">
-          <div v-if="project.picture.title">
-            <h3 class="sr-only">
-              {{ project.title }}
-            </h3>
-            <app-img :src="project.picture.title" />
-          </div>
           <h3
-            v-else
             class="mt-6 text-lg font-semibold text-gray-900 dark:text-gray-100"
           >
             {{ project.title }}
@@ -50,7 +43,7 @@
           <dt class="sr-only">
             {{ project.title }}
           </dt>
-          <p
+          <div
             class="
               mt-5
               text-sm
@@ -80,7 +73,14 @@
         </dl>
       </div>
     </nuxt-link>
-    <section class="w-full dark:bg-gray-800 group rounded-b-lg">
+    <component
+      :is="project.discover ? 'a' : 'span'"
+      class="w-full dark:bg-gray-800 group rounded-b-lg"
+      :class="{ 'hover:bg-gray-200 dark:hover:bg-gray-700': project.discover }"
+      :href="project.discover"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div
         class="
           flex
@@ -91,68 +91,34 @@
           dark:divide-gray-700
         "
       >
-        <div class="flex flex-1 w-0 -ml-px group">
-          <a
-            v-if="project.discover"
-            :href="project.discover"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="
-              relative
-              inline-flex
-              items-center
-              justify-center
-              flex-1
-              w-0
-              py-4
-              text-sm
-              font-medium
-              text-gray-700
-              dark:text-gray-300
-              border border-transparent
-              transition-colors
-              duration-100
-              dark:group-hover:bg-gray-700
-              hover:bg-gray-100
-            "
-          >
-            <div class="flex items-center">
-              <span
-                class="
-                  ml-1
-                  font-semibold
-                  transition-colors
-                  duration-300
-                  group-hover:text-gray-500
-                  dark:group-hover:text-gray-200
-                "
-              >
-                {{ $t('project.discover') }}
-              </span>
-            </div>
-          </a>
-          <span
-            v-else
-            class="
-              relative
-              inline-flex
-              items-center
-              justify-center
-              flex-1
-              w-0
-              py-4
-              text-sm
-              italic
-              font-medium
-              text-gray-400
-              border border-transparent
-            "
-          >
+        <div
+          class="
+            flex flex-1
+            w-0
+            -ml-px
+            group
+            relative
+            items-center
+            justify-center
+            py-4
+            text-sm
+            font-medium
+            text-gray-700
+            dark:text-gray-300
+            border border-transparent
+            transition-colors
+            duration-100
+          "
+        >
+          <span v-if="project.discover" class="font-semibold">
+            {{ $t('project.discover') }}
+          </span>
+          <span v-else class="text-sm italic">
             {{ $t('project.coming_soon') }}
           </span>
         </div>
       </div>
-    </section>
+    </component>
   </section>
 </template>
 

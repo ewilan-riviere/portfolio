@@ -1,26 +1,27 @@
 <template>
   <div>
     <lazy-hydrate when-idle>
-      <content-medium :document="content" picture="/images/laptop-woman.svg" />
+      <blocks-content-medium
+        :document="content"
+        picture="/images/laptop-woman.svg"
+      />
     </lazy-hydrate>
     <lazy-hydrate when-visible>
-      <features />
+      <blocks-home-features />
     </lazy-hydrate>
     <lazy-hydrate on-interaction>
-      <cloud-logos />
+      <blocks-home-technology-logos />
     </lazy-hydrate>
     <lazy-hydrate when-visible>
       <div>
-        <projects-list :projects="projects" :limited="true" />
-        <statistics />
-        <current-occupation />
-        <features-highlight />
-        <testimonial />
-        <formations-list :formations="formations" />
+        <blocks-projects-list :projects="projects" :limited="true" />
+        <blocks-home-statistics />
+        <blocks-home-current-occupation />
+        <blocks-home-features-highlight />
+        <blocks-home-testimonial />
+        <blocks-formations-list :formations="formations" />
+        <forms-contact-form />
       </div>
-    </lazy-hydrate>
-    <lazy-hydrate when-visible>
-      <contact-form />
     </lazy-hydrate>
   </div>
 </template>
@@ -29,45 +30,35 @@
 import qs from 'qs'
 import LazyHydrate from 'vue-lazy-hydration'
 
+import projectsData from '@/static/data/projects.json'
+
 export default {
   name: 'PageIndex',
   components: {
     LazyHydrate,
-    contentMedium: () => import('~/components/blocks/content-medium.vue'),
-    CurrentOccupation: () =>
-      import('~/components/blocks/home/current-occupation.vue'),
-    Statistics: () => import('~/components/blocks/home/statistics.vue'),
-    Testimonial: () => import('~/components/blocks/home/testimonial.vue'),
-    FormationsList: () => import('~/components/blocks/formations-list.vue'),
-    ContactForm: () => import('~/components/forms/contact-form.vue'),
-    CloudLogos: () => import('~/components/blocks/home/cloud-logos.vue'),
-    Features: () => import('~/components/blocks/home/features.vue'),
-    ProjectsList: () => import('~/components/blocks/projects-list.vue'),
-    FeaturesHighlight: () =>
-      import('~/components/blocks/home/features-highlight.vue'),
   },
   async asyncData({ app, i18n, $content }) {
     try {
-      const [formations, projects, content] = await Promise.all([
+      const [formations, content] = await Promise.all([
         app.$axios.$get(
           `/formations?${qs.stringify({
             lang: i18n.locale,
             color: '632ebe',
           })}`
         ),
-        app.$axios.$get(
-          `/projects?${qs.stringify({
-            lang: i18n.locale,
-            favorite: true,
-            limit: 12,
-          })}`
-        ),
+        // app.$axios.$get(
+        //   `/projects?${qs.stringify({
+        //     lang: i18n.locale,
+        //     favorite: true,
+        //     limit: 12,
+        //   })}`
+        // ),
+
         $content(`${i18n.locale}/home`).fetch(),
       ])
 
       return {
         formations: formations.data,
-        projects: projects.data,
         content,
       }
     } catch (error) {
@@ -82,6 +73,15 @@ export default {
     return {
       title: this.title,
     }
+  },
+  computed: {
+    projects() {
+      let projects = projectsData
+      projects = projects.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
+      projects.sort((a, b) => a.isFavorite + b.isFavorite)
+      projects = projects.slice(0, 12)
+      return projects
+    },
   },
   created() {
     this.$store.commit('setHeader', {

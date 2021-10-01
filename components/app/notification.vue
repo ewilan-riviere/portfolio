@@ -58,7 +58,7 @@
                     focus:outline-none
                     focus:ring-2
                     focus:ring-offset-2
-                    focus:ring-indigo-500
+                    focus:ring-primary-500
                   "
                   @click="$store.commit('toggleNotificationIsDisplay')"
                 >

@@ -47,11 +47,13 @@ export default {
     // '~/plugins/utils/i18n',
     // https://github.com/ndelvalle/v-click-outside
     '~/plugins/v-click-outside',
+    // https://github.com/surmon-china/vue-awesome-swiper
+    '~/plugins/vue-awesome-swiper.client.js',
   ],
 
   // GitHub: https://github.com/nuxt/components
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: [{ path: '~/components/common', pathPrefix: false }],
+  components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -115,6 +117,8 @@ export default {
     'nuxt-lazy-load',
     // https://i18n.nuxtjs.org/setup/
     'nuxt-i18n',
+    // https://www.npmjs.com/package/@nuxtjs/markdownit
+    '@nuxtjs/markdownit',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -192,6 +196,13 @@ export default {
     lazy: true,
     defaultLocale: 'en',
     langDir: 'lang/',
+  },
+  // See https://github.com/markdown-it/markdown-it
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    // use: ['markdown-it-div', 'markdown-it-attrs'],
   },
 
   hooks: {

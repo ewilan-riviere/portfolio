@@ -203,7 +203,7 @@
                     <span> {{ $t('fields.send') }} </span>
                   </span>
                   <span v-else class="flex items-center space-x-2">
-                    <loading class="w-4 h-4" />
+                    <app-loading class="w-4 h-4" />
                     <span> {{ $t('fields.sending') }} </span>
                   </span>
                 </app-button>

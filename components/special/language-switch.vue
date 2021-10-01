@@ -29,7 +29,7 @@
           class="text-gray-100 transition-all"
         />
         <!-- <svg-icon
-          name="arrow/chevron-right"
+          name="arrow/arrow-chevron-right"
           class="w-5 h-5 ml-1 transform rotate-90"
         /> -->
       </button>

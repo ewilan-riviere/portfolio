@@ -3,7 +3,7 @@
     <lazy-hydrate when-idle>
       <div>
         <app-navbar />
-        <notification />
+        <app-notification />
         <social-networks class="hidden lg:block" />
       </div>
     </lazy-hydrate>

@@ -1,0 +1,60 @@
+{
+  "personal": [
+    {
+      "meta": {
+        "slug": "bookshelves"
+      },
+      "title": "Bookshelves",
+      "subtitle": "Online library",
+      "order": null,
+      "abstract": "Get metadata of EPUB to generate database with playful front-end.",
+      "createdAt": "2021-01-03T00:00:00.000000Z",
+      "formation": null,
+      "logo": "bookshelves_logo.webp",
+      "isFavorite": true,
+      "discover": "https://bookshelves.ink"
+    },
+    {
+      "meta": {
+        "slug": "markdownthis"
+      },
+      "title": "MarkdownThis",
+      "subtitle": "",
+      "order": null,
+      "abstract": "",
+      "createdAt": "2020-11-05T00:00:00.000000Z",
+      "formation": null,
+      "logo": "markdownthis_logo.webp",
+      "isFavorite": true,
+      "discover": null
+    },
+    {
+      "meta": {
+        "slug": "skyscale"
+      },
+      "title": "Skyscale",
+      "subtitle": "",
+      "order": null,
+      "abstract": "",
+      "createdAt": "2020-10-30T00:00:00.000000Z",
+      "formation": null,
+      "logo": "skyscale_logo.webp",
+      "isFavorite": false,
+      "discover": "https://skyscale.git-projects.xyz"
+    },
+    {
+      "meta": {
+        "slug": "roazhon-star"
+      },
+      "title": "Roazhon Star",
+      "subtitle": "",
+      "order": null,
+      "abstract": "",
+      "createdAt": "2020-10-24T00:00:00.000000Z",
+      "formation": null,
+      "logo": "roazhon-star_logo.webp",
+      "isFavorite": false,
+      "discover": "http://roazhon-star-bus.git-projects.xyz"
+    }
+  ]
+}

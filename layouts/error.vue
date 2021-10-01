@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-white min-h-screen flex flex-col lg:relative">
+  <div class="bg-white dark:bg-gray-900 min-h-screen flex flex-col lg:relative">
     <div class="flex-grow flex flex-col">
-      <main class="flex-grow flex flex-col bg-white">
+      <main class="flex-grow flex flex-col">
         <div
           class="
             flex-grow
@@ -19,7 +19,8 @@
               class="
                 text-sm
                 font-semibold
-                text-indigo-600
+                text-primary-600
+                dark:text-primary-400
                 uppercase
                 tracking-wide
               "
@@ -32,13 +33,14 @@
                 text-3xl
                 font-semibold
                 text-gray-900
+                dark:text-gray-100
                 tracking-tight
                 sm:text-4xl
               "
             >
               {{ error.message }}
             </h1>
-            <p class="mt-2 text-base text-gray-500">
+            <p class="mt-2 text-base text-gray-500 dark:text-gray-400">
               Sorry, we couldn’t find the page you’re looking for.
             </p>
             <div class="mt-6">
@@ -51,8 +53,10 @@
                 class="
                   text-base
                   font-medium
-                  text-indigo-600
-                  hover:text-indigo-500
+                  text-primary-600
+                  dark:text-primary-400
+                  hover:text-primary-500
+                  dark:hover:text-primary-600
                 "
                 >Go back home<span aria-hidden="true"> &rarr;</span></nuxt-link
               >

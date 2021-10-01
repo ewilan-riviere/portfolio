@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "slug": "bookshelves"
+  },
+  "title": "Bookshelves",
+  "subtitle": "Online library",
+  "order": null,
+  "abstract": "To build a database and an interface from a list of EPUB.",
+  "description": "<p>Web and mobile application project where the back-end can **create a database** from a list of **EPUB files** by extracting the metadata of each EPUB to create **authors**, **series** and books while managing the **relationships between each model**, without leaving out information such as **tags**, **publisher**, **ISBN**, **language** and **description**. Information that cannot be retrieved from the EPUB file metadata is retrieved from external **APIs such as Wikipedia or Google Books**. All this allows to manage a complete database presenting all the books presented on the front of the application that allows to **consult each entity with its relations** and to download the books. <br/><br/>- It is possible to **search by entity** in order to find a book more easily<br/>- Detailed guides help to better understand how to use a reader to read EPUB files<br/>- A **comments** and **favorites** system is also available for registered users<br/>- A **contact form** allows to send messages to the team. <br/>- Embeds the **OPDS** (Open Publication Distribution System) to offer books to applications that offer this feed but also **Catalog** which offers a simplified interface to be able to browse Bookshelves from the e-reader's web browser if it doesn't support OPDS<br/>- Available in dark mode<br/>- Offers an API documentation with **scribe**</p>\n",
+  "status": {
+    "name": "Finishes",
+    "order": 3
+  },
+  "experience": "Personal",
+  "date": "2021-01-03T00:00:00.000000Z",
+  "formation": null,
+  "skills": [
+    {
+      "title": "Nuxt.js",
+      "slug": "nuxtjs",
+      "color": "#00C58E"
+    },
+    {
+      "title": "PHP",
+      "slug": "php",
+      "color": "#8993be"
+    },
+    {
+      "title": "Laravel",
+      "slug": "laravel",
+      "color": "#fb503b"
+    },
+    {
+      "title": "Tailwind CSS",
+      "slug": "tailwind-css",
+      "color": "#319795"
+    }
+  ],
+  "developers": [
+    {
+      "name": "Ewilan Rivière",
+      "slug": "ewilan-riviere",
+      "image": "http://localhost:8000/storage/media/developers/11/ewilan-riviere.webp",
+      "role": "DEVELOPER",
+      "link": {
+        "type": "GITHUB",
+        "url": "https://github.com/ewilan-riviere"
+      }
+    },
+    {
+      "name": "Mopi",
+      "slug": "mopi",
+      "image": "http://localhost:8000/storage/media/developers/16/mopi.webp",
+      "role": "CONCEPT",
+      "link": {
+        "type": "GIT",
+        "url": "https://forge.dotslashplay.it/mopi"
+      }
+    }
+  ],
+  "isFavorite": true,
+  "isPrivate": false,
+  "links": {
+    "back": {
+      "repository": "https://gitlab.com/ewilan-riviere/bookshelves-back",
+      "project": "https://bookshelves.ink/api/documentation",
+      "type": "Back"
+    },
+    "front": {
+      "repository": "https://gitlab.com/ewilan-riviere/bookshelves-front",
+      "project": "https://bookshelves.ink",
+      "type": "Front"
+    }
+  }
+}

@@ -108,7 +108,7 @@ export default async (context, locale) => {
       date_start: 'Start to',
       team: 'Team',
       context: 'Context',
-      discover: 'Discover demo',
+      discover: 'Discover',
       demo: 'Demo',
       repository: 'Repository',
       technologies: 'Technologies',

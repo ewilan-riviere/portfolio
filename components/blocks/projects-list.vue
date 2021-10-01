@@ -47,10 +47,10 @@
     >
       <app-button :to="localePath('projects')" color="white">
         <div class="flex items-center">
-          <span>
+          <span class="mb-1">
             {{ $t('projectsList.cta') }}
           </span>
-          <svg-icon name="chevron-right" class="relative w-6 h-6 ml-1" />
+          <svg-icon name="arrow-chevron-right" class="relative w-6 h-6 ml-1" />
         </div>
       </app-button>
     </div>
