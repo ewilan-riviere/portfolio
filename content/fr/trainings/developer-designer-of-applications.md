@@ -1,0 +1,6 @@
+---
+title: Conceptrice Développeuse d'Applications
+abstract: "Une formation en alternance pour le titre de CDA. 25% de temps par mois à l'école ENI et 75% de temps à l'entreprise UseWeb. Cette entreprise réalise des sites web pour des clients, avec un front-end en NuxtJS et un back-end en Laravel. À l'école, j'ai pu étudier : gestion de projet, gérer un serveur web, Java EE, ASP.net, cross-platform, analyse et conception, Symfony, Android."
+---
+
+Une formation en alternance pour le titre de CDA. 25% de temps par mois à l'école ENI et 75% de temps à l'entreprise UseWeb. Cette entreprise réalise des sites web pour des clients, avec un front-end en NuxtJS (VueJS) et un back-end en Laravel. Mon rôle est généralement de travailler sur la partie front-end mais il m'arrive de devoir travailler également sur le back-end, ou de réaliser une application entièrement. Le plus souvent je travaille en équipe restreinte de trois personnes, je suis suivie par mon équipe pour les questions techniques et le manager pour les questions d'entreprise. L'école me forme sur plusieurs technologies : gestion de projet, gérer un serveur web, Java EE, ASP.net, cross-platform, analyse et conception, Symfony, Android. Des évaluations sont faites sur mes compétences pour obtenir le titre de conceptrice développeuse d'applications (bac+4).
