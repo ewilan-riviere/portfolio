@@ -45,37 +45,37 @@ function getMeta() {
     {
       hid: 'author',
       name: 'author',
-      content: metadata.websiteauthor,
+      content: metadata.website.author,
     },
     {
       hid: 'language',
       name: 'language',
-      content: metadata.websitelanguage,
+      content: metadata.website.language,
     },
     {
       hid: 'designer',
       name: 'designer',
-      content: metadata.websitedesigner,
+      content: metadata.website.designer,
     },
     {
       hid: 'publisher',
       name: 'publisher',
-      content: metadata.websitepublisher,
+      content: metadata.website.publisher,
     },
     {
       hid: 'copyright',
       name: 'copyright',
-      content: metadata.websitecopyright,
+      content: metadata.website.copyright,
     },
     {
       hid: 'rating',
       name: 'rating',
-      content: metadata.websiterating,
+      content: metadata.website.rating,
     },
     {
       hid: 'keywords',
       name: 'keywords',
-      content: metadata.websitekeywords.join(','),
+      content: metadata.website.keywords.join(','),
     },
   ]
 }
@@ -89,7 +89,7 @@ function getOpenGraph() {
     },
     {
       hid: 'og:locale',
-      name: 'og:locale',
+      property: 'og:locale',
       content: metadata.settings.locale,
     },
   ]
@@ -102,15 +102,19 @@ function getTwitterCard() {
       name: 'twitter:card',
       content: 'summary_large_image',
     },
-    {
-      hid: 'twitter:url',
-      name: 'twitter:url',
-      content: metadata.twitter.url,
-    },
-    {
-      hid: 'twitter:creator',
-      name: 'twitter:creator',
-      content: metadata.twitter.creator,
-    },
+    metadata.twitter.url
+      ? {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: metadata.twitter.url,
+        }
+      : '',
+    metadata.twitter.creator
+      ? {
+          hid: 'twitter:creator',
+          name: 'twitter:creator',
+          content: metadata.twitter.creator,
+        }
+      : '',
   ]
 }
