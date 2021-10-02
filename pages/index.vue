@@ -19,7 +19,7 @@
         <blocks-home-current-occupation />
         <blocks-home-features-highlight />
         <blocks-home-testimonial />
-        <blocks-formations-list :formations="formations" />
+        <blocks-trainings-list :trainings="trainings" />
         <forms-contact-form />
       </div>
     </lazy-hydrate>
@@ -27,10 +27,7 @@
 </template>
 
 <script>
-import qs from 'qs'
 import LazyHydrate from 'vue-lazy-hydration'
-
-import projectsData from '@/static/data/projects.json'
 
 export default {
   name: 'PageIndex',
@@ -39,32 +36,35 @@ export default {
   },
   async asyncData({ app, i18n, $content }) {
     try {
-      const [formations, content] = await Promise.all([
-        app.$axios.$get(
-          `/formations?${qs.stringify({
-            lang: i18n.locale,
-            color: '632ebe',
-          })}`
-        ),
-        // app.$axios.$get(
-        //   `/projects?${qs.stringify({
-        //     lang: i18n.locale,
-        //     favorite: true,
-        //     limit: 12,
-        //   })}`
-        // ),
-
+      const [trainings, projects, content] = await Promise.all([
+        $content(`${i18n.locale}/trainings`, { deep: true })
+          .only(['title', 'slug', 'date', 'metadata', 'abstract'])
+          .where({
+            'metadata.isDraft': false,
+          })
+          .sortBy('date', 'desc')
+          .fetch(),
+        $content(`${i18n.locale}/projects`, { deep: true })
+          .only(['title', 'slug', 'date', 'metadata', 'abstract'])
+          .where({
+            'metadata.isDraft': false,
+            'metadata.isFavorite': true,
+          })
+          .sortBy('date', 'desc')
+          .limit(12)
+          .fetch(),
         $content(`${i18n.locale}/home`).fetch(),
       ])
 
       return {
-        formations: formations.data,
+        trainings,
+        projects,
         content,
       }
     } catch (error) {
       console.error(error)
       return {
-        formations: [],
+        trainings: [],
         projects: [],
       }
     }
@@ -73,15 +73,6 @@ export default {
     return {
       title: this.title,
     }
-  },
-  computed: {
-    projects() {
-      let projects = projectsData
-      projects = projects.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
-      projects.sort((a, b) => a.isFavorite + b.isFavorite)
-      projects = projects.slice(0, 12)
-      return projects
-    },
   },
   created() {
     this.$store.commit('setHeader', {

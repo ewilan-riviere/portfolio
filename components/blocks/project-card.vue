@@ -3,8 +3,6 @@
     class="
       relative
       flex flex-col
-      col-span-1
-      my-5
       text-center
       divide-y divide-gray-200
       dark:divide-gray-700
@@ -15,7 +13,7 @@
       :to="
         localePath({
           name: 'projects-slug',
-          params: { slug: project.meta.slug },
+          params: { slug: project.slug },
         })
       "
       class="
@@ -25,11 +23,12 @@
         dark:bg-gray-800 dark:hover:bg-gray-700
         hover:bg-gray-100
         rounded-t-lg
+        h-full
       "
     >
       <div class="flex flex-col flex-1 p-8">
         <app-img
-          :src="`/data/projects/logo/${project.logo}`"
+          :src="`/data/projects/logo/${project.slug}_logo.webp`"
           class="flex-shrink-0 w-32 h-32 mx-auto object-contain"
         />
         <div class="">
@@ -37,6 +36,8 @@
             class="mt-6 text-lg font-semibold text-gray-900 dark:text-gray-100"
           >
             {{ project.title }}
+            <!-- {{ project.metadata.createdAt }}
+            {{ project.metadata.isFavorite }} -->
           </h3>
         </div>
         <dl class="flex flex-col justify-between flex-grow mt-1">
@@ -51,6 +52,7 @@
               dark:text-gray-300
               text-left
               word-wraping
+              line-clamp-3
             "
             v-html="limitLength(project.abstract, 150)"
           />
@@ -74,10 +76,12 @@
       </div>
     </nuxt-link>
     <component
-      :is="project.discover ? 'a' : 'span'"
+      :is="project.metadata.discover ? 'a' : 'span'"
       class="w-full dark:bg-gray-800 group rounded-b-lg"
-      :class="{ 'hover:bg-gray-200 dark:hover:bg-gray-700': project.discover }"
-      :href="project.discover"
+      :class="{
+        'hover:bg-gray-200 dark:hover:bg-gray-700': project.metadata.discover,
+      }"
+      :href="project.metadata.discover"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -110,8 +114,15 @@
             duration-100
           "
         >
-          <span v-if="project.discover" class="font-semibold">
-            {{ $t('project.discover') }}
+          <span
+            v-if="project.metadata.discover"
+            class="font-semibold flex items-center space-x-2"
+          >
+            <svg-icon
+              name="sparkles"
+              class="w-5 h-5 group-hover:text-yellow-500"
+            />
+            <span>{{ $t('project.discover') }}</span>
           </span>
           <span v-else class="text-sm italic">
             {{ $t('project.coming_soon') }}

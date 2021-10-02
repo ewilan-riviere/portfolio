@@ -80,12 +80,8 @@
               { 'lg:left-0': positionImage === 'right' },
               { 'lg:right-0': positionImage === 'left' },
             ]"
-            class="
-              w-full
-              rounded-xl
-              lg:absolute lg:w-[60rem] lg:h-full lg:max-w-none
-              object-cover
-            "
+            class="w-full lg:absolute lg:w-[60rem] lg:h-full lg:max-w-none"
+            class-img="rounded-xl object-cover"
             :src="image"
           />
         </div>

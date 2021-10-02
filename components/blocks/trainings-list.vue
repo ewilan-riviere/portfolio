@@ -2,7 +2,7 @@
   <section class="text-gray-700 body-font lg:-mt-16">
     <div class="flex flex-wrap px-5 mx-auto md:container">
       <div
-        v-for="(formation, id) in formations"
+        v-for="(training, id) in trainings"
         :key="id"
         class="
           relative
@@ -45,19 +45,17 @@
         >
           {{ id + 1 }}
         </div>
-        <formation-card :formation="formation" />
+        <blocks-training-card :training="training" />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import formationCard from './formation-card.vue'
 export default {
-  name: 'FormationsList',
-  components: { formationCard },
+  name: 'TrainingsList',
   props: {
-    formations: {
+    trainings: {
       type: Array,
       default: () => [],
     },

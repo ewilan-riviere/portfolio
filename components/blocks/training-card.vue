@@ -24,9 +24,8 @@
       "
     >
       <div class="h-16 w-16 flex">
-        <img
-          :src="formation.logo"
-          :alt="formation.title"
+        <svg-icon
+          :name="`trainings/${training.slug}`"
           class="formation-logo mx-auto"
           loading="lazy"
         />
@@ -44,22 +43,25 @@
             title-font
           "
         >
-          {{ formation.title }}
+          {{ training.title }}
         </h3>
-        <span
-          class="hidden mx-2 my-auto text-gray-900 dark:text-gray-200 lg:block"
-          >-</span
-        >
-        <span>
-          {{ formation.level }}
-        </span>
+        <div class="text-gray-900 dark:text-gray-200 flex items-center">
+          <span class="hidden mx-2 my-auto lg:block">-</span>
+          <span>
+            {{ training.metadata.level }}
+          </span>
+        </div>
       </div>
-      <div class="mb-1 italic">
-        {{ $capitalize($formatDate(formation.date.begin)) }} -
-        {{ $formatDate(formation.date.end) }} à
+      <div class="mb-1 italic text-gray-500 dark:text-gray-400">
+        {{ training.metadata.dateBegin }}
+        <span
+          >{{ $capitalize($formatDate(training.metadata.dateBegin)) }} -
+          {{ $formatDate(training.metadata.dateEnd) }} à</span
+        >
+
         <a
-          v-if="formation.links.place"
-          :href="formation.links.place.link"
+          v-if="training.metadata.links && training.metadata.links.place"
+          :href="training.metadata.links.place.link"
           target="_blank"
           rel="noopener noreferrer"
           class="
@@ -72,17 +74,17 @@
             hover:text-gray-900 hover:border-gray-900
           "
         >
-          {{ formation.links.place.name }}
+          {{ training.metadata.links.place.name }}
         </a>
       </div>
       <p class="leading-relaxed hyphenate text-gray-700 dark:text-gray-200">
-        {{ formation.resume }}
+        {{ training.abstract }}
       </p>
       <app-button
         :to="
           localePath({
-            name: 'formations-slug',
-            params: { slug: formation.slug },
+            name: 'trainings-slug',
+            params: { slug: training.slug },
           })
         "
         class="mt-6"
@@ -94,7 +96,7 @@
           class="grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
         >
           <li
-            v-for="project in formation.projects"
+            v-for="project in training.projects"
             :key="project.id"
             class="
               col-span-1
@@ -144,9 +146,9 @@
 <script>
 import { limitLength } from '@/plugins/utils/methods'
 export default {
-  name: 'FormationCard',
+  name: 'TrainingCard',
   props: {
-    formation: {
+    training: {
       type: Object,
       default: () => {},
     },

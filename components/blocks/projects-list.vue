@@ -8,12 +8,11 @@
         :text="'projectsList.subtitle'"
         position="center"
       />
-      <section class="masonry-container">
+      <section class="grid grid-cols-4 gap-4">
         <project-card
           v-for="(project, projectId) in projects"
           :key="projectId"
           :project="project"
-          class="masonry-block"
         />
       </section>
     </div>

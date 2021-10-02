@@ -12,11 +12,11 @@
   >
     <lazy-hydrate when-idle>
       <div class="py-8 xl:py-10">
-        <project-layout :project="project" />
-        <project-gallery
+        <blocks-project-layout :project="project" />
+        <!-- <blocks-project-gallery
           v-if="project.picture"
           :gallery="project.picture.gallery"
-        />
+        /> -->
       </div>
     </lazy-hydrate>
   </main>
@@ -24,27 +24,22 @@
 
 <script>
 import { limitLength } from '@/plugins/utils/methods'
-import qs from 'qs'
 import LazyHydrate from 'vue-lazy-hydration'
 
 export default {
   name: 'PageProjectsSlug',
   components: {
     LazyHydrate,
-    projectLayout: () =>
-      import('~/components/blocks/project/project-layout.vue'),
-    ProjectGallery: () =>
-      import('~/components/blocks/project/project-gallery.vue'),
   },
-  async asyncData({ app, params, i18n }) {
-    const project = await app.$axios.$get(
-      `projects/${params.slug}?${qs.stringify({
-        lang: i18n.locale,
-      })}`
-    )
+  async asyncData({ $content, params, i18n }) {
+    const project = await $content(`${i18n.locale}/projects`, {
+      deep: true,
+    })
+      .where({ slug: params.slug })
+      .fetch()
 
     return {
-      project: project.data,
+      project: project[0],
     }
   },
   data() {
@@ -53,7 +48,7 @@ export default {
     }
   },
   created() {
-    console.log(this.project.picture.banner)
+    // console.log(this.project.picture.banner)
     this.$store.commit('setHeader', {
       title: this.project.title,
       abstract: limitLength(this.project.subtitle),

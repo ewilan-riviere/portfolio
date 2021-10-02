@@ -84,7 +84,10 @@
           >
             <figure>
               <div class="aspect-w-1 lg:aspect-h-2 aspect-h-1 lg:aspect-w-2">
-                <app-img class="object-contain object-center" :src="picture" />
+                <app-img
+                  class-img="object-contain object-center"
+                  :src="picture"
+                />
               </div>
             </figure>
           </div>

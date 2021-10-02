@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import qs from 'qs'
 import LazyHydrate from 'vue-lazy-hydration'
 
 export default {
@@ -16,16 +15,18 @@ export default {
     LazyHydrate,
     projectsList: () => import('~/components/blocks/projects-list.vue'),
   },
-  async asyncData({ app, i18n }) {
+  async asyncData({ $content, i18n }) {
     try {
-      const projects = await app.$axios.$get(
-        `projects?${qs.stringify({
-          lang: i18n.locale,
-        })}`
-      )
+      const projects = await $content(`${i18n.locale}/projects`, { deep: true })
+        .only(['title', 'slug', 'metadata', 'abstract'])
+        .where({
+          'metadata.isDraft': false,
+        })
+        .sortBy('metadata.createdAt', 'desc')
+        .fetch()
 
       return {
-        projects: projects.data,
+        projects,
       }
     } catch (error) {
       // eslint-disable-next-line no-console

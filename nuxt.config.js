@@ -1,27 +1,29 @@
-import metadata from './plugins/metadata/metadata'
-import sitemaps from './plugins/utils/sitemaps'
+import metadata from './plugins/config/metadata'
+import pwa from './plugins/config/pwa'
+import sitemaps from './plugins/config/sitemaps'
+// import crawler from './plugins/config/crawler'
 
-import metadataDynamic from './plugins/metadata/metadata-dynamic'
-import metadataStatic from './plugins/metadata/metadata-static'
+import metadataDynamic from './plugins/config/metadata-dynamic'
+import metadataStatic from './plugins/config/metadata-static'
 
 export default {
-  publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL,
-    apiURL: process.env.API_URL,
-  },
-
-  generate: {
-    crawler: true,
-    // routes,
-  },
-
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL,
+  },
+
+  // For static site generation
+  generate: {
+    crawler: true,
+    // routes: crawler,
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: metadata.tags.title,
-    titleTemplate: metadata.tags.titleTemplate,
+    title: metadata.websitetitle,
+    titleTemplate: metadata.websitetitleTemplate,
     htmlAttrs: {
       lang: metadata.settings.locale,
     },
@@ -134,31 +136,18 @@ export default {
     },
   },
   pwa: {
-    meta: {
-      name: metadata.tags.title,
-      author: metadata.tags.author,
-      description: metadata.tags.description,
-      theme_color: metadata.settings.color,
-      lang: metadata.settings.lang,
-      ogSiteName: metadata.og.siteName,
-      ogTitle: metadata.tags.title,
-      ogDescription: metadata.tags.description,
-      ogImage: `${process.env.BASE_URL}/default.jpg`,
-      ogUrl: process.env.BASE_URL,
-      twitterSite: metadata.twitter.site,
-      twitterCreator: metadata.twitter.creator,
-    },
-    manifest: {
-      name: metadata.tags.title,
-      short_name: metadata.og.siteName,
-      description: metadata.tags.description,
-      display: 'browser',
-      lang: metadata.settings.lang,
-    },
+    meta: pwa.meta,
+    manifest: pwa.manifest,
   },
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
     liveEdit: false,
+    nestedProperties: [
+      'metadata.isDraft',
+      'metadata.isFavorite',
+      'metadata.createdAt',
+      'metadata.beginDate',
+    ],
     // https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins
     markdown: {},
   },
@@ -212,6 +201,77 @@ export default {
         const stats = readingTime(document.text)
 
         document.readingTime = stats
+
+        // add projects metadata
+        if (document.path.includes('projects')) {
+          const developers = require(`./static/data/projects/developers.json`)
+          const frameworks = require(`./static/data/skills/frameworks.json`)
+          const languages = require(`./static/data/skills/languages.json`)
+          const talking = require(`./static/data/skills/talking.json`)
+          const tools = require(`./static/data/skills/tools.json`)
+          const skills = { ...frameworks, ...languages, ...talking, ...tools }
+
+          let meta = {}
+          try {
+            meta = require(`./static/data/projects/metadata/${document.slug}.json`)
+          } catch (error) {
+            console.error(error)
+          }
+          document.metadata = meta
+
+          // link developers
+          if (
+            document.metadata.developers &&
+            document.metadata.developers.length
+          ) {
+            const developersData = []
+            document.metadata.developers.forEach((element) => {
+              if (Object.keys(developers).includes(element.slug)) {
+                developersData.push({
+                  ...developers[element.slug],
+                  role: element.role,
+                })
+              }
+            })
+            document.metadata = {
+              ...document.metadata,
+              developers: developersData,
+            }
+          }
+
+          // link technologies
+          if (document.metadata.skills && document.metadata.skills.length) {
+            const skillsData = []
+            document.metadata.skills.forEach((element) => {
+              if (Object.keys(skills).includes(element)) {
+                skillsData.push({
+                  ...skills[element],
+                })
+              }
+            })
+            document.metadata = {
+              ...document.metadata,
+              skills: skillsData,
+            }
+          }
+
+          document.date = new Date(document.metadata.createdAt)
+        }
+
+        // add trainings metdata
+        if (document.path.includes('trainings')) {
+          const trainings = require(`./static/data/trainings/trainings.json`)
+
+          let meta = {}
+          if (Object.keys(trainings).includes(document.slug)) {
+            meta = {
+              ...trainings[document.slug],
+            }
+          }
+          document.metadata = meta
+
+          document.date = new Date(document.metadata.dateBegin)
+        }
       }
     },
   },

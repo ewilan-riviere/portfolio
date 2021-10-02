@@ -13,7 +13,7 @@
             class="
               inline-flex
               items-center
-              px-2.5
+              px-1.5
               py-0.5
               rounded-md
               text-sm
@@ -22,7 +22,7 @@
               text-green-800
             "
           >
-            {{ project.experience }}
+            {{ project.metadata.context }}
           </span>
         </div>
         <div class="text-gray-600 dark:text-gray-300">
@@ -31,10 +31,10 @@
       </div>
       <div class="py-3 xl:pt-6 xl:pb-0">
         <h2 class="sr-only">Description</h2>
-        <div
+        <nuxt-content
           class="prose dark:prose-light max-w-none hyphenate"
-          v-html="project.description"
-        ></div>
+          :document="project"
+        ></nuxt-content>
       </div>
     </div>
 
@@ -45,34 +45,40 @@
         <svg-icon name="calendar" class="w-6 h-6 text-gray-400" />
         <span class="text-sm font-medium text-gray-900 dark:text-gray-100"
           >{{ $t('project.date_start') }}
-          <time :datetime="project.date">
-            {{ $formatDate(project.date) }}
+          <time :datetime="project.metadata.createdAt">
+            {{ $formatDate(project.metadata.createdAt) }}
           </time></span
         >
       </div>
 
-      <div v-if="project.status" class="flex items-center space-x-2 mt-2">
+      <div
+        v-if="project.metadata.status"
+        class="flex items-center space-x-2 mt-2"
+      >
         <svg-icon
           name="tasks"
           class="w-6 h-6 text-gray-400 dark:text-gray-300"
         />
         <span class="text-sm font-medium text-gray-900 dark:text-gray-100">
-          {{ project.status.name }} ({{ project.status.order }}/4)
+          {{ project.metadata.status.name }} ({{ project.metadata.status }}/4)
         </span>
       </div>
 
-      <div class="space-y-5 mt-6">
-        <div v-for="(link, type) in project.links" :key="type">
+      <div
+        v-if="project.metadata && project.metadata.links"
+        class="space-y-5 mt-6"
+      >
+        <div v-for="(link, type) in project.metadata.links" :key="type">
           <div class="flex items-center space-x-1">
             <svg-icon
               :name="`links/${icon(type)}`"
               class="w-6 h-6 text-gray-400 dark:text-gray-300"
             />
-            <span class="dark:text-gray-100">{{ link.type }}</span>
+            <span class="dark:text-gray-100">{{ $capitalize(type) }}</span>
           </div>
           <div class="mt-1">
             <div v-if="link.project" class="text-sm dark:text-gray-100">
-              <span>{{ $t('project.demo') }}:</span
+              <span>{{ $t('project.discover') }}:</span
               ><a
                 :href="link.project"
                 target="_blank"
@@ -91,7 +97,7 @@
               >
             </div>
             <div
-              v-if="link.repository && !project.isPrivate"
+              v-if="link.repository && !project.metadata.isPrivate"
               class="text-sm dark:text-gray-100"
             >
               <span>{{ $t('project.repository') }}:</span
@@ -115,17 +121,20 @@
           </div>
         </div>
 
-        <div v-if="project.formation" class="flex items-center space-x-2">
+        <div
+          v-if="project.metadata.formation"
+          class="flex items-center space-x-2"
+        >
           <svg-icon
             name="briefcase"
             class="w-6 h-6 text-gray-400 dark:text-gray-300"
           />
           <span>Formation :</span>
           <div
-            v-if="project.formation.title"
+            v-if="project.metadata.formation.title"
             class="text-sm font-medium text-gray-900 dark:text-gray-100"
           >
-            {{ project.formation.title }}
+            {{ project.metadata.formation.title }}
           </div>
         </div>
       </div>
@@ -139,23 +148,25 @@
           border-transparent
         "
       >
-        <div v-if="project.developers">
+        <div v-if="project.metadata.developers">
           <h2 class="text-sm font-medium text-gray-500 dark:text-gray-400">
             {{ $t('project.team') }}
           </h2>
           <ul class="mt-3 space-y-3">
             <li
-              v-for="developer in project.developers"
+              v-for="developer in project.metadata.developers"
               :key="developer.id"
               class="flex justify-start"
             >
-              <a :href="developer.link.url" class="flex items-center space-x-3">
+              <a
+                :href="developer.links.primary"
+                class="flex items-center space-x-3"
+              >
                 <div class="flex-shrink-0">
-                  <img
-                    class="w-5 h-5 rounded-full"
-                    :src="developer.image"
-                    alt=""
-                    loading="lazy"
+                  <app-img
+                    class="w-5 h-5"
+                    class-img="rounded-full"
+                    :src="developer.avatar"
                   />
                 </div>
                 <div
@@ -167,11 +178,11 @@
             </li>
           </ul>
         </div>
-        <div v-if="project.skills">
+        <div v-if="project.metadata.skills">
           <h2 class="text-sm font-medium text-gray-500">Technologies</h2>
           <ul class="mt-2 leading-8">
             <li
-              v-for="skill in project.skills"
+              v-for="skill in project.metadata.skills"
               :key="skill.id"
               class="inline mr-1"
             >
