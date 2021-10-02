@@ -15,9 +15,9 @@
     <lazy-hydrate when-visible>
       <div>
         <blocks-projects-list :projects="projects" :limited="true" />
-        <blocks-home-statistics />
         <blocks-home-current-occupation />
-        <blocks-home-features-highlight />
+        <blocks-home-statistics />
+        <!-- <blocks-home-features-highlight /> -->
         <blocks-home-testimonial />
         <blocks-trainings-list :trainings="trainings" />
         <forms-contact-form />

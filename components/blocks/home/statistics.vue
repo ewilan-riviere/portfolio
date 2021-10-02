@@ -96,10 +96,9 @@ export default {
   methods: {
     async load() {
       try {
-        const projectsCount = await this.$content(
-          `${this.i18n.locale}/projects`,
-          { deep: true }
-        )
+        const projects = await this.$content(`${this.$i18n.locale}/projects`, {
+          deep: true,
+        })
           .only(['title', 'slug'])
           .where({
             'metadata.isDraft': false,
@@ -108,7 +107,7 @@ export default {
 
         this.stats.forEach((stat) => {
           if (stat.name === 'projects') {
-            stat.value = projectsCount.length
+            stat.value = projects.length
           }
         })
       } catch (error) {
