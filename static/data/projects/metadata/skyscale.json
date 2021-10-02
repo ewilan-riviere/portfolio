@@ -1,0 +1,16 @@
+{
+  "isFavorite": false,
+  "isDraft": false,
+  "status": "3",
+  "formation": null,
+  "context": "personal",
+  "createdAt": "2020-10-30",
+  "discover": "https://skyscale.git-projects.xyz/",
+  "links": {
+    "front": {
+      "repository": "https://gitlab.com/ewilan-riviere/skyscale",
+      "project": "https://skyscale.git-projects.xyz"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

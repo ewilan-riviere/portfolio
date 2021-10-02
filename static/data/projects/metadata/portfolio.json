@@ -1,0 +1,21 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "3",
+  "formation": null,
+  "context": "personal",
+  "createdAt": "2020-05-19",
+  "discover": "https://ewilan-riviere.com/",
+  "links": {
+    "back": {
+      "repository": "https://github.com/ewilan-riviere/portfolio-back",
+      "project": "https://ewilan-riviere.com/api/documentation"
+    },
+    "front": {
+      "repository": "https://github.com/ewilan-riviere/portfolio-front",
+      "project": "https://ewilan-riviere.com"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+  "skills": ["nuxtjs", "php", "laravel", "tailwind-css"]
+}

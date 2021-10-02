@@ -1,0 +1,17 @@
+{
+  "linkRepository": "https://github.com/ewilan-riviere/zergling-evolution",
+  "discover": null,
+  "formation": "developpeuse-web-web-mobile",
+  "context": "school",
+  "isFavorite": false,
+  "isDraft": false,
+  "status": "3",
+  "createdAt": "2018-11-07",
+  "links": {
+    "front": {
+      "repository": "https://gitlab.com/ewilan-riviere/zergling-evolution"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+  "skills": ["javascript"]
+}

@@ -1,0 +1,24 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "3",
+  "formation": null,
+  "context": "personal",
+  "createdAt": "2021-01-03",
+  "discover": "https://bookshelves.ink",
+  "links": {
+    "back": {
+      "repository": "https://gitlab.com/ewilan-riviere/bookshelves-back",
+      "project": "https://bookshelves.ink/api/documentation"
+    },
+    "front": {
+      "repository": "https://gitlab.com/ewilan-riviere/bookshelves-front",
+      "project": "https://bookshelves.ink"
+    }
+  },
+  "developers": [
+    { "slug": "ewilan-riviere", "role": "developer" },
+    { "slug": "mopi", "role": "concept" }
+  ],
+  "skills": ["nuxtjs", "php", "laravel", "tailwind-css"]
+}

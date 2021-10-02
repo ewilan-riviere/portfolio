@@ -1,0 +1,59 @@
+{
+  "ewilan-riviere": {
+    "name": "Ewilan Rivière",
+    "avatar": "https://avatars.githubusercontent.com/u/48261459?v=4",
+    "links": {
+      "primary": "https://github.com/ewilan-riviere",
+      "github": "https://github.com/ewilan-riviere",
+      "portfolio": "https://ewilan-riviere.com",
+      "linkedin": "https://www.linkedin.com/in/ewilan-riviere",
+      "gitlab": "https://gitlab.com/ewilan-riviere",
+      "twitter": "https://twitter.com/ewilanriviere",
+      "mail": "mailto:contact@ewilan-riviere.com"
+    }
+  },
+  "nora-hennebert": {
+    "name": "Nora Hennebert",
+    "links": {
+      "primary": "https://www.linkedin.com/in/nora-hennebert",
+      "github": "https://github.com/Norahenn",
+      "linkedin": "https://www.linkedin.com/in/nora-hennebert",
+      "gitlab": "https://gitlab.com/Norahenn"
+    }
+  },
+  "antoine-le-gonidec": {
+    "name": "Antoine Le Gonidec",
+    "links": {
+      "primary": "https://forge.dotslashplay.it/vv221",
+      "github": "https://github.com/vv221",
+      "git": "https://forge.dotslashplay.it/vv221"
+    }
+  },
+  "hugo-schindelman": {
+    "name": "Hugo Schindelman",
+    "links": {
+      "primary": "https://www.linkedin.com/in/hugo-schindelman",
+      "linkedin": "https://www.linkedin.com/in/hugo-schindelman",
+      "gitlab": "https://gitlab.com/Felonius"
+    }
+  },
+  "delphine-brunetiere": {
+    "name": "Delphine Brunetière",
+    "links": {
+      "primary": "https://www.linkedin.com/in/delphinebrunetiere",
+      "portfolio": "https://delphinebrunetiere.com",
+      "linkedin": "https://www.linkedin.com/in/delphinebrunetiere",
+      "gitlab": "https://gitlab.com/dearflynn",
+      "twitter": "https://twitter.com/D_Brunetiere",
+      "medium": "https://delphinebrunetiere.medium.com"
+    }
+  },
+  "mopi": {
+    "name": "Mopi",
+    "avatar": "https://forge.dotslashplay.it/uploads/-/system/user/avatar/8/avatar.png",
+    "links": {
+      "primary": "https://forge.dotslashplay.it/mopi",
+      "git": "https://forge.dotslashplay.it/mopi"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "4",
+  "formation": "useweb",
+  "context": "enterprise",
+  "createdAt": "2020-01-03",
+  "discover": "https://secob-v2.useweb.net",
+  "links": {
+    "back": {
+      "repository": "https://bitbucket.org/useweb/secob-backend/src/master",
+      "isPrivate": true
+    },
+    "front": {
+      "repository": "https://bitbucket.org/useweb/secob-frontend/src/master",
+      "project": "https://secob-v2.useweb.net",
+      "isPrivate": true
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

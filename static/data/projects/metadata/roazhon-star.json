@@ -1,0 +1,15 @@
+{
+  "isFavorite": false,
+  "isDraft": false,
+  "status": "1",
+  "formation": null,
+  "context": "personal",
+  "createdAt": "2020-10-24",
+  "links": {
+    "front": {
+      "repository": "https://gitlab.com/ewilan-riviere/roazhon-star-bus",
+      "project": "http://roazhon-star-bus.git-projects.xyz"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

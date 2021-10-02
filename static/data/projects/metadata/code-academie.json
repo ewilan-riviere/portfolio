@@ -1,0 +1,18 @@
+{
+  "linkRepository": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
+  "discover": "http://promo03.code-academie.fr/",
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "4",
+  "formation": "developpeuse-web-web-mobile",
+  "context": "school",
+  "createdAt": "2018-11-27",
+  "links": {
+    "front_back": {
+      "repository": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
+      "project": "http://promo03.code-academie.fr"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+  "skills": ["laravel", "javascript", "bootstrap"]
+}

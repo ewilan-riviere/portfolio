@@ -1,0 +1,20 @@
+{
+  "isFavorite": false,
+  "isDraft": true,
+  "status": "4",
+  "formation": "useweb",
+  "context": "enterprise",
+  "createdAt": "2019-04-01",
+  "links": {
+    "back": {
+      "repository": "https://bitbucket.org/useweb/laforet-back/src/master",
+      "isPrivate": true
+    },
+    "front": {
+      "repository": "https://bitbucket.org/useweb/laforet-front/src/master",
+      "project": "https://www.laforet.com",
+      "isPrivate": true
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

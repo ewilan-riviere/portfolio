@@ -1,0 +1,30 @@
+[
+    {
+        "name": {
+            "fr": "Concept & prototype",
+            "en": "Concept & prototype"
+        },
+        "order": "1"
+    },
+    {
+        "name": {
+            "fr": "Développement",
+            "en": "Development"
+        },
+        "order": "2"
+    },
+    {
+        "name": {
+            "fr": "Finitions",
+            "en": "Finishes"
+        },
+        "order": "3"
+    },
+    {
+        "name": {
+            "fr": "TMA",
+            "en": "TMA"
+        },
+        "order": "4"
+    }
+]

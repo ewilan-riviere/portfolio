@@ -1,0 +1,111 @@
+{
+  "psychology-bachelor": {
+    "image": "rennes-2.webp",
+    "certificate": null,
+    "color": "#000000",
+    "color_text_white": true,
+    "experience_type_id": "ecole",
+    "level": "Bac +3",
+    "dateBegin": "2011-09-01",
+    "dateEnd": "2014-06-01",
+    "isFinished": true,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Université de Rennes 2",
+        "link": "https://www.univ-rennes2.fr"
+      }
+    }
+  },
+  "web-and-mobile-developer": {
+    "image": "code-academie.webp",
+    "certificate": null,
+    "color": "#3e979b",
+    "color_text_white": true,
+    "experience_type_id": "ecole",
+    "level": "Bac +2",
+    "dateBegin": "2018-09-01",
+    "dateEnd": "2019-05-01",
+    "isFinished": true,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Code Académie",
+        "link": "http://code-academie.fr"
+      },
+      "promo": {
+        "name": "Promo 3",
+        "link": "http://promo03.code-academie.fr"
+      }
+    }
+  },
+  "poec-java": {
+    "image": "eni-ecole.webp",
+    "certificate": null,
+    "color": "#004982",
+    "color_text_white": true,
+    "experience_type_id": "ecole",
+    "level": "3 mois",
+    "dateBegin": "2019-06-01",
+    "dateEnd": "2019-09-01",
+    "isFinished": true,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "ENI Ecole Informatique",
+        "link": "https://www.eni-ecole.fr/"
+      }
+    }
+  },
+  "developer-designer-of-applications": {
+    "image": "useweb.webp",
+    "certificate": null,
+    "color": "#4981be",
+    "color_text_white": true,
+    "experience_type_id": "alternance",
+    "level": "Bac +4",
+    "dateBegin": "2019-10-01",
+    "dateEnd": "2021-06-01",
+    "isFinished": true,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Useweb",
+        "link": "https://www.useweb.fr"
+      },
+      "vocational": {
+        "name": "ENI Ecole Informatique",
+        "link": "https://www.eni-ecole.fr"
+      }
+    }
+  },
+  "manager-of-digital": {
+    "image": "useweb.webp",
+    "certificate": null,
+    "color": "#4981be",
+    "color_text_white": true,
+    "experience_type_id": "alternance",
+    "level": "Bac +5",
+    "dateBegin": "2021-09-01",
+    "dateEnd": "2022-12-01",
+    "isFinished": false,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Useweb",
+        "link": "https://www.useweb.fr"
+      },
+      "vocational": {
+        "name": "ENI Ecole Informatique",
+        "link": "https://www.eni-ecole.fr/formations/developpement/niveau-7-bac5-manager-de-solutions-digitales-et-data"
+      }
+    }
+  },
+  "useweb": {
+    "title": "Useweb",
+    "slug": "useweb",
+    "experience_type_id": "entreprise",
+    "isDraft": true,
+    "dateBegin": "2019-10-01"
+  }
+}

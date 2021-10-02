@@ -1,0 +1,17 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "1",
+  "formation": null,
+  "context": "personal",
+  "createdAt": "2020-11-05",
+  "links": {
+    "back": {
+      "repository": "https://gitlab.com/ewilan-riviere/markdown-this-back"
+    },
+    "front": {
+      "repository": "https://gitlab.com/ewilan-riviere/markdown-this-front"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

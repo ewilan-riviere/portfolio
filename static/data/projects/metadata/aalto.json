@@ -1,0 +1,27 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "4",
+  "formation": "useweb",
+  "context": "enterprise",
+  "createdAt": "2020-09-01",
+  "discover": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
+  "links": {
+    "front": {
+      "repository": "https://bitbucket.org/useweb/cap-transactions/src/master",
+      "project": "https://client.fonciere-aalto.com",
+      "isPrivate": true
+    },
+    "app_android": {
+      "repository": "https://bitbucket.org/useweb/cap-transactions-flutter/src/master",
+      "project": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
+      "isPrivate": true
+    },
+    "app_ios": {
+      "repository": "https://bitbucket.org/useweb/cap-transactions-flutter/src/master",
+      "project": "https://apps.apple.com/fr/app/fonci%C3%A8re-aalto-espace-client/id1549849593",
+      "isPrivate": true
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

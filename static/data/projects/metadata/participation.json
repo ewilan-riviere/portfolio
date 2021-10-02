@@ -1,0 +1,20 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "4",
+  "formation": "useweb",
+  "context": "enterprise",
+  "createdAt": "2021-07-12",
+  "discover": "https://mte.useweb.net/",
+  "links": {
+    "front": {
+      "repository": "https://bitbucket.org/useweb/mte-front/src/master/",
+      "isPrivate": true
+    },
+    "back": {
+      "repository": "https://bitbucket.org/useweb/mte-back/src/master/",
+      "isPrivate": true
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

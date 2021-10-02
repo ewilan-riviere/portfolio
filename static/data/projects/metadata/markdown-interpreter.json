@@ -1,0 +1,16 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "3",
+  "formation": null,
+  "context": "personal",
+  "createdAt": "2020-06-20",
+  "discover": "https://md-interpreter.git-projects.xyz/",
+  "links": {
+    "front": {
+      "repository": "https://github.com/ewilan-riviere/markdown-interpreter",
+      "project": "https://md-interpreter.git-projects.xyz"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

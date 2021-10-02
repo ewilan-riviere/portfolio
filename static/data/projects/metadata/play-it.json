@@ -1,0 +1,28 @@
+{
+  "linkRepository": "https://forge.dotslashplay.it/play.it/website",
+  "discover": "https://dev.website.dotslashplay.it/",
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "2",
+  "formation": "developpeuse-web-web-mobile",
+  "context": "school",
+  "createdAt": "2019-04-01",
+  "links": {
+    "back": {
+      "repository": "https://forge.dotslashplay.it/play.it/api",
+      "project": "https://api.dotslashplay.it/games/list"
+    },
+    "front": {
+      "repository": "https://forge.dotslashplay.it/play.it/website",
+      "project": "https://dev.website.dotslashplay.it"
+    }
+  },
+  "developers": [
+    { "slug": "ewilan-riviere", "role": "developer" },
+    {
+      "slug": "antoine-le-gonidec",
+      "role": "lead_developer"
+    }
+  ],
+  "skills": ["laravel", "blade", "tailwind-css"]
+}

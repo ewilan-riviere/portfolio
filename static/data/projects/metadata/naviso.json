@@ -1,0 +1,21 @@
+{
+  "isFavorite": false,
+  "isDraft": false,
+  "status": "4",
+  "formation": "useweb",
+  "context": "enterprise",
+  "createdAt": "2020-05-12",
+  "discover": "https://www.naviso.fr/",
+  "links": {
+    "back": {
+      "repository": "https://bitbucket.org/useweb/naviso-back/src/master",
+      "isPrivate": true
+    },
+    "front": {
+      "repository": "https://bitbucket.org/useweb/naviso-front/src/master",
+      "project": "https://naviso.useweb.net",
+      "isPrivate": true
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

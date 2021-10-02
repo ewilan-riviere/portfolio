@@ -1,0 +1,21 @@
+{
+  "isFavorite": false,
+  "isDraft": false,
+  "status": "4",
+  "formation": "useweb",
+  "context": "enterprise",
+  "createdAt": "2019-10-01",
+  "discover": "https://www.imprimerie-bretagne.fr/",
+  "links": {
+    "back": {
+      "repository": "https://bitbucket.org/useweb/le-galliard-back/src/master",
+      "isPrivate": true
+    },
+    "front": {
+      "repository": "https://bitbucket.org/useweb/le-galliard-front/src/master",
+      "project": "http://www.imprimerie-bretagne.fr",
+      "isPrivate": true
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

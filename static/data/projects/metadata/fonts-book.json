@@ -1,0 +1,14 @@
+{
+  "isFavorite": false,
+  "isDraft": true,
+  "status": "2",
+  "formation": null,
+  "context": "personal",
+  "createdAt": "2020-09-19",
+  "links": {
+    "front": {
+      "repository": "https://gitlab.com/ewilan-riviere/fonts-book"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

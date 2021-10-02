@@ -1,0 +1,22 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "4",
+  "formation": "useweb",
+  "context": "enterprise",
+  "createdAt": "2021-04-26",
+  "discover": "https://www.useweb.fr/",
+  "links": {
+    "front": {
+      "repository": "https://bitbucket.org/useweb/useweb-front/src/master/",
+      "project": "https://www.useweb.fr/",
+      "isPrivate": true
+    },
+    "back": {
+      "repository": "https://bitbucket.org/useweb/useweb-front/src/master/",
+      "project": "https://www.useweb.fr/admin",
+      "isPrivate": true
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}

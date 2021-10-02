@@ -1,0 +1,16 @@
+{
+  "isFavorite": true,
+  "isDraft": false,
+  "status": "3",
+  "formation": null,
+  "context": "personal",
+  "createdAt": "2020-06-27",
+  "discover": "https://memorandum.ewilan-riviere.com/",
+  "links": {
+    "front": {
+      "repository": "https://github.com/ewilan-riviere/memorandum",
+      "project": "https://memorandum.ewilan-riviere.com"
+    }
+  },
+  "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+}
