@@ -96,11 +96,19 @@ export default {
   methods: {
     async load() {
       try {
-        const projectsCount = await this.$axios.$get(`/projects/count`)
+        const projectsCount = await this.$content(
+          `${this.i18n.locale}/projects`,
+          { deep: true }
+        )
+          .only(['title', 'slug'])
+          .where({
+            'metadata.isDraft': false,
+          })
+          .fetch()
 
         this.stats.forEach((stat) => {
           if (stat.name === 'projects') {
-            stat.value = projectsCount
+            stat.value = projectsCount.length
           }
         })
       } catch (error) {
