@@ -1,9 +1,9 @@
 <template>
   <div :class="dev ? 'debug-screens' : ''" class="bg-white dark:bg-gray-900">
+    <lazy-app-notifications />
     <lazy-hydrate when-idle>
       <div>
         <app-navbar />
-        <app-notification />
         <social-networks class="hidden lg:block" />
       </div>
     </lazy-hydrate>

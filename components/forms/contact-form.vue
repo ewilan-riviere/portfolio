@@ -198,13 +198,14 @@
               </div>
               <div class="flex justify-between space-x-1 w-max">
                 <app-button type="submit" color="secondary">
-                  <span v-if="!loading" class="flex items-center space-x-2">
-                    <svg-icon name="airplane" class="w-4 h-4" />
+                  <span class="flex items-center space-x-2">
+                    <svg-icon
+                      v-if="!loading"
+                      name="notification/airplane"
+                      class="w-4 h-4"
+                    />
+                    <app-loading v-else class="w-4 h-4" />
                     <span> {{ $t('fields.send') }} </span>
-                  </span>
-                  <span v-else class="flex items-center space-x-2">
-                    <app-loading class="w-4 h-4" />
-                    <span> {{ $t('fields.sending') }} </span>
                   </span>
                 </app-button>
                 <app-button v-if="isDev" color="secondary" @click="fillForm">
@@ -220,8 +221,10 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  name: 'Cta',
+  name: 'ContactForm',
   data() {
     return {
       loading: false,
@@ -248,6 +251,10 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      signIn: 'auth/signIn',
+      signOut: 'auth/signOut',
+    }),
     fillForm() {
       for (const [key] of Object.entries(this.form)) {
         this.form[key] = this.formTesting[key]
@@ -261,60 +268,48 @@ export default {
     },
     async submit() {
       this.loading = true
-      console.log(this.form.honeypot)
-      if (this.form.honeypot) {
-        setTimeout(() => {
-          this.$store.commit('setNotification', {
-            icon: 'airplane',
-            title: 'success',
-            text: 'contact_success_text',
-            color: 'text-green-400',
-          })
-          this.$store.commit('toggleNotificationIsDisplay')
-          this.resetForm()
 
-          setTimeout(() => {
-            this.$store.commit('toggleNotificationIsDisplay')
-          }, 3000)
-        }, 1500)
+      if (this.form.honeypot) {
+        this.$nuxt.$emit('notification', {
+          title: 'success',
+          text: 'contact_success_text',
+          type: 'success',
+          icon: 'airplane',
+        })
         this.loading = false
         return
       }
+
       try {
+        // const credentials = {
+        //   email: 'admin@mail.com',
+        //   password: 'password',
+        // }
+        // await this.signIn(credentials)
+        // await this.signOut()
+
         await this.$axios.$post('/submission', this.form)
+        // await this.$axios.$get('/sanctum/csrf-cookie')
+        // await this.$axios.$post('/login', credentials)
 
-        this.success = true
-        this.errors = false
-
-        this.$store.commit('setNotification', {
-          icon: 'airplane',
+        this.$nuxt.$emit('notification', {
           title: 'success',
           text: 'contact_success_text',
-          color: 'text-green-400',
-        })
-        this.$store.commit('toggleNotificationIsDisplay')
-        this.resetForm()
-
-        setTimeout(() => {
-          this.$store.commit('toggleNotificationIsDisplay')
-        }, 3000)
-      } catch (e) {
-        console.error(e)
-        this.errors = true
-
-        this.$store.commit('setNotification', {
+          type: 'success',
           icon: 'airplane',
+        })
+        this.loading = false
+      } catch (error) {
+        console.error(error)
+
+        this.$nuxt.$emit('notification', {
           title: 'failed',
           text: 'contact_failed_text',
-          color: 'text-red-400',
+          type: 'error',
+          icon: 'airplane',
         })
-        this.$store.commit('toggleNotificationIsDisplay')
-
-        setTimeout(() => {
-          this.$store.commit('toggleNotificationIsDisplay')
-        }, 3000)
+        this.loading = false
       }
-      this.loading = false
     },
   },
 }

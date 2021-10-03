@@ -13,6 +13,10 @@ export default {
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
   },
+  privateRuntimeConfig: {
+    apiEmail: process.env.API_EMAIL,
+    apiPassword: process.env.API_PASSWORD,
+  },
 
   // For static site generation
   generate: {
@@ -43,6 +47,8 @@ export default {
   plugins: [
     // global helper methods
     '~/plugins/utils/helpers',
+    // Global notifications
+    '~/plugins/bus.client.js',
     // https://github.com/ymmooot/nuxt-jsonld
     '~/plugins/utils/jsonld',
     // https://i18n.nuxtjs.org
@@ -121,17 +127,20 @@ export default {
     'nuxt-i18n',
     // https://www.npmjs.com/package/@nuxtjs/markdownit
     '@nuxtjs/markdownit',
+    // https://github.com/microcipcip/cookie-universal/tree/master/packages/cookie-universal-nuxt
+    'cookie-universal-nuxt',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     baseURL: process.env.API_URL,
-    // credentials: true,
+    credentials: true,
     // https: false,
     headers: {
       common: {
         'X-Requested-With': 'XMLHttpRequest',
         'Access-Control-Allow-Origin': '*',
+        Accept: 'application/json, text/plain, */*',
       },
     },
   },
