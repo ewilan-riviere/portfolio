@@ -47,11 +47,14 @@
                   />
                 </a>
               </swiper-slide>
-              <div slot="button-prev" class="swiper-button-prev">
-                <svg-icon name="arrow-chevron-right" />
+              <div slot="button-prev" class="swiper-button-prev right-12">
+                <svg-icon
+                  name="arrow-chevron-right"
+                  class="w-10 h-10 transform rotate-180"
+                />
               </div>
-              <div slot="button-next" class="swiper-button-next">
-                <svg-icon name="arrow-chevron-right" />
+              <div slot="button-next" class="swiper-button-next right-0">
+                <svg-icon name="arrow-chevron-right" class="w-10 h-10" />
               </div>
               <div slot="pagination" class="swiper-pagination"></div>
             </swiper>
@@ -78,10 +81,11 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        paginationClickable: true,
+        // paginationClickable: true,
         pagination: {
           el: '.swiper-pagination',
-          clickable: true,
+          type: 'bullets',
+          // clickable: true,
         },
         breakpoints: {
           500: {
@@ -221,26 +225,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.technology-logos::v-deep {
-  & .swiper-button-prev {
-    left: unset !important;
-    @apply right-14 transform rotate-180 !important;
-  }
-  & .swiper-button-prev,
-  & .swiper-button-next {
-    @apply absolute w-10 bottom-1 hover:bg-primary-300 dark:hover:bg-primary-700 transition-colors duration-100 rounded-md !important;
-    & .icon {
-      @apply w-8 h-8 m-auto text-gray-300 dark:text-gray-400 !important;
-    }
-  }
-  & .swiper-pagination {
-    @apply cursor-default bottom-1;
-    & .swiper-pagination-bullet {
-      @apply bg-primary-300 dark:bg-primary-600 dark:opacity-60;
-    }
-    & .swiper-pagination-bullet-active {
-      @apply bg-primary-300 dark:bg-primary-300 dark:opacity-100;
-    }
-  }
+.swiper-button-prev,
+.swiper-button-next {
+  @apply absolute bottom-0 w-max hover:bg-gray-200 hover:bg-opacity-20 rounded-md transition-colors duration-75 z-20 text-gray-400;
 }
 </style>
