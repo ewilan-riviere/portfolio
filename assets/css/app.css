@@ -1,5 +1,5 @@
 @import './fonts.css';
-@import './swiper.pcss';
+@import './app/swiper.pcss';
 
 .dark {
   color-scheme: dark;

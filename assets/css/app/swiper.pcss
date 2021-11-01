@@ -1,8 +1,29 @@
+@import './swiper-base.pcss';
+
 :root {
   --swiper-theme-color: theme('colors.primary.400') !important;
 }
 
-.swiper-button-next::after,
+.swiper-container,
+.swiper-wrapper {
+  @apply mb-12 !important;
+}
+
+.swiper-pagination {
+  z-index: 10;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  z-index: 20;
+}
+.swiper-button-disabled {
+  & svg {
+    opacity: 0.4;
+  }
+}
+
+/* .swiper-button-next::after,
 .swiper-button-prev::after {
   font-family: unset !important;
   font-size: unset !important;
@@ -28,8 +49,6 @@
   height: unset !important;
   margin-top: unset !important;
   margin-top: unset !important;
-  /* z-index: unset !important; */
-  /* cursor: unset !important; */
   display: unset !important;
   align-items: unset !important;
   justify-content: unset !important;
@@ -43,8 +62,12 @@
 .swiper-slide {
   background-size: cover;
   background-position: center;
-}
+} */
 
 .swiper-pagination-bullet {
-  background: unset;
+  background: theme('colors.primary.400');
+  opacity: 0.4 !important;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
 }
