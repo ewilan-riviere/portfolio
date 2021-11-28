@@ -17,23 +17,13 @@ export default {
   components: { socialBlock },
   data() {
     return {
-      display: true,
+      display: false,
     }
   },
-  beforeMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll() {
-      if (window.scrollY > 150) {
-        this.display = true
-      } else {
-        this.display = false
-      }
-    },
+  mounted() {
+    setTimeout(() => {
+      this.display = true
+    }, 300)
   },
 }
 </script>
