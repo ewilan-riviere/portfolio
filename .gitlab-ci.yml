@@ -22,8 +22,8 @@ build-job:       # This job runs in the build stage, which runs first.
   stage: build
   image: node:16.13.2-slim
   cache:
-  paths:
-    - node_modules/
+    paths:
+      - node_modules/
   script:
     - echo "Check modules..."
     - yarn
