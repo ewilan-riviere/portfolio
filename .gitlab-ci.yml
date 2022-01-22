@@ -25,7 +25,7 @@ test-job:       # This job runs in the build stage, which runs first.
       - node_modules/
   script:
     - yarn
-    - yarn build
+    - yarn generate
 
 # unit-test-job:   # This job runs in the test stage.
 #   stage: test    # It only starts when the job in the build stage completes successfully.
@@ -53,6 +53,6 @@ deploy-job:
     - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - ssh $SSH_USER@$SSH_IP "cd /home/ewilan/www/portfolio && git pull && /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn && /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn build"
+    - ssh $SSH_USER@$SSH_IP "cd /home/ewilan/www/portfolio && git pull && /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn && /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn generate"
   only:
     - master
