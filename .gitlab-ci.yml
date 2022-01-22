@@ -1,20 +1,40 @@
-before_script:
-  - apt-get update -qq
-  - apt-get install -qq git
-  # Setup SSH deploy keys
-  - 'which ssh-agent || ( apt-get install -qq openssh-client )'
-  - eval $(ssh-agent -s)
-  - ssh-add <(echo "$SSH_PRIVATE_KEY")
-  - mkdir -p ~/.ssh
-  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+image: alpine:latest
 
-deploy_staging:
-  type: deploy
-  # environment:
-  #   name: staging
-  #   url: example.com
+pages:
+  stage: deploy
+  before_script:
+  - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
   script:
-    # - ssh root@example.com "cd var/www/ && git checkout master && git pull origin master && exit"
-    - ssh "$SSH_USER"@"$SSH_IP" "cd ~/www && cd portfolio && git pull && yarn && yarn build"
+  - ssh $SSH_USER@$SSH_IP "hostname && echo 'Welcome!!!' > welcome.txt"
+  artifacts:
+    paths:
+    - public
   only:
     - master
+
+# before_script:
+#   - apt-get update -qq
+#   - apt-get install -qq git
+#   # Setup SSH deploy keys
+#   - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+#   - eval $(ssh-agent -s)
+#   - ssh-add <(echo "$SSH_PRIVATE_KEY")
+#   - mkdir -p ~/.ssh
+#   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+# deploy_staging:
+#   type: deploy
+#   # environment:
+#   #   name: staging
+#   #   url: example.com
+#   script:
+#     # - ssh root@example.com "cd var/www/ && git checkout master && git pull origin master && exit"
+#     - ssh "$SSH_USER"@"$SSH_IP" "cd ~/www && cd portfolio && git pull && yarn && yarn build"
+#   only:
+#     - master
