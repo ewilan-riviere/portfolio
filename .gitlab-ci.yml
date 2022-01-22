@@ -13,19 +13,24 @@
 # #
 # # For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
 
-# stages:          # List of stages for jobs, and their order of execution
-#   - test
-#   - deploy
+stages:          # List of stages for jobs, and their order of execution
+  - test
+  - deploy
 
-# test-job:       # This job runs in the build stage, which runs first.
-#   stage: test
-#   image: node:16.13.0
-#   cache:
-#     paths:
-#       - node_modules/
-#   script:
-#     - yarn
-#     - yarn generate
+test-job:       # This job runs in the build stage, which runs first.
+  stage: test
+  tags:
+    - deploy
+  # image: node:16.13.0
+  # cache:
+  #   paths:
+  #     - node_modules/
+  script:
+    - echo "portfolio"
+    - pwd
+    - ls
+    # - yarn
+    # - yarn generate
 
 # # unit-test-job:   # This job runs in the test stage.
 # #   stage: test    # It only starts when the job in the build stage completes successfully.
