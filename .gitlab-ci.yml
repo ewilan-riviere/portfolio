@@ -60,6 +60,7 @@ build-job:       # This job runs in the build stage, which runs first.
     - ssh-keyscan $SSH_IP
     - cd
     - pwd
+    - ls -la
     - echo "SSH $SSH_IP with $SSH_USER"
     - ssh "$SSH_USER"@"$SSH_IP"
     - pwd
