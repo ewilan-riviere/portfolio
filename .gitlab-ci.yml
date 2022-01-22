@@ -22,7 +22,7 @@ build-job:       # This job runs in the build stage, which runs first.
   stage: build
   tags:
     - deploy
-  # image: node:16.13.2-slim
+  image: debian
   # cache:
   #   paths:
   #     - node_modules/
