@@ -15,6 +15,6 @@ deploy_staging:
   #   url: example.com
   script:
     # - ssh root@example.com "cd var/www/ && git checkout master && git pull origin master && exit"
-    - ssh "$SSH_USER"@"$SSH_IP" "cd ~/www && ls"
+    - ssh "$SSH_USER"@"$SSH_IP" "cd ~/www && cd portfolio && git pull && yarn && yarn build"
   only:
     - master
