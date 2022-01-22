@@ -13,12 +13,6 @@
 #
 # For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
 
-image: node:16.13.2-slim
-
-cache:
-  paths:
-    - node_modules/
-
 stages:          # List of stages for jobs, and their order of execution
   - build
   # - test
@@ -26,6 +20,10 @@ stages:          # List of stages for jobs, and their order of execution
 
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
+  image: node:16.13.2-slim
+  cache:
+  paths:
+    - node_modules/
   script:
     - echo "Check modules..."
     - yarn
