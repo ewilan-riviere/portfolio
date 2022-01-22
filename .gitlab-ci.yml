@@ -11,7 +11,7 @@ pages:
     - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - ssh $SSH_USER@$SSH_IP "node -v"
+    - ssh $SSH_USER@$SSH_IP "node -v && yarn -v"
   artifacts:
     paths:
     - public
