@@ -7,9 +7,12 @@ stages:
   - test
   - deploy
 
+variables:
+  NODE_VERSION: '16.13.0'
+
 test-job:
   stage: test
-  image: node:16.13.0
+  image: node:$NODE_VERSION
   cache:
     paths:
       - node_modules/
@@ -46,8 +49,8 @@ deploy-job:
     - ssh $SSH_USER@$SSH_IP "
       cd /home/ewilan/www/$CI_PROJECT_NAME &&
       git pull &&
-      /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn &&
-      /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn generate &&
+      /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/yarn &&
+      /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/yarn generate &&
       discord-queerotronic.sh '$CI_PROJECT_TITLE'"
   only:
     - master
