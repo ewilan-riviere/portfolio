@@ -26,7 +26,7 @@ build-job:       # This job runs in the build stage, which runs first.
   # cache:
   #   paths:
   #     - node_modules/
-  before_script:
+  script:
     ##
     ## Install ssh-agent if not already installed, it is required by Docker.
     ## (change apt-get to yum if you use an RPM-based image)
@@ -51,8 +51,6 @@ build-job:       # This job runs in the build stage, which runs first.
     ##
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-
-  script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
     - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
