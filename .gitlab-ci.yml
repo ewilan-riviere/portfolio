@@ -57,6 +57,7 @@ build-job:       # This job runs in the build stage, which runs first.
     - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
     - pwd
+    - ssh-keyscan $SSH_IP
     - echo "SSH $SSH_IP with $SSH_USER"
     - ssh "$SSH_USER"@"$SSH_IP"
     - pwd
