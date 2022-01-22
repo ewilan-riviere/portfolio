@@ -1,17 +1,17 @@
-# # This file is a template, and might need editing before it works on your project.
-# # To contribute improvements to CI/CD templates, please follow the Development guide at:
-# # https://docs.gitlab.com/ee/development/cicd/templates.html
-# # This specific template is located at:
-# # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
+# This file is a template, and might need editing before it works on your project.
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
-# # This is a sample GitLab CI/CD configuration file that should run without any modifications.
-# # It demonstrates a basic 3 stage CI/CD pipeline. Instead of real tests or scripts,
-# # it uses echo commands to simulate the pipeline execution.
-# #
-# # A pipeline is composed of independent jobs that run scripts, grouped into stages.
-# # Stages run in sequential order, but jobs within stages run in parallel.
-# #
-# # For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
+# This is a sample GitLab CI/CD configuration file that should run without any modifications.
+# It demonstrates a basic 3 stage CI/CD pipeline. Instead of real tests or scripts,
+# it uses echo commands to simulate the pipeline execution.
+#
+# A pipeline is composed of independent jobs that run scripts, grouped into stages.
+# Stages run in sequential order, but jobs within stages run in parallel.
+#
+# For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
 
 stages:          # List of stages for jobs, and their order of execution
   - test
@@ -19,52 +19,46 @@ stages:          # List of stages for jobs, and their order of execution
 
 test-job:       # This job runs in the build stage, which runs first.
   stage: test
-  # tags:
-  #   - deploy
-  # image: node:16.13.0
-  # cache:
-  #   paths:
-  #     - node_modules/
+  image: node:16.13.0
+  cache:
+    paths:
+      - node_modules/
   script:
-    - echo "portfolio"
-    - echo "$CI_PROJECT_DIR"
-    - pwd
-    - ls
-    # - yarn
-    # - yarn generate
+    - yarn
+    - yarn generate
 
-# # unit-test-job:   # This job runs in the test stage.
-# #   stage: test    # It only starts when the job in the build stage completes successfully.
-# #   script:
-# #     - echo "Running unit tests... This will take about 60 seconds."
-# #     - sleep 60
-# #     - echo "Code coverage is 90%"
-
-# # lint-test-job:   # This job also runs in the test stage.
-# #   stage: test    # It can run at the same time as unit-test-job (in parallel).
-# #   script:
-# #     - echo "Linting code... This will take about 10 seconds."
-# #     - sleep 10
-# #     - echo "No lint issues found."
-
-# deploy-job:
-#   stage: deploy
-#   image: alpine:latest
-#   before_script:
-#     - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
-#     - eval $(ssh-agent -s)
-#     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-#     - mkdir -p ~/.ssh
-#     - chmod 700 ~/.ssh
-#     - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
-#     - chmod 644 ~/.ssh/known_hosts
+# unit-test-job:   # This job runs in the test stage.
+#   stage: test    # It only starts when the job in the build stage completes successfully.
 #   script:
-#     - ssh $SSH_USER@$SSH_IP "
-#       cd /home/ewilan/www/portfolio &&
-#       git pull &&
-#       /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn &&
-#       /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn generate &&
-#       discord-queerotronic.sh portfolio
-#       "
-#   only:
-#     - master
+#     - echo "Running unit tests... This will take about 60 seconds."
+#     - sleep 60
+#     - echo "Code coverage is 90%"
+
+# lint-test-job:   # This job also runs in the test stage.
+#   stage: test    # It can run at the same time as unit-test-job (in parallel).
+#   script:
+#     - echo "Linting code... This will take about 10 seconds."
+#     - sleep 10
+#     - echo "No lint issues found."
+
+deploy-job:
+  stage: deploy
+  image: alpine:latest
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - ssh $SSH_USER@$SSH_IP "
+      cd /home/ewilan/www/portfolio &&
+      git pull &&
+      /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn &&
+      /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn generate &&
+      discord-queerotronic.sh $CI_PROJECT_TITLE
+      "
+  only:
+    - master
