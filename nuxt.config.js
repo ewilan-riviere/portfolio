@@ -118,9 +118,9 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://www.npmjs.com/package/@nuxtjs/robots
-    '@nuxtjs/robots',
+    // '@nuxtjs/robots',
     // https://sitemap.nuxtjs.org/guide/setup
-    '@nuxtjs/sitemap',
+    // '@nuxtjs/sitemap',
     // https://gitlab.com/broj42/nuxt-lazy-load
     'nuxt-lazy-load',
     // https://i18n.nuxtjs.org/setup/
