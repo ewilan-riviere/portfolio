@@ -3,15 +3,15 @@ image: alpine:latest
 pages:
   stage: deploy
   before_script:
-  - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
-  - eval $(ssh-agent -s)
-  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-  - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh
-  - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
-  - chmod 644 ~/.ssh/known_hosts
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
   script:
-  - ssh $SSH_USER@$SSH_IP "hostname && echo 'Welcome!!!' > welcome.txt"
+    - ssh $SSH_USER@$SSH_IP "node -v"
   artifacts:
     paths:
     - public
