@@ -20,9 +20,9 @@ stages:          # List of stages for jobs, and their order of execution
 test-job:       # This job runs in the build stage, which runs first.
   stage: test
   image: node:16.13.0
-    cache:
-      paths:
-        - node_modules/
+  cache:
+    paths:
+      - node_modules/
   script:
     - yarn
     - yarn build
