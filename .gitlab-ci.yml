@@ -58,7 +58,6 @@ deploy-job:
       git pull &&
       /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn &&
       /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn generate &&
-      discord-queerotronic.sh '$CI_PROJECT_TITLE'
-      "
+      discord-queerotronic.sh '$CI_PROJECT_TITLE'"
   only:
     - master
