@@ -10,7 +10,7 @@ stages:
 variables:
   NODE_VERSION: '16.13.0'
 
-test-job:
+build-job:
   stage: test
   image: node:$NODE_VERSION
   cache:
