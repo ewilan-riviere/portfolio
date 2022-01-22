@@ -44,7 +44,7 @@ deploy-job:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - ssh $SSH_USER@$SSH_IP "
-      cd /home/ewilan/www/portfolio &&
+      cd /home/ewilan/www/$CI_PROJECT_NAME &&
       git pull &&
       /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn &&
       /home/ewilan/.nvm/versions/node/v16.13.0/bin/yarn generate &&
