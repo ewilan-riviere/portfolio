@@ -15,6 +15,10 @@
 
 image: node:16.13.2-slim
 
+cache:
+  paths:
+    - node_modules/
+
 stages:          # List of stages for jobs, and their order of execution
   - build
   # - test
@@ -47,4 +51,7 @@ deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   script:
     - echo "Deploying application..."
+    - node -v
     - echo "Application successfully deployed."
+  only:
+    - master
