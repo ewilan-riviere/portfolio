@@ -27,6 +27,7 @@ test-job:       # This job runs in the build stage, which runs first.
   #     - node_modules/
   script:
     - echo "portfolio"
+    - echo "$CI_PROJECT_DIR"
     - pwd
     - ls
     # - yarn
