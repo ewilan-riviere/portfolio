@@ -7,6 +7,8 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.0"
+    "@nuxtjs/tailwindcss": "^5.0.2",
+    "nuxt": "3.0.0-rc.0",
+    "vite-plugin-markdown": "^2.0.2"
   }
 }
