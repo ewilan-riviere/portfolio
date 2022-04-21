@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import { attributes } from '@/content/file.md'
+import home from '@/content/home.md'
+import { useMarkdown } from './composables/markdown'
 
-console.log(attributes) //=> { title: 'Awesome Title', description: 'Describe this awesome content', tags: ['great', 'awesome', 'rad'] }
+const markdown = ref<Markdown>()
+const { loadMarkdown } = useMarkdown()
+markdown.value = await loadMarkdown(home)
 </script>
 
 <template>
-  <div>
-    <NuxtWelcome />
+  <div class="h-screen">
+    <layout-navbar />
+    <layout-sidebar />
+    <hero />
+    <content :markdown="markdown" />
+    <portfolio-features />
   </div>
 </template>

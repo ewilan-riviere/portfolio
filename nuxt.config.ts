@@ -1,22 +1,38 @@
 import { defineNuxtConfig } from 'nuxt'
-import Vue from '@vitejs/plugin-vue'
-import AntfuMarkdown from 'vite-plugin-md'
-const mdPlugin = require('vite-plugin-markdown')
+import markdownPlugin from 'vite-plugin-markdown'
+import svgLoader from 'vite-svg-loader'
 import markdown from '@dansvel/vite-plugin-markdown'
-import { vitePluginMdToHTML } from 'vite-plugin-md-to-html'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  build: {
+    postcss: {
+      // @ts-ignore
+      order: ['tailwindcss/nesting', 'tailwindcss', 'autoprefixer'],
+      plugins: {
+        'postcss-nested': false,
+      },
+    },
+  },
   vite: {
     plugins: [
-      // Vue({
-      // include: [/\.vue$/, /\.md$/],
-      // }),
-      // Markdown(),
-      // mdPlugin({}),
+      // markdownPlugin(),
       markdown({}),
-      // vitePluginMdToHTML()
+      svgLoader(),
     ],
   },
+  buildModules: ['@pinia/nuxt', '@vueuse/nuxt'],
   modules: ['@nuxtjs/tailwindcss'],
+  meta: {
+    title: 'Bookshelves',
+    script: [
+      {
+        src: '/color-mode.js',
+      },
+    ],
+  },
+  typescript: {
+    strict: true, // for pinia
+    shim: false, // with Take Over Mode from https://github.com/johnsoncodehk/volar/discussions/471
+  },
 })
