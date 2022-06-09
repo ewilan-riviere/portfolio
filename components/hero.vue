@@ -15,27 +15,3 @@
     </div>
   </div>
 </template>
-
-<style lang="css" scoped>
-.gradient {
-  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
-}
-.parallax {
-  @apply h-96 bg-fixed bg-center bg-no-repeat bg-cover;
-}
-.gradient-top {
-  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
-}
-.gradient-inter {
-  mask-image: linear-gradient(
-    180deg,
-    transparent 0%,
-    white 60%,
-    white 40%,
-    transparent 100%
-  );
-}
-.gradient-bottom {
-  mask-image: linear-gradient(to top, white 0%, transparent 100%);
-}
-</style>

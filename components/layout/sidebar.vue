@@ -29,14 +29,14 @@ const openSidebar = () => {
   setTimeout(() => {
     overlay.value = true
     sidebar.value = true
-  }, 250)
+  }, 150)
 }
 const closeSidebar = () => {
   overlay.value = false
   sidebar.value = false
   setTimeout(() => {
     layer.value = false
-  }, 250)
+  }, 150)
 
   navigation.closeSidebar()
 }

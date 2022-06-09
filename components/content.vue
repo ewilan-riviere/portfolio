@@ -63,7 +63,7 @@ defineProps<{
             class="relative mx-auto text-base max-w-prose lg:max-w-none"
           >
             <app-img
-              class="object-contain object-center"
+              class="object-contain object-center h-96 lg:h-full"
               :src="markdown.attributes.picture"
             />
           </div>
