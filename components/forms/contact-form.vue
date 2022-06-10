@@ -107,6 +107,7 @@
                     rounded-md
                     shadow-sm
                     focus:ring-primary-500 focus:border-primary-500
+                    dark:text-gray-900
                   "
                   :placeholder="`${$t('fields.name')}*`"
                   required
@@ -133,6 +134,7 @@
                     rounded-md
                     shadow-sm
                     focus:ring-primary-500 focus:border-primary-500
+                    dark:text-gray-900
                   "
                   :placeholder="`${$t('fields.email')}*`"
                   required
@@ -157,6 +159,7 @@
                     rounded-md
                     shadow-sm
                     focus:ring-primary-500 focus:border-primary-500
+                    dark:text-gray-900
                   "
                   minlength="25"
                   maxlength="1500"
