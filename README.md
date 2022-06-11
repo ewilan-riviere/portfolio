@@ -40,11 +40,3 @@ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
-## Links
-
-- <https://atom.redpixelthemes.com>
-- <https://redpixelthemes.com/templates>
-- <https://treact.owaiskhan.me>
-- <https://tailwind-cards.netlify.app>
-- <https://kitwind.io/products/kometa/components>
