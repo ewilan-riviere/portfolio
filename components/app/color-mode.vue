@@ -17,7 +17,7 @@ const toggleDark = () => {
 
 <template>
   <button
-    class="text-primary color-mode rounded-sm px-2 py-2 transition-colors duration-75 hover:bg-gray-800 focus:outline-transparent"
+    class="text-primary color-mode rounded-sm px-2 py-2 transition-colors duration-75 hover:bg-gray-100 focus:outline-transparent dark:hover:bg-gray-800"
     @click="toggleDark()"
   >
     <span class="sun" title="Switch to dark mode">

@@ -4,9 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   @apply min-h-screen text-black dark:bg-gray-900 dark:text-white transition-colors duration-75;
-}
+} */
 
 .v-enter-active,
 .v-leave-active {
@@ -30,9 +30,6 @@ body {
 
 .gradient {
   mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
-}
-.parallax {
-  @apply h-96 bg-fixed bg-center bg-no-repeat bg-cover;
 }
 .gradient-top {
   mask-image: linear-gradient(to bottom, white 0%, transparent 100%);

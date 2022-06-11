@@ -47,7 +47,7 @@ const features = [
               <div class="-mt-6">
                 <div>
                   <span
-                    class="inline-flex items-center justify-center p-3 bg-primary-500 dark:bg-primary-700 rounded-md shadow-lg"
+                    class="inline-flex items-center justify-center p-3 bg-purple-600-500 dark:bg-purple-600-700 rounded-md shadow-lg"
                   >
                     <svg-icon
                       :name="`features/${feature.icon}`"

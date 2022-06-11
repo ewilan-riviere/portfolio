@@ -5,7 +5,7 @@ const props = defineProps<{
 
 const currentIcon = computed(() =>
   defineAsyncComponent({
-    loader: () => import(`../assets/icons/svg/${props.name}.svg`),
+    loader: () => import(`../assets/icons/${props.name}.svg`),
     loadingComponent: {
       template: `<span></span>`,
     },

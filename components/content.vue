@@ -12,7 +12,7 @@ defineProps<{
       >
         <div>
           <h2
-            class="font-sans text-base font-semibold tracking-wide text-primary-600 dark:text-primary-400 uppercase"
+            class="font-sans text-base font-semibold tracking-wide text-purple-600-600 dark:text-purple-600-400 uppercase"
           >
             {{ markdown.attributes?.subtitle }}
           </h2>
@@ -70,7 +70,7 @@ defineProps<{
         </div>
         <div class="mt-8 lg:mt-0">
           <div
-            class="mx-auto mt-5 prose prose-primary dark:prose-invert lg:max-w-none lg:row-start-1 lg:col-start-1"
+            class="mx-auto mt-5 prose prose-purple-600 dark:prose-invert lg:max-w-none lg:row-start-1 lg:col-start-1"
           >
             <div v-html="markdown.body"></div>
           </div>

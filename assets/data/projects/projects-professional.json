@@ -1,0 +1,164 @@
+[
+  {
+    "title": "Aalto",
+    "slug": "aalto",
+    "isFavorite": true,
+    "isDraft": false,
+    "status": "4",
+    "formation": "useweb",
+    "context": "enterprise",
+    "createdAt": "2020-09-01",
+    "discover": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
+    "links": {
+      "front": {
+        "repository": "https://bitbucket.org/useweb/cap-transactions/src/master",
+        "project": "https://client.fonciere-aalto.com",
+        "isPrivate": true
+      },
+      "app_android": {
+        "repository": "https://bitbucket.org/useweb/cap-transactions-flutter/src/master",
+        "project": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
+        "isPrivate": true
+      },
+      "app_ios": {
+        "repository": "https://bitbucket.org/useweb/cap-transactions-flutter/src/master",
+        "project": "https://apps.apple.com/fr/app/fonci%C3%A8re-aalto-espace-client/id1549849593",
+        "isPrivate": true
+      }
+    },
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ]
+  },
+  {
+    "title": "Imprimerie LeGalliard",
+    "slug": "imprimerie-le-galliard",
+    "isFavorite": false,
+    "isDraft": false,
+    "status": "4",
+    "formation": "useweb",
+    "context": "enterprise",
+    "createdAt": "2019-10-01",
+    "discover": "https://www.imprimerie-bretagne.fr/",
+    "links": {
+      "back": {
+        "repository": "https://bitbucket.org/useweb/le-galliard-back/src/master",
+        "isPrivate": true
+      },
+      "front": {
+        "repository": "https://bitbucket.org/useweb/le-galliard-front/src/master",
+        "project": "http://www.imprimerie-bretagne.fr",
+        "isPrivate": true
+      }
+    },
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ]
+  },
+  {
+    "title": "Laforêt",
+    "slug": "laforet",
+    "isFavorite": false,
+    "isDraft": true,
+    "status": "4",
+    "formation": "useweb",
+    "context": "enterprise",
+    "createdAt": "2019-04-01",
+    "links": {
+      "back": {
+        "repository": "https://bitbucket.org/useweb/laforet-back/src/master",
+        "isPrivate": true
+      },
+      "front": {
+        "repository": "https://bitbucket.org/useweb/laforet-front/src/master",
+        "project": "https://www.laforet.com",
+        "isPrivate": true
+      }
+    },
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ]
+  },
+  {
+    "title": "Naviso",
+    "slug": "naviso",
+    "isFavorite": false,
+    "isDraft": false,
+    "status": "4",
+    "formation": "useweb",
+    "context": "enterprise",
+    "createdAt": "2020-05-12",
+    "discover": "https://www.naviso.fr/",
+    "links": {
+      "back": {
+        "repository": "https://bitbucket.org/useweb/naviso-back/src/master",
+        "isPrivate": true
+      },
+      "front": {
+        "repository": "https://bitbucket.org/useweb/naviso-front/src/master",
+        "project": "https://naviso.useweb.net",
+        "isPrivate": true
+      }
+    },
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ]
+  },
+  {
+    "title": "Participation",
+    "slug": "participation",
+    "isFavorite": true,
+    "isDraft": false,
+    "status": "4",
+    "formation": "useweb",
+    "context": "enterprise",
+    "createdAt": "2021-07-12",
+    "discover": "https://mte.useweb.net/",
+    "links": {
+      "front": {
+        "repository": "https://bitbucket.org/useweb/mte-front/src/master/",
+        "isPrivate": true
+      },
+      "back": {
+        "repository": "https://bitbucket.org/useweb/mte-back/src/master/",
+        "isPrivate": true
+      }
+    },
+    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+  },
+  {
+    "title": "Secob",
+    "slug": "secob",
+    "isFavorite": true,
+    "isDraft": false,
+    "status": "4",
+    "formation": "useweb",
+    "context": "enterprise",
+    "createdAt": "2020-01-03",
+    "discover": "https://secob-v2.useweb.net",
+    "links": {
+      "back": {
+        "repository": "https://bitbucket.org/useweb/secob-backend/src/master",
+        "isPrivate": true
+      },
+      "front": {
+        "repository": "https://bitbucket.org/useweb/secob-frontend/src/master",
+        "project": "https://secob-v2.useweb.net",
+        "isPrivate": true
+      }
+    },
+    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+  }
+]

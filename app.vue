@@ -10,21 +10,19 @@ const devMode = useNuxtApp()._legacyContext?.isDev
 </script>
 
 <template>
-  <div :class="{ 'debug-screens': devMode }" class="h-screen">
-    <layout-navbar />
-    <layout-sidebar />
-    <hero />
-    <!-- <content :markdown="markdown" /> -->
-    <!-- <portfolio-features /> -->
-    <projects />
-    <!-- <div class="h-32">
-      <div class="parallax bg-forest-swamp gradient-top h-32"></div>
+  <div :class="{ 'debug-screens': devMode }" class="min-h-[150vh]">
+    <div class="fixed top-0 left-0">
+      <app-color-mode />
     </div>
-    <div class="h-32">
-      <div class="parallax bg-jungle-forest gradient-inter h-32"></div>
+    <!-- <div class="h-96">
+      <div class="parallax bg-jungle-forest gradient-inter h-96"></div>
+    </div>
+    <div class="h-96">
+      <div class="parallax bg-jungle-forest gradient-inter h-96"></div>
     </div>
     <div class="h-64">
-      <div class="parallax bg-jungle-cascade gradient-bottom"></div>
+      <div class="parallax bg-jungle-cascade gradient-bottom h-96"></div>
     </div> -->
+    <atom />
   </div>
 </template>

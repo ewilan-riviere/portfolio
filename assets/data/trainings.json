@@ -1,0 +1,126 @@
+[
+  {
+    "title": "Psychology bachelor",
+    "slug": "psychology-bachelor",
+    "abstract": "A background in psychology with a focus on child and adolescent development.",
+    "image": "rennes-2.webp",
+    "certificate": null,
+    "color": "#000000",
+    "color_text_white": true,
+    "experience_type_id": "ecole",
+    "level": "Bac +3",
+    "dateBegin": "2011-09-01",
+    "dateEnd": "2014-06-01",
+    "isFinished": true,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Université de Rennes 2",
+        "link": "https://www.univ-rennes2.fr"
+      }
+    }
+  },
+  {
+    "title": "Web & mobile developer",
+    "slug": "web-and-mobile-developer",
+    "abstract": "A high quality training, launched within the framework of the “grande école du numérique”, which allows to train in 8 months to the basics and to some advanced notions of web development.",
+    "image": "code-academie.webp",
+    "certificate": null,
+    "color": "#3e979b",
+    "color_text_white": true,
+    "experience_type_id": "ecole",
+    "level": "Bac +2",
+    "dateBegin": "2018-09-01",
+    "dateEnd": "2019-05-01",
+    "isFinished": true,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Code Académie",
+        "link": "http://code-academie.fr"
+      },
+      "promo": {
+        "name": "Promo 3",
+        "link": "http://promo03.code-academie.fr"
+      }
+    }
+  },
+  {
+    "title": "POEC Java",
+    "slug": "poec-java",
+    "abstract": "Three months intensive on Java to understand the basics up to recent frameworks like Spring.",
+    "image": "eni-ecole.webp",
+    "certificate": null,
+    "color": "#004982",
+    "color_text_white": true,
+    "experience_type_id": "ecole",
+    "level": "3 mois",
+    "dateBegin": "2019-06-01",
+    "dateEnd": "2019-09-01",
+    "isFinished": true,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "ENI Ecole Informatique",
+        "link": "https://www.eni-ecole.fr/"
+      }
+    }
+  },
+  {
+    "title": "Developer Designer of Applications",
+    "slug": "developer-designer-of-applications",
+    "abstract": "A vocational course for the CDA title. 25% of the time per month at the ENI school and 75% of the time at UseWeb. This company creates websites for clients, with a front-end in NuxtJS and a back-end in Laravel. At school, I studied: project management, web server management, Java EE, ASP.net, cross-platform, analysis and design, Symfony, Android.",
+    "image": "useweb.webp",
+    "certificate": null,
+    "color": "#4981be",
+    "color_text_white": true,
+    "experience_type_id": "alternance",
+    "level": "Bac +4",
+    "dateBegin": "2019-10-01",
+    "dateEnd": "2021-06-01",
+    "isFinished": true,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Useweb",
+        "link": "https://www.useweb.fr"
+      },
+      "vocational": {
+        "name": "ENI Ecole Informatique",
+        "link": "https://www.eni-ecole.fr"
+      }
+    }
+  },
+  {
+    "title": "Manager of Digital and Data Solutions",
+    "slug": "manager-of-digital-and-data-solutions",
+    "abstract": "Organize an information system, acquire the fundamental technological and methodological notions allowing the management of an information system, manage a team (management, conducting meetings, recruitment), manage an IT project.",
+    "image": "useweb.webp",
+    "certificate": null,
+    "color": "#4981be",
+    "color_text_white": true,
+    "experience_type_id": "alternance",
+    "level": "Bac +5",
+    "dateBegin": "2021-09-01",
+    "dateEnd": "2022-12-01",
+    "isFinished": false,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Useweb",
+        "link": "https://www.useweb.fr"
+      },
+      "vocational": {
+        "name": "ENI Ecole Informatique",
+        "link": "https://www.eni-ecole.fr/formations/developpement/niveau-7-bac5-manager-de-solutions-digitales-et-data"
+      }
+    }
+  },
+  {
+    "title": "Useweb",
+    "slug": "useweb",
+    "experience_type_id": "entreprise",
+    "isDraft": true,
+    "dateBegin": "2019-10-01"
+  }
+]
