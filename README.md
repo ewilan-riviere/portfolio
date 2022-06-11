@@ -19,7 +19,7 @@ pnpm install --shamefully-hoist
 
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on <http://localhost:3000>
 
 ```bash
 npm run dev
@@ -40,3 +40,11 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+
+## Links
+
+- <https://atom.redpixelthemes.com>
+- <https://redpixelthemes.com/templates>
+- <https://treact.owaiskhan.me>
+- <https://tailwind-cards.netlify.app>
+- <https://kitwind.io/products/kometa/components>
