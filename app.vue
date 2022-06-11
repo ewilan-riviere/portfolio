@@ -14,9 +14,10 @@ const devMode = useNuxtApp()._legacyContext?.isDev
     <layout-navbar />
     <layout-sidebar />
     <hero />
-    <content :markdown="markdown" />
-    <portfolio-features />
-    <div class="h-32">
+    <!-- <content :markdown="markdown" /> -->
+    <!-- <portfolio-features /> -->
+    <projects />
+    <!-- <div class="h-32">
       <div class="parallax bg-forest-swamp gradient-top h-32"></div>
     </div>
     <div class="h-32">
@@ -24,6 +25,6 @@ const devMode = useNuxtApp()._legacyContext?.isDev
     </div>
     <div class="h-64">
       <div class="parallax bg-jungle-cascade gradient-bottom"></div>
-    </div>
+    </div> -->
   </div>
 </template>
