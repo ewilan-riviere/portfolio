@@ -4,9 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  @apply min-h-screen text-black dark:bg-gray-900 dark:text-white transition-colors duration-75;
-} */
+body {
+  @apply min-h-screen text-black dark:bg-gray-900 dark:text-white transition-colors duration-200;
+}
 
 .v-enter-active,
 .v-leave-active {
@@ -38,8 +38,8 @@
   mask-image: linear-gradient(
     180deg,
     transparent 0%,
-    white 60%,
     white 40%,
+    white 60%,
     transparent 100%
   );
 }

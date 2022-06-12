@@ -16,11 +16,8 @@ const toggleDark = () => {
 </script>
 
 <template>
-  <button
-    class="text-primary color-mode rounded-sm px-2 py-2 transition-colors duration-75 hover:bg-gray-100 focus:outline-transparent dark:hover:bg-gray-800"
-    @click="toggleDark()"
-  >
-    <span class="sun" title="Switch to dark mode">
+  <button class="flex" @click="toggleDark()">
+    <span class="sun m-auto" title="Switch to dark mode">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
@@ -36,7 +33,7 @@ const toggleDark = () => {
         />
       </svg>
     </span>
-    <span class="moon" title="Switch to light mode">
+    <span class="moon m-auto" title="Switch to light mode">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
@@ -56,9 +53,6 @@ const toggleDark = () => {
 </template>
 
 <style lang="css" scoped>
-.icon {
-  @apply rounded-md p-2 text-gray-500 transition-colors duration-75 hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700;
-}
 .moon {
   @apply hidden;
 }

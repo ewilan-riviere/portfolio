@@ -2,6 +2,7 @@
   {
     "title": "Français",
     "slug": "francais",
+    "icon": "francais",
     "version": "contemporaine",
     "link": null,
     "is_free": false,
@@ -14,11 +15,13 @@
     "image": "francais.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langues"
+    "skill_category_slug": "langues",
+    "isDisplay": false
   },
   {
     "title": "Anglais",
     "slug": "anglais",
+    "icon": "anglais",
     "version": "contemporaine",
     "link": null,
     "is_free": false,
@@ -31,6 +34,7 @@
     "image": "anglais.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langues"
+    "skill_category_slug": "langues",
+    "isDisplay": false
   }
 ]

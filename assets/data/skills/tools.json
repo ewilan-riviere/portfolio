@@ -2,6 +2,7 @@
   {
     "title": "Apache2",
     "slug": "apache2",
+    "icon": "apache2",
     "version": "",
     "link": "https://httpd.apache.org/",
     "is_free": true,
@@ -14,11 +15,13 @@
     "image": "apache.svg",
     "blockquote_text": "Quand le dernier back-office donnera une 404 - Quand la dernier serveur de prod sera tombé  - Quand le dernier développeur aura fini en burn-out - Alors on saura que le client est allé trop loin.",
     "blockquote_who": "Geronimo, lead-chef du développement de serveur web",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "NGINX",
     "slug": "nginx",
+    "icon": "nginx",
     "version": "",
     "link": "https://nginx.org/en/",
     "is_free": true,
@@ -31,11 +34,13 @@
     "image": "nginx.svg",
     "blockquote_text": "La légende veut que lors de la première version, la vitesse de NGINX a stupéfié les développeurs.",
     "blockquote_who": "Un journaliste spécialisé",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": true
   },
   {
     "title": "Git",
     "slug": "git",
+    "icon": "git",
     "version": "",
     "link": "https://git-scm.com",
     "is_free": true,
@@ -48,11 +53,13 @@
     "image": "git.svg",
     "blockquote_text": "Parler coûte peu. Montrez-moi le code source.",
     "blockquote_who": "Linus Torvalds",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": true
   },
   {
     "title": "Visual Studio Code",
     "slug": "visual-studio-code",
+    "icon": "visual-studio-code",
     "version": "",
     "link": "https://code.visualstudio.com/",
     "is_free": true,
@@ -65,11 +72,13 @@
     "image": "vs-code.svg",
     "blockquote_text": "Le seul problème à propos de Microsoft est qu'ils n'avaient pas de goût... Ils n'avaient pas d'originalité... Ils créaient des produits de troisième catégorie. Jusqu'à ce que...",
     "blockquote_who": "Steve, un utilisateur convaincu de Mac",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "PhpStorm",
     "slug": "php-storm",
+    "icon": "php-storm",
     "version": "",
     "link": "https://www.jetbrains.com/fr-fr/phpstorm/",
     "is_free": false,
@@ -82,11 +91,13 @@
     "image": "phpstorm.svg",
     "blockquote_text": "",
     "blockquote_who": null,
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "GitKraken",
     "slug": "git-kraken",
+    "icon": "git-kraken",
     "version": "",
     "link": "https://www.gitkraken.com/",
     "is_free": true,
@@ -99,11 +110,13 @@
     "image": "gitkraken.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "phpMyAdmin",
     "slug": "php-my-admin",
+    "icon": "php-my-admin",
     "version": "5.0",
     "link": "https://www.phpmyadmin.net/",
     "is_free": true,
@@ -116,11 +129,13 @@
     "image": "phpmyadmin.svg",
     "blockquote_text": "- On va voler des fichiers ? Ces fichiers ?<br/>- Hacker. On « hack » cette « base de données », termes informatiques.",
     "blockquote_who": "Deux hackers en devenir et en fuite",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "Photoshop",
     "slug": "photoshop",
+    "icon": "photoshop",
     "version": "CS6",
     "link": "https://www.adobe.com/fr/products/photoshop.html",
     "is_free": false,
@@ -133,11 +148,13 @@
     "image": "photoshop.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "GIMP",
     "slug": "gimp",
+    "icon": "gimp",
     "version": "",
     "link": "https://www.gimp.org/",
     "is_free": true,
@@ -150,11 +167,13 @@
     "image": "gimp.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "Office",
     "slug": "office",
+    "icon": "office",
     "version": "",
     "link": "https://www.office.com/",
     "is_free": false,
@@ -167,11 +186,13 @@
     "image": "office.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "Discord",
     "slug": "discord",
+    "icon": "discord",
     "version": "",
     "link": "https://discordapp.com/",
     "is_free": true,
@@ -184,11 +205,13 @@
     "image": "discord.svg",
     "blockquote_text": "Les gamers veulent la concorde, mais Internet sait mieux qu'eux ce qui est bon pour ces gens : il leur a donné Discord.",
     "blockquote_who": "Manuel Kant, philosophe des temps modernes",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "Teams",
     "slug": "teams",
+    "icon": "teams",
     "version": "",
     "link": "https://www.microsoft.com/en-ww/group-chat-software",
     "is_free": false,
@@ -201,11 +224,13 @@
     "image": "discord.svg",
     "blockquote_text": "",
     "blockquote_who": "",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "NodeJS",
     "slug": "node-js",
+    "icon": "node-js",
     "version": "11.15",
     "link": "https://nodejs.org/en/",
     "is_free": true,
@@ -218,11 +243,13 @@
     "image": "nodejs.svg",
     "blockquote_text": "Par mes actions, je t'honore. V8.",
     "blockquote_who": "Slit, un DevBoy émérite",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": true
   },
   {
-    "title": "NPM / Yarn",
+    "title": "NPM / Yarn / pnpm",
     "slug": "npm-yarn",
+    "icon": "npm-yarn",
     "version": "6.7 / 1.2",
     "link": "https://yarnpkg.com/lang/en/",
     "is_free": true,
@@ -235,11 +262,13 @@
     "image": "npm-yarn.svg",
     "blockquote_text": "Mraaoouuw ?",
     "blockquote_who": "mon chat devant yarn en action",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "Composer",
     "slug": "composer",
+    "icon": "composer",
     "version": "2.0",
     "link": "https://getcomposer.org/",
     "is_free": true,
@@ -252,11 +281,13 @@
     "image": "composer.svg",
     "blockquote_text": "Le plus nécessaire et le plus difficile dans les dépendances c'est de les télécharger",
     "blockquote_who": "Wolfgang Amadeus, un développeur de symphonies",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "Windows",
     "slug": "windows",
+    "icon": "windows",
     "version": "10",
     "link": "https://www.microsoft.com/en-us/windows",
     "is_free": false,
@@ -269,11 +300,13 @@
     "image": "windows.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "Linux",
     "slug": "linux",
+    "icon": "linux",
     "version": "Debian 10, Ubuntu 18.14",
     "link": "https://www.linux.org",
     "is_free": true,
@@ -286,11 +319,13 @@
     "image": "linux.svg",
     "blockquote_text": "Le manuel disait « Nécessite Windows XP ou mieux ». J’ai donc installé Linux.",
     "blockquote_who": "Un utilisateur sage et pertinent",
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   },
   {
     "title": "macOS",
     "slug": "mac-os",
+    "icon": "mac-os",
     "version": "Big Sur",
     "link": "https://www.apple.com/macos/big-sur/",
     "is_free": false,
@@ -303,6 +338,7 @@
     "image": "macos.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "technologies-logiciels"
+    "skill_category_slug": "technologies-logiciels",
+    "isDisplay": false
   }
 ]

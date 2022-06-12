@@ -2,6 +2,7 @@
   {
     "title": "PHP",
     "slug": "php",
+    "icon": "php",
     "version": "7.4",
     "link": "https://www.php.net/",
     "is_free": true,
@@ -14,11 +15,13 @@
     "image": "php.svg",
     "blockquote_text": "Maman ! Es-tu sûre que cette ligne de code est fini bien par un point virgule ? Tout cela me plonge dans la perplexité.",
     "blockquote_who": "Tantor, un éléphant méfiant",
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": true
   },
   {
     "title": "SASS / SCSS",
     "slug": "sass-scss",
+    "icon": "sass",
     "version": "",
     "link": "https://sass-lang.com/",
     "is_free": true,
@@ -31,11 +34,13 @@
     "image": "sass.svg",
     "blockquote_text": "Ce qui est sensas c'est paradoxalement d'utiliser du SASS",
     "blockquote_who": "Anonyme",
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": true
   },
   {
     "title": "JavaScript",
     "slug": "java-script",
+    "icon": "javascript",
     "version": "ECMAScript 2018",
     "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     "is_free": true,
@@ -48,11 +53,13 @@
     "image": "js.svg",
     "blockquote_text": "Ces écritures... serait-ce un dialecte Jawa ?",
     "blockquote_who": "Un archéologue d'une époque lointaine, très lointaine",
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": true
   },
   {
     "title": "TypeScript",
     "slug": "type-script",
+    "icon": "typescript",
     "version": "",
     "link": "https://www.typescriptlang.org/",
     "is_free": true,
@@ -65,11 +72,13 @@
     "image": "typescript.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": true
   },
   {
     "title": "MySQL / MariaDB",
     "slug": "my-sql-maria-db",
+    "icon": "mysql",
     "version": "",
     "link": "https://mariadb.org/",
     "is_free": true,
@@ -82,11 +91,13 @@
     "image": "mysql-mariadb.svg",
     "blockquote_text": "Utilisant des dauphins pour stocker des données à long terme, le fondateur de MySQL Michael dû finalement revendre son projet à Sun Maxizoo devant le scandale que le traitement des dauphins provoquait. Adoptant une conscience écologique, il décida d'apprivoiser des otaries pour stoker à nouveau des données mais cette fois-ci en respectant leurs besoins...",
     "blockquote_who": "Extrait d'un journal spécialisé",
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": true
   },
   {
     "title": "SQL Server",
     "slug": "sql-server",
+    "icon": "sql-server",
     "version": "",
     "link": null,
     "is_free": false,
@@ -99,11 +110,13 @@
     "image": "sql-server.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": false
   },
   {
     "title": "Java",
     "slug": "java",
+    "icon": "java",
     "version": "8",
     "link": "https://www.java.com/fr/",
     "is_free": true,
@@ -116,11 +129,13 @@
     "image": "java.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": false
   },
   {
     "title": "Bash",
     "slug": "bash",
+    "icon": "bash",
     "version": "bash, zsh",
     "link": "https://www.gnu.org/software/bash",
     "is_free": true,
@@ -133,11 +148,13 @@
     "image": "terminal.svg",
     "blockquote_text": "- Est ce que c'est... ?<br/>- Le shell ? Oui.<br/>- Et vous le regardez toujours en ligne de commande ?<br/>- Oui, faut bien, les interfaces graphiques prennent trop de ressources pour le programme. Et il y a beaucoup trop d'information à interpréter dans le shell.",
     "blockquote_who": "Le linuxien élu, devant un terminal",
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": true
   },
   {
     "title": "LaTeX",
-    "slug": "la-te-x",
+    "slug": "latex",
+    "icon": "latex",
     "version": "",
     "link": null,
     "is_free": true,
@@ -150,11 +167,13 @@
     "image": "latex.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": true
   },
   {
     "title": "Markdown",
     "slug": "markdown",
+    "icon": "markdown",
     "version": "",
     "link": null,
     "is_free": false,
@@ -167,6 +186,7 @@
     "image": "markdown.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement"
+    "skill_category_slug": "langages-de-developpement",
+    "isDisplay": true
   }
 ]

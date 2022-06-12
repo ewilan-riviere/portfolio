@@ -1,4 +1,9 @@
 <template>
+  <title-block
+    title="Articles"
+    subtitle="A selection of articles"
+    bg="bg-jungle-forest"
+  />
   <div class="bg-grey-50" id="blog">
     <div class="container py-16 md:py-20">
       <h2

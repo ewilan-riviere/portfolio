@@ -17,6 +17,7 @@ declare interface Training {
     vocational?: Link
     promo?: Link
   }
+  projects?: Project[]
 }
 
 interface Link {

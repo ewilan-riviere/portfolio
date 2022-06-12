@@ -9,14 +9,14 @@ let about = await $fetch('/api/about')
     ></div>
     <div class="container relative z-30 pt-20 pb-12 sm:pt-48 sm:pb-48 lg:pb-48">
       <div class="flex flex-col items-center justify-center lg:flex-row">
-        <div class="rounded-full border-4 border-purple-300 shadow-xl">
+        <div class="rounded-full border-2 border-white shadow-xl">
           <img
             src="/images/ewilan-riviere.webp"
             class="h-48 rounded-full sm:h-56"
             alt="author"
           />
         </div>
-        <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0 text-gray-900">
+        <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
           <h1 class="text-4xl sm:text-5xl font-morpheus">
             {{ about.name }}
           </h1>

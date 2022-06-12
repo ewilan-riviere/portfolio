@@ -11,18 +11,18 @@ const devMode = useNuxtApp()._legacyContext?.isDev
 
 <template>
   <div :class="{ 'debug-screens': devMode }" class="min-h-[150vh]">
-    <div class="fixed top-0 left-0">
-      <app-color-mode />
-    </div>
-    <!-- <div class="h-96">
-      <div class="parallax bg-jungle-forest gradient-inter h-96"></div>
-    </div>
-    <div class="h-96">
-      <div class="parallax bg-jungle-forest gradient-inter h-96"></div>
-    </div>
-    <div class="h-64">
-      <div class="parallax bg-jungle-cascade gradient-bottom h-96"></div>
-    </div> -->
-    <atom />
+    <!-- <atom-navbar /> -->
+    <layout-navbar />
+    <layout-sidebar />
+    <atom-hero />
+    <about />
+    <features />
+    <atom-cloud-logos class="mt-10" />
+    <atom-projects />
+    <atom-history />
+    <atom-blog />
+    <atom-contact />
+    <atom-app-footer />
+    <div class="parallax bg-jungle-cascade gradient-bottom h-32"></div>
   </div>
 </template>

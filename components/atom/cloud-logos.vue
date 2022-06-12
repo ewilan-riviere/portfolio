@@ -1,51 +1,41 @@
+<script setup lang="ts">
+const shuffleArray = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+}
+const skills = await $fetch('/api/skills')
+shuffleArray(skills)
+</script>
+
 <template>
-  <div class="bg-grey-50" id="clients">
-    <div class="container py-16 md:py-20">
-      <div class="mx-auto w-full sm:w-3/4 lg:w-full">
-        <h2
-          class="text-center font-header text-4xl font-semibold uppercase text-purple-600 sm:text-5xl lg:text-6xl"
-        >
-          My latest clients
-        </h2>
-        <div class="flex flex-wrap items-center justify-center pt-4 sm:pt-4">
-          <span class="m-8 block">
-            <img
-              src="https://atom.redpixelthemes.com/assets/img/logo-coca-cola.svg"
-              alt="client logo"
-              class="mx-auto block h-12 w-auto"
+  <div class="bg-gray-50">
+    <div class="text-purple-600 text-xl italic text-center pt-6">
+      See {{ skills.length }} technologies what I love
+    </div>
+    <div class="relative overflow-hidden mt-3">
+      <div class="relative overflow-auto">
+        <!-- Contents -->
+        <div class="relative w-full flex gap-20 snap-x overflow-x-auto p-5">
+          <div class="snap-center shrink-0 hidden">
+            <div class="shrink-0 w-4 sm:w-48"></div>
+          </div>
+          <a
+            v-for="skill in skills"
+            :href="skill.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="snap-center shrink-0 first:pl-8 last:pr-8 group"
+          >
+            <svg-icon
+              :name="`techno/${skill.icon}`"
+              class="shrink-0 w-80 h-40 rounded-lg text-gray-400 group-hover:text-gray-500 transition-colors duration-100"
             />
-          </span>
-          <span class="m-8 block">
-            <img
-              src="https://atom.redpixelthemes.com/assets/img/logo-apple.svg"
-              alt="client logo"
-              class="mx-auto block h-12 w-auto"
-            />
-          </span>
-
-          <span class="m-8 block">
-            <img
-              src="https://atom.redpixelthemes.com/assets/img/logo-netflix.svg"
-              alt="client logo"
-              class="mx-auto block h-12 w-auto"
-            />
-          </span>
-
-          <span class="m-8 block">
-            <img
-              src="https://atom.redpixelthemes.com/assets/img/logo-amazon.svg"
-              alt="client logo"
-              class="mx-auto block h-12 w-auto"
-            />
-          </span>
-
-          <span class="m-8 block">
-            <img
-              src="https://atom.redpixelthemes.com/assets/img/logo-stripe.svg"
-              alt="client logo"
-              class="mx-auto block h-12 w-auto"
-            />
-          </span>
+          </a>
+          <div class="snap-center shrink-0 hidden">
+            <div class="shrink-0 w-4 sm:w-48"></div>
+          </div>
         </div>
       </div>
     </div>

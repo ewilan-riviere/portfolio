@@ -104,7 +104,7 @@
     "dateBegin": "2021-09-01",
     "dateEnd": "2022-12-01",
     "isFinished": false,
-    "isDraft": false,
+    "isDraft": true,
     "links": {
       "place": {
         "name": "Useweb",
@@ -119,8 +119,22 @@
   {
     "title": "Useweb",
     "slug": "useweb",
-    "experience_type_id": "entreprise",
-    "isDraft": true,
-    "dateBegin": "2019-10-01"
+    "abstract": "Develop websites and software solutions for very different clients, in team.",
+    "image": "useweb.webp",
+    "certificate": null,
+    "color": "#5959d4",
+    "color_text_white": true,
+    "experience_type_id": "alternance",
+    "level": "Junior developer",
+    "dateBegin": "2021-09-01",
+    "dateEnd": "2022-12-01",
+    "isFinished": false,
+    "isDraft": false,
+    "links": {
+      "place": {
+        "name": "Useweb",
+        "link": "https://www.useweb.fr"
+      }
+    }
   }
 ]
