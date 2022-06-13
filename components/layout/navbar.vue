@@ -57,7 +57,7 @@ onBeforeUnmount(() => {
         </button>
       </div>
       <div
-        class="items-center h-full mx-auto font-sans text-lg font-semibold w-max hidden md:flex"
+        class="items-center h-full mx-auto font-sans text-lg font-semibold w-max hidden sm:flex"
       >
         <h1
           :class="isScroll ? '!text-xl' : ''"

@@ -10,19 +10,17 @@ const devMode = useNuxtApp()._legacyContext?.isDev
 </script>
 
 <template>
-  <div :class="{ 'debug-screens': devMode }" class="min-h-[150vh]">
-    <!-- <atom-navbar /> -->
+  <div :class="{ 'debug-screens': devMode }">
     <layout-navbar />
     <layout-sidebar />
-    <atom-hero />
-    <about />
-    <features />
-    <atom-cloud-logos class="mt-10" />
-    <atom-projects />
-    <atom-history />
-    <atom-blog />
-    <atom-contact />
-    <atom-app-footer />
-    <div class="parallax bg-jungle-cascade gradient-bottom h-32"></div>
+    <portfolio-hero />
+    <portfolio-about />
+    <portfolio-features />
+    <portfolio-technologies class="mt-10" />
+    <portfolio-projects />
+    <portfolio-history />
+    <portfolio-blog />
+    <portfolio-contact />
+    <layout-bottom />
   </div>
 </template>

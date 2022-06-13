@@ -6,6 +6,7 @@ defineProps<{
 
 <template>
   <article
+    v-if="project"
     class="mx-auto shadow-xl bg-cover bg-center transform duration-500 hover:-translate-y-2 cursor-pointer group relative rounded-md"
     :style="`background-image: url(/projects/banner/${project.slug}.webp)`"
   >

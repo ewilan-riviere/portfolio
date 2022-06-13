@@ -4,7 +4,7 @@ declare interface About {
   title: string
   subtitle: string
   text: string
-  social: Social
+  social: Social[]
 }
 
 interface Social {

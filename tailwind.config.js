@@ -37,7 +37,6 @@ module.exports = {
         '.parallax': {
           '@apply bg-center bg-no-repeat bg-cover': {},
           'background-attachment': 'fixed',
-          'min-height': '10rem',
         },
         '.center-full': {
           '@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2':
