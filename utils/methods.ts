@@ -1,5 +1,5 @@
-export const getJson = <T>(json: object): T => {
-  const data: T = JSON.parse(JSON.stringify(json))
+import { getJson } from './methods/api'
+import { shuffleArray } from './methods/array'
+import { date } from './methods/date'
 
-  return data
-}
+export { getJson, shuffleArray, date }

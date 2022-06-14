@@ -7,6 +7,8 @@ const { loadMarkdown } = useMarkdown()
 markdown.value = await loadMarkdown(home)
 
 const devMode = useNuxtApp()._legacyContext?.isDev
+
+useMetadata()
 </script>
 
 <template>

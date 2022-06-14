@@ -4,7 +4,7 @@ const features = await $fetch('/api/features')
 
 <template>
   <div>
-    <div class="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
       <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl px-6 py-16 sm:p-16">
         <div class="max-w-xl mx-auto lg:max-w-none">
           <div class="text-center">

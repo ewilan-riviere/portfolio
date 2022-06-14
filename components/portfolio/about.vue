@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import MarkdownIt from 'markdown-it'
+const md = new MarkdownIt()
+
 const about = await $fetch('/api/about')
+const text = md.render(about.text)
 </script>
 
 <template>
@@ -59,7 +63,7 @@ const about = await $fetch('/api/about')
           <div class="relative mx-auto text-base max-w-prose lg:max-w-none">
             <figure>
               <app-img
-                class-img="object-contain object-center"
+                class="object-contain object-center h-[20rem] lg:h-[40rem]"
                 src="/images/laptop-woman.svg"
               />
             </figure>
@@ -69,7 +73,7 @@ const about = await $fetch('/api/about')
           <div
             class="mx-auto mt-5 prose prose-primary dark:prose-invert lg:max-w-none lg:row-start-1 lg:col-start-1"
           >
-            <div v-html="about.text"></div>
+            <div v-html="text"></div>
           </div>
         </div>
       </div>
