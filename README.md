@@ -51,3 +51,9 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) f
 - <https://treact.owaiskhan.me>
 - <https://tailwind-cards.netlify.app>
 - <https://kitwind.io/products/kometa/components>
+
+## ESLint format
+
+- <https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3>
+- <https://github.com/johnsoncodehk/volar/discussions/53>
+- <https://github.com/johnsoncodehk/volar/issues/425>

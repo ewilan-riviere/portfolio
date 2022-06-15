@@ -1,6 +1,5 @@
 {
   // https://github.com/nuxt/eslint-config
-  // https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3
   "extends": [
     "@nuxtjs/eslint-config-typescript",
     "eslint:recommended",
