@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import home from '@/content/home.md'
 import { useMarkdown } from './composables/markdown'
+import home from '@/content/home.md'
 
 const markdown = ref<Markdown>()
 const { loadMarkdown } = useMarkdown()

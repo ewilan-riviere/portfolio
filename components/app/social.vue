@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const socialItems = await $fetch('/api/about').then((e) => e.socialItems)
+const socialItems = await $fetch('/api/about').then(e => e.socialItems)
 </script>
 
 <template>

@@ -31,7 +31,6 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
         :pagination="{ clickable: true }"
         :scrollbar="{ draggable: true }"
         loop
-        @swiper="setControlledSwiper"
         :slides-per-group="3"
         :breakpoints="{
           600: {
@@ -44,6 +43,7 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
             slidesPerView: 4,
           },
         }"
+        @swiper="setControlledSwiper"
       >
         <swiper-slide v-for="technology in technologies" :key="technology.slug">
           <div class="p-10">
@@ -61,14 +61,14 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
           </div>
         </swiper-slide>
         <button
-          @click="controlledSwiper?.slideNext()"
           class="swiper-button right-0"
+          @click="controlledSwiper?.slideNext()"
         >
           <svg-icon name="arrow/chevron-right" class="w-6 h-6" />
         </button>
         <button
-          @click="controlledSwiper?.slidePrev()"
           class="swiper-button right-10"
+          @click="controlledSwiper?.slidePrev()"
         >
           <svg-icon name="arrow/chevron-right" class="w-6 h-6 rotate-180" />
         </button>

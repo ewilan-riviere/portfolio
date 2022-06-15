@@ -73,7 +73,7 @@ const text = md.render(about.text)
           <div
             class="mx-auto mt-5 prose prose-primary dark:prose-invert lg:max-w-none lg:row-start-1 lg:col-start-1"
           >
-            <div v-html="text"></div>
+            <div v-html="text" />
           </div>
         </div>
       </div>

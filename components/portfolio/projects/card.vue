@@ -13,7 +13,7 @@ defineProps<{
     <div
       class="absolute z-10 top-0 right-0 m-3 text-white font-semibold flex items-center space-x-2 rounded-md bg-gray-800 bg-opacity-20 py-1 px-2"
     >
-      <div class="w-3 h-3 bg-purple-600 rounded-full"></div>
+      <div class="w-3 h-3 bg-purple-600 rounded-full" />
       <div>{{ project.type }}</div>
     </div>
     <div
@@ -26,7 +26,7 @@ defineProps<{
       </h3>
       <div
         class="w-16 h-2 bg-orange-500 rounded-full mb-5 transform translate-y-20 group-hover:translate-y-0 duration-300"
-      ></div>
+      />
       <p
         class="opacity-0 text-white text-xl group-hover:opacity-80 transform duration-500 pb-6 line-clamp-3"
       >

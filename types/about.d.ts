@@ -1,3 +1,10 @@
+interface SocialItem {
+  title: string
+  slug: string
+  color: string
+  link: string
+}
+
 declare interface About {
   name: string
   professionalTitle: string
@@ -5,11 +12,4 @@ declare interface About {
   subtitle: string
   text: string
   socialItems: SocialItem[]
-}
-
-interface SocialItem {
-  title: string
-  slug: string
-  color: string
-  link: string
 }

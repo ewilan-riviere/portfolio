@@ -13,6 +13,6 @@ export const date = (date?: Date) => {
   return date.toLocaleString(userLang, {
     year: 'numeric',
     month: 'long',
-    day: 'numeric',
+    day: 'numeric'
   })
 }

@@ -19,6 +19,6 @@ export const useScroll = () => {
 
   return {
     isScroll,
-    handleScroll,
+    handleScroll
   }
 }

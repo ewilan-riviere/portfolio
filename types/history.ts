@@ -1,3 +1,8 @@
+interface Link {
+  name: string
+  link: string
+}
+
 declare interface History {
   title: string
   slug: string
@@ -18,9 +23,4 @@ declare interface History {
     promo?: Link
   }
   projects?: Project[]
-}
-
-interface Link {
-  name: string
-  link: string
 }

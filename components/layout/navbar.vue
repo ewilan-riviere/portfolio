@@ -40,9 +40,9 @@ onBeforeUnmount(() => {
         class="absolute items-center px-5 py-3 transform -translate-y-1/2 lg:ml-10 top-1/2 hover:text-gray-300"
       >
         <button
-          @click="toggleSidebar"
           :class="isScroll ? 'w-8 h-8' : 'w-8 h-8 lg:w-12 lg:h-12'"
           class="relative transition-all duration-300"
+          @click="toggleSidebar"
         >
           <svg-icon
             name="ewilan-riviere"

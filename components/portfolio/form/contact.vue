@@ -7,18 +7,18 @@ const form = ref({
   name: '',
   email: '',
   message: '',
-  honeypot: false,
+  honeypot: false
 })
 const formTesting: Keyable = {
   name: 'Ewilan',
   email: 'ewilan@dotslashplay.it',
   message:
     'Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.',
-  honeypot: false,
+  honeypot: false
 }
 const message = ref({
   title: 'Erreur',
-  text: "Une erreur s'est produite, nous sommes désolés.",
+  text: "Une erreur s'est produite, nous sommes désolés."
 })
 
 const fillForm = () => {
@@ -144,9 +144,10 @@ const submit = async () => {
           <div class="max-w-xl pt-10 mx-auto">
             <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">
               <div>
-                <label for="full_name" class="sr-only"
-                  >{{ 'fields.name' }}*</label
-                >
+                <label
+                  for="full_name"
+                  class="sr-only"
+                >{{ 'fields.name' }}*</label>
                 <input
                   id="name"
                   v-model="form.name"
@@ -157,7 +158,7 @@ const submit = async () => {
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 dark:text-gray-900"
                   :placeholder="`${'fields.name'}*`"
                   required
-                />
+                >
               </div>
               <div>
                 <label for="email" class="sr-only">{{ 'fields.email' }}*</label>
@@ -171,12 +172,13 @@ const submit = async () => {
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 dark:text-gray-900"
                   :placeholder="`${'fields.email'}*`"
                   required
-                />
+                >
               </div>
               <div>
-                <label for="message" class="sr-only"
-                  >{{ 'fields.message' }}*</label
-                >
+                <label
+                  for="message"
+                  class="sr-only"
+                >{{ 'fields.message' }}*</label>
                 <textarea
                   id="message"
                   v-model="form.message"
@@ -190,10 +192,8 @@ const submit = async () => {
                 />
                 <div class="flex justify-between ml-1 text-sm text-gray-100">
                   <span>Min. 25 {{ 'fields.characters' }}</span>
-                  <span
-                    >{{ 'fields.currently' }}
-                    {{ form.message.length }}/1500</span
-                  >
+                  <span>{{ 'fields.currently' }}
+                    {{ form.message.length }}/1500</span>
                 </div>
               </div>
               <div class="hidden">
@@ -205,12 +205,13 @@ const submit = async () => {
                       name="conditions"
                       type="checkbox"
                       class="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
-                    />
+                    >
                   </div>
                   <div class="ml-3 text-sm">
-                    <label for="conditions" class="font-medium text-gray-700"
-                      >I accept conditions</label
-                    >
+                    <label
+                      for="conditions"
+                      class="font-medium text-gray-700"
+                    >I accept conditions</label>
                   </div>
                 </div>
               </div>

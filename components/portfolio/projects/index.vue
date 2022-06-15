@@ -3,7 +3,7 @@ const projects = await $fetch('/api/projects')
 </script>
 
 <template>
-  <div class="main-container" id="portfolio">
+  <div id="portfolio" class="main-container">
     <portfolio-title-block
       title="Projects"
       subtitle="A selection of my projects"

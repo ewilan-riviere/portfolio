@@ -4,23 +4,23 @@ const achivements = [
   {
     name: 'Bachelor',
     slug: 'training',
-    value: `+4`,
+    value: '+4'
   },
   {
     name: 'Projects',
     slug: 'projects',
-    value: projects.length,
+    value: projects.length
   },
   {
     name: 'Experience years',
     slug: 'experience',
-    value: `${new Date().getFullYear() - 2018}`,
-  },
+    value: `${new Date().getFullYear() - 2018}`
+  }
 ]
 </script>
 
 <template>
-  <div class="medium-container shadow-inner" id="statistics">
+  <div id="statistics" class="medium-container shadow-inner">
     <div class="container">
       <div class="mx-auto py-16 lg:py-20 xl:py-24 px-10">
         <div class="grid md:grid-cols-2 gap-5 md:gap-8 lg:grid-cols-3 xl:gap-5">

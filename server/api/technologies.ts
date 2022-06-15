@@ -3,6 +3,6 @@ import { getJson } from '~~/utils/methods'
 
 export default defineEventHandler((event) => {
   return getJson<Technology[]>(technologiesJson).filter(
-    (skill) => skill.isDisplay
+    skill => skill.isDisplay
   )
 })

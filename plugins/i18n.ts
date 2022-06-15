@@ -4,7 +4,7 @@ export default defineNuxtPlugin(() => {
   return {
     provide: {
       localePath: (route: Route) => route,
-      t: (path: string) => path,
-    },
+      t: (path: string) => path
+    }
   }
 })

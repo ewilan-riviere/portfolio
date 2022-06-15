@@ -72,7 +72,7 @@ defineProps<{
           <div
             class="mx-auto mt-5 prose prose-purple-600 dark:prose-invert lg:max-w-none lg:row-start-1 lg:col-start-1"
           >
-            <div v-html="markdown.body"></div>
+            <div v-html="markdown.body" />
           </div>
         </div>
       </div>
