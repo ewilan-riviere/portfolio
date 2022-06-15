@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const about = await $fetch("/api/about")
+
+const showRainbow = ref(false)
+const loaded = (loaded: boolean) => {
+  showRainbow.value = loaded
+}
 </script>
 
 <template>
@@ -9,20 +14,19 @@ const about = await $fetch("/api/about")
       <div
         class="flex flex-col items-center justify-center lg:flex-row center-full w-full"
       >
-        <div class="rounded-full border-2 border-white shadow-xl">
-          <img
-            src="/images/ewilan-riviere.webp"
-            class="h-48 rounded-full sm:h-56"
-            alt="author"
+        <div class="relative h-56 w-56">
+          <transition>
+            <div
+              v-if="showRainbow"
+              class="rainbow absolute -z-10 inset-0 rounded-full"
+            ></div>
+          </transition>
+          <app-img
+            src="https://ewilan-riviere.com/images/author.webp"
+            alt="ewilan riviere"
+            class="rounded-full p-0.5"
+            @loaded="loaded"
           />
-          <div class="relative h-96 w-96">
-            <div class="rainbow absolute -z-10 inset-0 rounded-full"></div>
-            <img
-              src="https://ewilan-riviere.com/images/author.webp"
-              alt="ewilan riviere"
-              class="rounded-full p-2"
-            />
-          </div>
         </div>
         <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0 text-center lg:text-left">
           <h1 class="text-4xl sm:text-5xl font-morpheus">
@@ -41,3 +45,22 @@ const about = await $fetch("/api/about")
     </div>
   </div>
 </template>
+
+<style lang="css" scoped>
+.rainbow {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
+</style>

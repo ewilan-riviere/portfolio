@@ -1,5 +1,13 @@
 <script setup lang="ts">
-const projects = await $fetch("/api/projects")
+const projects = ref<Project[]>()
+const isFull = ref(false)
+
+projects.value = await $fetch("/api/projects?limit=10")
+
+const getMore = async () => {
+  projects.value = await $fetch<Project[]>("/api/projects")
+  isFull.value = true
+}
 </script>
 
 <template>
@@ -9,7 +17,7 @@ const projects = await $fetch("/api/projects")
       subtitle="A selection of my projects"
     />
     <div
-      class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 lg:w-full md:grid-cols-2 lg:grid-cols-3"
+      class="mx-auto grid w-full grid-cols-1 gap-4 pt-12 lg:w-full md:grid-cols-2 lg:grid-cols-3"
     >
       <portfolio-projects-card
         v-for="project in projects"
@@ -17,5 +25,15 @@ const projects = await $fetch("/api/projects")
         :project="project"
       />
     </div>
+    <transition>
+      <div v-if="!isFull" class="flex mt-6">
+        <app-button color="white" class="mx-auto" @click="getMore">
+          <div class="flex items-center space-x-1">
+            <span>See more</span>
+            <svg-icon name="arrow/chevron-right" class="relative w-4 h-4" />
+          </div>
+        </app-button>
+      </div>
+    </transition>
   </div>
 </template>

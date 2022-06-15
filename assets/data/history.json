@@ -69,7 +69,7 @@
   {
     "title": "Developer Designer of Applications",
     "slug": "developer-designer-of-applications",
-    "abstract": "A vocational course for the CDA title. 25% of the time per month at the ENI school and 75% of the time at UseWeb. This company creates websites for clients, with a front-end in NuxtJS and a back-end in Laravel. At school, I studied: project management, web server management, Java EE, ASP.net, cross-platform, analysis and design, Symfony, Android.",
+    "abstract": "A vocational course for the CDA title. 25% of the time per month at the ENI school and 75% of the time at UseWeb.",
     "image": "useweb.webp",
     "certificate": null,
     "color": "#4981be",
@@ -85,7 +85,7 @@
         "name": "Useweb",
         "link": "https://www.useweb.fr"
       },
-      "vocational": {
+      "school": {
         "name": "ENI Ecole Informatique",
         "link": "https://www.eni-ecole.fr"
       }
@@ -110,7 +110,7 @@
         "name": "Useweb",
         "link": "https://www.useweb.fr"
       },
-      "vocational": {
+      "school": {
         "name": "ENI Ecole Informatique",
         "link": "https://www.eni-ecole.fr/formations/developpement/niveau-7-bac5-manager-de-solutions-digitales-et-data"
       }

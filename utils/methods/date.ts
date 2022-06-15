@@ -1,18 +1,26 @@
-export const date = (date?: Date) => {
+export const date = (date?: any) => {
   if (!date) {
     return ""
   }
-  date = new Date(date)
+  const formatDate = new Date(date)
 
   let userLang = "en"
-
   if (process.client) {
     userLang = navigator.language
   }
 
-  return date.toLocaleString(userLang, {
+  return formatDate.toLocaleString(userLang, {
     year: "numeric",
     month: "long",
-    day: "numeric",
   })
+}
+
+export const checkIfDateIsSuperiorToToday = (date?: any) => {
+  if (!date) {
+    return false
+  }
+  const today = new Date()
+  const dateToCheck = new Date(date)
+
+  return dateToCheck > today
 }

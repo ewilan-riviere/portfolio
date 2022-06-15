@@ -4,12 +4,14 @@ const loading = ref(false)
 const success = ref(false)
 
 const form = ref({
+  app: "Portfolio",
   name: "",
   email: "",
   message: "",
   honeypot: false,
 })
 const formTesting: Keyable = {
+  app: "Portfolio",
   name: "Ewilan",
   email: "ewilan@dotslashplay.it",
   message:
@@ -20,7 +22,6 @@ const message = ref({
   title: "Erreur",
   text: "Une erreur s'est produite, nous sommes désolés.",
 })
-console.log("a")
 
 const fillForm = () => {
   for (const [key] of Object.entries(form.value)) {
@@ -35,6 +36,12 @@ const resetForm = () => {
 }
 const submit = async () => {
   loading.value = true
+
+  await $fetch("/send/submission", {
+    baseURL: "http://app.toolbelt.test/api",
+    method: "POST",
+    body: JSON.stringify(form.value),
+  })
 
   // if (form.value.honeypot) {
   //   this.$nuxt.$emit('notification', {
@@ -73,7 +80,7 @@ const submit = async () => {
 </script>
 
 <template>
-  <div class="relative pb-16">
+  <div class="relative">
     <div aria-hidden="true" class="hidden sm:block">
       <svg
         class="absolute -ml-3 top-8 left-1/2"
@@ -106,7 +113,7 @@ const submit = async () => {
     </div>
     <div class="max-w-3xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
       <div
-        class="relative px-6 py-10 overflow-hidden bg-purple-500 dark:bg-purple-800 shadow-xl rounded-2xl sm:px-12 sm:py-20"
+        class="relative px-6 py-10 overflow-hidden bg-purple-500 dark:bg-purple-800 shadow rounded-2xl sm:px-12 sm:py-20"
       >
         <div
           aria-hidden="true"
@@ -136,18 +143,16 @@ const submit = async () => {
             <h2
               class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
             >
-              {{ "contact.title" }}
+              You've send mail!
             </h2>
             <p class="max-w-2xl mx-auto mt-6 text-lg text-purple-100">
-              {{ "contact.subtitle" }}
+              If you want to contact me for a new project!
             </p>
           </div>
           <div class="max-w-xl pt-10 mx-auto">
             <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">
               <div>
-                <label for="full_name" class="sr-only"
-                  >{{ "fields.name" }}*</label
-                >
+                <label for="full_name" class="sr-only">Name*</label>
                 <input
                   id="name"
                   v-model="form.name"
@@ -156,12 +161,12 @@ const submit = async () => {
                   autocomplete="name"
                   maxlength="100"
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 dark:text-gray-900"
-                  :placeholder="`${'fields.name'}*`"
+                  :placeholder="`Name*`"
                   required
                 />
               </div>
               <div>
-                <label for="email" class="sr-only">{{ "fields.email" }}*</label>
+                <label for="email" class="sr-only">Email*</label>
                 <input
                   id="email"
                   v-model="form.email"
@@ -170,31 +175,27 @@ const submit = async () => {
                   autocomplete="email"
                   maxlength="100"
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 dark:text-gray-900"
-                  :placeholder="`${'fields.email'}*`"
+                  :placeholder="`Email*`"
                   required
                 />
               </div>
               <div>
-                <label for="message" class="sr-only"
-                  >{{ "fields.message" }}*</label
-                >
+                <label for="message" class="sr-only">Message*</label>
                 <textarea
                   id="message"
                   v-model="form.message"
                   name="message"
                   rows="4"
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 dark:text-gray-900"
-                  minlength="25"
+                  minlength="0"
                   maxlength="1500"
-                  :placeholder="`${'fields.message'}*`"
+                  :spellcheck="false"
+                  :placeholder="`Message*`"
                   required
                 />
                 <div class="flex justify-between ml-1 text-sm text-gray-100">
-                  <span>Min. 25 {{ "fields.characters" }}</span>
-                  <span
-                    >{{ "fields.currently" }}
-                    {{ form.message.length }}/1500</span
-                  >
+                  <!-- <span>Min. 25 characters</span> -->
+                  <span>Currently {{ form.message.length }}/1500</span>
                 </div>
               </div>
               <div class="hidden">
@@ -224,7 +225,7 @@ const submit = async () => {
                       class="w-4 h-4"
                     />
                     <app-loading v-else class="w-4 h-4" />
-                    <span> {{ "fields.send" }} </span>
+                    <span> Send </span>
                   </span>
                 </app-button>
                 <app-button v-if="isDev" color="secondary" @click="fillForm">

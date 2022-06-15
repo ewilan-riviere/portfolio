@@ -3,7 +3,7 @@ import professionalJson from "~/assets/data/projects/projects-professional.json"
 import schoolJson from "~/assets/data/projects/projects-school.json"
 import { getJson } from "~~/utils/methods"
 
-export default defineEventHandler(() => {
+export default defineEventHandler((event): Project[] => {
   const personal = getJson<Project[]>(personalJson).map((obj) => ({
     ...obj,
     type: "Personal",
@@ -17,7 +17,22 @@ export default defineEventHandler(() => {
     type: "School",
   }))
 
-  const projects = [...personal, ...professional, ...school]
+  let projects = [...personal, ...professional, ...school] as Project[]
 
-  return projects.filter((item: Project) => !item.isDraft)
+  let limit = 0
+  if (event.req.url) {
+    const config = useRuntimeConfig()
+    const url = `${config.public.baseURL}${event.req.url}`
+    const params = new URL(url).searchParams
+    if (params.get("limit") !== null) {
+      limit = parseInt(params.get("limit")!)
+    }
+  }
+
+  projects = projects.filter((item: Project) => !item.isDraft)
+  if (limit) {
+    projects = projects.slice(0, limit)
+  }
+
+  return projects
 })

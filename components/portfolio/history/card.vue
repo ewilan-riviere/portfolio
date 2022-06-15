@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { date, checkIfDateIsSuperiorToToday } from "~~/utils/methods"
+
 defineProps<{
   history: History
 }>()
@@ -20,7 +22,7 @@ defineProps<{
     <slot />
     <div class="flex-grow pt-10 pb-6 pl-6">
       <span class="block font-body font-bold text-gray-300">
-        {{ history.dateBegin }} - {{ history.dateEnd }}</span
+        {{ date(history.dateBegin) }} - {{ date(history.dateEnd) }}</span
       >
       <span class="pt-1">
         <h3 class="font-header text-xl font-bold uppercase text-purple-600">
@@ -35,6 +37,13 @@ defineProps<{
       >
         {{ history.abstract }}
       </div>
+      <span
+        v-if="checkIfDateIsSuperiorToToday(history.dateEnd)"
+        class="text-xs bg-purple-600 bg-opacity-30 px-1 py-0.5 rounded-md font-semibold text-white flex items-center space-x-1 w-max mt-2"
+      >
+        <span class="bg-purple-600 w-2 h-2 block rounded-full"></span>
+        <span>currently</span>
+      </span>
     </div>
   </div>
 </template>

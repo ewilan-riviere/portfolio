@@ -125,10 +125,10 @@ const closeSidebar = () => {
 
 <style lang="css" scoped>
 .link {
-  @apply flex items-center rounded-md text-base font-medium leading-5 text-gray-600 hover: bg-gray-200 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700;
+  @apply flex items-center rounded-md text-base font-medium leading-5 text-gray-600 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700;
 }
 
 .router-link-active {
-  @apply text-black dark: bg-gray-600 dark:text-white;
+  @apply text-black dark:bg-gray-600 dark:text-white;
 }
 </style>

@@ -3,19 +3,12 @@ const features = await $fetch("/api/features")
 </script>
 
 <template>
-  <div>
-    <div class="medium-container">
-      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl px-6 py-16 sm:p-16">
+  <div class="mx-6">
+    <div class="medium-container !pb-6 !p-0">
+      <div class="pt-16 sm:p-6">
         <div class="mx-auto">
-          <div class="text-center">
-            <h2
-              class="text-2xl font-quicksand font-semibold tracking-tight text-gray-900 dark:text-gray-100"
-            >
-              What I'm doing on web
-            </h2>
-          </div>
           <div
-            class="mt-12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8 lg:grid-cols-3"
+            class="mt-12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8 lg:grid-cols-3 px-6"
           >
             <div
               v-for="feature in features"
@@ -45,6 +38,7 @@ const features = await $fetch("/api/features")
           </div>
         </div>
       </div>
+      <portfolio-technologies class="mt-6" />
     </div>
   </div>
 </template>

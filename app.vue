@@ -19,8 +19,7 @@ useMetadata()
     <portfolio-about />
     <portfolio-features />
     <portfolio-projects class="mt-16" />
-    <portfolio-technologies class="mt-12 mb-10" />
-    <portfolio-history />
+    <portfolio-history class="mt-16" />
     <portfolio-blog class="mt-16" />
     <portfolio-form-contact class="mt-28" />
     <layout-bottom class="mt-10" />

@@ -13,13 +13,13 @@ declare interface History {
   color_text_white?: string
   experience_type_id?: string
   level?: string
-  dateBegin?: Date
+  dateBegin: Date
   dateEnd?: Date
   isFinished?: boolean
   isDraft?: boolean
   links?: {
     place?: Link
-    vocational?: Link
+    school?: Link
     promo?: Link
   }
   projects?: Project[]

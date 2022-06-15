@@ -33,7 +33,7 @@ defineProps<{
   </div> -->
   <div class="text-center">
     <h2
-      class="text-3xl tracking-tight font-quicksand font-semibold text-gray-900 dark:text-gray-100 sm:text-4xl"
+      class="text-3xl tracking-tight font-quicksand font-semibold text-gray-900 dark:text-gray-100 sm:text-4xl underline underline-offset-4"
     >
       {{ title }}
     </h2>

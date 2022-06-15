@@ -16,10 +16,7 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
 </script>
 
 <template>
-  <div class="medium-container technologies">
-    <div class="text-purple-600 text-xl italic font-semibold text-center pt-3">
-      {{ technologies.length }} technologies I love
-    </div>
+  <div class="technologies">
     <client-only>
       <swiper
         :modules="[Navigation, Pagination, Controller]"
@@ -33,25 +30,22 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
         loop
         :slides-per-group="3"
         :breakpoints="{
-          600: {
+          400: {
             slidesPerView: 2,
           },
           900: {
             slidesPerView: 3,
           },
-          1300: {
-            slidesPerView: 4,
-          },
         }"
         @swiper="setControlledSwiper"
       >
         <swiper-slide v-for="technology in technologies" :key="technology.slug">
-          <div class="p-10">
+          <div class="p-5">
             <a
               :href="technology.link"
               target="_blank"
               rel="noopener noreferrer"
-              class="group hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md block px-6 py-3"
+              class="group rounded-md block px-2 py-1"
             >
               <svg-icon
                 :name="`techno/${technology.slug}`"
@@ -61,13 +55,13 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
           </div>
         </swiper-slide>
         <button
-          class="swiper-button right-0"
+          class="swiper-button right-6"
           @click="controlledSwiper?.slideNext()"
         >
           <svg-icon name="arrow/chevron-right" class="w-6 h-6" />
         </button>
         <button
-          class="swiper-button right-10"
+          class="swiper-button right-16"
           @click="controlledSwiper?.slidePrev()"
         >
           <svg-icon name="arrow/chevron-right" class="w-6 h-6 rotate-180" />
@@ -79,23 +73,16 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
 
 <style lang="css" scoped>
 .technologies :deep(.swiper) {
-  & .swiper-wrapper {
-    /* @apply pb-3; */
-  }
-
   & .swiper-pagination {
     @apply bottom-3;
   }
-
   & .swiper-button-next,
   .swiper-button-prev {
     @apply hidden;
   }
-
   & .swiper-pagination-bullet {
     @apply bg-gray-800;
   }
-
   & .swiper-pagination-bullet-active {
     @apply bg-purple-600;
   }
@@ -112,6 +99,6 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
 }
 
 .swiper-button {
-  @apply absolute z-10 bottom-0 hover: bg-gray-200 dark:hover:bg-gray-700 p-2 rounded-md transition-colors duration-75 text-gray-700 dark:text-gray-100;
+  @apply absolute z-10 bottom-0 hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded-md transition-colors duration-75 text-gray-700 dark:text-gray-100;
 }
 </style>

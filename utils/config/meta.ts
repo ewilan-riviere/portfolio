@@ -64,8 +64,8 @@ const meta = [
     content: "en-US",
   },
   {
-    hid: "twitter:url",
-    name: "twitter:url",
+    hid: "twitter:site",
+    name: "twitter:site",
     content: "@ewilanriviere",
   },
   {

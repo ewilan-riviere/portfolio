@@ -17,13 +17,23 @@ const achivements = [
     value: `${new Date().getFullYear() - 2018}`,
   },
 ]
+const opened = ref(false)
+const emit = defineEmits<{
+  (e: "opened", opened: boolean): void
+}>()
+const toggle = () => {
+  opened.value = !opened.value
+  emit("opened", opened.value)
+}
 </script>
 
 <template>
   <div id="statistics" class="medium-container shadow-inner">
     <div class="container">
-      <div class="mx-auto py-16 lg:py-20 xl:py-24 px-10">
-        <div class="grid md:grid-cols-2 gap-5 md:gap-8 lg:grid-cols-3 xl:gap-5">
+      <div class="mx-auto py-8 lg:py-10 xl:py-12 px-10">
+        <div
+          class="grid md:grid-cols-2 gap-5 md:gap-8 lg:grid-cols-3 xl:gap-5 mt-16"
+        >
           <div
             v-for="achivement in achivements"
             :key="achivement.slug"
@@ -48,6 +58,18 @@ const achivements = [
               </h4>
             </div>
           </div>
+        </div>
+        <div class="flex mt-12">
+          <app-button class="mx-auto" @click="toggle">
+            <div class="flex items-center space-x-2">
+              <span>Open history timeline</span>
+              <svg-icon
+                name="arrow/chevron-right"
+                :class="opened ? 'rotate-45' : ''"
+                class="w-5 h-5 transition-transform duration-75"
+              />
+            </div>
+          </app-button>
         </div>
       </div>
     </div>
