@@ -17,9 +17,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "forest-swamp": "url('/images/forest-swamp.webp')",
-        "jungle-forest": "url('/images/jungle-forest.webp')",
-        "jungle-cascade": "url('/images/jungle-cascade.webp')",
+        "forest-swamp": "url('/background/forest-swamp.webp')",
+        "jungle-forest": "url('/background/jungle-forest.webp')",
+        "jungle-cascade": "url('/background/jungle-cascade.webp')",
       },
       fontFamily: {
         morpheus: ["Morpheus"], // a-la-croisee-des-mondes
