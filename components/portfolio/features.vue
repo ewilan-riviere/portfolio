@@ -4,18 +4,18 @@ const features = await $fetch('/api/features')
 
 <template>
   <div>
-    <div class="max-w-6xl mx-auto">
+    <div class="medium-container">
       <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl px-6 py-16 sm:p-16">
-        <div class="max-w-xl mx-auto lg:max-w-none">
+        <div class="mx-auto">
           <div class="text-center">
             <h2
-              class="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100"
+              class="text-2xl font-quicksand font-semibold tracking-tight text-gray-900 dark:text-gray-100"
             >
-              We built our business on customer service
+              What I'm doing on web
             </h2>
           </div>
           <div
-            class="mt-12 max-w-sm mx-auto grid grid-cols-1 gap-y-10 gap-x-8 sm:max-w-none lg:grid-cols-3"
+            class="mt-12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8 lg:grid-cols-3"
           >
             <div
               v-for="feature in features"

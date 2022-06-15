@@ -34,6 +34,13 @@ module.exports = {
   plugins: [
     plugin(({ addComponents }) => {
       addComponents({
+        '.main-container': {
+          '@apply container max-w-7xl px-6 lg:px-8': {},
+        },
+        '.medium-container': {
+          '@apply container max-w-5xl px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 shadow rounded-md':
+            {},
+        },
         '.parallax': {
           '@apply bg-center bg-no-repeat bg-cover': {},
           'background-attachment': 'fixed',

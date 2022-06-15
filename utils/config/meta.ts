@@ -4,7 +4,11 @@ const link = [
     type: 'image/png',
     href: '/apple-touch-icon.png',
   },
-  { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+  {
+    rel: 'icon',
+    type: 'image/svg+xml',
+    href: '/favicon.svg',
+  },
   { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
   {
     rel: 'manifest',
@@ -19,7 +23,10 @@ const meta = [
     content: 'index,follow',
   },
   { name: 'msapplication-TileColor', content: '#ffffff' },
-  { name: 'theme-color', content: '#ffffff' },
+  {
+    name: 'theme-color',
+    content: '#ffffff',
+  },
   { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   {
     hid: 'author',

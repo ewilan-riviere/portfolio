@@ -18,7 +18,7 @@ let about = await $fetch('/api/about')
             alt="author"
           />
         </div>
-        <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0 text-center">
+        <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0 text-center lg:text-left">
           <h1 class="text-4xl sm:text-5xl font-morpheus">
             {{ about.name }}
           </h1>
@@ -28,7 +28,7 @@ let about = await $fetch('/api/about')
             {{ about.professionalTitle }}
           </h2>
           <app-social
-            class="flex justify-center lg:justify-start space-x-1 lg:space-x-6 mt-5"
+            class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-5"
           />
         </div>
       </div>

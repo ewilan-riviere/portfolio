@@ -4,10 +4,10 @@ declare interface About {
   title: string
   subtitle: string
   text: string
-  social: Social[]
+  socialItems: SocialItem[]
 }
 
-interface Social {
+interface SocialItem {
   title: string
   slug: string
   color: string

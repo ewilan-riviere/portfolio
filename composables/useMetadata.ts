@@ -1,5 +1,6 @@
 import { MetaObject } from '#app'
 import { ComputedGetter } from 'vue'
+import { isDark } from '~/utils/methods'
 
 interface HeadMeta {
   description?: string
@@ -29,6 +30,8 @@ export const useMetadata = (meta?: HeadMeta) => {
   const { fullPath } = useRoute()
   let route = fullPath
 
+  const isDarkMode = isDark()
+
   const metadata: MetaObject | ComputedGetter<MetaObject> = {
     title: title,
     meta: [
@@ -36,6 +39,10 @@ export const useMetadata = (meta?: HeadMeta) => {
         hid: 'description',
         name: 'description',
         content: description,
+      },
+      {
+        name: 'theme-color',
+        content: isDarkMode ? '#00aba9' : '#ffffff',
       },
       {
         hid: 'og:url',
@@ -76,6 +83,13 @@ export const useMetadata = (meta?: HeadMeta) => {
         hid: 'twitter:image',
         name: 'twitter:image',
         content: image,
+      },
+    ],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: isDarkMode ? '/favicon-dark.svg' : '/favicon.svg',
       },
     ],
   }

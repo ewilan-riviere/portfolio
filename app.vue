@@ -18,11 +18,11 @@ useMetadata()
     <portfolio-hero />
     <portfolio-about />
     <portfolio-features />
-    <portfolio-technologies class="mt-10" />
-    <portfolio-projects />
+    <portfolio-projects class="mt-16" />
+    <portfolio-technologies class="mt-12 mb-10" />
     <portfolio-history />
-    <portfolio-blog />
-    <portfolio-contact />
-    <layout-bottom />
+    <portfolio-blog class="mt-16" />
+    <portfolio-form-contact class="mt-28" />
+    <layout-bottom class="mt-10" />
   </div>
 </template>

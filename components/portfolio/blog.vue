@@ -1,104 +1,158 @@
 <template>
-  <section>
-    <div>
-      <h2>Articles</h2>
-      <p>A selection of articles</p>
-    </div>
-    <div class="bg-grey-50" id="blog">
-      <div class="container py-16 md:py-20">
-        <h2
-          class="text-center font-header text-4xl font-semibold uppercase text-purple-600 sm:text-5xl lg:text-6xl"
-        >
-          I also like to write
-        </h2>
-        <h4
-          class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
-        >
-          Check out my latest posts!
-        </h4>
-        <div
-          class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10"
-        >
-          <a href="/post" class="shadow">
-            <div
-              style="
-                background-image: url(https://atom.redpixelthemes.com/assets/img/post-01.png);
-              "
-              class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-            >
-              <span
-                class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
-              ></span>
-              <span
-                class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
-                >Read More</span
-              >
+  <div class="main-container">
+    <div class="relative max-w-7xl mx-auto">
+      <portfolio-title-block title="Blog" subtitle="Some tech" />
+      <div
+        class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+      >
+        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+          <div class="flex-shrink-0">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+              alt=""
+            />
+          </div>
+          <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+            <div class="flex-1">
+              <p class="text-sm font-medium text-indigo-600">
+                <a href="#" class="hover:underline"> Article </a>
+              </p>
+              <a href="#" class="block mt-2">
+                <p class="text-xl font-semibold text-gray-900">
+                  Boost your conversion rate
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto accusantium praesentium eius, ut atque fuga culpa,
+                  similique sequi cum eos quis dolorum.
+                </p>
+              </a>
             </div>
-            <div class="bg-white py-6 px-5 xl:py-8">
-              <span class="block font-body text-lg font-semibold text-black"
-                >How to become a frontend developer</span
-              >
-              <span class="block pt-2 font-body text-grey-20"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.</span
-              >
+            <div class="mt-6 flex items-center">
+              <div class="flex-shrink-0">
+                <a href="#">
+                  <span class="sr-only">Roel Aufderehar</span>
+                  <img
+                    class="h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-gray-900">
+                  <a href="#" class="hover:underline"> Roel Aufderehar </a>
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-500">
+                  <time datetime="2020-03-16"> Mar 16, 2020 </time>
+                  <span aria-hidden="true"> &middot; </span>
+                  <span> 6 min read </span>
+                </div>
+              </div>
             </div>
-          </a>
-          <a href="/post" class="shadow">
-            <div
-              style="
-                background-image: url(https://atom.redpixelthemes.com/assets/img/post-02.png);
-              "
-              class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-            >
-              <span
-                class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
-              ></span>
-              <span
-                class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
-                >Read More</span
-              >
+          </div>
+        </div>
+
+        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+          <div class="flex-shrink-0">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+              alt=""
+            />
+          </div>
+          <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+            <div class="flex-1">
+              <p class="text-sm font-medium text-indigo-600">
+                <a href="#" class="hover:underline"> Video </a>
+              </p>
+              <a href="#" class="block mt-2">
+                <p class="text-xl font-semibold text-gray-900">
+                  How to use search engine optimization to drive sales
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+                  facilis asperiores porro quaerat doloribus, eveniet dolore.
+                  Adipisci tempora aut inventore optio animi., tempore
+                  temporibus quo laudantium.
+                </p>
+              </a>
             </div>
-            <div class="bg-white py-6 px-5 xl:py-8">
-              <span class="block font-body text-lg font-semibold text-black"
-                >My personal productivity system</span
-              >
-              <span class="block pt-2 font-body text-grey-20"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.</span
-              >
+            <div class="mt-6 flex items-center">
+              <div class="flex-shrink-0">
+                <a href="#">
+                  <span class="sr-only">Brenna Goyette</span>
+                  <img
+                    class="h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-gray-900">
+                  <a href="#" class="hover:underline"> Brenna Goyette </a>
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-500">
+                  <time datetime="2020-03-10"> Mar 10, 2020 </time>
+                  <span aria-hidden="true"> &middot; </span>
+                  <span> 4 min read </span>
+                </div>
+              </div>
             </div>
-          </a>
-          <a href="/post" class="shadow">
-            <div
-              style="
-                background-image: url(https://atom.redpixelthemes.com/assets/img/post-03.png);
-              "
-              class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-            >
-              <span
-                class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
-              ></span>
-              <span
-                class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
-                >Read More</span
-              >
+          </div>
+        </div>
+
+        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+          <div class="flex-shrink-0">
+            <img
+              class="h-48 w-full object-cover"
+              src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+              alt=""
+            />
+          </div>
+          <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+            <div class="flex-1">
+              <p class="text-sm font-medium text-indigo-600">
+                <a href="#" class="hover:underline"> Case Study </a>
+              </p>
+              <a href="#" class="block mt-2">
+                <p class="text-xl font-semibold text-gray-900">
+                  Improve your customer experience
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+                  harum rerum voluptatem quo recusandae magni placeat saepe
+                  molestiae, sed excepturi cumque corporis perferendis hic.
+                </p>
+              </a>
             </div>
-            <div class="bg-white py-6 px-5 xl:py-8">
-              <span class="block font-body text-lg font-semibold text-black"
-                >My year in review 2020</span
-              >
-              <span class="block pt-2 font-body text-grey-20"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.</span
-              >
+            <div class="mt-6 flex items-center">
+              <div class="flex-shrink-0">
+                <a href="#">
+                  <span class="sr-only">Daniela Metz</span>
+                  <img
+                    class="h-10 w-10 rounded-full"
+                    src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-gray-900">
+                  <a href="#" class="hover:underline"> Daniela Metz </a>
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-500">
+                  <time datetime="2020-02-12"> Feb 12, 2020 </time>
+                  <span aria-hidden="true"> &middot; </span>
+                  <span> 11 min read </span>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>

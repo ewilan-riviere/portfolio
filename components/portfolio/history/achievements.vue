@@ -20,10 +20,7 @@ const achivements = [
 </script>
 
 <template>
-  <div
-    class="bg-gray-50 dark:bg-gray-800 shadow-inner max-w-5xl mx-auto"
-    id="statistics"
-  >
+  <div class="medium-container shadow-inner" id="statistics">
     <div class="container">
       <div class="mx-auto py-16 lg:py-20 xl:py-24 px-10">
         <div class="grid md:grid-cols-2 gap-5 md:gap-8 lg:grid-cols-3 xl:gap-5">

@@ -16,10 +16,8 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
 </script>
 
 <template>
-  <div
-    class="max-w-6xl rounded-md mx-auto shadow bg-gray-50 dark:bg-gray-800 py-3"
-  >
-    <div class="text-purple-600 text-xl italic text-center pt-3">
+  <div class="medium-container technologies">
+    <div class="text-purple-600 text-xl italic font-semibold text-center pt-3">
       {{ technologies.length }} technologies I love
     </div>
     <client-only>
@@ -32,6 +30,7 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
         grab-cursor
         :pagination="{ clickable: true }"
         :scrollbar="{ draggable: true }"
+        loop
         @swiper="setControlledSwiper"
         :slides-per-group="3"
         :breakpoints="{
@@ -46,34 +45,32 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
           },
         }"
       >
-        <swiper-slide
-          v-for="technology in technologies"
-          :key="technology.slug"
-          class="w-80"
-        >
-          <a
-            :href="technology.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group"
-          >
-            <svg-icon
-              :name="`techno/${technology.slug}`"
-              class="h-40 w-full rounded-lg text-gray-400 group-hover:text-gray-500 transition-colors duration-100 mx-auto px-6"
-            />
-          </a>
+        <swiper-slide v-for="technology in technologies" :key="technology.slug">
+          <div class="p-10">
+            <a
+              :href="technology.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md block px-6 py-3"
+            >
+              <svg-icon
+                :name="`techno/${technology.slug}`"
+                class="h-32 w-full rounded-lg text-gray-400 group-hover:text-gray-500 transition-colors duration-100 mx-auto"
+              />
+            </a>
+          </div>
         </swiper-slide>
         <button
           @click="controlledSwiper?.slideNext()"
-          class="absolute z-10 top-0 right-0"
+          class="swiper-button right-0"
         >
-          slide next
+          <svg-icon name="arrow/chevron-right" class="w-6 h-6" />
         </button>
         <button
           @click="controlledSwiper?.slidePrev()"
-          class="absolute z-10 top-0 left-0"
+          class="swiper-button right-10"
         >
-          slide previous
+          <svg-icon name="arrow/chevron-right" class="w-6 h-6 rotate-180" />
         </button>
       </swiper>
     </client-only>
@@ -81,25 +78,35 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
 </template>
 
 <style lang="css" scoped>
-::v-deep(.swiper) {
+.technologies :deep(.swiper) {
   & .swiper-wrapper {
-    @apply pb-3;
+    /* @apply pb-3; */
   }
   & .swiper-pagination {
-    @apply bottom-0;
+    @apply bottom-3;
+  }
+  & .swiper-button-next,
+  .swiper-button-prev {
+    @apply hidden;
+  }
+  & .swiper-pagination-bullet {
+    @apply bg-gray-800;
+  }
+  & .swiper-pagination-bullet-active {
+    @apply bg-purple-600;
   }
 }
 
-::v-deep(.swiper-button-next) {
-  @apply hidden !important;
+.dark .technologies :deep(.swiper) {
+  & .swiper-pagination-bullet {
+    @apply bg-gray-100;
+  }
+  & .swiper-pagination-bullet-active {
+    @apply bg-purple-300;
+  }
 }
-::v-deep(.swiper-button-prev) {
-  @apply hidden !important;
-}
-::v-deep(.swiper-pagination-bullet) {
-  @apply bg-gray-800;
-}
-::v-deep(.swiper-pagination-bullet-active) {
-  @apply bg-purple-600;
+
+.swiper-button {
+  @apply absolute z-10 bottom-0 hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded-md transition-colors duration-75 text-gray-700 dark:text-gray-100;
 }
 </style>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const social = await $fetch('/api/about').then((e) => e.social)
+const socialItems = await $fetch('/api/about').then((e) => e.socialItems)
 </script>
 
 <template>
   <div class="">
     <a
-      v-for="item in social"
+      v-for="item in socialItems"
       :key="item.slug"
       :href="item.link"
       target="_blank"

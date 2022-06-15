@@ -27,8 +27,8 @@ onBeforeUnmount(() => {
 <template>
   <section
     :class="[
-      { 'bg-black bg-opacity-65': isDark },
-      isScroll ? 'bg-black bg-opacity-65 h-12' : 'h-20',
+      { 'bg-black bg-opacity-60': isDark },
+      isScroll ? 'bg-black bg-opacity-60 h-12' : 'h-20',
     ]"
     class="fixed top-0 z-40 w-full text-white transition-all duration-300"
   >
@@ -45,7 +45,7 @@ onBeforeUnmount(() => {
           class="relative transition-all duration-300"
         >
           <svg-icon
-            name="logo"
+            name="ewilan-riviere"
             :class="isScroll ? 'opacity-0' : 'opacity-100'"
             class="w-8 h-8 lg:w-12 lg:h-12 transition-opacity duration-300 absolute inset-0"
           />
