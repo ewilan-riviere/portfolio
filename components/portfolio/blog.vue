@@ -2,16 +2,12 @@
   <div class="main-container">
     <div class="relative max-w-7xl mx-auto">
       <portfolio-title-block title="Blog" subtitle="Some tech" />
-      <div
-        class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
-      >
+      <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
           <div class="flex-shrink-0">
-            <img
-              class="h-48 w-full object-cover"
+            <img class="h-48 w-full object-cover"
               src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
-              alt=""
-            >
+              alt="">
           </div>
           <div class="flex-1 bg-white p-6 flex flex-col justify-between">
             <div class="flex-1">
@@ -33,11 +29,9 @@
               <div class="flex-shrink-0">
                 <a href="#">
                   <span class="sr-only">Roel Aufderehar</span>
-                  <img
-                    class="h-10 w-10 rounded-full"
+                  <img class="h-10 w-10 rounded-full"
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  >
+                    alt="">
                 </a>
               </div>
               <div class="ml-3">
@@ -56,11 +50,9 @@
 
         <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
           <div class="flex-shrink-0">
-            <img
-              class="h-48 w-full object-cover"
+            <img class="h-48 w-full object-cover"
               src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
-              alt=""
-            >
+              alt="">
           </div>
           <div class="flex-1 bg-white p-6 flex flex-col justify-between">
             <div class="flex-1">
@@ -83,11 +75,9 @@
               <div class="flex-shrink-0">
                 <a href="#">
                   <span class="sr-only">Brenna Goyette</span>
-                  <img
-                    class="h-10 w-10 rounded-full"
+                  <img class="h-10 w-10 rounded-full"
                     src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  >
+                    alt="">
                 </a>
               </div>
               <div class="ml-3">
@@ -106,11 +96,9 @@
 
         <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
           <div class="flex-shrink-0">
-            <img
-              class="h-48 w-full object-cover"
+            <img class="h-48 w-full object-cover"
               src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
-              alt=""
-            >
+              alt="">
           </div>
           <div class="flex-1 bg-white p-6 flex flex-col justify-between">
             <div class="flex-1">
@@ -132,11 +120,9 @@
               <div class="flex-shrink-0">
                 <a href="#">
                   <span class="sr-only">Daniela Metz</span>
-                  <img
-                    class="h-10 w-10 rounded-full"
+                  <img class="h-10 w-10 rounded-full"
                     src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  >
+                    alt="">
                 </a>
               </div>
               <div class="ml-3">

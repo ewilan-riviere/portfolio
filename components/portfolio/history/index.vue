@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const history = await $fetch('/api/history')
+const history = await $fetch("/api/history")
 </script>
 
 <template>

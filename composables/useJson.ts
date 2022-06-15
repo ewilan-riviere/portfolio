@@ -8,6 +8,6 @@ export const useJson = () => {
   }
 
   return {
-    loadMarkdown
+    loadMarkdown,
   }
 }

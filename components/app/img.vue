@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import lozad from 'lozad'
+import lozad from "lozad"
 
 const props = defineProps<{
   color?: string
@@ -17,10 +17,10 @@ const attrs = useAttrs()
 onMounted(() => {
   source.value = props.src
   lozad(media.value, {
-    load (el: HTMLImageElement) {
+    load(el: HTMLImageElement) {
       el.src = el.dataset.src!
       el.onload = () => (display.value = true)
-    }
+    },
   }).observe()
 })
 </script>
@@ -28,20 +28,10 @@ onMounted(() => {
 <template>
   <div ref="lazyMedia" class="lazy-media">
     <transition>
-      <div
-        v-if="!display"
-        v-bind="attrs"
-        class="placeholder bg-gray-50 dark:bg-gray-800"
-        :style="color !== '#ffffff' ? `background-color: ${color};` : ''"
-      />
+      <div v-if="!display" v-bind="attrs" class="placeholder bg-gray-50 dark:bg-gray-800"
+        :style="color !== '#ffffff' ? `background-color: ${color};` : ''" />
     </transition>
-    <img
-      ref="media"
-      v-bind="attrs"
-      :data-src="source"
-      :alt="display ? (alt ? alt : title) : ''"
-      loading="lazy"
-    >
+    <img ref="media" v-bind="attrs" :data-src="source" :alt="display ? (alt ? alt : title) : ''" loading="lazy" />
   </div>
 </template>
 
@@ -49,11 +39,13 @@ onMounted(() => {
 .lazy-media {
   position: relative;
 }
+
 .placeholder {
   position: absolute;
   height: 100%;
   width: 100%;
 }
+
 img {
   height: 100%;
   width: 100%;

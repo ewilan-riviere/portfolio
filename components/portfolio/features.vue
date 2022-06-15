@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const features = await $fetch('/api/features')
+const features = await $fetch("/api/features")
 </script>
 
 <template>
@@ -8,33 +8,20 @@ const features = await $fetch('/api/features')
       <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl px-6 py-16 sm:p-16">
         <div class="mx-auto">
           <div class="text-center">
-            <h2
-              class="text-2xl font-quicksand font-semibold tracking-tight text-gray-900 dark:text-gray-100"
-            >
+            <h2 class="text-2xl font-quicksand font-semibold tracking-tight text-gray-900 dark:text-gray-100">
               What I'm doing on web
             </h2>
           </div>
-          <div
-            class="mt-12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8 lg:grid-cols-3"
-          >
-            <div
-              v-for="feature in features"
-              :key="feature.icon"
-              class="text-center sm:flex sm:text-left lg:block lg:text-center"
-            >
+          <div class="mt-12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8 lg:grid-cols-3">
+            <div v-for="feature in features" :key="feature.icon"
+              class="text-center sm:flex sm:text-left lg:block lg:text-center">
               <div class="sm:flex-shrink-0">
                 <div class="flow-root">
-                  <svg-icon
-                    class="w-16 h-16 mx-auto"
-                    :name="`features/${feature.icon}`"
-                    alt=""
-                  />
+                  <svg-icon class="w-16 h-16 mx-auto" :name="`features/${feature.icon}`" alt="" />
                 </div>
               </div>
               <div class="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
-                <h3
-                  class="text-sm font-medium text-gray-900 dark:text-gray-100"
-                >
+                <h3 class="text-sm font-medium text-gray-900 dark:text-gray-100">
                   {{ feature.title }}
                 </h3>
                 <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">

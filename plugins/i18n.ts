@@ -1,10 +1,10 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin } from "#app"
 
 export default defineNuxtPlugin(() => {
   return {
     provide: {
       localePath: (route: Route) => route,
-      t: (path: string) => path
-    }
+      t: (path: string) => path,
+    },
   }
 })

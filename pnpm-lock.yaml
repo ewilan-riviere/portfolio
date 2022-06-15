@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@babel/eslint-parser': ^7.18.2
   '@dansvel/vite-plugin-markdown': ^2.0.4
   '@nuxtjs/eslint-config-typescript': ^10.0.0
   '@nuxtjs/tailwindcss': ^5.1.2
@@ -14,11 +15,13 @@ specifiers:
   '@vueuse/core': ^8.6.0
   '@vueuse/nuxt': ^8.6.0
   eslint: ^8.17.0
+  eslint-config-prettier: ^8.5.0
   lozad: ^1.16.0
   markdown-it: ^13.0.1
   nprogress: ^0.2.0
   nuxt: 3.0.0-rc.3
   pinia: ^2.0.14
+  prettier: ^2.7.0
   swiper: ^8.2.4
   tailwindcss: ^3.1.2
   typescript: ^4.7.3
@@ -38,6 +41,7 @@ dependencies:
   vite-svg-loader: 3.3.0
 
 devDependencies:
+  '@babel/eslint-parser': 7.18.2_eslint@8.17.0
   '@nuxtjs/eslint-config-typescript': 10.0.0_ud6rd4xtew5bv4yhvkvu24pzm4
   '@nuxtjs/tailwindcss': 5.1.2
   '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.1.2
@@ -47,7 +51,9 @@ devDependencies:
   '@types/lozad': 1.16.1
   '@types/markdown-it': 12.2.3
   eslint: 8.17.0
+  eslint-config-prettier: 8.5.0_eslint@8.17.0
   nuxt: 3.0.0-rc.3
+  prettier: 2.7.0
   tailwindcss: 3.1.2
   typescript: 4.7.3
   vite-plugin-markdown: 2.0.2
@@ -91,6 +97,19 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
+
+  /@babel/eslint-parser/7.18.2_eslint@8.17.0:
+    resolution: {integrity: sha512-oFQYkE8SuH14+uR51JVAmdqwKYXGRjEXx7s+WiagVjqQ+HPE+nnwyF2qlVG8evUsUHmPcA+6YXMEDbIhEyQc5A==}
+    engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
+    peerDependencies:
+      '@babel/core': '>=7.11.0'
+      eslint: ^7.5.0 || ^8.0.0
+    dependencies:
+      eslint: 8.17.0
+      eslint-scope: 5.1.1
+      eslint-visitor-keys: 2.1.0
+      semver: 6.3.0
+    dev: true
 
   /@babel/generator/7.17.9:
     resolution: {integrity: sha512-rAdDousTwxbIxbz5I7GEQ3lUip+xVCXooZNbsydCWs3xA7ZsYOv+CFRdzGxRX78BmQHu9B1Eso59AOZQOJDEdQ==}
@@ -2638,6 +2657,15 @@ packages:
   /escape-string-regexp/5.0.0:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
+
+  /eslint-config-prettier/8.5.0_eslint@8.17.0:
+    resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.17.0
+    dev: true
 
   /eslint-config-standard/17.0.0_2vzjc6wa644febnedshovlwyla:
     resolution: {integrity: sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==}
@@ -5487,6 +5515,12 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier/2.7.0:
+    resolution: {integrity: sha512-nwoX4GMFgxoPC6diHvSwmK/4yU8FFH3V8XWtLQrbj4IBsK2pkYhG4kf/ljF/haaZ/aii+wNJqISrCDPgxGWDVQ==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /pretty-bytes/6.0.0:

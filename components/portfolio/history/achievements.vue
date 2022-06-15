@@ -1,21 +1,21 @@
 <script setup lang="ts">
-const projects = await $fetch('/api/projects')
+const projects = await $fetch("/api/projects")
 const achivements = [
   {
-    name: 'Bachelor',
-    slug: 'training',
-    value: '+4'
+    name: "Bachelor",
+    slug: "training",
+    value: "+4",
   },
   {
-    name: 'Projects',
-    slug: 'projects',
-    value: projects.length
+    name: "Projects",
+    slug: "projects",
+    value: projects.length,
   },
   {
-    name: 'Experience years',
-    slug: 'experience',
-    value: `${new Date().getFullYear() - 2018}`
-  }
+    name: "Experience years",
+    slug: "experience",
+    value: `${new Date().getFullYear() - 2018}`,
+  },
 ]
 </script>
 

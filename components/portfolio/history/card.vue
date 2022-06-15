@@ -20,7 +20,8 @@ defineProps<{
     <slot />
     <div class="flex-grow pt-10 pb-6 pl-6">
       <span class="block font-body font-bold text-gray-300">
-        {{ history.dateBegin }} - {{ history.dateEnd }}</span>
+        {{ history.dateBegin }} - {{ history.dateEnd }}</span
+      >
       <span class="pt-1">
         <h3 class="font-header text-xl font-bold uppercase text-purple-600">
           {{ history.title }}

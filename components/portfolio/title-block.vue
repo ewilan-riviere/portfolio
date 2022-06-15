@@ -3,7 +3,7 @@ defineProps<{
   title?: string
   subtitle?: string
   reverse?: boolean
-  bg?: 'bg-forest-swamp' | 'bg-jungle-forest' | 'bg-jungle-cascade'
+  bg?: "bg-forest-swamp" | "bg-jungle-forest" | "bg-jungle-cascade"
 }>()
 </script>
 
@@ -32,14 +32,10 @@ defineProps<{
     </div>
   </div> -->
   <div class="text-center">
-    <h2
-      class="text-3xl tracking-tight font-quicksand font-semibold text-gray-900 dark:text-gray-100 sm:text-4xl"
-    >
+    <h2 class="text-3xl tracking-tight font-quicksand font-semibold text-gray-900 dark:text-gray-100 sm:text-4xl">
       {{ title }}
     </h2>
-    <p
-      class="mt-1 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400 sm:mt-2"
-    >
+    <p class="mt-1 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400 sm:mt-2">
       {{ subtitle }}
     </p>
   </div>
