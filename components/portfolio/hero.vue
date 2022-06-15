@@ -15,6 +15,14 @@ const about = await $fetch("/api/about")
             class="h-48 rounded-full sm:h-56"
             alt="author"
           />
+          <div class="relative h-96 w-96">
+            <div class="rainbow absolute -z-10 inset-0 rounded-full"></div>
+            <img
+              src="https://ewilan-riviere.com/images/author.webp"
+              alt="ewilan riviere"
+              class="rounded-full p-2"
+            />
+          </div>
         </div>
         <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0 text-center lg:text-left">
           <h1 class="text-4xl sm:text-5xl font-morpheus">
