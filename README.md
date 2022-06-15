@@ -8,7 +8,7 @@
 [![pnpm](https://img.shields.io/static/v1?label=pnpm&message=v7.*&color=F69220&style=flat-square&logo=pnpm&logoColor=ffffff)](https://pnpm.io)
 
 📀 [**Repository**](https://gitlab.com/ewilan-riviere/portfolio)  
-💻 [**ewilan-riviere.com**](https://ewilan-riviere.com): demo  
+💻 [**ewilan-riviere.com**](https://ewilan-riviere.com): demo
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 

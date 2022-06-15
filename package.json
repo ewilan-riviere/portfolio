@@ -5,7 +5,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint": "eslint --ext .ts,.js,.vue ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "format": "prettier --ignore-path .gitignore --config .prettierrc . --write"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",

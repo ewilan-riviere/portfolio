@@ -1,108 +1,108 @@
 const link = [
   {
-    rel: 'apple-touch-icon',
-    type: 'image/png',
-    href: '/apple-touch-icon.png'
+    rel: "apple-touch-icon",
+    type: "image/png",
+    href: "/apple-touch-icon.png",
   },
   {
-    rel: 'icon',
-    type: 'image/svg+xml',
-    href: '/favicon.svg'
+    rel: "icon",
+    type: "image/svg+xml",
+    href: "/favicon.svg",
   },
-  { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+  { rel: "shortcut icon", type: "image/x-icon", href: "/favicon.ico" },
   {
-    rel: 'manifest',
-    crossorigin: 'use-credentials',
-    href: '/site.webmanifest'
-  }
+    rel: "manifest",
+    crossorigin: "use-credentials",
+    href: "/site.webmanifest",
+  },
 ]
 const meta = [
   {
-    hid: 'robots',
-    name: 'robots',
-    content: 'index,follow'
+    hid: "robots",
+    name: "robots",
+    content: "index,follow",
   },
-  { name: 'msapplication-TileColor', content: '#ffffff' },
+  { name: "msapplication-TileColor", content: "#ffffff" },
   {
-    name: 'theme-color',
-    content: '#ffffff'
+    name: "theme-color",
+    content: "#ffffff",
   },
-  { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+  { name: "viewport", content: "width=device-width, initial-scale=1" },
   {
-    hid: 'author',
-    name: 'author',
-    content: 'Ewilan Rivière'
-  },
-  {
-    hid: 'language',
-    name: 'language',
-    content: 'en-US'
+    hid: "author",
+    name: "author",
+    content: "Ewilan Rivière",
   },
   {
-    hid: 'designer',
-    name: 'designer',
-    content: 'Ewilan Rivière'
+    hid: "language",
+    name: "language",
+    content: "en-US",
   },
   {
-    hid: 'publisher',
-    name: 'publisher',
-    content: 'Ewilan Rivière - Portfolio'
+    hid: "designer",
+    name: "designer",
+    content: "Ewilan Rivière",
   },
   {
-    hid: 'copyright',
-    name: 'copyright',
-    content: 'Ewilan Rivière - Portfolio'
+    hid: "publisher",
+    name: "publisher",
+    content: "Ewilan Rivière - Portfolio",
   },
   {
-    hid: 'og:site_name',
-    property: 'og:site_name',
-    content: 'Ewilan Rivière'
+    hid: "copyright",
+    name: "copyright",
+    content: "Ewilan Rivière - Portfolio",
   },
   {
-    hid: 'og:locale',
-    property: 'og:locale',
-    content: 'en-US'
+    hid: "og:site_name",
+    property: "og:site_name",
+    content: "Ewilan Rivière",
   },
   {
-    hid: 'twitter:url',
-    name: 'twitter:url',
-    content: '@ewilanriviere'
+    hid: "og:locale",
+    property: "og:locale",
+    content: "en-US",
   },
   {
-    hid: 'twitter:creator',
-    name: 'twitter:creator',
-    content: '@ewilanriviere'
+    hid: "twitter:url",
+    name: "twitter:url",
+    content: "@ewilanriviere",
   },
   {
-    hid: 'google-site-verification',
-    name: 'google-site-verification',
-    content: process.env.GOOGLE_SITE_VERIFICATION_TOKEN
+    hid: "twitter:creator",
+    name: "twitter:creator",
+    content: "@ewilanriviere",
   },
   {
-    hid: 'og:type',
-    property: 'og:type',
-    content: 'website'
+    hid: "google-site-verification",
+    name: "google-site-verification",
+    content: process.env.GOOGLE_SITE_VERIFICATION_TOKEN,
   },
   {
-    hid: 'og:url',
-    property: 'og:url',
-    content: process.env.BASE_URL
+    hid: "og:type",
+    property: "og:type",
+    content: "website",
   },
   {
-    hid: 'og:image:alt',
-    property: 'og:image:alt',
-    content: 'Ewilan Rivière'
+    hid: "og:url",
+    property: "og:url",
+    content: process.env.BASE_URL,
   },
   {
-    hid: 'twitter:card',
-    name: 'twitter:card',
-    content: 'summary_large_image'
-  }
+    hid: "og:image:alt",
+    property: "og:image:alt",
+    content: "Ewilan Rivière",
+  },
+  {
+    hid: "twitter:card",
+    name: "twitter:card",
+    content: "summary_large_image",
+  },
 ]
 const script = [
   {
-    src: '/color-mode.js'
-  }
+    src: "/color-mode.js",
+  },
 ]
 
 export default { link, meta, script }

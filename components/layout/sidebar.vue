@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onClickOutside } from '@vueuse/core'
-import { useNavigationStore } from '~~/store/navigation'
+import { onClickOutside } from "@vueuse/core"
+import { useNavigationStore } from "~~/store/navigation"
 
 const sidebar = ref(false)
 const layer = ref(false)
@@ -43,22 +43,40 @@ const closeSidebar = () => {
 </script>
 
 <template>
-  <div v-if="layer" class="fixed inset-0 z-40 flex" role="dialog" aria-modal="true">
+  <div
+    v-if="layer"
+    class="fixed inset-0 z-40 flex"
+    role="dialog"
+    aria-modal="true"
+  >
     <Transition>
-      <div v-if="overlay" class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true" />
+      <div
+        v-if="overlay"
+        class="fixed inset-0 bg-gray-600 bg-opacity-75"
+        aria-hidden="true"
+      />
     </Transition>
-    <div ref="target" :class="sidebar ? 'translate-x-0' : '-translate-x-full'"
-      class="relative flex w-full max-w-xs flex-1 transform flex-col bg-gray-100 pt-5 pb-4 transition duration-300 ease-in-out dark:bg-gray-800">
+    <div
+      ref="target"
+      :class="sidebar ? 'translate-x-0' : '-translate-x-full'"
+      class="relative flex w-full max-w-xs flex-1 transform flex-col bg-gray-100 pt-5 pb-4 transition duration-300 ease-in-out dark:bg-gray-800"
+    >
       <div class="absolute top-0 right-0 -mr-12 pt-2">
-        <button type="button"
+        <button
+          type="button"
           class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-          @click="closeSidebar">
+          @click="closeSidebar"
+        >
           <span class="sr-only">Close sidebar</span>
           <!-- <svg-icon name="cross" class="h-6 w-6 text-white" /> -->
         </button>
       </div>
       <div class="flex flex-shrink-0 items-center px-4">
-        <router-link to="/" class="inline-flex h-8 w-auto items-center" active-class="active-logo">
+        <router-link
+          to="/"
+          class="inline-flex h-8 w-auto items-center"
+          active-class="active-logo"
+        >
           <span class="inline-flex items-center" @click="closeSidebar">
             <!-- <img
               class="w-auto h-8 transition-all duration-100 sm:h-10 group-hover:home-logo-shadow"
@@ -75,12 +93,24 @@ const closeSidebar = () => {
         <nav class="px-2">
           <div class="space-y-1">
             <router-link to="/" class="link group" active-class="active-logo">
-              <span class="w-full px-2 py-4 font-semibold" @click="closeSidebar">
+              <span
+                class="w-full px-2 py-4 font-semibold"
+                @click="closeSidebar"
+              >
                 Home
               </span>
             </router-link>
-            <router-link v-for="(link, id) in navigation.main" :key="id" to="/" class="link group">
-              <span class="w-full px-2 py-4 font-semibold" @click="closeSidebar">{{ $t(`nav.${link.label}`) }}</span>
+            <router-link
+              v-for="(link, id) in navigation.main"
+              :key="id"
+              to="/"
+              class="link group"
+            >
+              <span
+                class="w-full px-2 py-4 font-semibold"
+                @click="closeSidebar"
+                >{{ $t(`nav.${link.label}`) }}</span
+              >
             </router-link>
           </div>
         </nav>
