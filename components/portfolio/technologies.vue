@@ -6,8 +6,9 @@ import { Swiper as SwiperInterface } from "swiper/types"
 import "swiper/css"
 import "swiper/css/pagination"
 import { shuffleArray } from "~~/utils/methods"
+import { useMainStore } from "~~/store/main"
 
-const technologies = await $fetch("/api/technologies")
+const { technologies } = useMainStore()
 shuffleArray(technologies)
 
 const controlledSwiper = ref<SwiperInterface>()

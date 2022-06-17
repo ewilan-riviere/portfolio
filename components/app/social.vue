@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const socialItems = await $fetch("/api/about").then((e) => e.socialItems)
+import { useMainStore } from "~~/store/main"
+
+const { about } = useMainStore()
+const socialItems = about.socialItems
 </script>
 
 <template>
@@ -10,7 +13,7 @@ const socialItems = await $fetch("/api/about").then((e) => e.socialItems)
       :href="item.link"
       target="_blank"
       rel="noopener noreferrer"
-      class="text-gray-800 dark:text-gray-200 hover:bg-gray-300 hover:bg-opacity-30 transition-colors duration-100 p-2 rounded-md"
+      class="text-gray-800 dark:text-gray-200 hover:bg-gray-300 hover:bg-opacity-30 transition-colors duration-100 p-2 rounded-md block"
     >
       <span class="sr-only">
         {{ item.title }}

@@ -16,8 +16,8 @@ const loaded = (loaded: boolean) => {
         class="flex flex-col items-center justify-center lg:flex-row center-full w-full"
       >
         <div
-          :class="show ? 'opacity-100' : ''"
-          class="relative h-56 w-56 transition-opacity duration-150 opacity-0"
+          :class="show ? 'opacity-100' : 'opacity-0'"
+          class="relative h-56 w-56 transition-opacity duration-150"
         >
           <div class="rainbow-flag absolute -z-10 inset-0 rounded-full"></div>
           <app-img

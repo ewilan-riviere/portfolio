@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const projects = await $fetch("/api/projects")
+import { useMainStore } from "~~/store/main"
+
+const { projects } = useMainStore()
 const achivements = [
   {
     name: "Bachelor",
@@ -28,9 +30,12 @@ const toggle = () => {
 </script>
 
 <template>
-  <div id="statistics" class="medium-container shadow-inner">
+  <div
+    id="statistics"
+    class="medium-container shadow-inner p-6 lg:py-10 xl:py-12 xl:px-10"
+  >
     <div class="container">
-      <div class="mx-auto py-8 lg:py-10 xl:py-12 px-10">
+      <div class="mx-auto">
         <div
           class="grid md:grid-cols-2 gap-5 md:gap-8 lg:grid-cols-3 xl:gap-5 mt-16"
         >
@@ -62,7 +67,7 @@ const toggle = () => {
         <div class="flex mt-12">
           <app-button class="mx-auto" @click="toggle">
             <div class="flex items-center space-x-2">
-              <span>Open history timeline</span>
+              <span>Open history</span>
               <svg-icon
                 name="arrow/chevron-right"
                 :class="opened ? 'rotate-45' : ''"

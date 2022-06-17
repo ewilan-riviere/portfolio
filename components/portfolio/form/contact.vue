@@ -4,16 +4,18 @@ const loading = ref(false)
 const success = ref(false)
 
 const form = ref({
-  app: "Portfolio",
+  app: "",
+  url: "",
   name: "",
   email: "",
   message: "",
   honeypot: false,
 })
-const formTesting: Keyable = {
-  app: "Portfolio",
+const formTesting = {
+  app: "",
+  url: "",
   name: "Ewilan",
-  email: "ewilan@dotslashplay.it",
+  email: "ewilan@email.com",
   message:
     "Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.",
   honeypot: false,
@@ -24,9 +26,13 @@ const message = ref({
 })
 
 const fillForm = () => {
-  for (const [key] of Object.entries(form.value)) {
-    form.value[key] = formTesting[key]
+  const original: Keyable = form.value
+  const testing: Keyable = formTesting
+  for (const [key] of Object.entries(original)) {
+    original[key] = testing[key]
   }
+  // @ts-ignore
+  form.value = original
 }
 const resetForm = () => {
   form.value.name = ""
@@ -35,13 +41,26 @@ const resetForm = () => {
   form.value.honeypot = false
 }
 const submit = async () => {
+  const { baseUrl, apiUrl } = useRuntimeConfig()
   loading.value = true
 
-  await $fetch("/send/submission", {
-    baseUrl: "http://app.toolbelt.test/api",
+  form.value.app = "Portfolio"
+  form.value.url = baseUrl
+
+  await $fetch("/api/send/submission", {
+    baseURL: apiUrl,
     method: "POST",
     body: JSON.stringify(form.value),
   })
+    .catch((e) => {
+      loading.value = false
+      console.error(e)
+    })
+    .then(() => {
+      loading.value = false
+      success.value = true
+      resetForm()
+    })
 
   // if (form.value.honeypot) {
   //   this.$nuxt.$emit('notification', {
@@ -74,8 +93,6 @@ const submit = async () => {
   //     icon: 'airplane',
   //   })
   // }
-
-  loading.value = false
 }
 </script>
 
@@ -83,7 +100,7 @@ const submit = async () => {
   <div class="relative">
     <div aria-hidden="true" class="hidden sm:block">
       <svg
-        class="absolute -ml-3 top-8 left-1/2"
+        class="absolute -ml-3 top-8 left-1/2 hidden lg:block"
         width="404"
         height="392"
         fill="none"

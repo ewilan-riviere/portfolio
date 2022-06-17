@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const features = await $fetch("/api/features")
+import { useMainStore } from "~~/store/main"
+
+const { features } = useMainStore()
 </script>
 
 <template>

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import MarkdownIt from "markdown-it"
+import { useMainStore } from "~~/store/main"
 const md = new MarkdownIt()
 
-const about = await $fetch("/api/about")
+const { about } = useMainStore()
 const text = md.render(about.text)
 </script>
 

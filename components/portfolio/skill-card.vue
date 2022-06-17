@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useMainStore } from "~~/store/main"
+
 const props = defineProps<{
   skill?: string
 }>()
@@ -7,8 +9,8 @@ const current = ref<Skill>()
 const color = ref("#ffffff")
 const hoverColor = ref("#ffffff")
 
-const getSkill = async () => {
-  const skills = await $fetch("/api/skills")
+const getSkill = () => {
+  const { skills } = useMainStore()
   current.value = skills.find((skill) => skill.slug === props.skill)
   color.value = current.value?.color ?? "#ffffff"
   hoverColor.value = !current.value?.isDark ? "#ffffff" : "#000000"

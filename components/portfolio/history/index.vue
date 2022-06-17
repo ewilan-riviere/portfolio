@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const history = await $fetch("/api/history")
+import { useMainStore } from "~~/store/main"
+
+const { historyItems } = useMainStore()
 
 const opened = ref(false)
 const toggle = (open: boolean) => {
@@ -18,12 +20,15 @@ const toggle = (open: boolean) => {
         <section class="text-gray-700 body-font">
           <div class="flex flex-wrap px-5 mx-auto md:container">
             <div
-              v-for="(item, id) in history"
-              :key="item.slug"
+              v-for="(historyItem, id) in historyItems"
+              :key="historyItem.slug"
               class="relative flex w-full mx-auto sm:items-center lg:w-2/3"
             >
-              <portfolio-history-card :history="item" class="h-full">
-                <div class="relative h-full">
+              <portfolio-history-card
+                :history-item="historyItem"
+                class="h-full"
+              >
+                <div class="relative h-full hidden lg:block">
                   <div
                     class="absolute inset-0 flex items-center justify-center w-6 h-full"
                   >

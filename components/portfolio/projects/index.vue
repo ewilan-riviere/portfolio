@@ -1,13 +1,16 @@
 <script setup lang="ts">
-const projects = ref<Project[]>()
-const isFull = ref(false)
+import { useMainStore } from "~~/store/main"
 
-projects.value = await $fetch("/api/projects?limit=10")
+// const projects = ref<Project[]>()
+// const isFull = ref(false)
 
-const getMore = async () => {
-  projects.value = await $fetch<Project[]>("/api/projects")
-  isFull.value = true
-}
+const { projects } = useMainStore()
+// projects.value = await $fetch("/api/projects?limit=10")
+
+// const getMore = async () => {
+//   projects.value = await $fetch<Project[]>("/api/projects")
+//   isFull.value = true
+// }
 </script>
 
 <template>
@@ -17,7 +20,7 @@ const getMore = async () => {
       subtitle="A selection of my projects"
     />
     <div
-      class="mx-auto grid w-full grid-cols-1 gap-4 pt-12 lg:w-full md:grid-cols-2 lg:grid-cols-3"
+      class="mx-auto grid w-full grid-cols-1 gap-4 pt-12 lg:w-full sm:grid-cols-2 lg:grid-cols-3"
     >
       <portfolio-projects-card
         v-for="project in projects"
@@ -25,7 +28,7 @@ const getMore = async () => {
         :project="project"
       />
     </div>
-    <transition>
+    <!-- <transition>
       <div v-if="!isFull" class="flex mt-6">
         <app-button color="white" class="mx-auto" @click="getMore">
           <div class="flex items-center space-x-1">
@@ -34,6 +37,6 @@ const getMore = async () => {
           </div>
         </app-button>
       </div>
-    </transition>
+    </transition> -->
   </div>
 </template>

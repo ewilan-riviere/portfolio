@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div
-    :class="large ? 'col-span-2' : 'col-span-1'"
+    :class="large ? 'md:col-span-2' : 'md:col-span-1'"
     class="relative z-20 mx-auto w-full max-w-sm sm:mx-0 sm:max-w-none group"
   >
     <a
