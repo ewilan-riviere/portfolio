@@ -2,7 +2,9 @@ import json from "~~/assets/data/history.json"
 import { getJson, sortByDate } from "~~/utils/methods"
 
 export default defineEventHandler(() => {
-  const data = getJson<History[]>(json).filter((item: History) => !item.isDraft)
+  const data = getJson<HistoryItem[]>(json).filter(
+    (item: HistoryItem) => !item.isDraft
+  )
   data.sort(sortByDate)
   data.reverse()
 

@@ -3,7 +3,7 @@ interface Link {
   link: string
 }
 
-declare interface History {
+declare interface HistoryItem {
   title: string
   slug: string
   abstract?: string

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const about = await $fetch("/api/about")
+import { useMainStore } from "~~/store/main"
+const { about } = useMainStore()
 
 const showRainbow = ref(false)
 const loaded = (loaded: boolean) => {

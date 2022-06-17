@@ -22,9 +22,9 @@ getSkill()
     :href="current.link"
     target="_blank"
     rel="noopener noreferrer"
-    class="border rounded-full py-0.5 px-2 m-1 flex items-center space-x-1 skill"
+    class="border rounded-full py-0.5 px-2 m-1 flex items-center space-x-1 skill text-sm"
   >
-    <span class="w-3 h-3 rounded-full tag-color"></span>
+    <span class="w-2 h-2 rounded-full tag-color"></span>
     <span>{{ current?.title }}</span>
   </a>
 </template>
@@ -43,7 +43,7 @@ getSkill()
   background-color: v-bind(color);
   color: v-bind(hoverColor);
   & .tag-color {
-    background-color: white;
+    background-color: v-bind(hoverColor);
   }
 }
 </style>
