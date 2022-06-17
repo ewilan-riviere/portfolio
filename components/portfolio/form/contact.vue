@@ -38,7 +38,7 @@ const submit = async () => {
   loading.value = true
 
   await $fetch("/send/submission", {
-    baseURL: "http://app.toolbelt.test/api",
+    baseUrl: "http://app.toolbelt.test/api",
     method: "POST",
     body: JSON.stringify(form.value),
   })

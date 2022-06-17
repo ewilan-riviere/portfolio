@@ -2,9 +2,9 @@
 import { useMainStore } from "~~/store/main"
 const { about } = useMainStore()
 
-const showRainbow = ref(false)
+const show = ref(false)
 const loaded = (loaded: boolean) => {
-  showRainbow.value = loaded
+  show.value = loaded
 }
 </script>
 
@@ -15,13 +15,11 @@ const loaded = (loaded: boolean) => {
       <div
         class="flex flex-col items-center justify-center lg:flex-row center-full w-full"
       >
-        <div class="relative h-56 w-56">
-          <transition>
-            <div
-              v-if="showRainbow"
-              class="rainbow absolute -z-10 inset-0 rounded-full"
-            ></div>
-          </transition>
+        <div
+          :class="show ? 'opacity-100' : ''"
+          class="relative h-56 w-56 transition-opacity duration-150 opacity-0"
+        >
+          <div class="rainbow absolute -z-10 inset-0 rounded-full"></div>
           <app-img
             src="https://ewilan-riviere.com/images/author.webp"
             alt="ewilan riviere"

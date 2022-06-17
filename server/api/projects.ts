@@ -25,7 +25,7 @@ export default defineEventHandler((event): Project[] => {
   let limit = 0
   if (event.req.url) {
     const config = useRuntimeConfig()
-    const url = `${config.public.baseURL}${event.req.url}`
+    const url = `${config.public.baseUrl}${event.req.url}`
     const params = new URL(url).searchParams
     if (params.get("limit") !== null) {
       limit = parseInt(params.get("limit")!)

@@ -76,7 +76,7 @@ const meta = [
   {
     hid: "google-site-verification",
     name: "google-site-verification",
-    content: process.env.GOOGLE_SITE_VERIFICATION_TOKEN,
+    content: "HlYyBKngNkGks_Ys_Yebcn0UcKoCz1o-XMxuCzgMmuk",
   },
   {
     hid: "og:type",

@@ -1,7 +1,6 @@
 const runtimeConfigPrivate = {}
 const runtimeConfigPublic = {
-  baseURL: process.env.BASE_URL ?? "http://localhost:3000",
-  googleSiteVerificationToken: process.env.GOOGLE_SITE_VERIFICATION_TOKEN ?? "",
+  baseUrl: process.env.BASE_URL ?? "http://localhost:3000",
 }
 
 export { runtimeConfigPrivate, runtimeConfigPublic }
