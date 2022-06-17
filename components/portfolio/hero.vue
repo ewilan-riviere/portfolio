@@ -19,7 +19,7 @@ const loaded = (loaded: boolean) => {
           :class="show ? 'opacity-100' : ''"
           class="relative h-56 w-56 transition-opacity duration-150 opacity-0"
         >
-          <div class="rainbow absolute -z-10 inset-0 rounded-full"></div>
+          <div class="rainbow-flag absolute -z-10 inset-0 rounded-full"></div>
           <app-img
             src="https://ewilan-riviere.com/images/author.webp"
             alt="ewilan riviere"
@@ -46,20 +46,25 @@ const loaded = (loaded: boolean) => {
 </template>
 
 <style lang="css" scoped>
-.rainbow {
+.rainbow-flag {
   background: linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgba(255, 154, 0, 1) 10%,
-    rgba(208, 222, 33, 1) 20%,
-    rgba(79, 220, 74, 1) 30%,
-    rgba(63, 218, 216, 1) 40%,
-    rgba(47, 201, 226, 1) 50%,
-    rgba(28, 127, 238, 1) 60%,
-    rgba(95, 21, 242, 1) 70%,
-    rgba(186, 12, 248, 1) 80%,
-    rgba(251, 7, 217, 1) 90%,
-    rgba(255, 0, 0, 1) 100%
+    180deg,
+    #ff0000 0%,
+    #ff9900 20%,
+    #fffe13 40%,
+    #059f2d 60%,
+    #014fe8 80%,
+    #9110a1 100%
+  );
+}
+.transgender-flag {
+  background: linear-gradient(
+    180deg,
+    #55cdfc 0%,
+    #f7a8b8 25%,
+    #ffffff 50%,
+    #f7a8b8 75%,
+    #55cdfc 100%
   );
 }
 </style>
