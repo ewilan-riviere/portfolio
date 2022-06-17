@@ -4,3 +4,10 @@ export const shuffleArray = (array: any[]) => {
     ;[array[i], array[j]] = [array[j], array[i]]
   }
 }
+
+export const sortByDate = (a: any, b: any) => {
+  const dateA = new Date(a.dateBegin).getTime()
+  const dateB = new Date(b.dateBegin).getTime()
+
+  return dateA > dateB ? 1 : -1
+}

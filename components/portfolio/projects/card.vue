@@ -12,6 +12,7 @@ defineProps<{
       :src="`/projects/banner/${project.slug}.webp`"
       :alt="project.title"
       class="rounded-md"
+      placeholder="/projects/banner/placeholder.webp"
     />
     <div
       class="bg-gray-600 bg-opacity-30 group-hover:bg-opacity-60 transition-all duration-500 absolute inset-0 z-10 rounded-md"

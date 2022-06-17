@@ -6,6 +6,7 @@ const props = defineProps<{
   src?: string
   title?: string
   alt?: string
+  placeholder?: string
 }>()
 
 const source = ref<string>()
@@ -58,7 +59,7 @@ const emit = defineEmits<{
     <img
       ref="defaultImage"
       v-bind="attrs"
-      src="/default.jpg"
+      :src="placeholder ? placeholder : '/default.jpg'"
       :alt="display ? (alt ? alt : title) : ''"
       class="hidden"
       loading="lazy"
