@@ -195,7 +195,7 @@
     "title": "TypeScript",
     "slug": "typescript",
     "version": "",
-    "link": "https://www.typescriptlang.org/",
+    "link": "https://www.typescriptlang.org",
     "isFree": true,
     "color": "#007acc",
     "isDark": false,
@@ -466,5 +466,29 @@
     "type": "Système d'exploitation",
     "isFavorite": true,
     "isDisplay": false
+  },
+  {
+    "title": "Vite",
+    "slug": "vite",
+    "version": "2.9",
+    "link": "https://vitejs.dev",
+    "isFree": true,
+    "color": "#747bff",
+    "isDark": false,
+    "type": "Frontend tooling",
+    "isFavorite": true,
+    "isDisplay": true
+  },
+  {
+    "title": "Strapi",
+    "slug": "strapi",
+    "version": "4.2.0",
+    "link": "https://strapi.io",
+    "isFree": true,
+    "color": "#2F2E8B",
+    "isDark": false,
+    "type": "Open source CMS headless",
+    "isFavorite": true,
+    "isDisplay": true
   }
 ]

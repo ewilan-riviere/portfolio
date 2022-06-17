@@ -13,7 +13,7 @@ const toggle = (open: boolean) => {
     <transition>
       <div
         v-if="opened"
-        class="max-w-3xl container border-b border-x shadow rounded-b-lg"
+        class="max-w-3xl container border-b border-x shadow rounded-b-lg dark:border-gray-800"
       >
         <section class="text-gray-700 body-font">
           <div class="flex flex-wrap px-5 mx-auto md:container">

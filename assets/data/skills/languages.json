@@ -5,9 +5,9 @@
     "icon": "php",
     "version": "7.4",
     "link": "https://www.php.net/",
-    "is_free": true,
+    "isFree": true,
     "color": "#8993be",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Langage serveur",
     "details": "Un de mes langages préférés, il revient de loin mais il a su se mettre à jour avec les années. Il est moins permissif que le JavaScript mais il reste très pratique pour la partie back d'une application",
     "is_favorite": true,
@@ -15,7 +15,6 @@
     "image": "php.svg",
     "blockquote_text": "Maman ! Es-tu sûre que cette ligne de code est fini bien par un point virgule ? Tout cela me plonge dans la perplexité.",
     "blockquote_who": "Tantor, un éléphant méfiant",
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": true
   },
   {
@@ -24,9 +23,9 @@
     "icon": "sass",
     "version": "",
     "link": "https://sass-lang.com/",
-    "is_free": true,
+    "isFree": true,
     "color": "#cc6699",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Langage de préprocesseur de CSS",
     "details": "Vital pour développer du CSS avec de l'héritage et des variables",
     "is_favorite": true,
@@ -34,7 +33,6 @@
     "image": "sass.svg",
     "blockquote_text": "Ce qui est sensas c'est paradoxalement d'utiliser du SASS",
     "blockquote_who": "Anonyme",
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": true
   },
   {
@@ -43,9 +41,9 @@
     "icon": "javascript",
     "version": "ECMAScript 2018",
     "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    "is_free": true,
+    "isFree": true,
     "color": "#f0db4f",
-    "color_text_dark": true,
+    "isDark": true,
     "subtitle": "Langage de front et de back",
     "details": "La base aujourd'hui dans le développement web, s'utilise partout et sous toutes les formes. Tout développement front-end passe forcément par ce langage",
     "is_favorite": true,
@@ -53,7 +51,6 @@
     "image": "js.svg",
     "blockquote_text": "Ces écritures... serait-ce un dialecte Jawa ?",
     "blockquote_who": "Un archéologue d'une époque lointaine, très lointaine",
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": true
   },
   {
@@ -62,9 +59,9 @@
     "icon": "typescript",
     "version": "",
     "link": "https://www.typescriptlang.org/",
-    "is_free": true,
+    "isFree": true,
     "color": "#007acc",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Langage  de sur-ensemble de JavaScript",
     "details": "Le renouveau du JavaScript même si l'ecmascript moderne est déjà bien pratique à utiliser",
     "is_favorite": true,
@@ -72,7 +69,6 @@
     "image": "typescript.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": true
   },
   {
@@ -81,9 +77,9 @@
     "icon": "mysql",
     "version": "",
     "link": "https://mariadb.org/",
-    "is_free": true,
+    "isFree": true,
     "color": "#00618a",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Système de gestion de base de données",
     "details": "Un langage efficace pour gérer ses bases de données, simple et efficace",
     "is_favorite": true,
@@ -91,7 +87,6 @@
     "image": "mysql-mariadb.svg",
     "blockquote_text": "Utilisant des dauphins pour stocker des données à long terme, le fondateur de MySQL Michael dû finalement revendre son projet à Sun Maxizoo devant le scandale que le traitement des dauphins provoquait. Adoptant une conscience écologique, il décida d'apprivoiser des otaries pour stoker à nouveau des données mais cette fois-ci en respectant leurs besoins...",
     "blockquote_who": "Extrait d'un journal spécialisé",
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": true
   },
   {
@@ -100,9 +95,9 @@
     "icon": "sql-server",
     "version": "",
     "link": null,
-    "is_free": false,
+    "isFree": false,
     "color": "#dd3127",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Système de gestion de base de données",
     "details": "Des bases mais je préfère l'open-source",
     "is_favorite": false,
@@ -110,7 +105,6 @@
     "image": "sql-server.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": false
   },
   {
@@ -119,9 +113,9 @@
     "icon": "java",
     "version": "8",
     "link": "https://www.java.com/fr/",
-    "is_free": true,
+    "isFree": true,
     "color": "#f89820",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Langage serveur",
     "details": "Un langage côté serveur historique qui fait encore ses preuves aujourd'hui autant pour le web que pour les clients lourds",
     "is_favorite": false,
@@ -129,7 +123,6 @@
     "image": "java.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": false
   },
   {
@@ -138,9 +131,9 @@
     "icon": "bash",
     "version": "bash, zsh",
     "link": "https://www.gnu.org/software/bash",
-    "is_free": true,
+    "isFree": true,
     "color": "#33ff00",
-    "color_text_dark": true,
+    "isDark": true,
     "subtitle": "Interface système de Linux",
     "details": "Indispensable pour développer sous Linux, la connaissance du Shell permet d'utiliser le terminal et de réaliser une mise en prod rapidement",
     "is_favorite": true,
@@ -148,7 +141,6 @@
     "image": "terminal.svg",
     "blockquote_text": "- Est ce que c'est... ?<br/>- Le shell ? Oui.<br/>- Et vous le regardez toujours en ligne de commande ?<br/>- Oui, faut bien, les interfaces graphiques prennent trop de ressources pour le programme. Et il y a beaucoup trop d'information à interpréter dans le shell.",
     "blockquote_who": "Le linuxien élu, devant un terminal",
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": true
   },
   {
@@ -157,9 +149,9 @@
     "icon": "latex",
     "version": "",
     "link": null,
-    "is_free": true,
+    "isFree": true,
     "color": "#ffffff",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Système de composition de documents",
     "details": "Très élégant pour réaliser des dossiers ou des livres, LaTeX offre des possibilités intéressantes pour réaliser un rendu de qualité",
     "is_favorite": true,
@@ -167,7 +159,6 @@
     "image": "latex.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": true
   },
   {
@@ -176,9 +167,9 @@
     "icon": "markdown",
     "version": "",
     "link": null,
-    "is_free": false,
+    "isFree": false,
     "color": "#000000",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Langage de balisage",
     "details": "Très pratique pour faire rapidement un document comme un readme",
     "is_favorite": true,
@@ -186,7 +177,6 @@
     "image": "markdown.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langages-de-developpement",
     "isDisplay": true
   }
 ]

@@ -74,7 +74,7 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
 <style lang="css" scoped>
 .technologies :deep(.swiper) {
   & .swiper-pagination {
-    @apply bottom-3;
+    @apply bottom-0;
   }
   & .swiper-button-next,
   .swiper-button-prev {

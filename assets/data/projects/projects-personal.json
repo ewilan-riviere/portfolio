@@ -8,7 +8,7 @@
     "formation": null,
     "context": "personal",
     "createdAt": "2021-01-03",
-    "discover": "https://bookshelves.ink",
+    "demo": "https://bookshelves.ink",
     "links": {
       "back": {
         "repository": "https://gitlab.com/ewilan-riviere/bookshelves-back",
@@ -29,7 +29,7 @@
         "role": "concept"
       }
     ],
-    "skills": ["nuxtjs", "php", "laravel", "tailwind-css"]
+    "skills": ["nuxt-js", "laravel", "tailwind-css", "typescript"]
   },
   {
     "title": "Markdown Interpreter",
@@ -40,7 +40,7 @@
     "formation": null,
     "context": "personal",
     "createdAt": "2020-06-20",
-    "discover": "https://md-interpreter.git-projects.xyz/",
+    "demo": "https://md-interpreter.git-projects.xyz/",
     "links": {
       "front": {
         "repository": "https://github.com/ewilan-riviere/markdown-interpreter",
@@ -52,7 +52,8 @@
         "slug": "ewilan-riviere",
         "role": "developer"
       }
-    ]
+    ],
+    "skills": ["laravel", "tailwind-css", "vue-js", "vite"]
   },
   {
     "title": "MarkdownThis",
@@ -87,7 +88,7 @@
     "formation": null,
     "context": "personal",
     "createdAt": "2020-06-27",
-    "discover": "https://memorandum.ewilan-riviere.com/",
+    "demo": "https://memorandum.ewilan-riviere.com/",
     "links": {
       "front": {
         "repository": "https://github.com/ewilan-riviere/memorandum",
@@ -99,7 +100,8 @@
         "slug": "ewilan-riviere",
         "role": "developer"
       }
-    ]
+    ],
+    "skills": ["php", "laravel", "tailwind-css", "vite"]
   },
   {
     "title": "Portfolio",
@@ -110,7 +112,7 @@
     "formation": null,
     "context": "personal",
     "createdAt": "2020-05-19",
-    "discover": "https://ewilan-riviere.com/",
+    "demo": "https://ewilan-riviere.com/",
     "links": {
       "back": {
         "repository": "https://github.com/ewilan-riviere/portfolio-back",
@@ -122,7 +124,7 @@
       }
     },
     "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
-    "skills": ["nuxtjs", "php", "laravel", "tailwind-css"]
+    "skills": ["nuxt-js", "tailwind-css", "typescript"]
   },
   {
     "title": "Roazhon StarBus",
@@ -150,7 +152,7 @@
     "formation": null,
     "context": "personal",
     "createdAt": "2020-10-30",
-    "discover": "https://skyscale.git-projects.xyz/",
+    "demo": "https://skyscale.git-projects.xyz/",
     "links": {
       "front": {
         "repository": "https://gitlab.com/ewilan-riviere/skyscale",

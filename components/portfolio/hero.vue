@@ -38,7 +38,7 @@ const loaded = (loaded: boolean) => {
             {{ about.professionalTitle }}
           </h2>
           <app-social
-            class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-5"
+            class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-3"
           />
         </div>
       </div>

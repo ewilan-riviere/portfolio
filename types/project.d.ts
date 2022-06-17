@@ -4,4 +4,6 @@ declare interface Project {
   isDraft?: boolean
   image?: string
   type?: string
+  typeColor?: string
+  skills?: string[]
 }

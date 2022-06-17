@@ -5,9 +5,9 @@
     "icon": "francais",
     "version": "contemporaine",
     "link": null,
-    "is_free": false,
+    "isFree": false,
     "color": "#002395",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Voici, ma belle, tout paris<br/>Tiens, une jolie fleur ma mie",
     "details": "Langue natale",
     "is_favorite": false,
@@ -15,7 +15,6 @@
     "image": "francais.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langues",
     "isDisplay": false
   },
   {
@@ -24,9 +23,9 @@
     "icon": "anglais",
     "version": "contemporaine",
     "link": null,
-    "is_free": false,
+    "isFree": false,
     "color": "#cf142b",
-    "color_text_dark": false,
+    "isDark": false,
     "subtitle": "Bryan is in the kitchen",
     "details": "Avec les séries et les jeux vidéo, un niveau suffisant pour comprendre les posts de StackOverflow",
     "is_favorite": false,
@@ -34,7 +33,6 @@
     "image": "anglais.svg",
     "blockquote_text": null,
     "blockquote_who": null,
-    "skill_category_slug": "langues",
     "isDisplay": false
   }
 ]

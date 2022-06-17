@@ -3,4 +3,7 @@ declare interface Skill {
   slug: string
   icon?: string
   isDisplay?: boolean
+  color?: string
+  isDark?: boolean
+  link?: string
 }
