@@ -29,7 +29,7 @@ defineProps<{
         class="w-3 h-3 rounded-full"
         :style="`background-color: ${project.typeColor}`"
       ></span>
-      <span>{{ project.type }}</span>
+      <span class="text-white">{{ project.type }}</span>
     </div>
     <div
       class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-wrap m-2 z-30"

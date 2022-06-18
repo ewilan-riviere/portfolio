@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n"
 import { useMainStore } from "~~/store/main"
+
 const { about } = useMainStore()
+const { t } = useI18n()
 
 const show = ref(false)
 const loaded = (loaded: boolean) => {
@@ -34,7 +37,7 @@ const loaded = (loaded: boolean) => {
           <h2
             class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:font-pelagiad lg:text-3xl"
           >
-            {{ about.professionalTitle }}
+            {{ t("about.professionalTitle") }}
           </h2>
           <app-social
             class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-3"

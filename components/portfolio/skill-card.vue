@@ -27,7 +27,7 @@ getSkill()
     class="border rounded-full py-0.5 px-2 m-1 flex items-center space-x-1 skill text-sm"
   >
     <span class="w-2 h-2 rounded-full tag-color"></span>
-    <span>{{ current?.title }}</span>
+    <span class="skill-title">{{ current?.title }}</span>
   </a>
 </template>
 
@@ -40,12 +40,18 @@ getSkill()
     @apply transition-colors duration-100;
     background-color: v-bind(color);
   }
+  .skill-title {
+    color: white;
+  }
 }
 .skill:hover {
   background-color: v-bind(color);
   color: v-bind(hoverColor);
   & .tag-color {
     background-color: v-bind(hoverColor);
+  }
+  & .skill-title {
+    color: v-bind(hoverColor);
   }
 }
 </style>
