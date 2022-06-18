@@ -18,11 +18,11 @@ const loaded = (loaded: boolean) => {
       <div
         class="flex flex-col items-center justify-center lg:flex-row center-full w-full"
       >
-        <div
-          :class="show ? 'opacity-100' : 'opacity-0'"
-          class="relative h-56 w-56 transition-opacity duration-150"
-        >
-          <div class="rainbow-flag absolute -z-10 inset-0 rounded-full"></div>
+        <div class="relative h-56 w-56">
+          <div
+            :class="show ? 'opacity-100' : 'opacity-0'"
+            class="rainbow-flag absolute -z-10 inset-0 rounded-full transition-opacity duration-150"
+          ></div>
           <app-img
             src="https://ewilan-riviere.com/images/author.webp"
             alt="ewilan riviere"
