@@ -22,7 +22,7 @@ const intlify: IntlifyModuleOptions = {
   },
 }
 
-const modules: ModuleOptions = {
+const modules = {
   tailwindcss,
   vueuse,
   schemaOrg,
