@@ -7,6 +7,8 @@
 [![node](https://img.shields.io/static/v1?label=NodeJS&message=v16.*&color=339933&style=flat-square&logo=node.js&logoColor=ffffff)](https://nodejs.org/en)
 [![pnpm](https://img.shields.io/static/v1?label=pnpm&message=v7.*&color=F69220&style=flat-square&logo=pnpm&logoColor=ffffff)](https://pnpm.io)
 
+![pipeline](https://gitlab.com/ewilan-riviere/portfolio/badges/main/pipeline.svg)
+
 📀 [**Repository**](https://gitlab.com/ewilan-riviere/portfolio)  
 💻 [**ewilan-riviere.com**](https://ewilan-riviere.com): demo
 

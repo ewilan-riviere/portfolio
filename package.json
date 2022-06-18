@@ -4,6 +4,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "start": "node .output/server/index.mjs",
     "preview": "nuxt preview",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "format": "prettier --ignore-path .gitignore --config .prettierrc . --write"
