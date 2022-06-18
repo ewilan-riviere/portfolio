@@ -7,20 +7,25 @@ const form = ref({
   app: "",
   url: "",
   name: "",
+  to: "",
   email: "",
   message: "",
   honeypot: false,
+  key: "",
 })
 const formTesting = {
   app: "",
   url: "",
   name: "Ewilan",
   email: "ewilan@email.com",
+  to: "",
   message:
     "Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.",
   honeypot: false,
+  key: "",
 }
-const message = ref({
+const toast = ref<Toast>({
+  type: "error",
   title: "Erreur",
   text: "Une erreur s'est produite, nous sommes désolés.",
 })
@@ -40,26 +45,38 @@ const resetForm = () => {
   form.value.message = ""
   form.value.honeypot = false
 }
+
 const submit = async () => {
-  const { baseUrl, apiUrl } = useRuntimeConfig()
+  const config = useRuntimeConfig()
   loading.value = true
 
+  const { pushToast } = useToast()
+
   form.value.app = "Portfolio"
-  form.value.url = baseUrl
+  form.value.url = config.public.baseUrl
+  form.value.key = config.public.apiKey
+  form.value.to = config.public.mailToAddress
 
   await $fetch("/api/send/submission", {
-    baseURL: apiUrl,
+    baseURL: config.public.apiUrl,
     method: "POST",
     body: JSON.stringify(form.value),
   })
-    .catch((e) => {
-      loading.value = false
-      console.error(e)
-    })
     .then(() => {
       loading.value = false
       success.value = true
+      toast.value = {
+        type: "success",
+        title: "Merci !",
+        text: "Votre message a bien été envoyé.",
+      }
+      pushToast(toast.value)
       resetForm()
+    })
+    .catch((e) => {
+      loading.value = false
+      console.error(e)
+      pushToast(toast.value)
     })
 
   // if (form.value.honeypot) {

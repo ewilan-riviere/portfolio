@@ -16,6 +16,7 @@ useMetadata()
 
 <template>
   <div :class="{ 'debug-screens': devMode }">
+    <app-toasts />
     <layout-navbar />
     <layout-sidebar />
     <portfolio-hero />

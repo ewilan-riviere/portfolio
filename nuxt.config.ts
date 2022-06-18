@@ -28,6 +28,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     ...config.runtimeConfigPrivate,
     public: config.runtimeConfigPublic,
+    // apiKey: process.env.API_KEY,
+    // public: {
+    //   baseUrl: process.env.BASE_URL ?? "http://localhost:3000",
+    //   apiUrl: process.env.API_URL ?? "http://app.toolbelt.test",
+    // },
   },
   typescript: {
     strict: true, // for pinia

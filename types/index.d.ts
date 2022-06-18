@@ -1,7 +1,12 @@
 declare module "@nuxt/schema" {
   interface RuntimeConfig {
-    baseUrl: string
-    apiUrl: string
+    secretKey: string
+    public: {
+      baseUrl: string
+      apiUrl: string
+      apiKey: string
+      mailToAddress: string
+    }
   }
 }
 // It is always important to ensure you import/export something when augmenting a type
