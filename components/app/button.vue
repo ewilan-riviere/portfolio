@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import SvgIcon from "@/components/svg-icon.vue"
+import SvgIcon from '@/components/svg-icon.vue'
 
 interface Props {
-  color?: "primary" | "secondary" | "white" | "danger"
-  type?: "button" | "reset" | "submit"
-  align?: "left" | "center" | "right"
-  size?: "sm" | "md" | "lg"
+  color?: 'primary' | 'secondary' | 'white' | 'danger'
+  type?: 'button' | 'reset' | 'submit'
+  align?: 'left' | 'center' | 'right'
+  size?: 'sm' | 'md' | 'lg'
   href?: string
   to?: string | object
   disabled?: boolean
@@ -17,36 +17,36 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: "primary",
-  type: "button",
-  align: "left",
-  size: "md",
+  color: 'primary',
+  type: 'button',
+  align: 'left',
+  size: 'md',
   href: undefined,
   to: undefined,
   disabled: false,
   download: false,
   icon: undefined,
-  loading: false,
+  loading: false
 })
 
-defineEmits(["click"])
+defineEmits(['click'])
 
-const tag = ref("button")
+const tag = ref('button')
 const btn = ref<HTMLElement>()
 
 if (props.href) {
-  tag.value = "a"
+  tag.value = 'a'
 }
 if (props.to) {
-  tag.value = "router-link"
+  tag.value = 'router-link'
 }
 
 const alignment = computed((): string => {
   const alignements: Keyable = {
-    left: "mr-auto",
-    center: "mx-auto",
-    right: "ml-auto",
-    default: "mx-auto",
+    left: 'mr-auto',
+    center: 'mx-auto',
+    right: 'ml-auto',
+    default: 'mx-auto'
   }
   const current = props.align
   return alignements[current] || alignements.default
@@ -57,7 +57,7 @@ onMounted(() => {
     const element: any = btn.value
     if (element instanceof HTMLElement) {
       const current = props.href
-      element.setAttribute("href", current)
+      element.setAttribute('href', current)
     }
   }
 })

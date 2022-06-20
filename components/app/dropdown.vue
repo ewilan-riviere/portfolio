@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { onClickOutside } from "@vueuse/core"
+import { onClickOutside } from '@vueuse/core'
 
 interface Props {
-  align?: "left" | "right"
+  align?: 'left' | 'right'
   arrow?: boolean
   autoClose?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
-  align: "right",
+  align: 'right',
   arrow: false,
   autoClose: false,
 })
@@ -18,12 +18,12 @@ const target = ref<HTMLElement>()
 onClickOutside(target, (event) => (open.value = false))
 
 const alignmentClasses = computed((): string => {
-  if (props.align === "left") {
-    return "origin-top-left left-0"
-  } else if (props.align === "right") {
-    return "origin-top-right right-0"
+  if (props.align === 'left') {
+    return 'origin-top-left left-0'
+  } else if (props.align === 'right') {
+    return 'origin-top-right right-0'
   } else {
-    return "origin-top"
+    return 'origin-top'
   }
 })
 </script>

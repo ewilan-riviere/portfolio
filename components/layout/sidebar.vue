@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onClickOutside } from "@vueuse/core"
-import { useNavigationStore } from "~~/store/navigation"
+import { onClickOutside } from '@vueuse/core'
+import { useNavigationStore } from '~~/store/navigation'
 
 const sidebar = ref(false)
 const layer = ref(false)
@@ -109,8 +109,7 @@ const closeSidebar = () => {
               <span
                 class="w-full px-2 py-4 font-semibold"
                 @click="closeSidebar"
-                >{{ $t(`nav.${link.label}`) }}</span
-              >
+              >{{ $t(`nav.${link.label}`) }}</span>
             </router-link>
           </div>
         </nav>

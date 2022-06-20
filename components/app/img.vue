@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import lozad from "lozad"
+import lozad from 'lozad'
 
 const props = defineProps<{
   color?: string
@@ -23,11 +23,11 @@ onMounted(() => {
       el.src = el.dataset.src!
       el.onload = () => {
         display.value = true
-        emit("loaded", true)
+        emit('loaded', true)
       }
       el.onerror = () => {
-        media.value?.classList.add("hidden")
-        defaultImage.value?.classList.remove("hidden")
+        media.value?.classList.add('hidden')
+        defaultImage.value?.classList.remove('hidden')
         display.value = true
       }
     },
@@ -35,7 +35,7 @@ onMounted(() => {
 })
 
 const emit = defineEmits<{
-  (e: "loaded", loaded: boolean): void
+  (e: 'loaded', loaded: boolean): void
 }>()
 </script>
 

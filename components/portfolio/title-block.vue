@@ -3,7 +3,7 @@ defineProps<{
   title?: string
   subtitle?: string
   reverse?: boolean
-  bg?: "bg-forest-swamp" | "bg-jungle-forest" | "bg-jungle-cascade"
+  bg?: 'bg-forest-swamp' | 'bg-jungle-forest' | 'bg-jungle-cascade'
 }>()
 </script>
 

@@ -1,29 +1,29 @@
 <script lang="ts" setup>
-import { useI18n } from "vue-i18n"
+import { useI18n } from 'vue-i18n'
 const i18n = useI18n()
 
-type LocaleList = "en" | "fr"
+type LocaleList = 'en' | 'fr'
 
 const lang = (locale: LocaleList) => {
   const langs = {
-    en: "English",
-    fr: "Français",
+    en: 'English',
+    fr: 'Français'
   }
 
-  return langs[locale] ?? "English"
+  return langs[locale] ?? 'English'
 }
 const switchLocale = (locale: LocaleList) => {
   i18n.locale.value = locale
-  localStorage.setItem("locale", locale)
+  localStorage.setItem('locale', locale)
 }
 
 if (process.client) {
-  const localeStorageLocale = localStorage.getItem("locale") as LocaleList
+  const localeStorageLocale = localStorage.getItem('locale') as LocaleList
   if (localeStorageLocale) {
     switchLocale(localeStorageLocale)
   } else {
     const navigatorLanguage = navigator.language
-    const currentLang = navigatorLanguage.split("-")[0] as LocaleList
+    const currentLang = navigatorLanguage.split('-')[0] as LocaleList
     switchLocale(currentLang)
   }
 }
