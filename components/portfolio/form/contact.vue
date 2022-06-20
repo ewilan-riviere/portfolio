@@ -1,30 +1,23 @@
 <script setup lang="ts">
-import { log } from 'console'
-
+const minChar = 10
 const isDev = useNuxtApp()._legacyContext?.isDev
 const loading = ref(false)
 const success = ref(false)
 
 const form = ref({
-  app: '',
-  url: '',
   name: '',
-  to: '',
+  to: null,
   email: '',
   message: '',
   honeypot: false,
-  key: '',
 })
 const formTesting = {
-  app: '',
-  url: '',
   name: 'Ewilan',
   email: 'ewilan@email.com',
-  to: '',
+  to: null,
   message:
     'Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.',
   honeypot: false,
-  key: '',
 }
 
 const fillForm = () => {
@@ -48,36 +41,39 @@ const submit = async () => {
   loading.value = true
 
   const { pushToast } = useToast()
+  // form.value.to = config.public.mailToAddress
 
-  form.value.app = 'Portfolio'
-  form.value.url = config.public.baseUrl
-  form.value.key = config.public.apiKey
-  form.value.to = config.public.mailToAddress
-
-  const response = await $fetch.raw<ApiResponse>('/api/send/submission', {
-    baseURL: config.public.apiUrl,
-    method: 'POST',
-    body: JSON.stringify(form.value),
-  })
-  console.log(response)
   let toast: Toast = {
     type: 'error',
     title: 'Erreur',
     text: "Une erreur s'est produite, nous sommes désolés.",
   }
 
-  if (response.status === 200) {
-    success.value = true
-    toast = {
-      type: 'success',
-      title: 'Merci !',
-      text: 'Votre message a bien été envoyé.',
+  const response = await $fetch
+    .raw<ApiResponse>('/api/send/submission', {
+      baseURL: config.public.apiUrl,
+      method: 'POST',
+      body: JSON.stringify(form.value),
+    })
+    .catch((e) => {
+      console.error(e)
+      pushToast(toast)
+    })
+
+  if (response) {
+    if (response.status === 200) {
+      success.value = true
+      toast = {
+        type: 'success',
+        title: 'Merci !',
+        text: 'Votre message a bien été envoyé.',
+      }
+      pushToast(toast)
+      resetForm()
+    } else {
+      console.error(response.status)
+      pushToast(toast)
     }
-    pushToast(toast)
-    resetForm()
-  } else {
-    console.error(response.status)
-    pushToast(toast)
   }
 
   loading.value = false
@@ -192,14 +188,14 @@ const submit = async () => {
                   name="message"
                   rows="4"
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 dark:text-gray-900"
-                  minlength="0"
+                  :minlength="minChar"
                   maxlength="1500"
                   :spellcheck="false"
                   :placeholder="`Message*`"
                   required
                 />
                 <div class="flex justify-between ml-1 text-sm text-gray-100">
-                  <!-- <span>Min. 25 characters</span> -->
+                  <span>Min. {{ minChar }} characters</span>
                   <span>Currently {{ form.message.length }}/1500</span>
                 </div>
               </div>

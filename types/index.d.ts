@@ -1,10 +1,9 @@
-declare module "@nuxt/schema" {
+declare module '@nuxt/schema' {
   interface RuntimeConfig {
     secretKey: string
     public: {
       baseUrl: string
       apiUrl: string
-      apiKey: string
       mailToAddress: string
     }
   }
