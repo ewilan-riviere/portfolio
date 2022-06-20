@@ -40,7 +40,7 @@ defineProps<{
           <img
             src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2.95&amp;w=512&amp;h=512&amp;q=80"
             class="block mr-3 w-12 max-w-full h-12 align-middle rounded-full"
-          />
+          >
           <div class="text-xs leading-4 text-gray-500 dark:text-gray-400">
             <div
               class="mt-0 text-sm font-bold leading-5 text-gray-600 dark:text-gray-200"

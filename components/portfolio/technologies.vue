@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { Navigation, Pagination, Controller } from "swiper"
-import { Swiper, SwiperSlide } from "swiper/vue"
-import { Swiper as SwiperInterface } from "swiper/types"
+import { Navigation, Pagination, Controller } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Swiper as SwiperInterface } from 'swiper/types'
 
-import "swiper/css"
-import "swiper/css/pagination"
-import { shuffleArray } from "~~/utils/methods"
-import { useMainStore } from "~~/store/main"
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { shuffleArray } from '~~/utils/methods'
+import { useMainStore } from '~~/store/main'
 
 const { technologies } = useMainStore()
 shuffleArray(technologies)

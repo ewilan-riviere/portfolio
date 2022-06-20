@@ -1,34 +1,31 @@
 <script setup lang="ts">
+import { log } from 'console'
+
 const isDev = useNuxtApp()._legacyContext?.isDev
 const loading = ref(false)
 const success = ref(false)
 
 const form = ref({
-  app: "",
-  url: "",
-  name: "",
-  to: "",
-  email: "",
-  message: "",
+  app: '',
+  url: '',
+  name: '',
+  to: '',
+  email: '',
+  message: '',
   honeypot: false,
-  key: "",
+  key: '',
 })
 const formTesting = {
-  app: "",
-  url: "",
-  name: "Ewilan",
-  email: "ewilan@email.com",
-  to: "",
+  app: '',
+  url: '',
+  name: 'Ewilan',
+  email: 'ewilan@email.com',
+  to: '',
   message:
-    "Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.",
+    'Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.',
   honeypot: false,
-  key: "",
+  key: '',
 }
-const toast = ref<Toast>({
-  type: "error",
-  title: "Erreur",
-  text: "Une erreur s'est produite, nous sommes désolés.",
-})
 
 const fillForm = () => {
   const original: Keyable = form.value
@@ -40,9 +37,9 @@ const fillForm = () => {
   form.value = original
 }
 const resetForm = () => {
-  form.value.name = ""
-  form.value.email = ""
-  form.value.message = ""
+  form.value.name = ''
+  form.value.email = ''
+  form.value.message = ''
   form.value.honeypot = false
 }
 
@@ -52,64 +49,38 @@ const submit = async () => {
 
   const { pushToast } = useToast()
 
-  form.value.app = "Portfolio"
+  form.value.app = 'Portfolio'
   form.value.url = config.public.baseUrl
   form.value.key = config.public.apiKey
   form.value.to = config.public.mailToAddress
 
-  await $fetch("/api/send/submission", {
+  const response = await $fetch.raw<ApiResponse>('/api/send/submission', {
     baseURL: config.public.apiUrl,
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify(form.value),
   })
-    .then(() => {
-      loading.value = false
-      success.value = true
-      toast.value = {
-        type: "success",
-        title: "Merci !",
-        text: "Votre message a bien été envoyé.",
-      }
-      pushToast(toast.value)
-      resetForm()
-    })
-    .catch((e) => {
-      loading.value = false
-      console.error(e)
-      pushToast(toast.value)
-    })
+  console.log(response)
+  let toast: Toast = {
+    type: 'error',
+    title: 'Erreur',
+    text: "Une erreur s'est produite, nous sommes désolés.",
+  }
 
-  // if (form.value.honeypot) {
-  //   this.$nuxt.$emit('notification', {
-  //     title: 'success',
-  //     text: 'contact_success_text',
-  //     type: 'success',
-  //     icon: 'airplane',
-  //   })
-  //   loading.value = false
-  //   return
-  // }
+  if (response.status === 200) {
+    success.value = true
+    toast = {
+      type: 'success',
+      title: 'Merci !',
+      text: 'Votre message a bien été envoyé.',
+    }
+    pushToast(toast)
+    resetForm()
+  } else {
+    console.error(response.status)
+    pushToast(toast)
+  }
 
-  // try {
-  //   await this.$axios.$post('/submission', this.form)
-
-  //   this.$nuxt.$emit('notification', {
-  //     title: 'success',
-  //     text: 'contact_success_text',
-  //     type: 'success',
-  //     icon: 'airplane',
-  //   })
-  //   loading.value = false
-  // } catch (error) {
-  //   console.error(error)
-
-  //   this.$nuxt.$emit('notification', {
-  //     title: 'failed',
-  //     text: 'contact_failed_text',
-  //     type: 'error',
-  //     icon: 'airplane',
-  //   })
-  // }
+  loading.value = false
 }
 </script>
 
@@ -244,9 +215,9 @@ const submit = async () => {
                     />
                   </div>
                   <div class="ml-3 text-sm">
-                    <label for="conditions" class="font-medium text-gray-700"
-                      >I accept conditions</label
-                    >
+                    <label for="conditions" class="font-medium text-gray-700">
+                      I accept conditions
+                    </label>
                   </div>
                 </div>
               </div>

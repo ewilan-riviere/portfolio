@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n"
-import { useMainStore } from "~~/store/main"
+import { useI18n } from 'vue-i18n'
+import { useMainStore } from '~~/store/main'
 
 const { about } = useMainStore()
 const { t } = useI18n()
@@ -22,9 +22,9 @@ const loaded = (loaded: boolean) => {
           <div
             :class="show ? 'opacity-100' : 'opacity-0'"
             class="rainbow-flag absolute -z-10 inset-0 rounded-full transition-opacity duration-150"
-          ></div>
+          />
           <app-img
-            src="https://ewilan-riviere.com/images/author.webp"
+            src="/images/ewilan-riviere.webp"
             alt="ewilan riviere"
             class="rounded-full p-0.5"
             @loaded="loaded"
@@ -37,7 +37,7 @@ const loaded = (loaded: boolean) => {
           <h2
             class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:font-pelagiad lg:text-3xl"
           >
-            {{ t("about.professionalTitle") }}
+            {{ t('about.professionalTitle') }}
           </h2>
           <app-social
             class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-3"

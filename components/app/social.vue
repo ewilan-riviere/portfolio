@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMainStore } from "~~/store/main"
+import { useMainStore } from '~~/store/main'
 
 const { about } = useMainStore()
 const socialItems = about.socialItems

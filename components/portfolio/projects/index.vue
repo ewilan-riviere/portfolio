@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMainStore } from "~~/store/main"
+import { useMainStore } from '~~/store/main'
 
 // const projects = ref<Project[]>()
 // const isFull = ref(false)

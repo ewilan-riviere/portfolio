@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNavigationStore } from "~~/store/navigation"
+import { useNavigationStore } from '~~/store/navigation'
 
 const { isScroll } = useScroll()
 const isDark = ref(false)

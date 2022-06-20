@@ -16,7 +16,7 @@ defineProps<{
     />
     <div
       class="bg-gray-600 bg-opacity-30 group-hover:bg-opacity-60 transition-all duration-500 absolute inset-0 z-10 rounded-md"
-    ></div>
+    />
     <div
       class="absolute left-0 top-0 z-20 text-white font-quicksand rounded-md rounded-tl-md w-max py-1 px-2 rounded-t-md opacity-100 group-hover:opacity-0 transition-opacity duration-200 bg-gray-700 bg-opacity-80 m-1 text-sm"
     >
@@ -28,7 +28,7 @@ defineProps<{
       <span
         class="w-3 h-3 rounded-full"
         :style="`background-color: ${project.typeColor}`"
-      ></span>
+      />
       <span class="text-white">{{ project.type }}</span>
     </div>
     <div

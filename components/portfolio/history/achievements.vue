@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { useMainStore } from "~~/store/main"
+import { useMainStore } from '~~/store/main'
 
 const { projects } = useMainStore()
 const achivements = [
   {
-    name: "Bachelor",
-    slug: "training",
-    value: "+4",
+    name: 'Bachelor',
+    slug: 'training',
+    value: '+4'
   },
   {
-    name: "Projects",
-    slug: "projects",
-    value: projects.length,
+    name: 'Projects',
+    slug: 'projects',
+    value: projects.length
   },
   {
-    name: "Experience years",
-    slug: "experience",
-    value: `${new Date().getFullYear() - 2018}`,
-  },
+    name: 'Experience years',
+    slug: 'experience',
+    value: `${new Date().getFullYear() - 2018}`
+  }
 ]
 const opened = ref(false)
 const emit = defineEmits<{
-  (e: "opened", opened: boolean): void
+  (e: 'opened', opened: boolean): void
 }>()
 const toggle = () => {
   opened.value = !opened.value
-  emit("opened", opened.value)
+  emit('opened', opened.value)
 }
 </script>
 

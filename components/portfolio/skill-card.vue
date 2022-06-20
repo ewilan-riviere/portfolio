@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import { useMainStore } from "~~/store/main"
+import { useMainStore } from '~~/store/main'
 
 const props = defineProps<{
   skill?: string
 }>()
 
 const current = ref<Skill>()
-const color = ref("#ffffff")
-const hoverColor = ref("#ffffff")
+const color = ref('#ffffff')
+const hoverColor = ref('#ffffff')
 
 const getSkill = () => {
   const { skills } = useMainStore()
-  current.value = skills.find((skill) => skill.slug === props.skill)
-  color.value = current.value?.color ?? "#ffffff"
-  hoverColor.value = !current.value?.isDark ? "#ffffff" : "#000000"
+  current.value = skills.find(skill => skill.slug === props.skill)
+  color.value = current.value?.color ?? '#ffffff'
+  hoverColor.value = !current.value?.isDark ? '#ffffff' : '#000000'
 }
 getSkill()
 </script>
@@ -26,7 +26,7 @@ getSkill()
     rel="noopener noreferrer"
     class="border rounded-full py-0.5 px-2 m-1 flex items-center space-x-1 skill text-sm"
   >
-    <span class="w-2 h-2 rounded-full tag-color"></span>
+    <span class="w-2 h-2 rounded-full tag-color" />
     <span class="skill-title">{{ current?.title }}</span>
   </a>
 </template>

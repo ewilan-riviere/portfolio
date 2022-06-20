@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import SvgIcon from "@/components/svg-icon.vue"
-import { useToastStore } from "~/store/toast"
+import SvgIcon from '@/components/svg-icon.vue'
+import { useToastStore } from '~/store/toast'
 
 const props = defineProps<{
   toast?: Toast
 }>()
 
-const type = props.toast?.type ? props.toast.type : "default"
+const type = props.toast?.type ? props.toast.type : 'default'
 const bgColor = computed(() => {
   const colors = {
-    success: "bg-green-100",
-    warning: "bg-orange-100",
-    error: "bg-red-100",
-    information: "bg-blue-100",
-    default: "bg-blue-100",
+    success: 'bg-green-100',
+    warning: 'bg-orange-100',
+    error: 'bg-red-100',
+    information: 'bg-blue-100',
+    default: 'bg-blue-100'
   }
   return colors[type] || colors.default
 })
 const color = computed(() => {
   const colors = {
-    success: "text-green-400",
-    warning: "text-orange-400",
-    error: "text-red-400",
-    information: "text-blue-400",
-    default: "text-blue-400",
+    success: 'text-green-400',
+    warning: 'text-orange-400',
+    error: 'text-red-400',
+    information: 'text-blue-400',
+    default: 'text-blue-400'
   }
   return colors[type]
 })
@@ -41,7 +41,7 @@ const clear = () => {
   >
     <span
       class="absolute inset-x-0 bottom-0 h-1 bg-primary-500 dark:bg-primary-600 animate-life"
-    ></span>
+    />
     <div class="p-4">
       <div class="flex items-start">
         <div class="shrink-0">
@@ -75,7 +75,7 @@ const clear = () => {
                 fill-rule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                 clip-rule="evenodd"
-              ></path>
+              />
             </svg>
           </button>
         </div>
