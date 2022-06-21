@@ -1,17 +1,17 @@
 export const date = (date?: any) => {
   if (!date) {
-    return ""
+    return ''
   }
   const formatDate = new Date(date)
 
-  let userLang = "en"
+  let userLang = 'en'
   if (process.client) {
     userLang = navigator.language
   }
 
   return formatDate.toLocaleString(userLang, {
-    year: "numeric",
-    month: "long",
+    year: 'numeric',
+    month: 'long',
   })
 }
 
