@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNavigationStore } from "~~/store/navigation"
+import { useNavigationStore } from '~~/store/navigation'
 
 const { isScroll } = useScroll()
 const isDark = ref(false)
@@ -56,6 +56,7 @@ const { toggleSidebar } = useNavigationStore()
           <app-color-mode
             :size="isScroll ? 'w-8 h-8' : 'w-8 h-8 lg:w-8 lg:h-8'"
           />
+          <layout-language-switch />
           <!-- <language-switch
             :size="isScroll ? 'w-8 h-8' : 'w-8 h-8 lg:w-8 lg:h-8'"
           />

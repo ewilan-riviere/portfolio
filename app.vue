@@ -16,6 +16,7 @@ useMetadata()
 
 <template>
   <div :class="{ 'debug-screens': devMode }">
+    <app-toasts />
     <layout-navbar />
     <layout-sidebar />
     <portfolio-hero />
@@ -23,7 +24,7 @@ useMetadata()
     <portfolio-features />
     <portfolio-projects class="mt-16" />
     <portfolio-history class="mt-16" />
-    <portfolio-blog class="mt-16" />
+    <!-- <portfolio-blog class="mt-16" /> -->
     <portfolio-form-contact class="mt-28" />
     <layout-bottom class="mt-10" />
     <layout-back-to-top />

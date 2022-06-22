@@ -10,11 +10,11 @@ export const useScroll = () => {
   }
 
   onMounted(() => {
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener('scroll', handleScroll)
   })
 
   onBeforeUnmount(() => {
-    window.removeEventListener("scroll", handleScroll)
+    window.removeEventListener('scroll', handleScroll)
   })
 
   return {

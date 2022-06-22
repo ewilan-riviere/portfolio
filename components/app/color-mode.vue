@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const toggleDark = () => {
   const root = document.documentElement.classList
-  if (root.contains("dark")) {
-    root.toggle("light")
-    root.remove("dark")
+  if (root.contains('dark')) {
+    root.toggle('light')
+    root.remove('dark')
 
-    localStorage.setItem("color-scheme", "light")
+    localStorage.setItem('color-scheme', 'light')
   } else {
-    root.toggle("dark")
-    root.remove("light")
+    root.toggle('dark')
+    root.remove('light')
 
-    localStorage.setItem("color-scheme", "dark")
+    localStorage.setItem('color-scheme', 'dark')
   }
 }
 </script>

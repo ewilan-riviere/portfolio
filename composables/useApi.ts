@@ -1,5 +1,5 @@
-import { NitroFetchRequest } from "nitropack"
-import { useMainStore } from "~~/store/main"
+import { NitroFetchRequest } from 'nitropack'
+import { useMainStore } from '~~/store/main'
 
 export const useApi = () => {
   type ApiEndpoint = NitroFetchRequest
@@ -18,15 +18,15 @@ export const useApi = () => {
       skills,
       technologies,
     ] = await Promise.all([
-      fetchData<About>("/api/about"),
-      fetchData<Developer[]>("/api/developers"),
-      fetchData<Feature[]>("/api/features"),
-      fetchData<HistoryItem[]>("/api/history-items"),
-      fetchData<Hobby[]>("/api/hobbies"),
-      fetchData<ProjectStatus[]>("/api/project-statuses"),
-      fetchData<Project[]>("/api/projects"),
-      fetchData<Skill[]>("/api/skills"),
-      fetchData<Technology[]>("/api/technologies"),
+      fetchData<About>('/api/about'),
+      fetchData<Developer[]>('/api/developers'),
+      fetchData<Feature[]>('/api/features'),
+      fetchData<HistoryItem[]>('/api/history-items'),
+      fetchData<Hobby[]>('/api/hobbies'),
+      fetchData<ProjectStatus[]>('/api/project-statuses'),
+      fetchData<Project[]>('/api/projects'),
+      fetchData<Skill[]>('/api/skills'),
+      fetchData<Technology[]>('/api/technologies'),
     ])
 
     mainStore.setAbout(about.value)

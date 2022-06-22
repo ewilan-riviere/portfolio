@@ -9,7 +9,7 @@ stages:
 
 variables:
   NODE_VERSION: '16.15.0'
-   PM2: 'portfolio'
+  PM2: 'portfolio'
 
 build-job:
   stage: test

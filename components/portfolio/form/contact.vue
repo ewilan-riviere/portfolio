@@ -1,29 +1,24 @@
 <script setup lang="ts">
+const minChar = 10
 const isDev = useNuxtApp()._legacyContext?.isDev
 const loading = ref(false)
 const success = ref(false)
 
 const form = ref({
-  app: "",
-  url: "",
-  name: "",
-  email: "",
-  message: "",
+  name: '',
+  to: null,
+  email: '',
+  message: '',
   honeypot: false,
 })
 const formTesting = {
-  app: "",
-  url: "",
-  name: "Ewilan",
-  email: "ewilan@email.com",
+  name: 'Ewilan',
+  email: 'ewilan@email.com',
+  to: null,
   message:
-    "Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.",
+    'Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.',
   honeypot: false,
 }
-const message = ref({
-  title: "Erreur",
-  text: "Une erreur s'est produite, nous sommes désolés.",
-})
 
 const fillForm = () => {
   const original: Keyable = form.value
@@ -35,64 +30,53 @@ const fillForm = () => {
   form.value = original
 }
 const resetForm = () => {
-  form.value.name = ""
-  form.value.email = ""
-  form.value.message = ""
+  form.value.name = ''
+  form.value.email = ''
+  form.value.message = ''
   form.value.honeypot = false
 }
+
 const submit = async () => {
-  const { baseUrl, apiUrl } = useRuntimeConfig()
+  const config = useRuntimeConfig()
   loading.value = true
 
-  form.value.app = "Portfolio"
-  form.value.url = baseUrl
+  const { pushToast } = useToast()
+  // form.value.to = config.public.mailToAddress
 
-  await $fetch("/api/send/submission", {
-    baseURL: apiUrl,
-    method: "POST",
-    body: JSON.stringify(form.value),
-  })
+  let toast: Toast = {
+    type: 'error',
+    title: 'Erreur',
+    text: "Une erreur s'est produite, nous sommes désolés.",
+  }
+
+  const response = await $fetch
+    .raw<ApiResponse>('/api/send/submission', {
+      baseURL: config.public.apiUrl,
+      method: 'POST',
+      body: JSON.stringify(form.value),
+    })
     .catch((e) => {
-      loading.value = false
       console.error(e)
+      pushToast(toast)
     })
-    .then(() => {
-      loading.value = false
+
+  if (response) {
+    if (response.status === 200) {
       success.value = true
+      toast = {
+        type: 'success',
+        title: 'Merci !',
+        text: 'Votre message a bien été envoyé.',
+      }
+      pushToast(toast)
       resetForm()
-    })
+    } else {
+      console.error(response.status)
+      pushToast(toast)
+    }
+  }
 
-  // if (form.value.honeypot) {
-  //   this.$nuxt.$emit('notification', {
-  //     title: 'success',
-  //     text: 'contact_success_text',
-  //     type: 'success',
-  //     icon: 'airplane',
-  //   })
-  //   loading.value = false
-  //   return
-  // }
-
-  // try {
-  //   await this.$axios.$post('/submission', this.form)
-
-  //   this.$nuxt.$emit('notification', {
-  //     title: 'success',
-  //     text: 'contact_success_text',
-  //     type: 'success',
-  //     icon: 'airplane',
-  //   })
-  //   loading.value = false
-  // } catch (error) {
-  //   console.error(error)
-
-  //   this.$nuxt.$emit('notification', {
-  //     title: 'failed',
-  //     text: 'contact_failed_text',
-  //     type: 'error',
-  //     icon: 'airplane',
-  //   })
-  // }
+  loading.value = false
 }
 </script>
 
@@ -204,14 +188,14 @@ const submit = async () => {
                   name="message"
                   rows="4"
                   class="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 dark:text-gray-900"
-                  minlength="0"
+                  :minlength="minChar"
                   maxlength="1500"
                   :spellcheck="false"
                   :placeholder="`Message*`"
                   required
                 />
                 <div class="flex justify-between ml-1 text-sm text-gray-100">
-                  <!-- <span>Min. 25 characters</span> -->
+                  <span>Min. {{ minChar }} characters</span>
                   <span>Currently {{ form.message.length }}/1500</span>
                 </div>
               </div>
@@ -227,9 +211,9 @@ const submit = async () => {
                     />
                   </div>
                   <div class="ml-3 text-sm">
-                    <label for="conditions" class="font-medium text-gray-700"
-                      >I accept conditions</label
-                    >
+                    <label for="conditions" class="font-medium text-gray-700">
+                      I accept conditions
+                    </label>
                   </div>
                 </div>
               </div>

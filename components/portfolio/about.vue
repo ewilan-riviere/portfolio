@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MarkdownIt from "markdown-it"
-import { useMainStore } from "~~/store/main"
+import MarkdownIt from 'markdown-it'
+import { useMainStore } from '~~/store/main'
 const md = new MarkdownIt()
 
 const { about } = useMainStore()

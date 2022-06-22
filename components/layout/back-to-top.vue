@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { isScroll } = useScroll()
 
-const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 // export default {
 //   name: 'BackToTop',
 //   data() {
