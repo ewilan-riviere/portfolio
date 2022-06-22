@@ -6,8 +6,7 @@
     "generate": "nuxt generate",
     "start": "node .output/server/index.mjs",
     "preview": "nuxt preview",
-    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore . --fix",
-    "format": "prettier --ignore-path .gitignore --config .prettierrc . --write"
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore . --fix"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
@@ -22,10 +21,8 @@
     "@types/lozad": "^1.16.1",
     "@types/markdown-it": "^12.2.3",
     "eslint": "^8.17.0",
-    "eslint-config-prettier": "^8.5.0",
-    "nuxt": "3.0.0-rc.3",
+    "nuxt": "3.0.0-rc.4",
     "nuxt-icons": "^2.0.1",
-    "prettier": "^2.7.0",
     "tailwindcss": "^3.1.2",
     "typescript": "^4.7.3",
     "vite-plugin-markdown": "^2.0.2"

@@ -4,7 +4,6 @@
     "@nuxtjs/eslint-config-typescript",
     "eslint:recommended",
     "plugin:vue/vue3-recommended"
-    // "prettier"
   ],
   "rules": {
     "no-undef": "off",
