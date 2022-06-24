@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
+import { useI18nStore } from '~~/store/i18n'
 const i18n = useI18n()
-
-type LocaleList = 'en' | 'fr'
+const { changeLocale } = useI18nStore()
 
 const getLocale = (locale: LocaleList) => {
   const locales: Keyable = {
@@ -15,6 +15,7 @@ const getLocale = (locale: LocaleList) => {
 const switchLocale = (locale: LocaleList) => {
   i18n.locale.value = locale
   localStorage.setItem('locale', locale)
+  changeLocale(locale)
 }
 
 if (process.client) {

@@ -9,5 +9,37 @@
   "title": "Titre",
   "hero": {
     "title": "Titre"
+  },
+  "features": {
+    "code": {
+      "icon": "code",
+      "title": "Développement",
+      "text": "Regardez toujours ce qui a été codé pour voir si cela peut être amélioré, les commentaires et le refactoring permettent de toujours améliorer le code."
+    },
+    "web-design": {
+      "icon": "web-design",
+      "title": "Front-end & design",
+      "text": "Le front-end est la base de la maîtrise de l'intégration d'un modèle, que ce soit avec un framework CSS ou à la main."
+    },
+    "server": {
+      "icon": "server",
+      "title": "Déploiements",
+      "text": "Déployer des projets sur des serveurs VPS, en HTTPS, HTTP 2 sur NGINX avec des bases de données sont souvent en MySQL."
+    },
+    "framework": {
+      "icon": "framework",
+      "title": "Full-stack",
+      "text": "Créez une application du front-end au back-end via une API. Le tout soutenu par une base de données et modifiable depuis un back-office."
+    },
+    "seo": {
+      "icon": "seo",
+      "title": "SEO",
+      "text": "Qu'il s'agisse de la mise en place des métadonnées <head>, de l'open graph, des redirections, de l'analyse du trafic ou de l'écoconception, le référencement est important dans chaque projet."
+    },
+    "documentation": {
+      "icon": "documentation",
+      "title": "Documentation technique",
+      "text": "Rédiger la documentation technique pour expliquer comment utiliser certains projets, sauvegarder les snippets, rédiger certains articles pour les développeurs."
+    }
   }
 }

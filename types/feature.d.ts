@@ -1,5 +1,5 @@
 declare interface Feature {
-  icon: string
+  slug: string
   title: string
   text: string
 }
