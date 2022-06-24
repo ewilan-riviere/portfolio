@@ -2,14 +2,11 @@
 // import { useMarkdown } from "./composables/markdown"
 // import home from "@/content/home.md"
 
-import { useI18n } from 'vue-i18n'
-
 // const markdown = ref<Markdown>()
 // const { loadMarkdown } = useMarkdown()
 // markdown.value = await loadMarkdown(home)
 
 const { isDev } = useDev()
-const { t, d, n, tm } = useI18n()
 
 const { fetchApi } = useApi()
 await fetchApi()
@@ -23,10 +20,7 @@ useMetadata()
     <layout-navbar />
     <layout-sidebar />
     <div>
-      {{ n(1000, 'currency') }}
-      {{ d(new Date(), 'short') }}
       {{ $t('title') }}
-      {{ t('title') }}
     </div>
     <portfolio-hero />
     <portfolio-about />

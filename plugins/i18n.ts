@@ -11,6 +11,15 @@ import fr from '../locales/fr.json'
  * vite-plugin-vue-i18n: https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
  * docs: https://vue-i18n.intlify.dev/guide/advanced/typescript.html#global-resource-schema-type-definition
  * intlify/nuxt3: https://github.com/intlify/nuxt3
+ * @nuxtjs/i18n: https://github.com/nuxt-community/i18n-module/tree/next
+ *
+ * ```ts
+ * const { t, d, n, tm } = useI18n()
+ *
+ * t('hello', 'ewie')
+ * n(1000, 'currency')
+ * d(new Date(), 'short')
+ * ```
  */
 const i18n = createI18n({
   legacy: false, // The default is to use the Legacy API mode. If you want to use the Composition API mode, you need to set it to false.
