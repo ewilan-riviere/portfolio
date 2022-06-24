@@ -1,8 +1,5 @@
 import { defineNuxtConfig } from 'nuxt'
-// import markdownPlugin from 'vite-plugin-markdown'
 import svgLoader from 'vite-svg-loader'
-// import markdown from '@dansvel/vite-plugin-markdown'
-// import vueI18n from '@intlify/vite-plugin-vue-i18n'
 import config from './utils/config'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -26,7 +23,7 @@ export default defineNuxtConfig({
   ],
   tailwindcss: config.modules.tailwindcss,
   vueuse: config.modules.vueuse,
-  intlify: config.modules.intlify,
+  // intlify: config.modules.intlify,
   schemaOrg: config.modules.schemaOrg,
   content: config.modules.content,
   // i18n: config.modules.i18n,
@@ -42,8 +39,6 @@ export default defineNuxtConfig({
   // https://v3.nuxtjs.org/api/configuration/nuxt.config#vite
   vite: {
     plugins: [
-      // markdownPlugin(),
-      // markdown({}),
       svgLoader({
         svgo: true,
         svgoConfig: {
@@ -61,10 +56,6 @@ export default defineNuxtConfig({
           ],
         },
       }),
-      // vueI18n({
-      // compositionOnly: false
-      // include: path.resolve(__dirname, './locales/**')
-      // })
     ],
   },
 })
