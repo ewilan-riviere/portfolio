@@ -1,9 +1,13 @@
 {
   "locale": "Français",
+  "messages": {
+    "hello": "Bonjour, {name}!"
+  },
   "about": {
     "professionalTitle": "Développeuse designer d'applications"
   },
+  "title": "Titre",
   "hero": {
-    "title": "titre"
+    "title": "Titre"
   }
 }

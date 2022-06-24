@@ -152,6 +152,13 @@ const submit = async () => {
           </div>
           <div class="max-w-xl pt-10 mx-auto">
             <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">
+              <field-text
+                v-model="form.name"
+                name="name"
+                autocomplete="name"
+                :maxlength="100"
+                :placeholder="`Name*`"
+              />
               <div>
                 <label for="full_name" class="sr-only">Name*</label>
                 <input
@@ -199,7 +206,7 @@ const submit = async () => {
                   <span>Currently {{ form.message.length }}/1500</span>
                 </div>
               </div>
-              <div class="hidden">
+              <div :class="{ hidden: !isDev }">
                 <div class="relative flex items-start">
                   <div class="flex items-center h-5">
                     <input

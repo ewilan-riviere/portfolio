@@ -4,7 +4,7 @@ import { useMainStore } from '~~/store/main'
 const md = new MarkdownIt()
 
 const { about } = useMainStore()
-const text = md.render(about.text)
+const text = md.render(about.text ?? '')
 </script>
 
 <template>

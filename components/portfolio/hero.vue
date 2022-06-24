@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+// import { useI18n } from 'vue-i18n';
 import { useMainStore } from '~~/store/main'
+// import type { MessageSchema, NumberSchema } from '@/plugins/i18n'
 
 const { about } = useMainStore()
-const { t } = useI18n()
 
 const show = ref(false)
 const loaded = (loaded: boolean) => {
   show.value = loaded
 }
+
+// const { t, n } = useI18n<{ message: MessageSchema, number: NumberSchema }>({
+//       useScope: 'global'
+//     })
 </script>
 
 <template>
@@ -37,8 +41,12 @@ const loaded = (loaded: boolean) => {
           <h2
             class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:font-pelagiad lg:text-3xl"
           >
-            {{ t('about.professionalTitle') }}
+            {{ $t('about.professionalTitle') }}
           </h2>
+          <div>
+            <p>message: {{ $t('messages.hello', { name: 'ewie' }) }}</p>
+            <p>currecy: {{ $n(1000, 'currency') }}</p>
+          </div>
           <app-social
             class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-3"
           />

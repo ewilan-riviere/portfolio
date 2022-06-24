@@ -1,5 +1,8 @@
 {
   "locale": "English",
+  "messages": {
+    "hello": "Hello, {name}!"
+  },
   "about": {
     "professionalTitle": "Developer designer of applications"
   },

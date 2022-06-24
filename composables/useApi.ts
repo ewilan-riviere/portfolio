@@ -6,7 +6,6 @@ export const useApi = () => {
 
   const fetchApi = async () => {
     const mainStore = useMainStore()
-
     const [
       about,
       developers,
@@ -28,7 +27,6 @@ export const useApi = () => {
       fetchData<Skill[]>('/api/skills'),
       fetchData<Technology[]>('/api/technologies'),
     ])
-
     mainStore.setAbout(about.value)
     mainStore.setDevelopers(developers.value)
     mainStore.setFeatures(features.value)
