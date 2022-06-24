@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+// import { useI18n } from 'vue-i18n'
 import { useMainStore } from '~~/store/main'
-const { t } = useI18n()
+// const { t } = useI18n()
 
 const { features } = useMainStore()
 </script>
@@ -20,11 +20,11 @@ const { features } = useMainStore()
                 </div>
               </div>
               <div class="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
-                <h3 class="text-sm font-medium text-gray-900 dark:text-gray-100">
-                  {{ t(`features.${feature.slug}.title`) }}
+                <h3 class="text-sm font-medium text-gray-dark">
+                  {{ $t(`features.${feature.slug}.title`) }}
                 </h3>
-                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  {{ t(`features.${feature.slug}.text`) }}}
+                <p class="mt-2 text-sm text-gray-medium">
+                  {{ $t(`features.${feature.slug}.text`) }}}
                 </p>
               </div>
             </div>

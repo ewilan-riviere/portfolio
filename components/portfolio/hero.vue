@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+// import { useI18n } from 'vue-i18n'
 import { useMainStore } from '~~/store/main'
 
 const { about } = useMainStore()
@@ -9,7 +9,7 @@ const loaded = (loaded: boolean) => {
   show.value = loaded
 }
 
-const { t } = useI18n()
+// const { t } = useI18n()
 
 </script>
 
@@ -29,7 +29,7 @@ const { t } = useI18n()
           </h1>
           <div
             class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:font-pelagiad lg:text-3xl">
-            {{ t('about.professionalTitle') }}
+            {{ $t('about.professionalTitle') }}
           </div>
           <app-social class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-3" />
         </div>

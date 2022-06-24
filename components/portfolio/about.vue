@@ -1,25 +1,27 @@
 <script setup lang="ts">
-import MarkdownIt from 'markdown-it'
-import { useI18n } from 'vue-i18n'
+// import MarkdownIt from 'markdown-it'
+// import { useI18n } from 'vue-i18n'
 import { useI18nStore } from '~~/store/i18n'
 import { useMainStore } from '~~/store/main'
-const md = new MarkdownIt()
+// const md = new MarkdownIt()
 
 const { about } = useMainStore()
-const text = md.render(about.text ?? '')
+// const text = md.render(about.text ?? '')
 const i18nStore = useI18nStore()
 
-const { locale } = useI18n()
+// const { locale } = useI18n()
 
 const aboutText = ref()
 const getAboutText = async () => {
-  aboutText.value = await queryContent('/about').locale(locale.value).findOne()
+  aboutText.value = await queryContent('/about')
+    .locale(i18nStore.locale)
+    .findOne()
 }
 getAboutText()
 
 watch(
   () => i18nStore.locale,
-  (newVal) => {
+  () => {
     getAboutText()
   }
 )
@@ -33,8 +35,7 @@ watch(
           <h2 class="font-sans text-base font-semibold tracking-wide text-primary-600 dark:text-primary-400 uppercase">
             {{ about.subtitle }}
           </h2>
-          <h3
-            class="mt-2 text-3xl font-semibold leading-8 tracking-tight text-gray-900 dark:text-gray-100 font-quicksand sm:text-4xl">
+          <h3 class="mt-2 text-3xl font-semibold leading-8 tracking-tight text-gray-dark font-quicksand sm:text-4xl">
             {{ about.title }}
           </h3>
         </div>
@@ -59,7 +60,6 @@ watch(
         </div>
         <div class="mt-8 lg:mt-0">
           <div class="mx-auto mt-5 prose prose-primary dark:prose-invert lg:max-w-none lg:row-start-1 lg:col-start-1">
-            <div v-html="text" />
             <ContentRenderer v-if="aboutText" :value="aboutText">
               <h1>{{ aboutText.title }}</h1>
               <MarkdownRenderer :value="aboutText" />

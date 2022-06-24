@@ -7,25 +7,21 @@
 
 const { isDev } = useDev()
 
-// const { fetchApi } = useApi()
-// await fetchApi()
+const { fetchApi } = useApi()
+await fetchApi()
 
-// useMetadata()
+useMetadata()
 </script>
 
 <template>
   <div :class="{ 'debug-screens': isDev }">
-    <!-- <app-toasts /> -->
-    <!-- <layout-navbar /> -->
-    <!-- <layout-sidebar /> -->
-    <!-- <portfolio-hero /> -->
-    <!-- <portfolio-about /> -->
-    <!-- <portfolio-features /> -->
-    <!-- <portfolio-projects class="mt-16" /> -->
-    <!-- <portfolio-history class="mt-16" /> -->
-    <!-- <portfolio-blog class="mt-16" /> -->
-    <!-- <portfolio-form-contact class="mt-28" /> -->
-    <!-- <layout-bottom class="mt-10" /> -->
-    <!-- <layout-back-to-top /> -->
+    <app-toasts />
+    <layout-navbar />
+    <layout-sidebar />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+    <layout-bottom class="mt-10" />
+    <layout-back-to-top />
   </div>
 </template>
