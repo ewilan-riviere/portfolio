@@ -3,7 +3,6 @@ import { useI18nStore } from '~~/store/i18n'
 import { useMainStore } from '~~/store/main'
 
 const { about } = useMainStore()
-const { $locale } = useNuxtApp()
 const i18n = useI18nStore()
 
 const aboutText = ref()
@@ -16,7 +15,7 @@ getAboutText()
 
 watch(
   () => i18n.currentLocale,
-  (newVal) => {
+  () => {
     getAboutText()
   }
 )

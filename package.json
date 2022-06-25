@@ -31,6 +31,7 @@
     "lozad": "^1.16.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.14",
+    "remark-reading-time": "^2.0.1",
     "swiper": "^8.2.4",
     "vite-svg-loader": "^3.4.0"
   }

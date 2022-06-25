@@ -26,7 +26,12 @@ const schemaOrg: NuxtConfig['schemaOrg'] = {
 // https://content.nuxtjs.org/api/configuration
 const content: NuxtConfig['content'] = {
   defaultLocale: 'en',
-  locales: ['en', 'fr']
+  locales: ['en', 'fr'],
+  markdown: {
+    remarkPlugins: [
+      'remark-reading-time'
+    ]
+  }
 }
 
 // const i18n: NuxtI18nOptions = {

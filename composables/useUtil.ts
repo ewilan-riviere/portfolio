@@ -1,7 +1,7 @@
 import { useI18nStore } from '~~/store/i18n'
 
 export const useUtil = () => {
-  const date = (date?: any) => {
+  const date = (date?: any, options?: Intl.DateTimeFormatOptions) => {
     if (!date) {
       return ''
     }
@@ -15,6 +15,7 @@ export const useUtil = () => {
     return formatDate.toLocaleString(userLang, {
       year: 'numeric',
       month: 'long',
+      ...options
     })
   }
 

@@ -22,11 +22,11 @@ const { toggleSidebar } = useNavigationStore()
             class="transition-all duration-300 rounded-md p-1 absolute inset-0 hover:bg-gray-800 h-full w-full" />
         </button>
       </div>
-      <div class="items-center h-full mx-auto font-sans text-lg font-semibold w-max hidden sm:flex">
-        <h1 :class="isScroll ? '!text-xl' : ''"
-          class="text-xl font-normal sm:text-2xl lg:text-3xl font-morpheus transition-all duration-300">
+      <div class="items-center h-full mx-auto font-sans text-lg font-semibold w-max hidden sm:flex group">
+        <nuxt-link to="/" :class="isScroll ? '!text-xl' : ''"
+          class="text-xl font-normal sm:text-2xl lg:text-3xl font-morpheus transition-all duration-300 border-b border-transparent group-hover:border-white">
           &ndash; Ewilan Rivière &ndash;
-        </h1>
+        </nuxt-link>
       </div>
 
       <div class="absolute right-0 px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2">

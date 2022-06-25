@@ -1,10 +1,20 @@
 <script setup lang="ts">
 import type { Guide } from '~~/types/content'
 
-defineProps<{
+const props = defineProps<{
   guide: Guide
   large?: boolean
 }>()
+
+const { date } = useUtil()
+
+const readTime = computed(() => {
+  const time = props.guide.readingTime?.minutes
+
+  return Math.round(time ?? 0)
+})
+console.log(props.guide)
+
 </script>
 
 <template>
@@ -20,7 +30,12 @@ defineProps<{
             {{ guide.category }}
           </a>
         </p>
-        <a href="#" class="block mt-2">
+        <nuxt-link :to="{
+          name: 'slug',
+          params: {
+            slug: guide._path.substring(1)
+          }
+        }" class="block mt-2">
           <p
             class="text-xl font-semibold text-gray-dark border-b-2 border-transparent group-hover:border-purple-400 transition-color duration-100 w-max">
             {{ guide.title }}
@@ -28,7 +43,7 @@ defineProps<{
           <p class="mt-3 text-base text-gray-medium">
             {{ guide.description }}
           </p>
-        </a>
+        </nuxt-link>
       </div>
       <div class="mt-6">
         <p class="text-sm font-medium text-gray-dark space-x-1">
@@ -37,9 +52,14 @@ defineProps<{
           </a>
         </p>
         <div class="flex space-x-1 text-sm text-gray-medium">
-          <time datetime="2020-03-16"> Mar 16, 2020 </time>
+          <time datetime="2020-03-16">
+            {{ date(guide.date, {
+                day: '2-digit'
+              })
+            }}
+          </time>
           <span aria-hidden="true"> &middot; </span>
-          <span> 6 min read </span>
+          <span> {{ readTime }} min read </span>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ await fetchApi()
 
 <template>
   <div :class="{ 'debug-screens': isDev }">
+    <app-helper />
     <app-toasts />
     <layout-navbar />
     <layout-sidebar />
