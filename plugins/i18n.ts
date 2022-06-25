@@ -64,15 +64,6 @@ import { useI18nStore } from '~~/store/i18n'
 export default defineNuxtPlugin(() => {
   // nuxtApp.vueApp.use(i18n)
 
-  const { translate, getStorageLocale } = useI18nStore()
-
-  // return {
-  //   provide: {
-  //     t: (key: string) => translate(key),
-  //     locale: computed(() => getStorageLocale())
-  //   }
-  // }
-
   return {
     provide: {
       t: (key: string) => {

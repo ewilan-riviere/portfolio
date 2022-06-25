@@ -41,5 +41,22 @@
       "title": "Technical documentation",
       "text": "Write technical documentation to explain how to use some projects, to save snippets, to write some articles for developers."
     }
+  },
+  "projects": {
+    "bookshelves": {
+      "subtitle": "subtitle",
+      "excerpt": "Manage eBooks and comics with a web app, can parse EPUB, CBX and PDF. You can use filters, search, download, webreader and OPDS.",
+      "description": "description"
+    }
+  },
+  "project-statuses": {
+    "concept": "Concept & prototype",
+    "development": "Development",
+    "finish": "Finishes",
+    "tpam": "TPAM"
+  },
+  "developer-role": {
+    "developer": "Developer",
+    "concept": "Concept & ideas"
   }
 }

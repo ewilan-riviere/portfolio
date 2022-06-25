@@ -22,10 +22,14 @@ export const useI18nStore = defineStore('i18n', {
       return this.getValue(currentLocale, key)
     },
     getValue(obj: Keyable, path: string): any {
-      if (!path) { return obj }
-      const properties = path.split('.')
-      const key = properties.shift() as string
-      return this.getValue(obj[key], properties.join('.')) ?? path
+      try {
+        if (!path) { return obj }
+        const properties = path.split('.')
+        const key = properties.shift() as string
+        return this.getValue(obj[key], properties.join('.')) ?? path
+      } catch (error) {
+        return path
+      }
     },
     getStorageLocale() {
       let locale: LocaleList = 'en'
