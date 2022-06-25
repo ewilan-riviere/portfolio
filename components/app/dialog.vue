@@ -81,7 +81,7 @@ const scrollEnabled = () => {
           class="fixed inset-0 z-50 overflow-y-auto scrollbar-thin"
         >
           <div
-            class="md:min-h-32 block min-h-screen items-end justify-center p-0 text-center"
+            class="lg:min-h-32 block min-h-screen items-end justify-center p-0 text-center"
           >
             <!-- This element is to trick the browser into centering the modal contents. -->
             <span
