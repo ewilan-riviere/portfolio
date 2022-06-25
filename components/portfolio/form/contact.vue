@@ -109,23 +109,23 @@ const submit = async () => {
         <div class="relative">
           <div class="sm:text-center">
             <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              You've send mail!
+              {{ $t('contact.title') }}
             </h2>
             <p class="max-w-2xl mx-auto mt-6 text-lg text-purple-100">
-              If you want to contact me for a new project!
+              {{ $t('contact.subtitle') }}
             </p>
           </div>
           <div class="max-w-xl pt-10 mx-auto">
             <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">
-              <field-text v-model="form.name" name="name" autocomplete="name" :maxlength="100" :placeholder="`Name*`"
-                required />
+              <field-text v-model="form.name" name="name" autocomplete="name" :maxlength="100"
+                :placeholder="`${$t('contact.form.name')}*`" required />
               <field-text v-model="form.email" name="email" type="email" autocomplete="email" :maxlength="100"
-                :placeholder="`Email*`" required />
+                :placeholder="`${$t('contact.form.email')}*`" required />
               <field-text v-model="form.message" name="message" autocomplete="message" :minlength="minChar"
-                :maxlength="1500" :placeholder="`Message*`" multiline required>
+                :maxlength="1500" :placeholder="`${$t('contact.form.message')}*`" multiline required>
                 <div class="flex justify-between text-white">
-                  <span>Min. {{ minChar }} characters</span>
-                  <span>Currently {{ form.message?.length }}/1500</span>
+                  <span>Min. {{ minChar }} {{ $t('contact.form.characters') }}</span>
+                  <span>{{ $t('contact.form.currently') }} {{ form.message?.length }}/1500</span>
                 </div>
               </field-text>
               <div :class="{ hidden: !isDev }">
@@ -146,7 +146,9 @@ const submit = async () => {
                   <span class="flex items-center space-x-2">
                     <svg-icon v-if="!loading" name="notification-airplane" class="w-4 h-4" />
                     <app-loading v-else class="w-4 h-4" />
-                    <span> Send </span>
+                    <span>
+                      {{ $t('contact.form.send') }}
+                    </span>
                   </span>
                 </app-button>
                 <app-button v-if="isDev" color="secondary" @click="fillForm">

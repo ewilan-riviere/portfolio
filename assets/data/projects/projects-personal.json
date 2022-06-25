@@ -32,12 +32,17 @@
         "role": "concept"
       }
     ],
-    "skills": [
+    "technologies": [
       "nuxt-js",
       "laravel",
       "tailwind-css",
       "typescript",
       "meilisearch"
+    ],
+    "languages": [
+      "php",
+      "vue",
+      "typescript"
     ],
     "features": [
       "dark-mode",
@@ -70,7 +75,7 @@
         "role": "developer"
       }
     ],
-    "skills": [
+    "technologies": [
       "laravel",
       "tailwind-css",
       "vue-js",
@@ -129,11 +134,14 @@
         "role": "developer"
       }
     ],
-    "skills": [
-      "php",
+    "technologies": [
       "laravel",
       "tailwind-css",
       "vite"
+    ],
+    "languages": [
+      "php",
+      "typescript"
     ]
   },
   {
@@ -161,9 +169,13 @@
         "role": "developer"
       }
     ],
-    "skills": [
+    "technologies": [
       "nuxt-js",
       "tailwind-css",
+      "typescript"
+    ],
+    "languages": [
+      "vue",
       "typescript"
     ]
   },

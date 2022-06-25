@@ -1,18 +1,19 @@
 <script lang="ts" setup>
+import { useI18nStore } from '~~/store/i18n'
 import type { Guide } from '~~/types/content'
 
 const guides = ref<Guide[]>()
-const { $locale } = useNuxtApp()
+const i18n = useI18nStore()
 
 const getGuides = async () => {
   guides.value = await queryContent<Guide>('blog')
-    .locale($locale.value)
+    .locale(i18n.locale)
     .find()
 }
 getGuides()
 
 watch(
-  () => $locale.value,
+  () => i18n.locale,
   () => {
     getGuides()
   }

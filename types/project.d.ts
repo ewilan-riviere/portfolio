@@ -5,10 +5,8 @@ declare interface DeveloperLight {
 
 interface Links {
   main?: string
-  app?: {
-    android?: string
-    ios?: string
-  }
+  android?: string
+  ios?: string
   api?: string
 }
 
@@ -22,13 +20,16 @@ declare interface Project {
   title: string
   slug: string
   isDraft?: boolean
+  isOpenSource?: boolean
   image?: string
   type?: string
   typeColor?: string
-  skills?: string[],
+  technologies?: string[]
+  languages?: string[]
   createdAt?: Date
   status?: number
   developers?: DeveloperLight[]
-  links: Links
-  repositories: Repository[]
+  links?: Links
+  repositories?: Repository[]
+  features?: string[]
 }

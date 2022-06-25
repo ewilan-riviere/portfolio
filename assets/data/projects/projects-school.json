@@ -4,7 +4,7 @@
     "slug": "code-academie-promo-03",
     "isFavorite": true,
     "isDraft": false,
-    "isOpenSource": true,
+    "isOpenSource": false,
     "status": "4",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
@@ -24,7 +24,7 @@
         "role": "developer"
       }
     ],
-    "skills": [
+    "technologies": [
       "laravel",
       "javascript",
       "bootstrap"
@@ -53,7 +53,7 @@
         "role": "developer"
       }
     ],
-    "skills": [
+    "technologies": [
       "javascript"
     ]
   },
@@ -90,7 +90,7 @@
         "role": "lead_developer"
       }
     ],
-    "skills": [
+    "technologies": [
       "laravel",
       "blade",
       "tailwind-css"
@@ -119,7 +119,7 @@
         "role": "developer"
       }
     ],
-    "skills": [
+    "technologies": [
       "javascript"
     ]
   },
@@ -146,7 +146,7 @@
         "role": "developer"
       }
     ],
-    "skills": [
+    "technologies": [
       "javascript"
     ]
   },
@@ -161,7 +161,7 @@
     "context": "school",
     "createdAt": "2014-06-01",
     "links": {
-      "main": "data/projects/documents/ter-la-cyberviolence.pdf"
+      "main": "/projects/documents/ter-la-cyberviolence.pdf"
     },
     "developers": [
       {
@@ -193,7 +193,7 @@
         "role": "developer"
       }
     ],
-    "skills": [
+    "technologies": [
       "javascript"
     ]
   }

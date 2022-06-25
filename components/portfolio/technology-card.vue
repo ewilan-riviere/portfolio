@@ -2,20 +2,27 @@
 import { useMainStore } from '~~/store/main'
 
 const props = defineProps<{
-  skill?: string
+  technology?: string
+  forceWhite?: boolean
 }>()
 
-const current = ref<Skill>()
+const current = ref<Technology>()
 const color = ref('#ffffff')
 const hoverColor = ref('#ffffff')
 
-const getSkill = () => {
+const technologyTitleColor = ref('black')
+const technologyTitleColorDark = ref('white')
+
+const getTechnology = () => {
   const { technologies } = useMainStore()
-  current.value = technologies.find(skill => skill.slug === props.skill)
+  current.value = technologies.find(technology => technology.slug === props.technology)
   color.value = current.value?.color ?? '#ffffff'
   hoverColor.value = !current.value?.isDark ? '#ffffff' : '#000000'
 }
-getSkill()
+getTechnology()
+if (props.forceWhite) {
+  technologyTitleColor.value = 'white'
+}
 </script>
 
 <template>
@@ -38,7 +45,16 @@ getSkill()
   }
 
   .skill-title {
-    color: white;
+    color: v-bind(technologyTitleColor);
+  }
+
+}
+
+.dark {
+  & .skill {
+    & .skill-title {
+      color: v-bind(technologyTitleColorDark);
+    }
   }
 }
 

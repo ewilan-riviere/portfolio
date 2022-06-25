@@ -44,9 +44,9 @@
   },
   "projects": {
     "bookshelves": {
-      "subtitle": "subtitle",
+      "subtitle": "Web app to manage eBooks and comics",
       "excerpt": "Manage eBooks and comics with a web app, can parse EPUB, CBX and PDF. You can use filters, search, download, webreader and OPDS.",
-      "description": "description"
+      "description": "Manage eBooks and comics with a web app, can parse EPUB, CBX and PDF. You can use filters, search, download, webreader and OPDS."
     }
   },
   "project-statuses": {
@@ -55,8 +55,30 @@
     "finish": "Finishes",
     "tpam": "TPAM"
   },
+  "project-languages": {
+    "php": "PHP",
+    "vue": "Vue.js",
+    "typescript": "TypeScript"
+  },
+  "project-features": {
+    "dark-mode": "Dark mode",
+    "search": "Search engine",
+    "api": "API"
+  },
   "developer-role": {
     "developer": "Developer",
     "concept": "Concept & ideas"
+  },
+  "contact": {
+    "title": " You've send mail!",
+    "subtitle": "If you want to contact me for a new project!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "characters": "characters",
+      "currently": "Currently",
+      "send": "Send"
+    }
   }
 }

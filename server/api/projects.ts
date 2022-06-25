@@ -1,6 +1,6 @@
-import personalJson from '~/assets/data/projects/project-personal.json'
-import professionalJson from '~/assets/data/projects/project-professional.json'
-import schoolJson from '~/assets/data/projects/project-school.json'
+import personalJson from '~/assets/data/projects/projects-personal.json'
+import professionalJson from '~/assets/data/projects/projects-professional.json'
+import schoolJson from '~/assets/data/projects/projects-school.json'
 import { getJson } from '~~/utils/methods'
 
 export default defineEventHandler((event): Project[] => {

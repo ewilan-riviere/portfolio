@@ -25,10 +25,11 @@ onMounted(() => {
         {{ project.title }}
       </div>
       <portfolio-project-type :project="project"
-        class="absolute top-0 right-0 z-30 bg-gray-700  text-sm rounded-md bg-opacity-80 py-1 px-2 m-1 group-hover:opacity-0 opacity-100 transition-opacity duration-200" />
+        class="absolute top-0 right-0 z-30 bg-gray-700  text-sm rounded-md bg-opacity-80 py-1 px-2 m-1 group-hover:opacity-0 opacity-100 transition-opacity duration-200 text-white" />
       <div
         class="absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-wrap m-2 z-30">
-        <portfolio-skill-card v-for="(skill, index) in project.skills" :key="index" :skill="skill" />
+        <portfolio-technology-card v-for="(technology, index) in project.technologies" :key="index"
+          :technology="technology" force-white />
       </div>
       <div class="absolute z-30 bottom-3 transform translate-y-20 group-hover:translate-y-0 duration-300 px-3">
         <div class="opacity-0 text-white group-hover:opacity-90 transform duration-300 line-clamp-3">
