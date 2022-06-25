@@ -94,5 +94,18 @@ export const useMetadata = (meta?: HeadMeta) => {
     ],
   }
 
+  useSchemaOrg([
+    defineOrganization({
+      name: 'Nuxt.js',
+      logo: '/logo.png',
+      sameAs: [
+        'https://twitter.com/nuxt_js'
+      ]
+    }),
+    defineWebSite({
+      name: 'Nuxt',
+    }),
+    // defineWebPage(),
+  ])
   useHead(metadata)
 }
