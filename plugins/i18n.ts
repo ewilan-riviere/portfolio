@@ -61,20 +61,22 @@ import { useI18nStore } from '~~/store/i18n'
 //   }
 // })
 
-const getValue = (obj: Keyable, path: string): any => {
-  if (!path) { return obj }
-  const properties = path.split('.')
-  const key = properties.shift() as string
-  return getValue(obj[key], properties.join('.')) ?? path
-}
-
 export default defineNuxtPlugin(() => {
   // nuxtApp.vueApp.use(i18n)
+
+  const { translate, getStorageLocale } = useI18nStore()
+
+  // return {
+  //   provide: {
+  //     t: (key: string) => translate(key),
+  //     locale: computed(() => getStorageLocale())
+  //   }
+  // }
 
   return {
     provide: {
       t: (key: string) => {
-        const { locale } = useI18nStore()
+        const { locale, getValue } = useI18nStore()
         const locales = {
           en: enJson,
           fr: frJson,
@@ -82,7 +84,15 @@ export default defineNuxtPlugin(() => {
         const currentLocale = locales[locale] ?? enJson
 
         return getValue(currentLocale, key)
-      }
+      },
+      locale: computed(() => {
+        let locale: LocaleList = 'en'
+        if (process.client) {
+          locale = localStorage.getItem('locale') as LocaleList ?? 'en'
+        }
+
+        return locale
+      })
     }
   }
 })

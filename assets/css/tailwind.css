@@ -28,6 +28,10 @@ body {
   transform: translateX(30px);
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .gradient {
   mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
 }

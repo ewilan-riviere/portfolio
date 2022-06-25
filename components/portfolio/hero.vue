@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import { useI18n } from 'vue-i18n'
 import { useMainStore } from '~~/store/main'
 
 const { about } = useMainStore()
@@ -8,9 +7,6 @@ const show = ref(false)
 const loaded = (loaded: boolean) => {
   show.value = loaded
 }
-
-// const { t } = useI18n()
-
 </script>
 
 <template>
@@ -18,9 +14,8 @@ const loaded = (loaded: boolean) => {
     <div class="absolute inset-0 z-20 parallax bg-forest-swamp gradient-top" />
     <div class="container relative z-30 h-screen">
       <div class="flex flex-col items-center justify-center lg:flex-row center-full w-full">
-        <div class="relative h-56 w-56">
-          <div :class="show ? 'opacity-100' : 'opacity-0'"
-            class="rainbow-flag absolute -z-10 inset-0 rounded-full transition-opacity duration-150" />
+        <div :class="show ? 'opacity-100' : 'opacity-0'" class="relative h-56 w-56 transition-opacity duration-150">
+          <div class="rainbow-flag absolute -z-10 inset-0 rounded-full " />
           <app-img src="/images/ewilan-riviere.webp" alt="ewilan riviere" class="rounded-full p-0.5" @loaded="loaded" />
         </div>
         <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0 text-center lg:text-left">

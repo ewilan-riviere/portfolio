@@ -7,7 +7,7 @@ const currentIcon = computed(() =>
   defineAsyncComponent({
     // loader: () => import(`../assets/icons/${props.name}.svg`),
     // loading: https://github.com/jpkleemans/vite-svg-loader/issues/47
-    loader: () => import('../assets/' + props.name + '.svg?component'),
+    loader: () => import('../assets/icons/' + props.name + '.svg?component'),
     loadingComponent: {
       template: '<span></span>'
     },
@@ -29,7 +29,7 @@ const defaultSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox=
     <client-only>
       <component :is="currentIcon" :class="attrs.class" />
       <template #fallback>
-        <span v-html="defaultSvg"></span>
+        <!-- <span v-html="defaultSvg"></span> -->
       </template>
     </client-only>
   </span>

@@ -31,14 +31,8 @@ const { toggleSidebar } = useNavigationStore()
 
       <div class="absolute right-0 px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2">
         <div class="flex items-center space-x-4">
-          <app-color-mode :size="isScroll ? 'w-8 h-8' : 'w-8 h-8 lg:w-8 lg:h-8'" />
+          <layout-color-mode />
           <layout-locale-switch />
-          <!-- <language-switch
-            :size="isScroll ? 'w-8 h-8' : 'w-8 h-8 lg:w-8 lg:h-8'"
-          />
-          <routes-list
-            :class="isScroll ? 'w-8 h-8' : 'w-8 h-8 lg:w-8 lg:h-8'"
-          /> -->
         </div>
       </div>
     </div>

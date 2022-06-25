@@ -1,27 +1,22 @@
 <script setup lang="ts">
-// import MarkdownIt from 'markdown-it'
-// import { useI18n } from 'vue-i18n'
 import { useI18nStore } from '~~/store/i18n'
 import { useMainStore } from '~~/store/main'
-// const md = new MarkdownIt()
 
 const { about } = useMainStore()
-// const text = md.render(about.text ?? '')
-const i18nStore = useI18nStore()
-
-// const { locale } = useI18n()
+const { $locale } = useNuxtApp()
+const i18n = useI18nStore()
 
 const aboutText = ref()
 const getAboutText = async () => {
   aboutText.value = await queryContent('/about')
-    .locale(i18nStore.locale)
+    .locale(i18n.currentLocale)
     .findOne()
 }
 getAboutText()
 
 watch(
-  () => i18nStore.locale,
-  () => {
+  () => i18n.currentLocale,
+  (newVal) => {
     getAboutText()
   }
 )
