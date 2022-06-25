@@ -94,6 +94,8 @@ export const useMetadata = (meta?: HeadMeta) => {
     ],
   }
 
+  // https://github.com/vueuse/schema-org
+  // https://vue-schema-org.netlify.app/guide/setup/nuxt.html
   useSchemaOrg([
     defineOrganization({
       name: 'Nuxt.js',
