@@ -37,6 +37,12 @@ const { getDomain } = useUtil()
 }
 
 .link:hover {
-  @apply bg-purple-500 bg-opacity-50;
+  @apply bg-gray-200 bg-opacity-50;
+}
+
+.dark {
+  & .link:hover {
+    @apply bg-gray-700 bg-opacity-50;
+  }
 }
 </style>

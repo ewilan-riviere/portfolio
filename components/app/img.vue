@@ -42,12 +42,28 @@ const emit = defineEmits<{
 <template>
   <div ref="lazyMedia" class="lazy-media">
     <transition>
-      <div v-if="!display" v-bind="attrs" class="placeholder bg-gray-50 dark:bg-gray-800"
-        :style="color !== '#ffffff' ? `background-color: ${color};` : ''" />
+      <div
+        v-if="!display"
+        v-bind="attrs"
+        class="placeholder bg-gray-50 dark:bg-gray-800"
+        :style="color !== '#ffffff' ? `background-color: ${color};` : ''"
+      />
     </transition>
-    <img ref="media" v-bind="attrs" :data-src="source" :alt="display ? (alt ? alt : title) : ''" loading="lazy" />
-    <img ref="defaultImage" v-bind="attrs" :src="placeholder ? placeholder : '/default.webp'"
-      :alt="display ? (alt ? alt : title) : ''" class="hidden object-cover" loading="lazy" />
+    <img
+      ref="media"
+      v-bind="attrs"
+      :data-src="source"
+      :alt="display ? (alt ? alt : title) : ''"
+      loading="lazy"
+    />
+    <img
+      ref="defaultImage"
+      v-bind="attrs"
+      :src="placeholder ? placeholder : '/default.webp'"
+      :alt="display ? (alt ? alt : title) : ''"
+      class="hidden object-cover"
+      loading="lazy"
+    />
   </div>
 </template>
 

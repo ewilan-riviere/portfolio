@@ -53,6 +53,7 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) f
 - <https://treact.owaiskhan.me>
 - <https://tailwind-cards.netlify.app>
 - <https://kitwind.io/products/kometa/components>
+- <https://github.com/Atinux/content-wind>
 
 ## ESLint format
 

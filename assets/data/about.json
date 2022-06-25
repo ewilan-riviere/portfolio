@@ -31,6 +31,12 @@
       "slug": "email",
       "color": "#EA4335",
       "link": "mailto:contact@ewilan-riviere.com"
+    },
+    {
+      "name": "Curriculum Vitae",
+      "slug": "resume",
+      "color": "#6c63ff",
+      "link": "/ewilan-riviere-resume.pdf"
     }
   ]
 }

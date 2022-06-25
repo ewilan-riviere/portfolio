@@ -49,24 +49,47 @@
       "text": "Rédiger la documentation technique pour expliquer comment utiliser certains projets, sauvegarder les snippets, rédiger certains articles pour les développeurs."
     }
   },
-  "projects": {
+  "project": {
     "title": "Projets",
     "subtitle": "Une sélection de mes projets",
+    "details": {
+      "developers": "Développeur·ses",
+      "begin-date": "Date de début",
+      "current-status": "Statut actuel",
+      "type": "Type",
+      "about": "À props",
+      "repositories-demo": "Dépôt & demo",
+      "features": "Fonctionnalités",
+      "languages": "Langages",
+      "technologies": "Technologies"
+    },
+    "statuses": {
+      "concept": "Concept & prototype",
+      "development": "Développement",
+      "finish": "Finitions",
+      "tpam": "TMA"
+    },
+    "languages": {
+      "php": "PHP",
+      "vue": "Vue.js",
+      "typescript": "TypeScript"
+    },
+    "features": {
+      "dark-mode": "Mode sombre",
+      "search": "Moteur de recherche",
+      "api": "API"
+    },
+    "role": {
+      "developer": "Développeur·se",
+      "concept": "Concept & idées"
+    }
+  },
+  "projects": {
     "bookshelves": {
       "subtitle": "subtitle",
       "excerpt": "Manage eBooks and comics with a web app, can parse EPUB, CBX and PDF. You can use filters, search, download, webreader and OPDS.",
       "description": "description"
     }
-  },
-  "project-statuses": {
-    "concept": "Concept & prototype",
-    "development": "Développement",
-    "finish": "Finitions",
-    "tpam": "TMA"
-  },
-  "developer-role": {
-    "developer": "Développeur·se",
-    "concept": "Concept & idées"
   },
   "achievements": {
     "bachelor": "Bac",

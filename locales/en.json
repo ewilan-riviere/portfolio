@@ -49,34 +49,47 @@
       "text": "Write technical documentation to explain how to use some projects, to save snippets, to write some articles for developers."
     }
   },
-  "projects": {
+  "project": {
     "title": "Projects",
     "subtitle": "A selection of my projects",
+    "details": {
+      "developers": "Developers",
+      "begin-date": "Begin date",
+      "current-status": "Current status",
+      "type": "Type",
+      "about": "About",
+      "repositories-demo": "Repositories & demo",
+      "features": "Features",
+      "languages": "Languages",
+      "technologies": "Technologies"
+    },
+    "statuses": {
+      "concept": "Concept & prototype",
+      "development": "Development",
+      "finish": "Finishes",
+      "tpam": "TPAM"
+    },
+    "languages": {
+      "php": "PHP",
+      "vue": "Vue.js",
+      "typescript": "TypeScript"
+    },
+    "features": {
+      "dark-mode": "Dark mode",
+      "search": "Search engine",
+      "api": "API"
+    },
+    "role": {
+      "developer": "Developer",
+      "concept": "Concept & ideas"
+    }
+  },
+  "projects": {
     "bookshelves": {
       "subtitle": "Web app to manage eBooks and comics",
       "excerpt": "Manage eBooks and comics with a web app, can parse EPUB, CBX and PDF. You can use filters, search, download, webreader and OPDS.",
       "description": "Manage eBooks and comics with a web app, can parse EPUB, CBX and PDF. You can use filters, search, download, webreader and OPDS."
     }
-  },
-  "project-statuses": {
-    "concept": "Concept & prototype",
-    "development": "Development",
-    "finish": "Finishes",
-    "tpam": "TPAM"
-  },
-  "project-languages": {
-    "php": "PHP",
-    "vue": "Vue.js",
-    "typescript": "TypeScript"
-  },
-  "project-features": {
-    "dark-mode": "Dark mode",
-    "search": "Search engine",
-    "api": "API"
-  },
-  "developer-role": {
-    "developer": "Developer",
-    "concept": "Concept & ideas"
   },
   "achievements": {
     "bachelor": "Bachelor",

@@ -37,7 +37,7 @@ const getRoutes = () => {
   pushToast({
     title: 'Check your console',
     text: 'List of all routes is available.',
-    type: 'success'
+    type: 'success',
   })
   isOpen.value = false
 }
@@ -53,16 +53,30 @@ const links = [
 
 <template>
   <div>
-    <button name="router"
+    <button
+      name="router"
       class="fixed bottom-0 right-0 z-50 rounded-tl-md bg-gray-700 p-2 transition-colors duration-100 hover:bg-gray-600"
-      type="button" @click="() => (isOpen = !isOpen)">
+      type="button"
+      @click="() => (isOpen = !isOpen)"
+    >
       <span
-        class="flex items-center rounded-md text-sm font-medium shadow-sm transition-all duration-100 focus:outline-none focus:ring-2 focus:ring-offset-2">
+        class="flex items-center rounded-md text-sm font-medium shadow-sm transition-all duration-100 focus:outline-none focus:ring-2 focus:ring-offset-2"
+      >
         <span class="sr-only">Help</span>
         <span class="h-6 w-6 text-gray-200">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
         </span>
       </span>
@@ -73,9 +87,16 @@ const links = [
           Helper
         </h2>
         <ul role="list" class="mt-3 grid grid-cols-1 space-y-4">
-          <li v-for="(item, id) in links" :key="id"
-            class="rounded-md border border-gray-200 shadow-sm transition-colors duration-75 hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-700">
-            <button type="button" class="col-span-1 flex w-full text-left" @click="getRoutes">
+          <li
+            v-for="(item, id) in links"
+            :key="id"
+            class="rounded-md border border-gray-200 shadow-sm transition-colors duration-75 hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-700"
+          >
+            <button
+              type="button"
+              class="col-span-1 flex w-full text-left"
+              @click="getRoutes"
+            >
               <div class="items-center justify-between truncate rounded-r-md">
                 <div class="flex-1 truncate p-2 text-sm">
                   <div class="font-medium text-gray-900 dark:text-gray-100">
