@@ -1,6 +1,7 @@
-{
-  "ewilan-riviere": {
+[
+  {
     "name": "Ewilan Rivière",
+    "slug": "ewilan-riviere",
     "avatar": "https://avatars.githubusercontent.com/u/48261459?v=4",
     "links": {
       "primary": "https://github.com/ewilan-riviere",
@@ -12,8 +13,9 @@
       "mail": "mailto:contact@ewilan-riviere.com"
     }
   },
-  "nora-hennebert": {
+  {
     "name": "Nora Hennebert",
+    "slug": "nora-hennebert",
     "links": {
       "primary": "https://www.linkedin.com/in/nora-hennebert",
       "github": "https://github.com/Norahenn",
@@ -21,24 +23,27 @@
       "gitlab": "https://gitlab.com/Norahenn"
     }
   },
-  "antoine-le-gonidec": {
+  {
     "name": "Antoine Le Gonidec",
+    "slug": "antoine-le-gonidec",
     "links": {
       "primary": "https://forge.dotslashplay.it/vv221",
       "github": "https://github.com/vv221",
       "git": "https://forge.dotslashplay.it/vv221"
     }
   },
-  "hugo-schindelman": {
+  {
     "name": "Hugo Schindelman",
+    "slug": "hugo-schindelman",
     "links": {
       "primary": "https://www.linkedin.com/in/hugo-schindelman",
       "linkedin": "https://www.linkedin.com/in/hugo-schindelman",
       "gitlab": "https://gitlab.com/Felonius"
     }
   },
-  "delphine-brunetiere": {
+  {
     "name": "Delphine Brunetière",
+    "slug": "delphine-brunetiere",
     "links": {
       "primary": "https://www.linkedin.com/in/delphinebrunetiere",
       "portfolio": "https://delphinebrunetiere.com",
@@ -48,12 +53,13 @@
       "medium": "https://delphinebrunetiere.medium.com"
     }
   },
-  "mopi": {
+  {
     "name": "Mopi",
+    "slug": "mopi",
     "avatar": "https://forge.dotslashplay.it/uploads/-/system/user/avatar/8/avatar.png",
     "links": {
       "primary": "https://forge.dotslashplay.it/mopi",
       "git": "https://forge.dotslashplay.it/mopi"
     }
   }
-}
+]
