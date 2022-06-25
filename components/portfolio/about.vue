@@ -1,36 +1,34 @@
 <script setup lang="ts">
 import { useI18nStore } from '~~/store/i18n'
-import { useMainStore } from '~~/store/main'
 
-const { about } = useMainStore()
 const i18n = useI18nStore()
 
-const aboutText = ref()
-const getAboutText = async () => {
-  aboutText.value = await queryContent('/about')
+const content = ref<Guide>()
+const fetchContent = async () => {
+  content.value = await queryContent<Guide>('/about')
     .locale(i18n.currentLocale)
     .findOne()
 }
-getAboutText()
+fetchContent()
 
 watch(
   () => i18n.currentLocale,
   () => {
-    getAboutText()
+    fetchContent()
   }
 )
 </script>
 
 <template>
-  <div class="overflow-hidden">
+  <div v-if="content" class="overflow-hidden">
     <div class="relative px-4 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
         <div>
           <h2 class="font-sans text-base font-semibold tracking-wide text-primary-600 dark:text-primary-400 uppercase">
-            {{ about.subtitle }}
+            {{ content.subtitle }}
           </h2>
           <h3 class="mt-2 text-3xl font-semibold leading-8 tracking-tight text-gray-dark font-quicksand sm:text-4xl">
-            {{ about.title }}
+            {{ content.title }}
           </h3>
         </div>
       </div>
@@ -54,9 +52,8 @@ watch(
         </div>
         <div class="mt-8 lg:mt-0">
           <div class="mx-auto mt-5 prose prose-primary dark:prose-invert lg:max-w-none lg:row-start-1 lg:col-start-1">
-            <ContentRenderer v-if="aboutText" :value="aboutText">
-              <h1>{{ aboutText.title }}</h1>
-              <MarkdownRenderer :value="aboutText" />
+            <ContentRenderer :value="content">
+              <MarkdownRenderer :value="content" />
               <template #empty>
                 <p>No content found.</p>
               </template>

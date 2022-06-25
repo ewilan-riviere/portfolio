@@ -3,10 +3,10 @@ const plugin = require('tailwindcss/plugin')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    'components/**/*.{vue,js}',
+    'components/**/*.{vue,ts,js}',
     'layouts/**/*.vue',
     'pages/**/*.vue',
-    'plugins/**/*.{js,ts}',
+    'plugins/**/*.{js,ts,js}',
     'app.vue'
   ],
   darkMode: 'class',

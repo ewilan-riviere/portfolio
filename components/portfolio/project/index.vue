@@ -15,7 +15,7 @@ const { projects } = useMainStore()
 
 <template>
   <div id="portfolio" class="main-container">
-    <portfolio-title-block title="Projects" subtitle="A selection of my projects" />
+    <portfolio-title-block :title="$t('projects.title')" :subtitle="$t('projects.subtitle')" />
     <div class="mx-auto grid w-full grid-cols-1 gap-4 pt-12 lg:w-full sm:grid-cols-2 lg:grid-cols-3">
       <portfolio-project-card v-for="project in projects" :key="project.slug" :project="project" />
     </div>

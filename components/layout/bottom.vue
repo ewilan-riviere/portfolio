@@ -6,9 +6,9 @@
         &copy; 2020-{{ new Date().getFullYear() }}. <a href="https://github.com/ewilan-riviere" target="_blank"
           rel="noopener noreferrer" class="link ml-1">Ewilan
           Rivière</a>. <a href="https://gitlab.com/ewilan-riviere/portfolio/-/blob/main/LICENSE" target="_blank"
-          rel="noopener noreferrer" class="link ml-1">MIT License</a>.
+          rel="noopener noreferrer" class="link ml-1">{{ $t('footer.mit-license') }}</a>.
         <span class="flex items-center ml-1">
-          <span>Built with</span>
+          <span>{{ $t('footer.built-with') }}</span>
           <a href="https://v3.nuxtjs.org" target="_blank" rel="noopener noreferrer" class="link mx-1">
             <svg-icon name="nuxt" class="w-5 h-5" />
           </a>

@@ -29,7 +29,6 @@ const { features } = useMainStore()
           </div>
         </div>
       </div>
-      <portfolio-technologies class="mt-3" />
     </div>
   </div>
 </template>

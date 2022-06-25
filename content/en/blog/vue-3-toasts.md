@@ -1,7 +1,7 @@
 ---
 title: Vue 3 Toasts
 description: Add toasts to Vue 3 / Nuxt 3
-picture: /default.jpg
+picture: /default.webp
 category: vue
 tags: [vue,nuxt]
 date: 2022-06-25

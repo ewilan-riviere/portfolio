@@ -96,7 +96,7 @@ const submit = async () => {
     </div>
     <div class="max-w-3xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
       <div
-        class="relative px-6 py-10 overflow-hidden bg-purple-500 dark:bg-purple-800 shadow rounded-2xl sm:px-12 sm:py-20">
+        class="medium-container relative px-6 py-10 overflow-hidden bg-purple-500 dark:bg-purple-800 shadow rounded-2xl sm:px-12 sm:py-20">
         <div aria-hidden="true" class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
           <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice"
             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1463 360">

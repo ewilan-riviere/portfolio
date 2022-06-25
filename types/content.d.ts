@@ -7,6 +7,7 @@ interface TocItem {
 
 declare interface Guide {
   title?: string
+  subtitle?: string
   excerpt?: any
   description?: string
   author: string

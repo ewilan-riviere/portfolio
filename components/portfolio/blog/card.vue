@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { Guide } from '~~/types/content'
-
 const props = defineProps<{
   guide: Guide
   large?: boolean
@@ -13,7 +11,6 @@ const readTime = computed(() => {
 
   return Math.round(time ?? 0)
 })
-console.log(props.guide)
 
 </script>
 

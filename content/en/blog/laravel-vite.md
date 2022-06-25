@@ -1,7 +1,7 @@
 ---
 title: Laravel Vite
 description: Install Vite on Laravel
-picture: /default.jpg
+picture: /default.webp
 category: vite
 tags: [vite,laravel,setup]
 date: 2022-06-25
