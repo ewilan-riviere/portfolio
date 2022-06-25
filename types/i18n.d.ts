@@ -1,6 +1,6 @@
-/**
- * you need to import the some interfaces
- */
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import {
   DefineLocaleMessage,
   DefineDateTimeFormat,

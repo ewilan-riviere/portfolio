@@ -1,5 +1,5 @@
 import { VueUseNuxtOptions } from '@vueuse/nuxt'
-import { ModuleOptions, NuxtConfig } from '@nuxt/schema'
+import { NuxtConfig } from '@nuxt/schema'
 // import { NuxtI18nOptions } from '@nuxtjs/i18n/dist/module'
 // import { IntlifyModuleOptions } from '@intlify/nuxt3'
 
