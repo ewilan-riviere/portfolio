@@ -37,7 +37,7 @@ onMounted(() => {
   <div>
     <div v-if="loaded" ref="target" class="relative h-full">
       <span class="h-full" @click="open = !open">
-        <slot name="trigger" />
+        <slot />
       </span>
 
       <transition

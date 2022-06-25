@@ -109,14 +109,14 @@ const scrollEnabled = () => {
             </button>
 
             <Transition>
-              <div
+              <dialog
                 v-if="modal"
                 ref="target"
                 class="inline-block min-h-screen w-full transform overflow-hidden bg-white text-left align-middle shadow-xl transition-all dark:bg-gray-800 dark:text-gray-100 md:min-h-full md:rounded-lg"
                 :class="`dialog-${size}`"
               >
                 <slot />
-              </div>
+              </dialog>
             </Transition>
           </div>
         </div>
