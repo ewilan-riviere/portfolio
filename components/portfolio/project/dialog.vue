@@ -58,35 +58,29 @@ const { date, getList, transList } = useUtil()
             {{ $t(`projects.${project.slug}.description`) }}
           </dd>
         </div>
-        <div v-if="project.technologies && project.technologies.length" class="sm:col-span-2">
-          <dt class="text-sm font-medium text-gray-medium">Technologies</dt>
-          <dd class="mt-1 text-sm text-gray-dark">
-            <div role="list" class="flex flex-wrap">
-              <portfolio-technology-card v-for="(technology, index) in project.technologies" :key="index"
-                :technology="technology" />
-            </div>
-          </dd>
-        </div>
-        <div v-if="project.languages && project.languages.length" class="sm:col-span-2">
-          <dt class="text-sm font-medium text-gray-medium">Languages</dt>
-          <dd class="mt-1 text-sm text-gray-dark">
-            <div role="list" class="flex flex-wrap">
-              {{ getList(transList(project.languages, 'project-languages')) }}
-            </div>
-          </dd>
-        </div>
-        <div v-if="project.features && project.features.length" class="sm:col-span-2">
-          <dt class="text-sm font-medium text-gray-medium">Features</dt>
-          <dd class="mt-1 text-sm text-gray-dark">
-            <div role="list" class="flex flex-wrap">
-              {{ getList(transList(project.features, 'project-features')) }}
-            </div>
-          </dd>
-        </div>
         <div class="sm:col-span-2">
           <dt class="text-sm font-medium text-gray-medium">Repositories & demo</dt>
           <dd class="mt-1 text-sm text-gray-dark">
             <portfolio-project-links :project="project" />
+          </dd>
+        </div>
+        <div v-if="project.features && project.features.length" class="sm:col-span-1">
+          <dt class="text-sm font-medium text-gray-medium">Features</dt>
+          <dd class="mt-1 text-sm text-gray-dark">
+            {{ getList(transList(project.features, 'project-features')) }}
+          </dd>
+        </div>
+        <div v-if="project.languages && project.languages.length" class="sm:col-span-1">
+          <dt class="text-sm font-medium text-gray-medium">Languages</dt>
+          <dd class="mt-1 text-sm text-gray-dark">
+            {{ getList(transList(project.languages, 'project-languages')) }}
+          </dd>
+        </div>
+        <div v-if="project.technologies && project.technologies.length" class="sm:col-span-1">
+          <dt class="text-sm font-medium text-gray-medium">Technologies</dt>
+          <dd class="mt-1 text-sm text-gray-dark flex flex-wrap">
+            <portfolio-technology-card v-for="(technology, index) in project.technologies" :key="index"
+              :technology="technology" />
           </dd>
         </div>
       </dl>
