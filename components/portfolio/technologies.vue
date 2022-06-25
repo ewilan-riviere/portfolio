@@ -22,11 +22,14 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
       <swiper :modules="[Navigation, Pagination, Controller, Autoplay]" :controller="{ control: controlledSwiper }"
         :slides-per-view="1" :space-between="25" navigation grab-cursor :pagination="{ clickable: true }"
         :scrollbar="{ draggable: true }" loop :slides-per-group="3" :breakpoints="{
-          400: {
+          600: {
             slidesPerView: 2,
           },
-          900: {
+          800: {
             slidesPerView: 3,
+          },
+          1100: {
+            slidesPerView: 4,
           },
         }" autoplay @swiper="setControlledSwiper">
         <swiper-slide v-for="technology in technologies" :key="technology.slug">
