@@ -490,5 +490,17 @@
     "type": "Open source CMS headless",
     "isFavorite": true,
     "isDisplay": true
+  },
+  {
+    "title": "Meilisearch",
+    "slug": "meilisearch",
+    "version": "4.2.0",
+    "link": "https://www.meilisearch.com",
+    "isFree": true,
+    "color": "#ff5caa",
+    "isDark": false,
+    "type": "An open-source, lightning-fast, and hyper-relevant search engine that fits effortlessly into your apps, websites, and workflow",
+    "isFavorite": true,
+    "isDisplay": true
   }
 ]

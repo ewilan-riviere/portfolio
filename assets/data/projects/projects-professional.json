@@ -4,25 +4,24 @@
     "slug": "aalto",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
     "createdAt": "2020-09-01",
     "links": {
       "main": "https://client.fonciere-aalto.com",
-      "app": {
-        "android": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
-        "ios": "https://apps.apple.com/fr/app/fonci%C3%A8re-aalto-espace-client/id1549849593"
-      }
+      "android": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
+      "ios": "https://apps.apple.com/fr/app/fonci%C3%A8re-aalto-espace-client/id1549849593"
     },
     "repositories": [
       {
-        "repository": "https://bitbucket.org/useweb/cap-transactions",
+        "url": "https://bitbucket.org/useweb/cap-transactions",
         "type": "main",
         "isPrivate": true
       },
       {
-        "repository": "https://bitbucket.org/useweb/cap-transactions-flutter",
+        "url": "https://bitbucket.org/useweb/cap-transactions-flutter",
         "type": "app",
         "isPrivate": true
       }
@@ -44,6 +43,7 @@
     "slug": "imprimerie-le-galliard",
     "isFavorite": false,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
@@ -53,12 +53,12 @@
     },
     "repositories": [
       {
-        "repository": "https://bitbucket.org/useweb/le-galliard-back",
+        "url": "https://bitbucket.org/useweb/le-galliard-back",
         "type": "back",
         "isPrivate": true
       },
       {
-        "repository": "https://bitbucket.org/useweb/le-galliard-front",
+        "url": "https://bitbucket.org/useweb/le-galliard-front",
         "type": "front",
         "isPrivate": true
       }
@@ -79,6 +79,7 @@
     "slug": "laforet",
     "isFavorite": false,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
@@ -88,12 +89,12 @@
     },
     "repositories": [
       {
-        "repository": "https://bitbucket.org/useweb/laforet-back",
+        "url": "https://bitbucket.org/useweb/laforet-back",
         "type": "back",
         "isPrivate": true
       },
       {
-        "repository": "https://bitbucket.org/useweb/laforet-front",
+        "url": "https://bitbucket.org/useweb/laforet-front",
         "type": "front",
         "isPrivate": true
       }
@@ -114,6 +115,7 @@
     "slug": "naviso",
     "isFavorite": false,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
@@ -123,12 +125,12 @@
     },
     "repositories": [
       {
-        "repository": "https://bitbucket.org/useweb/naviso-back",
+        "url": "https://bitbucket.org/useweb/naviso-back",
         "type": "back",
         "isPrivate": true
       },
       {
-        "repository": "https://bitbucket.org/useweb/naviso-front",
+        "url": "https://bitbucket.org/useweb/naviso-front",
         "type": "front",
         "isPrivate": true
       }
@@ -150,6 +152,7 @@
     "slug": "participation",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
@@ -159,12 +162,12 @@
     },
     "repositories": [
       {
-        "repository": "https://bitbucket.org/useweb/mte-front",
+        "url": "https://bitbucket.org/useweb/mte-front",
         "type": "front",
         "isPrivate": true
       },
       {
-        "repository": "https://bitbucket.org/useweb/mte-back",
+        "url": "https://bitbucket.org/useweb/mte-back",
         "type": "back",
         "isPrivate": true
       }
@@ -185,6 +188,7 @@
     "slug": "secob",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
@@ -194,12 +198,12 @@
     },
     "repositories": [
       {
-        "repository": "https://bitbucket.org/useweb/secob-backend",
+        "url": "https://bitbucket.org/useweb/secob-backend",
         "type": "back",
         "isPrivate": true
       },
       {
-        "repository": "https://bitbucket.org/useweb/secob-frontend",
+        "url": "https://bitbucket.org/useweb/secob-frontend",
         "type": "front",
         "isPrivate": true
       }
@@ -220,6 +224,7 @@
     "slug": "release",
     "isFavorite": false,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
@@ -250,6 +255,7 @@
     "slug": "hallouvry",
     "isFavorite": false,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
@@ -286,6 +292,7 @@
     "slug": "useweb",
     "isFavorite": false,
     "isDraft": false,
+    "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",

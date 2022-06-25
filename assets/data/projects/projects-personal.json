@@ -4,6 +4,7 @@
     "slug": "bookshelves",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
@@ -13,11 +14,11 @@
     },
     "repositories": [
       {
-        "repository": "https://gitlab.com/bookshelves-project/bookshelves-back",
+        "url": "https://gitlab.com/bookshelves-project/bookshelves-back",
         "type": "back"
       },
       {
-        "repository": "https://gitlab.com/bookshelves-project/bookshelves-front",
+        "url": "https://gitlab.com/bookshelves-project/bookshelves-front",
         "type": "front"
       }
     ],
@@ -35,7 +36,13 @@
       "nuxt-js",
       "laravel",
       "tailwind-css",
-      "typescript"
+      "typescript",
+      "meilisearch"
+    ],
+    "features": [
+      "dark-mode",
+      "search",
+      "api"
     ]
   },
   {
@@ -43,6 +50,7 @@
     "slug": "markdown-interpreter",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
@@ -52,7 +60,7 @@
     },
     "repositories": [
       {
-        "repository": "https://github.com/ewilan-riviere/markdown-interpreter",
+        "url": "https://github.com/ewilan-riviere/markdown-interpreter",
         "type": "main"
       }
     ],
@@ -74,17 +82,18 @@
     "slug": "markdown-this",
     "isFavorite": true,
     "isDraft": true,
+    "isOpenSource": true,
     "status": "1",
     "formation": null,
     "context": "personal",
     "createdAt": "2020-11-05",
     "repositories": [
       {
-        "repository": "https://gitlab.com/ewilan-riviere/markdown-this-back",
+        "url": "https://gitlab.com/ewilan-riviere/markdown-this-back",
         "type": "back"
       },
       {
-        "repository": "https://gitlab.com/ewilan-riviere/markdown-this-front",
+        "url": "https://gitlab.com/ewilan-riviere/markdown-this-front",
         "type": "front"
       }
     ],
@@ -100,6 +109,7 @@
     "slug": "memorandum",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
@@ -109,7 +119,7 @@
     },
     "repositories": [
       {
-        "repository": "https://gitlab.com/ewilan-riviere/memorandum",
+        "url": "https://gitlab.com/ewilan-riviere/memorandum",
         "type": "main"
       }
     ],
@@ -131,6 +141,7 @@
     "slug": "portfolio",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
@@ -140,7 +151,7 @@
     },
     "repositories": [
       {
-        "repository": "https://gitlab.com/ewilan-riviere/portfolio",
+        "url": "https://gitlab.com/ewilan-riviere/portfolio",
         "type": "main"
       }
     ],
@@ -161,6 +172,7 @@
     "slug": "roazhon-star-bus",
     "isFavorite": false,
     "isDraft": true,
+    "isOpenSource": true,
     "status": "1",
     "formation": null,
     "context": "personal",
@@ -170,7 +182,7 @@
     },
     "repositories": [
       {
-        "repository": "https://gitlab.com/ewilan-riviere/roazhon-star-bus",
+        "url": "https://gitlab.com/ewilan-riviere/roazhon-star-bus",
         "type": "main"
       }
     ],
@@ -186,6 +198,7 @@
     "slug": "skyscale",
     "isFavorite": false,
     "isDraft": true,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
@@ -195,7 +208,7 @@
     },
     "repositories": [
       {
-        "repository": "https://gitlab.com/ewilan-riviere/skyscale",
+        "url": "https://gitlab.com/ewilan-riviere/skyscale",
         "type": "main"
       }
     ],
