@@ -9,10 +9,10 @@
 
 ![pipeline](https://gitlab.com/ewilan-riviere/portfolio/badges/main/pipeline.svg)
 
+>Personal portfolio of Ewilan Rivière. Use Nuxt 3.x and Tailwind CSS.
+
 📀 [**Repository**](https://gitlab.com/ewilan-riviere/portfolio)  
 💻 [**ewilan-riviere.com**](https://ewilan-riviere.com): demo
-
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Setup
 

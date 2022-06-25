@@ -4,142 +4,197 @@
     "slug": "code-academie-promo-03",
     "isFavorite": true,
     "isDraft": false,
-    "linkRepository": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
-    "demo": "http://promo03.code-academie.fr/",
+    "isOpenSource": false,
     "status": "4",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
     "createdAt": "2018-11-27",
     "links": {
-      "front_back": {
-        "repository": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
-        "project": "http://promo03.code-academie.fr"
-      }
+      "main": "http://promo03.code-academie.fr"
     },
+    "repositories": [
+      {
+        "url": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
+        "type": "main"
+      }
+    ],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
       }
     ],
-    "skills": ["laravel", "javascript", "bootstrap"]
+    "technologies": [
+      "laravel",
+      "javascript",
+      "bootstrap"
+    ]
   },
   {
     "title": "Overwatch Memory",
     "slug": "overwatch-memory",
     "isFavorite": true,
     "isDraft": true,
-    "linkRepository": "https://github.com/ewilan-riviere/overwatch-memory",
+    "isOpenSource": true,
     "demo": null,
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
     "createdAt": "2018-11-07",
-    "links": {
-      "front": {
-        "repository": "https://gitlab.com/ewilan-riviere/challenge_05_memory"
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/challenge_05_memory",
+        "type": "main"
       }
-    },
-    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
-    "skills": ["javascript"]
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ],
+    "technologies": [
+      "javascript"
+    ]
   },
   {
     "title": "./play.it",
     "slug": "play-it",
     "isFavorite": true,
     "isDraft": true,
-    "linkRepository": "https://forge.dotslashplay.it/play.it/website",
-    "demo": "https://dev.website.dotslashplay.it/",
+    "isOpenSource": true,
     "status": "2",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
     "createdAt": "2019-04-01",
     "links": {
-      "back": {
-        "repository": "https://forge.dotslashplay.it/play.it/api",
-        "project": "https://api.dotslashplay.it/games/list"
-      },
-      "front": {
-        "repository": "https://forge.dotslashplay.it/play.it/website",
-        "project": "https://dev.website.dotslashplay.it"
-      }
+      "main": "https://dev.website.dotslashplay.it"
     },
+    "repositories": [
+      {
+        "url": "https://forge.dotslashplay.it/play.it/api",
+        "type": "back"
+      },
+      {
+        "url": "https://forge.dotslashplay.it/play.it/website",
+        "type": "front"
+      }
+    ],
     "developers": [
-      { "slug": "ewilan-riviere", "role": "developer" },
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      },
       {
         "slug": "antoine-le-gonidec",
         "role": "lead_developer"
       }
     ],
-    "skills": ["laravel", "blade", "tailwind-css"]
+    "technologies": [
+      "laravel",
+      "blade",
+      "tailwind-css"
+    ]
   },
   {
     "title": "Pomodoro",
     "slug": "pomodoro",
     "isFavorite": false,
     "isDraft": true,
-    "linkRepository": "https://github.com/ewilan-riviere/pomodoro",
+    "isOpenSource": true,
     "demo": null,
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
     "createdAt": "2018-11-28",
-    "links": {
-      "front": {
-        "repository": "https://gitlab.com/ewilan-riviere/challenge_08_pomodoro"
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/challenge_08_pomodoro",
+        "type": "main"
       }
-    },
-    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
-    "skills": ["javascript"]
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ],
+    "technologies": [
+      "javascript"
+    ]
   },
   {
     "title": "Quizz Pokémon",
     "slug": "quizz-pokemon",
     "isFavorite": false,
     "isDraft": true,
-    "linkRepository": "https://github.com/ewilan-riviere/quizz-pokemon",
+    "isOpenSource": true,
     "demo": null,
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
     "createdAt": "2018-12-06",
-    "links": {
-      "front": {
-        "repository": "https://gitlab.com/ewilan-riviere/challenge_09_quizz"
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/challenge_09_quizz",
+        "type": "main"
       }
-    },
-    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
-    "skills": ["javascript"]
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ],
+    "technologies": [
+      "javascript"
+    ]
   },
   {
     "title": "TER Cyberviolence",
     "slug": "ter-cyberviolence",
     "isFavorite": false,
     "isDraft": false,
-    "demo": "data/projects/documents/ter-la-cyberviolence.pdf",
+    "isOpenSource": true,
     "status": "4",
     "formation": "licence-de-psychologie",
     "context": "school",
     "createdAt": "2014-06-01",
-    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    "links": {
+      "main": "/projects/documents/ter-la-cyberviolence.pdf"
+    },
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ]
   },
   {
     "title": "Zergling Evolution",
     "slug": "zergling-evolution",
     "isFavorite": false,
     "isDraft": true,
-    "linkRepository": "https://github.com/ewilan-riviere/zergling-evolution",
+    "isOpenSource": true,
     "demo": null,
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
     "status": "3",
     "createdAt": "2018-11-07",
-    "links": {
-      "front": {
-        "repository": "https://gitlab.com/ewilan-riviere/zergling-evolution"
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/zergling-evolution",
+        "type": "main"
       }
-    },
-    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
-    "skills": ["javascript"]
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ],
+    "technologies": [
+      "javascript"
+    ]
   }
 ]

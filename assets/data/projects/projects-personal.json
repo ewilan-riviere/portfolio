@@ -4,21 +4,24 @@
     "slug": "bookshelves",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
     "createdAt": "2021-01-03",
-    "demo": "https://bookshelves.ink",
     "links": {
-      "back": {
-        "repository": "https://gitlab.com/ewilan-riviere/bookshelves-back",
-        "project": "https://bookshelves.ink/api/documentation"
-      },
-      "front": {
-        "repository": "https://gitlab.com/ewilan-riviere/bookshelves-front",
-        "project": "https://bookshelves.ink"
-      }
+      "main": "https://bookshelves.ink"
     },
+    "repositories": [
+      {
+        "url": "https://gitlab.com/bookshelves-project/bookshelves-back",
+        "type": "back"
+      },
+      {
+        "url": "https://gitlab.com/bookshelves-project/bookshelves-front",
+        "type": "front"
+      }
+    ],
     "developers": [
       {
         "slug": "ewilan-riviere",
@@ -29,49 +32,76 @@
         "role": "concept"
       }
     ],
-    "skills": ["nuxt-js", "laravel", "tailwind-css", "typescript"]
+    "technologies": [
+      "nuxt-js",
+      "laravel",
+      "tailwind-css",
+      "typescript",
+      "meilisearch"
+    ],
+    "languages": [
+      "php",
+      "vue",
+      "typescript"
+    ],
+    "features": [
+      "dark-mode",
+      "search",
+      "api"
+    ]
   },
   {
     "title": "Markdown Interpreter",
     "slug": "markdown-interpreter",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
     "createdAt": "2020-06-20",
-    "demo": "https://md-interpreter.git-projects.xyz/",
     "links": {
-      "front": {
-        "repository": "https://github.com/ewilan-riviere/markdown-interpreter",
-        "project": "https://md-interpreter.git-projects.xyz"
-      }
+      "main": "https://md-interpreter.git-projects.xyz"
     },
+    "repositories": [
+      {
+        "url": "https://github.com/ewilan-riviere/markdown-interpreter",
+        "type": "main"
+      }
+    ],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
       }
     ],
-    "skills": ["laravel", "tailwind-css", "vue-js", "vite"]
+    "technologies": [
+      "laravel",
+      "tailwind-css",
+      "vue-js",
+      "vite"
+    ]
   },
   {
     "title": "MarkdownThis",
     "slug": "markdown-this",
     "isFavorite": true,
     "isDraft": true,
+    "isOpenSource": true,
     "status": "1",
     "formation": null,
     "context": "personal",
     "createdAt": "2020-11-05",
-    "links": {
-      "back": {
-        "repository": "https://gitlab.com/ewilan-riviere/markdown-this-back"
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/markdown-this-back",
+        "type": "back"
       },
-      "front": {
-        "repository": "https://gitlab.com/ewilan-riviere/markdown-this-front"
+      {
+        "url": "https://gitlab.com/ewilan-riviere/markdown-this-front",
+        "type": "front"
       }
-    },
+    ],
     "developers": [
       {
         "slug": "ewilan-riviere",
@@ -84,81 +114,121 @@
     "slug": "memorandum",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
     "createdAt": "2020-06-27",
-    "demo": "https://memorandum.ewilan-riviere.com/",
     "links": {
-      "front": {
-        "repository": "https://github.com/ewilan-riviere/memorandum",
-        "project": "https://memorandum.ewilan-riviere.com"
-      }
+      "main": "https://memorandum.ewilan-riviere.com"
     },
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/memorandum",
+        "type": "main"
+      }
+    ],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
       }
     ],
-    "skills": ["php", "laravel", "tailwind-css", "vite"]
+    "technologies": [
+      "laravel",
+      "tailwind-css",
+      "vite"
+    ],
+    "languages": [
+      "php",
+      "typescript"
+    ]
   },
   {
     "title": "Portfolio",
     "slug": "portfolio",
     "isFavorite": true,
     "isDraft": false,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
     "createdAt": "2020-05-19",
-    "demo": "https://ewilan-riviere.com/",
     "links": {
-      "back": {
-        "repository": "https://github.com/ewilan-riviere/portfolio-back",
-        "project": "https://ewilan-riviere.com/api/documentation"
-      },
-      "front": {
-        "repository": "https://github.com/ewilan-riviere/portfolio-front",
-        "project": "https://ewilan-riviere.com"
-      }
+      "main": "https://ewilan-riviere.com"
     },
-    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
-    "skills": ["nuxt-js", "tailwind-css", "typescript"]
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/portfolio",
+        "type": "main"
+      }
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ],
+    "technologies": [
+      "nuxt-js",
+      "tailwind-css",
+      "typescript"
+    ],
+    "languages": [
+      "vue",
+      "typescript"
+    ]
   },
   {
     "title": "Roazhon StarBus",
     "slug": "roazhon-star-bus",
     "isFavorite": false,
     "isDraft": true,
+    "isOpenSource": true,
     "status": "1",
     "formation": null,
     "context": "personal",
     "createdAt": "2020-10-24",
     "links": {
-      "front": {
-        "repository": "https://gitlab.com/ewilan-riviere/roazhon-star-bus",
-        "project": "http://roazhon-star-bus.git-projects.xyz"
-      }
+      "main": "http://roazhon-star-bus.git-projects.xyz"
     },
-    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/roazhon-star-bus",
+        "type": "main"
+      }
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ]
   },
   {
     "title": "Skyscale",
     "slug": "skyscale",
     "isFavorite": false,
     "isDraft": true,
+    "isOpenSource": true,
     "status": "3",
     "formation": null,
     "context": "personal",
     "createdAt": "2020-10-30",
-    "demo": "https://skyscale.git-projects.xyz/",
     "links": {
-      "front": {
-        "repository": "https://gitlab.com/ewilan-riviere/skyscale",
-        "project": "https://skyscale.git-projects.xyz"
-      }
+      "main": "https://skyscale.git-projects.xyz"
     },
-    "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    "repositories": [
+      {
+        "url": "https://gitlab.com/ewilan-riviere/skyscale",
+        "type": "main"
+      }
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      }
+    ]
   }
 ]

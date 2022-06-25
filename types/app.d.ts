@@ -9,3 +9,5 @@ declare interface Route {
   paramsList?: Keyable
   queryList?: Keyable
 }
+
+declare type LocaleList = 'en' | 'fr'

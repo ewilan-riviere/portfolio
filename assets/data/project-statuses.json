@@ -1,30 +1,18 @@
 [
   {
-    "name": {
-      "fr": "Concept & prototype",
-      "en": "Concept & prototype"
-    },
+    "slug": "concept",
     "order": "1"
   },
   {
-    "name": {
-      "fr": "Développement",
-      "en": "Development"
-    },
+    "slug": "development",
     "order": "2"
   },
   {
-    "name": {
-      "fr": "Finitions",
-      "en": "Finishes"
-    },
+    "slug": "finish",
     "order": "3"
   },
   {
-    "name": {
-      "fr": "TMA",
-      "en": "TMA"
-    },
+    "slug": "tpam",
     "order": "4"
   }
 ]

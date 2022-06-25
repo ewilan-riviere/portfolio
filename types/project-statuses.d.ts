@@ -1,3 +1,4 @@
 declare interface ProjectStatus {
-  name: string
+  slug: string
+  order: number
 }

@@ -1,6 +1,6 @@
-import { defineStore } from "pinia"
+import { defineStore } from 'pinia'
 
-export const useToastStore = defineStore("toast", {
+export const useToastStore = defineStore('toast', {
   state: () => ({
     toasts: [] as Toast[],
   }),

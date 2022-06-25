@@ -3,10 +3,10 @@ const plugin = require('tailwindcss/plugin')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    'components/**/*.{vue,js}',
+    'components/**/*.{vue,ts,js}',
     'layouts/**/*.vue',
     'pages/**/*.vue',
-    'plugins/**/*.{js,ts}',
+    'plugins/**/*.{js,ts,js}',
     'app.vue'
   ],
   darkMode: 'class',
@@ -54,6 +54,19 @@ module.exports = {
         },
         '.center-x': {
           '@apply absolute left-1/2 -translate-x-1/2': {}
+        },
+        '.text-gray-medium': {
+          '@apply text-gray-500 dark:text-gray-400': {}
+        },
+        '.text-gray-dark': {
+          '@apply text-gray-900 dark:text-gray-100': {}
+        },
+        '.word-wraping': {
+          'text-align': 'justify',
+          '-webkit-hyphens': 'auto',
+          '-moz-hyphens': 'auto',
+          '-ms-hyphens': 'auto',
+          hyphens: 'auto',
         },
         '.debug-screens': {
           '@apply before:bottom-0 before:left-0 before:fixed before:px-1 before:text-sm before:bg-black before:text-white before:shadow-xl before:content-["screen:_"] sm:before:content-["screen:sm"] md:before:content-["screen:md"] lg:before:content-["screen:lg"] xl:before:content-["screen:xl"] 2xl:before:content-["screen:2xl"]':

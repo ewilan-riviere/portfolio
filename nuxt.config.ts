@@ -1,8 +1,6 @@
-import { defineNuxtConfig } from "nuxt"
-// import markdownPlugin from 'vite-plugin-markdown'
-import svgLoader from "vite-svg-loader"
-import markdown from "@dansvel/vite-plugin-markdown"
-import config from "./utils/config"
+import { defineNuxtConfig } from 'nuxt'
+import svgLoader from 'vite-svg-loader'
+import config from './utils/config'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -14,25 +12,25 @@ export default defineNuxtConfig({
     script: config.meta.script,
   },
   modules: [
-    "@nuxtjs/tailwindcss", // https://tailwindcss.nuxtjs.org
-    "@pinia/nuxt", // https://pinia.vuejs.org/ssr/nuxt.html
-    "@vueuse/nuxt", // https://vueuse.org/guide/
-    // 'nuxt-schema-org', // https://github.com/vueuse/schema-org
-    "@intlify/nuxt3", // https://github.com/intlify/nuxt3
+    '@nuxtjs/tailwindcss', // https://tailwindcss.nuxtjs.org
+    '@pinia/nuxt', // https://pinia.vuejs.org/ssr/nuxt.html
+    '@vueuse/nuxt', // https://vueuse.org/guide/
+    'nuxt-schema-org', // https://github.com/vueuse/schema-org
+    // '@intlify/nuxt3', // https://github.com/intlify/nuxt3
+    // '@nuxtjs/i18n', // https://github.com/nuxt-community/i18n-module/tree/next
+    '@nuxt/content', // https://content.nuxtjs.org/get-started
+    // 'nuxt-icons' // https://github.com/gitFoxCode/nuxt-icons
   ],
   tailwindcss: config.modules.tailwindcss,
   vueuse: config.modules.vueuse,
-  intlify: config.modules.intlify,
-  // schemaOrg: config.modules.schemaOrg,
+  // intlify: config.modules.intlify,
+  schemaOrg: config.modules.schemaOrg,
+  content: config.modules.content,
+  // i18n: config.modules.i18n,
   // http://v3.nuxtjs.org/guide/features/runtime-config
   runtimeConfig: {
     ...config.runtimeConfigPrivate,
     public: config.runtimeConfigPublic,
-    // apiKey: process.env.API_KEY,
-    // public: {
-    //   baseUrl: process.env.BASE_URL ?? "http://localhost:3000",
-    //   apiUrl: process.env.API_URL ?? "http://app.toolbelt.test",
-    // },
   },
   typescript: {
     strict: true, // for pinia
@@ -41,9 +39,12 @@ export default defineNuxtConfig({
   // https://v3.nuxtjs.org/api/configuration/nuxt.config#vite
   vite: {
     plugins: [
-      // markdownPlugin(),
-      markdown({}),
       svgLoader(),
     ],
+    resolve: {
+      alias: {
+        // '@': pathSrc,
+      },
+    },
   },
 })

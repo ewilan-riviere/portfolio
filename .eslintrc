@@ -4,7 +4,6 @@
     "@nuxtjs/eslint-config-typescript",
     "eslint:recommended",
     "plugin:vue/vue3-recommended"
-    // "prettier"
   ],
   "rules": {
     "no-undef": "off",
@@ -27,6 +26,8 @@
     "vue/singleline-html-element-content-newline": "off",
     "func-call-spacing": "off",
     "space-before-function-paren": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "vue/html-indent": "off",
+    "vue/html-closing-bracket-newline": "off"
   }
 }

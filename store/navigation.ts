@@ -1,25 +1,25 @@
-import { defineStore } from "pinia"
+import { defineStore } from 'pinia'
 
-export const useNavigationStore = defineStore("navigation", {
+export const useNavigationStore = defineStore('navigation', {
   state: () => ({
     sidebar: false,
     main: [
       {
-        label: "books",
+        label: 'books',
         route: {
-          name: "index",
+          name: 'index',
         },
       },
       {
-        label: "series",
+        label: 'series',
         route: {
-          name: "index",
+          name: 'index',
         },
       },
       {
-        label: "authors",
+        label: 'authors',
         route: {
-          name: "index",
+          name: 'index',
         },
       },
     ] as RouteLink[],

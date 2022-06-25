@@ -215,7 +215,6 @@
     "blockquote_who": null,
     "isDisplay": false
   },
-
   {
     "title": "Dart",
     "slug": "dart",
@@ -269,5 +268,23 @@
     "blockquote_text": null,
     "blockquote_who": null,
     "isDisplay": false
+  },
+  {
+    "title": "Strapi",
+    "slug": "strapi",
+    "icon": "blade",
+    "version": "4.2.0",
+    "link": "https://strapi.io",
+    "isFree": true,
+    "color": "#2F2E8B",
+    "isDark": false,
+    "subtitle": "Open source CMS headless",
+    "details": null,
+    "is_favorite": true,
+    "rating": 4,
+    "image": null,
+    "blockquote_text": null,
+    "blockquote_who": null,
+    "isDisplay": true
   }
 ]
