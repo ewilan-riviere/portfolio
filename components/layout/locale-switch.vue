@@ -15,7 +15,7 @@ onMounted(() => {
         :title="$t('app.locale-switch')">
         <div class="relative group">
           <div
-            class="absolute -top-2 -right-2 bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-0.5 rounded-full z-10 bg-opacity-50 w-5 h-5 flex"
+            class="absolute -top-2 -right-2 bg-gray-100 dark:bg-gray-800 opacity-70 text-black dark:text-white p-0.5 rounded-md z-10 w-5 h-5 flex"
             style="font-size: 0.55rem;">
             <div class="m-auto uppercase">
               {{ i18n.currentLocale }}
