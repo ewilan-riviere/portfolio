@@ -83,12 +83,30 @@ const submit = async () => {
 <template>
   <div class="relative">
     <div aria-hidden="true" class="hidden sm:block">
-      <svg class="absolute -ml-3 top-8 left-1/2 hidden lg:block" width="404" height="392" fill="none"
-        viewBox="0 0 404 392">
+      <svg
+        class="absolute -ml-3 top-8 left-1/2 hidden lg:block"
+        width="404"
+        height="392"
+        fill="none"
+        viewBox="0 0 404 392"
+      >
         <defs>
-          <pattern id="8228f071-bcee-4ec8-905a-2a059a2cc4fb" x="0" y="0" width="20" height="20"
-            patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+          <pattern
+            id="8228f071-bcee-4ec8-905a-2a059a2cc4fb"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="4"
+              height="4"
+              class="text-gray-200"
+              fill="currentColor"
+            />
           </pattern>
         </defs>
         <rect width="404" height="392" />
@@ -96,19 +114,36 @@ const submit = async () => {
     </div>
     <div class="max-w-3xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
       <div
-        class="medium-container relative px-6 py-10 overflow-hidden bg-purple-500 dark:bg-purple-800 shadow rounded-2xl sm:px-12 sm:py-20">
-        <div aria-hidden="true" class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
-          <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice"
-            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1463 360">
-            <path class="text-purple-400 dark:text-purple-900 text-opacity-40" fill="currentColor"
-              d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z" />
-            <path class="text-purple-600 dark:text-purple-700 text-opacity-40" fill="currentColor"
-              d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z" />
+        class="medium-container relative px-6 py-10 overflow-hidden bg-purple-500 dark:bg-purple-800 shadow rounded-2xl sm:px-12 sm:py-20"
+      >
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0"
+        >
+          <svg
+            class="absolute inset-0 w-full h-full"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 1463 360"
+          >
+            <path
+              class="text-purple-400 dark:text-purple-900 text-opacity-40"
+              fill="currentColor"
+              d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
+            />
+            <path
+              class="text-purple-600 dark:text-purple-700 text-opacity-40"
+              fill="currentColor"
+              d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
+            />
           </svg>
         </div>
         <div class="relative">
           <div class="sm:text-center">
-            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <h2
+              class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+            >
               {{ $t('contact.title') }}
             </h2>
             <p class="max-w-2xl mx-auto mt-6 text-lg text-purple-100">
@@ -117,22 +152,54 @@ const submit = async () => {
           </div>
           <div class="max-w-xl pt-10 mx-auto">
             <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">
-              <field-text v-model="form.name" name="name" autocomplete="name" :maxlength="100"
-                :placeholder="`${$t('contact.form.name')}*`" required />
-              <field-text v-model="form.email" name="email" type="email" autocomplete="email" :maxlength="100"
-                :placeholder="`${$t('contact.form.email')}*`" required />
-              <field-text v-model="form.message" name="message" autocomplete="message" :minlength="minChar"
-                :maxlength="1500" :placeholder="`${$t('contact.form.message')}*`" multiline required>
+              <field-text
+                v-model="form.name"
+                name="name"
+                autocomplete="name"
+                :maxlength="100"
+                :placeholder="`${$t('contact.form.name')}*`"
+                required
+              />
+              <field-text
+                v-model="form.email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                :maxlength="100"
+                :placeholder="`${$t('contact.form.email')}*`"
+                required
+              />
+              <field-text
+                v-model="form.message"
+                name="message"
+                autocomplete="message"
+                :minlength="minChar"
+                :maxlength="1500"
+                :placeholder="`${$t('contact.form.message')}*`"
+                multiline
+                required
+              >
                 <div class="flex justify-between text-white">
-                  <span>Min. {{ minChar }} {{ $t('contact.form.characters') }}</span>
-                  <span>{{ $t('contact.form.currently') }} {{ form.message?.length }}/1500</span>
+                  <span
+                    >Min. {{ minChar }}
+                    {{ $t('contact.form.characters') }}</span
+                  >
+                  <span
+                    >{{ $t('contact.form.currently') }}
+                    {{ form.message?.length }}/1500</span
+                  >
                 </div>
               </field-text>
               <div :class="{ hidden: !isDev }">
                 <div class="relative flex items-start">
                   <div class="flex items-center h-5">
-                    <input id="conditions" v-model="form.honeypot" name="conditions" type="checkbox"
-                      class="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500" />
+                    <input
+                      id="conditions"
+                      v-model="form.honeypot"
+                      name="conditions"
+                      type="checkbox"
+                      class="w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                    />
                   </div>
                   <div class="ml-3 text-sm">
                     <label for="conditions" class="font-medium text-gray-300">
@@ -144,7 +211,11 @@ const submit = async () => {
               <div class="flex justify-between space-x-1 w-max">
                 <app-button type="submit" color="secondary">
                   <span class="flex items-center space-x-2">
-                    <svg-icon v-if="!loading" name="notification-airplane" class="w-4 h-4" />
+                    <svg-icon
+                      v-if="!loading"
+                      name="notification-airplane"
+                      class="w-4 h-4"
+                    />
                     <app-loading v-else class="w-4 h-4" />
                     <span>
                       {{ $t('contact.form.send') }}
