@@ -3,7 +3,6 @@ import AppDialog from '@/components/app/dialog.vue'
 
 const router = useRouter()
 const isOpen = ref(false)
-const { $toast } = useNuxtApp()
 
 const openHelp = (status: boolean) => {
   isOpen.value = status
@@ -18,14 +17,17 @@ const getRoutes = () => {
         path: route.path,
       })
     })
+    // eslint-disable-next-line no-console
     console.log('------------')
     // routes = routes.filter((e) => e.name.includes('__en'))
     // routes = routes.sort((a, b) =>
     //   a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
     // )
     routes.forEach((route) => {
+      // eslint-disable-next-line no-console
       console.log(`${route.name.replace('___en', '')} => ${route.path}`)
     })
+    // eslint-disable-next-line no-console
     console.log('------------')
     // console.log('i18n is enabled!')
     // console.log('You have to set your routes with $localePath().')
@@ -44,7 +46,6 @@ const links = [
   {
     label: 'Routes',
     description: 'Print all routes in console',
-    method: getRoutes,
     icon: 'router',
   },
 ]
@@ -74,9 +75,7 @@ const links = [
         <ul role="list" class="mt-3 grid grid-cols-1 space-y-4">
           <li v-for="(item, id) in links" :key="id"
             class="rounded-md border border-gray-200 shadow-sm transition-colors duration-75 hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-700">
-            <component :is="item.method ? 'button' : 'a'" :href="item.href" target="_blank" rel="noopener noreferrer"
-              type="button" class="col-span-1 flex w-full text-left"
-              @click="item.method ? item.method() : (isOpen = false)" @click.native="isOpen = false">
+            <button type="button" class="col-span-1 flex w-full text-left" @click="getRoutes">
               <div class="items-center justify-between truncate rounded-r-md">
                 <div class="flex-1 truncate p-2 text-sm">
                   <div class="font-medium text-gray-900 dark:text-gray-100">
@@ -85,7 +84,7 @@ const links = [
                   <p class="text-gray-500">{{ item.description }}</p>
                 </div>
               </div>
-            </component>
+            </button>
           </li>
         </ul>
       </div>
