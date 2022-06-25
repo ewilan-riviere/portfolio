@@ -13,6 +13,6 @@ status.value = projectStatuses[props.project.status ? props.project.status - 1 :
 
 <template>
   <div v-if="status">
-    {{ $t(`project-statuses.${status.slug}`) }} ({{ status.order }}/4)
+    {{ $t(`project.statuses.${status.slug}`) }} ({{ status.order }}/4)
   </div>
 </template>

@@ -20,7 +20,7 @@ const getDev = (developer: DeveloperLight) => {
         <app-img :src="getDev(developer)?.avatar" class="rounded-full w-5 h-5" />
         <div>{{ getDev(developer)?.name }}</div>
       </a>
-      <div>({{ $t(`developer-role.${developer.role}`) }})</div>
+      <div>({{ $t(`project.role.${developer.role}`) }})</div>
     </div>
   </div>
 </template>
