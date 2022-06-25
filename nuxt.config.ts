@@ -1,6 +1,10 @@
+
+import { fileURLToPath, URL } from 'url'
 import { defineNuxtConfig } from 'nuxt'
 import svgLoader from 'vite-svg-loader'
 import config from './utils/config'
+
+const pathSrc = fileURLToPath(new URL('./assets', import.meta.url))
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -39,23 +43,12 @@ export default defineNuxtConfig({
   // https://v3.nuxtjs.org/api/configuration/nuxt.config#vite
   vite: {
     plugins: [
-      svgLoader({
-        svgo: true,
-        svgoConfig: {
-          plugins: [
-            {
-              name: 'preset-default',
-              params: {
-                overrides: {
-                  inlineStyles: {
-                    onlyMatchedOnce: false,
-                  },
-                },
-              },
-            },
-          ],
-        },
-      }),
+      svgLoader(),
     ],
+    resolve: {
+      alias: {
+        // '@': pathSrc,
+      },
+    },
   },
 })

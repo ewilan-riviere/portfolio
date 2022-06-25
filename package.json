@@ -17,10 +17,8 @@
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/lozad": "^1.16.1",
-    "@types/markdown-it": "^12.2.3",
     "eslint": "^8.17.0",
     "nuxt": "3.0.0-rc.4",
-    "nuxt-icons": "^2.0.1",
     "nuxt-schema-org": "^0.6.2",
     "tailwindcss": "^3.1.2",
     "typescript": "^4.7.3",
@@ -31,10 +29,9 @@
     "@vueuse/core": "^8.7.5",
     "@vueuse/nuxt": "^8.7.5",
     "lozad": "^1.16.0",
-    "markdown-it": "^13.0.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.14",
     "swiper": "^8.2.4",
-    "vite-svg-loader": "^3.3.0"
+    "vite-svg-loader": "^3.4.0"
   }
 }
