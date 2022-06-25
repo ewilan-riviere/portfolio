@@ -5,9 +5,9 @@ const props = defineProps<{
 
 const currentIcon = computed(() =>
   defineAsyncComponent({
-    // loader: () => import(`../assets/icons/${props.name}.svg`),
+    loader: () => import(`../assets/icons/${props.name}.svg`),
     // loading: https://github.com/jpkleemans/vite-svg-loader/issues/47
-    loader: () => import('../assets/icons/' + props.name + '.svg?component'),
+    // loader: () => import('../assets/icons/' + props.name + '.svg?component'),
     loadingComponent: {
       template: '<span></span>'
     },

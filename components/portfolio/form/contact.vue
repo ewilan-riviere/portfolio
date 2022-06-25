@@ -123,7 +123,7 @@ const submit = async () => {
                 :placeholder="`Email*`" required />
               <field-text v-model="form.message" name="message" autocomplete="message" :minlength="minChar"
                 :maxlength="1500" :placeholder="`Message*`" multiline required>
-                <div class="flex justify-between">
+                <div class="flex justify-between text-white">
                   <span>Min. {{ minChar }} characters</span>
                   <span>Currently {{ form.message?.length }}/1500</span>
                 </div>
@@ -144,7 +144,7 @@ const submit = async () => {
               <div class="flex justify-between space-x-1 w-max">
                 <app-button type="submit" color="secondary">
                   <span class="flex items-center space-x-2">
-                    <svg-icon v-if="!loading" name="notification/airplane" class="w-4 h-4" />
+                    <svg-icon v-if="!loading" name="notification-airplane" class="w-4 h-4" />
                     <app-loading v-else class="w-4 h-4" />
                     <span> Send </span>
                   </span>

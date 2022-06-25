@@ -22,6 +22,7 @@ onMounted(() => {
               </div>
             </div>
             <svg-icon name="locale" class="w-6 h-6" />
+            <!-- <nuxt-icon name="locale" class="text-xl" fill /> -->
           </div>
         </template>
         <template #content>

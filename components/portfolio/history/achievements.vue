@@ -52,7 +52,7 @@ const toggle = () => {
           <app-button class="mx-auto" @click="toggle">
             <div class="flex items-center space-x-2">
               <span>Open history</span>
-              <svg-icon name="arrow/chevron-right" :class="opened ? 'rotate-45' : ''"
+              <svg-icon name="arrow-chevron-right" :class="opened ? 'rotate-45' : ''"
                 class="w-5 h-5 transition-transform duration-75" />
             </div>
           </app-button>

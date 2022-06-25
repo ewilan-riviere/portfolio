@@ -16,7 +16,7 @@ const { features } = useMainStore()
               class="text-center sm:flex sm:text-left lg:block lg:text-center">
               <div class="sm:flex-shrink-0">
                 <div class="flow-root">
-                  <svg-icon class="w-16 h-16 mx-auto" :name="`features/${feature.slug}`" alt="" />
+                  <svg-icon class="w-16 h-16 mx-auto" :name="`feature-${feature.slug}`" alt="" />
                 </div>
               </div>
               <div class="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">

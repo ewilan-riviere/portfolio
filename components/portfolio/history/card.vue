@@ -11,15 +11,20 @@ defineProps<{
     <div
       class="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-purple-500 bg-gray-100 dark:bg-gray-800 rounded-full m-auto lg:mr-6">
       <div class="h-16 w-16 flex">
-        <svg-icon :name="`history/${historyItem.slug}`" class="formation-logo mx-auto h-16 w-16 text-purple-600"
+        <svg-icon :name="`history-${historyItem.slug}`" class="formation-logo mx-auto h-16 w-16 text-purple-600"
           loading="lazy" />
       </div>
     </div>
     <slot />
     <div class="flex-grow pt-10 pb-6 pl-6">
       <span class="block font-body font-bold text-gray-300">
-        {{ date(historyItem.dateBegin) }} -
-        {{ date(historyItem.dateEnd) }}</span>
+        <span v-if="historyItem.dateBegin">
+          {{ date(historyItem.dateBegin) }}
+        </span>
+        <span v-if="historyItem.dateEnd">
+          - {{ date(historyItem.dateEnd) }}
+        </span>
+      </span>
       <span class="pt-1">
         <h3 class="font-header text-xl font-bold uppercase text-purple-600">
           {{ historyItem.title }}

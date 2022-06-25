@@ -12,7 +12,7 @@ const socialItems = about.socialItems
       <span class="sr-only">
         {{ item.title }}
       </span>
-      <svg-icon :name="`social/${item.slug}`" class="w-6 h-6" />
+      <svg-icon :name="`social-${item.slug}`" class="w-6 h-6" />
     </a>
   </div>
 </template>
