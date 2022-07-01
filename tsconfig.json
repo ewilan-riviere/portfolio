@@ -1,9 +1,4 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "types": [
-      "@intlify/vite-plugin-vue-i18n/client"
-    ]
-  }
+  "extends": "./.nuxt/tsconfig.json"
 }
