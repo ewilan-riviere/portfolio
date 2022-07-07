@@ -15,7 +15,10 @@ export const useMetadata = (meta?: HeadMeta) => {
   const appName = 'Ewilan Rivière - Portfolio'
   const appDescription = 'Portfolio of Ewilan Rivière, developer'
 
-  const title = appName
+  let title = appName
+  if (meta?.title) {
+    title += `${meta.title} · ${appName}`
+  }
 
   let description = appDescription
   if (meta?.description) {
@@ -42,7 +45,7 @@ export const useMetadata = (meta?: HeadMeta) => {
       },
       {
         name: 'theme-color',
-        content: isDarkMode ? '#00aba9' : '#ffffff',
+        content: isDarkMode ? '#6c63ff' : '#564fcc',
       },
       {
         hid: 'og:url',

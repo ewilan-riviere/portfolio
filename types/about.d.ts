@@ -1,5 +1,5 @@
 interface SocialItem {
-  title: string
+  name: string
   slug: string
   color: string
   link: string
