@@ -1,6 +1,14 @@
 {
   "name": "Ewilan Rivière",
   "professionalTitle": "about.professionalTitle",
+  "hobbies": [
+    "develop",
+    "read",
+    "paint",
+    "podcasts",
+    "video-games",
+    "tv-show"
+  ],
   "socialItems": [
     {
       "name": "GitHub",

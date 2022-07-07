@@ -19,4 +19,5 @@
     "locales"
   ],
   "i18n-ally.keystyle": "nested",
+  "npm.packageManager": "pnpm"
 }

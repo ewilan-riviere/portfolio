@@ -17,6 +17,14 @@
     },
     "locale-switch": "Switch locale"
   },
+  "hobbies": {
+    "develop": "Develop my web projects",
+    "read": "Read some books like fantasy or science-fiction",
+    "paint": "Paint Warhammers",
+    "podcasts": "Listen to podcasts",
+    "video-games": "Play video games & modding",
+    "tv-show": "Watch TV shows"
+  },
   "features": {
     "code": {
       "title": "Developement",

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useI18nStore } from '~~/store/i18n'
+import { useMainStore } from '~~/store/main'
 
 const i18n = useI18nStore()
+const { about } = useMainStore()
 
 const content = ref<Guide>()
 const fetchContent = async () => {
@@ -10,6 +12,8 @@ const fetchContent = async () => {
     .findOne()
 }
 fetchContent()
+
+const hobbiesOpened = ref(false)
 
 watch(
   () => i18n.currentLocale,
@@ -92,6 +96,16 @@ watch(
                 <p>No content found.</p>
               </template>
             </ContentRenderer>
+            <app-button @click="hobbiesOpened = !hobbiesOpened">And my hobbies?</app-button>
+            <app-dialog :open="hobbiesOpened" @close="hobbiesOpened = false">
+              <div class="p-5">
+                <ul class="list-outside list-disc">
+                  <li v-for="hobby in about.hobbies" :key="hobby">
+                    {{ $t(`hobbies.${hobby}`) }}
+                  </li>
+                </ul>
+              </div>
+            </app-dialog>
           </div>
         </div>
       </div>

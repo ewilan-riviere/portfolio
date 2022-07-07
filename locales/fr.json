@@ -4,7 +4,7 @@
     "hello": "Bonjour, {name}!"
   },
   "about": {
-    "professionalTitle": "Développeuse designer d'applications"
+    "professionalTitle": "Conceptrice développeuse d'applications"
   },
   "title": "Titre",
   "hero": {
@@ -16,6 +16,14 @@
       "dark": "Passer au mode sombre"
     },
     "locale-switch": "Changer de langue"
+  },
+  "hobbies": {
+    "develop": "Développer mes projets web",
+    "read": "Lire des livres comme de la fantas ou de la science-fiction",
+    "paint": "Peindre des Warhammers",
+    "podcasts": "Écouter des podcasts",
+    "video-games": "Jouer aux jeux vidéo et les modder",
+    "tv-show": "Regarder des séries"
   },
   "features": {
     "code": {

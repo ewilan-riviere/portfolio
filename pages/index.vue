@@ -8,7 +8,7 @@ useMetadata()
   <div>
     <portfolio-hero />
     <portfolio-about />
-    <portfolio-technologies class="mt-3 mb-10" />
+    <portfolio-technologies-bg class="mt-3 mb-10" />
     <portfolio-features />
     <portfolio-project class="mt-16" />
     <portfolio-history class="mt-16" />

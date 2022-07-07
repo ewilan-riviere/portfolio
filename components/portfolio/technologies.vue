@@ -36,8 +36,11 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
           800: {
             slidesPerView: 3,
           },
-          1100: {
+          900: {
             slidesPerView: 4,
+          },
+          1100: {
+            slidesPerView: 5,
           },
         }"
         @swiper="setControlledSwiper"

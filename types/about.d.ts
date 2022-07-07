@@ -4,12 +4,12 @@ interface SocialItem {
   color: string
   link: string
 }
-
 declare interface About {
   name: string
   professionalTitle: string
   title: string
   subtitle: string
   text: string
+  hobbies: string[]
   socialItems: SocialItem[]
 }
