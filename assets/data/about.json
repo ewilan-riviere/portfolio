@@ -14,43 +14,50 @@
       "name": "GitHub",
       "slug": "github",
       "color": "#181717",
-      "link": "https://github.com/ewilan-riviere"
+      "link": "https://github.com/ewilan-riviere",
+      "primary": true
     },
     {
       "name": "GitLab",
       "slug": "gitlab",
       "color": "#FC6D26",
-      "link": "https://gitlab.com/ewilan-riviere"
+      "link": "https://gitlab.com/ewilan-riviere",
+      "primary": true
     },
     {
       "name": "Stack Overflow",
       "slug": "stackoverflow",
       "color": "#F58025",
-      "link": "https://stackoverflow.com/users/11008206/ewilan-r"
+      "link": "https://stackoverflow.com/users/11008206/ewilan-r",
+      "primary": true
     },
     {
       "name": "Twitter",
       "slug": "twitter",
       "color": "#1DA1F2",
-      "link": "https://twitter.com/ewilanriviere"
-    },
-    {
-      "name": "LinkedIn",
-      "slug": "linkedin",
-      "color": "#0A66C2",
-      "link": "https://www.linkedin.com/in/ewilan-riviere"
+      "link": "https://twitter.com/ewilanriviere",
+      "primary": true
     },
     {
       "name": "Email",
       "slug": "email",
       "color": "#EA4335",
-      "link": "mailto:contact@ewilan-riviere.com"
+      "link": "mailto:contact@ewilan-riviere.com",
+      "primary": true
+    },
+    {
+      "name": "LinkedIn",
+      "slug": "linkedin",
+      "color": "#0A66C2",
+      "link": "https://www.linkedin.com/in/ewilan-riviere",
+      "primary": false
     },
     {
       "name": "Curriculum Vitae",
       "slug": "resume",
       "color": "#6c63ff",
-      "link": "/ewilan-riviere-resume.pdf"
+      "link": "/ewilan-riviere-resume.pdf",
+      "primary": false
     }
   ]
 }

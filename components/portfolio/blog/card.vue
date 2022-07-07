@@ -11,12 +11,15 @@ const readTime = computed(() => {
 
   return Math.round(time ?? 0)
 })
+const slug = computed(() => props.guide._path.replace('/blog/', ''))
 </script>
 
 <template>
-  <div
+  <nuxt-link
+    :to="{name:'blog-slug', params: { slug: slug}}"
     class="flex flex-col rounded-lg shadow overflow-hidden transform duration-500 hover:-translate-y-2 hover:shadow-lg group cursor-pointer relative"
   >
+    {{ guide.slug }}
     <div class="flex-shrink-0">
       <app-img class="h-48 w-full object-cover" :src="guide.picture" alt="" />
     </div>
@@ -29,15 +32,7 @@ const readTime = computed(() => {
             {{ guide.category }}
           </a>
         </p>
-        <nuxt-link
-          :to="{
-            name: 'slug',
-            params: {
-              slug: guide._path.substring(1),
-            },
-          }"
-          class="block mt-2"
-        >
+        <div class="block mt-2">
           <p
             class="text-xl font-semibold text-gray-dark border-b-2 border-transparent group-hover:border-primary-400 transition-color duration-100 w-max"
           >
@@ -46,7 +41,7 @@ const readTime = computed(() => {
           <p class="mt-3 text-base text-gray-medium">
             {{ guide.description }}
           </p>
-        </nuxt-link>
+        </div>
       </div>
       <div class="mt-6">
         <p class="text-sm font-medium text-gray-dark space-x-1">
@@ -72,5 +67,5 @@ const readTime = computed(() => {
         </div>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>

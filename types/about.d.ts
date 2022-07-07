@@ -3,7 +3,9 @@ interface SocialItem {
   slug: string
   color: string
   link: string
+  primary: boolean
 }
+
 declare interface About {
   name: string
   professionalTitle: string

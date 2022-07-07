@@ -23,6 +23,7 @@ declare interface Guide {
   _path: string
   _locale: string
   _draft: boolean
+  slug: string
   body: {
     children: any[]
     toc: {
