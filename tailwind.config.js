@@ -36,7 +36,7 @@ module.exports = {
         },
       },
       animation: {
-        life: 'life 1900ms linear forwards',
+        life: 'life 3900ms linear forwards',
       },
       backgroundImage: {
         'forest-swamp': 'url(\'/background/forest-swamp.webp\')',
