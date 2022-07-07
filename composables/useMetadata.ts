@@ -15,7 +15,10 @@ export const useMetadata = (meta?: HeadMeta) => {
   const appName = 'Ewilan Rivière - Portfolio'
   const appDescription = 'Portfolio of Ewilan Rivière, developer'
 
-  const title = appName
+  let title = appName
+  if (meta?.title) {
+    title += `${meta.title} · ${appName}`
+  }
 
   let description = appDescription
   if (meta?.description) {
