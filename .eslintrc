@@ -20,6 +20,10 @@
         "avoidEscape": true
       }
     ],
+    "semi": [
+      "error",
+      "never"
+    ],
     "comma-dangle": "off",
     "vue/html-self-closing": "off",
     "vue/max-attributes-per-line": "warn",
@@ -27,7 +31,6 @@
     "func-call-spacing": "off",
     "space-before-function-paren": "off",
     "arrow-parens": "off",
-    "vue/html-indent": "off",
     "vue/html-closing-bracket-newline": "off",
     "object-property-newline": "warn"
   }

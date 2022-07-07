@@ -16,6 +16,19 @@ module.exports = {
       center: true
     },
     extend: {
+      colors: {
+        primary: {
+          100: '#e2e0ff',
+          200: '#c4c1ff',
+          300: '#a7a1ff',
+          400: '#8982ff',
+          500: '#6c63ff',
+          600: '#564fcc',
+          700: '#413b99',
+          800: '#2b2866',
+          900: '#161433',
+        },
+      },
       backgroundImage: {
         'forest-swamp': 'url(\'/background/forest-swamp.webp\')',
         'jungle-forest': 'url(\'/background/jungle-forest.webp\')',
