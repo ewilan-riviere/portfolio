@@ -19,7 +19,7 @@ defineProps<{
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <h2
         v-if="title"
-        class="text-center font-header text-4xl font-morpheus text-purple-600 sm:text-5xl lg:text-6xl"
+        class="text-center font-header text-4xl font-morpheus text-primary-600 sm:text-5xl lg:text-6xl"
       >
         {{ title }}
       </h2>

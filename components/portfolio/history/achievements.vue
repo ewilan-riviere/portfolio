@@ -42,12 +42,12 @@ const toggle = () => {
             <div>
               <svg-icon
                 :name="`achievement-${achievement.slug}`"
-                class="mx-auto h-12 w-auto md:h-20 text-purple-600"
+                class="mx-auto h-12 w-auto md:h-20 text-primary-600"
               />
             </div>
             <div class="pt-2 md:pl-5 md:pt-0 w-full">
               <h1
-                class="font-body text-2xl font-bold text-purple-600 md:text-4xl"
+                class="font-body text-2xl font-bold text-primary-600 md:text-4xl"
               >
                 {{ achievement.value }}
               </h1>

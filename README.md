@@ -46,15 +46,6 @@ pnpm preview
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
 
-## Links
-
-- <https://atom.redpixelthemes.com>
-- <https://redpixelthemes.com/templates>
-- <https://treact.owaiskhan.me>
-- <https://tailwind-cards.netlify.app>
-- <https://kitwind.io/products/kometa/components>
-- <https://github.com/Atinux/content-wind>
-
 ## ESLint format
 
 - <https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3>

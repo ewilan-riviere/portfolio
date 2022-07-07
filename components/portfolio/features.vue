@@ -31,7 +31,7 @@ const { features } = useMainStore()
                   {{ $t(`features.${feature.slug}.title`) }}
                 </h3>
                 <p class="mt-2 text-sm text-gray-medium">
-                  {{ $t(`features.${feature.slug}.text`) }}}
+                  {{ $t(`features.${feature.slug}.text`) }}
                 </p>
               </div>
             </div>

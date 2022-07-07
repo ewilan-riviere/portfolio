@@ -5,7 +5,6 @@ const build = {
       'postcss-nested': false,
     },
   },
-  transpile: ['vue-i18n'],
 }
 
 export default build

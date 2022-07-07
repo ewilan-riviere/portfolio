@@ -72,7 +72,7 @@ const scrollEnabled = () => {
       <span
         class="hidden md:inline-block md:h-screen md:align-middle"
         aria-hidden="true"
-        >&#8203;</span
+      >&#8203;</span
       >
 
       <Transition>
@@ -81,13 +81,13 @@ const scrollEnabled = () => {
           class="fixed inset-0 z-50 overflow-y-auto scrollbar-thin"
         >
           <div
-            class="md:min-h-32 block min-h-screen items-end justify-center p-0 text-center"
+            class="sm:min-h-32 block min-h-screen items-end justify-center p-0 text-center"
           >
             <!-- This element is to trick the browser into centering the modal contents. -->
             <span
               class="hidden md:inline-block md:h-screen md:align-middle"
               aria-hidden="true"
-              >&#8203;</span
+            >&#8203;</span
             >
 
             <button
@@ -109,14 +109,14 @@ const scrollEnabled = () => {
             </button>
 
             <Transition>
-              <dialog
+              <div
                 v-if="modal"
                 ref="target"
                 class="inline-block min-h-screen w-full transform overflow-hidden bg-white text-left align-middle shadow-xl transition-all dark:bg-gray-800 dark:text-gray-100 md:min-h-full md:rounded-lg"
                 :class="`dialog-${size}`"
               >
                 <slot />
-              </dialog>
+              </div>
             </Transition>
           </div>
         </div>

@@ -1,7 +1,7 @@
 {
   "[vue]": {
-    // "editor.defaultFormatter": "Vue.volar",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "Vue.volar",
+    "editor.formatOnSave": false
   },
   "[ts]": {
     // "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -11,7 +11,10 @@
     // "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  // "prettier.enable": false,
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
   "i18n-ally.localesPaths": [
     "locales"
   ],

@@ -37,7 +37,7 @@ const toggle = (open: boolean) => {
                     />
                   </div>
                   <div
-                    class="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-purple-500 rounded-full sm:mt-0 title-font top-1/2"
+                    class="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-primary-500 rounded-full sm:mt-0 title-font top-1/2"
                   >
                     {{ id + 1 }}
                   </div>

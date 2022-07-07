@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Navigation, Pagination, Controller, Autoplay } from 'swiper'
+import { Navigation, Pagination, Controller } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Swiper as SwiperInterface } from 'swiper/types'
 
@@ -20,7 +20,7 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
   <div class="technologies">
     <client-only>
       <swiper
-        :modules="[Navigation, Pagination, Controller, Autoplay]"
+        :modules="[Navigation, Pagination, Controller]"
         :controller="{ control: controlledSwiper }"
         :slides-per-view="1"
         :space-between="25"
@@ -28,7 +28,6 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
         grab-cursor
         :pagination="{ clickable: true }"
         :scrollbar="{ draggable: true }"
-        loop
         :slides-per-group="3"
         :breakpoints="{
           600: {
@@ -41,7 +40,6 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
             slidesPerView: 4,
           },
         }"
-        autoplay
         @swiper="setControlledSwiper"
       >
         <swiper-slide v-for="technology in technologies" :key="technology.slug">
