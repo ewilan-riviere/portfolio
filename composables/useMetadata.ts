@@ -42,7 +42,7 @@ export const useMetadata = (meta?: HeadMeta) => {
       },
       {
         name: 'theme-color',
-        content: isDarkMode ? '#00aba9' : '#ffffff',
+        content: isDarkMode ? '#6c63ff' : '#564fcc',
       },
       {
         hid: 'og:url',
