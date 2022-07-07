@@ -29,6 +29,15 @@ module.exports = {
           900: '#161433',
         },
       },
+      keyframes: {
+        life: {
+          '0%': { width: '100%' },
+          '100%': { width: '0%' },
+        },
+      },
+      animation: {
+        life: 'life 1900ms linear forwards',
+      },
       backgroundImage: {
         'forest-swamp': 'url(\'/background/forest-swamp.webp\')',
         'jungle-forest': 'url(\'/background/jungle-forest.webp\')',
