@@ -24,7 +24,7 @@ const readTime = computed(() => {
       class="flex-1 bg-white dark:bg-gray-800 p-6 flex flex-col justify-between"
     >
       <div class="flex-1">
-        <p class="text-sm font-medium text-purple-600 dark:text-purple-400">
+        <p class="text-sm font-medium text-primary-600 dark:text-primary-400">
           <a href="#" class="hover:underline">
             {{ guide.category }}
           </a>
@@ -39,7 +39,7 @@ const readTime = computed(() => {
           class="block mt-2"
         >
           <p
-            class="text-xl font-semibold text-gray-dark border-b-2 border-transparent group-hover:border-purple-400 transition-color duration-100 w-max"
+            class="text-xl font-semibold text-gray-dark border-b-2 border-transparent group-hover:border-primary-400 transition-color duration-100 w-max"
           >
             {{ guide.title }}
           </p>

@@ -125,18 +125,18 @@ onMounted(() => {
 
 .btn {
   @apply inline-flex items-center rounded-md border text-base font-semibold transition-colors duration-100;
-  @apply focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2;
   @apply dark:focus:ring-gray-900 dark:focus:ring-offset-gray-800;
 }
 .secondary {
-  @apply border-transparent bg-purple-100 text-purple-600 hover:bg-purple-200 hover:text-purple-600;
-  @apply dark:bg-purple-200 dark:text-gray-800 dark:hover:bg-purple-300;
+  @apply border-transparent bg-primary-100 text-primary-600 hover:bg-primary-200 hover:text-primary-600;
+  @apply dark:bg-primary-200 dark:text-gray-800 dark:hover:bg-primary-300;
 }
 .primary {
-  @apply border-transparent bg-purple-600 text-white shadow-sm hover:bg-purple-500;
+  @apply border-transparent bg-primary-600 text-white shadow-sm hover:bg-primary-500;
 }
 .white {
-  @apply border-gray-300 bg-white text-gray-700 shadow-sm hover:bg-purple-100;
+  @apply border-gray-300 bg-white text-gray-700 shadow-sm hover:bg-primary-100;
   @apply dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700;
 }
 .danger {

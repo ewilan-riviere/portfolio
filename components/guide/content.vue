@@ -17,7 +17,7 @@ const { getList, transList } = useUtil()
       >
         <div
           v-if="content.tags"
-          class="mt-2 text-base text-purple-600 font-semibold tracking-wide uppercase"
+          class="mt-2 text-base text-primary-600 font-semibold tracking-wide uppercase"
         >
           {{ getList(transList(content.tags)) }}
         </div>

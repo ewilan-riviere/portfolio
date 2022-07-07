@@ -97,7 +97,7 @@ const value = computed<string>({
 <style lang="postcss" scoped>
 .field {
   @apply block w-full rounded-md border-gray-300 placeholder-gray-500 border shadow-sm text-gray-900;
-  @apply focus:border-purple-600 focus:ring-purple-600;
+  @apply focus:border-primary-600 focus:ring-primary-600;
   /* @apply dark:border-gray-700 dark:bg-gray-700 dark:text-white sm:text-sm dark:placeholder-gray-100; */
 }
 
