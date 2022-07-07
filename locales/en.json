@@ -30,8 +30,8 @@
       "title": "Deployments",
       "text": "Deploy projects on VPS servers, in HTTPS, HTTP 2 on NGINX with databases are often in MySQL."
     },
-    "experiment": {
-      "title": "Experiment",
+    "experiments": {
+      "title": "Experiments",
       "text": "See what's new on the technologies I like and test them, then implement them in new projects."
     },
     "seo": {

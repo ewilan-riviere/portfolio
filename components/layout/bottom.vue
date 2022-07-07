@@ -1,12 +1,12 @@
 <template>
   <footer
-    class="main-container md:flex md:items-center justify-between pb-6 text-gray-700 dark:text-gray-300"
+    class="main-container lg:flex lg:items-center justify-between pb-6 text-gray-700 dark:text-gray-300"
   >
     <app-social
-      class="flex flex-wrap justify-center items-center md:space-x-6 md:order-2"
+      class="flex flex-wrap justify-center items-center lg:space-x-6 lg:order-2"
     />
-    <div class="mt-8 md:mt-0 md:order-1">
-      <div class="text-center text-base dark:text-gray-100 flex items-center">
+    <div class="mt-8 lg:mt-0 lg:order-1 flex">
+      <div class="text-center text-base dark:text-gray-100 flex items-center mx-auto">
         &copy; 2020-{{ new Date().getFullYear() }}.
         <a
           href="https://github.com/ewilan-riviere"
