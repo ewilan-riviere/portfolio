@@ -51,3 +51,10 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) f
 - <https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3>
 - <https://github.com/johnsoncodehk/volar/discussions/53>
 - <https://github.com/johnsoncodehk/volar/issues/425>
+
+## PDF
+
+```bash
+sudo apt-get install ghostscript
+ps2pdf resume.pdf resume-ps2pdf.pdf
+```
