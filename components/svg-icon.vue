@@ -26,7 +26,7 @@ const defaultSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
     <client-only>
       <component :is="currentIcon" :class="attrs.class" />
       <template #fallback>
-        <span :class="attrs.class" class="text-white dark:text-gray-900 animate-pulse rounded-md" v-html="defaultSvg"></span>
+        <span :class="attrs.class" class="text-transparent" v-html="defaultSvg"></span>
       </template>
     </client-only>
   </span>
