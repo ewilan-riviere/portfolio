@@ -1,10 +1,10 @@
-import build from './config/build'
-import meta from './config/meta'
-import modules from './config/modules'
+import build from './build'
+import meta from './meta'
+import modules from './modules'
 import {
   runtimeConfigPublic,
   runtimeConfigPrivate,
-} from './config/runtime-config'
+} from './runtime-config'
 
 const config = {
   build,

@@ -3,7 +3,7 @@ defineProps<{
   historyItem: HistoryItem
 }>()
 
-const { date, checkIfDateIsSuperiorToToday } = useUtil()
+const { date, checkIfDateIsSuperiorToToday } = useUtils()
 </script>
 
 <template>

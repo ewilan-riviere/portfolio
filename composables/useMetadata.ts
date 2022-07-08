@@ -1,6 +1,8 @@
 import { MetaObject } from '#app'
 import { ComputedGetter } from 'vue'
-import { isDark } from '~/utils/methods'
+import { useDarkMode } from './useDarkMode'
+
+const { isDark } = useDarkMode()
 
 interface HeadMeta {
   description?: string

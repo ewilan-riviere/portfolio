@@ -1,6 +1,6 @@
 import { useI18nStore } from '~~/store/i18n'
 
-export const useUtil = () => {
+export const useUtils = () => {
   const date = (date?: any, options?: Intl.DateTimeFormatOptions) => {
     if (!date) {
       return ''
@@ -65,11 +65,34 @@ export const useUtil = () => {
     return transList
   }
 
+  const getJson = <T>(json: object): T => {
+    const data: T = JSON.parse(JSON.stringify(json))
+
+    return data
+  }
+
+  const shuffleArray = (array: any[]) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+        ;[array[i], array[j]] = [array[j], array[i]]
+    }
+  }
+
+  const sortByDate = (a: any, b: any) => {
+    const dateA = new Date(a.dateBegin).getTime()
+    const dateB = new Date(b.dateBegin).getTime()
+
+    return dateA > dateB ? 1 : -1
+  }
+
   return {
     date,
     checkIfDateIsSuperiorToToday,
     getDomain,
     getList,
-    transList
+    transList,
+    getJson,
+    shuffleArray,
+    sortByDate
   }
 }

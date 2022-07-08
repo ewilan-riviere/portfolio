@@ -1,5 +1,6 @@
 import json from '~~/assets/data/history.json'
-import { getJson, sortByDate } from '~~/utils/methods'
+import { useUtils } from '~~/composables/useUtils'
+const { getJson, sortByDate } = useUtils()
 
 export default defineEventHandler(() => {
   const data = getJson<HistoryItem[]>(json).filter(

@@ -31,13 +31,6 @@ export const useToastStore = defineStore('toast', {
 
       const index = toasts.findIndex((key) => key.id === payload.id)
       toasts.splice(index, 1)
-      // toasts = toasts.filter((toast) => toast.id !== payload.id)
-
-      // toasts.forEach((toast, index) => {
-      //   if (toast.date === payload.date) {
-      //     delete toasts[index]
-      //   }
-      // })
 
       this.$patch({
         toasts,

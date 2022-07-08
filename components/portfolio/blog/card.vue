@@ -4,7 +4,7 @@ const props = defineProps<{
   large?: boolean
 }>()
 
-const { date } = useUtil()
+const { date } = useUtils()
 
 const readTime = computed(() => {
   const time = props.guide.readingTime?.minutes

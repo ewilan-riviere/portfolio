@@ -1,5 +1,6 @@
 import technologiesJson from '~/assets/data/technologies.json'
-import { getJson } from '~~/utils/methods'
+import { useUtils } from '~~/composables/useUtils'
+const { getJson } = useUtils()
 
 export default defineEventHandler(() => {
   return getJson<Technology[]>(technologiesJson).filter(

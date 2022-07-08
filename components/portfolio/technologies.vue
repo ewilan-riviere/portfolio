@@ -2,12 +2,12 @@
 import { Navigation, Pagination, Controller } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Swiper as SwiperInterface } from 'swiper/types'
-
+import { useMainStore } from '~~/store/main'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { shuffleArray } from '~~/utils/methods'
-import { useMainStore } from '~~/store/main'
+import { useUtils } from '~~/composables/useUtils'
 
+const { shuffleArray } = useUtils()
 const { technologies } = useMainStore()
 shuffleArray(technologies)
 

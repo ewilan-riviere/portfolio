@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { shuffleArray } from '~~/utils/methods'
+import { useUtils } from '~~/composables/useUtils'
 import { useMainStore } from '~~/store/main'
 
+const { shuffleArray } = useUtils()
 const { technologies } = useMainStore()
 shuffleArray(technologies)
 

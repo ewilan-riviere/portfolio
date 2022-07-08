@@ -3,7 +3,7 @@ defineProps<{
   content?: Guide
 }>()
 
-const { getList, transList } = useUtil()
+const { getList, transList } = useUtils()
 </script>
 
 <template>

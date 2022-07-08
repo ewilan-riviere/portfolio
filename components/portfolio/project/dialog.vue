@@ -3,7 +3,7 @@ defineProps<{
   project: Project
 }>()
 
-const { date, getList, transList } = useUtil()
+const { date, getList, transList } = useUtils()
 </script>
 
 <template>
