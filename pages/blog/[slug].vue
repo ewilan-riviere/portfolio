@@ -7,7 +7,7 @@ const { data: content } = await useAsyncData(slug, () =>
 )
 
 useMetadata({
-  title: content.value?.title
+  title: `${content.value?.title} on Blog`
 })
 </script>
 

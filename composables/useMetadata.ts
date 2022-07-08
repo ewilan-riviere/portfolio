@@ -19,7 +19,7 @@ export const useMetadata = (meta?: HeadMeta) => {
 
   let title = appName
   if (meta?.title) {
-    title += `${meta.title} · ${appName}`
+    title = `${meta.title} · ${appName}`
   }
 
   let description = appDescription

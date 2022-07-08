@@ -14,27 +14,36 @@ This guide use Vue 3 / Nuxt 3 with [**Vite**](https://vitejs.dev).
 
 From [github.com/jpkleemans/vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader), you can use a specific module with Nuxt 3 if you want: [github.com/gitFoxCode/nuxt-icons](https://github.com/gitFoxCode/nuxt-icons).
 
-## Add dependency
+## Add Node dependency
 
-```bash
-npm install vite-svg-loader --save-dev
-```
+From [github.com/jpkleemans/vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader)
 
-```bash
-pnpm add vite-svg-loader -D
-```
+::code-group
+  ```bash [pnpm]
+  pnpm add vite-svg-loader -D
+  ```
+  ```bash [npm]
+  npm install vite-svg-loader --save-dev
+  ```
+  ```bash [yarn]
+  yarn add vite-svg-loader -D
+  ```
+::
 
-### Vue 3
+### Add to Vue 3
 
 ```ts [vite.config.ts]
 import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
-  plugins: [vue(), svgLoader()]
+  plugins: [
+    vue(),
+    svgLoader() // https://github.com/jpkleemans/vite-svg-loader#readme
+  ]
 })
 ```
 
-### Nuxt 3
+### Add to Nuxt 3
 
 ```ts [nuxt.config.ts]
 import { defineNuxtConfig } from 'nuxt'
@@ -49,7 +58,7 @@ export default defineNuxtConfig({
 })
 ```
 
-## Add SVG
+## Add SVG for test
 
 Create a directory like `assets` into your project and add a new SVG like `github.svg`.
 
