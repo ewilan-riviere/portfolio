@@ -31,8 +31,8 @@
       "text": "Build an application from front-end to back-end, with API. Always look back at what has been coded to see if it can be improved, comments and refactoring allow to always improve the code."
     },
     "web-design": {
-      "title": "Front-end & design",
-      "text": "The front-end is the basis for mastering the integration of a model, either with a CSS framework or by hand."
+      "title": "Responsive & design",
+      "text": "The front-end is the basis for mastering the integration of a model, either with a CSS framework or by hand, with mobile-first development."
     },
     "server": {
       "title": "Deployments",

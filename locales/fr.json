@@ -31,8 +31,8 @@
       "text": "Créez une application du front-end au back-end, avec une API. Regarder toujours ce qui a été codé pour voir si cela peut être amélioré, les commentaires et le refactoring permettent de toujours améliorer le code."
     },
     "web-design": {
-      "title": "Front-end & design",
-      "text": "Le front-end est la base de la maîtrise de l'intégration d'un modèle, que ce soit avec un framework CSS ou à la main."
+      "title": "Responsive & design",
+      "text": "Le front-end est la base de la maîtrise de l'intégration d'un modèle, que ce soit avec un framework CSS ou à la main, avec un développment mobile-first."
     },
     "server": {
       "title": "Déploiements",
