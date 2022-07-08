@@ -12,6 +12,7 @@ declare interface Guide {
   description?: string
   author: string
   picture?: string
+  draft?: boolean
   category?: string
   tags?: string[]
   readingTime?: {

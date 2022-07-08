@@ -1,7 +1,7 @@
 import { useI18nStore } from '~~/store/i18n'
 
 export const useUtils = () => {
-  const date = (date?: any, options?: Intl.DateTimeFormatOptions) => {
+  const formatDate = (date?: any, options?: Intl.DateTimeFormatOptions) => {
     if (!date) {
       return ''
     }
@@ -73,7 +73,7 @@ export const useUtils = () => {
   }
 
   return {
-    date,
+    formatDate,
     checkIfDateIsSuperiorToToday,
     getDomain,
     getList,

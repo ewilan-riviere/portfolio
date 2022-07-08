@@ -5,10 +5,7 @@ picture: /default.webp
 category: vue
 tags: [nuxt,eslint]
 date: 2022-06-25
+draft: true
 ---
-
-Add ESLint to Nuxt 3 project.
-
-<!--more-->
 
 An beautiful guide!

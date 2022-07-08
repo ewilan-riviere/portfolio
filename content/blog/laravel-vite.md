@@ -5,11 +5,8 @@ picture: /default.webp
 category: vite
 tags: [vite,laravel,setup]
 date: 2022-06-25
+draft: true
 ---
-
-Install Vite on Laravel
-
-<!--more-->
 
 ## Installation
 
