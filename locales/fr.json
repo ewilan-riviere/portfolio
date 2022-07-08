@@ -7,6 +7,10 @@
     "professionalTitle": "Conceptrice développeuse d'applications"
   },
   "title": "Titre",
+  "nav": {
+    "home": "Accueil",
+    "blog": "Blog"
+  },
   "hero": {
     "title": "Titre"
   },

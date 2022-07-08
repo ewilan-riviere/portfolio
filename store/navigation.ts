@@ -5,24 +5,31 @@ export const useNavigationStore = defineStore('navigation', {
     sidebar: false,
     main: [
       {
-        label: 'books',
+        label: 'home',
         route: {
           name: 'index',
         },
+        icon: 'home'
       },
       {
-        label: 'series',
+        label: 'blog',
         route: {
-          name: 'index',
+          name: 'blog',
         },
-      },
-      {
-        label: 'authors',
-        route: {
-          name: 'index',
-        },
+        icon: 'blog'
       },
     ] as RouteLink[],
+    external: [
+      {
+        label: 'Memorandum',
+        href: 'https://memorandum.ewilan-riviere.com',
+        icon: 'memorandum'
+      },
+    ] as {
+      label: string
+      href: string
+      icon?: string
+    }[],
   }),
   actions: {
     toggleSidebar(): boolean {

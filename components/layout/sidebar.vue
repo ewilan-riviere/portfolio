@@ -72,45 +72,45 @@ const closeSidebar = () => {
         </button>
       </div>
       <div class="flex flex-shrink-0 items-center px-4">
-        <router-link
+        <nuxt-link
           to="/"
           class="inline-flex h-8 w-auto items-center"
           active-class="active-logo"
         >
           <span class="inline-flex items-center" @click="closeSidebar">
-            <!-- <img
-              class="w-auto h-8 transition-all duration-100 sm:h-10 group-hover:home-logo-shadow"
-              src="/icon.svg"
-              :alt="`${$config.appName} logo`"
-            /> -->
-            <!-- <div class="mt-2 ml-3 text-2xl font-handlee dark:text-gray-100">
-              {{ $config.appName }}
-            </div> -->
+            <svg-icon name="ewilan-riviere" class="w-auto h-8 transition-all duration-100 sm:h-10 group-hover:home-logo-shadow" />
+            <div class="mt-2 ml-3 dark:text-gray-100">
+              <svg-icon name="ewilan-riviere-text" class="h-6 w-auto" />
+            </div>
           </span>
-        </router-link>
+        </nuxt-link>
       </div>
       <div class="mt-5 h-0 flex-1 overflow-y-auto">
         <nav class="px-2">
-          <div class="space-y-1">
-            <router-link to="/" class="link group" active-class="active-logo">
-              <span
-                class="w-full px-2 py-4 font-semibold"
-                @click="closeSidebar"
-              >
-                Home
-              </span>
-            </router-link>
-            <router-link
+          <div class="space-y-2">
+            <nuxt-link
               v-for="(link, id) in navigation.main"
               :key="id"
-              to="/"
+              :to="link.route"
               class="link group"
+              @click="closeSidebar"
             >
-              <span
-                class="w-full px-2 py-4 font-semibold"
-                @click="closeSidebar"
-              >{{ $t(`nav.${link.label}`) }}</span>
-            </router-link>
+              <svg-icon :name="`nav-${link.icon}`" class="w-6 h-6" />
+              <div>{{ $t(`nav.${link.label}`) }}</div>
+            </nuxt-link>
+            <hr class="border-gray-700 dark:border-gray-300" />
+            <a
+              v-for="(link, id) in navigation.external"
+              :key="id"
+              :href="link.href"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link group"
+              @click="closeSidebar"
+            >
+              <svg-icon :name="`nav-${link.icon}`" class="w-6 h-6" />
+              <div>{{ $t(`nav.${link.label}`) }}</div>
+            </a>
           </div>
         </nav>
       </div>
@@ -124,7 +124,7 @@ const closeSidebar = () => {
 
 <style lang="css" scoped>
 .link {
-  @apply flex items-center rounded-md text-base font-medium leading-5 text-gray-600 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700;
+  @apply flex items-center rounded-md text-base leading-5 text-gray-600 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 w-full px-2 py-3 font-semibold space-x-1;
 }
 
 .router-link-active {
