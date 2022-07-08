@@ -41,10 +41,5 @@ export default defineNuxtConfig({
     plugins: [
       svgLoader(),
     ],
-    resolve: {
-      alias: {
-        // '@': pathSrc,
-      },
-    },
   },
 })

@@ -11,7 +11,6 @@ export const useApi = () => {
       developers,
       features,
       historyItems,
-      hobbies,
       projectStatuses,
       projects,
       skills,
@@ -21,7 +20,6 @@ export const useApi = () => {
       fetchData<Developer[]>('/api/developers'),
       fetchData<Feature[]>('/api/features'),
       fetchData<HistoryItem[]>('/api/history-items'),
-      fetchData<Hobby[]>('/api/hobbies'),
       fetchData<ProjectStatus[]>('/api/project-statuses'),
       fetchData<Project[]>('/api/projects'),
       fetchData<Skill[]>('/api/skills'),
@@ -31,7 +29,6 @@ export const useApi = () => {
     mainStore.setDevelopers(developers.value)
     mainStore.setFeatures(features.value)
     mainStore.setHistoryItems(historyItems.value)
-    mainStore.setHobbies(hobbies.value)
     mainStore.setProjectStatuses(projectStatuses.value)
     mainStore.setProjects(projects.value)
     mainStore.setSkills(skills.value)

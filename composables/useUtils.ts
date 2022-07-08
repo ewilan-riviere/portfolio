@@ -65,24 +65,11 @@ export const useUtils = () => {
     return transList
   }
 
-  const getJson = <T>(json: object): T => {
-    const data: T = JSON.parse(JSON.stringify(json))
-
-    return data
-  }
-
   const shuffleArray = (array: any[]) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
         ;[array[i], array[j]] = [array[j], array[i]]
     }
-  }
-
-  const sortByDate = (a: any, b: any) => {
-    const dateA = new Date(a.dateBegin).getTime()
-    const dateB = new Date(b.dateBegin).getTime()
-
-    return dateA > dateB ? 1 : -1
   }
 
   return {
@@ -91,8 +78,6 @@ export const useUtils = () => {
     getDomain,
     getList,
     transList,
-    getJson,
-    shuffleArray,
-    sortByDate
+    shuffleArray
   }
 }
