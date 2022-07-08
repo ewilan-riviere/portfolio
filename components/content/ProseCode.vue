@@ -29,7 +29,7 @@ defineProps({
   >
     <span
       v-if="filename || language"
-      class="filename transition-base absolute top-1 right-1 z-0 rounded-lg py-1 pr-2 font-mono text-xs leading-none tracking-tight text-gray-400 opacity-100"
+      class="filename transition-base absolute top-1 right-1 z-0 rounded-md py-1 px-2 font-mono text-xs leading-none tracking-tight text-gray-medium opacity-100 dark:bg-gray-700"
     >
       <span v-if="filename">{{ filename }}</span>
       <span v-else>{{ language }}</span>
