@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Morpheus';
   src: url('../fonts/morpheus/morpheus-webfont.woff');
 }
@@ -21,7 +21,7 @@
 @font-face {
   font-family: 'Pelagiad';
   src: url('../fonts/pelagiad/Pelagiad.ttf');
-}
+} */
 
 @font-face {
   font-family: 'Quicksand';

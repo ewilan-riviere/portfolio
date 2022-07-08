@@ -6,7 +6,7 @@
       class="flex flex-wrap justify-center items-center lg:space-x-6 lg:order-2"
     />
     <div class="mt-8 lg:mt-0 lg:order-1 flex">
-      <div class="text-center text-base dark:text-gray-100 flex items-center mx-auto">
+      <div class="text-center text-base dark:text-gray-100 flex flex-wrap items-center mx-auto">
         &copy; 2020-{{ new Date().getFullYear() }}.
         <a
           href="https://github.com/ewilan-riviere"

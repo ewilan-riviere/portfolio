@@ -502,5 +502,17 @@
     "type": "An open-source, lightning-fast, and hyper-relevant search engine that fits effortlessly into your apps, websites, and workflow",
     "isFavorite": true,
     "isDisplay": true
+  },
+  {
+    "title": "Markdoc",
+    "slug": "markdoc",
+    "version": "0.1",
+    "link": "https://markdoc.io",
+    "isFree": true,
+    "color": "#ffd848",
+    "isDark": false,
+    "type": "Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites",
+    "isFavorite": true,
+    "isDisplay": true
   }
 ]

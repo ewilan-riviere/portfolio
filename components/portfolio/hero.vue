@@ -21,11 +21,12 @@ const loaded = (loaded: boolean) => {
           <app-img src="/images/ewilan-riviere.webp" alt="ewilan riviere" class="rounded-full p-0.5" @loaded="loaded" />
         </div>
         <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0 text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl font-morpheus">
+          <svg-icon name="ewilan-riviere-text" class="h-8 lg:h-12 w-auto mx-auto lg:mx-0" />
+          <h1 class="sr-only">
             {{ about?.name }}
           </h1>
           <div
-            class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:font-pelagiad lg:text-3xl">
+            class="max-w-lg mx-auto mt-3 text-lg md:text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl font-quicksand font-medium lg:text-3xl">
             {{ $t('about.professionalTitle') }}
           </div>
           <app-social class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-3" primary />

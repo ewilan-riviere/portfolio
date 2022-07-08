@@ -21,7 +21,7 @@ onMounted(() => {
       <app-img
         :src="`/projects/banner/${project.slug}.webp`"
         :alt="project.title"
-        class="rounded-md"
+        class="rounded-md min-h-[12rem] object-cover"
         placeholder="/projects/banner/placeholder.webp"
       />
       <div

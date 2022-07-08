@@ -44,11 +44,11 @@ module.exports = {
         'jungle-cascade': 'url(\'/background/jungle-cascade.webp\')'
       },
       fontFamily: {
-        morpheus: ['Morpheus'], // a-la-croisee-des-mondes
-        booter: ['Booter'], // l-autre
-        'caslon-antique': ['Caslon Antique'], // ewilan
-        immortal: ['Immortal'], // les-ames-croisees
-        pelagiad: ['Pelagiad'], // morrowind
+        // morpheus: ['Morpheus'], // a-la-croisee-des-mondes
+        // booter: ['Booter'], // l-autre
+        // 'caslon-antique': ['Caslon Antique'], // ewilan
+        // immortal: ['Immortal'], // les-ames-croisees
+        // pelagiad: ['Pelagiad'], // morrowind
         quicksand: ['Quicksand'] // Quicksand
       }
     }
@@ -60,7 +60,7 @@ module.exports = {
           '@apply container max-w-7xl px-6 lg:px-8': {}
         },
         '.medium-container': {
-          '@apply container max-w-5xl px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 shadow rounded-md':
+          '@apply container max-w-5xl px-3 md:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 shadow rounded-md':
             {}
         },
         '.parallax': {

@@ -52,8 +52,8 @@
     }
   },
   "project": {
-    "title": "Projects",
-    "subtitle": "A selection of my projects",
+    "title": "A selection of my projects",
+    "subtitle": "Personal, profesional and open-source",
     "details": {
       "developers": "Developers",
       "begin-date": "Begin date",

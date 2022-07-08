@@ -44,9 +44,11 @@ const { toggleSidebar } = useNavigationStore()
         <nuxt-link
           to="/"
           :class="isScroll ? '!text-xl' : ''"
-          class="text-xl font-normal sm:text-2xl lg:text-3xl font-morpheus transition-all duration-300 border-b border-transparent group-hover:border-white"
+          class="border-b border-transparent group-hover:border-white flex items-center space-x-2"
         >
-          &ndash; Ewilan Rivière &ndash;
+          <div>&ndash;</div>
+          <svg-icon name="ewilan-riviere-text" class="h-6 lg:h-7 w-auto transition-all duration-300" />
+          <div>&ndash;</div>
         </nuxt-link>
       </div>
 

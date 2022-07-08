@@ -6,8 +6,6 @@ const props = defineProps<{
 const currentIcon = computed(() =>
   defineAsyncComponent({
     loader: () => import(`../assets/icons/${props.name}.svg`),
-    // loading: https://github.com/jpkleemans/vite-svg-loader/issues/47
-    // loader: () => import('../assets/icons/' + props.name + '.svg?component'),
     loadingComponent: {
       template: '<span></span>',
     },
@@ -20,6 +18,7 @@ const currentIcon = computed(() =>
   })
 )
 const attrs = useAttrs()
+const defaultSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M0 0h24v24H0z"/></svg>'
 </script>
 
 <template>
@@ -27,7 +26,7 @@ const attrs = useAttrs()
     <client-only>
       <component :is="currentIcon" :class="attrs.class" />
       <template #fallback>
-        <!-- <span v-html="defaultSvg"></span> -->
+        <span :class="attrs.class" class="text-white dark:text-gray-900 animate-pulse rounded-md" v-html="defaultSvg"></span>
       </template>
     </client-only>
   </span>
