@@ -59,7 +59,7 @@ const content: NuxtConfig['content'] = {
       'xml',
     ],
     // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
-    theme: 'vitesse-dark',
+    theme: 'css-variables',
   },
   defaultLocale: 'en',
   locales: ['en', 'fr'],

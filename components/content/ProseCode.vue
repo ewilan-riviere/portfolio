@@ -44,15 +44,15 @@ defineProps({
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="css" scoped>
 div {
   @apply relative my-4 overflow-hidden rounded-lg;
 
-  &.highlight-zsh,
-  &.highlight-sh,
-  &.highlight-bash,
-  &.highlight-shell,
-  &.highlight-shellscript {
+  & .highlight-zsh,
+  & .highlight-sh,
+  & .highlight-bash,
+  & .highlight-shell,
+  & .highlight-shellscript {
     :deep(code) {
       .line {
         @apply pl-4 relative;
@@ -82,6 +82,12 @@ div {
 
 :deep(.line.highlight) {
   background-color: #3f3f46;
+}
+
+:deep(.dark) {
+  & code {
+    @apply !text-gray-300;
+  }
 }
 
 .group:hover {
