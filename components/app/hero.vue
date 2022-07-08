@@ -11,11 +11,11 @@ defineProps<{
     <div class="container relative z-30 h-[30vh]">
       <div class="flex flex-col items-center justify-center lg:flex-row center-full w-full">
         <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0 text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl font-morpheus text-center">
+          <h1 class="text-4xl sm:text-5xl text-center font-quicksand text-primary-600 dark:text-primary-200 font-semibold">
             {{ title }}
           </h1>
           <div
-            class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:font-pelagiad lg:text-3xl">
+            class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:text-3xl text-center capitalize">
             {{ subtitle }}
           </div>
         </div>

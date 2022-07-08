@@ -8,36 +8,13 @@ defineProps<{
 </script>
 
 <template>
-  <!-- <div class="relative">
-    <div
-      :class="[
-        reverse ? 'gradient-bottom' : 'gradient-top',
-        bg ? bg : 'bg-forest-swamp',
-      ]"
-      class="parallax h-[25rem]"
-    ></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <h2
-        v-if="title"
-        class="text-center font-header text-4xl font-morpheus text-primary-600 sm:text-5xl lg:text-6xl"
-      >
-        {{ title }}
-      </h2>
-      <h3
-        v-if="subtitle"
-        class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
-      >
-        {{ subtitle }}
-      </h3>
-    </div>
-  </div> -->
   <div class="text-center">
-    <h2
-      class="text-3xl tracking-tight font-quicksand font-semibold text-gray-dark sm:text-4xl underline underline-offset-4">
-      {{ title }}
-    </h2>
-    <p class="mt-1 max-w-2xl mx-auto text-xl text-gray-medium sm:mt-2">
+    <p class="max-w-2xl mx-auto text-xl sm:mt-2 text-purple-600 dark:text-primary-500">
       {{ subtitle }}
     </p>
+    <h2
+      class="text-3xl tracking-tight font-quicksand font-semibold text-gray-dark sm:text-4xl mt-1">
+      {{ title }}
+    </h2>
   </div>
 </template>

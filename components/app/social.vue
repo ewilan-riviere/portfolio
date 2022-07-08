@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { useMainStore } from '~~/store/main'
 
+const props = defineProps<{
+  primary?:boolean
+}>()
+
 const { about } = useMainStore()
-const socialItems = about.socialItems
+const socialItems = props.primary ? about.socialItems.filter(e => e.primary) : about.socialItems
 </script>
 
 <template>

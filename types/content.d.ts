@@ -12,6 +12,7 @@ declare interface Guide {
   description?: string
   author: string
   picture?: string
+  draft?: boolean
   category?: string
   tags?: string[]
   readingTime?: {
@@ -23,6 +24,7 @@ declare interface Guide {
   _path: string
   _locale: string
   _draft: boolean
+  slug: string
   body: {
     children: any[]
     toc: {

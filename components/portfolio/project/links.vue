@@ -3,7 +3,7 @@ defineProps<{
   project: Project
 }>()
 
-const { getDomain } = useUtil()
+const { getDomain } = useUtils()
 </script>
 
 <template>

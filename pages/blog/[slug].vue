@@ -1,5 +1,21 @@
+<script lang="ts" setup>
+const { params } = useRoute()
+
+const slug = params.slug as string
+const { data: content } = await useAsyncData(slug, () =>
+  queryContent<Guide>(`/blog/${slug}`).findOne()
+)
+
+useMetadata({
+  title: content.value?.title
+})
+</script>
+
 <template>
-  <div>
-    blog slug
+  <div v-if="content">
+    <app-hero :title="content?.title" :subtitle="content?.category" />
+    <div class="main-container">
+      <guide-content :content="content" />
+    </div>
   </div>
 </template>

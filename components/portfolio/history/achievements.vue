@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useMainStore } from '~~/store/main'
 
-const { projects } = useMainStore()
+const { about, projects } = useMainStore()
 const achievements = [
   {
     slug: 'bachelor',
@@ -16,6 +16,8 @@ const achievements = [
     value: `${new Date().getFullYear() - 2018}`,
   },
 ]
+const resume = about.socialItems.find(e => e.slug === 'resume')
+
 const opened = ref(false)
 const emit = defineEmits<{
   (e: 'opened', opened: boolean): void
@@ -33,21 +35,30 @@ const toggle = () => {
   >
     <div class="container">
       <div class="mx-auto">
-        <div class="flex flex-wrap mt-16">
+        <div class="text-center text-primary-500 text-3xl font-semibold font-quicksand">
+          {{ $t(about.professionalTitle) }}
+        </div>
+        <a :href="resume?.link" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-gray-900 bg-opacity-50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-100 p-2 rounded-md block w-max text-primary-600 dark:text-primary-500 mx-auto mt-3">
+          <svg-icon :name="`social-${resume?.slug}`" class="h-6 w-6 mx-auto" />
+          <div class="text-center text-gray-medium">
+            {{ resume?.name }}
+          </div>
+        </a>
+        <div class="grid grid-cols-1 lg:grid-cols-3 mt-8 space-y-6 lg:space-y-0">
           <div
             v-for="achievement in achievements"
             :key="achievement.slug"
             class="flex m-auto w-40"
           >
-            <div>
+            <div class="hidden lg:block">
               <svg-icon
                 :name="`achievement-${achievement.slug}`"
-                class="mx-auto h-12 w-auto md:h-20 text-primary-600"
+                class="mx-auto h-12 w-auto md:h-20 text-primary-600 dark:text-primary-500"
               />
             </div>
-            <div class="pt-2 md:pl-5 md:pt-0 w-full">
+            <div class="pt-2 lg:pl-5 lg:pt-0 w-full flex items-center lg:block">
               <h1
-                class="font-body text-2xl font-bold text-primary-600 md:text-4xl"
+                class="font-body text-3xl font-bold text-primary-600 dark:text-primary-500 md:text-4xl mr-3 lg:mr-0"
               >
                 {{ achievement.value }}
               </h1>
@@ -65,11 +76,6 @@ const toggle = () => {
               <span>
                 {{ $t('history.open') }}
               </span>
-              <svg-icon
-                name="arrow-chevron-right"
-                :class="opened ? 'rotate-45' : ''"
-                class="w-5 h-5 transition-transform duration-75"
-              />
             </div>
           </app-button>
         </div>

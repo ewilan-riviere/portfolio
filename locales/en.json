@@ -7,6 +7,10 @@
     "professionalTitle": "Developer designer of applications"
   },
   "title": "Title",
+  "nav": {
+    "home": "Home",
+    "blog": "Blog"
+  },
   "hero": {
     "title": "Title"
   },
@@ -17,21 +21,29 @@
     },
     "locale-switch": "Switch locale"
   },
+  "hobbies": {
+    "develop": "Develop my web projects",
+    "read": "Read some books like fantasy or science-fiction",
+    "paint": "Paint Warhammers",
+    "podcasts": "Listen to podcasts",
+    "video-games": "Play video games & modding",
+    "tv-show": "Watch TV shows"
+  },
   "features": {
     "code": {
       "title": "Developement",
       "text": "Build an application from front-end to back-end, with API. Always look back at what has been coded to see if it can be improved, comments and refactoring allow to always improve the code."
     },
     "web-design": {
-      "title": "Front-end & design",
-      "text": "The front-end is the basis for mastering the integration of a model, either with a CSS framework or by hand."
+      "title": "Responsive & design",
+      "text": "The front-end is the basis for mastering the integration of a model, either with a CSS framework or by hand, with mobile-first development."
     },
     "server": {
       "title": "Deployments",
       "text": "Deploy projects on VPS servers, in HTTPS, HTTP 2 on NGINX with databases are often in MySQL."
     },
-    "experiment": {
-      "title": "Experiment",
+    "experiments": {
+      "title": "Experiments",
       "text": "See what's new on the technologies I like and test them, then implement them in new projects."
     },
     "seo": {
@@ -44,8 +56,8 @@
     }
   },
   "project": {
-    "title": "Projects",
-    "subtitle": "A selection of my projects",
+    "title": "A selection of my projects",
+    "subtitle": "Personal, profesional and open-source",
     "details": {
       "developers": "Developers",
       "begin-date": "Begin date",

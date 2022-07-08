@@ -15,9 +15,9 @@
     "text": "features.server.text"
   },
   {
-    "slug": "experiment",
-    "title": "features.experiment.title",
-    "text": "features.experiment.text"
+    "slug": "experiments",
+    "title": "features.experiments.title",
+    "text": "features.experiments.text"
   },
   {
     "slug": "seo",

@@ -4,9 +4,13 @@
     "hello": "Bonjour, {name}!"
   },
   "about": {
-    "professionalTitle": "Développeuse designer d'applications"
+    "professionalTitle": "Conceptrice développeuse d'applications"
   },
   "title": "Titre",
+  "nav": {
+    "home": "Accueil",
+    "blog": "Blog"
+  },
   "hero": {
     "title": "Titre"
   },
@@ -17,14 +21,22 @@
     },
     "locale-switch": "Changer de langue"
   },
+  "hobbies": {
+    "develop": "Développer mes projets web",
+    "read": "Lire des livres comme de la fantas ou de la science-fiction",
+    "paint": "Peindre des Warhammers",
+    "podcasts": "Écouter des podcasts",
+    "video-games": "Jouer aux jeux vidéo et les modder",
+    "tv-show": "Regarder des séries"
+  },
   "features": {
     "code": {
       "title": "Développement",
       "text": "Créez une application du front-end au back-end, avec une API. Regarder toujours ce qui a été codé pour voir si cela peut être amélioré, les commentaires et le refactoring permettent de toujours améliorer le code."
     },
     "web-design": {
-      "title": "Front-end & design",
-      "text": "Le front-end est la base de la maîtrise de l'intégration d'un modèle, que ce soit avec un framework CSS ou à la main."
+      "title": "Responsive & design",
+      "text": "Le front-end est la base de la maîtrise de l'intégration d'un modèle, que ce soit avec un framework CSS ou à la main, avec un développment mobile-first."
     },
     "server": {
       "title": "Déploiements",
@@ -44,8 +56,8 @@
     }
   },
   "project": {
-    "title": "Projets",
-    "subtitle": "Une sélection de mes projets",
+    "title": "Une sélection de mes projets",
+    "subtitle": "Personnels, professionnels et open-source",
     "details": {
       "developers": "Développeur·ses",
       "begin-date": "Date de début",

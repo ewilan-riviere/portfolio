@@ -3,6 +3,7 @@ interface SocialItem {
   slug: string
   color: string
   link: string
+  primary: boolean
 }
 
 declare interface About {
@@ -11,5 +12,6 @@ declare interface About {
   title: string
   subtitle: string
   text: string
+  hobbies: string[]
   socialItems: SocialItem[]
 }

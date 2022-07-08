@@ -67,8 +67,8 @@ const emit = defineEmits<{
   </div>
 </template>
 
-<style scoped>
-.lazy-media {
+<style lang="css" scoped>
+        .lazy-media {
   position: relative;
 }
 

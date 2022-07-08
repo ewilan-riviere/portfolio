@@ -4,17 +4,22 @@ const props = defineProps<{
   large?: boolean
 }>()
 
-const { date } = useUtil()
+const { formatDate, getList } = useUtils()
 
 const readTime = computed(() => {
   const time = props.guide.readingTime?.minutes
 
   return Math.round(time ?? 0)
 })
+const slug = computed(() => props.guide._path.replace('/blog/', ''))
+const date = computed(() => formatDate(props.guide.date, {
+  day: '2-digit',
+}))
 </script>
 
 <template>
-  <div
+  <nuxt-link
+    :to="{name:'blog-slug', params: { slug: slug}}"
     class="flex flex-col rounded-lg shadow overflow-hidden transform duration-500 hover:-translate-y-2 hover:shadow-lg group cursor-pointer relative"
   >
     <div class="flex-shrink-0">
@@ -24,20 +29,10 @@ const readTime = computed(() => {
       class="flex-1 bg-white dark:bg-gray-800 p-6 flex flex-col justify-between"
     >
       <div class="flex-1">
-        <p class="text-sm font-medium text-primary-600 dark:text-primary-400">
-          <a href="#" class="hover:underline">
-            {{ guide.category }}
-          </a>
+        <p class="text-sm font-medium text-primary-600 dark:text-primary-400 capitalize">
+          {{ guide.category }}
         </p>
-        <nuxt-link
-          :to="{
-            name: 'slug',
-            params: {
-              slug: guide._path.substring(1),
-            },
-          }"
-          class="block mt-2"
-        >
+        <div class="block mt-2">
           <p
             class="text-xl font-semibold text-gray-dark border-b-2 border-transparent group-hover:border-primary-400 transition-color duration-100 w-max"
           >
@@ -46,31 +41,20 @@ const readTime = computed(() => {
           <p class="mt-3 text-base text-gray-medium">
             {{ guide.description }}
           </p>
-        </nuxt-link>
+        </div>
       </div>
       <div class="mt-6">
-        <p class="text-sm font-medium text-gray-dark space-x-1">
-          <a
-            v-for="tag in guide.tags"
-            :key="tag"
-            href="#"
-            class="hover:underline"
-          >
-            {{ tag }}
-          </a>
-        </p>
+        <div v-if="guide.tags" class="text-sm font-medium text-gray-dark capitalize">
+          {{ getList(guide.tags) }}
+        </div>
         <div class="flex space-x-1 text-sm text-gray-medium">
-          <time datetime="2020-03-16">
-            {{
-              date(guide.date, {
-                day: '2-digit',
-              })
-            }}
+          <time :datetime="date">
+            {{ date }}
           </time>
           <span aria-hidden="true"> &middot; </span>
           <span> {{ readTime }} min read </span>
         </div>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
