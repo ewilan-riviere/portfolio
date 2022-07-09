@@ -38,12 +38,6 @@ const toggle = () => {
         <div class="text-center text-primary-500 text-3xl font-semibold font-quicksand">
           {{ $t(about.professionalTitle) }}
         </div>
-        <a :href="resume?.link" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-gray-900 bg-opacity-50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-100 p-2 rounded-md block w-max text-primary-600 dark:text-primary-500 mx-auto mt-3">
-          <svg-icon :name="`social-${resume?.slug}`" class="h-6 w-6 mx-auto" />
-          <div class="text-center text-gray-medium">
-            {{ resume?.name }}
-          </div>
-        </a>
         <div class="grid grid-cols-1 lg:grid-cols-3 mt-8 space-y-6 lg:space-y-0">
           <div
             v-for="achievement in achievements"
@@ -70,12 +64,16 @@ const toggle = () => {
             </div>
           </div>
         </div>
-        <div class="flex mt-12">
+        <div class="flex items-center mt-12 space-x-2">
           <app-button class="mx-auto" @click="toggle">
-            <div class="flex items-center space-x-2">
-              <span>
-                {{ $t('history.open') }}
-              </span>
+            {{ $t('history.open') }}
+          </app-button>
+          <app-button :href="resume?.link" class="mx-auto">
+            <div class="flex items-center space-x-1">
+              <svg-icon :name="`social-${resume?.slug}`" class="h-6 w-6" />
+              <div>
+                {{ resume?.name }}
+              </div>
             </div>
           </app-button>
         </div>
