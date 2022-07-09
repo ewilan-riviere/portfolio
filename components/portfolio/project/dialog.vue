@@ -3,7 +3,7 @@ defineProps<{
   project: Project
 }>()
 
-const { date, getList, transList } = useUtils()
+const { formatDate, getList, transList } = useUtils()
 </script>
 
 <template>
@@ -45,7 +45,7 @@ const { date, getList, transList } = useUtils()
             {{ $t('project.details.begin-date') }}
           </dt>
           <dd class="mt-1 text-sm text-gray-dark">
-            {{ date(project.createdAt) }}
+            {{ formatDate(project.createdAt) }}
           </dd>
         </div>
         <div class="sm:col-span-1">
