@@ -103,7 +103,8 @@
     "experience": "Experience years"
   },
   "history": {
-    "open": "Open history",
+    "open": "History",
+    "resume": "Resume",
     "currently": "currently"
   },
   "history-items": {

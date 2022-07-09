@@ -68,12 +68,10 @@ const toggle = () => {
           <app-button class="mx-auto" @click="toggle">
             {{ $t('history.open') }}
           </app-button>
-          <app-button :href="resume?.link" class="mx-auto">
-            <div class="flex items-center space-x-1">
-              <svg-icon :name="`social-${resume?.slug}`" class="h-6 w-6" />
-              <div>
-                {{ resume?.name }}
-              </div>
+          <app-button :href="resume?.link" class="mx-auto flex items-center space-x-1">
+            <svg-icon :name="`social-${resume?.slug}`" class="h-6 w-6" />
+            <div>
+              {{ $t('history.resume') }}
             </div>
           </app-button>
         </div>

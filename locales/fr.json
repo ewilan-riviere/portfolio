@@ -103,7 +103,8 @@
     "experience": "Années d'expérience"
   },
   "history": {
-    "open": "Voir mon historique",
+    "open": "Historique",
+    "resume": "CV",
     "currently": "actuellement"
   },
   "history-items": {
