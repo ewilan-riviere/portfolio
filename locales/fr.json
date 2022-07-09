@@ -42,7 +42,7 @@
       "title": "Déploiements",
       "text": "Déployer des projets sur des serveurs VPS, en HTTPS, HTTP 2 sur NGINX avec des bases de données sont souvent en MySQL."
     },
-    "experiment": {
+    "experiments": {
       "title": "Expérimenter",
       "text": "Voir ce qui vient de sortir sur les technologies que j'apprécie et tester ces nouveautés, puis les implémenter dans les nouveaux projets."
     },
