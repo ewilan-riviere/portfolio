@@ -3,7 +3,7 @@ defineProps<{
   historyItem: HistoryItem
 }>()
 
-const { date, checkIfDateIsSuperiorToToday } = useUtils()
+const { formatDate, checkIfDateIsSuperiorToToday } = useUtils()
 </script>
 
 <template>
@@ -23,10 +23,10 @@ const { date, checkIfDateIsSuperiorToToday } = useUtils()
     <div class="flex-grow pt-10 pb-6 pl-6">
       <span class="block font-body font-bold text-gray-medium">
         <span v-if="historyItem.dateBegin">
-          {{ date(historyItem.dateBegin) }}
+          {{ formatDate(historyItem.dateBegin) }}
         </span>
         <span v-if="historyItem.dateEnd">
-          - {{ date(historyItem.dateEnd) }}
+          - {{ formatDate(historyItem.dateEnd) }}
         </span>
       </span>
       <span class="pt-1">
