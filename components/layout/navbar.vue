@@ -38,19 +38,15 @@ const { toggleSidebar } = useNavigationStore()
           />
         </button>
       </div>
-      <div
-        class="items-center h-full mx-auto font-sans text-lg font-semibold w-max hidden sm:flex group"
+      <nuxt-link
+        to="/"
+        :class="isScroll ? '!text-xl' : ''"
+        class="items-center h-full mx-auto font-sans text-lg font-semibold w-max hidden sm:flex border-b border-transparent hover:border-white space-x-2"
       >
-        <nuxt-link
-          to="/"
-          :class="isScroll ? '!text-xl' : ''"
-          class="border-b border-transparent group-hover:border-white flex items-center space-x-2"
-        >
-          <div>&ndash;</div>
-          <svg-icon name="ewilan-riviere-text" class="h-6 lg:h-7 w-auto transition-all duration-300" />
-          <div>&ndash;</div>
-        </nuxt-link>
-      </div>
+        <div>&ndash;</div>
+        <svg-icon name="ewilan-riviere-text" class="h-6 lg:h-7 w-auto transition-all duration-300" />
+        <div>&ndash;</div>
+      </nuxt-link>
 
       <div
         class="absolute right-0 px-5 py-3 ml-10 transform -translate-y-1/2 top-1/2"
