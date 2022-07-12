@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     'nuxt-schema-org', // https://github.com/vueuse/schema-org
     // '@intlify/nuxt3', // https://github.com/intlify/nuxt3
     // '@nuxtjs/i18n', // https://github.com/nuxt-community/i18n-module/tree/next
-    '@nuxt/content', // https://content.nuxtjs.org/get-started
+    // '@nuxt/content', // https://content.nuxtjs.org/get-started
     // 'nuxt-icons' // https://github.com/gitFoxCode/nuxt-icons
   ],
   tailwindcss: config.modules.tailwindcss,

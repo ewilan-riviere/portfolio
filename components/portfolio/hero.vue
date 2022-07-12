@@ -29,7 +29,7 @@ const loaded = (loaded: boolean) => {
             class="max-w-lg mx-auto mt-3 text-lg md:text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl font-quicksand font-medium lg:text-3xl">
             {{ $t('about.professionalTitle') }}
           </div>
-          <app-social class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-3" primary />
+          <app-social class="flex justify-center lg:justify-start space-x-1 lg:space-x-3 mt-3" />
         </div>
       </div>
     </div>

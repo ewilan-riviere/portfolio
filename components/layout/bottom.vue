@@ -16,7 +16,7 @@
         >Ewilan Rivière</a
         >.
         <a
-          href="https://gitlab.com/ewilan-riviere/portfolio/-/blob/main/LICENSE"
+          href="https://github.com/ewilan-riviere/portfolio/blob/main/LICENSE"
           target="_blank"
           rel="noopener noreferrer"
           class="link ml-1"

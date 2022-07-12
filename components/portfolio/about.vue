@@ -6,19 +6,19 @@ const i18n = useI18nStore()
 const { about } = useMainStore()
 
 const content = ref<Guide>()
-const fetchContent = async () => {
-  content.value = await queryContent<Guide>('/about')
-    .locale(i18n.currentLocale)
-    .findOne()
-}
-fetchContent()
+// const fetchContent = async () => {
+//   content.value = await queryContent<Guide>('/about')
+//     .locale(i18n.currentLocale)
+//     .findOne()
+// }
+// fetchContent()
 
 const hobbiesOpened = ref(false)
 
 watch(
   () => i18n.currentLocale,
   () => {
-    fetchContent()
+    // fetchContent()
   }
 )
 </script>

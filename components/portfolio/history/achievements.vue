@@ -16,7 +16,6 @@ const achievements = [
     value: `${new Date().getFullYear() - 2018}`,
   },
 ]
-const resume = about.socialItems.find(e => e.slug === 'resume')
 
 const opened = ref(false)
 const emit = defineEmits<{
@@ -64,12 +63,11 @@ const toggle = () => {
             </div>
           </div>
         </div>
-        <div class="flex items-center mt-12 space-x-2">
-          <app-button class="mx-auto" @click="toggle">
+        <div class="flex items-center mt-12 space-x-2 mx-auto w-max">
+          <app-button @click="toggle">
             {{ $t('history.open') }}
           </app-button>
-          <app-button :href="resume?.link" class="mx-auto flex items-center space-x-1">
-            <svg-icon :name="`social-${resume?.slug}`" class="h-6 w-6" />
+          <app-button v-if="about.resume" :href="about.resume?.link" class="mx-auto flex items-center space-x-1">
             <div>
               {{ $t('history.resume') }}
             </div>

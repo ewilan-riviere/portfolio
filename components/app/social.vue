@@ -1,18 +1,13 @@
 <script setup lang="ts">
 import { useMainStore } from '~~/store/main'
 
-const props = defineProps<{
-  primary?:boolean
-}>()
-
 const { about } = useMainStore()
-const socialItems = props.primary ? about.socialItems.filter(e => e.primary) : about.socialItems
 </script>
 
 <template>
   <div>
     <a
-      v-for="item in socialItems"
+      v-for="item in about.socialItems"
       :key="item.slug"
       :href="item.link"
       target="_blank"

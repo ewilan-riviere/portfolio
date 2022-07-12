@@ -41,10 +41,10 @@ const { toggleSidebar } = useNavigationStore()
       <nuxt-link
         to="/"
         :class="isScroll ? '!text-xl' : ''"
-        class="items-center h-full mx-auto font-sans text-lg font-semibold w-max hidden sm:flex border-b border-transparent hover:border-white space-x-2"
+        class="items-center h-full mx-auto font-sans text-lg font-semibold w-max hidden sm:flex border-b border-transparent hover:border-white space-x-2 transition-all duration-300"
       >
         <div>&ndash;</div>
-        <svg-icon name="ewilan-riviere-text" class="h-6 lg:h-7 w-auto transition-all duration-300" />
+        <svg-icon name="ewilan-riviere-text" class="h-6 lg:h-7 w-auto" />
         <div>&ndash;</div>
       </nuxt-link>
 

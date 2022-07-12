@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-const { data: guides } = await useAsyncData('blog', () =>
-  queryContent<Guide>('blog')
-    .find()
-    .then((guides) => guides.filter((e) => e.draft === false))
-)
+const guides = ref<Guide[]>()
+// const { data: guides } = await useAsyncData('blog', () =>
+//   queryContent<Guide>('blog')
+//     .find()
+//     .then((guides) => guides.filter((e) => e.draft === false))
+// )
 
 useMetadata({
   title: 'Blog'

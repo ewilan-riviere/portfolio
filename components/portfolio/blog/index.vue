@@ -4,15 +4,15 @@
 const guides = ref<Guide[]>()
 // const i18n = useI18nStore()
 
-const getGuides = async () => {
-  const guidesList = await queryContent<Guide>('blog')
-    // .locale(i18n.locale)
-    // .where({ draft: false })
-    .find()
+// const getGuides = async () => {
+//   const guidesList = await queryContent<Guide>('blog')
+//     // .locale(i18n.locale)
+//     // .where({ draft: false })
+//     .find()
 
-  guides.value = guidesList.filter((e) => e.draft === false)
-}
-getGuides()
+//   guides.value = guidesList.filter((e) => e.draft === false)
+// }
+// getGuides()
 
 // watch(
 //   () => i18n.locale,

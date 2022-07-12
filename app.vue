@@ -6,7 +6,7 @@ await fetchApi()
 </script>
 
 <template>
-  <div :class="{ 'debug-screens': isDev }">
+  <div>
     <app-helper v-if="isDev" />
     <app-toasts />
     <layout-navbar />
