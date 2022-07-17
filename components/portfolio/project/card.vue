@@ -15,13 +15,13 @@ onMounted(() => {
   <div>
     <article
       v-if="loaded"
-      class="relative transform duration-500 shadow hover:-translate-y-2 hover:shadow-lg cursor-pointer group min-h-[12rem]"
+      class="relative transform duration-500 shadow hover:-translate-y-2 hover:shadow-lg cursor-pointer group min-h-[12.5rem]"
       @click="opened = !opened"
     >
       <app-img
         :src="`/projects/banner/${project.slug}.webp`"
         :alt="project.title"
-        class="rounded-md min-h-[12rem] object-cover"
+        class="rounded-md min-h-[12.5rem] object-cover"
         placeholder="/projects/banner/placeholder.webp"
       />
       <div
