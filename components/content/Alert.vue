@@ -35,7 +35,11 @@ const currentIcon = computed(() => {
     <div class="p-4">
       <div class="flex items-start">
         <div class="flex-shrink-0">
-          <span :class="type" class="w-6 h-6 block" v-html="currentIcon"></span>
+          <span
+            :class="type"
+            class="w-6 h-6 block"
+            v-html="currentIcon"
+          />
         </div>
         <div class="ml-3 w-0 flex-1 pt-0.5">
           <p class="text-sm font-medium text-gray-dark m-0 capitalize">

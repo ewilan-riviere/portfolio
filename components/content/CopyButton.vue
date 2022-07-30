@@ -23,7 +23,7 @@ const copy = (e: MouseEvent) => {
       }, 1000)
     })
     .catch(() => {
-      console.warn("Couldn't copy to clipboard!")
+      console.warn('Couldn\'t copy to clipboard!')
     })
 }
 </script>
@@ -38,6 +38,10 @@ const copy = (e: MouseEvent) => {
       name="clipboard-check"
       class="h-4 w-4"
     />
-    <svg-icon v-else name="clipboard" class="h-4 w-4" />
+    <svg-icon
+      v-else
+      name="clipboard"
+      class="h-4 w-4"
+    />
   </button>
 </template>

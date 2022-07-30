@@ -2,5 +2,28 @@
   "extends": [
     "@nuxtjs/eslint-config-typescript",
     "@antfu"
-  ]
+  ],
+  "rules": {
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        "singleline": {
+          "max": 1
+        },
+        "multiline": {
+          "max": 1
+        }
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
 }

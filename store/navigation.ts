@@ -9,21 +9,21 @@ export const useNavigationStore = defineStore('navigation', {
         route: {
           name: 'index',
         },
-        icon: 'home'
+        icon: 'home',
       },
       {
         label: 'blog',
         route: {
           name: 'blog',
         },
-        icon: 'blog'
+        icon: 'blog',
       },
     ] as RouteLink[],
     external: [
       {
         label: 'Memorandum',
         href: 'https://memorandum.ewilan-riviere.com',
-        icon: 'memorandum'
+        icon: 'memorandum',
       },
     ] as {
       label: string

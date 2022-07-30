@@ -19,9 +19,9 @@ const computedTitle = computed(() =>
   (props.title || props.link)
     .split('/')
     .filter(Boolean)
-    .map((part) =>
+    .map(part =>
       splitByCase(part)
-        .map((p) => upperFirst(p))
+        .map(p => upperFirst(p))
         .join(' '),
     )
     .join(' > '),
@@ -29,5 +29,10 @@ const computedTitle = computed(() =>
 </script>
 
 <template>
-  <Alert icon="👉"> Read more in <NuxtLink :to="link" v-html="computedTitle" />. </Alert>
+  <Alert icon="👉">
+    Read more in <NuxtLink
+      :to="link"
+      v-html="computedTitle"
+    />.
+  </Alert>
 </template>

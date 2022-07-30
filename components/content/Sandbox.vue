@@ -33,7 +33,7 @@ const providers = {
     `https://stackblitz.com/github/${props.repo}/tree/${props.branch}/${props.dir}?embed=1&file=${props.file}&theme=${colorMode.value}`,
 }
 
-const providersTabs = Object.keys(providers).map((p) => ({ label: p }))
+const providersTabs = Object.keys(providers).map(p => ({ label: p }))
 const activeTabIndex = ref(-1)
 const tabs = ref()
 const url = ref('')
@@ -46,7 +46,7 @@ const changeProvider = (value) => {
 }
 
 const sandBoxUrl = computed(() =>
-  url.value?.replace('?embed=1&', '?').replace('/embed/', '/s/')
+  url.value?.replace('?embed=1&', '?').replace('/embed/', '/s/'),
 )
 
 const updateTab = (i: number) => {
@@ -81,7 +81,10 @@ onMounted(() => {
             :to="sandBoxUrl"
             target="_blank"
           >
-            <Icon name="heroicons-outline:arrows-expand" class="h-6 w-6" />
+            <Icon
+              name="heroicons-outline:arrows-expand"
+              class="h-6 w-6"
+            />
           </NuxtLink>
         </div>
       </template>
@@ -95,7 +98,10 @@ onMounted(() => {
       class="h-full min-h-[700px] w-full overflow-hidden"
     />
 
-    <span v-else class="flex-1 text-white">Loading Sandbox...</span>
+    <span
+      v-else
+      class="flex-1 text-white"
+    >Loading Sandbox...</span>
   </div>
 </template>
 

@@ -23,7 +23,10 @@ onMounted(() => {
             {{ i18n.currentLocale }}
           </div>
         </div>
-        <svg-icon name="locale" class="w-6 h-6" />
+        <svg-icon
+          name="locale"
+          class="w-6 h-6"
+        />
       </div>
     </button>
     <template #content>

@@ -28,8 +28,15 @@ const props = defineProps({
     :class="[size, bold ? 'font-semibold' : 'font-medium']"
     :to="href"
   >
-    <Icon v-if="icon" :name="icon" class="w-4 h-4 mr-2" />
-    <Markdown :use="$slots.default" unwrap="p ul li" />
+    <Icon
+      v-if="icon"
+      :name="icon"
+      class="w-4 h-4 mr-2"
+    />
+    <Markdown
+      :use="$slots.default"
+      unwrap="p ul li"
+    />
   </NuxtLink>
 </template>
 

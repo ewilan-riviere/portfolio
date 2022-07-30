@@ -48,11 +48,11 @@ export default defineComponent({
     return () => {
       const items = flatUnwrap((slots.default && slots.default()) ?? [], [
         'ul',
-      ]).map((li) => unwrap(li, ['li']))
+      ]).map(li => unwrap(li, ['li']))
 
       return h(
         'ul',
-        items.map((item) =>
+        items.map(item =>
           h('li', { class: 'mb-3 flex items-center' }, [
             h(
               'span',
@@ -60,11 +60,11 @@ export default defineComponent({
               h(resolveComponent('icon'), {
                 name: iconName.value,
                 class: 'h-6 w-6',
-              })
+              }),
             ),
             h('span', h(resolveComponent('Markdown'), { use: () => item })),
-          ])
-        )
+          ]),
+        ),
       )
     }
   },

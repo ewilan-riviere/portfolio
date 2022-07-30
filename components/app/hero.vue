@@ -15,7 +15,8 @@ defineProps<{
             {{ title }}
           </h1>
           <div
-            class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:text-3xl text-center capitalize">
+            class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl lg:text-3xl text-center capitalize"
+          >
             {{ subtitle }}
           </div>
         </div>

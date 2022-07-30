@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useMainStore } from '~~/store/main'
 
+const emit = defineEmits<{
+  (e: 'opened', opened: boolean): void
+}>()
 const { about, projects } = useMainStore()
 const achievements = [
   {
@@ -18,9 +21,6 @@ const achievements = [
 ]
 
 const opened = ref(false)
-const emit = defineEmits<{
-  (e: 'opened', opened: boolean): void
-}>()
 const toggle = () => {
   opened.value = !opened.value
   emit('opened', opened.value)
@@ -67,7 +67,12 @@ const toggle = () => {
           <app-button @click="toggle">
             {{ $t('history.open') }}
           </app-button>
-          <app-button v-if="about.resume" :href="about.resume?.link" class="mx-auto flex items-center space-x-1">
+          <app-button
+            v-if="about.resume"
+            :href="about.resume?.link"
+            download="Ewilan Rivière - Resume"
+            class="mx-auto flex items-center space-x-1"
+          >
             <div>
               {{ $t('history.resume') }}
             </div>

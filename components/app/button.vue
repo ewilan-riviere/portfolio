@@ -9,7 +9,7 @@ interface Props {
   href?: string
   to?: string | object
   disabled?: boolean
-  download?: boolean
+  download?: string
   icon?: string
   loading?: boolean
   outlined?: boolean
@@ -24,9 +24,9 @@ const props = withDefaults(defineProps<Props>(), {
   href: undefined,
   to: undefined,
   disabled: false,
-  download: false,
+  download: undefined,
   icon: undefined,
-  loading: false
+  loading: false,
 })
 
 defineEmits(['click'])
@@ -34,19 +34,18 @@ defineEmits(['click'])
 const tag = ref('button')
 const btn = ref<HTMLElement>()
 
-if (props.href) {
+if (props.href)
   tag.value = 'a'
-}
-if (props.to) {
+
+if (props.to)
   tag.value = 'router-link'
-}
 
 const alignment = computed((): string => {
   const alignements: Keyable = {
     left: 'mr-auto',
     center: 'mx-auto',
     right: 'ml-auto',
-    default: 'mx-auto'
+    default: 'mx-auto',
   }
   const current = props.align
   return alignements[current] || alignements.default
@@ -70,7 +69,7 @@ onMounted(() => {
     :to="to !== undefined ? to : null"
     :target="href ? (download ? '' : '_blank') : null"
     :rel="href ? 'noopener noreferrer' : null"
-    :class="[color, { disabled: disabled }, size]"
+    :class="[color, { disabled }, size]"
     class="btn relative"
     :type="type"
     :disabled="disabled"
@@ -100,14 +99,27 @@ onMounted(() => {
         />
       </svg>
     </span>
-    <span :class="[{ 'space-x-2': icon }, alignment]" class="flex items-center">
-      <svg-icon v-if="icon" :name="icon" class="h-5 w-5" />
+    <span
+      :class="[{ 'space-x-2': icon }, alignment]"
+      class="flex items-center"
+    >
+      <SvgIcon
+        v-if="icon"
+        :name="icon"
+        class="h-5 w-5"
+      />
       <span class="inline-block">
         <slot />
       </span>
     </span>
-    <span v-if="href" class="ml-1 block">
-      <svg-icon name="external-link" class="h-4 w-4" />
+    <span
+      v-if="href"
+      class="ml-1 block"
+    >
+      <SvgIcon
+        name="external-link"
+        class="h-4 w-4"
+      />
     </span>
   </component>
 </template>

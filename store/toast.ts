@@ -29,7 +29,7 @@ export const useToastStore = defineStore('toast', {
     deleteToast(payload: Toast) {
       const toasts = this.toasts
 
-      const index = toasts.findIndex((key) => key.id === payload.id)
+      const index = toasts.findIndex(key => key.id === payload.id)
       toasts.splice(index, 1)
 
       this.$patch({

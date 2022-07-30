@@ -5,10 +5,10 @@ import frJson from '../locales/fr.json'
 export const useI18nStore = defineStore('i18n', {
   state: () => ({
     availableLocales: ['en', 'fr'],
-    locale: 'en' as LocaleList
+    locale: 'en' as LocaleList,
   }),
   getters: {
-    currentLocale: (state) => state.locale,
+    currentLocale: state => state.locale,
   },
   actions: {
     translate(key: string) {
@@ -23,26 +23,27 @@ export const useI18nStore = defineStore('i18n', {
     },
     getValue(obj: Keyable, path: string): any {
       try {
-        if (!path) { return obj }
+        if (!path)
+          return obj
         const properties = path.split('.')
         const key = properties.shift() as string
         return this.getValue(obj[key], properties.join('.')) ?? path
-      } catch (error) {
+      }
+      catch (error) {
         return path
       }
     },
     getStorageLocale() {
       let locale: LocaleList = 'en'
-      if (process.client) {
+      if (process.client)
         locale = localStorage.getItem('locale') as LocaleList ?? 'en'
-      }
 
       return locale
     },
     transLocale(locale: LocaleList | string) {
       const locales: Keyable = {
         en: 'English',
-        fr: 'Français'
+        fr: 'Français',
       }
 
       return locales[locale] ?? locale
@@ -60,12 +61,13 @@ export const useI18nStore = defineStore('i18n', {
         const localeStorageLocale = localStorage.getItem('locale') as LocaleList
         if (localeStorageLocale) {
           this.switchLocale(localeStorageLocale)
-        } else {
+        }
+        else {
           const navigatorLanguage = navigator.language
           const navigatorLocale = navigatorLanguage.split('-')[0] as LocaleList
           this.switchLocale(navigatorLocale)
         }
       }
-    }
+    },
   },
 })

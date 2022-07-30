@@ -8,7 +8,8 @@ const formatDateByLocale = (date: string) => {
       month: 'long',
       year: 'numeric',
     }).format(Date.parse(date))
-  } catch (_) {
+  }
+  catch (_) {
     return date
   }
 }
@@ -23,15 +24,24 @@ const formatDateByLocale = (date: string) => {
     >
       <!-- Body -->
       <div class="flex-1">
-        <ContentRenderer :value="release" class="docus-content" />
-        <ReleasesReactions class="lg:mb-4" :release="release" />
+        <ContentRenderer
+          :value="release"
+          class="docus-content"
+        />
+        <ReleasesReactions
+          class="lg:mb-4"
+          :release="release"
+        />
       </div>
 
       <!-- Header -->
       <div
         class="sticky flex flex-row items-center self-start justify-between w-full gap-2 py-2 text-right lg:py-0 release-meta surface z-1 lg:w-1/4 lg:bg-transparent lg:backdrop-blur-none lg:items-end lg:flex-col"
       >
-        <a :href="release.url" target="_blank">
+        <a
+          :href="release.url"
+          target="_blank"
+        >
           <h2
             :id="release.name"
             class="text-2xl font-bold transition-colors cursor-pointer hover:text-secondary-hover transition-base lg:text-3xl"
@@ -52,7 +62,7 @@ const formatDateByLocale = (date: string) => {
                 class="w-6 h-6 rounded-full"
                 :src="release.author?.avatar"
                 alt=""
-              />
+              >
             </div>
             <p class="text-sm lg:text-base">@{{ release.author.name }}</p>
           </a>

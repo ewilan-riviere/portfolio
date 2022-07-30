@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Navigation, Pagination, Controller } from 'swiper'
+import { Controller, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Swiper as SwiperInterface } from 'swiper/types'
+import type { Swiper as SwiperInterface } from 'swiper/types'
 import { useMainStore } from '~~/store/main'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -19,7 +19,7 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
 <template>
   <div class="technologies">
     <client-only>
-      <swiper
+      <Swiper
         :modules="[Navigation, Pagination, Controller]"
         :controller="{ control: controlledSwiper }"
         :slides-per-view="1"
@@ -45,7 +45,10 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
         }"
         @swiper="setControlledSwiper"
       >
-        <swiper-slide v-for="technology in technologies" :key="technology.slug">
+        <SwiperSlide
+          v-for="technology in technologies"
+          :key="technology.slug"
+        >
           <div class="p-5">
             <a
               :href="technology.link"
@@ -59,20 +62,26 @@ const setControlledSwiper = (swiper: SwiperInterface) =>
               />
             </a>
           </div>
-        </swiper-slide>
+        </SwiperSlide>
         <button
           class="swiper-button right-6"
           @click="controlledSwiper?.slideNext()"
         >
-          <svg-icon name="arrow-chevron-right" class="w-6 h-6" />
+          <svg-icon
+            name="arrow-chevron-right"
+            class="w-6 h-6"
+          />
         </button>
         <button
           class="swiper-button right-16"
           @click="controlledSwiper?.slidePrev()"
         >
-          <svg-icon name="arrow-chevron-right" class="w-6 h-6 rotate-180" />
+          <svg-icon
+            name="arrow-chevron-right"
+            class="w-6 h-6 rotate-180"
+          />
         </button>
-      </swiper>
+      </Swiper>
     </client-only>
   </div>
 </template>

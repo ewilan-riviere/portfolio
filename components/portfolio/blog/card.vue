@@ -19,11 +19,15 @@ const date = computed(() => formatDate(props.guide.date, {
 
 <template>
   <nuxt-link
-    :to="{name:'blog-slug', params: { slug: slug}}"
+    :to="{ name: 'blog-slug', params: { slug } }"
     class="flex flex-col rounded-lg shadow overflow-hidden transform duration-500 hover:-translate-y-2 hover:shadow-lg group cursor-pointer relative"
   >
     <div class="flex-shrink-0">
-      <app-img class="h-48 w-full object-cover" :src="guide.picture" alt="" />
+      <app-img
+        class="h-48 w-full object-cover"
+        :src="guide.picture"
+        :alt="guide.title"
+      />
     </div>
     <div
       class="flex-1 bg-white dark:bg-gray-800 p-6 flex flex-col justify-between"
@@ -44,7 +48,10 @@ const date = computed(() => formatDate(props.guide.date, {
         </div>
       </div>
       <div class="mt-6">
-        <div v-if="guide.tags" class="text-sm font-medium text-gray-dark capitalize">
+        <div
+          v-if="guide.tags"
+          class="text-sm font-medium text-gray-dark capitalize"
+        >
           {{ getList(guide.tags) }}
         </div>
         <div class="flex space-x-1 text-sm text-gray-medium">

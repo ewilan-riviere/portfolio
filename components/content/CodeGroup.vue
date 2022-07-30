@@ -19,7 +19,7 @@ export default defineComponent({
   render() {
     const slots = this.$slots.default()
     const tabs = slots
-      .filter((slot) => isTag(slot, 'code-block') || isTag(slot, 'code'))
+      .filter(slot => isTag(slot, 'code-block') || isTag(slot, 'code'))
       .map((slot, index) => {
         return {
           label: slot?.props?.filename || slot?.props?.label || `${index}`,
@@ -38,10 +38,10 @@ export default defineComponent({
       },
       [
         h(TabsHeader, {
-          ref: 'tabs-header',
-          activeTabIndex: this.activeTabIndex,
+          'ref': 'tabs-header',
+          'activeTabIndex': this.activeTabIndex,
           tabs,
-          'onUpdate:activeTabIndex': ($event) => (this.activeTabIndex = $event),
+          'onUpdate:activeTabIndex': $event => (this.activeTabIndex = $event),
         }),
         h(
           'div',
@@ -67,19 +67,19 @@ export default defineComponent({
                 isTag(slot, 'code')
                   ? slot
                   : h(
-                      'div',
-                      {
-                        class: {
-                          'preview-canvas': true,
-                        },
+                    'div',
+                    {
+                      class: {
+                        'preview-canvas': true,
                       },
-                      [slot.children.default()]
-                    ),
-              ]
-            )
-          )
+                    },
+                    [slot.children.default()],
+                  ),
+              ],
+            ),
+          ),
         ),
-      ]
+      ],
     )
   },
 })

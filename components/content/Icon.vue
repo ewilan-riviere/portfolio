@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { ref, watch, computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useNuxtApp } from '#imports'
 
-const nuxtApp = useNuxtApp()
 const props = defineProps({
   name: {
     type: String,
     required: true,
   },
 })
-
+const nuxtApp = useNuxtApp()
 // const icon: Ref<IconifyIcon | null> = ref(null)
 // const component = computed(() => nuxtApp.vueApp.component(props.name))
 
@@ -22,7 +21,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div></div>
+  <div />
   <!-- <div>{{ name }}</div> -->
   <!-- <Iconify v-if="icon" :icon="icon" />
   <Component :is="component" v-else-if="component" />

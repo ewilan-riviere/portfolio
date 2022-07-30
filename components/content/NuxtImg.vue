@@ -32,11 +32,13 @@ export default defineComponent({
 
       try {
         src = JSON.parse(src as any)
-      } catch (e) {
+      }
+      catch (e) {
         src = props.src
       }
 
-      if (typeof src === 'string') return props.src
+      if (typeof src === 'string')
+        return props.src
 
       return src
     })
@@ -47,18 +49,16 @@ export default defineComponent({
   },
   render({ imgSrc }) {
     // String as `src`; return a single image
-    if (typeof imgSrc === 'string') {
+    if (typeof imgSrc === 'string')
       return h('img', { src: imgSrc })
-    }
 
     // Object as `src`; return a light and dark image if present
     const nodes = []
-    if (imgSrc.light) {
+    if (imgSrc.light)
       nodes.push(h('img', { src: imgSrc.light, class: ['dark-img'] }))
-    }
-    if (imgSrc.dark) {
+
+    if (imgSrc.dark)
       nodes.push(h('img', { src: imgSrc.dark, class: ['light-img'] }))
-    }
 
     return nodes
   },

@@ -18,7 +18,10 @@ const { about } = useMainStore()
       <span class="sr-only">
         {{ item.name }}
       </span>
-      <svg-icon :name="`social-${item.slug}`" class="w-6 h-6" />
+      <svg-icon
+        :name="`social-${item.slug}`"
+        class="w-6 h-6"
+      />
     </a>
   </div>
 </template>

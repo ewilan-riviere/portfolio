@@ -1,5 +1,5 @@
-import { MetaObject } from '#app'
-import { ComputedGetter } from 'vue'
+import type { MetaObject } from '#app'
+import type { ComputedGetter } from 'vue'
 import { useDarkMode } from './useDarkMode'
 
 const { isDark } = useDarkMode()
@@ -18,19 +18,16 @@ export const useMetadata = (meta?: HeadMeta) => {
   const appDescription = 'Portfolio of Ewilan Rivière, developer'
 
   let title = appName
-  if (meta?.title) {
+  if (meta?.title)
     title = `${meta.title} · ${appName}`
-  }
 
   let description = appDescription
-  if (meta?.description) {
-    description = meta.description.substring(0, 155 - 3) + '...'
-  }
+  if (meta?.description)
+    description = `${meta.description.substring(0, 155 - 3)}...`
 
   let image = '/default.jpg'
-  if (meta?.image) {
+  if (meta?.image)
     image = meta.image
-  }
 
   const { fullPath } = useRoute()
   const route = fullPath
@@ -106,8 +103,8 @@ export const useMetadata = (meta?: HeadMeta) => {
       name: 'Nuxt.js',
       logo: '/logo.png',
       sameAs: [
-        'https://twitter.com/nuxt_js'
-      ]
+        'https://twitter.com/nuxt_js',
+      ],
     }),
     defineWebSite({
       name: 'Nuxt',

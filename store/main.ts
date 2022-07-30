@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useMainStore = defineStore('main', {
   state: () => ({
+    ready: false,
     about: {} as About,
     developers: {} as Developer[],
     features: {} as Feature[],
@@ -13,49 +14,54 @@ export const useMainStore = defineStore('main', {
     technologies: {} as Technology[],
   }),
   actions: {
-    setAbout(payload: About) {
+    setReady(payload: boolean) {
       this.$patch({
-        about: payload,
+        ready: payload,
       })
     },
-    setDevelopers(payload: Developer[]) {
+    setAbout(payload: About | undefined) {
       this.$patch({
-        developers: payload,
+        about: payload ?? {},
       })
     },
-    setFeatures(payload: Feature[]) {
+    setDevelopers(payload: Developer[] | undefined) {
       this.$patch({
-        features: payload,
+        developers: payload ?? [],
       })
     },
-    setHistoryItems(payload: HistoryItem[]) {
+    setFeatures(payload: Feature[] | undefined) {
       this.$patch({
-        historyItems: payload,
+        features: payload ?? [],
+      })
+    },
+    setHistoryItems(payload: HistoryItem[] | undefined) {
+      this.$patch({
+        historyItems: payload ?? [],
       })
     },
     setHobbies(payload: Hobby[]) {
       this.$patch({
-        hobbies: payload,
+        hobbies: payload ?? [],
       })
     },
-    setProjectStatuses(payload: ProjectStatus[]) {
+    setProjectStatuses(payload: ProjectStatus[] | undefined) {
       this.$patch({
-        projectStatuses: payload,
+        projectStatuses: payload ?? [],
       })
     },
-    setProjects(payload: Project[]) {
+    setProjects(payload: Project[] | undefined) {
       this.$patch({
-        projects: payload,
+        projects: payload ?? [],
       })
     },
-    setSkills(payload: Skill[]) {
+    setSkills(payload: Skill[] | undefined) {
       this.$patch({
-        skills: payload,
+        skills: payload ?? [],
       })
     },
-    setTechnologies(payload: Technology[]) {
+    setTechnologies(payload: Technology[] | undefined) {
       this.$patch({
-        technologies: payload,
+        technologies: payload ?? [],
       })
     },
   },

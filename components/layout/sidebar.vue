@@ -9,21 +9,6 @@ const target = ref(null)
 
 const navigation = useNavigationStore()
 
-watch(
-  () => navigation.sidebar,
-  (newVal) => {
-    if (newVal) {
-      openSidebar()
-    } else {
-      closeSidebar()
-    }
-  }
-)
-
-onClickOutside(target, () => {
-  closeSidebar()
-})
-
 const openSidebar = () => {
   layer.value = true
   setTimeout(() => {
@@ -40,6 +25,20 @@ const closeSidebar = () => {
 
   navigation.closeSidebar()
 }
+
+watch(
+  () => navigation.sidebar,
+  (newVal) => {
+    if (newVal)
+      openSidebar()
+    else
+      closeSidebar()
+  },
+)
+
+onClickOutside(target, () => {
+  closeSidebar()
+})
 </script>
 
 <template>
@@ -77,10 +76,19 @@ const closeSidebar = () => {
           class="inline-flex h-8 w-auto items-center"
           active-class="active-logo"
         >
-          <span class="inline-flex items-center" @click="closeSidebar">
-            <svg-icon name="ewilan-riviere" class="w-auto h-8 transition-all duration-100 sm:h-10 group-hover:home-logo-shadow" />
+          <span
+            class="inline-flex items-center"
+            @click="closeSidebar"
+          >
+            <svg-icon
+              name="ewilan-riviere"
+              class="w-auto h-8 transition-all duration-100 sm:h-10 group-hover:home-logo-shadow"
+            />
             <div class="mt-2 ml-3 dark:text-gray-100">
-              <svg-icon name="ewilan-riviere-text" class="h-6 w-auto" />
+              <svg-icon
+                name="ewilan-riviere-text"
+                class="h-6 w-auto"
+              />
             </div>
           </span>
         </nuxt-link>
@@ -95,10 +103,13 @@ const closeSidebar = () => {
               class="link group"
               @click="closeSidebar"
             >
-              <svg-icon :name="`nav-${link.icon}`" class="w-6 h-6" />
+              <svg-icon
+                :name="`nav-${link.icon}`"
+                class="w-6 h-6"
+              />
               <div>{{ $t(`nav.${link.label}`) }}</div>
             </nuxt-link>
-            <hr class="border-gray-700 dark:border-gray-300" />
+            <hr class="border-gray-700 dark:border-gray-300">
             <a
               v-for="(link, id) in navigation.external"
               :key="id"
@@ -108,7 +119,10 @@ const closeSidebar = () => {
               class="link group"
               @click="closeSidebar"
             >
-              <svg-icon :name="`nav-${link.icon}`" class="w-6 h-6" />
+              <svg-icon
+                :name="`nav-${link.icon}`"
+                class="w-6 h-6"
+              />
               <div>{{ $t(`nav.${link.label}`) }}</div>
             </a>
           </div>
@@ -116,7 +130,10 @@ const closeSidebar = () => {
       </div>
     </div>
 
-    <div class="w-14 flex-shrink-0" aria-hidden="true">
+    <div
+      class="w-14 flex-shrink-0"
+      aria-hidden="true"
+    >
       <!-- Dummy element to force sidebar to shrink to fit close icon -->
     </div>
   </div>

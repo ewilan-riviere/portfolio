@@ -22,13 +22,14 @@ const highlightUnderline = ref()
 function updateHighlightUnderlinePosition() {
   const activeTab = tabsRef.value[props.activeTabIndex]
 
-  if (!activeTab) return
+  if (!activeTab)
+    return
 
   highlightUnderline.value.style.left = `${activeTab.offsetLeft}px`
   highlightUnderline.value.style.top = `${activeTab.offsetTop}px`
   highlightUnderline.value.style.width = `${activeTab.clientWidth}px`
   highlightUnderline.value.style.height = `${activeTab.clientHeight}px`
-  highlightUnderline.value.style.transform = `scale(1)`
+  highlightUnderline.value.style.transform = 'scale(1)'
   highlightUnderline.value.style.opacity = 1
 }
 
@@ -40,7 +41,8 @@ function updateTabs(i) {
 watch(
   tabsRef,
   (newVal) => {
-    if (!newVal) return
+    if (!newVal)
+      return
 
     setTimeout(() => {
       updateHighlightUnderlinePosition()
@@ -48,13 +50,16 @@ watch(
   },
   {
     immediate: true,
-  }
+  },
 )
 </script>
 
 <template>
   <div class="tabs-header relative text-white bg-gray-700">
-    <div v-if="tabs" class="relative z-0 px-2">
+    <div
+      v-if="tabs"
+      class="relative z-0 px-2"
+    >
       <button
         v-for="({ label }, i) in tabs"
         ref="tabsRef"

@@ -5,7 +5,7 @@ useMetadata()
 <template>
   <div>
     <portfolio-hero />
-    <!-- <portfolio-about /> -->
+    <portfolio-about />
     <portfolio-technologies-bg class="mt-3 mb-10" />
     <portfolio-features />
     <portfolio-project class="mt-16" />

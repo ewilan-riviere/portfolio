@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt'
+import svgLoader from 'vite-svg-loader'
 import config from './config'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
@@ -12,11 +13,11 @@ export default defineNuxtConfig({
     script: config.meta.script,
   },
   modules: [
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss',
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    'nuxt-schema-org',
+    '@nuxt/content', // https://github.com/nuxt/content
+    '@nuxtjs/tailwindcss', // https://github.com/nuxt-community/tailwindcss-module
+    '@pinia/nuxt', // https://github.com/vuejs/pinia
+    '@vueuse/nuxt', // https://github.com/vueuse/vueuse
+    'nuxt-schema-org', // https://github.com/vueuse/schema-org#readme
   ],
   tailwindcss: config.modules.tailwindcss,
   vueuse: config.modules.vueuse,
@@ -35,6 +36,12 @@ export default defineNuxtConfig({
   typescript: {
     strict: true, // for pinia
     shim: false, // with Take Over Mode from https://github.com/johnsoncodehk/volar/discussions/471
+  },
+
+  vite: {
+    plugins: [
+      svgLoader(),
+    ],
   },
 
   // nitro: {

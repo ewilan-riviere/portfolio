@@ -70,8 +70,7 @@ export default <Config>{
             {},
         },
         '.parallax': {
-          '@apply bg-center bg-no-repeat bg-cover': {},
-          'background-attachment': 'fixed',
+          '@apply bg-center bg-no-repeat bg-cover bg-fixed': {},
         },
         '.center-full': {
           '@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2':

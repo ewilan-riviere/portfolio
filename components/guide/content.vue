@@ -7,11 +7,14 @@ const { getList, transList } = useUtils()
 </script>
 
 <template>
-  <div v-if="content" class="overflow-hidden">
+  <div
+    v-if="content"
+    class="overflow-hidden"
+  >
     <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
       <div
         class="hidden lg:block bg-gray-50 dark:bg-gray-800 absolute top-0 bottom-0 left-3/4 w-screen"
-      ></div>
+      />
       <div
         class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none"
       >
@@ -66,7 +69,7 @@ const { getList, transList } = useUtils()
                   alt="Whitney leaning against a railing on a downtown street"
                   width="1184"
                   height="1376"
-                />
+                >
               </div>
             </figure>
           </div>
@@ -80,7 +83,10 @@ const { getList, transList } = useUtils()
           <div
             class="mt-5 prose prose-indigo text-gray-medium word-wraping mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1"
           >
-            <ContentRenderer v-if="content" :value="content">
+            <ContentRenderer
+              v-if="content"
+              :value="content"
+            >
               <MarkdownRenderer :value="content" />
               <template #empty>
                 <p>No content found.</p>

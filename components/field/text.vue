@@ -5,18 +5,18 @@ interface Props {
   name?: string
   placeholder?: string
   type?:
-    | 'date'
-    | 'datetime-local'
-    | 'email'
-    | 'month'
-    | 'number'
-    | 'password'
-    | 'search'
-    | 'tel'
-    | 'text'
-    | 'time'
-    | 'url'
-    | 'week'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'search'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week'
   required?: boolean
   multiline?: boolean
   minlength?: number
@@ -59,7 +59,10 @@ const value = computed<string>({
       class="block text-sm font-medium text-gray-700 dark:text-gray-200"
     >
       {{ label }}
-      <span v-if="required" class="text-red-600 dark:text-red-500">*</span>
+      <span
+        v-if="required"
+        class="text-red-600 dark:text-red-500"
+      >*</span>
     </label>
     <div class="mt-1">
       <textarea
@@ -74,7 +77,7 @@ const value = computed<string>({
         :autocomplete="autocomplete"
         class="field"
         :required="required"
-      ></textarea>
+      />
       <input
         v-else
         :id="name"
@@ -86,9 +89,12 @@ const value = computed<string>({
         :autocomplete="autocomplete"
         :aria-describedby="`${name}-description`"
         :required="required"
-      />
+      >
     </div>
-    <div id="email-description" class="mt-2 text-sm text-gray">
+    <div
+      id="email-description"
+      class="mt-2 text-sm text-gray"
+    >
       <slot />
     </div>
   </div>
