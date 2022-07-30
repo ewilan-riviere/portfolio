@@ -14,7 +14,6 @@ onMounted(() => {
 <template>
   <div>
     <app-slide-over
-      full
       border
       :title="project.title"
       :subtitle="$t(`projects.${project.slug}.subtitle`)"

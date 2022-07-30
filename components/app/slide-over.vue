@@ -49,7 +49,7 @@ watch(
       dialog.value = newVal
       setTimeout(() => {
         layer.value = newVal
-      }, 250)
+      }, 500)
       scrollEnabled()
     }
   },
@@ -73,7 +73,7 @@ onClickOutside(target, () => closeEvent())
       <Transition>
         <div
           v-if="overlay"
-          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          class="fixed inset-0 bg-white dark:bg-gray-900 opacity-50 transition-opacity"
         />
       </Transition>
 
@@ -90,7 +90,7 @@ onClickOutside(target, () => closeEvent())
                 ref="target"
                 :class="[
                   dialog ? 'translate-x-0' : 'translate-x-full',
-                  full ? 'w-screen' : 'w-screen max-w-md',
+                  full ? 'w-screen' : 'w-screen max-w-3xl',
                 ]"
                 class="pointer-events-auto transform transition ease-in-out duration-500 sm:duration-700"
               >
