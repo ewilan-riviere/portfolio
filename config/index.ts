@@ -2,8 +2,8 @@ import build from './build'
 import meta from './meta'
 import modules from './modules'
 import {
-  runtimeConfigPublic,
   runtimeConfigPrivate,
+  runtimeConfigPublic,
 } from './runtime-config'
 
 const config = {

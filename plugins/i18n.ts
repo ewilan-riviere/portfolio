@@ -78,12 +78,11 @@ export default defineNuxtPlugin(() => {
       },
       locale: computed(() => {
         let locale: LocaleList = 'en'
-        if (process.client) {
+        if (process.client)
           locale = localStorage.getItem('locale') as LocaleList ?? 'en'
-        }
 
         return locale
-      })
-    }
+      }),
+    },
   }
 })

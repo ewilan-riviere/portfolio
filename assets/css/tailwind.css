@@ -1,5 +1,5 @@
-@import url('./fonts.css');
-@import url('./prose.css');
+@import 'addons/fonts.css';
+@import 'addons/prose.css';
 
 @tailwind base;
 @tailwind components;
@@ -76,7 +76,7 @@ body {
   pointer-events: none;
 }
 #nprogress .bar {
-  @apply fixed top-0 left-0 w-full bg-primary-600 opacity-75;
+  /* @apply fixed top-0 left-0 w-full bg-primary-600 opacity-75; */
   z-index: 1031;
   height: 3px;
 }
