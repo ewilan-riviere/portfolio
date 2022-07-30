@@ -2,6 +2,7 @@
 
 import enJson from '../locales/en.json'
 import frJson from '../locales/fr.json'
+import bzhJson from '../locales/bzh.json'
 import { useI18nStore } from '~~/store/i18n'
 
 // /**
@@ -71,6 +72,7 @@ export default defineNuxtPlugin(() => {
         const locales = {
           en: enJson,
           fr: frJson,
+          bzh: bzhJson,
         }
         const currentLocale = locales[locale] ?? enJson
 

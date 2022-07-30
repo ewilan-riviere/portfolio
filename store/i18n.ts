@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 import enJson from '../locales/en.json'
 import frJson from '../locales/fr.json'
+import bzhJson from '../locales/bzh.json'
 
 export const useI18nStore = defineStore('i18n', {
   state: () => ({
-    availableLocales: ['en', 'fr'],
+    availableLocales: ['en', 'fr', 'bzh'],
     locale: 'en' as LocaleList,
   }),
   getters: {
@@ -16,6 +17,7 @@ export const useI18nStore = defineStore('i18n', {
       const locales = {
         en: enJson,
         fr: frJson,
+        // bzh: bzhJson,
       }
       const currentLocale = locales[locale] ?? enJson
 
@@ -44,6 +46,7 @@ export const useI18nStore = defineStore('i18n', {
       const locales: Keyable = {
         en: 'English',
         fr: 'Français',
+        // bzh: 'Breizh',
       }
 
       return locales[locale] ?? locale
