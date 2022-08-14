@@ -6,15 +6,15 @@ import skillsTools from '~/assets/data/skills/tools.json'
 
 export default defineEventHandler(() => {
   const frameworks = getJson<Skill[]>(skillsFrameworks).filter(
-    (skill) => skill.isDisplay
+    skill => skill.isDisplay
   )
   const languages = getJson<Skill[]>(skillsLanguages).filter(
-    (skill) => skill.isDisplay
+    skill => skill.isDisplay
   )
   const talkings = getJson<Skill[]>(skillsTalking).filter(
-    (skill) => skill.isDisplay
+    skill => skill.isDisplay
   )
-  const tools = getJson<Skill[]>(skillsTools).filter((skill) => skill.isDisplay)
+  const tools = getJson<Skill[]>(skillsTools).filter(skill => skill.isDisplay)
 
   return [...frameworks, ...languages, ...talkings, ...tools]
 })

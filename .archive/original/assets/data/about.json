@@ -1,0 +1,55 @@
+{
+  "name": "Ewilan Rivière",
+  "professionalTitle": "about.professionalTitle",
+  "hobbies": [
+    "develop",
+    "read",
+    "paint",
+    "podcasts",
+    "video-games",
+    "tv-show"
+  ],
+  "resume": {
+    "name": "Resume",
+    "slug": "resume",
+    "link": "/ewilan-riviere-resume.pdf"
+  },
+  "socialItems": [
+    {
+      "name": "GitHub",
+      "slug": "github",
+      "color": "#181717",
+      "link": "https://github.com/ewilan-riviere"
+    },
+    {
+      "name": "GitLab",
+      "slug": "gitlab",
+      "color": "#FC6D26",
+      "link": "https://gitlab.com/ewilan-riviere"
+    },
+    {
+      "name": "Stack Overflow",
+      "slug": "stackoverflow",
+      "color": "#F58025",
+      "link": "https://stackoverflow.com/users/11008206/ewilan-r"
+    },
+    {
+      "name": "Twitter",
+      "slug": "twitter",
+      "color": "#1DA1F2",
+      "link": "https://twitter.com/ewilanriviere"
+    },
+    {
+      "name": "Email",
+      "slug": "email",
+      "color": "#EA4335",
+      "link": "mailto:contact@ewilan-riviere.com"
+    },
+    {
+      "name": "LinkedIn",
+      "slug": "linkedin",
+      "color": "#0A66C2",
+      "link": "https://www.linkedin.com/in/ewilan-riviere"
+    }
+  ]
+}

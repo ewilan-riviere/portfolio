@@ -13,7 +13,8 @@ defineProps<{
       {{ subtitle }}
     </p>
     <h2
-      class="text-3xl tracking-tight font-quicksand font-semibold text-gray-dark sm:text-4xl mt-1">
+      class="text-3xl tracking-tight font-quicksand font-semibold text-gray-dark sm:text-4xl mt-1"
+    >
       {{ title }}
     </h2>
   </div>

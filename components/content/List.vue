@@ -5,7 +5,7 @@ import {
   h,
   resolveComponent,
   useSlots,
-  useUnwrap,
+  useUnwrap
 } from '#imports'
 
 const iconTypeMap = {
@@ -13,7 +13,7 @@ const iconTypeMap = {
   info: 'heroicons-outline:information-circle',
   success: 'heroicons-outline:check-circle',
   warning: 'heroicons-outline:exclamation',
-  danger: 'heroicons-outline:exclamation-circle',
+  danger: 'heroicons-outline:exclamation-circle'
 }
 
 export default defineComponent({
@@ -24,7 +24,7 @@ export default defineComponent({
      */
     icon: {
       type: String,
-      default: null,
+      default: null
     },
     /**
      * Type of list
@@ -33,10 +33,10 @@ export default defineComponent({
       type: String,
       default: 'primary',
       validator: (value: string) =>
-        ['primary', 'info', 'success', 'warning', 'danger'].includes(value),
-    },
+        ['primary', 'info', 'success', 'warning', 'danger'].includes(value)
+    }
   },
-  setup(props) {
+  setup (props) {
     const slots = useSlots()
 
     const { flatUnwrap, unwrap } = useUnwrap()
@@ -47,27 +47,27 @@ export default defineComponent({
     // Otherwise Vue warns that slot "default" was invoked outside of the render function
     return () => {
       const items = flatUnwrap((slots.default && slots.default()) ?? [], [
-        'ul',
-      ]).map((li) => unwrap(li, ['li']))
+        'ul'
+      ]).map(li => unwrap(li, ['li']))
 
       return h(
         'ul',
-        items.map((item) =>
+        items.map(item =>
           h('li', { class: 'mb-3 flex items-center' }, [
             h(
               'span',
               { class: `list-${props.type} mt-px mr-3 flex-shrink-0` },
               h(resolveComponent('icon'), {
                 name: iconName.value,
-                class: 'h-6 w-6',
+                class: 'h-6 w-6'
               })
             ),
-            h('span', h(resolveComponent('Markdown'), { use: () => item })),
+            h('span', h(resolveComponent('Markdown'), { use: () => item }))
           ])
         )
       )
     }
-  },
+  }
 })
 </script>
 

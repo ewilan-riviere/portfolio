@@ -5,14 +5,23 @@
         <h4
           class="mb-2 font-semibold leading-6 text-slate-900 dark:text-slate-200"
         >
-          <Markdown :use="$slots.title" unwrap="p" />
+          <Markdown
+            :use="$slots.title"
+            unwrap="p"
+          />
         </h4>
         <div>
-          <Markdown :use="$slots.description" unwrap="p" />
+          <Markdown
+            :use="$slots.description"
+            unwrap="p"
+          />
         </div>
       </div>
       <div class="relative z-10 col-span-3">
-        <Markdown :use="$slots.content" unwrap="p" />
+        <Markdown
+          :use="$slots.content"
+          unwrap="p"
+        />
       </div>
     </li>
   </ol>

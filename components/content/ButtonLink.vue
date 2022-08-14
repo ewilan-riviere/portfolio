@@ -5,20 +5,20 @@ import { computed } from '#imports'
 const props = defineProps({
   href: {
     type: String,
-    default: '',
+    default: ''
   },
   size: {
     type: String,
-    default: 'medium',
+    default: 'medium'
   },
   bold: {
     type: Boolean,
-    default: false,
+    default: false
   },
   icon: {
     type: String,
-    default: '',
-  },
+    default: ''
+  }
 })
 </script>
 
@@ -28,8 +28,15 @@ const props = defineProps({
     :class="[size, bold ? 'font-semibold' : 'font-medium']"
     :to="href"
   >
-    <Icon v-if="icon" :name="icon" class="w-4 h-4 mr-2" />
-    <Markdown :use="$slots.default" unwrap="p ul li" />
+    <Icon
+      v-if="icon"
+      :name="icon"
+      class="w-4 h-4 mr-2"
+    />
+    <Markdown
+      :use="$slots.default"
+      unwrap="p ul li"
+    />
   </NuxtLink>
 </template>
 

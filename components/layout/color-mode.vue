@@ -21,11 +21,7 @@ const toggleDark = () => {
 const setColorMode = () => {
   if (process.client) {
     const color = localStorage.getItem('color-scheme')
-    if (color && color === 'dark') {
-      isDark.value = true
-    } else {
-      isDark.value = false
-    }
+    if (color && color === 'dark') { isDark.value = true } else { isDark.value = false }
   }
 }
 setColorMode()

@@ -7,14 +7,14 @@ const currentIcon = computed(() =>
   defineAsyncComponent({
     loader: () => import(`../assets/icons/${props.name}.svg`),
     loadingComponent: {
-      template: '<span></span>',
+      template: '<span></span>'
     },
     errorComponent: {
-      template: '<span>error</span>',
+      template: '<span>error</span>'
     },
     delay: 200,
     timeout: 3000,
-    suspensible: true,
+    suspensible: true
   })
 )
 const attrs = useAttrs()
@@ -24,9 +24,15 @@ const defaultSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
 <template>
   <span>
     <client-only>
-      <component :is="currentIcon" :class="attrs.class" />
+      <component
+        :is="currentIcon"
+        :class="attrs.class"
+      />
       <template #fallback>
-        <span :class="attrs.class" v-html="defaultSvg"></span>
+        <span
+          :class="attrs.class"
+          v-html="defaultSvg"
+        />
       </template>
     </client-only>
   </span>

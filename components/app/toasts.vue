@@ -9,8 +9,15 @@ const toasts = computed(() => toastStore.toasts as Toast[])
 
 <template>
   <div class="fixed top-0 right-0 z-50">
-    <transition-group name="list" tag="section">
-      <app-toast v-for="(toast, id) in toasts" :key="id" :toast="toast" />
+    <transition-group
+      name="list"
+      tag="section"
+    >
+      <AppToast
+        v-for="(toast, id) in toasts"
+        :key="id"
+        :toast="toast"
+      />
     </transition-group>
   </div>
 </template>

@@ -23,9 +23,14 @@ const { formatDate, getList, transList } = useUtils()
         class="text-gray-medium"
       >
         <div class="flex">
-          <svg-icon name="open-source" class="w-8 h-8 m-auto" />
+          <svg-icon
+            name="open-source"
+            class="w-8 h-8 m-auto"
+          />
         </div>
-        <p class="text-xs text-center">Open source</p>
+        <p class="text-xs text-center">
+          Open source
+        </p>
       </div>
     </div>
     <div

@@ -13,7 +13,7 @@ const bgColor = computed(() => {
     warning: 'bg-orange-100',
     error: 'bg-red-100',
     information: 'bg-blue-100',
-    default: 'bg-blue-100',
+    default: 'bg-blue-100'
   }
   return colors[type] || colors.default
 })
@@ -23,7 +23,7 @@ const color = computed(() => {
     warning: 'text-orange-400',
     error: 'text-red-400',
     information: 'text-blue-400',
-    default: 'text-blue-400',
+    default: 'text-blue-400'
   }
   return colors[type]
 })
@@ -45,7 +45,7 @@ const clear = () => {
     <div class="p-4">
       <div class="flex items-start">
         <div class="shrink-0">
-          <svg-icon
+          <SvgIcon
             :name="toast.type ? `toast-${toast.type}` : 'information'"
             :class="color"
             class="h-6 w-6"

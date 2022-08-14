@@ -3,19 +3,24 @@ defineProps({
   to: {
     type: String,
     required: true,
-    default: '/community/contribution#documentation-guide',
+    default: '/community/contribution#documentation-guide'
   },
   icon: {
     type: String,
     required: true,
-    default: '🚧',
-  },
+    default: '🚧'
+  }
 })
 </script>
 
 <template>
-  <Alert type="warning" :icon="icon">
+  <Alert
+    type="warning"
+    :icon="icon"
+  >
     Documentation for this section is not yet complete. You can
-    <NuxtLink :to="to"> contribute to the documentation. </NuxtLink>
+    <NuxtLink :to="to">
+      contribute to the documentation.
+    </NuxtLink>
   </Alert>
 </template>

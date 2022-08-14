@@ -5,13 +5,13 @@ import { computed } from '#imports'
 const props = defineProps({
   link: {
     type: String,
-    required: true,
+    required: true
   },
   title: {
     type: String,
     required: false,
-    default: '',
-  },
+    default: ''
+  }
 })
 
 // Guess title from link!
@@ -19,15 +19,20 @@ const computedTitle = computed(() =>
   (props.title || props.link)
     .split('/')
     .filter(Boolean)
-    .map((part) =>
+    .map(part =>
       splitByCase(part)
-        .map((p) => upperFirst(p))
-        .join(' '),
+        .map(p => upperFirst(p))
+        .join(' ')
     )
-    .join(' > '),
+    .join(' > ')
 )
 </script>
 
 <template>
-  <Alert icon="👉"> Read more in <NuxtLink :to="link" v-html="computedTitle" />. </Alert>
+  <Alert icon="👉">
+    Read more in <NuxtLink
+      :to="link"
+      v-html="computedTitle"
+    />.
+  </Alert>
 </template>

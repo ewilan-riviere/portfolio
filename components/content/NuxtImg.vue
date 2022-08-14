@@ -11,22 +11,22 @@ export default defineComponent({
   props: {
     src: {
       type: [String, Object] as PropType<NuxtImg>,
-      default: null,
+      default: null
     },
     alt: {
       type: String,
-      default: '',
+      default: ''
     },
     width: {
       type: [String, Number],
-      default: undefined,
+      default: undefined
     },
     height: {
       type: [String, Number],
-      default: undefined,
-    },
+      default: undefined
+    }
   },
-  setup(props) {
+  setup (props) {
     const imgSrc = computed(() => {
       let src = props.src
 
@@ -36,31 +36,26 @@ export default defineComponent({
         src = props.src
       }
 
-      if (typeof src === 'string') return props.src
+      if (typeof src === 'string') { return props.src }
 
       return src
     })
 
     return {
-      imgSrc,
+      imgSrc
     }
   },
-  render({ imgSrc }) {
+  render ({ imgSrc }) {
     // String as `src`; return a single image
-    if (typeof imgSrc === 'string') {
-      return h('img', { src: imgSrc })
-    }
+    if (typeof imgSrc === 'string') { return h('img', { src: imgSrc }) }
 
     // Object as `src`; return a light and dark image if present
     const nodes = []
-    if (imgSrc.light) {
-      nodes.push(h('img', { src: imgSrc.light, class: ['dark-img'] }))
-    }
-    if (imgSrc.dark) {
-      nodes.push(h('img', { src: imgSrc.dark, class: ['light-img'] }))
-    }
+    if (imgSrc.light) { nodes.push(h('img', { src: imgSrc.light, class: ['dark-img'] })) }
+
+    if (imgSrc.dark) { nodes.push(h('img', { src: imgSrc.dark, class: ['light-img'] })) }
 
     return nodes
-  },
+  }
 })
 </script>

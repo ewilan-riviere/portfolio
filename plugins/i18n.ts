@@ -2,6 +2,7 @@
 
 import enJson from '../locales/en.json'
 import frJson from '../locales/fr.json'
+import bzhJson from '../locales/bzh.json'
 import { useI18nStore } from '~~/store/i18n'
 
 // /**
@@ -70,7 +71,8 @@ export default defineNuxtPlugin(() => {
         const { locale, getValue } = useI18nStore()
         const locales = {
           en: enJson,
-          fr: frJson,
+          fr: frJson
+          // bzh: bzhJson
         }
         const currentLocale = locales[locale] ?? enJson
 
@@ -78,9 +80,7 @@ export default defineNuxtPlugin(() => {
       },
       locale: computed(() => {
         let locale: LocaleList = 'en'
-        if (process.client) {
-          locale = localStorage.getItem('locale') as LocaleList ?? 'en'
-        }
+        if (process.client) { locale = localStorage.getItem('locale') as LocaleList ?? 'en' }
 
         return locale
       })

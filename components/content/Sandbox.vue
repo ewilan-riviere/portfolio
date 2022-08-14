@@ -4,24 +4,24 @@ import { computed, onMounted, ref, useColorMode } from '#imports'
 const props = defineProps({
   src: {
     type: String,
-    default: '',
+    default: ''
   },
   repo: {
     type: String,
-    default: '',
+    default: ''
   },
   branch: {
     type: String,
-    default: '',
+    default: ''
   },
   dir: {
     type: String,
-    default: '',
+    default: ''
   },
   file: {
     type: String,
-    default: 'app.vue',
-  },
+    default: 'app.vue'
+  }
 })
 
 const colorMode = useColorMode()
@@ -30,10 +30,10 @@ const providers = {
   CodeSandBox: () =>
     `https://codesandbox.io/embed/github/${props.repo}/tree/${props.branch}/${props.dir}?hidenavigation=1&theme=${colorMode.value}`,
   StackBlitz: () =>
-    `https://stackblitz.com/github/${props.repo}/tree/${props.branch}/${props.dir}?embed=1&file=${props.file}&theme=${colorMode.value}`,
+    `https://stackblitz.com/github/${props.repo}/tree/${props.branch}/${props.dir}?embed=1&file=${props.file}&theme=${colorMode.value}`
 }
 
-const providersTabs = Object.keys(providers).map((p) => ({ label: p }))
+const providersTabs = Object.keys(providers).map(p => ({ label: p }))
 const activeTabIndex = ref(-1)
 const tabs = ref()
 const url = ref('')
@@ -81,7 +81,10 @@ onMounted(() => {
             :to="sandBoxUrl"
             target="_blank"
           >
-            <Icon name="heroicons-outline:arrows-expand" class="h-6 w-6" />
+            <Icon
+              name="heroicons-outline:arrows-expand"
+              class="h-6 w-6"
+            />
           </NuxtLink>
         </div>
       </template>
@@ -95,7 +98,10 @@ onMounted(() => {
       class="h-full min-h-[700px] w-full overflow-hidden"
     />
 
-    <span v-else class="flex-1 text-white">Loading Sandbox...</span>
+    <span
+      v-else
+      class="flex-1 text-white"
+    >Loading Sandbox...</span>
   </div>
 </template>
 

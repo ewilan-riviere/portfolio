@@ -2,14 +2,17 @@
 defineProps({
   title: {
     type: String,
-    default: 'Features',
-  },
+    default: 'Features'
+  }
 })
 </script>
 
 <template>
   <section class="bg-gray-50 dark:bg-gray-800 dark:bg-opacity-25">
-    <Container padded class="w-full py-8">
+    <Container
+      padded
+      class="w-full py-8"
+    >
       <h2 class="mb-8 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
         <slot name="title" />
       </h2>
