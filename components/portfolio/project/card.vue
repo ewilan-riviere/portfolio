@@ -20,7 +20,7 @@ onMounted(() => {
     >
       <article
         v-if="loaded"
-        class="relative transform duration-500 shadow hover:-translate-y-2 hover:shadow-lg cursor-pointer group min-h-[12.5rem]"
+        class="relative transform duration-500 shadow hover:-translate-y-2 hover:shadow-lg cursor-pointer group min-h-[12.5rem] min-w-[20rem]"
         @click="opened = !opened"
       >
         <app-img

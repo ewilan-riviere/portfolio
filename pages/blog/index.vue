@@ -3,11 +3,11 @@
 const { data: guides } = await useAsyncData('blog', () =>
   queryContent<Guide>('blog')
     .find()
-    .then(guides => guides.filter(e => e.draft === false)),
+    .then(guides => guides.filter(e => e.draft === false))
 )
 
 useMetadata({
-  title: 'Blog',
+  title: 'Blog'
 })
 </script>
 

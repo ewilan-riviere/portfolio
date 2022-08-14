@@ -11,19 +11,6 @@
   --shiki-token-punctuation: #ff869a;
   --shiki-token-link: #ff869a;
 }
-
-.dark {
-  & code {
-    @apply text-gray-300;
-  }
-}
-
-.prose code {
-  @apply bg-gray-800 p-0.5 rounded-md mx-0.5;
-}
-.prose code::before {
-  content: '' !important;
-}
-.prose code::after {
-  content: '' !important;
+:not(pre) code {
+  @apply bg-gray-800 rounded-md p-1;
 }

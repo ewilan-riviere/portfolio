@@ -13,7 +13,7 @@ const readTime = computed(() => {
 })
 const slug = computed(() => props.guide._path.replace('/blog/', ''))
 const date = computed(() => formatDate(props.guide.date, {
-  day: '2-digit',
+  day: '2-digit'
 }))
 </script>
 

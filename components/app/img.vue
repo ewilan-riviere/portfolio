@@ -42,8 +42,7 @@ onMounted(() => {
         }
       })
     }, { rootMargin: '0px 0px -200px 0px' })
-    if (media.value)
-      observer.observe(media.value)
+    if (media.value) { observer.observe(media.value) }
   }
 })
 </script>

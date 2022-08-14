@@ -8,16 +8,16 @@ const { about, projects } = useMainStore()
 const achievements = [
   {
     slug: 'bachelor',
-    value: '+4',
+    value: '+4'
   },
   {
     slug: 'projects',
-    value: projects.length,
+    value: projects.length
   },
   {
     slug: 'experience',
-    value: `${new Date().getFullYear() - 2018}`,
-  },
+    value: `${new Date().getFullYear() - 2018}`
+  }
 ]
 
 const opened = ref(false)
@@ -70,7 +70,8 @@ const toggle = () => {
           <app-button
             v-if="about.resume"
             :href="about.resume?.link"
-            download="Ewilan Rivière - Resume"
+            target="_blank"
+            rel="noopener noreferrer"
             class="mx-auto flex items-center space-x-1"
           >
             <div>

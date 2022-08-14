@@ -9,7 +9,7 @@ const form = ref({
   to: null,
   email: '',
   message: '',
-  honeypot: false,
+  honeypot: false
 })
 const formTesting = {
   name: 'Ewilan',
@@ -17,15 +17,15 @@ const formTesting = {
   to: null,
   message:
     'Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.',
-  honeypot: false,
+  honeypot: false
 }
 
 const fillForm = () => {
   const original: Keyable = form.value
   const testing: Keyable = formTesting
-  for (const [key] of Object.entries(original))
-    original[key] = testing[key]
+  for (const [key] of Object.entries(original)) { original[key] = testing[key] }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
   form.value = original
 }
@@ -46,14 +46,14 @@ const submit = async () => {
   let toast: Toast = {
     type: 'error',
     title: 'Erreur',
-    text: 'Une erreur s\'est produite, nous sommes désolés.',
+    text: 'Une erreur s\'est produite, nous sommes désolés.'
   }
 
   const response = await $fetch
-    .raw<ApiResponse>('/api/send/submission', {
+    .raw<ApiResponse>('/api/submissions', {
       baseURL: config.public.apiUrl,
       method: 'POST',
-      body: JSON.stringify(form.value),
+      body: JSON.stringify(form.value)
     })
     .catch((e) => {
       console.error(e)
@@ -66,12 +66,11 @@ const submit = async () => {
       toast = {
         type: 'success',
         title: 'Merci !',
-        text: 'Votre message a bien été envoyé.',
+        text: 'Votre message a bien été envoyé.'
       }
       pushToast(toast)
       resetForm()
-    }
-    else {
+    } else {
       console.error(response.status)
       pushToast(toast)
     }

@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
   download: undefined,
   icon: undefined,
-  loading: false,
+  loading: false
 })
 
 defineEmits(['click'])
@@ -34,18 +34,16 @@ defineEmits(['click'])
 const tag = ref('button')
 const btn = ref<HTMLElement>()
 
-if (props.href)
-  tag.value = 'a'
+if (props.href) { tag.value = 'a' }
 
-if (props.to)
-  tag.value = 'router-link'
+if (props.to) { tag.value = 'router-link' }
 
 const alignment = computed((): string => {
   const alignements: Keyable = {
     left: 'mr-auto',
     center: 'mx-auto',
     right: 'ml-auto',
-    default: 'mx-auto',
+    default: 'mx-auto'
   }
   const current = props.align
   return alignements[current] || alignements.default

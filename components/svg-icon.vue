@@ -7,15 +7,15 @@ const currentIcon = computed(() =>
   defineAsyncComponent({
     loader: () => import(`../assets/icons/${props.name}.svg`),
     loadingComponent: {
-      template: '<span></span>',
+      template: '<span></span>'
     },
     errorComponent: {
-      template: '<span>error</span>',
+      template: '<span>error</span>'
     },
     delay: 200,
     timeout: 3000,
-    suspensible: true,
-  }),
+    suspensible: true
+  })
 )
 const attrs = useAttrs()
 const defaultSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="transparent" d="M0 0h24v24H0z"/></svg>'

@@ -36,18 +36,18 @@ const props = withDefaults(defineProps<Props>(), {
   minlength: 0,
   maxlength: 0,
   disabled: false,
-  autocomplete: undefined,
+  autocomplete: undefined
 })
 
 const emit = defineEmits(['update:modelValue'])
 
 const value = computed<string>({
-  get() {
+  get () {
     return props.modelValue as string
   },
-  set(val) {
+  set (val) {
     emit('update:modelValue', val)
-  },
+  }
 })
 </script>
 

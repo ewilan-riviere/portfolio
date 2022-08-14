@@ -7,7 +7,7 @@ interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   open: false,
-  size: 'sm',
+  size: 'sm'
 })
 
 const emit = defineEmits(['close'])
@@ -38,8 +38,7 @@ watch(
         dialog.value = newVal
       }, 150)
       scrollDisabled()
-    }
-    else {
+    } else {
       overlay.value = newVal
       dialog.value = newVal
       setTimeout(() => {
@@ -47,7 +46,7 @@ watch(
       }, 250)
       scrollEnabled()
     }
-  },
+  }
 )
 
 onClickOutside(target, () => closeEvent())

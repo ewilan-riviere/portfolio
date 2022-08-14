@@ -72,15 +72,6 @@ body {
   display: none;
 }
 
-#nprogress {
-  pointer-events: none;
-}
-#nprogress .bar {
-  /* @apply fixed top-0 left-0 w-full bg-primary-600 opacity-75; */
-  z-index: 1031;
-  height: 3px;
-}
-
 .gradient {
   mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
 }

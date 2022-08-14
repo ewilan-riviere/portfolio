@@ -4,11 +4,11 @@ const { params } = useRoute()
 const slug = params.slug as string
 // const content = ref<Guide>()
 const { data: content } = await useAsyncData(slug, () =>
-  queryContent<Guide>(`/blog/${slug}`).findOne(),
+  queryContent<Guide>(`/blog/${slug}`).findOne()
 )
 
 useMetadata({
-  title: `${content.value?.title} on Blog`,
+  title: `${content.value?.title} on Blog`
 })
 </script>
 

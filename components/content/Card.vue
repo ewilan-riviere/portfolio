@@ -1,20 +1,20 @@
 <script setup lang="ts">
 defineProps({
   title: {
-    type: String,
+    type: String
   },
   description: {
     type: String,
-    default: '',
+    default: ''
   },
   icon: {
     type: String,
-    default: '',
+    default: ''
   },
   iconClass: {
     type: String,
-    default: '',
-  },
+    default: ''
+  }
 })
 
 const isImage = (icon: string) => String(icon).includes('.')

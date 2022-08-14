@@ -5,13 +5,13 @@ import { computed } from '#imports'
 const props = defineProps({
   link: {
     type: String,
-    required: true,
+    required: true
   },
   title: {
     type: String,
     required: false,
-    default: '',
-  },
+    default: ''
+  }
 })
 
 // Guess title from link!
@@ -22,9 +22,9 @@ const computedTitle = computed(() =>
     .map(part =>
       splitByCase(part)
         .map(p => upperFirst(p))
-        .join(' '),
+        .join(' ')
     )
-    .join(' > '),
+    .join(' > ')
 )
 </script>
 

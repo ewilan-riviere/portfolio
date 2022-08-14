@@ -29,11 +29,8 @@ const closeSidebar = () => {
 watch(
   () => navigation.sidebar,
   (newVal) => {
-    if (newVal)
-      openSidebar()
-    else
-      closeSidebar()
-  },
+    if (newVal) { openSidebar() } else { closeSidebar() }
+  }
 )
 
 onClickOutside(target, () => {

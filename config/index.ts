@@ -3,7 +3,7 @@ import meta from './meta'
 import modules from './modules'
 import {
   runtimeConfigPrivate,
-  runtimeConfigPublic,
+  runtimeConfigPublic
 } from './runtime-config'
 
 const config = {
@@ -11,7 +11,7 @@ const config = {
   meta,
   modules,
   runtimeConfigPublic,
-  runtimeConfigPrivate,
+  runtimeConfigPrivate
 }
 
 export default config

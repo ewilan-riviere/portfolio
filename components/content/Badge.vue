@@ -6,10 +6,10 @@ defineProps({
   type: {
     type: String,
     default: 'info',
-    validator(value: string) {
+    validator (value: string) {
       return ['info', 'success', 'warning', 'danger', 'primary', 'gray'].includes(value)
-    },
-  },
+    }
+  }
 })
 </script>
 

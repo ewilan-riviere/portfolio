@@ -7,44 +7,44 @@ export const useNavigationStore = defineStore('navigation', {
       {
         label: 'home',
         route: {
-          name: 'index',
+          name: 'index'
         },
-        icon: 'home',
+        icon: 'home'
       },
       {
         label: 'blog',
         route: {
-          name: 'blog',
+          name: 'blog'
         },
-        icon: 'blog',
-      },
+        icon: 'blog'
+      }
     ] as RouteLink[],
     external: [
       {
         label: 'Memorandum',
         href: 'https://memorandum.ewilan-riviere.com',
-        icon: 'memorandum',
-      },
+        icon: 'memorandum'
+      }
     ] as {
       label: string
       href: string
       icon?: string
-    }[],
+    }[]
   }),
   actions: {
-    toggleSidebar(): boolean {
+    toggleSidebar (): boolean {
       this.$patch({
-        sidebar: !this.sidebar,
+        sidebar: !this.sidebar
       })
 
       return this.sidebar
     },
-    closeSidebar(): boolean {
+    closeSidebar (): boolean {
       this.$patch({
-        sidebar: false,
+        sidebar: false
       })
 
       return this.sidebar
-    },
-  },
+    }
+  }
 })

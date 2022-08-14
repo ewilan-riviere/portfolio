@@ -2,16 +2,16 @@ import type { VueUseNuxtOptions } from '@vueuse/nuxt'
 import type { NuxtConfig } from '@nuxt/schema'
 
 const tailwindcss: NuxtConfig['tailwindcss'] = {
-  exposeConfig: true,
+  exposeConfig: true
 }
 const vueuse: VueUseNuxtOptions = {
-  ssrHandlers: true,
+  ssrHandlers: true
 }
 // https://vue-schema-org.netlify.app/guide/setup/nuxt.html#_2-configure-the-module
 const schemaOrg: NuxtConfig['schemaOrg'] = {
   disableRuntimeScriptsWhenSSR: true,
   canonicalHost: 'https://ewilan-riviere.com',
-  defaultLanguage: 'en-US',
+  defaultLanguage: 'en-US'
 }
 
 // https://content.nuxtjs.org/api/configuration
@@ -47,30 +47,30 @@ const content: NuxtConfig['content'] = {
       'vue-html',
       'vim',
       'yaml',
-      'xml',
+      'xml'
     ],
     // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
-    theme: 'css-variables',
+    theme: 'css-variables'
   },
   defaultLocale: 'en',
   locales: ['en', 'fr'],
   markdown: {
     remarkPlugins: [
-      'remark-reading-time',
+      'remark-reading-time'
       // 'remark-emoji'
     ],
-    toc: { depth: 3, searchDepth: 3 },
+    toc: { depth: 3, searchDepth: 3 }
   },
   navigation: {
-    fields: ['navTitle'],
-  },
+    fields: ['navTitle']
+  }
 }
 
 const modules = {
   tailwindcss,
   vueuse,
   schemaOrg,
-  content,
+  content
 }
 
 export default modules

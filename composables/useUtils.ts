@@ -2,25 +2,22 @@ import { useI18nStore } from '~~/store/i18n'
 
 export const useUtils = () => {
   const formatDate = (date?: any, options?: Intl.DateTimeFormatOptions) => {
-    if (!date)
-      return ''
+    if (!date) { return '' }
 
     const formatDate = new Date(date)
 
     let userLang = 'en'
-    if (process.client)
-      userLang = navigator.language
+    if (process.client) { userLang = navigator.language }
 
     return formatDate.toLocaleString(userLang, {
       year: 'numeric',
       month: 'long',
-      ...options,
+      ...options
     })
   }
 
   const checkIfDateIsSuperiorToToday = (date?: any) => {
-    if (!date)
-      return false
+    if (!date) { return false }
 
     const today = new Date()
     const dateToCheck = new Date(date)
@@ -33,8 +30,7 @@ export const useUtils = () => {
       try {
         const currentUrl = new URL(url)
         return currentUrl
-      }
-      catch (error) {
+      } catch (error) {
 
       }
     }
@@ -42,8 +38,7 @@ export const useUtils = () => {
 
   const getList = (list: string[]) => {
     let userLang = 'en'
-    if (process.client)
-      userLang = navigator.language
+    if (process.client) { userLang = navigator.language }
 
     const format = new Intl.ListFormat(userLang, { style: 'long', type: 'conjunction' })
 
@@ -56,8 +51,7 @@ export const useUtils = () => {
     const transList: string[] = []
     list.forEach((element) => {
       let translateKey = element
-      if (key)
-        translateKey = `${key}.${element}`
+      if (key) { translateKey = `${key}.${element}` }
 
       transList.push(i18n.translate(translateKey))
     })
@@ -71,8 +65,7 @@ export const useUtils = () => {
         const j = Math.floor(Math.random() * (i + 1))
           ;[array[i], array[j]] = [array[j], array[i]]
       }
-    }
-    else {
+    } else {
       return []
     }
   }
@@ -83,6 +76,6 @@ export const useUtils = () => {
     getDomain,
     getList,
     transList,
-    shuffleArray,
+    shuffleArray
   }
 }

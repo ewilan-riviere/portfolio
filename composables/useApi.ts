@@ -6,8 +6,7 @@ export const useApi = () => {
 
   const fetchData = async <T>(endpoint: ApiEndpoint) => {
     return await $fetch.raw<T>(endpoint).then((e) => {
-      if (e.status === 200)
-        return e._data
+      if (e.status === 200) { return e._data }
     }).catch((e) => {
       console.error(e)
       return undefined
@@ -26,7 +25,7 @@ export const useApi = () => {
         projectStatuses,
         projects,
         skills,
-        technologies,
+        technologies
       ] = await Promise.all([
         fetchData<About>('/api/about'),
         fetchData<Developer[]>('/api/developers'),
@@ -35,7 +34,7 @@ export const useApi = () => {
         fetchData<ProjectStatus[]>('/api/project-statuses'),
         fetchData<Project[]>('/api/projects'),
         fetchData<Skill[]>('/api/skills'),
-        fetchData<Technology[]>('/api/technologies'),
+        fetchData<Technology[]>('/api/technologies')
       ])
 
       mainStore.setReady(true)
@@ -51,6 +50,6 @@ export const useApi = () => {
   }
 
   return {
-    fetchApi,
+    fetchApi
   }
 }

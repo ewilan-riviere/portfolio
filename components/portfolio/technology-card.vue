@@ -16,14 +16,13 @@ const technologyTitleColorDark = ref('white')
 const getTechnology = () => {
   const { technologies } = useMainStore()
   current.value = technologies.find(
-    technology => technology.slug === props.technology,
+    technology => technology.slug === props.technology
   )
   color.value = current.value?.color ?? '#ffffff'
   hoverColor.value = !current.value?.isDark ? '#ffffff' : '#000000'
 }
 getTechnology()
-if (props.forceWhite)
-  technologyTitleColor.value = 'white'
+if (props.forceWhite) { technologyTitleColor.value = 'white' }
 </script>
 
 <template>

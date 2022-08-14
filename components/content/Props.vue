@@ -6,38 +6,38 @@ export default defineComponent({
   props: {
     of: {
       type: String,
-      default: undefined,
+      default: undefined
     },
     /**
      * Toggle required column.
      */
     required: {
       type: Boolean,
-      default: undefined,
+      default: undefined
     },
     /**
      * Toggle values column.
      */
     values: {
       type: Boolean,
-      default: undefined,
+      default: undefined
     },
     /**
      * Toggle description column.
      */
     description: {
       type: Boolean,
-      default: undefined,
+      default: undefined
     },
     /**
      * Toglle default column.
      */
     default: {
       type: Boolean,
-      default: undefined,
-    },
+      default: undefined
+    }
   },
-  async setup(props) {
+  async setup (props) {
     // Docs: https://github.com/nuxtlabs/nuxt-component-meta
     const query = `/api/component-meta/${kebabCase(props.of)}`
 
@@ -46,29 +46,25 @@ export default defineComponent({
     const properties = computed(() => meta.value.props.filter(prop => !prop.tags?.ignore.includes(prop)))
 
     const showRequired = computed(() => {
-      if (props.required !== undefined)
-        return props.required
+      if (props.required !== undefined) { return props.required }
 
       return properties.value?.find(prop => prop.required !== undefined)
     })
 
     const showValues = computed(() => {
-      if (props.values !== undefined)
-        return props.values
+      if (props.values !== undefined) { return props.values }
 
       return properties.value?.find(prop => prop.values)
     })
 
     const showDescription = computed(() => {
-      if (props.description !== undefined)
-        return props.description
+      if (props.description !== undefined) { return props.description }
 
       return properties.value?.find(prop => prop.description)
     })
 
     const showDefault = computed(() => {
-      if (props.default !== undefined)
-        return props.default
+      if (props.default !== undefined) { return props.default }
 
       return properties.value?.find(prop => prop.default)
     })
@@ -79,9 +75,9 @@ export default defineComponent({
       showRequired,
       showValues,
       showDescription,
-      showDefault,
+      showDefault
     }
-  },
+  }
 })
 </script>
 

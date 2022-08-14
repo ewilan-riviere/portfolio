@@ -5,16 +5,16 @@ import { computed, ref } from '#imports'
 const props = defineProps({
   poster: {
     type: String,
-    default: '',
+    default: ''
   },
   src: {
     type: String,
-    default: '',
+    default: ''
   },
   sources: {
     type: Array as PropType<any[]>,
-    default: () => [],
-  },
+    default: () => []
+  }
 })
 
 const provider = computed(() => {
@@ -25,7 +25,7 @@ const provider = computed(() => {
       name: 'youtube',
       src: `https://www.youtube-nocookie.com/embed/${match[1]}?autoplay=1`,
       poster:
-        props.poster || `https://i3.ytimg.com/vi/${match[1]}/hqdefault.jpg`,
+        props.poster || `https://i3.ytimg.com/vi/${match[1]}/hqdefault.jpg`
     }
   }
 })
@@ -34,7 +34,7 @@ const loaded = ref(false)
 
 if (!props.src && !props.sources.length) {
   throw new Error(
-    'VideoPlayer: you need to provide either `src` or `sources` props',
+    'VideoPlayer: you need to provide either `src` or `sources` props'
   )
 }
 

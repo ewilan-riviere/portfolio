@@ -6,8 +6,8 @@ import { useNuxtApp } from '#imports'
 const props = defineProps({
   name: {
     type: String,
-    required: true,
-  },
+    required: true
+  }
 })
 const nuxtApp = useNuxtApp()
 // const icon: Ref<IconifyIcon | null> = ref(null)

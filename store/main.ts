@@ -11,58 +11,58 @@ export const useMainStore = defineStore('main', {
     projectStatuses: {} as ProjectStatus[],
     projects: {} as Project[],
     skills: {} as Skill[],
-    technologies: {} as Technology[],
+    technologies: {} as Technology[]
   }),
   actions: {
-    setReady(payload: boolean) {
+    setReady (payload: boolean) {
       this.$patch({
-        ready: payload,
+        ready: payload
       })
     },
-    setAbout(payload: About | undefined) {
+    setAbout (payload: About | undefined) {
       this.$patch({
-        about: payload ?? {},
+        about: payload ?? {}
       })
     },
-    setDevelopers(payload: Developer[] | undefined) {
+    setDevelopers (payload: Developer[] | undefined) {
       this.$patch({
-        developers: payload ?? [],
+        developers: payload ?? []
       })
     },
-    setFeatures(payload: Feature[] | undefined) {
+    setFeatures (payload: Feature[] | undefined) {
       this.$patch({
-        features: payload ?? [],
+        features: payload ?? []
       })
     },
-    setHistoryItems(payload: HistoryItem[] | undefined) {
+    setHistoryItems (payload: HistoryItem[] | undefined) {
       this.$patch({
-        historyItems: payload ?? [],
+        historyItems: payload ?? []
       })
     },
-    setHobbies(payload: Hobby[]) {
+    setHobbies (payload: Hobby[]) {
       this.$patch({
-        hobbies: payload ?? [],
+        hobbies: payload ?? []
       })
     },
-    setProjectStatuses(payload: ProjectStatus[] | undefined) {
+    setProjectStatuses (payload: ProjectStatus[] | undefined) {
       this.$patch({
-        projectStatuses: payload ?? [],
+        projectStatuses: payload ?? []
       })
     },
-    setProjects(payload: Project[] | undefined) {
+    setProjects (payload: Project[] | undefined) {
       this.$patch({
-        projects: payload ?? [],
+        projects: payload ?? []
       })
     },
-    setSkills(payload: Skill[] | undefined) {
+    setSkills (payload: Skill[] | undefined) {
       this.$patch({
-        skills: payload ?? [],
+        skills: payload ?? []
       })
     },
-    setTechnologies(payload: Technology[] | undefined) {
+    setTechnologies (payload: Technology[] | undefined) {
       this.$patch({
-        technologies: payload ?? [],
+        technologies: payload ?? []
       })
-    },
-  },
+    }
+  }
 })

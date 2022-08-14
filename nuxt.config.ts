@@ -10,14 +10,14 @@ export default defineNuxtConfig({
   meta: {
     link: config.meta.link,
     meta: config.meta.meta,
-    script: config.meta.script,
+    script: config.meta.script
   },
   modules: [
     '@nuxt/content', // https://github.com/nuxt/content
     '@nuxtjs/tailwindcss', // https://github.com/nuxt-community/tailwindcss-module
     '@pinia/nuxt', // https://github.com/vuejs/pinia
     '@vueuse/nuxt', // https://github.com/vueuse/vueuse
-    'nuxt-schema-org', // https://github.com/vueuse/schema-org#readme
+    'nuxt-schema-org' // https://github.com/vueuse/schema-org#readme
   ],
   tailwindcss: config.modules.tailwindcss,
   vueuse: config.modules.vueuse,
@@ -26,23 +26,23 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     ...config.runtimeConfigPrivate,
-    public: config.runtimeConfigPublic,
+    public: config.runtimeConfigPublic
   },
 
   router: {
-    trailingSlash: false,
+    trailingSlash: false
   },
 
   typescript: {
     strict: true, // for pinia
-    shim: false, // with Take Over Mode from https://github.com/johnsoncodehk/volar/discussions/471
+    shim: false // with Take Over Mode from https://github.com/johnsoncodehk/volar/discussions/471
   },
 
   vite: {
     plugins: [
-      svgLoader(),
-    ],
-  },
+      svgLoader()
+    ]
+  }
 
   // nitro: {
   //   prerender: {

@@ -5,8 +5,8 @@ import { ref } from '#imports'
 const props = defineProps({
   content: {
     type: String,
-    default: '',
-  },
+    default: ''
+  }
 })
 
 const { copy: copyToClipboard } = useClipboard()

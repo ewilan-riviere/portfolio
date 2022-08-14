@@ -19,7 +19,7 @@ watch(
   () => i18n.currentLocale,
   () => {
     fetchContent()
-  },
+  }
 )
 </script>
 

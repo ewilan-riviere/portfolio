@@ -14,7 +14,7 @@ const getRoutes = () => {
     router.options.routes.forEach((route) => {
       routes.push({
         name: route.name,
-        path: route.path,
+        path: route.path
       })
     })
     // eslint-disable-next-line no-console
@@ -37,7 +37,7 @@ const getRoutes = () => {
   pushToast({
     title: 'Check your console',
     text: 'List of all routes is available.',
-    type: 'success',
+    type: 'success'
   })
   isOpen.value = false
 }
@@ -46,8 +46,8 @@ const links = [
   {
     label: 'Routes',
     description: 'Print all routes in console',
-    icon: 'router',
-  },
+    icon: 'router'
+  }
 ]
 </script>
 

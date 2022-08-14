@@ -5,20 +5,20 @@ import { computed } from '#imports'
 const props = defineProps({
   href: {
     type: String,
-    default: '',
+    default: ''
   },
   size: {
     type: String,
-    default: 'medium',
+    default: 'medium'
   },
   bold: {
     type: Boolean,
-    default: false,
+    default: false
   },
   icon: {
     type: String,
-    default: '',
-  },
+    default: ''
+  }
 })
 </script>
 

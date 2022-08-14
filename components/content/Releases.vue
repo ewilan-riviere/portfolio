@@ -6,10 +6,9 @@ const formatDateByLocale = (date: string) => {
     return new Intl.DateTimeFormat(currentLocale, {
       day: 'numeric',
       month: 'long',
-      year: 'numeric',
+      year: 'numeric'
     }).format(Date.parse(date))
-  }
-  catch (_) {
+  } catch (_) {
     return date
   }
 }

@@ -5,12 +5,12 @@ import type { PropType } from 'vue'
 const props = defineProps({
   tabs: {
     type: Array as PropType<{ label: string }[]>,
-    required: true,
+    required: true
   },
   activeTabIndex: {
     type: Number,
-    required: true,
-  },
+    required: true
+  }
 })
 
 const emit = defineEmits(['update:activeTabIndex'])
@@ -19,11 +19,10 @@ const tabsRef = ref()
 
 const highlightUnderline = ref()
 
-function updateHighlightUnderlinePosition() {
+function updateHighlightUnderlinePosition () {
   const activeTab = tabsRef.value[props.activeTabIndex]
 
-  if (!activeTab)
-    return
+  if (!activeTab) { return }
 
   highlightUnderline.value.style.left = `${activeTab.offsetLeft}px`
   highlightUnderline.value.style.top = `${activeTab.offsetTop}px`
@@ -33,7 +32,7 @@ function updateHighlightUnderlinePosition() {
   highlightUnderline.value.style.opacity = 1
 }
 
-function updateTabs(i) {
+function updateTabs (i) {
   emit('update:activeTabIndex', i)
   nextTick(() => updateHighlightUnderlinePosition())
 }
@@ -41,16 +40,15 @@ function updateTabs(i) {
 watch(
   tabsRef,
   (newVal) => {
-    if (!newVal)
-      return
+    if (!newVal) { return }
 
     setTimeout(() => {
       updateHighlightUnderlinePosition()
     }, 50)
   },
   {
-    immediate: true,
-  },
+    immediate: true
+  }
 )
 </script>
 

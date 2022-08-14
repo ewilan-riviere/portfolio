@@ -4,24 +4,24 @@ import { computed, onMounted, ref, useColorMode } from '#imports'
 const props = defineProps({
   src: {
     type: String,
-    default: '',
+    default: ''
   },
   repo: {
     type: String,
-    default: '',
+    default: ''
   },
   branch: {
     type: String,
-    default: '',
+    default: ''
   },
   dir: {
     type: String,
-    default: '',
+    default: ''
   },
   file: {
     type: String,
-    default: 'app.vue',
-  },
+    default: 'app.vue'
+  }
 })
 
 const colorMode = useColorMode()
@@ -30,7 +30,7 @@ const providers = {
   CodeSandBox: () =>
     `https://codesandbox.io/embed/github/${props.repo}/tree/${props.branch}/${props.dir}?hidenavigation=1&theme=${colorMode.value}`,
   StackBlitz: () =>
-    `https://stackblitz.com/github/${props.repo}/tree/${props.branch}/${props.dir}?embed=1&file=${props.file}&theme=${colorMode.value}`,
+    `https://stackblitz.com/github/${props.repo}/tree/${props.branch}/${props.dir}?embed=1&file=${props.file}&theme=${colorMode.value}`
 }
 
 const providersTabs = Object.keys(providers).map(p => ({ label: p }))
@@ -46,7 +46,7 @@ const changeProvider = (value) => {
 }
 
 const sandBoxUrl = computed(() =>
-  url.value?.replace('?embed=1&', '?').replace('/embed/', '/s/'),
+  url.value?.replace('?embed=1&', '?').replace('/embed/', '/s/')
 )
 
 const updateTab = (i: number) => {

@@ -2,7 +2,7 @@ import type { RouterConfig } from '@nuxt/schema'
 
 // https://router.vuejs.org/api/#routeroptions
 export default <RouterConfig>{
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to, _, savedPosition) {
     const nuxtApp = useNuxtApp()
 
     // If history back
@@ -21,21 +21,13 @@ export default <RouterConfig>{
 
         return window.scrollTo({
           top: heading.offsetTop,
-          behavior: 'smooth',
+          behavior: 'smooth'
         })
       })
       return
     }
 
-    // route change
-    if (from.path !== to.path) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      })
-      return
-    }
-
+    // Scroll to top of window
     return { top: 0 }
-  },
+  }
 }

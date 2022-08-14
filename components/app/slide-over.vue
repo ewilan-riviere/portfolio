@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
   full: false,
   border: false,
   title: undefined,
-  subtitle: undefined,
+  subtitle: undefined
 })
 
 const emit = defineEmits(['close'])
@@ -43,8 +43,7 @@ watch(
         dialog.value = newVal
       }, 150)
       scrollDisabled()
-    }
-    else {
+    } else {
       overlay.value = newVal
       dialog.value = newVal
       setTimeout(() => {
@@ -52,7 +51,7 @@ watch(
       }, 500)
       scrollEnabled()
     }
-  },
+  }
 )
 
 onClickOutside(target, () => closeEvent())
@@ -82,7 +81,7 @@ onClickOutside(target, () => closeEvent())
           <div class="absolute inset-0 overflow-hidden">
             <div
               :class="[
-                full ? 'max-w-full' : 'max-w-full pl-10',
+                full ? 'max-w-full' : 'max-w-full lg:pl-10',
               ]"
               class="pointer-events-none fixed inset-y-0 right-0 flex"
             >

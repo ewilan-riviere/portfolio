@@ -5,12 +5,12 @@ import { computed } from '#imports'
 defineProps({
   size: {
     type: String,
-    default: 'w-8 h-8',
+    default: 'w-8 h-8'
   },
   spacing: {
     type: String,
-    default: 'p-0',
-  },
+    default: 'p-0'
+  }
 })
 
 // const colorMode = useColorMode()

@@ -3,13 +3,13 @@ defineProps({
   to: {
     type: String,
     required: true,
-    default: '/community/contribution#documentation-guide',
+    default: '/community/contribution#documentation-guide'
   },
   icon: {
     type: String,
     required: true,
-    default: '🚧',
-  },
+    default: '🚧'
+  }
 })
 </script>
 

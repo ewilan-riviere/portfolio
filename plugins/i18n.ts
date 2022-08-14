@@ -72,7 +72,7 @@ export default defineNuxtPlugin(() => {
         const locales = {
           en: enJson,
           fr: frJson,
-          bzh: bzhJson,
+          bzh: bzhJson
         }
         const currentLocale = locales[locale] ?? enJson
 
@@ -80,11 +80,10 @@ export default defineNuxtPlugin(() => {
       },
       locale: computed(() => {
         let locale: LocaleList = 'en'
-        if (process.client)
-          locale = localStorage.getItem('locale') as LocaleList ?? 'en'
+        if (process.client) { locale = localStorage.getItem('locale') as LocaleList ?? 'en' }
 
         return locale
-      }),
-    },
+      })
+    }
   }
 })

@@ -1,7 +1,7 @@
 export const useDev = () => {
-  const isDev = useNuxtApp()._legacyContext?.isDev
+  const isDev = process.env.NODE_ENV === 'development'
 
   return {
-    isDev,
+    isDev
   }
 }
