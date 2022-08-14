@@ -9,7 +9,7 @@ const form = ref({
   to: null,
   email: '',
   message: '',
-  honeypot: false,
+  honeypot: false
 })
 const formTesting = {
   name: 'Ewilan',
@@ -17,16 +17,16 @@ const formTesting = {
   to: null,
   message:
     'Dolor pariatur exercitation duis dolore eu ut commodo quis incididunt ad voluptate sit. Do est nulla adipisicing ut dolore amet dolore nostrud labore. Magna laborum aliqua duis eiusmod quis aliquip officia veniam adipisicing est magna nostrud culpa. Laborum nisi nisi sit Lorem fugiat aute deserunt ea reprehenderit sint sint nulla ad labore.',
-  honeypot: false,
+  honeypot: false
 }
 
 const fillForm = () => {
   const original: Keyable = form.value
   const testing: Keyable = formTesting
-  for (const [key] of Object.entries(original)) {
-    original[key] = testing[key]
-  }
-  // @ts-ignore
+  for (const [key] of Object.entries(original)) { original[key] = testing[key] }
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   form.value = original
 }
 const resetForm = () => {
@@ -46,14 +46,14 @@ const submit = async () => {
   let toast: Toast = {
     type: 'error',
     title: 'Erreur',
-    text: "Une erreur s'est produite, nous sommes désolés.",
+    text: 'Une erreur s\'est produite, nous sommes désolés.'
   }
 
   const response = await $fetch
-    .raw<ApiResponse>('/api/send/submission', {
+    .raw<ApiResponse>('/api/submissions', {
       baseURL: config.public.apiUrl,
       method: 'POST',
-      body: JSON.stringify(form.value),
+      body: JSON.stringify(form.value)
     })
     .catch((e) => {
       console.error(e)
@@ -66,7 +66,7 @@ const submit = async () => {
       toast = {
         type: 'success',
         title: 'Merci !',
-        text: 'Votre message a bien été envoyé.',
+        text: 'Votre message a bien été envoyé.'
       }
       pushToast(toast)
       resetForm()
@@ -82,13 +82,17 @@ const submit = async () => {
 
 <template>
   <div class="relative">
-    <div aria-hidden="true" class="hidden sm:block">
+    <div
+      aria-hidden="true"
+      class="hidden sm:block"
+    >
       <svg
         class="absolute -ml-3 top-8 left-1/2 hidden lg:block"
         width="404"
         height="392"
         fill="none"
-        viewBox="0 0 404 392">
+        viewBox="0 0 404 392"
+      >
         <defs>
           <pattern
             id="8228f071-bcee-4ec8-905a-2a059a2cc4fb"
@@ -96,37 +100,49 @@ const submit = async () => {
             y="0"
             width="20"
             height="20"
-            patternUnits="userSpaceOnUse">
+            patternUnits="userSpaceOnUse"
+          >
             <rect
               x="0"
               y="0"
               width="4"
               height="4"
               class="text-gray-200"
-              fill="currentColor" />
+              fill="currentColor"
+            />
           </pattern>
         </defs>
-        <rect width="404" height="392" />
+        <rect
+          width="404"
+          height="392"
+        />
       </svg>
     </div>
     <div class="max-w-3xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
       <div
-        class="medium-container relative px-6 py-10 overflow-hidden bg-primary-500 dark:bg-primary-800 shadow rounded-2xl sm:px-12 sm:py-20">
-        <div aria-hidden="true" class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
+        class="medium-container relative px-6 py-10 overflow-hidden bg-primary-500 dark:bg-primary-800 shadow rounded-2xl sm:px-12 sm:py-20"
+      >
+        <div
+          aria-hidden="true"
+          class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0"
+        >
           <svg
             class="absolute inset-0 w-full h-full"
             preserveAspectRatio="xMidYMid slice"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 1463 360">
+            viewBox="0 0 1463 360"
+          >
             <path
               class="text-primary-400 dark:text-primary-700 text-opacity-40"
               fill="currentColor"
-              d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z" />
+              d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
+            />
             <path
               class="text-primary-600 dark:text-primary-600 text-opacity-40"
               fill="currentColor"
-              d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z" />
+              d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
+            />
           </svg>
         </div>
         <div class="relative">
@@ -139,14 +155,18 @@ const submit = async () => {
             </p>
           </div>
           <div class="max-w-xl pt-10 mx-auto">
-            <form class="grid grid-cols-1 gap-y-6" @submit.prevent="submit">
+            <form
+              class="grid grid-cols-1 gap-y-6"
+              @submit.prevent="submit"
+            >
               <field-text
                 v-model="form.name"
                 name="name"
                 autocomplete="name"
                 :maxlength="100"
                 :placeholder="`${$t('contact.form.name')}*`"
-                required />
+                required
+              />
               <field-text
                 v-model="form.email"
                 name="email"
@@ -154,7 +174,8 @@ const submit = async () => {
                 autocomplete="email"
                 :maxlength="100"
                 :placeholder="`${$t('contact.form.email')}*`"
-                required />
+                required
+              />
               <field-text
                 v-model="form.message"
                 name="message"
@@ -163,7 +184,8 @@ const submit = async () => {
                 :maxlength="1500"
                 :placeholder="`${$t('contact.form.message')}*`"
                 multiline
-                required>
+                required
+              >
                 <div class="flex justify-between text-white">
                   <span>Min. {{ minChar }}
                     {{ $t('contact.form.characters') }}</span>
@@ -179,27 +201,48 @@ const submit = async () => {
                       v-model="form.honeypot"
                       name="conditions"
                       type="checkbox"
-                      class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500" />
+                      class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                    >
                   </div>
                   <div class="ml-3 text-sm">
-                    <label for="conditions" class="font-medium text-gray-300">
+                    <label
+                      for="conditions"
+                      class="font-medium text-gray-300"
+                    >
                       I accept conditions
                     </label>
                   </div>
                 </div>
               </div>
               <div class="flex justify-between space-x-1 w-max">
-                <app-button type="submit" color="secondary">
+                <app-button
+                  type="submit"
+                  color="secondary"
+                >
                   <span class="flex items-center space-x-2">
-                    <svg-icon v-if="!loading" name="notification-airplane" class="w-4 h-4" />
-                    <app-loading v-else class="w-4 h-4" />
+                    <svg-icon
+                      v-if="!loading"
+                      name="notification-airplane"
+                      class="w-4 h-4"
+                    />
+                    <app-loading
+                      v-else
+                      class="w-4 h-4"
+                    />
                     <span>
                       {{ $t('contact.form.send') }}
                     </span>
                   </span>
                 </app-button>
-                <app-button v-if="isDev" color="secondary" @click="fillForm">
-                  <svg-icon name="test" class="w-4 h-4" />
+                <app-button
+                  v-if="isDev"
+                  color="secondary"
+                  @click="fillForm"
+                >
+                  <svg-icon
+                    name="test"
+                    class="w-4 h-4"
+                  />
                 </app-button>
               </div>
             </form>

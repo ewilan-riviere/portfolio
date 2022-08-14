@@ -1,27 +1,26 @@
 <script setup lang="ts">
 import { useMainStore } from '~~/store/main'
 
+const emit = defineEmits<{
+  (e: 'opened', opened: boolean): void
+}>()
 const { about, projects } = useMainStore()
 const achievements = [
   {
     slug: 'bachelor',
-    value: '+4',
+    value: '+4'
   },
   {
     slug: 'projects',
-    value: projects.length,
+    value: projects.length
   },
   {
     slug: 'experience',
-    value: `${new Date().getFullYear() - 2018}`,
-  },
+    value: `${new Date().getFullYear() - 2018}`
+  }
 ]
-const resume = about.socialItems.find(e => e.slug === 'resume')
 
 const opened = ref(false)
-const emit = defineEmits<{
-  (e: 'opened', opened: boolean): void
-}>()
 const toggle = () => {
   opened.value = !opened.value
   emit('opened', opened.value)
@@ -38,12 +37,6 @@ const toggle = () => {
         <div class="text-center text-primary-500 text-3xl font-semibold font-quicksand">
           {{ $t(about.professionalTitle) }}
         </div>
-        <a :href="resume?.link" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-gray-900 bg-opacity-50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-100 p-2 rounded-md block w-max text-primary-600 dark:text-primary-500 mx-auto mt-3">
-          <svg-icon :name="`social-${resume?.slug}`" class="h-6 w-6 mx-auto" />
-          <div class="text-center text-gray-medium">
-            {{ resume?.name }}
-          </div>
-        </a>
         <div class="grid grid-cols-1 lg:grid-cols-3 mt-8 space-y-6 lg:space-y-0">
           <div
             v-for="achievement in achievements"
@@ -70,12 +63,19 @@ const toggle = () => {
             </div>
           </div>
         </div>
-        <div class="flex mt-12">
-          <app-button class="mx-auto" @click="toggle">
-            <div class="flex items-center space-x-2">
-              <span>
-                {{ $t('history.open') }}
-              </span>
+        <div class="flex items-center mt-12 space-x-2 mx-auto w-max">
+          <app-button @click="toggle">
+            {{ $t('history.open') }}
+          </app-button>
+          <app-button
+            v-if="about.resume"
+            :href="about.resume?.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mx-auto flex items-center space-x-1"
+          >
+            <div>
+              {{ $t('history.resume') }}
             </div>
           </app-button>
         </div>

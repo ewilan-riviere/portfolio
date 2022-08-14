@@ -2,6 +2,7 @@
 const { params } = useRoute()
 
 const slug = params.slug as string
+// const content = ref<Guide>()
 const { data: content } = await useAsyncData(slug, () =>
   queryContent<Guide>(`/blog/${slug}`).findOne()
 )
@@ -13,7 +14,10 @@ useMetadata({
 
 <template>
   <div v-if="content">
-    <app-hero :title="content?.title" :subtitle="content?.category" />
+    <app-hero
+      :title="content?.title"
+      :subtitle="content?.category"
+    />
     <div class="main-container">
       <guide-content :content="content" />
     </div>

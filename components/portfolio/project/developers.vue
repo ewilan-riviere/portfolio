@@ -7,7 +7,7 @@ defineProps<{
 
 const { developers } = useMainStore()
 const getDev = (developer: DeveloperLight) => {
-  return developers.find((dev) => dev.slug === developer.slug)
+  return developers.find(dev => dev.slug === developer.slug)
 }
 </script>
 

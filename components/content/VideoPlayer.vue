@@ -5,16 +5,16 @@ import { computed, ref } from '#imports'
 const props = defineProps({
   poster: {
     type: String,
-    default: '',
+    default: ''
   },
   src: {
     type: String,
-    default: '',
+    default: ''
   },
   sources: {
     type: Array as PropType<any[]>,
-    default: () => [],
-  },
+    default: () => []
+  }
 })
 
 const provider = computed(() => {
@@ -25,17 +25,18 @@ const provider = computed(() => {
       name: 'youtube',
       src: `https://www.youtube-nocookie.com/embed/${match[1]}?autoplay=1`,
       poster:
-        props.poster || `https://i3.ytimg.com/vi/${match[1]}/hqdefault.jpg`,
+        props.poster || `https://i3.ytimg.com/vi/${match[1]}/hqdefault.jpg`
     }
   }
 })
 
 const loaded = ref(false)
 
-if (!props.src && !props.sources.length)
+if (!props.src && !props.sources.length) {
   throw new Error(
     'VideoPlayer: you need to provide either `src` or `sources` props'
   )
+}
 
 const src = computed(() => props.src || props.sources?.[0]?.src || false)
 </script>
@@ -48,19 +49,30 @@ const src = computed(() => props.src || props.sources?.[0]?.src || false)
     <NuxtImg
       v-if="provider ? provider.poster : poster"
       image-classes="video absolute top-0 left-0 h-full w-full object-fit"
-      :src="(provider ? provider.poster : poster as any)"
+      :src="provider ? provider.poster : poster as any"
     />
 
-    <div v-if="loaded" class="absolute top-0 left-0 w-full h-full video">
+    <div
+      v-if="loaded"
+      class="absolute top-0 left-0 w-full h-full video"
+    >
       <!-- Remote -->
-      <video v-if="!provider" :poster="poster" controls autoplay>
-        <source v-if="src" :src="src" />
+      <video
+        v-if="!provider"
+        :poster="poster"
+        controls
+        autoplay
+      >
+        <source
+          v-if="src"
+          :src="src"
+        >
         <source
           v-for="source in sources"
           :key="source.src || source"
           :src="source.src || source"
           :type="source.type"
-        />
+        >
       </video>
 
       <!-- YouTube -->

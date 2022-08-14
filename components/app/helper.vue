@@ -14,7 +14,7 @@ const getRoutes = () => {
     router.options.routes.forEach((route) => {
       routes.push({
         name: route.name,
-        path: route.path,
+        path: route.path
       })
     })
     // eslint-disable-next-line no-console
@@ -37,7 +37,7 @@ const getRoutes = () => {
   pushToast({
     title: 'Check your console',
     text: 'List of all routes is available.',
-    type: 'success',
+    type: 'success'
   })
   isOpen.value = false
 }
@@ -46,8 +46,8 @@ const links = [
   {
     label: 'Routes',
     description: 'Print all routes in console',
-    icon: 'router',
-  },
+    icon: 'router'
+  }
 ]
 </script>
 
@@ -81,12 +81,18 @@ const links = [
         </span>
       </span>
     </button>
-    <app-dialog :open="isOpen" @close="openHelp">
+    <AppDialog
+      :open="isOpen"
+      @close="openHelp"
+    >
       <div class="p-5">
         <h2 class="text-xs font-medium uppercase tracking-wide text-gray">
           Helper
         </h2>
-        <ul role="list" class="mt-3 grid grid-cols-1 space-y-4">
+        <ul
+          role="list"
+          class="mt-3 grid grid-cols-1 space-y-4"
+        >
           <li
             v-for="(item, id) in links"
             :key="id"
@@ -102,13 +108,15 @@ const links = [
                   <div class="font-medium text-gray-900 dark:text-gray-100">
                     {{ item.label }}
                   </div>
-                  <p class="text-gray-500">{{ item.description }}</p>
+                  <p class="text-gray-500">
+                    {{ item.description }}
+                  </p>
                 </div>
               </div>
             </button>
           </li>
         </ul>
       </div>
-    </app-dialog>
+    </AppDialog>
   </div>
 </template>

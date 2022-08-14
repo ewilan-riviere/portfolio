@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "code",
+    "title": "features.code.title",
+    "text": "features.code.text"
+  },
+  {
+    "slug": "web-design",
+    "title": "features.web-design.title",
+    "text": "features.web-design.text"
+  },
+  {
+    "slug": "server",
+    "title": "features.server.title",
+    "text": "features.server.text"
+  },
+  {
+    "slug": "experiments",
+    "title": "features.experiments.title",
+    "text": "features.experiments.text"
+  },
+  {
+    "slug": "seo",
+    "title": "features.seo.title",
+    "text": "features.seo.text"
+  },
+  {
+    "slug": "documentation",
+    "title": "features.documentation.title",
+    "text": "features.documentation.text"
+  }
+]

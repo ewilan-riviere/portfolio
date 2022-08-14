@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import lozad from 'lozad'
-
+<script lang="ts" setup>
 const props = defineProps<{
   color?: string
   src?: string
@@ -9,8 +7,11 @@ const props = defineProps<{
   placeholder?: string
 }>()
 
+const emit = defineEmits<{
+  (e: 'loaded', loaded: boolean): void
+}>()
+
 const source = ref<string>()
-const lazyMedia = ref<HTMLElement>()
 const media = ref<HTMLImageElement>()
 const defaultImage = ref<HTMLImageElement>()
 const display = ref(false)
@@ -18,29 +19,38 @@ const attrs = useAttrs()
 
 onMounted(() => {
   source.value = props.src
-  lozad(media.value, {
-    load(el: HTMLImageElement) {
-      el.src = el.dataset.src!
-      el.onload = () => {
-        display.value = true
-        emit('loaded', true)
-      }
-      el.onerror = () => {
-        media.value?.classList.add('hidden')
-        defaultImage.value?.classList.remove('hidden')
-        display.value = true
-      }
-    },
-  }).observe()
-})
 
-const emit = defineEmits<{
-  (e: 'loaded', loaded: boolean): void
-}>()
+  if (window.IntersectionObserver) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const media = entry.target
+          if (media instanceof HTMLImageElement) {
+            media.src = source.value ?? props.placeholder ?? ''
+            media.onload = () => {
+              display.value = true
+              emit('loaded', true)
+            }
+            media.onerror = () => {
+              media.classList.add('hidden')
+              defaultImage.value?.classList.remove('hidden')
+              display.value = true
+            }
+          }
+
+          observer.unobserve(entry.target)
+        }
+      })
+    }, { rootMargin: '0px 0px -200px 0px' })
+    if (media.value) { observer.observe(media.value) }
+  }
+})
 </script>
 
 <template>
-  <div ref="lazyMedia" class="lazy-media">
+  <div
+    class="lazy-media"
+  >
     <transition>
       <div
         v-if="!display"
@@ -55,7 +65,7 @@ const emit = defineEmits<{
       :data-src="source"
       :alt="display ? (alt ? alt : title) : ''"
       loading="lazy"
-    />
+    >
     <img
       ref="defaultImage"
       v-bind="attrs"
@@ -63,12 +73,12 @@ const emit = defineEmits<{
       :alt="display ? (alt ? alt : title) : ''"
       class="hidden object-cover"
       loading="lazy"
-    />
+    >
   </div>
 </template>
 
 <style lang="css" scoped>
-        .lazy-media {
+.lazy-media {
   position: relative;
 }
 

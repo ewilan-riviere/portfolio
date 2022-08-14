@@ -24,7 +24,10 @@ watch(
 </script>
 
 <template>
-  <div v-if="content" class="overflow-hidden">
+  <div
+    v-if="content"
+    class="overflow-hidden"
+  >
     <div class="relative px-4 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div
         class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none"
@@ -96,11 +99,19 @@ watch(
                 <p>No content found.</p>
               </template>
             </ContentRenderer>
-            <app-button @click="hobbiesOpened = !hobbiesOpened">And my hobbies?</app-button>
-            <app-dialog :open="hobbiesOpened" @close="hobbiesOpened = false">
+            <app-button @click="hobbiesOpened = !hobbiesOpened">
+              And my hobbies?
+            </app-button>
+            <app-dialog
+              :open="hobbiesOpened"
+              @close="hobbiesOpened = false"
+            >
               <div class="p-5">
                 <ul class="list-outside list-disc">
-                  <li v-for="hobby in about.hobbies" :key="hobby">
+                  <li
+                    v-for="hobby in about.hobbies"
+                    :key="hobby"
+                  >
                     {{ $t(`hobbies.${hobby}`) }}
                   </li>
                 </ul>

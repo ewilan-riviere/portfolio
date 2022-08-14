@@ -6,12 +6,13 @@ await fetchApi()
 </script>
 
 <template>
-  <div :class="{ 'debug-screens': isDev }">
+  <div :class="{'debug-screens': isDev}">
     <app-helper v-if="isDev" />
     <app-toasts />
     <layout-navbar />
     <layout-sidebar />
     <main class="min-h-screen">
+      <NuxtLoadingIndicator />
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>

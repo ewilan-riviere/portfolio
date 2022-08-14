@@ -9,7 +9,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   align: 'right',
   arrow: false,
-  autoClose: false,
+  autoClose: false
 })
 
 const open = ref(false)
@@ -19,13 +19,7 @@ const target = ref<HTMLElement>()
 onClickOutside(target, () => (open.value = false))
 
 const alignmentClasses = computed((): string => {
-  if (props.align === 'left') {
-    return 'origin-top-left left-0'
-  } else if (props.align === 'right') {
-    return 'origin-top-right right-0'
-  } else {
-    return 'origin-top'
-  }
+  if (props.align === 'left') { return 'origin-top-left left-0' } else if (props.align === 'right') { return 'origin-top-right right-0' } else { return 'origin-top' }
 })
 
 onMounted(() => {
@@ -35,8 +29,15 @@ onMounted(() => {
 
 <template>
   <div>
-    <div v-if="loaded" ref="target" class="relative h-full">
-      <span class="h-full" @click="open = !open">
+    <div
+      v-if="loaded"
+      ref="target"
+      class="relative h-full"
+    >
+      <span
+        class="h-full"
+        @click="open = !open"
+      >
         <slot />
       </span>
 
@@ -59,6 +60,8 @@ onMounted(() => {
         </div>
       </transition>
     </div>
-    <div v-else>...</div>
+    <div v-else>
+      ...
+    </div>
   </div>
 </template>

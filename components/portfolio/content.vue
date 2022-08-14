@@ -5,7 +5,10 @@ defineProps<{
 </script>
 
 <template>
-  <div v-if="markdown" class="overflow-hidden">
+  <div
+    v-if="markdown"
+    class="overflow-hidden"
+  >
     <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div
         class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none"

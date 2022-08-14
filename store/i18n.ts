@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import enJson from '../locales/en.json'
 import frJson from '../locales/fr.json'
+// import bzhJson from '../locales/bzh.json'
 
 export const useI18nStore = defineStore('i18n', {
   state: () => ({
@@ -8,14 +9,15 @@ export const useI18nStore = defineStore('i18n', {
     locale: 'en' as LocaleList
   }),
   getters: {
-    currentLocale: (state) => state.locale,
+    currentLocale: state => state.locale
   },
   actions: {
     translate(key: string) {
       const locale = this.getStorageLocale()
       const locales = {
         en: enJson,
-        fr: frJson,
+        fr: frJson
+        // bzh: bzhJson,
       }
       const currentLocale = locales[locale] ?? enJson
 
@@ -33,9 +35,7 @@ export const useI18nStore = defineStore('i18n', {
     },
     getStorageLocale() {
       let locale: LocaleList = 'en'
-      if (process.client) {
-        locale = localStorage.getItem('locale') as LocaleList ?? 'en'
-      }
+      if (process.client) { locale = localStorage.getItem('locale') as LocaleList ?? 'en' }
 
       return locale
     },
@@ -43,6 +43,7 @@ export const useI18nStore = defineStore('i18n', {
       const locales: Keyable = {
         en: 'English',
         fr: 'Français'
+        // bzh: 'Breizh',
       }
 
       return locales[locale] ?? locale
@@ -52,7 +53,7 @@ export const useI18nStore = defineStore('i18n', {
       localStorage.setItem('locale', locale)
 
       this.$patch({
-        locale,
+        locale
       })
     },
     initLocale() {
@@ -67,5 +68,5 @@ export const useI18nStore = defineStore('i18n', {
         }
       }
     }
-  },
+  }
 })

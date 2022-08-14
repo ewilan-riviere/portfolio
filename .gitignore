@@ -5,5 +5,6 @@ node_modules
 .cache
 .output
 .env
+dist
+.idea
 .DS_Store
-bfg-*.jar

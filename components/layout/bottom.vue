@@ -13,15 +13,13 @@
           target="_blank"
           rel="noopener noreferrer"
           class="link ml-1"
-        >Ewilan Rivière</a
-        >.
+        >Ewilan Rivière</a>.
         <a
-          href="https://gitlab.com/ewilan-riviere/portfolio/-/blob/main/LICENSE"
+          href="https://github.com/ewilan-riviere/portfolio/blob/main/LICENSE"
           target="_blank"
           rel="noopener noreferrer"
           class="link ml-1"
-        >{{ $t('footer.mit-license') }}</a
-        >.
+        >{{ $t('footer.mit-license') }}</a>.
         <span class="flex items-center ml-1">
           <span>{{ $t('footer.built-with') }}</span>
           <a
@@ -30,7 +28,10 @@
             rel="noopener noreferrer"
             class="link mx-1"
           >
-            <svg-icon name="nuxt" class="w-5 h-5" />
+            <svg-icon
+              name="nuxt"
+              class="w-5 h-5"
+            />
           </a>
           <span>&</span>
           <a
@@ -39,7 +40,10 @@
             rel="noopener noreferrer"
             class="link mx-1"
           >
-            <svg-icon name="tailwindcss" class="w-5 h-5" />
+            <svg-icon
+              name="tailwindcss"
+              class="w-5 h-5"
+            />
           </a>
         </span>
       </div>

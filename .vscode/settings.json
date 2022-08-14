@@ -1,11 +1,11 @@
 {
   "[vue]": {
-    "editor.defaultFormatter": "Vue.volar",
+    // "editor.defaultFormatter": "Vue.volar",
     "editor.formatOnSave": false
   },
   "[ts]": {
     // "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -13,7 +13,7 @@
   },
   // "prettier.enable": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
+    "source.fixAll.eslint": true
   },
   "i18n-ally.localesPaths": [
     "locales"
