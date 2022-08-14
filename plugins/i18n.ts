@@ -71,8 +71,8 @@ export default defineNuxtPlugin(() => {
         const { locale, getValue } = useI18nStore()
         const locales = {
           en: enJson,
-          fr: frJson,
-          bzh: bzhJson
+          fr: frJson
+          // bzh: bzhJson
         }
         const currentLocale = locales[locale] ?? enJson
 

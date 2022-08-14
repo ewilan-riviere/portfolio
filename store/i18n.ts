@@ -1,18 +1,18 @@
 import { defineStore } from 'pinia'
 import enJson from '../locales/en.json'
 import frJson from '../locales/fr.json'
-import bzhJson from '../locales/bzh.json'
+// import bzhJson from '../locales/bzh.json'
 
 export const useI18nStore = defineStore('i18n', {
   state: () => ({
-    availableLocales: ['en', 'fr', 'bzh'],
+    availableLocales: ['en', 'fr'],
     locale: 'en' as LocaleList
   }),
   getters: {
     currentLocale: state => state.locale
   },
   actions: {
-    translate (key: string) {
+    translate(key: string) {
       const locale = this.getStorageLocale()
       const locales = {
         en: enJson,
@@ -23,7 +23,7 @@ export const useI18nStore = defineStore('i18n', {
 
       return this.getValue(currentLocale, key)
     },
-    getValue (obj: Keyable, path: string): any {
+    getValue(obj: Keyable, path: string): any {
       try {
         if (!path) { return obj }
         const properties = path.split('.')
@@ -33,13 +33,13 @@ export const useI18nStore = defineStore('i18n', {
         return path
       }
     },
-    getStorageLocale () {
+    getStorageLocale() {
       let locale: LocaleList = 'en'
       if (process.client) { locale = localStorage.getItem('locale') as LocaleList ?? 'en' }
 
       return locale
     },
-    transLocale (locale: LocaleList | string) {
+    transLocale(locale: LocaleList | string) {
       const locales: Keyable = {
         en: 'English',
         fr: 'Français'
@@ -48,7 +48,7 @@ export const useI18nStore = defineStore('i18n', {
 
       return locales[locale] ?? locale
     },
-    switchLocale (payload: LocaleList | string) {
+    switchLocale(payload: LocaleList | string) {
       const locale = payload as LocaleList
       localStorage.setItem('locale', locale)
 
@@ -56,7 +56,7 @@ export const useI18nStore = defineStore('i18n', {
         locale
       })
     },
-    initLocale () {
+    initLocale() {
       if (process.client) {
         const localeStorageLocale = localStorage.getItem('locale') as LocaleList
         if (localeStorageLocale) {
