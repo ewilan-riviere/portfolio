@@ -95,18 +95,18 @@ export const useMetadata = (meta?: HeadMeta) => {
 
   // https://github.com/vueuse/schema-org
   // https://vue-schema-org.netlify.app/guide/setup/nuxt.html
-  useSchemaOrg([
-    defineOrganization({
-      name: 'Nuxt.js',
-      logo: '/logo.png',
-      sameAs: [
-        'https://twitter.com/nuxt_js'
-      ]
-    }),
-    defineWebSite({
-      name: 'Nuxt'
-    })
-    // defineWebPage(),
-  ])
+  // useSchemaOrg([
+  //   defineOrganization({
+  //     name: 'Nuxt.js',
+  //     logo: '/logo.png',
+  //     sameAs: [
+  //       'https://twitter.com/nuxt_js'
+  //     ]
+  //   }),
+  //   defineWebSite({
+  //     name: 'Nuxt'
+  //   })
+  //   // defineWebPage(),
+  // ])
   useHead(metadata)
 }

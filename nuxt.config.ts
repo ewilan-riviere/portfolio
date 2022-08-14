@@ -16,12 +16,12 @@ export default defineNuxtConfig({
     '@nuxt/content', // https://github.com/nuxt/content
     '@nuxtjs/tailwindcss', // https://github.com/nuxt-community/tailwindcss-module
     '@pinia/nuxt', // https://github.com/vuejs/pinia
-    '@vueuse/nuxt', // https://github.com/vueuse/vueuse
-    'nuxt-schema-org' // https://github.com/vueuse/schema-org#readme
+    '@vueuse/nuxt' // https://github.com/vueuse/vueuse
+    // 'nuxt-schema-org' // https://github.com/vueuse/schema-org#readme
   ],
   tailwindcss: config.modules.tailwindcss,
   vueuse: config.modules.vueuse,
-  schemaOrg: config.modules.schemaOrg,
+  // schemaOrg: config.modules.schemaOrg,
   content: config.modules.content,
 
   runtimeConfig: {
