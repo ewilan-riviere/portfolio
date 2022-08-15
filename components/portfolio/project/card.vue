@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 defineProps<{
   project: Project
 }>()
@@ -12,15 +12,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <app-slide-over
-      border
-      :title="project.title"
-      :subtitle="$t(`projects.${project.slug}.subtitle`)"
-    >
+  <app-slide-over
+    border
+    :title="project.title"
+    :subtitle="$t(`projects.${project.slug}.subtitle`)"
+  >
+    <div class="relative transform duration-500 shadow hover:-translate-y-2 hover:shadow-lg cursor-pointer group min-h-[12.5rem] min-w-full">
       <article
         v-if="loaded"
-        class="relative transform duration-500 shadow hover:-translate-y-2 hover:shadow-lg cursor-pointer group min-h-[12.5rem] min-w-[20rem]"
+        class=""
         @click="opened = !opened"
       >
         <app-img
@@ -61,33 +61,26 @@ onMounted(() => {
           </div>
         </div>
       </article>
-      <template #title-right>
-        <div
-          v-if="project.isOpenSource"
-          title="Open source"
-          class="text-gray-medium"
-        >
-          <div class="flex">
-            <svg-icon
-              name="open-source"
-              class="w-8 h-8 m-auto"
-            />
-          </div>
-          <p class="text-xs text-center">
-            Open source
-          </p>
+    </div>
+    <template #title-right>
+      <div
+        v-if="project.isOpenSource"
+        title="Open source"
+        class="text-gray-medium"
+      >
+        <div class="flex">
+          <svg-icon
+            name="open-source"
+            class="w-8 h-8 m-auto"
+          />
         </div>
-      </template>
-      <template #content>
-        <portfolio-project-panel :project="project" />
-      </template>
-    </app-slide-over>
-    <!-- <app-dialog
-      :open="opened"
-      size="2xl"
-      @close="opened = false"
-    >
-      <portfolio-project-dialog :project="project" />
-    </app-dialog> -->
-  </div>
+        <p class="text-xs text-center">
+          Open source
+        </p>
+      </div>
+    </template>
+    <template #content>
+      <portfolio-project-panel :project="project" />
+    </template>
+  </app-slide-over>
 </template>

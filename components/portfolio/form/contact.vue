@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const minChar = 10
+const minChar = 50
 const { isDev } = useDev()
 const loading = ref(false)
 const success = ref(false)
