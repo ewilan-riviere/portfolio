@@ -7,7 +7,7 @@ interface Props {
   title?: string
   subtitle?: string
 }
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   full: false,
   border: false,
   title: undefined,

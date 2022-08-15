@@ -22,12 +22,34 @@
     "locale-switch": "Changer de langue"
   },
   "hobbies": {
-    "develop": "Développer mes projets web",
-    "read": "Lire des livres comme de la fantas ou de la science-fiction",
-    "paint": "Peindre des Warhammers",
-    "podcasts": "Écouter des podcasts",
-    "video-games": "Jouer aux jeux vidéo et les modder",
-    "tv-show": "Regarder des séries"
+    "develop": {
+      "label": "Développer & veille techno",
+      "description": "Développer des projets avec mes frameworks préférés, pour expérimenter de nouvelles fonctionnalités de ma veille techno."
+    },
+    "read": {
+      "label": "Lire",
+      "description": "Lire des livres de fantasy, de science-fiction ou des romans, comme ceux de Robin Hobb or J.M. Auel."
+    },
+    "paint": {
+      "label": "Peindre",
+      "description": "Des Warhammers comme ceux du Seigneur des Anneaux."
+    },
+    "podcasts": {
+      "label": "Podcasts",
+      "description": "Ecouter des podcasts, sur la culture, les jeux vidéo, la veille techno ou le jeu de rôle."
+    },
+    "role-play": {
+      "label": "Jeu de rôle",
+      "description": "Je suis une MJ débutante, mais j'adore les campagnes à long terme."
+    },
+    "video-games": {
+      "label": "Jeux vidéo",
+      "description": "Jouer aux jeux vidéo et modder, comme avec les Elder Scrolls ou les jeux de simulation."
+    },
+    "tv-show": {
+      "label": "Séries",
+      "description": "Regarder des séries et web séries de science-fiction ou de fantasy."
+    }
   },
   "features": {
     "code": {

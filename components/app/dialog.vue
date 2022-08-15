@@ -64,7 +64,7 @@ onClickOutside(target, () => closeEvent())
       <Transition>
         <div
           v-if="overlay"
-          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          class="fixed inset-0 bg-white dark:bg-gray-900 opacity-50 transition-opacity"
           aria-hidden="true"
         />
       </Transition>

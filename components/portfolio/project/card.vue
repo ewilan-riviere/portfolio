@@ -3,7 +3,6 @@ defineProps<{
   project: Project
 }>()
 
-const opened = ref(false)
 const loaded = ref(false)
 
 onMounted(() => {
@@ -20,8 +19,6 @@ onMounted(() => {
     <div class="relative transform duration-500 shadow hover:-translate-y-2 hover:shadow-lg cursor-pointer group min-h-[12.5rem] min-w-full">
       <article
         v-if="loaded"
-        class=""
-        @click="opened = !opened"
       >
         <app-img
           :src="`/projects/banner/${project.slug}.webp`"
