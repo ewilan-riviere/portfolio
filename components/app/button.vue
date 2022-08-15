@@ -14,6 +14,7 @@ interface Props {
   loading?: boolean
   outlined?: boolean
   hideLabel?: boolean
+  fakeButton?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -26,10 +27,11 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
   download: undefined,
   icon: undefined,
-  loading: false
+  loading: false,
+  fakeButton: false
 })
 
-defineEmits(['click'])
+const emit = defineEmits(['click'])
 
 const tag = ref('button')
 const btn = ref<HTMLElement>()
@@ -57,6 +59,11 @@ onMounted(() => {
       element.setAttribute('href', current)
     }
   }
+  if (!props.fakeButton) {
+    btn.value?.addEventListener('click', () => {
+      emit('click')
+    }, false)
+  }
 })
 </script>
 
@@ -72,7 +79,6 @@ onMounted(() => {
     :type="type"
     :disabled="disabled"
     :download="download"
-    @click.stop="$emit('click')"
   >
     <span class="absolute top-1/2 left-2 -translate-y-1/2 transform">
       <svg

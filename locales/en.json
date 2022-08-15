@@ -22,12 +22,34 @@
     "locale-switch": "Switch locale"
   },
   "hobbies": {
-    "develop": "Develop my web projects",
-    "read": "Read some books like fantasy or science-fiction",
-    "paint": "Paint Warhammers",
-    "podcasts": "Listen to podcasts",
-    "video-games": "Play video games & modding",
-    "tv-show": "Watch TV shows"
+    "develop": {
+      "label": "Develop & technology watch",
+      "description": "Develop projects with my favorites frameworks, to experiment new features from technology watch."
+    },
+    "read": {
+      "label": "Read",
+      "description": "Read some books like fantasy, science-fiction or novels like Robin Hobb or J.M. Auel."
+    },
+    "paint": {
+      "label": "Paint",
+      "description": "Warhammers like Lord of the Rings series."
+    },
+    "podcasts": {
+      "label": "Podcasts",
+      "description": "Listen to podcasts, on culture, video games, technoloy watching or role play."
+    },
+    "role-play": {
+      "label": "Role play",
+      "description": "I'm beginner Game Master, but I love long-term campaigns."
+    },
+    "video-games": {
+      "label": "Video games",
+      "description": "Play to video games and modding, like Elder Scrolls series or simulation games."
+    },
+    "tv-show": {
+      "label": "TV shows",
+      "description": "I'm watching science-fiction or fantasy TV shows or web series."
+    }
   },
   "features": {
     "code": {
