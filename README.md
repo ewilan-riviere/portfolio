@@ -11,7 +11,7 @@
 
 >Personal portfolio of Ewilan Rivière. Use Nuxt 3.x and Tailwind CSS.
 
-📀 [**Repository**](https://gitlab.com/ewilan-riviere/portfolio)  
+📀 [**Repository**](https://github.com/ewilan-riviere/portfolio)  
 💻 [**ewilan-riviere.com**](https://ewilan-riviere.com): demo
 
 ## Setup

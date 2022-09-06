@@ -1,6 +1,6 @@
-import type { MetaObject } from '#app'
 import type { ComputedGetter } from 'vue'
 import { useDarkMode } from './useDarkMode'
+import type { MetaObject } from '#app'
 
 const { isDark } = useDarkMode()
 
@@ -87,8 +87,8 @@ export const useMetadata = (meta?: HeadMeta) => {
     link: [
       {
         rel: 'icon',
-        type: 'image/svg+xml',
-        href: isDarkMode ? '/favicon-dark.svg' : '/favicon.svg'
+        type: 'image/ico',
+        href: '/favicon.ico'
       }
     ]
   }
