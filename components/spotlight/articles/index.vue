@@ -2,7 +2,7 @@
 import type { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
 
 defineProps<{
-  articles?: MarkdownParsedContent[]
+  articles?: MarkdownParsedContent[] | null
 }>()
 </script>
 

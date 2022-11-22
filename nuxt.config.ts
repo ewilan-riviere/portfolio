@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   ],
   // https://content.nuxtjs.org/api/configuration
   content: {
-
+    documentDriven: true,
+    // fullTextSearchFields: ['title', 'description', 'slug'],
   },
   postcss: {
     plugins: {

@@ -1,6 +1,7 @@
 ---
 title: Home
 description: 'meta description of the page'
+createdAt: 2022-11-22
 ---
 
 # Hello Content
