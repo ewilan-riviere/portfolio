@@ -7454,7 +7454,7 @@ packages:
     dev: true
 
   file:../../nuxt-ray-0.0.1.tgz:
-    resolution: {integrity: sha512-cRaYOUWVo3F9uuuxPyXVMt7MWb6R/VA0qdIiz/4SxpICWHDqSKAeZo+O8zRCBF6M6FfpKP0+W+95UWW26FP5Rw==, tarball: file:../../nuxt-ray-0.0.1.tgz}
+    resolution: {integrity: sha512-ZP7rWBPa+x448uRRcXVE9GjiisPTVdL+zGnuKAsf+GUiuHAQnqjke0E4tbP4ITPo+jppqG5uI3urC/oGCpbVtA==, tarball: file:../../nuxt-ray-0.0.1.tgz}
     name: nuxt-ray
     version: 0.0.1
     dependencies:

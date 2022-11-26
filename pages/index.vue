@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const ray = useRay()
-// ray('Hello world')
+const ray = useNuxtRay()
+ray('Hello from Ray').color('green')
 </script>
 
 <template>
