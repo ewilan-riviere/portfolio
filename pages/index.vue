@@ -1,4 +1,7 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const ray = useRay()
+// ray('Hello world')
+</script>
 
 <template>
   <spotlight-home-hero />
