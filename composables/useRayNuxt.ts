@@ -7,7 +7,7 @@ interface IRay extends Ray {
   color: (color: 'green' | 'orange' | 'red' | 'blue' | 'purple' | 'gray') => Ray
 }
 
-export const useNuxtRay = () => {
+export const useRayNuxt = () => {
   if (process.client) {
     return (...args: any[]) =>
       ray(...args) as IRay

@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-const ray = useNuxtRay()
-ray('Hello from Ray').color('green')
+
 </script>
 
 <template>
-  <spotlight-home-hero />
+  <spotlight-home-hero title="Software designer, founder, and amateur astronaut." />
   <spotlight-home-gallery />
   <spotlight-home-main />
 </template>
