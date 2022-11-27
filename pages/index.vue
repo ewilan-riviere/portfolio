@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-
+const ray = useRayNuxt()
+ray('Hello from index.vue')
 </script>
 
 <template>
