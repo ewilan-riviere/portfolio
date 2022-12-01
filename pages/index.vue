@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-const ray = useRayNuxt()
-ray('Hello home page')
+import { useMainStore } from '~~/store/main'
+
+const { projects, historyItems } = useMainStore()
 </script>
 
 <template>
   <spotlight-home-hero title="Software designer, founder, and amateur astronaut." />
-  <spotlight-home-gallery />
+  <spotlight-home-gallery :projects="projects" />
   <spotlight-home-main />
 </template>
 

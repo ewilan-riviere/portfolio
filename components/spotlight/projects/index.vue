@@ -5,7 +5,7 @@
     <ul role="list" class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
       <li class="group relative flex flex-col items-start">
         <div class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-          <img alt="" src="/_next/static/media/planetaria.ecd81ade.svg" decoding="async" data-nimg="1" class="h-8 w-8" loading="lazy" style="color: transparent;" width="32" height="32">
+          <img alt="" decoding="async" data-nimg="1" class="h-8 w-8" loading="lazy" style="color: transparent;" width="32" height="32">
         </div><h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
           <div class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" /><a href="http://planetaria.tech"><span class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" /><span class="relative z-10">Planetaria</span></a>
         </h2><p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">

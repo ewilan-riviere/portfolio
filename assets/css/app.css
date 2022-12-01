@@ -3,5 +3,91 @@
 @tailwind utilities;
 
 body {
-  @apply bg-black;
+  @apply dark:text-white dark:bg-black;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.gradient {
+  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
+}
+.gradient-top {
+  mask-image: linear-gradient(to bottom, white 0%, transparent 100%);
+}
+.gradient-inter {
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    white 40%,
+    white 60%,
+    transparent 100%
+  );
+}
+.gradient-bottom {
+  mask-image: linear-gradient(to top, white 0%, transparent 100%);
+}
+
+@layer utilities {
+  .rainbow-flag {
+    position: relative;
+    background-image: linear-gradient(
+      180deg,
+      #ff0000 0%,
+      #ff9900 20%,
+      #fffe13 40%,
+      #059f2d 60%,
+      #014fe8 80%,
+      #9110a1 100%
+    );
+    z-index: 1;
+  }
+
+  .rainbow-flag::before {
+    @apply absolute content-[''] inset-0 opacity-0 transition-opacity duration-300 ease-linear rounded-full;
+    background-image: linear-gradient(
+      180deg,
+      #55cdfc 0%,
+      #f7a8b8 25%,
+      #ffffff 50%,
+      #f7a8b8 75%,
+      #55cdfc 100%
+    );
+    z-index: -1;
+  }
+  .rainbow-flag::after {
+    @apply absolute content-[''] inset-0 opacity-0 transition-opacity duration-300 ease-linear rounded-full;
+    background-image: linear-gradient(
+      180deg,
+      #ff1b8d 0%,
+      #ffda00 50%,
+      #1bb3ff 100%
+    );
+    z-index: -1;
+  }
+}
+
+.option {
+  @apply border-y border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 py-1;
 }

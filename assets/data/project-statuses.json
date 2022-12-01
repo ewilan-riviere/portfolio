@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "concept",
+    "order": "1"
+  },
+  {
+    "slug": "development",
+    "order": "2"
+  },
+  {
+    "slug": "finish",
+    "order": "3"
+  },
+  {
+    "slug": "tpam",
+    "order": "4"
+  }
+]
