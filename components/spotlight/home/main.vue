@@ -1,11 +1,6 @@
 <script lang="ts" setup>
-import type { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
-import { useMainStore } from '~~/store/main'
-
-// const {  } = useMainStore()
-const { data: articles } = useAsyncData('article', () =>
-  queryContent<MarkdownParsedContent>('/articles').where({ _draft: false }).limit(3).find(),
-)
+const { findAll } = useMarkdownContent()
+const articles = findAll()
 </script>
 
 <template>
@@ -21,5 +16,3 @@ const { data: articles } = useAsyncData('article', () =>
     </div>
   </spotlight-layout-container>
 </template>
-
-<style scoped></style>

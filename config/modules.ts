@@ -47,11 +47,6 @@ const i18n: NuxtConfig['i18n'] = {
     legacy: false,
     locale: 'en',
     fallbackLocale: 'en',
-    messages: {
-      en: localeEn,
-      fr: localeFr,
-      // bzh: localeBzh,
-    },
   },
 }
 

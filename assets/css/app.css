@@ -89,5 +89,5 @@ body {
 }
 
 .option {
-  @apply border-y border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 py-1;
+  @apply border-y border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 py-1;
 }
