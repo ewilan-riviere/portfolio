@@ -1,5 +1,5 @@
-
-const _paq = window._paq = window._paq || []
+// eslint-disable-next-line prefer-const
+let _paq = window._paq = window._paq || []
 /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
 _paq.push(['trackPageView'])
 _paq.push(['enableLinkTracking']);
