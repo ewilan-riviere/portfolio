@@ -4,28 +4,26 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "install",
+      "label": "PNPM install",
       "type": "shell",
       "command": "pnpm i",
-      "problemMatcher": []
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "close": true
+      }
     },
     {
-      "label": "build",
-      "type": "shell",
-      "command": "pnpm build",
-      "problemMatcher": []
-    },
-    {
-      "label": "lint:fix",
-      "type": "shell",
-      "command": "pnpm lint:fix",
-      "problemMatcher": []
-    },
-    {
-      "label": "dev",
+      "label": "PNPM dev",
       "type": "shell",
       "command": "pnpm dev",
-      "problemMatcher": []
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "close": true
+      }
     }
   ]
 }

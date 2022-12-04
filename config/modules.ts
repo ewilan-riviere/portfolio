@@ -1,7 +1,5 @@
 import type { NuxtConfig } from '@nuxt/schema'
-import localeEn from '../locales/en.json'
-import localeFr from '../locales/fr.json'
-// import localeBzh from '../locales/bzh.json'
+import locale from '../locales'
 
 // https://content.nuxtjs.org/api/configuration
 const content: NuxtConfig['content'] = {
@@ -33,13 +31,11 @@ const i18n: NuxtConfig['i18n'] = {
       code: 'en',
       iso: 'en-US',
       name: 'English',
-      file: 'en.json',
     },
     {
       code: 'fr',
       iso: 'fr-FR',
       name: 'Français',
-      file: 'fr.json',
     },
   ],
   defaultLocale: 'en',
@@ -47,6 +43,10 @@ const i18n: NuxtConfig['i18n'] = {
     legacy: false,
     locale: 'en',
     fallbackLocale: 'en',
+    messages: {
+      en: locale.en,
+      fr: locale.fr,
+    },
   },
 }
 
