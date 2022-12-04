@@ -108,6 +108,9 @@ const script = [
     defer: true,
     'data-website-id': '52ad2483-3446-4416-a486-ceb570dd05f9',
     src: 'https://umami.git-projects.xyz/umami.js'
+  },
+  {
+    src: '/matomo.js'
   }
 ]
 
