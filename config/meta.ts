@@ -102,6 +102,12 @@ const meta = [
 const script = [
   {
     src: '/color-mode.js'
+  },
+  {
+    async: true,
+    defer: true,
+    'data-website-id': '52ad2483-3446-4416-a486-ceb570dd05f9',
+    src: 'https://umami.git-projects.xyz/umami.js'
   }
 ]
 
