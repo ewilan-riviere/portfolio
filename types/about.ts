@@ -13,9 +13,9 @@ declare interface About {
   text: string
   hobbies: string[]
   resume: {
-    name:string
-    slug:string
-    link:string
+    name: string
+    slug: string
+    link: string
   }
   socialItems: SocialItem[]
 }

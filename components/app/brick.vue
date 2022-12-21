@@ -1,11 +1,24 @@
 <script lang="ts" setup>
 defineProps<{
-  url: string
+  url?: string
 }>()
+
+const isLoaded = ref(false)
+const imgLoad = () => {
+  isLoaded.value = true
+}
 </script>
 
 <template>
-  <div
+  <div class="relative">
+    <img
+      :src="url"
+      class="w-full h-full object-cover"
+      @load="imgLoad"
+    >
+  </div>
+  <!-- <div
+    v-cloak
     class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20"
   >
     <img
@@ -30,9 +43,5 @@ defineProps<{
         <span class="test__tag bg-white bg-opacity-60 py-1 px-4 rounded-md text-black">#tag</span>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
-
-<style scoped>
-
-</style>

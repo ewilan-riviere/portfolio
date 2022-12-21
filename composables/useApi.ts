@@ -2,9 +2,10 @@ import type { NitroFetchRequest } from 'nitropack'
 import { useMainStore } from '~~/store/main'
 
 interface QueryParam {
-  'filter[isDraft]': boolean
-  'sort': string
-  [key: string]: string | number | boolean
+  'filter[isDraft]'?: boolean | undefined
+  'filter[isFavorite]'?: boolean | undefined
+  'sort'?: string | undefined
+  [key: string]: string | number | boolean | undefined
 }
 
 export const useApi = () => {
@@ -67,6 +68,7 @@ export const useApi = () => {
   }
 
   return {
+    fetchData,
     fetchApi,
   }
 }

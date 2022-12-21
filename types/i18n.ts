@@ -1,23 +1,22 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import {
-  DefineLocaleMessage,
   DefineDateTimeFormat,
-  DefineNumberFormat
+  DefineLocaleMessage,
+  DefineNumberFormat,
 } from 'vue-i18n'
 
 declare module 'vue-i18n' {
   // define the locale messages schema
   export interface DefineLocaleMessage {
-    locale: string,
+    locale: string
     messages: {
       hello: string
-    },
+    }
     about: {
       professionalTitle: string
-    },
-    title: string,
+    }
+    title: string
     hero: {
       title: string
     }

@@ -17,7 +17,7 @@ declare interface Guide {
   tags?: string[]
   readingTime?: {
     minutes?: number
-  },
+  }
   date?: Date
 
   _id: string

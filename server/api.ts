@@ -1,4 +1,5 @@
 import type { H3Event } from 'h3'
+import { localeHead } from 'vue-i18n-routing'
 
 export const getJson = <T>(json: object): T => {
   const data: T = JSON.parse(JSON.stringify(json))
@@ -45,6 +46,7 @@ export const queryBuilder = <T>(event: H3Event, data: T[]): T[] => {
       const isSort = query.startsWith('sort')
       const isLimit = query.startsWith('limit')
       const isShuffle = query.startsWith('shuffle')
+      const isOther = !isFilter && !isSort && !isLimit && !isShuffle
 
       let qvalue: string | undefined | boolean = value
       if (value === 'true' || value === 'false')
@@ -72,6 +74,9 @@ export const queryBuilder = <T>(event: H3Event, data: T[]): T[] => {
 
       if (isShuffle)
         data = shuffle(data)
+
+      if (isOther)
+        data = data.filter((item: any) => item[query] === qvalue)
     }
   }
 

@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "PNPM install",
+      "label": "install",
       "type": "shell",
       "command": "pnpm i",
       "problemMatcher": [],
@@ -15,7 +15,7 @@
       }
     },
     {
-      "label": "PNPM dev",
+      "label": "dev",
       "type": "shell",
       "command": "pnpm dev",
       "problemMatcher": [],

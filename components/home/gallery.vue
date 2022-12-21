@@ -2,6 +2,12 @@
 defineProps<{
   projects: Project[]
 }>()
+
+const { fetchData } = useApi()
+const projects = await fetchData<Project[]>('/api/projects', {
+  'filter[isFavorite]': true,
+  'context': 'personal',
+})
 </script>
 
 <template>

@@ -1,4 +1,5 @@
 import type { MarkdownParsedContent, QueryBuilderWhere } from '@nuxt/content/dist/runtime/types'
+import type { Ref } from 'vue'
 
 interface Options {
   localize?: boolean
@@ -10,7 +11,7 @@ export const useMarkdownContent = () => {
   const findAll = (options: Options = {
     localize: true,
     where: { _draft: false },
-  }): MarkdownParsedContent[] | undefined => {
+  }): Ref<MarkdownParsedContent[] | undefined> => {
     const { locale } = useI18n()
     const { data: articles } = useAsyncData('article', () => {
       let content = queryContent<MarkdownParsedContent>('/articles')
@@ -22,10 +23,14 @@ export const useMarkdownContent = () => {
       if (options.localize)
         content = content.locale(locale.value)
 
-      return content.find()
+      return content
+        .sort({
+          createdAt: -1,
+        })
+        .find()
     })
 
-    return articles as unknown as MarkdownParsedContent[] | undefined
+    return articles as unknown as Ref<MarkdownParsedContent[] | undefined>
   }
 
   return {

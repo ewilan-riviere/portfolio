@@ -1,5 +1,5 @@
 import type { NuxtConfig } from '@nuxt/schema'
-import locale from '../locales'
+import locale from './locales'
 
 // https://content.nuxtjs.org/api/configuration
 const content: NuxtConfig['content'] = {
