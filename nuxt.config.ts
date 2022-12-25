@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  extends: '@nuxt-themes/typography',
+  // extends: '@nuxt-themes/typography',
   modules: [
     '@nuxt/content', // https://content.nuxtjs.org/get-started,
     '@nuxtjs/i18n', // https://i18n.nuxtjs.org/getting-started
@@ -32,11 +32,26 @@ export default defineNuxtConfig({
   },
   postcss: {
     plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
+      'postcss-import': {},
+      'tailwindcss/nesting': {},
+      'tailwindcss': {},
+      'autoprefixer': {},
     },
   },
   typescript: {
     shim: false,
+  },
+  hooks: {
+    // '': (a) => {
+    //   console.log('Nuxt is ready')
+    //   console.log(a)
+    //   console.log(document.documentElement)
+    // },
+    // 'content:file:beforeInsert': (document) => {
+    //   if (document.extension === '.md') {
+    //     const { html } = require('markdown-it')().render(document.text)
+    //     document.text = html
+    //   }
+    // },
   },
 })

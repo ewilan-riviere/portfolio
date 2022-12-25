@@ -1,42 +1,14 @@
 <script lang="ts" setup>
-const isDark = ref(false)
-
-const toggleDark = () => {
-  const root = document.documentElement.classList
-  if (root.contains('dark')) {
-    root.toggle('light')
-    root.remove('dark')
-
-    localStorage.setItem('color-scheme', 'light')
-    isDark.value = false
-  }
-  else {
-    root.toggle('dark')
-    root.remove('light')
-
-    localStorage.setItem('color-scheme', 'dark')
-    isDark.value = true
-  }
-}
-
-const setColorMode = () => {
-  if (process.client) {
-    const color = localStorage.getItem('color-scheme')
-    if (color && color === 'dark')
-      isDark.value = true
-    else isDark.value = false
-  }
-}
-setColorMode()
+const { isDark, toggle } = useColorScheme()
 </script>
 
 <template>
   <button
-    class="option rounded-r-full px-2 !border-r"
+    class="option rounded-r-full px-2 !border-r !bg-white dark:!bg-gray-800 border-gray-200 dark:border-gray-700 hover:!bg-gray-100 dark:hover:!bg-gray-700"
     type="button"
     aria-label="Toggle dark mode"
     :title="$t(`app.color-mode.${isDark ? 'light' : 'dark'}`)"
-    @click="toggleDark()"
+    @click="toggle()"
   >
     <span class="sun">
       <svg-icon name="sun" class="h-6 w-6 block" />

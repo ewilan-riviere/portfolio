@@ -108,7 +108,7 @@ const meta: Meta<any['link']>[] = [
 ]
 const script: Script<any['script']>[] = [
   {
-    src: '/color-mode.js',
+    src: '/color-scheme.js',
   },
 ]
 

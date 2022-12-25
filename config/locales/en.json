@@ -120,7 +120,7 @@
     }
   },
   "achievements": {
-    "bachelor": "Bachelor",
+    "bachelor": "Bac",
     "projects": "Projects",
     "experience": "Experience years"
   },
@@ -136,15 +136,15 @@
   },
   "history-items": {
     "psychology-bachelor": {
-      "title": "Psychology bachelor",
+      "title": "Psychology degree",
       "abstract": "A background in psychology with a focus on child and adolescent development.",
-      "level": "Bachelor +3",
+      "level": "Bac +3",
       "role": "Student"
     },
     "web-and-mobile-developer": {
       "title": "Web & mobile developer",
       "abstract": "A high quality training, launched within the framework of the “grande école du numérique”, which allows to train in 8 months to the basics and to some advanced notions of web development.",
-      "level": "Bachelor +2",
+      "level": "Bac +2",
       "role": "Student"
     },
     "poec-java": {
@@ -156,13 +156,13 @@
     "developer-designer-of-applications": {
       "title": "Developer Designer of Applications",
       "abstract": "A vocational studies, 25% of the time per month at the ENI school and 75% of the time at UseWeb.",
-      "level": "Bachelor +4",
+      "level": "Bac +4",
       "role": "Fullstack developer"
     },
     "manager-of-digital-and-data-solutions": {
       "title": "Manager of Digital and Data Solutions",
       "abstract": "Organize an information system, acquire the fundamental technological and methodological notions allowing the management of an information system, manage a team (management, conducting meetings, recruitment), manage an IT project.",
-      "level": "Bachelor +5",
+      "level": "Bac +5",
       "role": "Fullstack developer"
     }
   },

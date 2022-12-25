@@ -3,12 +3,13 @@ interface Link {
   link: string
 }
 
-declare interface HistoryItem {
+export interface HistoryItem {
   slug: string
   image?: string
   certificate?: string
   color?: string
   colorReversed?: string
+  icon: import('~~/.nuxt/svg-transformer').IconType
   experienceType?: string
   dateBegin: Date
   dateEnd?: Date

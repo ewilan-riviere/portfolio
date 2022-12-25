@@ -1,8 +1,6 @@
 import type { ComputedGetter } from 'vue'
-import { useDarkMode } from './useDarkMode'
+import { useColorScheme } from './useColorScheme'
 import type { MetaObject } from '#app'
-
-const { isDark } = useDarkMode()
 
 interface HeadMeta {
   description?: string
@@ -32,7 +30,7 @@ export const useMetadata = (meta?: HeadMeta) => {
   const { fullPath } = useRoute()
   const route = fullPath
 
-  const isDarkMode = isDark()
+  const { isDark } = useColorScheme()
 
   const metadata: MetaObject | ComputedGetter<MetaObject> = {
     title,
@@ -44,7 +42,7 @@ export const useMetadata = (meta?: HeadMeta) => {
       },
       {
         name: 'theme-color',
-        content: isDarkMode ? '#6c63ff' : '#564fcc',
+        content: isDark.value ? '#6c63ff' : '#564fcc',
       },
       {
         hid: 'og:url',
