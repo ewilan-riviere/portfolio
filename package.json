@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
-    "@nuxt-themes/typography": "^0.1.9",
+    "@nuxt-themes/typography": "^0.2.2",
     "@nuxt/content": "^2.3.0",
     "@nuxtjs/i18n": "8.0.0-beta.7",
     "@pinia/nuxt": "^0.4.6",
@@ -21,7 +21,7 @@
     "autoprefixer": "^10.4.13",
     "eslint": "^8.30.0",
     "nuxt": "3.0.0",
-    "nuxt-svg-transformer": "^0.0.7",
+    "nuxt-svg-transformer": "^0.0.9",
     "nuxt-typed-link": "^0.0.2",
     "pinia": "^2.0.28",
     "postcss": "^8.4.20",

@@ -12,11 +12,6 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   extends: '@nuxt-themes/typography',
   modules: [
-    // '@nuxt/content',
-    // '@pinia/nuxt',
-    // 'nuxt-svg-transformer',
-    // 'nuxt-typed-link',
-    // '@nuxtjs/i18n',
     '@nuxt/content', // https://content.nuxtjs.org/get-started,
     '@nuxtjs/i18n', // https://i18n.nuxtjs.org/getting-started
     '@pinia/nuxt', // https://pinia.vuejs.org/ssr/nuxt.html#installation

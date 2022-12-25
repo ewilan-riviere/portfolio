@@ -59,6 +59,7 @@ const schemaOrg: object = {
 
 // https://github.com/kiwilan/nuxt-svg-transformer
 const svgTransformer: NuxtConfig['svgTransformer'] = {
+  title: false,
 }
 
 // https://github.com/kiwilan/nuxt-typed-link
