@@ -10,16 +10,20 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  // extends: '@nuxt-themes/typography',
+  extends: '@nuxt-themes/docus',
   modules: [
+    '@nuxtjs/color-mode', // https://color-mode.nuxtjs.org/
     '@nuxt/content', // https://content.nuxtjs.org/get-started,
     '@nuxtjs/i18n', // https://i18n.nuxtjs.org/getting-started
     '@pinia/nuxt', // https://pinia.vuejs.org/ssr/nuxt.html#installation
-    // '@vueuse/nuxt', // https://vueuse.org/guide/
+    '@vueuse/nuxt', // https://vueuse.org/guide/index.html#nuxt
     // 'nuxt-schema-org', // https://vue-schema-org.netlify.app/guide/getting-started/nuxt
     'nuxt-svg-transformer', // https://github.com/kiwilan/nuxt-svg-transformer
     'nuxt-typed-link', // https://github.com/kiwilan/nuxt-typed-link
   ],
+  colorMode: {
+    classSuffix: '',
+  },
   content: modules.content,
   i18n: modules.i18n,
   svgTransformer: modules.svgTransformer,
@@ -40,18 +44,5 @@ export default defineNuxtConfig({
   },
   typescript: {
     shim: false,
-  },
-  hooks: {
-    // '': (a) => {
-    //   console.log('Nuxt is ready')
-    //   console.log(a)
-    //   console.log(document.documentElement)
-    // },
-    // 'content:file:beforeInsert': (document) => {
-    //   if (document.extension === '.md') {
-    //     const { html } = require('markdown-it')().render(document.text)
-    //     document.text = html
-    //   }
-    // },
   },
 })

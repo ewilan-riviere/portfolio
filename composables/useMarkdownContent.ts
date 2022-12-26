@@ -1,39 +1,132 @@
-import type { MarkdownParsedContent, QueryBuilderWhere } from '@nuxt/content/dist/runtime/types'
-import type { Ref } from 'vue'
+import type { ParsedContent, QueryBuilderWhere } from '@nuxt/content/dist/runtime/types'
 
 interface Options {
   localize?: boolean
   where: QueryBuilderWhere
   limit?: number
+  first?: boolean
 }
 
+interface HeadContent {
+  // _dir: string
+  // _draft: boolean
+  // _empty: boolean
+  // _extension: string
+  // _file: string
+  // _id: string
+  _link: string
+  // _locale: string
+  // _original: boolean
+  // _partial: boolean
+  // _path: string
+  _slug: string
+  _slugFallbackLocale: string
+  _slugLocale: string
+  // _source: string
+  // _type: string
+  // createdAt: string
+  // description: string
+  // title: string
+}
+
+interface Content extends ParsedContent, HeadContent {}
+
+const optsDefault: Options = { localize: true, where: { _draft: false }, first: false }
+
 export const useMarkdownContent = () => {
-  const findAll = (options: Options = {
-    localize: true,
-    where: { _draft: false },
-  }): Ref<MarkdownParsedContent[] | undefined> => {
-    const { locale } = useI18n()
-    const { data: articles } = useAsyncData('article', () => {
-      let content = queryContent<MarkdownParsedContent>('/articles')
-        .where(options.where)
+  const contents = ref<Content[]>()
+  const content = ref<Content>()
 
-      if (options.limit)
-        content = content.limit(options.limit)
+  const addMetaHead = (articles: Content[]) => {
+    const nuxtApp = useNuxtApp()
+    const fallbackLocale = nuxtApp.vueApp.config.globalProperties.$i18n.fallbackLocale
 
-      if (options.localize)
-        content = content.locale(locale.value)
+    articles.forEach((article) => {
+      const fullPath = article._file?.replace(/\.md$/, '')
+      const path = article._path?.substring(1)
+      const fallback = article._path?.split('/') || []
+      fallback.shift()
+      const fallbackPath = `/${fallback.join('/')}`
 
-      return content
-        .sort({
-          createdAt: -1,
-        })
-        .find()
+      article._slugLocale = `${fullPath}`
+      article._slugFallbackLocale = `${fallbackLocale}${fallbackPath}`
+      article._slug = `${path}`
+      article._original = article._locale === fallbackLocale
+      article._link = `${article._original ? '' : `/${article._locale}`}${fallbackPath}`
     })
 
-    return articles as unknown as Ref<MarkdownParsedContent[] | undefined>
+    return articles
+  }
+
+  const fetchContent = async (path: string, options: Options) => {
+    const { locale } = useI18n()
+    let documents = queryContent<Content>(path)
+      .where(options.where)
+
+    if (options.limit)
+      documents = documents.limit(options.limit)
+
+    if (options.localize)
+      documents = documents.locale(locale.value)
+
+    documents = documents.sort({
+      createdAt: -1,
+    })
+
+    const fetching = await documents.find()
+
+    contents.value = addMetaHead(fetching)
+
+    return fetching
+  }
+
+  const getFullPath = (path: string) => {
+    const nuxtApp = useNuxtApp()
+    const i18n = nuxtApp.vueApp.config.globalProperties.$i18n
+    const localeAvailables = i18n.availableLocales
+    // const localeFallback = i18n.fallbackLocale
+
+    let splitted = path.split('/')
+    splitted = splitted.filter(item => item !== '')
+
+    const locale = splitted[0] ?? undefined
+    if (locale && localeAvailables.includes(locale))
+      splitted.shift()
+
+    return `/${splitted.join('/')}`
+  }
+
+  const findAll = async (path: string, options: Options = optsDefault) => {
+    return await fetchContent(getFullPath(path), options)
+  }
+
+  const findOne = async (path: string, options: Options = optsDefault) => {
+    const documents = await fetchContent(getFullPath(path), options)
+    const document = documents[0] ? documents[0] : undefined
+    content.value = document
+
+    if (!document) {
+      const router = useRouter()
+      router.push({ name: '404' })
+    }
+
+    return document
+  }
+
+  const getHead = (document: ParsedContent) => {
+    const head = { ...document }
+    delete head.body
+    delete head.excerpt
+
+    return head as unknown as HeadContent
   }
 
   return {
     findAll,
+    findOne,
+    contents,
+    content,
+    getFullPath,
+    getHead,
   }
 }

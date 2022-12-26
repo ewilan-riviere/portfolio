@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import type { HistoryItem } from '~~/types/history-item'
 
 export const useMainStore = defineStore('main', {
   state: () => ({

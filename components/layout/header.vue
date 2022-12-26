@@ -19,7 +19,7 @@ const { isScroll } = useScroll()
             <layout-header-navbar />
             <div class="flex items-center divide-x">
               <layout-header-locale-switch />
-              <layout-header-color-mode />
+              <layout-header-color-mode-nuxt />
             </div>
           </div>
         </div>

@@ -2,13 +2,17 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/eslint-config': ^0.34.0
+  '@nuxt-themes/docus': ^1.2.3
   '@nuxt-themes/typography': ^0.2.2
   '@nuxt/content': ^2.3.0
+  '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/i18n': 8.0.0-beta.7
   '@pinia/nuxt': ^0.4.6
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.8
+  '@vueuse/core': ^9.9.0
+  '@vueuse/nuxt': ^9.9.0
   autoprefixer: ^10.4.13
   eslint: ^8.30.0
   nuxt: 3.0.0
@@ -22,13 +26,17 @@ specifiers:
 
 devDependencies:
   '@antfu/eslint-config': 0.34.0_lzzuuodtsqwxnvqeq4g4likcqa
+  '@nuxt-themes/docus': 1.2.3_x4mkhtv5o5bjpuzr357amzgs5y
   '@nuxt-themes/typography': 0.2.2_postcss@8.4.20+vue@3.2.45
   '@nuxt/content': 2.3.0
+  '@nuxtjs/color-mode': 3.2.0
   '@nuxtjs/i18n': 8.0.0-beta.7_vue@3.2.45
   '@pinia/nuxt': 0.4.6_prq2uz4lho2pwp6irk4cfkrxwu
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
+  '@vueuse/core': 9.9.0_vue@3.2.45
+  '@vueuse/nuxt': 9.9.0_nuxt@3.0.0+vue@3.2.45
   autoprefixer: 10.4.13_postcss@8.4.20
   eslint: 8.30.0
   nuxt: 3.0.0_lzzuuodtsqwxnvqeq4g4likcqa
@@ -743,6 +751,41 @@ packages:
       fastq: 1.14.0
     dev: true
 
+  /@nuxt-themes/docus/1.2.3_x4mkhtv5o5bjpuzr357amzgs5y:
+    resolution: {integrity: sha512-MWjCZ6mzPV057lqgiE98l1egEUYIIqUy2n3nlOnR8NQThzIU3tJf5YN4RUK4BKDWH7edH9/OA65B2Z/BGirPZw==}
+    dependencies:
+      '@nuxt-themes/elements': 0.3.3_postcss@8.4.20+vue@3.2.45
+      '@nuxt-themes/tokens': 1.4.2_postcss@8.4.20+vue@3.2.45
+      '@nuxt-themes/typography': 0.2.2_postcss@8.4.20+vue@3.2.45
+      '@nuxt/content': 2.3.0
+      '@nuxthq/studio': 0.4.2
+      '@vueuse/nuxt': 9.9.0_nuxt@3.0.0+vue@3.2.45
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - bufferutil
+      - nuxt
+      - postcss
+      - rollup
+      - sass
+      - supports-color
+      - utf-8-validate
+      - vue
+    dev: true
+
+  /@nuxt-themes/elements/0.3.3_postcss@8.4.20+vue@3.2.45:
+    resolution: {integrity: sha512-6S3z+GY2H78Ff36BJNzvWAP4NKhmzju4NGhST6oIJnw07UYKsgkO1ttz867QX1kNhOwFFsCTpcxVCrj0FFxpSw==}
+    dependencies:
+      '@nuxt-themes/tokens': 1.4.2_postcss@8.4.20+vue@3.2.45
+      '@vueuse/core': 9.9.0_vue@3.2.45
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - postcss
+      - rollup
+      - sass
+      - supports-color
+      - vue
+    dev: true
+
   /@nuxt-themes/tokens/1.4.2_postcss@8.4.20+vue@3.2.45:
     resolution: {integrity: sha512-zeqq5jjHG2CqAmGDe38IkdJIIEaNgvRISVf+/iZx2f70yLd2fS+6fDDOmgQleNdr7Mzh8u0ndGVb62F0BoCXmQ==}
     dependencies:
@@ -1008,6 +1051,23 @@ packages:
       - typescript
       - vls
       - vti
+    dev: true
+
+  /@nuxthq/studio/0.4.2:
+    resolution: {integrity: sha512-IkDuRn9i7mEbb4+SU+wC0pYEWyxjmnvT1wOursIP6wVkdNa7oM2qdiueAZQ7KTAGAEtn2R6gtAD8h6ukEWE5gA==}
+    dependencies:
+      '@nuxt/kit': 3.0.0
+      '@nuxt/schema': 3.0.0
+      defu: 6.1.1
+      nuxt-component-meta: 0.4.1
+      nuxt-config-schema: 0.3.7
+      socket.io-client: 4.5.4
+      ufo: 1.0.1
+    transitivePeerDependencies:
+      - bufferutil
+      - rollup
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /@nuxtjs/color-mode/3.2.0:
@@ -1616,8 +1676,22 @@ packages:
       muggle-string: 0.1.0
     dev: true
 
+  /@volar/language-core/1.0.17:
+    resolution: {integrity: sha512-Z1QEtvAeZdoREJct27TrMNEQQFoxPkg4FQwBtyr7wziX/JbSMt04wTCcLZ+Kk2mDg0+EsNY7OYGawIFDrCrZGw==}
+    dependencies:
+      '@volar/source-map': 1.0.17
+      '@vue/reactivity': 3.2.45
+      muggle-string: 0.1.0
+    dev: true
+
   /@volar/source-map/1.0.16:
     resolution: {integrity: sha512-PKjzmQcg8QOGC/1V9tmGh2jcy6bKLhkW5bGidElSr83iDbCzLvldt2/La/QlDxaRCHYLT0MeyuGJBZIChB1dYQ==}
+    dependencies:
+      muggle-string: 0.1.0
+    dev: true
+
+  /@volar/source-map/1.0.17:
+    resolution: {integrity: sha512-+EtqkMLKXrSClhoFmianVuq/whNgchshtr0CzRYfdt2gT9vBf6XBJoSjSBp3Nzksqxcg3n28MljNsDRtN6fJSw==}
     dependencies:
       muggle-string: 0.1.0
     dev: true
@@ -1627,6 +1701,19 @@ packages:
     dependencies:
       '@volar/language-core': 1.0.16
       '@volar/source-map': 1.0.16
+      '@vue/compiler-dom': 3.2.45
+      '@vue/compiler-sfc': 3.2.45
+      '@vue/reactivity': 3.2.45
+      '@vue/shared': 3.2.45
+      minimatch: 5.1.2
+      vue-template-compiler: 2.7.14
+    dev: true
+
+  /@volar/vue-language-core/1.0.17:
+    resolution: {integrity: sha512-mKOE5HqxtpWSvruoiJ4A8b5YO0L+dqiUvfUALTqHA/b7fSJdE9CD9S+ROywaIWy4Y11wZ6nAyzLJC//sgr4hdA==}
+    dependencies:
+      '@volar/language-core': 1.0.17
+      '@volar/source-map': 1.0.17
       '@vue/compiler-dom': 3.2.45
       '@vue/compiler-sfc': 3.2.45
       '@vue/reactivity': 3.2.45
@@ -1769,6 +1856,24 @@ packages:
 
   /@vueuse/metadata/9.9.0:
     resolution: {integrity: sha512-pgxsUJv/d7IjKpLeB6TthggEsaBwM3ffc5jPrr5TmxAm/fup0mGR5VTzrdA/PSx85tpb+CIvP92D+55qBNc8ag==}
+    dev: true
+
+  /@vueuse/nuxt/9.9.0_nuxt@3.0.0+vue@3.2.45:
+    resolution: {integrity: sha512-bhvHsy3vM38WWRhFgyjbDP/tfn0AMP7z1KeaWt5+ysxGHZ1EHMsY4lcFbpcFlQ6K9TKMcYvzzcBSzYxlWanMnQ==}
+    peerDependencies:
+      nuxt: ^3.0.0
+    dependencies:
+      '@nuxt/kit': 3.0.0
+      '@vueuse/core': 9.9.0_vue@3.2.45
+      '@vueuse/metadata': 9.9.0
+      local-pkg: 0.4.2
+      nuxt: 3.0.0_lzzuuodtsqwxnvqeq4g4likcqa
+      vue-demi: 0.13.11_vue@3.2.45
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - rollup
+      - supports-color
+      - vue
     dev: true
 
   /@vueuse/shared/9.9.0_vue@3.2.45:
@@ -5722,6 +5827,18 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /nuxt-component-meta/0.4.1:
+    resolution: {integrity: sha512-vbbElbYI/Y/dYvshsSXycew+CTe4Z9M1/khMF2+8uT+64mcgVyuOgiRzq7AQmYXk14PvRSqLzv0pO3fGd7pF+Q==}
+    dependencies:
+      '@nuxt/kit': 3.0.0
+      scule: 1.0.0
+      typescript: 4.9.4
+      vue-component-meta: 1.0.17_typescript@4.9.4
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
   /nuxt-config-schema/0.3.7:
     resolution: {integrity: sha512-BXDbtnVm5/TPFTkmu9lKDqvvFLenC2IemvgGc6QHynEru7WvNPZB4O06G71UIshz6WIEotMZp6YOqUWGUhSYQw==}
     dependencies:
@@ -7643,6 +7760,10 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
+  /typesafe-path/0.2.2:
+    resolution: {integrity: sha512-OJabfkAg1WLZSqJAJ0Z6Sdt3utnbzr/jh+NAHoyWHJe8CMSy79Gm085094M9nvTPy22KzTVn5Zq5mbapCI/hPA==}
+    dev: true
+
   /typescript/4.9.4:
     resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
@@ -8117,6 +8238,17 @@ packages:
     resolution: {integrity: sha512-43vCqTgaMXfHhtR8/VcxxWD1DgtzyvNc4wNyG5NKCIH19O1z5G9ZCRXTGEA2wifVec5PU82CkRLD2sTK9NkTdA==}
     dependencies:
       ufo: 1.0.1
+    dev: true
+
+  /vue-component-meta/1.0.17_typescript@4.9.4:
+    resolution: {integrity: sha512-kOluwhavuM7HA/y43TzRixVY9dGIVhZQzDp/y9zezKBMEOojYx7RSWoz5m+cZ6rvMohxtr5mg/HXAyZ/t1xczg==}
+    peerDependencies:
+      typescript: '*'
+    dependencies:
+      '@volar/language-core': 1.0.17
+      '@volar/vue-language-core': 1.0.17
+      typesafe-path: 0.2.2
+      typescript: 4.9.4
     dev: true
 
   /vue-demi/0.13.11_vue@3.2.45:

@@ -1,3 +1,4 @@
+const root = document.documentElement
 const csLocal = 'color-scheme'
 
 /**
@@ -45,8 +46,8 @@ const checkStorage = () => {
  * setColorMode('dark')
  */
 const setColorMode = (scheme) => {
-  document.documentElement.classList.remove('light', 'dark')
-  document.documentElement.classList.add(scheme)
+  root.classList.remove('light', 'dark')
+  root.classList.add(scheme)
   setStorage(scheme)
 }
 

@@ -1,0 +1,14 @@
+pre {
+  @apply bg-gray-800 !text-base;
+}
+.prose-code .filename {
+  color: #fff !important;
+}
+p {
+  @apply !text-base;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}

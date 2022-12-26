@@ -11,16 +11,28 @@ import type { MarkdownParsedContent } from '@nuxt/content/dist/runtime/types'
 // const { data: articles } = useAsyncData('blog', () =>
 //   queryContent('/blog').where({ _draft: false }).find(),
 // )
-const { data: articles } = useAsyncData('article', () =>
-  queryContent<MarkdownParsedContent>('/articles').where({ _draft: false }).find(),
-)
+
+// const { data: articles } = useAsyncData('article', () =>
+//   queryContent<MarkdownParsedContent>('/articles')
+//     .where({ _draft: false })
+//     .locale(locale.value)
+//     .find(),
+// )
+// const { locale } = useI18n()
+// const articles = await queryContent<MarkdownParsedContent>('/articles')
+//   .where({ _draft: false })
+//   .locale(locale.value)
+//   .find()
+
+const { findAll, contents: articles } = useMarkdownContent()
+await findAll('articles')
 </script>
 
 <template>
   <layout-page title="Title" description="Desc">
     <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
       <div class="flex max-w-3xl flex-col space-y-16">
-        <articles-card v-for="(article, key) in articles" :key="key" :article="article" />
+        <articles-card v-for="article in articles" :key="article._id" :article="article" />
       </div>
     </div>
   </layout-page>
