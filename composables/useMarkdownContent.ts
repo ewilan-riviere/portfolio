@@ -22,6 +22,7 @@ interface HeadContent {
   _slug: string
   _slugFallbackLocale: string
   _slugLocale: string
+  createdAt: string
   // _source: string
   // _type: string
   // createdAt: string

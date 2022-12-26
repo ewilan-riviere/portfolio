@@ -2,6 +2,8 @@
 const { fullPath } = useRoute()
 const { findOne, content: article } = useMarkdownContent()
 await findOne(fullPath)
+
+const { date } = useUtils()
 </script>
 
 <template>
@@ -30,7 +32,7 @@ await findOne(fullPath)
         <article>
           <header class="flex flex-col">
             <h1
-              class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+              class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl sr-only"
             >
               {{ article.title }}
             </h1>
@@ -42,7 +44,7 @@ await findOne(fullPath)
                 class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"
               />
               <span class="ml-3">
-                {{ article.createdAt }}
+                {{ date(article.createdAt, 'full') }}
               </span>
             </time>
           </header>

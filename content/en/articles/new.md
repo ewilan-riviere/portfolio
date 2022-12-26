@@ -1,10 +1,8 @@
 ---
 title: New
-description: 'new'
+description: 'new article'
 createdAt: 2022-12-21
 ---
-
-# New
 
 Ut amet incididunt culpa enim ea ipsum aliqua aute. Occaecat quis nulla nulla enim non eiusmod ipsum excepteur magna adipisicing. Commodo anim aute ea culpa aliqua.
 
