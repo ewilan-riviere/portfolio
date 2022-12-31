@@ -60,11 +60,17 @@ const schemaOrg: object = {
 // https://github.com/kiwilan/nuxt-svg-transformer
 const svgTransformer: NuxtConfig['svgTransformer'] = {
   title: false,
+  sizeInherit: true,
 }
 
 // https://github.com/kiwilan/nuxt-typed-link
 const typedLink: NuxtConfig['typedLink'] = {
   i18n: true,
+}
+
+// https://color-mode.nuxtjs.org/
+const colorMode: NuxtConfig['colorMode'] = {
+  classSuffix: '',
 }
 
 const modules = {
@@ -73,6 +79,7 @@ const modules = {
   svgTransformer,
   schemaOrg,
   typedLink,
+  colorMode,
 }
 
 export default modules

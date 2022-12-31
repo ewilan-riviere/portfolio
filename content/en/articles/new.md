@@ -1,6 +1,8 @@
 ---
 title: New
 description: 'new article'
+category: Articles
+tags: [web, development]
 createdAt: 2022-12-21
 ---
 

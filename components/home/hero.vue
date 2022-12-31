@@ -1,72 +1,48 @@
-<script lang="ts" setup>
-import type { IconType } from '~~/.nuxt/svg-transformer'
+<script setup lang="ts">
+import { useMainStore } from '~~/store/main'
 
-defineProps<{
-  title?: string
-}>()
+const { about } = useMainStore()
 
-interface Social {
-  name: string
-  url: string
-  icon: IconType
+const show = ref(false)
+const loaded = (loaded: boolean) => {
+  show.value = loaded
 }
-
-const socials: Social[] = [
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/ewilanriviere',
-    icon: 'social/github',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/ewilanriviere',
-    icon: 'social/gitlab',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/ewilanriviere',
-    icon: 'social/twitter',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/ewilanriviere',
-    icon: 'social/stackoverflow',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/ewilanriviere',
-    icon: 'social/linkedin',
-  },
-]
 </script>
 
 <template>
-  <div class="sm:px-8 mt-9">
-    <div class="mx-auto max-w-7xl lg:px-8">
-      <div class="relative px-4 sm:px-8 lg:px-12">
-        <div class="mx-auto max-w-2xl lg:max-w-5xl flex items-center space-x-8">
-          <div class="max-w-2xl">
-            <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              {{ $t('hero.title') }}
-            </h1>
-            <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              {{ $t('hero.subtitle') }}
-            </p>
-            <div class="mt-6 flex gap-6">
-              <a v-for="social in socials" :key="social.icon" class="group -m-1 p-1" :aria-label="`Follow on ${social.name}`" :title="social.name" :href="social.url">
-                <svg-icon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" :name="social.icon" />
-              </a>
-            </div>
+  <layout-container :margin="false" class="z-40">
+    <div class="lg:flex items-center justify-between w-full space-x-0 lg:space-x-12 max-w-4xl mx-auto mt-16 mb-10">
+      <div class="text-center lg:text-left">
+        <svg-icon
+          name="logo/text"
+          class="h-8 w-auto mx-0 text-3xl"
+        />
+        <h1 class="sr-only">
+          {{ about?.name }}
+        </h1>
+        <div
+          class="max-w-lg mx-auto mt-3 text-lg md:text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl font-quicksand font-medium lg:text-3xl"
+        >
+          {{ $t('about.professionalTitle') }}
+        </div>
+        <home-social class="mt-3 mx-auto lg:mx-0 w-max" />
+      </div>
+      <div class="flex mt-10 lg:mt-0">
+        <div
+          :class="show ? 'opacity-100' : 'opacity-0'"
+          class="relative h-56 w-56 transition-opacity duration-150 group mx-auto"
+        >
+          <div class="transition-colors duration-100 absolute z-10 inset-0 rounded-full">
+            <div class="rainbow-flag group-hover:before:opacity-100 group-active:after:opacity-100 group-active:before:opacity-0 h-full w-full rounded-full" />
           </div>
-          <div class="hidden lg:block">
-            <div class="w-max rotate-3 border border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 px-3 pt-3 pb-8">
-              <img src="/images/ewilan-riviere.webp" alt="" class="w-64 h-64 object-cover">
-            </div>
-          </div>
+          <app-img
+            src="/images/ewilan-riviere.webp"
+            alt="ewilan riviere"
+            class="rounded-full p-0.5 relative z-20"
+            @loaded="loaded"
+          />
         </div>
       </div>
     </div>
-  </div>
+  </layout-container>
 </template>
-
-<style scoped></style>

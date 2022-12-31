@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const { fetchApi } = useApi()
 await fetchApi()
+const sidebarState = useSidebar()
 
 useHead({
   titleTemplate: '%s - Ewilan Rivière',
@@ -9,6 +10,7 @@ useHead({
 </script>
 
 <template>
+  <NuxtLoadingIndicator color="#9333EA" />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

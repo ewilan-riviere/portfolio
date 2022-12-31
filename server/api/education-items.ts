@@ -1,6 +1,6 @@
 import { getJson, queryBuilder } from '../api'
 import type { HistoryItem } from '~~/types/history-item'
-import json from '~~/assets/data/history.json'
+import json from '~~/assets/data/education-items.json'
 import type { IconType } from '~~/.nuxt/svg-transformer'
 
 export default defineEventHandler((event) => {

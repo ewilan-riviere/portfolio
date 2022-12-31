@@ -1,5 +1,3 @@
-<script lang="ts" setup></script>
-
 <template>
   <article class="group relative flex flex-col items-start">
     <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
@@ -23,5 +21,3 @@
     </div>
   </article>
 </template>
-
-<style scoped></style>

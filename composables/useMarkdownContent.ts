@@ -23,6 +23,9 @@ interface HeadContent {
   _slugFallbackLocale: string
   _slugLocale: string
   createdAt: string
+  category?: string
+  tags?: string[]
+  tagsList?: string
   // _source: string
   // _type: string
   // createdAt: string
@@ -40,6 +43,7 @@ export const useMarkdownContent = () => {
 
   const addMetaHead = (articles: Content[]) => {
     const nuxtApp = useNuxtApp()
+    const locale = nuxtApp.vueApp.config.globalProperties.$i18n.locale
     const fallbackLocale = nuxtApp.vueApp.config.globalProperties.$i18n.fallbackLocale
 
     articles.forEach((article) => {
@@ -54,6 +58,9 @@ export const useMarkdownContent = () => {
       article._slug = `${path}`
       article._original = article._locale === fallbackLocale
       article._link = `${article._original ? '' : `/${article._locale}`}${fallbackPath}`
+
+      const formatter = new Intl.ListFormat(locale, { style: 'long', type: 'conjunction' })
+      article.tagsList = article.tags ? formatter.format(article.tags) : undefined
     })
 
     return articles

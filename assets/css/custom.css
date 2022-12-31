@@ -1,5 +1,5 @@
 body {
-  /* @apply dark:text-white dark:bg-black; */
+  @apply dark:text-white dark:bg-black;
 }
 
 .v-enter-active,

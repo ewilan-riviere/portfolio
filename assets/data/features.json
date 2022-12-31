@@ -2,31 +2,37 @@
   {
     "slug": "code",
     "title": "features.code.title",
-    "text": "features.code.text"
+    "text": "features.code.text",
+    "icon": "feature/code"
   },
   {
     "slug": "web-design",
     "title": "features.web-design.title",
-    "text": "features.web-design.text"
+    "text": "features.web-design.text",
+    "icon": "feature/web-design"
   },
   {
     "slug": "server",
     "title": "features.server.title",
-    "text": "features.server.text"
+    "text": "features.server.text",
+    "icon": "feature/server"
   },
   {
     "slug": "experiments",
     "title": "features.experiments.title",
-    "text": "features.experiments.text"
+    "text": "features.experiments.text",
+    "icon": "feature/experiments"
   },
   {
     "slug": "seo",
     "title": "features.seo.title",
-    "text": "features.seo.text"
+    "text": "features.seo.text",
+    "icon": "feature/seo"
   },
   {
     "slug": "documentation",
     "title": "features.documentation.title",
-    "text": "features.documentation.text"
+    "text": "features.documentation.text",
+    "icon": "feature/documentation"
   }
 ]

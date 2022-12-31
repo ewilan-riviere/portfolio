@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  extends: '@nuxt-themes/docus',
+  // extends: '@nuxt-themes/docus',
   modules: [
     '@nuxtjs/color-mode', // https://color-mode.nuxtjs.org/
     '@nuxt/content', // https://content.nuxtjs.org/get-started,
@@ -21,9 +21,7 @@ export default defineNuxtConfig({
     'nuxt-svg-transformer', // https://github.com/kiwilan/nuxt-svg-transformer
     'nuxt-typed-link', // https://github.com/kiwilan/nuxt-typed-link
   ],
-  colorMode: {
-    classSuffix: '',
-  },
+  colorMode: modules.colorMode,
   content: modules.content,
   i18n: modules.i18n,
   svgTransformer: modules.svgTransformer,

@@ -164,6 +164,12 @@
       "abstract": "Organize an information system, acquire the fundamental technological and methodological notions allowing the management of an information system, manage a team (management, conducting meetings, recruitment), manage an IT project.",
       "level": "Bac +5",
       "role": "Fullstack developer"
+    },
+    "useweb": {
+      "title": "Useweb",
+      "abstract": "As fullstack developer, I work on the development of web applications, from the conception to the deployment. I also work on the maintenance of existing applications.",
+      "level": "Bac +5",
+      "role": "Fullstack developer"
     }
   },
   "blog": {

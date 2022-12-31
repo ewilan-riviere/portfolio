@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { useMainStore } from '~~/store/main'
 
-const { projects, historyItems } = useMainStore()
+const { projects } = useMainStore()
 const { findAll, contents: articles } = useMarkdownContent()
 await findAll('articles')
 </script>
 
 <template>
   <div>
-    <home-hero title="Software designer, founder, and amateur astronaut." />
+    <home-hero />
     <home-gallery :projects="projects" />
     <layout-container>
       <div v-animate class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">

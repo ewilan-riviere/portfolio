@@ -1,67 +1,77 @@
 <script lang="ts" setup>
-import type { IconType } from '.nuxt/svg-transformer'
+import { useMainStore } from '@/store/main'
 
-const links: {
-  label: string
-  href: string
-  icon: IconType
-  color: string
-  colorDark: string
-}[] = [
-  {
-    label: 'Follow on Twitter',
-    href: 'https://twitter.com/ewilanriviere',
-    icon: 'social/twitter',
-    color: '#1DA1F2',
-    colorDark: '#1DA1F2',
-  },
-  {
-    label: 'Follow on Stack Overflow',
-    href: 'https://stackoverflow.com/users/11008206/ewilan-r?tab=profile',
-    icon: 'social/stackoverflow',
-    color: '#F48024',
-    colorDark: '#F48024',
-  },
-  {
-    label: 'Follow on GitHub',
-    href: 'https://github.com/ewilan-riviere',
-    icon: 'social/github',
-    color: '#333',
-    colorDark: '#fff',
-  },
-  {
-    label: 'Follow on LinkedIn',
-    href: 'https://www.linkedin.com/in/ewilan-riviere/',
-    icon: 'social/linkedin',
-    color: '#0077B5',
-    colorDark: '#0077B5',
-  },
-]
+const { socials } = useMainStore()
 </script>
 
 <template>
-  <layout-page title="Title" description="Desc">
-    <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+  <layout-page title="About me" description="Tech enthusiast">
+    <div
+      class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
+    >
       <div class="lg:pl-20">
         <div class="max-w-xs px-2.5 lg:max-w-none">
-          <div class="w-max rotate-3 border border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-600 px-3 pt-3 pb-8">
-            <img src="/images/ewilan-riviere.webp" alt="" class="w-64 h-64 object-cover">
+          <div
+            class="w-max rotate-3 border border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-600 px-3 pt-3 pb-8"
+          >
+            <img
+              src="/images/ewilan-riviere.webp"
+              alt="Ewilan Rivière"
+              class="w-64 h-64 object-cover"
+            >
           </div>
         </div>
       </div>
       <div class="lg:order-first lg:row-span-2">
-        <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          I'm Ewilan Rivière. I live in New York City, where I design the future.
+        <h1
+          class="text-3xl font-semibold text-zinc-800 dark:text-zinc-100 sm:text-4xl"
+        >
+          Hi, I'm Ewilan Rivière, full-stack developer
         </h1>
         <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-          <p>I've loved making things for as long as I can remember, and wrote my first program when I was 6 years old, just two weeks after my mom brought home the brand new Macintosh LC 550 that I taught myself to type on.</p><p>The only thing I loved more than computers as a kid was space. When I was 8, I climbed the 40-foot oak tree at the back of our yard while wearing my older sister’s motorcycle helmet, counted down from three, and jumped — hoping the tree was tall enough that with just a bit of momentum I’d be able to get to orbit.</p><p>I spent the next few summers indoors working on a rocket design, while I recovered from the multiple surgeries it took to fix my badly broken legs. It took nine iterations, but when I was 15 I sent my dad’s Blackberry into orbit and was able to transmit a photo back down to our family computer from space.</p><p>Today, I’m the founder of Planetaria, where we’re working on civilian space suits and manned shuttle kits you can assemble at home so that the next generation of kids really <em>can</em> make it to orbit — from the comfort of their own backyards.</p>
+          <p>
+            As a young developer, I started to develop my first real projects
+            with Laravel (PHP), learning also to use Git. But I'm also very
+            interested in the user experience, which pushes me to keep a link
+            with the front-end with Vue.js and Nuxt.js (JavaScript / TypeScript)
+            with CSS frameworks like Tailwind CSS. I want to implement the
+            necessary for SEO, although I am not an expert in this field. On the
+            mobile side, beyond web responsive, I do Flutter (Dart) in order to
+            be able to deploy applications on Android and on iOS.
+          </p>
+          <p>
+            I like to have knowledge on each part of the chain, from local
+            development to deployment on a server (with NGINX), which leads me
+            to configure quite often Linux servers for both production and local
+            development. Therefore, I like to have efficient tools, whatever the
+            development environment (Linux, Windows or macOS) to be able to
+            easily use such or such version of a language.
+          </p>
+          <p>
+            I develop best in groups, preferring communication and help to
+            isolated development, as long as I have colleagues who also enjoy
+            this way of working. I love to discuss technologies, I'm interested
+            in the latest versions of the languages I use and I spend a lot of
+            time reading documentation or making it, in Markdown of course. I
+            always have too many projects on the go, but I also always have
+            something to do!
+          </p>
         </div>
       </div>
       <div class="lg:pl-20">
         <ul role="list">
-          <about-link v-for="(link, id) in links" :key="id" :link="link" />
+          <about-social
+            v-for="(social, id) in socials"
+            :key="id"
+            :social="social"
+          />
         </ul>
       </div>
+    </div>
+    <div class="space-y-16 mt-10">
+      <about-uses />
+      <about-features />
+      <form-contact id="contact" />
     </div>
   </layout-page>
 </template>

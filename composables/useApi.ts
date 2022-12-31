@@ -1,5 +1,6 @@
 import type { NitroFetchRequest } from 'nitropack'
 import { useMainStore } from '~~/store/main'
+import type { HistoryItem } from '~~/types/history-item'
 
 interface QueryParam {
   'filter[isDraft]'?: boolean | undefined
@@ -36,7 +37,8 @@ export const useApi = () => {
         about,
         developers,
         features,
-        historyItems,
+        workItems,
+        educationItems,
         projectStatuses,
         projects,
         skills,
@@ -45,7 +47,11 @@ export const useApi = () => {
         fetchData<About>('/api/about'),
         fetchData<Developer[]>('/api/developers'),
         fetchData<Feature[]>('/api/features'),
-        fetchData<HistoryItem[]>('/api/history-items', {
+        fetchData<HistoryItem[]>('/api/work-items', {
+          'filter[isDraft]': false,
+          'sort': '-dateBegin',
+        }),
+        fetchData<HistoryItem[]>('/api/education-items', {
           'filter[isDraft]': false,
           'sort': '-dateBegin',
         }),
@@ -59,7 +65,8 @@ export const useApi = () => {
       mainStore.setAbout(about)
       mainStore.setDevelopers(developers)
       mainStore.setFeatures(features)
-      mainStore.setHistoryItems(historyItems)
+      mainStore.setWorkItems(workItems)
+      mainStore.setEducationItems(educationItems)
       mainStore.setProjectStatuses(projectStatuses)
       mainStore.setProjects(projects)
       mainStore.setSkills(skills)

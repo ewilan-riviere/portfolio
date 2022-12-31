@@ -1,10 +1,10 @@
-pre {
+.prose pre {
   @apply bg-gray-800 !text-base;
 }
-.prose-code .filename {
+.prose .prose-code .filename {
   color: #fff !important;
 }
-p {
+.prose p {
   @apply !text-base;
   text-align: justify;
   -webkit-hyphens: auto;
