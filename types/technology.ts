@@ -1,4 +1,4 @@
-declare interface Technology {
+export interface Technology {
   title: string
   slug: string
   version: string
@@ -9,4 +9,5 @@ declare interface Technology {
   type: string
   isFavorite: boolean
   isDisplay: boolean
+  icon: import('~~/.nuxt/svg-transformer').IconType
 }

@@ -39,6 +39,7 @@ onMounted(async () => {
       <img
         ref="img"
         class="w-full rounded-md"
+        loading="lazy"
       >
       <div class="test__body absolute inset-0 p-8 text-white flex flex-col">
         <div class="relative">

@@ -22,6 +22,7 @@ interface HeadContent {
   _slug: string
   _slugFallbackLocale: string
   _slugLocale: string
+  subtitle?: string
   createdAt: string
   category?: string
   tags?: string[]
@@ -35,7 +36,7 @@ interface HeadContent {
 
 interface Content extends ParsedContent, HeadContent {}
 
-const optsDefault: Options = { localize: true, where: { _draft: false }, first: false }
+const optsDefault: Options = { localize: false, where: { _draft: false }, first: false }
 
 export const useMarkdownContent = () => {
   const contents = ref<Content[]>()
