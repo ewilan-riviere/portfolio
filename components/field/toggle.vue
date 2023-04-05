@@ -9,7 +9,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
-  label: 'switch',
+  label: undefined,
   flexible: false,
   right: false,
   reverse: false,
@@ -26,7 +26,7 @@ watch(
   },
 )
 
-const toggle = () => {
+function toggle() {
   toggled.value = !toggled.value
   emit('update:modelValue', toggled.value)
 }
@@ -44,7 +44,6 @@ onMounted(() => {
     :title="label"
   >
     <div
-      v-if="label"
       :class="{
         'order-2': reverse,
         'order-1': !reverse,
@@ -55,7 +54,10 @@ onMounted(() => {
       <span
         id="availability-label"
         class="text-sm font-medium text-gray-900 dark:text-gray-100"
-      >{{ label }}</span>
+      >
+        {{ label }}
+        <slot name="label" />
+      </span>
     </div>
     <button
       type="button"

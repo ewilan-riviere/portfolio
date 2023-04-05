@@ -187,7 +187,10 @@
       "message": "Message",
       "characters": "characters",
       "currently": "Currently",
-      "send": "Send"
+      "accept": "I accept the",
+      "terms": "terms and conditions",
+      "understand": "Understood",
+      "submit": "Let's talk"
     }
   },
   "footer": {

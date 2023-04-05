@@ -175,13 +175,17 @@
   "contact": {
     "title": "Que diriez-vous d'un petit message ?",
     "subtitle": "Si vous souhaitez me contacter pour un nouveau project",
+    "terms": "",
     "form": {
       "name": "Nom",
       "email": "Email",
       "message": "Message",
       "characters": "caractères",
       "currently": "Actuellement",
-      "send": "Envoyer"
+      "accept": "J'accepte les",
+      "terms": "termes et conditions",
+      "understand": "Compris",
+      "submit": "Parlons-en"
     }
   },
   "footer": {

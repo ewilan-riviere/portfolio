@@ -5,11 +5,30 @@ const form = ref({
   message: '',
   conditions: false,
 })
+
+const isDev = import.meta.env.DEV
+const { findOne, content } = useMarkdownContent()
+const termsAreOpened = ref(false)
+function toggleTerms() {
+  termsAreOpened.value = !termsAreOpened.value
+}
+function test() {
+  form.value = {
+    name: 'test',
+    email: 'test@mail.com',
+    message: 'test message',
+    conditions: true,
+  }
+}
+
+await findOne('terms', {
+  localized: true,
+})
 </script>
 
 <template>
   <div class="mx-auto max-w-7xl">
-    <div class="relative shadow-xl bg-gray-800 rounded-lg">
+    <div class="relative shadow-xl bg-white dark:bg-gray-800 rounded-lg">
       <h2 class="sr-only">
         Contact us
       </h2>
@@ -38,11 +57,11 @@ const form = ref({
         <!-- Contact form -->
         <div class="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
           <form class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-            <field-text v-model="form.name" name="name" label="Nom" />
-            <field-text v-model="form.email" name="email" label="Email" />
+            <field-text v-model="form.name" name="name" :label="$t('contact.form.name')" />
+            <field-text v-model="form.email" name="email" :label="$t('contact.form.email')" />
             <field-text
               v-model="form.message"
-              name="message"
+              :name="$t('contact.form.message')"
               label="Message"
               multiline
               class="sm:col-span-2"
@@ -50,13 +69,36 @@ const form = ref({
             <field-toggle
               v-model="form.conditions"
               name="conditions"
-              label="Agree to policies"
               flexible
               reverse
               class="sm:col-span-2"
-            />
-            <div class="sm:col-span-2 sm:flex sm:justify-end">
-              <app-button> Let's talk </app-button>
+            >
+              <template #label>
+                <span>
+                  {{ $t('contact.form.accept') }}
+                </span>
+                <span class="underline ml-1" @click="toggleTerms">
+                  {{ $t('contact.form.terms') }}
+                </span>
+              </template>
+            </field-toggle>
+            <app-dialog :open="termsAreOpened" @close="termsAreOpened = false">
+              <div class="p-6 prose dark:prose-invert">
+                <ContentRenderer :value="content" />
+                <div class="flex justify-end">
+                  <app-button color="secondary" @click="termsAreOpened = false">
+                    {{ $t('contact.form.understand') }}
+                  </app-button>
+                </div>
+              </div>
+            </app-dialog>
+            <div class="sm:col-span-2 sm:flex sm:justify-end space-x-1">
+              <app-button v-if="isDev" @click="test">
+                test
+              </app-button>
+              <app-button>
+                {{ $t('contact.form.submit') }}
+              </app-button>
             </div>
           </form>
         </div>
