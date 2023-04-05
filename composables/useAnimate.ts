@@ -16,7 +16,7 @@ const defaultOpts: Options = {
   duration: 400,
 }
 
-export const useAnimate = (target?: Ref<HTMLElement | undefined>, options: Options = defaultOpts) => {
+export function useAnimate(target?: Ref<HTMLElement | undefined>, options: Options = defaultOpts) {
   const isVisible = ref(false)
   const observerOpts: IntersectionObserverInit = {
     rootMargin: options.rootMargin,

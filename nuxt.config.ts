@@ -1,3 +1,4 @@
+// eslint-disable-next-line unused-imports/no-unused-imports
 import { head, modules, runtimeConfigPrivate, runtimeConfigPublic } from './config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -17,15 +18,14 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n', // https://i18n.nuxtjs.org/getting-started
     '@pinia/nuxt', // https://pinia.vuejs.org/ssr/nuxt.html#installation
     '@vueuse/nuxt', // https://vueuse.org/guide/index.html#nuxt
-    // 'nuxt-schema-org', // https://vue-schema-org.netlify.app/guide/getting-started/nuxt
     'nuxt-svg-transformer', // https://github.com/kiwilan/nuxt-svg-transformer
     'nuxt-typed-link', // https://github.com/kiwilan/nuxt-typed-link
+    // 'nuxt-seo-kit', // https://github.com/harlan-zw/nuxt-seo-kit
   ],
   colorMode: modules.colorMode,
   content: modules.content,
   i18n: modules.i18n,
   svgTransformer: modules.svgTransformer,
-  // schemaOrg: modules.schemaOrg,
   typedLink: modules.typedLink,
 
   runtimeConfig: {

@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { RouteType } from '~~/.nuxt/typed-link'
 
+const currentYear = new Date().getFullYear()
+
 const items: {
   label: string
   to: RouteType
@@ -37,19 +39,9 @@ const items: {
                   </typed-link>
                 </div>
                 <p class="text-sm text-zinc-400 dark:text-zinc-500">
-                  ©
-                  <!-- -->2022<!-- -->
-                  Ewilan Rivière. MIT licensed.
+                  © 2021-{{ currentYear }}
+                  Ewilan Rivière.
                 </p>
-              </div>
-              <div class="text-xs text-gray-500 text-center mt-10">
-                <em>From
-                  <a
-                    href="https://tailwindui.com/templates/spotlight"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="underline underline-offset-2"
-                  >Tailwind UI</a>.</em>
               </div>
             </div>
           </div>

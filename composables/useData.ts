@@ -2,7 +2,7 @@ import personalJson from '~/assets/data/projects/projects-personal.json'
 import professionalJson from '~/assets/data/projects/projects-professional.json'
 import schoolJson from '~/assets/data/projects/projects-school.json'
 
-export const useData = () => {
+export function useData() {
   const getJson = <T>(json: object): T => {
     const data: T = JSON.parse(JSON.stringify(json))
 

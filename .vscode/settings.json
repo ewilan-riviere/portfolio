@@ -6,5 +6,7 @@
     "editor.defaultFormatter": "Vue.volar",
     "editor.formatOnSave": false
   },
-  "laravel-pint.enable": false
+  "laravel-pint.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "dotenv.enableAutocloaking": false
 }

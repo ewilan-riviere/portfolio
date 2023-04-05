@@ -1,4 +1,4 @@
-export const useScroll = () => {
+export function useScroll() {
   const isScroll = ref(false)
 
   const handleScroll = () => {

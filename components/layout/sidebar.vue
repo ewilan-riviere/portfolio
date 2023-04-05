@@ -10,14 +10,14 @@ const target = ref(null)
 const { navbar } = useMainStore()
 const sidebarState = useSidebar()
 
-const openSidebar = () => {
+function openSidebar() {
   layer.value = true
   setTimeout(() => {
     overlay.value = true
     sidebar.value = true
   }, 150)
 }
-const closeSidebar = () => {
+function closeSidebar() {
   sidebar.value = false
   overlay.value = false
   setTimeout(() => {

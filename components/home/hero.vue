@@ -4,7 +4,7 @@ import { useMainStore } from '~~/store/main'
 const { about } = useMainStore()
 
 const show = ref(false)
-const loaded = (loaded: boolean) => {
+function loaded(loaded: boolean) {
   show.value = loaded
 }
 </script>

@@ -1,4 +1,5 @@
 import type { NitroFetchRequest } from 'nitropack'
+import type { Technology } from '~/types/technology'
 import { useMainStore } from '~~/store/main'
 import type { HistoryItem } from '~~/types/history-item'
 
@@ -9,7 +10,7 @@ interface QueryParam {
   [key: string]: string | number | boolean | undefined
 }
 
-export const useApi = () => {
+export function useApi() {
   type ApiEndpoint = NitroFetchRequest
 
   const fetchData = async <T>(endpoint: ApiEndpoint, query?: QueryParam) => {

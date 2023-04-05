@@ -8,6 +8,8 @@
   },
   "nav": {
     "home": "Home",
+    "about": "About",
+    "projects": "Projects",
     "blog": "Blog"
   },
   "hero": {
@@ -24,31 +26,31 @@
   "hobbies": {
     "develop": {
       "label": "Develop & technology watch",
-      "description": "Develop projects with my favorites frameworks, to experiment new features from technology watch."
+      "value": "Develop projects with my favorites frameworks, to experiment new features from technology watch."
     },
     "read": {
       "label": "Read",
-      "description": "Read some books like fantasy, science-fiction or novels like Robin Hobb or J.M. Auel."
+      "value": "Read some books like fantasy, science-fiction or novels like Robin Hobb or J.M. Auel."
     },
     "paint": {
       "label": "Paint",
-      "description": "Warhammers like Lord of the Rings series."
+      "value": "Warhammers like Lord of the Rings series."
     },
     "podcasts": {
       "label": "Podcasts",
-      "description": "Listen to podcasts, on culture, video games, technoloy watching or role play."
+      "value": "Listen to podcasts, on culture, video games, technoloy watching or role play."
     },
     "role-play": {
       "label": "Role play",
-      "description": "I'm beginner Game Master, but I love long-term campaigns."
+      "value": "I'm beginner Game Master, but I love long-term campaigns."
     },
     "video-games": {
       "label": "Video games",
-      "description": "Play to video games and modding, like Elder Scrolls series or simulation games."
+      "value": "Play to video games and modding, like Elder Scrolls series or simulation games."
     },
-    "tv-show": {
+    "tv-shows": {
       "label": "TV shows",
-      "description": "I'm watching science-fiction or fantasy TV shows or web series."
+      "value": "I'm watching science-fiction or fantasy TV shows or web series."
     }
   },
   "features": {
@@ -62,11 +64,11 @@
     },
     "server": {
       "title": "Deployments",
-      "text": "Deploy projects on VPS servers, in HTTPS, HTTP 2 on NGINX with databases are often in MySQL."
+      "text": "Deploy projects on servers, either directly with NGINX or in containers, with relational databases (MySQL, PostgreSQL)."
     },
     "experiments": {
-      "title": "Experiments",
-      "text": "See what's new on the technologies I like and test them, then implement them in new projects."
+      "title": "Tests & experiments",
+      "text": "Write tests to improve the maintainability of projects with a CI/CD. But also see what's new on the technologies I like and test them, then implement them in new projects."
     },
     "seo": {
       "title": "SEO",

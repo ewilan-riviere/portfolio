@@ -1,8 +1,6 @@
 ---
 title: Hi, I'm Ewilan Rivière
 subtitle: Full-stack developer
-description: "about meta description"
-createdAt: 2022-11-22
 ---
 
 As a young developer, I started to develop my first real projects with Laravel (PHP), learning also to use Git. But I'm also very interested in the user experience, which pushes me to keep a link with the front-end with Vue.js and Nuxt.js (JavaScript / TypeScript) with CSS frameworks like Tailwind CSS. I want to implement the necessary for SEO, although I am not an expert in this field. On the mobile side, beyond web responsive, I do Flutter (Dart) in order to be able to deploy applications on Android and on iOS.

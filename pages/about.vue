@@ -4,7 +4,9 @@ import { useMainStore } from '@/store/main'
 const { findOne, content } = useMarkdownContent()
 const { socials } = useMainStore()
 
-await findOne('about')
+await findOne('about', {
+  localized: true,
+})
 </script>
 
 <template>
@@ -48,9 +50,10 @@ await findOne('about')
         </ul>
       </div>
     </div>
-    <div class="space-y-16 mt-10">
-      <about-skills-snap />
-      <about-features />
+    <about-hobbies class="mt-3" />
+    <div class="mt-10">
+      <about-skills class="mt-20" />
+      <about-features class="mt-10" />
       <form-contact id="contact" />
     </div>
   </layout-page>

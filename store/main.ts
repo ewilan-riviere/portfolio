@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import type { Technology } from '~/types/technology'
 import type { IconType } from '~~/.nuxt/svg-transformer'
 import type { RouteType } from '~~/.nuxt/typed-link'
 import type { HistoryItem } from '~~/types/history-item'
@@ -18,19 +19,19 @@ export const useMainStore = defineStore('main', {
     technologies: {} as Technology[],
     navbar: [
       {
-        title: 'Home',
+        title: 'home',
         to: { name: 'index' },
       },
       {
-        title: 'About',
+        title: 'about',
         to: { name: 'about' },
       },
       {
-        title: 'Projects',
+        title: 'projects',
         to: { name: 'projects' },
       },
       {
-        title: 'Blog',
+        title: 'blog',
         to: { name: 'articles' },
       },
     ] as {

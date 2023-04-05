@@ -11,7 +11,7 @@ interface HeadMeta {
   title?: string
 }
 
-export const useMetadata = (meta?: HeadMeta) => {
+export function useMetadata(meta?: HeadMeta) {
   const appName = 'Ewilan Rivière - Portfolio'
   const appDescription = 'Portfolio of Ewilan Rivière, developer'
 

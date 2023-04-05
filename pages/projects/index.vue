@@ -1,7 +1,8 @@
 <script lang="ts" setup></script>
 
 <template>
-  <layout-page title="Title" description="Desc">
+  <layout-page title="Projects" description="An overview of my projects">
+    <part-statistics />
     <app-masonry />
     <!-- <ul role="list" class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
       <li class="group relative flex flex-col items-start">

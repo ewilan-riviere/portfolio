@@ -1,8 +1,8 @@
 import type { ParsedContent, QueryBuilderWhere } from '@nuxt/content/dist/runtime/types'
 
 interface Options {
-  localize?: boolean
-  where: QueryBuilderWhere
+  localized?: boolean
+  where?: QueryBuilderWhere
   limit?: number
   first?: boolean
 }
@@ -36,9 +36,9 @@ interface HeadContent {
 
 interface Content extends ParsedContent, HeadContent {}
 
-const optsDefault: Options = { localize: false, where: { _draft: false }, first: false }
+const optsDefault: Options = { localized: false, where: { _draft: false }, first: false }
 
-export const useMarkdownContent = () => {
+export function useMarkdownContent() {
   const contents = ref<Content[]>()
   const content = ref<Content>()
 
@@ -70,12 +70,14 @@ export const useMarkdownContent = () => {
   const fetchContent = async (path: string, options: Options) => {
     const { locale } = useI18n()
     let documents = queryContent<Content>(path)
-      .where(options.where)
+
+    if (options.where)
+      documents = documents.where(options.where)
 
     if (options.limit)
       documents = documents.limit(options.limit)
 
-    if (options.localize)
+    if (options.localized)
       documents = documents.locale(locale.value)
 
     documents = documents.sort({

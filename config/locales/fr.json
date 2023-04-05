@@ -8,6 +8,8 @@
   },
   "nav": {
     "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
     "blog": "Blog"
   },
   "hero": {
@@ -24,31 +26,31 @@
   "hobbies": {
     "develop": {
       "label": "Développer & veille techno",
-      "description": "Développer des projets avec mes frameworks préférés, pour expérimenter de nouvelles fonctionnalités de ma veille techno."
+      "value": "Développer des projets avec mes frameworks préférés, pour expérimenter de nouvelles fonctionnalités de ma veille techno."
     },
     "read": {
       "label": "Lire",
-      "description": "Lire des livres de fantasy, de science-fiction ou des romans, comme ceux de Robin Hobb or J.M. Auel."
+      "value": "Lire des livres de fantasy, de science-fiction ou des romans, comme ceux de Robin Hobb or J.M. Auel."
     },
     "paint": {
       "label": "Peindre",
-      "description": "Des Warhammers comme ceux du Seigneur des Anneaux."
+      "value": "Des Warhammers comme ceux du Seigneur des Anneaux."
     },
     "podcasts": {
       "label": "Podcasts",
-      "description": "Ecouter des podcasts, sur la culture, les jeux vidéo, la veille techno ou le jeu de rôle."
+      "value": "Ecouter des podcasts, sur la culture, les jeux vidéo, la veille techno ou le jeu de rôle."
     },
     "role-play": {
       "label": "Jeu de rôle",
-      "description": "Je suis une MJ débutante, mais j'adore les campagnes à long terme."
+      "value": "Je suis une MJ débutante, mais j'adore les campagnes à long terme."
     },
     "video-games": {
       "label": "Jeux vidéo",
-      "description": "Jouer aux jeux vidéo et modder, comme avec les Elder Scrolls ou les jeux de simulation."
+      "value": "Jouer aux jeux vidéo et modder, comme avec les Elder Scrolls ou les jeux de simulation."
     },
-    "tv-show": {
+    "tv-shows": {
       "label": "Séries",
-      "description": "Regarder des séries et web séries de science-fiction ou de fantasy."
+      "value": "Regarder des séries et web séries de science-fiction ou de fantasy."
     }
   },
   "features": {
@@ -62,11 +64,11 @@
     },
     "server": {
       "title": "Déploiements",
-      "text": "Déployer des projets sur des serveurs VPS, en HTTPS, HTTP 2 sur NGINX avec des bases de données sont souvent en MySQL."
+      "text": "Déployer des projets sur des serveurs, que ce soit directement avec NGINX ou en conteneur, avec des bases de données relationnelles (MySQL, PostgreSQL)."
     },
     "experiments": {
-      "title": "Expérimenter",
-      "text": "Voir ce qui vient de sortir sur les technologies que j'apprécie et tester ces nouveautés, puis les implémenter dans les nouveaux projets."
+      "title": "Tests & expérimentations",
+      "text": "Écrire des tests pour améliorer la maintenabilité des projets. Mais aussi voir ce qui vient de sortir sur les technologies que j'apprécie et tester ces nouveautés, puis les implémenter dans les nouveaux projets."
     },
     "seo": {
       "title": "SEO",

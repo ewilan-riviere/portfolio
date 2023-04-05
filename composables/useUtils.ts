@@ -2,7 +2,7 @@ interface Options {
 
 }
 
-export const useUtils = () => {
+export function useUtils() {
   const date = (
     date: string,
     type: 'full' | 'date' | 'time' = 'date',

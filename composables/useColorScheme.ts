@@ -1,4 +1,4 @@
-export const useColorScheme = () => {
+export function useColorScheme() {
   const isDark = ref(false)
   const csStorage = 'color-scheme'
 

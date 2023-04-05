@@ -41,9 +41,9 @@ const toggle = ref(false)
         <span class="ml-3"> Work & Education </span>
       </h2>
     </div>
-    <field-toggle v-model="toggle" label="See education" flexible class="mt-4" />
+    <field-toggle v-model="toggle" label="See work" flexible class="mt-4" />
     <div>
-      <ol v-if="!toggle" class="mt-6 space-y-3">
+      <ol v-if="toggle" class="mt-6 space-y-3">
         <home-history-item
           v-for="item in workItems"
           :key="item.slug"

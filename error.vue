@@ -34,7 +34,7 @@ watchEffect(() => {
                   >
                     Error
                   </h1>
-                  <p class="mt-2 text-base text-gray-500 dark:text-gray-100">
+                  <p class="mt-2 text-base text-gray-500 dark:text-gray-100 max-w-md">
                     {{ message }}
                   </p>
                   <div class="mt-6">

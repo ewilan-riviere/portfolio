@@ -514,5 +514,29 @@
     "type": "Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites",
     "isFavorite": true,
     "isDisplay": true
+  },
+  {
+    "title": "Docker",
+    "slug": "docker",
+    "version": "20.10",
+    "link": "https://www.docker.com",
+    "isFree": true,
+    "color": "#2496ed",
+    "isDark": false,
+    "type": "Plateforme logicielle",
+    "isFavorite": true,
+    "isDisplay": true
+  },
+  {
+    "title": "Fastify",
+    "slug": "fastify",
+    "version": "4.10",
+    "link": "https://www.fastify.io",
+    "isFree": true,
+    "color": "#000000",
+    "isDark": true,
+    "type": "Fast and low overhead web framework, for Node.js",
+    "isFavorite": true,
+    "isDisplay": true
   }
 ]
