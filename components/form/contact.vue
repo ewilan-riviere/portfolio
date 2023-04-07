@@ -24,6 +24,22 @@ function test() {
 await findOne('terms', {
   localized: true,
 })
+
+const config = useRuntimeConfig()
+async function submit() {
+  const api = `${config.public.apiUrl}/api/submissions`
+  await fetch(api, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: form.value.name,
+      email: form.value.email,
+      message: form.value.message,
+    }),
+  })
+}
 </script>
 
 <template>
@@ -56,7 +72,7 @@ await findOne('terms', {
 
         <!-- Contact form -->
         <div class="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-          <form class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+          <form class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8" @submit.prevent="submit">
             <field-text v-model="form.name" name="name" :label="$t('contact.form.name')" />
             <field-text v-model="form.email" name="email" :label="$t('contact.form.email')" />
             <field-text
@@ -96,7 +112,7 @@ await findOne('terms', {
               <app-button v-if="isDev" @click="test">
                 test
               </app-button>
-              <app-button>
+              <app-button type="submit">
                 {{ $t('contact.form.submit') }}
               </app-button>
             </div>
