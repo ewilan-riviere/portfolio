@@ -1,5 +1,4 @@
 import type { NuxtConfig } from '@nuxt/schema'
-import locale from './locales'
 
 // https://content.nuxtjs.org/api/configuration
 const content: NuxtConfig['content'] = {
@@ -39,23 +38,14 @@ const i18n: NuxtConfig['i18n'] = {
     },
   ],
   defaultLocale: 'en',
-  vueI18n: {
-    legacy: false,
-    locale: 'en',
-    fallbackLocale: 'en',
-    messages: {
-      en: locale.en,
-      fr: locale.fr,
-    },
-  },
+  vueI18n: '@/i18n.config.ts',
 }
 
-// https://github.com/kiwilan/nuxt-svg-transformer
-const schemaOrg: object = {
-  disableRuntimeScriptsWhenSSR: true,
-  canonicalHost: 'https://ewilan-riviere.com',
-  defaultLanguage: 'en-US',
-}
+// const schemaOrg: object = {
+//   disableRuntimeScriptsWhenSSR: true,
+//   canonicalHost: 'https://ewilan-riviere.com',
+//   defaultLanguage: 'en-US',
+// }
 
 // https://github.com/kiwilan/nuxt-svg-transformer
 const svgTransformer: NuxtConfig['svgTransformer'] = {
@@ -77,7 +67,6 @@ const modules = {
   content,
   i18n,
   svgTransformer,
-  schemaOrg,
   typedLink,
   colorMode,
 }

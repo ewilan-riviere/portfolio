@@ -10,6 +10,9 @@ useHead({
 </script>
 
 <template>
+  <!-- <div>
+    {{ $t('welcome') }}
+  </div> -->
   <NuxtLoadingIndicator color="#9333EA" />
   <NuxtLayout>
     <NuxtPage />

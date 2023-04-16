@@ -72,7 +72,7 @@
     },
     "seo": {
       "title": "SEO",
-      "text": "Whether it's setting up <head> metadata, open graph, redirects, traffic analysis or ecodesign, SEO is important in every project."
+      "text": "Whether it's setting up `head` metadata, open graph, redirects, traffic analysis or ecodesign, SEO is important in every project."
     },
     "documentation": {
       "title": "Technical documentation",

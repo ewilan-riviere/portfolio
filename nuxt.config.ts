@@ -1,4 +1,3 @@
-// eslint-disable-next-line unused-imports/no-unused-imports
 import { head, modules, runtimeConfigPrivate, runtimeConfigPublic } from './config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -10,21 +9,42 @@ export default defineNuxtConfig({
       script: head.script,
     },
   },
+
   css: ['~/assets/css/main.css'],
-  // extends: '@nuxt-themes/docus',
+
+  extends: '@nuxt-themes/docus',
   modules: [
+    '@nuxt/devtools', // https://devtools.nuxtjs.org
     '@nuxtjs/color-mode', // https://color-mode.nuxtjs.org/
-    '@nuxt/content', // https://content.nuxtjs.org/get-started,
-    '@nuxtjs/i18n', // https://i18n.nuxtjs.org/getting-started
-    '@pinia/nuxt', // https://pinia.vuejs.org/ssr/nuxt.html#installation
+    '@nuxt/content', // https://content.nuxtjs.org,
+    '@nuxtjs/i18n', // https://i18n.nuxtjs.org
+    '@pinia/nuxt', // https://pinia.vuejs.org/ssr/nuxt.html
     '@vueuse/nuxt', // https://vueuse.org/guide/index.html#nuxt
     'nuxt-svg-transformer', // https://github.com/kiwilan/nuxt-svg-transformer
     'nuxt-typed-link', // https://github.com/kiwilan/nuxt-typed-link
     // 'nuxt-seo-kit', // https://github.com/harlan-zw/nuxt-seo-kit
   ],
+
   colorMode: modules.colorMode,
   content: modules.content,
-  i18n: modules.i18n,
+  // i18n: modules.i18n,
+  i18n: {
+    baseUrl: process.env.BASE_URL,
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English',
+      },
+      {
+        code: 'fr',
+        iso: 'fr-FR',
+        name: 'Français',
+      },
+    ],
+    defaultLocale: 'en',
+    vueI18n: './config/locales/i18n.config.ts',
+  },
   svgTransformer: modules.svgTransformer,
   typedLink: modules.typedLink,
 
@@ -32,6 +52,7 @@ export default defineNuxtConfig({
     ...runtimeConfigPrivate,
     public: runtimeConfigPublic,
   },
+
   postcss: {
     plugins: {
       'postcss-import': {},
@@ -40,7 +61,12 @@ export default defineNuxtConfig({
       'autoprefixer': {},
     },
   },
+
   typescript: {
     shim: false,
+  },
+  devtools: {
+    enabled: true,
+    vscode: {},
   },
 })

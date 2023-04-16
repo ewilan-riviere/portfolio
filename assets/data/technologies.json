@@ -538,5 +538,17 @@
     "type": "Fast and low overhead web framework, for Node.js",
     "isFavorite": true,
     "isDisplay": true
+  },
+  {
+    "title": "Pest",
+    "slug": "pest",
+    "version": "2.0",
+    "link": "https://pestphp.com",
+    "isFree": true,
+    "color": "#7ec699",
+    "isDark": false,
+    "type": "Pest is a modern PHP Testing Framework",
+    "isFavorite": true,
+    "isDisplay": true
   }
 ]
