@@ -54,7 +54,6 @@ await findOne('about', {
     <div class="mt-10">
       <about-skills class="mt-20" />
       <about-features class="mt-10" />
-      <form-contact id="contact" class="mt-6" />
     </div>
   </layout-page>
 </template>

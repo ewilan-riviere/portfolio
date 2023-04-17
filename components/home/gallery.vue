@@ -4,10 +4,12 @@ defineProps<{
 }>()
 
 const { fetchData } = useApi()
-const projects = await fetchData<Project[]>('/api/projects', {
+const { shuffle } = useData()
+let projects = await fetchData<Project[]>('/api/projects', {
   'filter[isFavorite]': true,
   'context': 'personal',
 })
+projects = shuffle(projects)
 </script>
 
 <template>
@@ -23,7 +25,7 @@ const projects = await fetchData<Project[]>('/api/projects', {
           <app-img
             :src="project.image" :alt="project.title"
             class="h-full w-full object-cover"
-            placeholder="/projects/banner/placeholder.webp"
+            placeholder="/projects/placeholder.webp"
           />
         </div>
       </div>

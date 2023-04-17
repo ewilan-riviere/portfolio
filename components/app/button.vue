@@ -43,7 +43,7 @@ const isLink = ref(false)
 const toLink = ref('/')
 const hrefLink = ref('')
 
-const setupButton = () => {
+function setupButton() {
   isLink.value = false
   if (props.href) {
     tag.value = 'a'

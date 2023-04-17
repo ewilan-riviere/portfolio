@@ -550,5 +550,41 @@
     "type": "Pest is a modern PHP Testing Framework",
     "isFavorite": true,
     "isDisplay": true
+  },
+  {
+    "title": "Livewire",
+    "slug": "livewire",
+    "version": "2.0",
+    "link": "https://laravel-livewire.com",
+    "isFree": true,
+    "color": "#ff2d20",
+    "isDark": false,
+    "type": "Livewire is a full-stack framework for Laravel that takes the pain out of building dynamic UIs",
+    "isFavorite": true,
+    "isDisplay": true
+  },
+  {
+    "title": "AlpineJS",
+    "slug": "alpinejs",
+    "version": "3.0",
+    "link": "https://alpinejs.dev",
+    "isFree": true,
+    "color": "#ffed4a",
+    "isDark": false,
+    "type": "A rugged, minimal framework for composing JavaScript behavior in your markup",
+    "isFavorite": true,
+    "isDisplay": true
+  },
+  {
+    "title": "InertiaJS",
+    "slug": "inertiajs",
+    "version": "0.9",
+    "link": "https://inertiajs.com",
+    "isFree": true,
+    "color": "#4b5563",
+    "isDark": false,
+    "type": "Inertia.js is a tool for building single-page React, Vue, and Svelte apps using server-side routing and controllers",
+    "isFavorite": true,
+    "isDisplay": true
   }
 ]

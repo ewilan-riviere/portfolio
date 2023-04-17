@@ -2,41 +2,35 @@
   {
     "title": "AALTO",
     "slug": "aalto",
-    "isFavorite": true,
+    "isFavorite": false,
     "isDraft": false,
     "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2020-09-01",
     "links": {
       "main": "https://client.fonciere-aalto.com",
       "android": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
       "ios": "https://apps.apple.com/fr/app/fonci%C3%A8re-aalto-espace-client/id1549849593"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/cap-transactions",
-        "type": "main",
-        "isPrivate": true
-      },
-      {
-        "url": "https://bitbucket.org/useweb/cap-transactions-flutter",
-        "type": "app",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
+      },
+      {
+        "slug": "adrien-beaudouin",
+        "role": "lead-developer"
+      },
+      {
+        "slug": "mathieu-monnier",
+        "role": "lead-developer"
       }
     ],
-    "technologies": [
-      "nuxt-js",
-      "laravel",
-      "flutter"
-    ]
+    "technologies": ["nuxt-js", "laravel", "flutter"]
   },
   {
     "title": "Imprimerie LeGalliard",
@@ -47,32 +41,19 @@
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2019-10-01",
     "links": {
       "main": "https://www.imprimerie-bretagne.fr"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/le-galliard-back",
-        "type": "back",
-        "isPrivate": true
-      },
-      {
-        "url": "https://bitbucket.org/useweb/le-galliard-front",
-        "type": "front",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
       }
     ],
-    "technologies": [
-      "nuxt-js",
-      "laravel"
-    ]
+    "technologies": ["nuxt-js", "laravel"]
   },
   {
     "title": "Laforêt",
@@ -83,32 +64,27 @@
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2019-04-01",
     "links": {
       "main": "https://www.laforet.com"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/laforet-back",
-        "type": "back",
-        "isPrivate": true
-      },
-      {
-        "url": "https://bitbucket.org/useweb/laforet-front",
-        "type": "front",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
+      },
+      {
+        "slug": "adrien-beaudouin",
+        "role": "lead-developer"
+      },
+      {
+        "slug": "mathieu-monnier",
+        "role": "lead-developer"
       }
     ],
-    "technologies": [
-      "nuxt-js",
-      "laravel"
-    ]
+    "technologies": ["nuxt-js", "laravel"]
   },
   {
     "title": "Naviso",
@@ -119,105 +95,73 @@
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2020-05-12",
     "links": {
       "main": "https://www.naviso.fr"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/naviso-back",
-        "type": "back",
-        "isPrivate": true
-      },
-      {
-        "url": "https://bitbucket.org/useweb/naviso-front",
-        "type": "front",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
+      },
+      {
+        "slug": "mathieu-monnier",
+        "role": "lead-developer"
       }
     ],
-    "technologies": [
-      "nuxt-js",
-      "laravel",
-      "tailwind-css"
-    ]
+    "technologies": ["nuxt-js", "laravel", "tailwind-css"]
   },
   {
     "title": "Participation",
     "slug": "participation",
-    "isFavorite": true,
+    "isFavorite": false,
     "isDraft": false,
     "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2021-07-12",
     "links": {
       "main": "https://participation.developpement-durable.gouv.fr"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/mte-front",
-        "type": "front",
-        "isPrivate": true
-      },
-      {
-        "url": "https://bitbucket.org/useweb/mte-back",
-        "type": "back",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
       }
     ],
-    "technologies": [
-      "nuxt-js",
-      "strapi"
-    ]
+    "technologies": ["nuxt-js", "strapi"]
   },
   {
     "title": "SECOB",
     "slug": "secob",
-    "isFavorite": true,
+    "isFavorite": false,
     "isDraft": false,
     "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2020-01-03",
     "links": {
       "main": "https://www.secob.fr"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/secob-backend",
-        "type": "back",
-        "isPrivate": true
-      },
-      {
-        "url": "https://bitbucket.org/useweb/secob-frontend",
-        "type": "front",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
+      },
+      {
+        "slug": "mathieu-monnier",
+        "role": "lead-developer"
       }
     ],
-    "technologies": [
-      "nuxt-js",
-      "laravel"
-    ]
+    "technologies": ["nuxt-js", "laravel"]
   },
   {
     "title": "Agence Release",
@@ -228,64 +172,42 @@
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2020-02-21",
     "links": {
       "main": "https://www.agence-release.com"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/release",
-        "type": "main",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
       }
     ],
-    "technologies": [
-      "vue-js",
-      "laravel"
-    ]
+    "technologies": ["vue-js", "laravel"]
   },
   {
     "title": "EPH35",
-    "slug": "hallouvry",
+    "slug": "eph",
     "isFavorite": false,
     "isDraft": false,
     "isOpenSource": false,
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2021-06-02",
     "links": {
       "main": "https://www.eph35.fr"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/hallouvry-front",
-        "type": "back",
-        "isPrivate": true
-      },
-      {
-        "url": "https://bitbucket.org/useweb/hallouvry-back",
-        "type": "front",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
       }
     ],
-    "technologies": [
-      "nuxt-js",
-      "laravel",
-      "tailwind-css"
-    ]
+    "technologies": ["nuxt-js", "laravel", "tailwind-css"]
   },
   {
     "title": "Useweb",
@@ -296,32 +218,49 @@
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
+    "type": "website",
     "createdAt": "2021-06-01",
     "links": {
       "main": "https://www.useweb.fr"
     },
-    "repositories": [
-      {
-        "url": "https://bitbucket.org/useweb/useweb-back",
-        "type": "back",
-        "isPrivate": true
-      },
-      {
-        "url": "https://bitbucket.org/useweb/useweb-front",
-        "type": "front",
-        "isPrivate": true
-      }
-    ],
+    "repositories": [],
     "developers": [
       {
         "slug": "ewilan-riviere",
         "role": "developer"
       }
     ],
-    "technologies": [
-      "nuxt-js",
-      "laravel",
-      "tailwind-css"
-    ]
+    "technologies": ["nuxt-js", "laravel", "tailwind-css"]
+  },
+  {
+    "title": "Domitys",
+    "slug": "domitys",
+    "isFavorite": false,
+    "isDraft": false,
+    "isOpenSource": false,
+    "status": "4",
+    "formation": "useweb",
+    "context": "enterprise",
+    "type": "website",
+    "createdAt": "2022-06-01",
+    "links": {
+      "main": "https://www.domitys.fr"
+    },
+    "repositories": [],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "developer"
+      },
+      {
+        "slug": "mathieu-monnier",
+        "role": "developer"
+      },
+      {
+        "slug": "adrien-beaudouin",
+        "role": "lead-developer"
+      }
+    ],
+    "technologies": ["laravel", "tailwind-css", "php"]
   }
 ]

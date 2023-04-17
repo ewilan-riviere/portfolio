@@ -9,7 +9,7 @@ const items: {
 }[] = [
   {
     label: 'Contact me',
-    to: { name: 'about', hash: '#contact' },
+    to: { name: 'contact' },
   },
 ]
 </script>

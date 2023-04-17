@@ -97,7 +97,12 @@
       "concept": "Concept & prototype",
       "development": "Développement",
       "finish": "Finitions",
-      "tpam": "TMA"
+      "tpam": "TMA (Tierce Maintenance Applicative)"
+    },
+    "contexts": {
+      "personal": "Personnel",
+      "enterprise": "Entreprise",
+      "school": "École"
     },
     "languages": {
       "php": "PHP",

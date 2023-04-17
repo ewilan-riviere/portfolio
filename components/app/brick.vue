@@ -6,7 +6,7 @@ const props = defineProps<{
 const img = ref<HTMLImageElement>()
 const isLoaded = ref(false)
 
-const loadImage = async (url: string, elem: HTMLImageElement) => {
+async function loadImage(url: string, elem: HTMLImageElement) {
   return new Promise((resolve, reject) => {
     elem.onload = () => {
       setTimeout(() => {
@@ -41,22 +41,22 @@ onMounted(async () => {
         class="w-full rounded-md"
         loading="lazy"
       >
-      <div class="test__body absolute inset-0 p-8 text-white flex flex-col">
+      <div class="absolute inset-0 p-8 text-white flex flex-col">
         <div class="relative">
           <a
-            class="test__link absolute inset-0"
+            class="absolute inset-0"
             target="_blank"
             href="/"
           />
-          <h1 class="test__title text-3xl font-bold mb-3">
+          <h1 class="text-3xl font-bold mb-3">
             Title post
           </h1>
-          <p class="test__author font-sm font-light">
+          <p class="font-sm font-light">
             Author
           </p>
         </div>
         <div class="mt-auto">
-          <span class="test__tag bg-white bg-opacity-60 py-1 px-4 rounded-md text-black">#tag</span>
+          <span class="bg-white bg-opacity-60 py-1 px-4 rounded-md text-black">#tag</span>
         </div>
       </div>
     </div>

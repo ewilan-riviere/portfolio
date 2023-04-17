@@ -35,16 +35,24 @@ const items: {
 <template>
   <div>
     <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-      <div v-for="(item, id) in items" :key="id" class="overflow-hidden rounded-lg bg-white dark:bg-gray-700 px-4 py-5 shadow sm:p-6 flex space-x-5">
+      <div
+        v-for="(item, id) in items"
+        :key="id"
+        class="overflow-hidden rounded-lg bg-white dark:bg-gray-800 px-4 py-5 shadow sm:p-6 flex space-x-5"
+      >
         <svg-icon
           :name="item.icon"
           class="h-10 w-10 text-gray-400 dark:text-gray-300"
         />
         <div>
-          <dt class="truncate text-sm font-medium text-gray-500 dark:text-gray-400">
+          <dt
+            class="truncate text-sm font-medium text-gray-500 dark:text-gray-400"
+          >
             {{ item.title }}
           </dt>
-          <dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+          <dd
+            class="mt-1 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100"
+          >
             {{ item.value }}
           </dd>
         </div>

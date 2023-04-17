@@ -6,25 +6,25 @@ import schoolJson from '~/assets/data/projects/projects-school.json'
 export default defineEventHandler((event): Project[] => {
   const personal = getJson<Project[]>(personalJson).map(obj => ({
     ...obj,
-    type: 'Personal',
-    typeColor: '#9333EA',
+    contextColor: '#9333EA',
+    createdAt: obj.createdAt ? new Date(obj.createdAt) : undefined,
   }))
   const professional = getJson<Project[]>(professionalJson).map(obj => ({
     ...obj,
-    type: 'Professional',
-    typeColor: '#DC2626',
+    contextColor: '#DC2626',
+    createdAt: obj.createdAt ? new Date(obj.createdAt) : undefined,
   }))
   const school = getJson<Project[]>(schoolJson).map(obj => ({
     ...obj,
-    type: 'School',
-    typeColor: '#059669',
+    contextColor: '#059669',
+    createdAt: obj.createdAt ? new Date(obj.createdAt) : undefined,
   }))
 
   const projects = [...personal, ...professional, ...school] as Project[]
 
   const config = useRuntimeConfig()
   projects.forEach((project) => {
-    project.image = `${config.public.baseUrl}/projects/banner/${project.slug}.webp`
+    project.image = `${config.public.baseUrl}/projects/${project.slug}.webp`
   })
 
   return queryBuilder<Project>(event, projects)

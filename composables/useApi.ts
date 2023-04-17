@@ -57,7 +57,10 @@ export function useApi() {
           'sort': '-dateBegin',
         }),
         fetchData<ProjectStatus[]>('/api/project-statuses'),
-        fetchData<Project[]>('/api/projects'),
+        fetchData<Project[]>('/api/projects', {
+          'filter[isDraft]': false,
+          'sort': '-createdAt',
+        }),
         fetchData<Skill[]>('/api/skills'),
         fetchData<Technology[]>('/api/technologies'),
       ])

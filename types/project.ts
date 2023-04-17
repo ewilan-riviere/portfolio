@@ -21,11 +21,14 @@ declare interface Project {
   slug: string
   isDraft?: boolean
   isOpenSource?: boolean
+  isFavorite?: boolean
   image?: string
-  type?: string
   typeColor?: string
   technologies?: string[]
   languages?: string[]
+  context?: 'personal' | 'enterprise' | 'school'
+  contextColor?: string
+  type?: 'website' | 'app' | 'api' | 'library'
   createdAt?: Date
   status?: number
   developers?: DeveloperLight[]

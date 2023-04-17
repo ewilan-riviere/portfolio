@@ -97,7 +97,12 @@
       "concept": "Concept & prototype",
       "development": "Development",
       "finish": "Finishes",
-      "tpam": "TPAM"
+      "tpam": "TPAM (Third-party application maintenance)"
+    },
+    "contexts": {
+      "personal": "Personal",
+      "enterprise": "Enterprise",
+      "school": "School"
     },
     "languages": {
       "php": "PHP",

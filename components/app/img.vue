@@ -41,7 +41,7 @@ onMounted(() => {
           observer.unobserve(entry.target)
         }
       })
-    }, { rootMargin: '0px 0px -200px 0px' })
+    }, { rootMargin: '0px 0px 50px 0px' })
     if (media.value)
       observer.observe(media.value)
   }

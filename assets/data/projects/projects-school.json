@@ -2,12 +2,13 @@
   {
     "title": "Code Académie: Promo #03",
     "slug": "code-academie-promo-03",
-    "isFavorite": true,
+    "isFavorite": false,
     "isDraft": false,
     "isOpenSource": false,
     "status": "4",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2018-11-27",
     "links": {
       "main": "http://promo03.code-academie.fr"
@@ -22,13 +23,17 @@
       {
         "slug": "ewilan-riviere",
         "role": "developer"
+      },
+      {
+        "slug": "nora-hennebert",
+        "role": "developer"
+      },
+      {
+        "slug": "delphine-brunetiere",
+        "role": "designer"
       }
     ],
-    "technologies": [
-      "laravel",
-      "javascript",
-      "bootstrap"
-    ]
+    "technologies": ["laravel", "javascript", "bootstrap"]
   },
   {
     "title": "Overwatch Memory",
@@ -40,6 +45,7 @@
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2018-11-07",
     "repositories": [
       {
@@ -53,9 +59,7 @@
         "role": "developer"
       }
     ],
-    "technologies": [
-      "javascript"
-    ]
+    "technologies": ["javascript"]
   },
   {
     "title": "./play.it",
@@ -66,6 +70,7 @@
     "status": "2",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2019-04-01",
     "links": {
       "main": "https://dev.website.dotslashplay.it"
@@ -90,11 +95,7 @@
         "role": "lead_developer"
       }
     ],
-    "technologies": [
-      "laravel",
-      "blade",
-      "tailwind-css"
-    ]
+    "technologies": ["laravel", "blade", "tailwind-css"]
   },
   {
     "title": "Pomodoro",
@@ -106,6 +107,7 @@
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2018-11-28",
     "repositories": [
       {
@@ -119,9 +121,7 @@
         "role": "developer"
       }
     ],
-    "technologies": [
-      "javascript"
-    ]
+    "technologies": ["javascript"]
   },
   {
     "title": "Quizz Pokémon",
@@ -133,6 +133,7 @@
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2018-12-06",
     "repositories": [
       {
@@ -146,9 +147,7 @@
         "role": "developer"
       }
     ],
-    "technologies": [
-      "javascript"
-    ]
+    "technologies": ["javascript"]
   },
   {
     "title": "TER Cyberviolence",
@@ -159,6 +158,7 @@
     "status": "4",
     "formation": "licence-de-psychologie",
     "context": "school",
+    "type": "website",
     "createdAt": "2014-06-01",
     "links": {
       "main": "/projects/documents/ter-la-cyberviolence.pdf"
@@ -179,6 +179,7 @@
     "demo": null,
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "status": "3",
     "createdAt": "2018-11-07",
     "repositories": [
@@ -193,8 +194,6 @@
         "role": "developer"
       }
     ],
-    "technologies": [
-      "javascript"
-    ]
+    "technologies": ["javascript"]
   }
 ]

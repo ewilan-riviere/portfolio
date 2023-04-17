@@ -3,7 +3,7 @@ const bricks: string[] = []
 
 for (let i = 1; i <= 25; i++) {
   const el = [i]
-  bricks.push(`https://source.unsplash.com/random/${el}`)
+  bricks.push(`https://seeds.git-projects.xyz/api/pictures/random/${el}`)
 }
 
 const { fetchData } = useApi()

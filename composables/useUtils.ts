@@ -4,10 +4,13 @@ interface Options {
 
 export function useUtils() {
   const date = (
-    date: string,
+    date: string | Date | undefined,
     type: 'full' | 'date' | 'time' = 'date',
     options: Options = {},
   ) => {
+    if (!date)
+      return undefined
+
     const d = new Date(date)
 
     let userLang = 'en'
