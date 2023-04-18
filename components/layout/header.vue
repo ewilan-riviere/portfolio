@@ -2,7 +2,7 @@
 const { isScroll } = useScroll()
 const sidebarState = useSidebar()
 
-const toggle = () => {
+function toggle() {
   sidebarState.value = !sidebarState.value
 }
 </script>

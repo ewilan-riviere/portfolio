@@ -8,7 +8,7 @@ interface Options {
   duration?: number
 }
 
-const useAnimate = (el: HTMLElement, binding: DirectiveBinding<Options>) => {
+function useAnimate(el: HTMLElement, binding: DirectiveBinding<Options>) {
   const defaultOpts: Options = {
     rootMargin: '0px 0px 0px 0px' as IntersectionObserverInit['rootMargin'],
     threshold: 0 as IntersectionObserverInit['threshold'],

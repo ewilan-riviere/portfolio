@@ -3,6 +3,25 @@
   "messages": {
     "hello": "Bonjour, {name}!"
   },
+  "head": {
+    "home": "Bienvenue",
+    "about": "À propos de moi",
+    "projects": "Mes projets",
+    "blog": "Mon blog",
+    "contact": "Me contacter"
+  },
+  "home": {
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Envoyez-moi un message et je vous répondrai dès que possible.",
+      "button": "Me contacter"
+    },
+    "experience": {
+      "title": "Expérience & Éducation",
+      "toggle": "Professionnel",
+      "download-cv": "Télécharger mon CV"
+    }
+  },
   "about": {
     "professionalTitle": "Conceptrice développeuse d'applications",
     "title": "À propos de moi",
@@ -15,10 +34,6 @@
     "about": "À propos",
     "projects": "Projets",
     "blog": "Blog"
-  },
-  "hero": {
-    "title": "Ewilan Rivière, conceptrice développeuse",
-    "subtitle": "Je suis développeuse web, je travaille généralement sur Vite avec Vue/React/Svelte et TypeScript. Pour le style, j'installe Tailwind CSS sur tous mes projets et pour le back-end, j'utilise Laravel ou Node.js. Et le mobile ? Flutter. J'adore le markdown et la communauté open-source."
   },
   "app": {
     "color-mode": {
@@ -153,13 +168,6 @@
       "title": "Liens",
       "repositories": "Dépôts",
       "private": "Privé"
-    }
-  },
-  "projects": {
-    "bookshelves": {
-      "subtitle": "subtitle",
-      "excerpt": "Manage eBooks and comics with a web app, can parse EPUB, CBX and PDF. You can use filters, search, download, webreader and OPDS.",
-      "description": "description"
     }
   },
   "achievements": {

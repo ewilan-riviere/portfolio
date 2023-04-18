@@ -29,24 +29,9 @@ export default defineNuxtConfig({
 
   colorMode: modules.colorMode,
   content: modules.content,
-  // i18n: modules.i18n,
   i18n: {
-    baseUrl: process.env.BASE_URL,
-    locales: [
-      {
-        code: 'en',
-        iso: 'en-US',
-        name: 'English',
-      },
-      {
-        code: 'fr',
-        iso: 'fr-FR',
-        name: 'Français',
-      },
-    ],
-    defaultLocale: 'en',
-    vueI18n: './config/locales/i18n.config.ts',
-    // vueI18n: './config/locales/i18n.config.ts',
+    ...modules.i18n,
+    // vueI18n: './i18n.config.ts',
   },
   svgTransformer: modules.svgTransformer,
   typedLink: modules.typedLink,
@@ -57,9 +42,9 @@ export default defineNuxtConfig({
   // },
   runtimeConfig: {
     public: {
-      baseUrl: process.env.BASE_URL ?? 'http://localhost:3000',
-      apiUrl: process.env.API_URL ?? 'http://app.toolbelt.test',
-      mailToAddress: process.env.MAIL_TO_ADDRESS ?? 'contact@email.com',
+      baseUrl: process.env.NUXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+      apiUrl: process.env.NUXT_PUBLIC_API_URL ?? 'http://app.toolbelt.test',
+      mailToAddress: process.env.NUXT_PUBLIC_MAIL_TO_ADDRESS ?? 'contact@email.com',
 
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
       siteName: 'Portfolio',

@@ -4,7 +4,7 @@ import type { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
 const { locale, availableLocales, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 
-const localeTrans = (lang: string) => {
+function localeTrans(lang: string) {
   const list: LocaleObject[] = locales.value as LocaleObject[]
   return list.find(l => l.code === lang)?.name
 }

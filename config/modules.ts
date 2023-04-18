@@ -1,4 +1,5 @@
 import type { NuxtConfig } from '@nuxt/schema'
+import { en, fr } from './locales'
 
 // https://content.nuxtjs.org/api/configuration
 const content: NuxtConfig['content'] = {
@@ -24,7 +25,7 @@ const content: NuxtConfig['content'] = {
 }
 
 const i18n: NuxtConfig['i18n'] = {
-  baseUrl: process.env.BASE_URL,
+  baseUrl: process.env.NUXT_PUBLIC_SITE_URL,
   locales: [
     {
       code: 'en',
@@ -38,7 +39,16 @@ const i18n: NuxtConfig['i18n'] = {
     },
   ],
   defaultLocale: 'en',
-  vueI18n: './config/locales/i18n.config.ts',
+  // old configuration
+  vueI18n: {
+    legacy: false,
+    locale: 'en',
+    fallbackLocale: 'en',
+    messages: {
+      en,
+      fr,
+    },
+  },
 }
 
 // const schemaOrg: object = {

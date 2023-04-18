@@ -93,7 +93,7 @@ const meta: Meta<any['link']>[] = [
   {
     hid: 'og:url',
     property: 'og:url',
-    content: process.env.BASE_URL,
+    content: process.env.NUXT_PUBLIC_SITE_URL,
   },
   {
     hid: 'og:image:alt',
