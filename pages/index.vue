@@ -3,7 +3,11 @@ import { useMainStore } from '~~/store/main'
 
 const { projects } = useMainStore()
 const { findAll, contents: articles } = useMarkdownContent()
-await findAll('articles')
+await findAll('articles', {
+  where: {
+    draft: false,
+  },
+})
 </script>
 
 <template>

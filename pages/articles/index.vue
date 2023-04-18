@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 const { findAll, contents: articles } = useMarkdownContent()
-await findAll('articles')
+await findAll('articles', {
+  where: {
+    draft: false,
+  },
+})
 </script>
 
 <template>

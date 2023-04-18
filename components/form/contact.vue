@@ -8,6 +8,11 @@ const form = ref({
 
 const isDev = import.meta.env.DEV
 const { findOne, content } = useMarkdownContent()
+
+const loading = ref(false)
+const send = ref(false)
+const success = ref(false)
+
 const termsAreOpened = ref(false)
 function toggleTerms() {
   termsAreOpened.value = !termsAreOpened.value
@@ -27,8 +32,9 @@ await findOne('terms', {
 
 const config = useRuntimeConfig()
 async function submit() {
+  loading.value = true
   const api = `${config.public.apiUrl}/api/submissions`
-  await fetch(api, {
+  const res = await fetch(api, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -37,8 +43,32 @@ async function submit() {
       name: form.value.name,
       email: form.value.email,
       message: form.value.message,
+      conditions: form.value.conditions,
+      honeypot: true,
     }),
   })
+
+  if (res.ok) {
+    form.value = {
+      name: '',
+      email: '',
+      message: '',
+      conditions: false,
+    }
+    termsAreOpened.value = false
+
+    send.value = true
+    success.value = true
+  }
+  else {
+    send.value = true
+    success.value = false
+  }
+
+  loading.value = false
+  setTimeout(() => {
+    send.value = false
+  }, 3000)
 }
 </script>
 
@@ -63,23 +93,24 @@ async function submit() {
             </svg>
           </div>
           <h3 class="text-lg font-medium text-white">
-            You've send mail!
+            {{ $t('contact.title') }}
           </h3>
           <div class="mt-6 max-w-3xl text-base text-indigo-50">
-            If you want to contact me for a new project!
+            {{ $t('contact.subtitle') }}
           </div>
         </div>
 
         <!-- Contact form -->
         <div class="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
           <form class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8" @submit.prevent="submit">
-            <field-text v-model="form.name" name="name" :label="$t('contact.form.name')" />
-            <field-text v-model="form.email" name="email" :label="$t('contact.form.email')" />
+            <field-text v-model="form.name" name="name" :label="$t('contact.form.name')" required />
+            <field-text v-model="form.email" name="email" :label="$t('contact.form.email')" required />
             <field-text
               v-model="form.message"
               :name="$t('contact.form.message')"
               label="Message"
               multiline
+              required
               class="sm:col-span-2"
             />
             <field-toggle
@@ -87,6 +118,7 @@ async function submit() {
               name="conditions"
               flexible
               reverse
+              required
               class="sm:col-span-2"
             >
               <template #label>
@@ -108,13 +140,29 @@ async function submit() {
                 </div>
               </div>
             </app-dialog>
-            <div class="sm:col-span-2 sm:flex sm:justify-end space-x-1">
-              <app-button v-if="isDev" @click="test">
-                test
-              </app-button>
-              <app-button type="submit">
-                {{ $t('contact.form.submit') }}
-              </app-button>
+            <div class="sm:col-span-2 flex items-center justify-between">
+              <Transition>
+                <div v-if="send" class="text-sm">
+                  <span v-if="success" class="text-green-500 dark:text-green-400">
+                    Votre message a été envoyé avec succès!
+                  </span>
+                  <span v-else class="text-red-500 dark:text-red-400">
+                    Une erreur est survenue lors de l'envoi de votre message.
+                  </span>
+                </div>
+              </Transition>
+              <div v-if="!send" />
+              <div class="space-x-1 flex items-center">
+                <Transition>
+                  <app-loading v-if="loading" />
+                </Transition>
+                <app-button v-if="isDev" @click="test">
+                  test
+                </app-button>
+                <app-button type="submit">
+                  {{ $t('contact.form.submit') }}
+                </app-button>
+              </div>
             </div>
           </form>
         </div>

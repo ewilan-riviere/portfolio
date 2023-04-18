@@ -5,6 +5,7 @@ interface Props {
   flexible?: boolean
   right?: boolean
   reverse?: boolean
+  required?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -43,6 +44,7 @@ onMounted(() => {
     }"
     :title="label"
   >
+    <input v-model="toggled" type="checkbox" :required="required" class="sr-only">
     <div
       :class="{
         'order-2': reverse,

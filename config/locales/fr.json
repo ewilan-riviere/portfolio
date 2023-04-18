@@ -214,6 +214,8 @@
     "subtitle": "À propos de tech, du web et de serveurs"
   },
   "contact": {
+    "page-title": "Me contacter",
+    "page-subtitle": "Seulement les messages sympathiques!",
     "title": "Que diriez-vous d'un petit message ?",
     "subtitle": "Si vous souhaitez me contacter pour un nouveau project",
     "terms": "",

@@ -78,10 +78,8 @@ export function useMarkdownContent() {
     if (options.limit)
       documents = documents.limit(options.limit)
 
-    if (options.localized) {
+    if (options.localized)
       documents = documents.locale(locale.value)
-      console.log(documents)
-    }
 
     documents = documents.sort({
       createdAt: -1,
