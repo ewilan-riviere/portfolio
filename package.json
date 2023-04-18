@@ -6,6 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "start": "nuxt start",
     "lint": "eslint . --ext .js,.ts,.vue",
     "lint:fix": "eslint . --fix --ext .js,.ts,.vue"
   },
