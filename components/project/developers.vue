@@ -29,7 +29,6 @@ currentDevelopers.forEach((element) => {
       <app-img
         :src="developer.avatar" :alt="developer.name"
         class="w-10 h-10 rounded-full object-cover"
-        placeholder="/projects/placeholder.webp"
       />
       <div>
         <a :href="developer.links?.primary" target="_blank" rel="noopener noreferrer" class="underline">

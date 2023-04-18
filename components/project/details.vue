@@ -60,7 +60,6 @@ const status = projectStatuses.find(s => s.order === props.project?.status)?.slu
         <app-img
           :src="project.image" :alt="project.title"
           class="w-full max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 object-contain"
-          placeholder="/projects/placeholder.webp"
         />
       </div>
     </div>

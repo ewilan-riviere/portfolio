@@ -49,7 +49,6 @@ const domain = computed(() => {
           :src="`/projects/${project.slug}-icon.webp`"
           width="32"
           height="32"
-          placeholder="/projects/placeholder.webp"
         />
       </div>
       <div class="flex items-center space-x-1 border context-border rounded-full px-1.5 py-0.5">

@@ -1,16 +1,23 @@
 <script lang="ts" setup>
-const props = defineProps<{
-  color?: string
-  src?: string
-  title?: string
-  alt?: string
-  placeholder?: string
-}>()
+const props = withDefaults(defineProps<Props>(), {
+  color: '#000000',
+  src: undefined,
+  title: undefined,
+  alt: undefined,
+  placeholder: '/images/placeholder.webp',
+})
 
 const emit = defineEmits<{
   (e: 'loaded', loaded: boolean): void
 }>()
 
+interface Props {
+  color?: string
+  src?: string
+  title?: string
+  alt?: string
+  placeholder?: string
+}
 const source = ref<string>()
 const media = ref<HTMLImageElement>()
 const defaultImage = ref<HTMLImageElement>()

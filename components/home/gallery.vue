@@ -25,7 +25,6 @@ projects = shuffle(projects)
           <app-img
             :src="project.image" :alt="project.title"
             class="h-full w-full object-cover"
-            placeholder="/projects/placeholder.webp"
           />
         </div>
       </div>

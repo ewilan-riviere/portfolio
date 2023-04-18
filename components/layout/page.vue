@@ -18,7 +18,6 @@ defineProps<{
         v-if="image"
         :src="image" :alt="title"
         class="h-24 w-24 object-cover rounded-md"
-        placeholder="/projects/placeholder.webp"
       />
       <div>
         <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
