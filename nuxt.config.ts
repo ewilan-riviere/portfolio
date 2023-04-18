@@ -1,59 +1,55 @@
-import { defineNuxtConfig } from 'nuxt'
-import svgLoader from 'vite-svg-loader'
-import config from './config'
+import { head, modules, runtimeConfigPrivate, runtimeConfigPublic } from './config'
 
-// https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  build: config.build,
-  meta: {
-    link: config.meta.link,
-    meta: config.meta.meta,
-    script: config.meta.script
+  app: {
+    head: {
+      link: head.link,
+      meta: head.meta,
+      script: head.script,
+    },
   },
+
+  css: ['~/assets/css/main.css'],
+
+  extends: '@nuxt-themes/docus',
   modules: [
-    '@nuxt/content', // https://github.com/nuxt/content
-    '@nuxtjs/tailwindcss', // https://github.com/nuxt-community/tailwindcss-module
-    '@pinia/nuxt', // https://github.com/vuejs/pinia
-    '@vueuse/nuxt' // https://github.com/vueuse/vueuse
-    // 'nuxt-schema-org' // https://github.com/vueuse/schema-org#readme
+    '@nuxt/devtools', // https://devtools.nuxtjs.org
+    '@nuxtjs/color-mode', // https://color-mode.nuxtjs.org/
+    '@nuxt/content', // https://content.nuxtjs.org,
+    '@nuxtjs/i18n', // https://i18n.nuxtjs.org
+    '@pinia/nuxt', // https://pinia.vuejs.org/ssr/nuxt.html
+    '@vueuse/nuxt', // https://vueuse.org/guide/index.html#nuxt
+    'nuxt-svg-transformer', // https://github.com/kiwilan/nuxt-svg-transformer
+    'nuxt-typed-link', // https://github.com/kiwilan/nuxt-typed-link
+    // 'nuxt-seo-kit', // https://github.com/harlan-zw/nuxt-seo-kit
   ],
-  tailwindcss: config.modules.tailwindcss,
-  vueuse: config.modules.vueuse,
-  // schemaOrg: config.modules.schemaOrg,
-  content: config.modules.content,
+
+  colorMode: modules.colorMode,
+  content: modules.content,
+  i18n: modules.i18n,
+  svgTransformer: modules.svgTransformer,
+  typedLink: modules.typedLink,
 
   runtimeConfig: {
-    ...config.runtimeConfigPrivate,
-    public: config.runtimeConfigPublic
+    ...runtimeConfigPrivate,
+    public: runtimeConfigPublic,
   },
 
-  router: {
-    trailingSlash: false
+  postcss: {
+    plugins: {
+      'postcss-import': {},
+      'tailwindcss/nesting': {},
+      'tailwindcss': {},
+      'autoprefixer': {},
+    },
   },
 
   typescript: {
-    strict: true, // for pinia
-    shim: false // with Take Over Mode from https://github.com/johnsoncodehk/volar/discussions/471
+    shim: false,
   },
-
-  vite: {
-    plugins: [
-      svgLoader()
-    ]
-  }
-
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: true,
-  //     routes: [
-  //       '/',
-  //       '/sitemap.xml',
-  //       '/feed.xml',
-  //       '/feed.json',
-  //       '/feed.atom',
-  //     ],
-  //   },
-  // },
+  devtools: {
+    enabled: true,
+    vscode: {},
+  },
 })

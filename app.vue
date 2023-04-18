@@ -1,23 +1,16 @@
-<script setup lang="ts">
-const { isDev } = useDev()
-
+<script lang="ts" setup>
 const { fetchApi } = useApi()
 await fetchApi()
+
+useHead({
+  titleTemplate: '%s - Ewilan Rivière',
+  title: 'Welcome',
+})
 </script>
 
 <template>
-  <div :class="{'debug-screens': isDev}">
-    <app-helper v-if="isDev" />
-    <app-toasts />
-    <layout-navbar />
-    <layout-sidebar />
-    <main class="min-h-screen">
-      <NuxtLoadingIndicator />
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </main>
-    <layout-bottom class="mt-10" />
-    <layout-back-to-top />
-  </div>
+  <NuxtLoadingIndicator color="#9333EA" />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>

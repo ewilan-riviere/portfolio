@@ -1,16 +1,33 @@
 import type { NitroFetchRequest } from 'nitropack'
+import type { Technology } from '~/types/technology'
 import { useMainStore } from '~~/store/main'
+import type { HistoryItem } from '~~/types/history-item'
 
-export const useApi = () => {
+interface QueryParam {
+  'filter[isDraft]'?: boolean | undefined
+  'filter[isFavorite]'?: boolean | undefined
+  'sort'?: string | undefined
+  [key: string]: string | number | boolean | undefined
+}
+
+export function useApi() {
   type ApiEndpoint = NitroFetchRequest
 
-  const fetchData = async <T>(endpoint: ApiEndpoint) => {
-    return await $fetch.raw<T>(endpoint).then((e) => {
-      if (e.status === 200) { return e._data }
-    }).catch((e) => {
-      console.error(e)
+  const fetchData = async <T>(endpoint: ApiEndpoint, query?: QueryParam) => {
+    const queryParams: URLSearchParams = new URLSearchParams()
+    if (query) {
+      Object.keys(query).forEach((key) => {
+        queryParams.append(key, query[key] as string)
+      })
+    }
+    const res = await $fetch.raw<T>(`${endpoint}?${queryParams.toString()}`)
+
+    if (res.status !== 200) {
+      console.error(res.statusText)
       return undefined
-    })
+    }
+
+    return res._data as T
   }
 
   const fetchApi = async () => {
@@ -21,27 +38,39 @@ export const useApi = () => {
         about,
         developers,
         features,
-        historyItems,
+        workItems,
+        educationItems,
         projectStatuses,
         projects,
         skills,
-        technologies
+        technologies,
       ] = await Promise.all([
         fetchData<About>('/api/about'),
         fetchData<Developer[]>('/api/developers'),
         fetchData<Feature[]>('/api/features'),
-        fetchData<HistoryItem[]>('/api/history-items'),
+        fetchData<HistoryItem[]>('/api/work-items', {
+          'filter[isDraft]': false,
+          'sort': '-dateBegin',
+        }),
+        fetchData<HistoryItem[]>('/api/education-items', {
+          'filter[isDraft]': false,
+          'sort': '-dateBegin',
+        }),
         fetchData<ProjectStatus[]>('/api/project-statuses'),
-        fetchData<Project[]>('/api/projects'),
+        fetchData<Project[]>('/api/projects', {
+          'filter[isDraft]': false,
+          'sort': '-createdAt',
+        }),
         fetchData<Skill[]>('/api/skills'),
-        fetchData<Technology[]>('/api/technologies')
+        fetchData<Technology[]>('/api/technologies'),
       ])
 
       mainStore.setReady(true)
       mainStore.setAbout(about)
       mainStore.setDevelopers(developers)
       mainStore.setFeatures(features)
-      mainStore.setHistoryItems(historyItems)
+      mainStore.setWorkItems(workItems)
+      mainStore.setEducationItems(educationItems)
       mainStore.setProjectStatuses(projectStatuses)
       mainStore.setProjects(projects)
       mainStore.setSkills(skills)
@@ -50,6 +79,7 @@ export const useApi = () => {
   }
 
   return {
-    fetchApi
+    fetchData,
+    fetchApi,
   }
 }

@@ -36,18 +36,18 @@ const props = withDefaults(defineProps<Props>(), {
   minlength: 0,
   maxlength: 0,
   disabled: false,
-  autocomplete: undefined
+  autocomplete: undefined,
 })
 
 const emit = defineEmits(['update:modelValue'])
 
 const value = computed<string>({
-  get () {
+  get() {
     return props.modelValue as string
   },
-  set (val) {
+  set(val) {
     emit('update:modelValue', val)
-  }
+  },
 })
 </script>
 
@@ -104,7 +104,7 @@ const value = computed<string>({
 .field {
   @apply block w-full rounded-md border-gray-300 placeholder-gray-500 border shadow-sm text-gray-900;
   @apply focus:border-primary-600 focus:ring-primary-600;
-  /* @apply dark:border-gray-700 dark:bg-gray-700 dark:text-white sm:text-sm dark:placeholder-gray-100; */
+  @apply dark:border-gray-700 dark:bg-gray-700 dark:text-white sm:text-sm dark:placeholder-gray-100;
 }
 
 textarea {

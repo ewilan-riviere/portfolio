@@ -1,81 +1,68 @@
-import { useI18nStore } from '~~/store/i18n'
+interface Options {
+  date?: Intl.DateTimeFormatOptions
+  time?: Intl.DateTimeFormatOptions
+}
 
-export const useUtils = () => {
-  const formatDate = (date?: any, options?: Intl.DateTimeFormatOptions) => {
-    if (!date) { return '' }
+export function useUtils() {
+  const date = (
+    date: string | Date | undefined,
+    type: 'full' | 'date' | 'time' = 'date',
+    options: Options = {
+      date: {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      },
+      time: {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false,
+      },
+    },
+  ) => {
+    if (!date)
+      return undefined
 
-    const formatDate = new Date(date)
+    const d = new Date(date)
 
-    let userLang = 'en'
-    if (process.client) { userLang = navigator.language }
+    const { locale } = useI18n()
+    const userLang = locale.value
 
-    return formatDate.toLocaleString(userLang, {
-      year: 'numeric',
-      month: 'long',
-      ...options
-    })
-  }
-
-  const checkIfDateIsSuperiorToToday = (date?: any) => {
-    if (!date) { return false }
-
-    const today = new Date()
-    const dateToCheck = new Date(date)
-
-    return dateToCheck > today
-  }
-
-  const getDomain = (url: string | undefined): URL | undefined => {
-    if (url) {
-      try {
-        const currentUrl = new URL(url)
-        return currentUrl
-      } catch (error) {
-
-      }
+    let opts: Intl.DateTimeFormatOptions = {
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     }
-  }
 
-  const getList = (list: string[]) => {
-    let userLang = 'en'
-    if (process.client) { userLang = navigator.language }
+    switch (type) {
+      case 'full':
+        opts = {
+          ...opts,
+          ...options.date,
+          ...options.time,
+        }
+        break
 
-    const format = new Intl.ListFormat(userLang, { style: 'long', type: 'conjunction' })
+      case 'date':
+        opts = {
+          ...opts,
+          ...options.date,
+        }
+        break
 
-    return format.format(list)
-  }
+      case 'time':
+        opts = {
+          ...opts,
+          ...options.time,
+        }
+        break
 
-  const transList = (list: string[], key?: string) => {
-    const i18n = useI18nStore()
-
-    const transList: string[] = []
-    list.forEach((element) => {
-      let translateKey = element
-      if (key) { translateKey = `${key}.${element}` }
-
-      transList.push(i18n.translate(translateKey))
-    })
-
-    return transList
-  }
-
-  const shuffleArray = (array: any[] | undefined) => {
-    if (array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1))
-          ;[array[i], array[j]] = [array[j], array[i]]
-      }
-    } else {
-      return []
+      default:
+        break
     }
+
+    return d.toLocaleString(userLang, opts)
   }
 
   return {
-    formatDate,
-    checkIfDateIsSuperiorToToday,
-    getDomain,
-    getList,
-    transList,
-    shuffleArray
+    date,
   }
 }

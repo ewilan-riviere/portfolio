@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "useweb",
+    "image": "useweb.webp",
+    "certificate": null,
+    "color": "#595ad4",
+    "colorReversed": true,
+    "experienceType": "vocational",
+    "dateBegin": "2019-10-01",
+    "dateEnd": "2022-12-02",
+    "isDraft": false,
+    "url": "https://www.useweb.fr/",
+    "links": {
+      "place": {
+        "name": "Useweb",
+        "link": "https://www.useweb.fr"
+      },
+      "school": {
+        "name": "ENI Ecole Informatique",
+        "link": "https://www.eni-ecole.fr/formations/developpement/niveau-7-bac5-manager-de-solutions-digitales-et-data"
+      }
+    }
+  }
+]

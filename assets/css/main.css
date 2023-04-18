@@ -1,0 +1,6 @@
+@import 'custom';
+@import 'prose';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -16,6 +16,7 @@
   {
     "name": "Nora Hennebert",
     "slug": "nora-hennebert",
+    "avatar": "https://media.licdn.com/dms/image/C4E03AQGaAafAGBaqyw/profile-displayphoto-shrink_800_800/0/1637253193279?e=2147483647&v=beta&t=jXapsv-qwgoZvQW2oE4vJxP0gWBC2AJKbF0oTqCNx9o",
     "links": {
       "primary": "https://www.linkedin.com/in/nora-hennebert",
       "github": "https://github.com/Norahenn",
@@ -44,6 +45,7 @@
   {
     "name": "Delphine Brunetière",
     "slug": "delphine-brunetiere",
+    "avatar": "https://mir-s3-cdn-cf.behance.net/user/230/8060ff85012183.629f41ad5f75e.jpg",
     "links": {
       "primary": "https://www.linkedin.com/in/delphinebrunetiere",
       "portfolio": "https://delphinebrunetiere.com",
@@ -60,6 +62,35 @@
     "links": {
       "primary": "https://forge.dotslashplay.it/mopi",
       "git": "https://forge.dotslashplay.it/mopi"
+    }
+  },
+  {
+    "name": "Julien Baylac",
+    "slug": "julien-baylac",
+    "avatar": "https://avatars.githubusercontent.com/u/43619846?v=4",
+    "links": {
+      "primary": "https://fr.linkedin.com/in/julien-baylac",
+      "linkedin": "https://fr.linkedin.com/in/julien-baylac",
+      "github": "https://github.com/Julien-Baylac"
+    }
+  },
+  {
+    "name": "Adrien Beaudouin",
+    "slug": "adrien-beaudouin",
+    "avatar": "https://avatars.githubusercontent.com/u/3679080?v=4",
+    "links": {
+      "primary": "https://github.com/adr1enbe4udou1n",
+      "linkedin": "https://www.linkedin.com/in/adr1enbe4udou1n",
+      "github": "https://github.com/adr1enbe4udou1n"
+    }
+  },
+  {
+    "name": "Mathieu Monnier",
+    "slug": "mathieu-monnier",
+    "avatar": "https://media.licdn.com/dms/image/D4E03AQEBnknueMpQWQ/profile-displayphoto-shrink_400_400/0/1669730236781?e=1687392000&v=beta&t=wTWxXmPuKOSLDQHdwHiKqoIN3tnub-aw7d0OUvDnnNU",
+    "links": {
+      "primary": "https://www.linkedin.com/in/mathieu-monnier-55a689104",
+      "linkedin": "https://www.linkedin.com/in/mathieu-monnier-55a689104"
     }
   }
 ]

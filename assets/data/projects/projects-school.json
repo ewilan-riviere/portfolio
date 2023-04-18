@@ -2,16 +2,20 @@
   {
     "title": "Code Académie: Promo #03",
     "slug": "code-academie-promo-03",
-    "isFavorite": true,
+    "isFavorite": false,
     "isDraft": false,
     "isOpenSource": false,
     "status": "4",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2018-11-27",
-    "links": {
-      "main": "http://promo03.code-academie.fr"
-    },
+    "links": [
+      {
+        "url": "https://promo-03.code-academie.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
@@ -22,13 +26,17 @@
       {
         "slug": "ewilan-riviere",
         "role": "developer"
+      },
+      {
+        "slug": "nora-hennebert",
+        "role": "developer"
+      },
+      {
+        "slug": "delphine-brunetiere",
+        "role": "designer"
       }
     ],
-    "technologies": [
-      "laravel",
-      "javascript",
-      "bootstrap"
-    ]
+    "technologies": ["laravel", "javascript", "bootstrap"]
   },
   {
     "title": "Overwatch Memory",
@@ -36,10 +44,10 @@
     "isFavorite": true,
     "isDraft": true,
     "isOpenSource": true,
-    "demo": null,
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2018-11-07",
     "repositories": [
       {
@@ -53,9 +61,7 @@
         "role": "developer"
       }
     ],
-    "technologies": [
-      "javascript"
-    ]
+    "technologies": ["javascript"]
   },
   {
     "title": "./play.it",
@@ -66,14 +72,18 @@
     "status": "2",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2019-04-01",
-    "links": {
-      "main": "https://dev.website.dotslashplay.it"
-    },
+    "links": [
+      {
+        "url": "https://dev.website.dotslashplay.it",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://forge.dotslashplay.it/play.it/api",
-        "type": "back"
+        "type": "api"
       },
       {
         "url": "https://forge.dotslashplay.it/play.it/website",
@@ -90,11 +100,7 @@
         "role": "lead_developer"
       }
     ],
-    "technologies": [
-      "laravel",
-      "blade",
-      "tailwind-css"
-    ]
+    "technologies": ["laravel", "blade", "tailwind-css"]
   },
   {
     "title": "Pomodoro",
@@ -106,6 +112,7 @@
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2018-11-28",
     "repositories": [
       {
@@ -119,9 +126,7 @@
         "role": "developer"
       }
     ],
-    "technologies": [
-      "javascript"
-    ]
+    "technologies": ["javascript"]
   },
   {
     "title": "Quizz Pokémon",
@@ -133,6 +138,7 @@
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "createdAt": "2018-12-06",
     "repositories": [
       {
@@ -146,9 +152,7 @@
         "role": "developer"
       }
     ],
-    "technologies": [
-      "javascript"
-    ]
+    "technologies": ["javascript"]
   },
   {
     "title": "TER Cyberviolence",
@@ -159,10 +163,15 @@
     "status": "4",
     "formation": "licence-de-psychologie",
     "context": "school",
+    "type": "website",
     "createdAt": "2014-06-01",
-    "links": {
-      "main": "/projects/documents/ter-la-cyberviolence.pdf"
-    },
+    "links": [
+      {
+        "url": "/projects/documents/ter-la-cyberviolence.pdf",
+        "label": "TER Cyberviolence",
+        "type": "main"
+      }
+    ],
     "developers": [
       {
         "slug": "ewilan-riviere",
@@ -179,6 +188,7 @@
     "demo": null,
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
+    "type": "website",
     "status": "3",
     "createdAt": "2018-11-07",
     "repositories": [
@@ -193,8 +203,6 @@
         "role": "developer"
       }
     ],
-    "technologies": [
-      "javascript"
-    ]
+    "technologies": ["javascript"]
   }
 ]

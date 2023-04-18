@@ -1,4 +1,4 @@
-import { getJson } from '../api'
+import { getJson, queryBuilder } from '../api'
 import personalJson from '~/assets/data/projects/projects-personal.json'
 import professionalJson from '~/assets/data/projects/projects-professional.json'
 import schoolJson from '~/assets/data/projects/projects-school.json'
@@ -6,32 +6,26 @@ import schoolJson from '~/assets/data/projects/projects-school.json'
 export default defineEventHandler((event): Project[] => {
   const personal = getJson<Project[]>(personalJson).map(obj => ({
     ...obj,
-    type: 'Personal',
-    typeColor: '#9333EA'
+    contextColor: '#9333EA',
+    createdAt: obj.createdAt ? new Date(obj.createdAt) : undefined,
   }))
   const professional = getJson<Project[]>(professionalJson).map(obj => ({
     ...obj,
-    type: 'Professional',
-    typeColor: '#DC2626'
+    contextColor: '#DC2626',
+    createdAt: obj.createdAt ? new Date(obj.createdAt) : undefined,
   }))
   const school = getJson<Project[]>(schoolJson).map(obj => ({
     ...obj,
-    type: 'School',
-    typeColor: '#059669'
+    contextColor: '#059669',
+    createdAt: obj.createdAt ? new Date(obj.createdAt) : undefined,
   }))
 
-  let projects = [...personal, ...professional, ...school] as Project[]
+  const projects = [...personal, ...professional, ...school] as Project[]
 
-  let limit = 0
-  if (event.req.url) {
-    const config = useRuntimeConfig()
-    const url = `${config.public.baseUrl}${event.req.url}`
-    const params = new URL(url).searchParams
-    if (params.get('limit') !== null) { limit = parseInt(params.get('limit')!) }
-  }
+  const config = useRuntimeConfig()
+  projects.forEach((project) => {
+    project.image = `${config.public.baseUrl}/projects/${project.slug}.webp`
+  })
 
-  projects = projects.filter((item: Project) => !item.isDraft)
-  if (limit) { projects = projects.slice(0, limit) }
-
-  return projects
+  return queryBuilder<Project>(event, projects)
 })

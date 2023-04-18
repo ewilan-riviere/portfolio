@@ -1,8 +1,10 @@
-export const useScroll = () => {
+export function useScroll() {
   const isScroll = ref(false)
 
   const handleScroll = () => {
-    if (window.scrollY > 50) { isScroll.value = true } else { isScroll.value = false }
+    if (window.scrollY > 50)
+      isScroll.value = true
+    else isScroll.value = false
   }
 
   onMounted(() => {
@@ -15,6 +17,6 @@ export const useScroll = () => {
 
   return {
     isScroll,
-    handleScroll
+    handleScroll,
   }
 }

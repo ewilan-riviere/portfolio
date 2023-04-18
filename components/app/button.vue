@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import SvgIcon from '@/components/svg-icon.vue'
+import type { RouteType } from '~/.nuxt/typed-link'
+import type { IconType } from '~/.nuxt/svg-transformer'
 
 interface Props {
   color?: 'primary' | 'secondary' | 'white' | 'danger'
@@ -7,14 +8,14 @@ interface Props {
   align?: 'left' | 'center' | 'right'
   size?: 'sm' | 'md' | 'lg'
   href?: string
-  to?: string | object
+  to?: RouteType
   disabled?: boolean
-  download?: string
-  icon?: string
+  download?: boolean
+  icon?: IconType
   loading?: boolean
   outlined?: boolean
   hideLabel?: boolean
-  fakeButton?: boolean
+  full?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -25,112 +26,131 @@ const props = withDefaults(defineProps<Props>(), {
   href: undefined,
   to: undefined,
   disabled: false,
-  download: undefined,
+  download: false,
   icon: undefined,
   loading: false,
-  fakeButton: false
+  full: false,
 })
 
-const emit = defineEmits(['click'])
+defineEmits(['click'])
 
 const tag = ref('button')
-const btn = ref<HTMLElement>()
+const isLink = ref(false)
+const toLink = ref('/')
+const hrefLink = ref('')
 
-if (props.href) { tag.value = 'a' }
+function setupButton() {
+  isLink.value = false
+  if (props.href) {
+    tag.value = 'a'
+    hrefLink.value = props.href
+  }
 
-if (props.to) { tag.value = 'router-link' }
+  if (props.to) {
+    tag.value = 'a'
+    if (typeof useLocalePath === 'function') {
+      const localePath = useLocalePath()
+      // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
+      // @ts-ignore RouteType not compatible with RouteLocation
+      toLink.value = localePath(props.to)
+    }
+    else {
+      // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
+      // @ts-ignore RouteType not compatible with RouteLocation
+      toLink.value = props.to
+    }
+    isLink.value = true
+  }
+}
+setupButton()
 
 const alignment = computed((): string => {
-  const alignements: Keyable = {
+  const alignements: { [key: string]: any } = {
     left: 'mr-auto',
     center: 'mx-auto',
     right: 'ml-auto',
-    default: 'mx-auto'
+    default: 'mx-auto',
   }
   const current = props.align
   return alignements[current] || alignements.default
 })
 
-onMounted(() => {
-  if (props.href) {
-    const element: any = btn.value
-    if (element instanceof HTMLElement) {
-      const current = props.href
-      element.setAttribute('href', current)
-    }
-  }
-  if (!props.fakeButton) {
-    btn.value?.addEventListener('click', () => {
-      emit('click')
-    }, false)
-  }
-})
+watch(
+  () => props.href || props.to,
+  (newVal) => {
+    setupButton()
+  },
+)
 </script>
 
 <template>
-  <component
-    :is="tag"
-    ref="btn"
-    :to="to !== undefined ? to : null"
-    :target="href ? (download ? '' : '_blank') : null"
-    :rel="href ? 'noopener noreferrer' : null"
-    :class="[color, { disabled }, size]"
-    class="btn relative"
-    :type="type"
-    :disabled="disabled"
-    :download="download"
-  >
-    <span class="absolute top-1/2 left-2 -translate-y-1/2 transform">
-      <svg
-        v-if="loading"
-        class="h-5 w-5 animate-spin"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <circle
-          class="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          stroke-width="4"
-        />
-        <path
-          class="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-        />
-      </svg>
-    </span>
-    <span
-      :class="[{ 'space-x-2': icon }, alignment]"
-      class="flex items-center"
+  <router-link v-slot="{ href: hrefSlot, navigate }" :to="toLink" custom>
+    <a
+      v-if="isLink"
+      :href="hrefSlot"
+      :class="[color, { disabled }, size, { 'w-full': full }]"
+      class="btn relative"
+      @click="navigate"
     >
-      <SvgIcon
-        v-if="icon"
-        :name="icon"
-        class="h-5 w-5"
-      />
-      <span class="inline-block">
-        <slot />
+      <slot />
+    </a>
+    <component
+      :is="tag"
+      v-else
+      :href="href"
+      :target="href ? (download ? '' : '_blank') : null"
+      :rel="href ? 'noopener noreferrer' : null"
+      :class="[color, { disabled }, size, { 'w-full': full }]"
+      class="btn relative"
+      :type="type"
+      :disabled="disabled"
+      :download="download"
+      @click.stop="$emit('click')"
+    >
+      <span class="absolute top-1/2 left-2 -translate-y-1/2 transform">
+        <svg
+          v-if="loading"
+          class="h-5 w-5 animate-spin"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          />
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          />
+        </svg>
       </span>
-    </span>
-    <span
-      v-if="href"
-      class="ml-1 block"
-    >
-      <SvgIcon
-        name="external-link"
-        class="h-4 w-4"
-      />
-    </span>
-  </component>
+      <span :class="[{ 'space-x-2': icon }, alignment]" class="flex items-center">
+        <svg-icon v-if="icon" :name="icon" class="h-5 w-5" />
+        <span class="inline-block">
+          <slot />
+        </span>
+      </span>
+      <span v-if="href" class="ml-1 block">
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          />
+        </svg>
+      </span>
+    </component>
+  </router-link>
 </template>
 
 <style lang="css" scoped>
 .sm {
-  @apply px-3 py-1;
+  @apply px-3 py-1 !text-sm !font-normal;
 }
 .md {
   @apply px-4 py-2;

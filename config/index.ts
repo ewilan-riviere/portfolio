@@ -1,17 +1,13 @@
-import build from './build'
-import meta from './meta'
+import head from './head'
 import modules from './modules'
 import {
   runtimeConfigPrivate,
-  runtimeConfigPublic
+  runtimeConfigPublic,
 } from './runtime-config'
 
-const config = {
-  build,
-  meta,
+export {
+  head,
   modules,
   runtimeConfigPublic,
-  runtimeConfigPrivate
+  runtimeConfigPrivate,
 }
-
-export default config

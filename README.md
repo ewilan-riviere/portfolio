@@ -1,33 +1,27 @@
-# Ewilan Rivière - Portfolio
+# Ewilan's portfolio
 
-[![nuxt](https://img.shields.io/static/v1?label=Nuxt&message=v3.*&color=00C58E&style=flat-square&logo=nuxt.js&logoColor=ffffff)](https://nuxtjs.org/)
-[![nuxt-ssr](https://img.shields.io/static/v1?label=Designed%20to%20be&message=SSR&color=00C58E&style=flat-square&logo=nuxt.js&logoColor=ffffff)](https://nuxtjs.org/docs/concepts/server-side-rendering/)
-[![tailwindcss](https://img.shields.io/static/v1?label=Tailwind%20CSS&message=v3.*&color=38B2AC&style=flat-square&logo=tailwind-css&logoColor=ffffff)](https://tailwindcss.com/)
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-[![node](https://img.shields.io/static/v1?label=NodeJS&message=v14.18&color=339933&style=flat-square&logo=node.js&logoColor=ffffff)](https://nodejs.org/en)
-[![pnpm](https://img.shields.io/static/v1?label=pnpm&message=v7.*&color=F69220&style=flat-square&logo=pnpm&logoColor=ffffff)](https://pnpm.io)
+## Modules
 
-![pipeline](https://gitlab.com/ewilan-riviere/portfolio/badges/main/pipeline.svg)
-
->Personal portfolio of Ewilan Rivière. Use Nuxt 3.x and Tailwind CSS.
-
-📀 [**Repository**](https://github.com/ewilan-riviere/portfolio)  
-💻 [**ewilan-riviere.com**](https://ewilan-riviere.com): demo
+- [Nuxt 3](https://nuxtjs.org)
+- [@antfu/eslint-config](https://github.com/antfu/eslint-config)
+- [@nuxt-themes/typography](https://typography.nuxt.space/)
+- [@nuxt/content](https://content.nuxtjs.org/)
+- [tailwindcss](https://tailwindcss.com/docs/guides/nuxtjs)
+- [@pinia/nuxt](https://pinia.vuejs.org/ssr/nuxt.html#installation)
+- [nuxt-svg-transformer](https://github.com/kiwilan/nuxt-svg-transformer)
+- [nuxt-typed-link](https://github.com/kiwilan/nuxt-typed-link)
+- [@nuxtjs/i18n](https://v8.i18n.nuxtjs.org/)
 
 ## Setup
-
-Make sure to install the dependencies:
 
 ```bash
 pnpm i
 ```
 
-## Development Server
-
-Start the development server on <http://localhost:3000>
-
 ```bash
-pnpm dev
+pnpm run dev
 ```
 
 ## Production
@@ -35,26 +29,13 @@ pnpm dev
 Build the application for production:
 
 ```bash
-pnpm build
+pnpm run build
 ```
 
 Locally preview production build:
 
 ```bash
-pnpm preview
+pnpm run preview
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
-
-## ESLint format
-
-- <https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3>
-- <https://github.com/johnsoncodehk/volar/discussions/53>
-- <https://github.com/johnsoncodehk/volar/issues/425>
-
-## PDF
-
-```bash
-sudo apt-get install ghostscript
-ps2pdf resume.pdf resume-ps2pdf.pdf
-```
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

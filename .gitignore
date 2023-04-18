@@ -6,5 +6,8 @@ node_modules
 .output
 .env
 dist
-.idea
+
+assets/icons/cache
+
+assets/svg-transformer-list.ts
 .DS_Store

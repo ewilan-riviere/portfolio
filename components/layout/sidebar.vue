@@ -1,36 +1,39 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
-import { useNavigationStore } from '~~/store/navigation'
+import { useMainStore } from '~~/store/main'
 
 const sidebar = ref(false)
 const layer = ref(false)
 const overlay = ref(false)
 const target = ref(null)
 
-const navigation = useNavigationStore()
+const { navbar } = useMainStore()
+const sidebarState = useSidebar()
 
-const openSidebar = () => {
+function openSidebar() {
   layer.value = true
   setTimeout(() => {
     overlay.value = true
     sidebar.value = true
   }, 150)
 }
-const closeSidebar = () => {
-  overlay.value = false
+function closeSidebar() {
   sidebar.value = false
+  overlay.value = false
   setTimeout(() => {
     layer.value = false
   }, 150)
 
-  navigation.closeSidebar()
+  sidebarState.value = false
 }
 
 watch(
-  () => navigation.sidebar,
+  () => sidebarState.value,
   (newVal) => {
-    if (newVal) { openSidebar() } else { closeSidebar() }
-  }
+    if (newVal)
+      openSidebar()
+    else closeSidebar()
+  },
 )
 
 onClickOutside(target, () => {
@@ -78,12 +81,12 @@ onClickOutside(target, () => {
             @click="closeSidebar"
           >
             <svg-icon
-              name="ewilan-riviere"
+              name="logo/classic"
               class="w-auto h-8 transition-all duration-100 sm:h-10 group-hover:home-logo-shadow"
             />
             <div class="mt-2 ml-3 dark:text-gray-100">
               <svg-icon
-                name="ewilan-riviere-text"
+                name="logo/text"
                 class="h-6 w-auto"
               />
             </div>
@@ -93,21 +96,21 @@ onClickOutside(target, () => {
       <div class="mt-5 h-0 flex-1 overflow-y-auto">
         <nav class="px-2">
           <div class="space-y-2">
-            <nuxt-link
-              v-for="(link, id) in navigation.main"
+            <typed-link
+              v-for="(item, id) in navbar"
               :key="id"
-              :to="link.route"
+              :to="item.to"
               class="link group"
               @click="closeSidebar"
             >
-              <svg-icon
+              <!-- <svg-icon
                 :name="`nav-${link.icon}`"
                 class="w-6 h-6"
-              />
-              <div>{{ $t(`nav.${link.label}`) }}</div>
-            </nuxt-link>
-            <hr class="border-gray-700 dark:border-gray-300">
-            <a
+              /> -->
+              <div>{{ $t(`nav.${item.title}`) }}</div>
+            </typed-link>
+            <!-- <hr class="border-gray-700 dark:border-gray-300"> -->
+            <!-- <a
               v-for="(link, id) in navigation.external"
               :key="id"
               :href="link.href"
@@ -121,7 +124,7 @@ onClickOutside(target, () => {
                 class="w-6 h-6"
               />
               <div>{{ $t(`nav.${link.label}`) }}</div>
-            </a>
+            </a> -->
           </div>
         </nav>
       </div>
