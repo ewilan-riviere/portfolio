@@ -4,6 +4,7 @@
 [![Tailwind CSS][tailwind-version-src]][tailwind-version-href]
 [![Content][content-version-src]][content-version-href]
 [![i18n][i18n-version-src]][i18n-version-href]
+[![tests][tests-src]][tests-href]
 [![license][license-src]][license-href]
 
 My portfolio, built with [Nuxt 3](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com/).
@@ -60,5 +61,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 [content-version-href]: https://content.nuxtjs.org/
 [i18n-version-src]: https://img.shields.io/badge/dynamic/json?label=@nuxtjs/i18n&query=devDependencies['@nuxtjs/i18n']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&labelColor=18181b
 [i18n-version-href]: https://v8.i18n.nuxtjs.org/
+[tests-src]: https://img.shields.io/github/actions/workflow/status/ewilan-riviere/portfolio/ci.yml?branch=main&label=tests&style=flat-square&colorA=18181B
+[tests-href]: https://github.com/ewilan-riviere/portfolio/actions/workflows/ci.yml
 [license-src]: https://img.shields.io/github/license/ewilan-riviere/portfolio.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://github.com/ewilan-riviere/portfolio/blob/main/LICENSE
