@@ -4,7 +4,11 @@
     "hello": "Hello, {name}!"
   },
   "about": {
-    "professionalTitle": "Developer designer of applications"
+    "professionalTitle": "Developer designer of applications",
+    "title": "About me",
+    "subtitle": "Tech enthusiast",
+    "follow": "Follow on {social}",
+    "technologies": "Technologies I use"
   },
   "nav": {
     "home": "Home",
@@ -24,6 +28,8 @@
     "locale-switch": "Switch locale"
   },
   "hobbies": {
+    "title": "Hobbies",
+    "subtitle": "What I like to do in my free time",
     "develop": {
       "label": "Develop & technology watch",
       "value": "Develop projects with my favorites frameworks, to experiment new features from technology watch."
@@ -79,9 +85,24 @@
       "text": "Write technical documentation to explain how to use some projects, to save snippets, to write some articles for developers."
     }
   },
+  "statistics": {
+    "education": {
+      "label": "Education",
+      "value": "Master's degree"
+    },
+    "projects": {
+      "label": "Projects",
+      "value": "{number}"
+    },
+    "experience": {
+      "label": "Experience",
+      "value": "{number} years"
+    }
+  },
   "project": {
     "title": "A selection of my projects",
     "subtitle": "Personal, profesional and open-source",
+    "created-at": "Created at {date}",
     "details": {
       "developers": "Developers",
       "begin-date": "Begin date",
@@ -94,10 +115,18 @@
       "technologies": "Technologies"
     },
     "statuses": {
+      "currently-in": "Currently in",
       "concept": "Concept & prototype",
       "development": "Development",
       "finish": "Finishes",
       "tpam": "TPAM (Third-party application maintenance)"
+    },
+    "types": {
+      "website": "Website",
+      "mobile": "Mobile application",
+      "desktop": "Desktop application",
+      "api": "API",
+      "library": "Library"
     },
     "contexts": {
       "personal": "Personal",
@@ -114,9 +143,16 @@
       "search": "Search engine",
       "api": "API"
     },
-    "role": {
+    "roles": {
+      "lead-developer": "Lead developer",
       "developer": "Developer",
-      "concept": "Concept & ideas"
+      "concept": "Concept & ideas",
+      "designer": "Designer"
+    },
+    "links": {
+      "title": "Links",
+      "repositories": "Repositories",
+      "private": "Private"
     }
   },
   "projects": {
@@ -199,6 +235,8 @@
     }
   },
   "footer": {
+    "contact-me": "Contact me",
+    "github": "Github",
     "mit-license": "MIT License",
     "built-with": "Built with"
   }

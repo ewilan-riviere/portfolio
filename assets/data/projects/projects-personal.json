@@ -10,16 +10,19 @@
     "context": "personal",
     "type": "website",
     "createdAt": "2021-01-03",
-    "links": {
-      "main": "https://bookshelves.ink"
-    },
+    "links": [
+      {
+        "url": "https://bookshelves.ink",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
-        "url": "https://gitlab.com/bookshelves-project/bookshelves-back",
-        "type": "back"
+        "url": "https://github.com/bookshelves-project/bookshelves",
+        "type": "main"
       },
       {
-        "url": "https://gitlab.com/bookshelves-project/bookshelves-front",
+        "url": "https://github.com/bookshelves-project/bookshelves-front",
         "type": "front"
       }
     ],
@@ -38,9 +41,11 @@
       "laravel",
       "tailwind-css",
       "typescript",
-      "meilisearch"
+      "meilisearch",
+      "php",
+      "vue",
+      "typescript"
     ],
-    "languages": ["php", "vue", "typescript"],
     "features": ["dark-mode", "search", "api"]
   },
   {
@@ -54,9 +59,12 @@
     "context": "personal",
     "type": "website",
     "createdAt": "2020-06-20",
-    "links": {
-      "main": "https://md-interpreter.git-projects.xyz"
-    },
+    "links": [
+      {
+        "url": "https://md-interpreter.git-projects.xyz",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/ewilan-riviere/markdown-interpreter",
@@ -110,12 +118,15 @@
     "context": "personal",
     "type": "website",
     "createdAt": "2020-06-27",
-    "links": {
-      "main": "https://memorandum.ewilan-riviere.com"
-    },
+    "links": [
+      {
+        "url": "https://memorandum.ewilan-riviere.com",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
-        "url": "https://gitlab.com/ewilan-riviere/memorandum",
+        "url": "https://github.com/ewilan-riviere/memorandum",
         "type": "main"
       }
     ],
@@ -125,8 +136,7 @@
         "role": "developer"
       }
     ],
-    "technologies": ["laravel", "tailwind-css", "vite"],
-    "languages": ["php", "typescript"]
+    "technologies": ["nuxt-js", "tailwind-css", "vite", "typescript"]
   },
   {
     "title": "Portfolio",
@@ -139,12 +149,15 @@
     "context": "personal",
     "type": "website",
     "createdAt": "2020-05-19",
-    "links": {
-      "main": "https://ewilan-riviere.com"
-    },
+    "links": [
+      {
+        "url": "https://ewilan-riviere.com",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
-        "url": "https://gitlab.com/ewilan-riviere/portfolio",
+        "url": "https://github.com/ewilan-riviere/portfolio",
         "type": "main"
       }
     ],
@@ -154,8 +167,13 @@
         "role": "developer"
       }
     ],
-    "technologies": ["nuxt-js", "tailwind-css", "typescript"],
-    "languages": ["vue", "typescript"]
+    "technologies": [
+      "nuxt-js",
+      "tailwind-css",
+      "typescript",
+      "vue",
+      "typescript"
+    ]
   },
   {
     "title": "Roazhon StarBus",
@@ -168,9 +186,12 @@
     "context": "personal",
     "type": "website",
     "createdAt": "2020-10-24",
-    "links": {
-      "main": "http://roazhon-star-bus.git-projects.xyz"
-    },
+    "links": [
+      {
+        "url": "http://roazhon-star-bus.git-projects.xyz",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://gitlab.com/ewilan-riviere/roazhon-star-bus",
@@ -195,9 +216,12 @@
     "context": "personal",
     "type": "website",
     "createdAt": "2020-10-30",
-    "links": {
-      "main": "https://skyscale.git-projects.xyz"
-    },
+    "links": [
+      {
+        "url": "https://skyscale.git-projects.xyz",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://gitlab.com/ewilan-riviere/skyscale",
@@ -222,9 +246,12 @@
     "context": "personal",
     "type": "api",
     "createdAt": "2023-03-02",
-    "links": {
-      "main": "https://seeds.git-projects.xyz"
-    },
+    "links": [
+      {
+        "url": "https://seeds.git-projects.xyz",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/seeds",
@@ -237,8 +264,7 @@
         "role": "developer"
       }
     ],
-    "technologies": ["node-js", "fastify"],
-    "languages": ["typescript"],
+    "technologies": ["node-js", "fastify", "typescript"],
     "features": []
   },
   {
@@ -252,9 +278,12 @@
     "context": "personal",
     "type": "library",
     "createdAt": "2023-01-02",
-    "links": {
-      "main": "https://www.npmjs.com/package/@kiwilan/fastify-utils"
-    },
+    "links": [
+      {
+        "url": "https://www.npmjs.com/package/@kiwilan/fastify-utils",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/fastify-utils",
@@ -267,13 +296,12 @@
         "role": "developer"
       }
     ],
-    "technologies": ["node-js", "fastify"],
-    "languages": ["typescript"],
+    "technologies": ["node-js", "fastify", "typescript"],
     "features": []
   },
   {
-    "title": "Node.js Filesystem",
-    "slug": "node-filesystem",
+    "title": "Kiwilan's Node.js Filesystem",
+    "slug": "kiwilan-node-filesystem",
     "isFavorite": false,
     "isDraft": false,
     "isOpenSource": true,
@@ -282,9 +310,12 @@
     "context": "personal",
     "type": "library",
     "createdAt": "2023-03-02",
-    "links": {
-      "main": "https://www.npmjs.com/package/@kiwilan/filesystem"
-    },
+    "links": [
+      {
+        "url": "https://www.npmjs.com/package/@kiwilan/filesystem",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/node-filesystem",
@@ -297,8 +328,7 @@
         "role": "developer"
       }
     ],
-    "technologies": ["node-js"],
-    "languages": ["typescript"],
+    "technologies": ["node-js", "typescript"],
     "features": []
   },
   {
@@ -312,9 +342,12 @@
     "context": "personal",
     "type": "library",
     "createdAt": "2023-01-28",
-    "links": {
-      "main": "https://packagist.org/packages/kiwilan/typescriptable-laravel"
-    },
+    "links": [
+      {
+        "url": "https://packagist.org/packages/kiwilan/typescriptable-laravel",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/typescriptable-laravel",
@@ -327,8 +360,7 @@
         "role": "developer"
       }
     ],
-    "technologies": ["laravel"],
-    "languages": ["php", "typescript"],
+    "technologies": ["laravel", "php", "typescript"],
     "features": []
   },
   {
@@ -342,9 +374,12 @@
     "context": "personal",
     "type": "library",
     "createdAt": "2023-03-25",
-    "links": {
-      "main": "https://packagist.org/packages/kiwilan/php-ebook"
-    },
+    "links": [
+      {
+        "url": "https://packagist.org/packages/kiwilan/php-ebook",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/php-ebook",
@@ -357,8 +392,7 @@
         "role": "developer"
       }
     ],
-    "technologies": [],
-    "languages": ["php"],
+    "technologies": ["php"],
     "features": []
   },
   {
@@ -372,9 +406,12 @@
     "context": "personal",
     "type": "library",
     "createdAt": "2023-03-20",
-    "links": {
-      "main": "https://packagist.org/packages/kiwilan/php-archive"
-    },
+    "links": [
+      {
+        "url": "https://packagist.org/packages/kiwilan/php-archive",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/php-archive",
@@ -387,8 +424,7 @@
         "role": "developer"
       }
     ],
-    "technologies": [],
-    "languages": ["php"],
+    "technologies": ["php"],
     "features": []
   },
   {
@@ -402,9 +438,12 @@
     "context": "personal",
     "type": "library",
     "createdAt": "2022-11-27",
-    "links": {
-      "main": "https://nuxt-svg-transformer.netlify.app"
-    },
+    "links": [
+      {
+        "url": "https://nuxt-svg-transformer.netlify.app",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/nuxt-svg-transformer",
@@ -417,8 +456,7 @@
         "role": "developer"
       }
     ],
-    "technologies": ["nuxt-js"],
-    "languages": ["typescript", "vue"],
+    "technologies": ["nuxt-js", "typescript", "vue"],
     "features": []
   },
   {
@@ -432,9 +470,12 @@
     "context": "personal",
     "type": "library",
     "createdAt": "2022-11-30",
-    "links": {
-      "main": "https://www.npmjs.com/package/nuxt-typed-link"
-    },
+    "links": [
+      {
+        "url": "https://www.npmjs.com/package/nuxt-typed-link",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/nuxt-typed-link",
@@ -447,8 +488,7 @@
         "role": "developer"
       }
     ],
-    "technologies": ["nuxt-js"],
-    "languages": ["typescript", "vue"],
+    "technologies": ["nuxt-js", "typescript", "vue"],
     "features": []
   },
   {
@@ -462,9 +502,12 @@
     "context": "personal",
     "type": "api",
     "createdAt": "2022-10-22",
-    "links": {
-      "main": "https://social-oembed.git-projects.xyz"
-    },
+    "links": [
+      {
+        "url": "https://social-oembed.git-projects.xyz",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://github.com/kiwilan/social-oembed",
@@ -477,8 +520,7 @@
         "role": "developer"
       }
     ],
-    "technologies": ["fastify"],
-    "languages": ["typescript"],
+    "technologies": ["fastify", "typescript"],
     "features": []
   },
   {
@@ -492,13 +534,17 @@
     "context": "personal",
     "type": "website",
     "createdAt": "2022-07-01",
-    "links": {
-      "main": "https://recette.koguart.com"
-    },
+    "links": [
+      {
+        "url": "https://recette.koguart.com",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://gitlab.com/koguart/koguart",
-        "type": "main"
+        "type": "main",
+        "isPrivate": true
       }
     ],
     "developers": [
@@ -511,8 +557,14 @@
         "role": "developer"
       }
     ],
-    "technologies": ["laravel", "filament", "livewire"],
-    "languages": ["php", "typescript"],
+    "technologies": [
+      "laravel",
+      "filament",
+      "livewire",
+      "php",
+      "typescript",
+      "alpinejs"
+    ],
     "features": []
   }
 ]

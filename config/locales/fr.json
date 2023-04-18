@@ -4,7 +4,11 @@
     "hello": "Bonjour, {name}!"
   },
   "about": {
-    "professionalTitle": "Conceptrice développeuse d'applications"
+    "professionalTitle": "Conceptrice développeuse d'applications",
+    "title": "À propos de moi",
+    "subtitle": "Tech fan",
+    "follow": "Suivez-moi sur {social}",
+    "technologies": "Les technologies que j'utilise"
   },
   "nav": {
     "home": "Accueil",
@@ -24,6 +28,8 @@
     "locale-switch": "Changer de langue"
   },
   "hobbies": {
+    "title": "Mes passions",
+    "subtitle": "Ce que j'aime faire dans la vie",
     "develop": {
       "label": "Développer & veille techno",
       "value": "Développer des projets avec mes frameworks préférés, pour expérimenter de nouvelles fonctionnalités de ma veille techno."
@@ -79,9 +85,24 @@
       "text": "Rédiger la documentation technique pour expliquer comment utiliser certains projets, sauvegarder les snippets, rédiger certains articles pour les développeurs."
     }
   },
+  "statistics": {
+    "education": {
+      "label": "Formation",
+      "value": "Bac +5"
+    },
+    "projects": {
+      "label": "Projets",
+      "value": "{number}"
+    },
+    "experience": {
+      "label": "Expérience",
+      "value": "{number} ans"
+    }
+  },
   "project": {
     "title": "Une sélection de mes projets",
     "subtitle": "Personnels, professionnels et open-source",
+    "created-at": "Créé le {date}",
     "details": {
       "developers": "Développeur·ses",
       "begin-date": "Date de début",
@@ -94,10 +115,18 @@
       "technologies": "Technologies"
     },
     "statuses": {
+      "currently-in": "Actuellement en",
       "concept": "Concept & prototype",
       "development": "Développement",
       "finish": "Finitions",
       "tpam": "TMA (Tierce Maintenance Applicative)"
+    },
+    "types": {
+      "website": "Site web",
+      "mobile": "Application mobile",
+      "desktop": "Application de bureau",
+      "api": "API",
+      "library": "Bibliothèque"
     },
     "contexts": {
       "personal": "Personnel",
@@ -114,9 +143,16 @@
       "search": "Moteur de recherche",
       "api": "API"
     },
-    "role": {
+    "roles": {
+      "lead-developer": "Chef·fe de projet",
       "developer": "Développeur·se",
-      "concept": "Concept & idées"
+      "concept": "Concept & idées",
+      "designer": "Designer"
+    },
+    "links": {
+      "title": "Liens",
+      "repositories": "Dépôts",
+      "private": "Privé"
     }
   },
   "projects": {
@@ -194,6 +230,8 @@
     }
   },
   "footer": {
+    "contact-me": "Me contacter",
+    "github": "Github",
     "mit-license": "Licence MIT",
     "built-with": "Carbure avec"
   }

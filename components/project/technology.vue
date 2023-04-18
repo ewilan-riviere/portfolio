@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <li class="border tech-border rounded-full px-2 py-1 flex items-center space-x-2 max-w-max relative">
+  <li class="border tech-border rounded-full px-2 py-1 flex items-center space-x-2 max-w-max relative m-1">
     <div class="tech-bg rounded-full h-3 w-3" />
     <div class="text-sm">
       {{ technology.title }}

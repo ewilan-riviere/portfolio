@@ -27,24 +27,7 @@ export default defineNuxtConfig({
 
   colorMode: modules.colorMode,
   content: modules.content,
-  // i18n: modules.i18n,
-  i18n: {
-    baseUrl: process.env.BASE_URL,
-    locales: [
-      {
-        code: 'en',
-        iso: 'en-US',
-        name: 'English',
-      },
-      {
-        code: 'fr',
-        iso: 'fr-FR',
-        name: 'Français',
-      },
-    ],
-    defaultLocale: 'en',
-    vueI18n: './config/locales/i18n.config.ts',
-  },
+  i18n: modules.i18n,
   svgTransformer: modules.svgTransformer,
   typedLink: modules.typedLink,
 

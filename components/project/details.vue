@@ -5,8 +5,14 @@ const props = defineProps<{
   project: Project
 }>()
 
+const { findOne, content } = useMarkdownContent()
+await findOne(`projects/${props.project?.slug}`, {
+  // localized: true,
+  allowFailed: true,
+})
 const { projectStatuses } = useMainStore()
 const { date } = useUtils()
+const status = projectStatuses.find(s => s.order === props.project?.status)?.slug
 </script>
 
 <template>
@@ -22,23 +28,16 @@ const { date } = useUtils()
         <div class="lg:pr-4">
           <div class="lg:max-w-lg">
             <p class="text-base font-semibold leading-7 text-indigo-600 dark:text-indigo-400">
-              {{ project.type }}
+              {{ $t(`project.types.${project.type}`) }}
             </p>
-            <!-- <h1
-              class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100"
-            >
-              {{ project.title }}
-            </h1> -->
-            <div class="mt-6 text-sm border border-gray-100 dark:border-gray-800 rounded-md p-4">
-              <div>Created at {{ date(props.project?.createdAt) }}</div>
+            <div class="mt-6 text-sm border border-gray-100 dark:border-gray-700 rounded-md p-4">
+              <div>{{ $t('project.created-at', { date: date(props.project?.createdAt) }) }}</div>
               <div class="mt-2">
-                Currently in {{ $t(`project.statuses.${projectStatuses.find(s => s.order === props.project?.status)?.slug}`) }}
+                {{ $t('project.statuses.currently-in') }} {{ $t(`project.statuses.${status}`) }}
               </div>
             </div>
-            <p class="mt-6 text-xl leading-8 text-gray-700 dark:text-gray-300">
-              Aliquet nec orci mattis amet quisque ullamcorper neque, nibh
-              sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque
-              id at vitae feugiat egestas.
+            <p class="mt-6 text-lg leading-8 text-gray-700 dark:text-gray-300">
+              {{ content?.description }}
             </p>
             <project-technologies
               :project="project"
@@ -64,14 +63,12 @@ const { date } = useUtils()
           placeholder="/projects/placeholder.webp"
         />
       </div>
-      <div
-        class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8"
-      >
-        <div class="lg:pr-4">
-          <div class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg prose dark:prose-invert">
-            text
-          </div>
-        </div>
+    </div>
+    <div
+      v-if="content"
+    >
+      <div class="prose dark:prose-invert mx-auto lg:prose-lg">
+        <ContentRenderer :value="content" />
       </div>
     </div>
   </div>

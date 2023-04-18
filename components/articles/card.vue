@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import type { Content } from '~/composables/useMarkdownContent'
 
 interface Props {
-  article: ParsedContent
+  article: Content
   type?: 'home' | 'article'
 }
 
@@ -10,12 +10,13 @@ withDefaults(defineProps<Props>(), {
   type: 'article',
 })
 
-const date = (date: string) =>
-  new Date(date).toLocaleDateString('en-US', {
+function date(date: string) {
+  return new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   })
+}
 </script>
 
 <template>

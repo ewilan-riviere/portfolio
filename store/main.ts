@@ -40,7 +40,7 @@ export const useMainStore = defineStore('main', {
     }[],
     socials: [
       {
-        label: 'Follow on Twitter',
+        label: 'about.follow',
         title: 'Twitter',
         href: 'https://twitter.com/ewilanriviere',
         icon: 'social/twitter',
@@ -48,7 +48,7 @@ export const useMainStore = defineStore('main', {
         colorDark: '#1DA1F2',
       },
       {
-        label: 'Follow on Stack Overflow',
+        label: 'about.follow',
         title: 'Stack Overflow',
         href: 'https://stackoverflow.com/users/11008206/ewilan-r?tab=profile',
         icon: 'social/stackoverflow',
@@ -56,7 +56,7 @@ export const useMainStore = defineStore('main', {
         colorDark: '#F48024',
       },
       {
-        label: 'Follow on GitHub',
+        label: 'about.follow',
         title: 'GitHub',
         href: 'https://github.com/ewilan-riviere',
         icon: 'social/github',
@@ -64,7 +64,7 @@ export const useMainStore = defineStore('main', {
         colorDark: '#fff',
       },
       {
-        label: 'Follow on GitLab',
+        label: 'about.follow',
         title: 'GitLab',
         href: 'https://gitlab.com/ewilan-riviere',
         icon: 'social/gitlab',
@@ -72,7 +72,7 @@ export const useMainStore = defineStore('main', {
         colorDark: '#FC6D26',
       },
       {
-        label: 'Follow on LinkedIn',
+        label: 'about.follow',
         title: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ewilan-riviere/',
         icon: 'social/linkedin',

@@ -14,8 +14,12 @@ const currentDevelopers = props.project?.developers || []
 currentDevelopers.forEach((element) => {
   const developer = developers.find(t => t.slug === element.slug)
 
-  if (developer)
-    list.push(developer)
+  if (developer) {
+    list.push({
+      ...developer,
+      role: element.role,
+    })
+  }
 })
 </script>
 
@@ -27,8 +31,12 @@ currentDevelopers.forEach((element) => {
         class="w-10 h-10 rounded-full object-cover"
         placeholder="/projects/placeholder.webp"
       />
-      <div>{{ developer.name }}</div>
-      <a :href="developer.links?.primary" target="_blank" rel="noopener noreferrer" class="absolute inset-0" />
+      <div>
+        <a :href="developer.links?.primary" target="_blank" rel="noopener noreferrer" class="underline">
+          {{ developer.name }}
+        </a>
+        ({{ $t(`project.roles.${developer.role}`) }})
+      </div>
     </li>
   </ul>
 </template>

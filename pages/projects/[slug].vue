@@ -14,7 +14,7 @@ project.value = projects.find(p => p.slug === slug)
   <layout-page
     v-if="project"
     :title="project.title"
-    description="An overview of my projects"
+    :description="$t(`project.contexts.${project.context}`)"
   >
     <project-details :project="project" />
   </layout-page>

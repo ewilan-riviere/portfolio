@@ -5,11 +5,16 @@ const currentYear = new Date().getFullYear()
 
 const items: {
   label: string
-  to: RouteType
+  to?: RouteType
+  href?: string
 }[] = [
   {
-    label: 'Contact me',
+    label: 'footer.contact-me',
     to: { name: 'contact' },
+  },
+  {
+    label: 'footer.github',
+    href: 'https://github.com/ewilan-riviere',
   },
 ]
 </script>
@@ -29,14 +34,27 @@ const items: {
                 <div
                   class="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200"
                 >
-                  <typed-link
+                  <span
                     v-for="item in items"
                     :key="item.label"
-                    class="transition hover:text-teal-500 dark:hover:text-teal-400"
-                    :to="item.to"
                   >
-                    {{ item.label }}
-                  </typed-link>
+                    <typed-link
+                      v-if="item.to"
+                      class="transition hover:text-teal-500 dark:hover:text-teal-400"
+                      :to="item.to"
+                    >
+                      {{ $t(item.label) }}
+                    </typed-link>
+                    <a
+                      v-else
+                      class="transition hover:text-teal-500 dark:hover:text-teal-400"
+                      :href="item.href"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {{ $t(item.label) }}
+                    </a>
+                  </span>
                 </div>
                 <p class="text-sm text-zinc-400 dark:text-zinc-500">
                   © 2021-{{ currentYear }}

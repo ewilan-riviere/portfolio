@@ -13,14 +13,17 @@ shuffleTechnologies.value = shuffle<Technology>(technologies)
 <template>
   <section>
     <h2 class="text-2xl">
-      Technologies I use
+      {{ $t('about.technologies') }}
     </h2>
     <app-swiper>
       <SwiperSlide
         v-for="technology in shuffleTechnologies"
         :key="technology.slug"
       >
-        <div :title="technology.title" class="flex">
+        <div class="flex">
+          <span class="sr-only">
+            {{ technology.title }}
+          </span>
           <svg-icon
             :name="technology.icon"
             class="shrink-0 w-48 h-20 rounded-lg text-gray-400 dark:text-gray-200 mx-auto"

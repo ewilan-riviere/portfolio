@@ -5,7 +5,7 @@ const { projects } = useMainStore()
 </script>
 
 <template>
-  <layout-page title="Projects" description="An overview of my projects">
+  <layout-page :title="$t('project.title')" :description="$t('project.subtitle')">
     <part-statistics />
     <!-- <app-masonry /> -->
     <div class="mt-14">

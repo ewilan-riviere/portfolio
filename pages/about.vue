@@ -10,7 +10,7 @@ await findOne('about', {
 </script>
 
 <template>
-  <layout-page title="About me" description="Tech enthusiast">
+  <layout-page :title="$t('about.title')" :description="$t('about.subtitle')">
     <div
       class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
     >
@@ -50,10 +50,8 @@ await findOne('about', {
         </ul>
       </div>
     </div>
-    <about-hobbies class="mt-3" />
-    <div class="mt-10">
-      <about-skills class="mt-20" />
-      <about-features class="mt-10" />
-    </div>
+    <about-skills class="mt-10" />
+    <about-hobbies class="mt-10" />
+    <about-features class="mt-10" />
   </layout-page>
 </template>

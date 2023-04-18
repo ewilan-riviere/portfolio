@@ -8,3 +8,11 @@ En tant que jeune développeuse, j'ai commencé à développer mes premiers proj
 J'aime avoir des connaissances sur chaque partie de la chaîne, du développement local au déploiement sur un serveur (avec NGINX), ce qui m'amène à configurer assez souvent des serveurs Linux à la fois pour la production et le développement local. J'aime donc disposer d'outils efficaces, quel que soit l'environnement de développement (Linux, Windows ou macOS) pour pouvoir utiliser facilement telle ou telle version d'un langage.
 
 Je me développe mieux en groupe, préférant la communication et l'aide au développement isolé, à condition d'avoir des collègues qui apprécient également cette façon de travailler. J'aime discuter des technologies, je m'intéresse aux dernières versions des langages que j'utilise et je passe beaucoup de temps à lire de la documentation ou à en faire, en Markdown bien sûr. J'ai toujours trop de projets en cours, mais j'ai toujours quelque chose à faire !
+
+Mes outils de préférés sont :
+
+- IDE : Visual Studio Code
+- Système : macOS (puce M1), Android
+- Serveur : Linux Debian
+- Technologies principales : Laravel, Vue.js, TypeScript, Node.js, Tailwind CSS
+- En plus : GitHub Copilot, TablePlus, Figma

@@ -10,9 +10,12 @@
     "context": "school",
     "type": "website",
     "createdAt": "2018-11-27",
-    "links": {
-      "main": "http://promo03.code-academie.fr"
-    },
+    "links": [
+      {
+        "url": "https://promo-03.code-academie.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
@@ -41,7 +44,6 @@
     "isFavorite": true,
     "isDraft": true,
     "isOpenSource": true,
-    "demo": null,
     "status": "3",
     "formation": "developpeuse-web-web-mobile",
     "context": "school",
@@ -72,13 +74,16 @@
     "context": "school",
     "type": "website",
     "createdAt": "2019-04-01",
-    "links": {
-      "main": "https://dev.website.dotslashplay.it"
-    },
+    "links": [
+      {
+        "url": "https://dev.website.dotslashplay.it",
+        "type": "main"
+      }
+    ],
     "repositories": [
       {
         "url": "https://forge.dotslashplay.it/play.it/api",
-        "type": "back"
+        "type": "api"
       },
       {
         "url": "https://forge.dotslashplay.it/play.it/website",
@@ -160,9 +165,13 @@
     "context": "school",
     "type": "website",
     "createdAt": "2014-06-01",
-    "links": {
-      "main": "/projects/documents/ter-la-cyberviolence.pdf"
-    },
+    "links": [
+      {
+        "url": "/projects/documents/ter-la-cyberviolence.pdf",
+        "label": "TER Cyberviolence",
+        "type": "main"
+      }
+    ],
     "developers": [
       {
         "slug": "ewilan-riviere",

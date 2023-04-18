@@ -8,3 +8,11 @@ As a young developer, I started to develop my first real projects with Laravel (
 I like to have knowledge on each part of the chain, from local development to deployment on a server (with NGINX), which leads me to configure quite often Linux servers for both production and local development. Therefore, I like to have efficient tools, whatever the development environment (Linux, Windows or macOS) to be able to easily use such or such version of a language.
 
 I develop best in groups, preferring communication and help to isolated development, as long as I have colleagues who also enjoy this way of working. I love to discuss technologies, I'm interested in the latest versions of the languages I use and I spend a lot of time reading documentation or making it, in Markdown of course. I always have too many projects on the go, but I also always have something to do!
+
+My favorite tools are :
+
+- IDE : Visual Studio Code
+- System: macOS (M1 chip), Android
+- Server: Linux Debian
+- Main technologies : Laravel, Vue.js, TypeScript, Node.js, Tailwind CSS
+- In addition : GitHub Copilot, TablePlus, Figma

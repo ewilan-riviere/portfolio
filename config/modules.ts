@@ -38,7 +38,7 @@ const i18n: NuxtConfig['i18n'] = {
     },
   ],
   defaultLocale: 'en',
-  vueI18n: '@/i18n.config.ts',
+  vueI18n: './config/locales/i18n.config.ts',
 }
 
 // const schemaOrg: object = {

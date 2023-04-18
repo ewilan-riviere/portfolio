@@ -8,13 +8,22 @@
     "status": "4",
     "formation": "useweb",
     "context": "enterprise",
-    "type": "website",
+    "type": "mobile",
     "createdAt": "2020-09-01",
-    "links": {
-      "main": "https://client.fonciere-aalto.com",
-      "android": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
-      "ios": "https://apps.apple.com/fr/app/fonci%C3%A8re-aalto-espace-client/id1549849593"
-    },
+    "links": [
+      {
+        "url": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
+        "type": "main"
+      },
+      {
+        "url": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
+        "type": "android"
+      },
+      {
+        "url": "https://apps.apple.com/fr/app/fonci%C3%A8re-aalto-espace-client/id1549849593",
+        "type": "ios"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -43,9 +52,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2019-10-01",
-    "links": {
-      "main": "https://www.imprimerie-bretagne.fr"
-    },
+    "links": [
+      {
+        "url": "https://www.imprimerie-bretagne.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -66,9 +78,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2019-04-01",
-    "links": {
-      "main": "https://www.laforet.com"
-    },
+    "links": [
+      {
+        "url": "https://www.laforet.com",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -97,9 +112,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2020-05-12",
-    "links": {
-      "main": "https://www.naviso.fr"
-    },
+    "links": [
+      {
+        "url": "https://www.naviso.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -124,9 +142,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2021-07-12",
-    "links": {
-      "main": "https://participation.developpement-durable.gouv.fr"
-    },
+    "links": [
+      {
+        "url": "https://participation.developpement-durable.gouv.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -147,9 +168,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2020-01-03",
-    "links": {
-      "main": "https://www.secob.fr"
-    },
+    "links": [
+      {
+        "url": "https://www.secob.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -174,9 +198,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2020-02-21",
-    "links": {
-      "main": "https://www.agence-release.com"
-    },
+    "links": [
+      {
+        "url": "https://www.agence-release.com",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -197,9 +224,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2021-06-02",
-    "links": {
-      "main": "https://www.eph35.fr"
-    },
+    "links": [
+      {
+        "url": "https://www.eph35.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -220,9 +250,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2021-06-01",
-    "links": {
-      "main": "https://www.useweb.fr"
-    },
+    "links": [
+      {
+        "url": "https://www.useweb.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {
@@ -243,9 +276,12 @@
     "context": "enterprise",
     "type": "website",
     "createdAt": "2022-06-01",
-    "links": {
-      "main": "https://www.domitys.fr"
-    },
+    "links": [
+      {
+        "url": "https://www.domitys.fr",
+        "type": "main"
+      }
+    ],
     "repositories": [],
     "developers": [
       {

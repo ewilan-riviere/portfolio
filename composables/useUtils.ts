@@ -1,33 +1,32 @@
 interface Options {
-
+  date?: Intl.DateTimeFormatOptions
+  time?: Intl.DateTimeFormatOptions
 }
 
 export function useUtils() {
   const date = (
     date: string | Date | undefined,
     type: 'full' | 'date' | 'time' = 'date',
-    options: Options = {},
+    options: Options = {
+      date: {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      },
+      time: {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false,
+      },
+    },
   ) => {
     if (!date)
       return undefined
 
     const d = new Date(date)
 
-    let userLang = 'en'
-    if (process.client)
-      userLang = navigator.language
-
-    const dateOpts: Intl.DateTimeFormatOptions = {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    }
-
-    const timeOpts: Intl.DateTimeFormatOptions = {
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: false,
-    }
+    const { locale } = useI18n()
+    const userLang = locale.value
 
     let opts: Intl.DateTimeFormatOptions = {
       timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
@@ -37,31 +36,28 @@ export function useUtils() {
       case 'full':
         opts = {
           ...opts,
-          ...dateOpts,
-          ...timeOpts,
+          ...options.date,
+          ...options.time,
         }
         break
 
       case 'date':
         opts = {
           ...opts,
-          ...dateOpts,
+          ...options.date,
         }
         break
 
       case 'time':
         opts = {
           ...opts,
-          ...timeOpts,
+          ...options.time,
         }
         break
 
       default:
         break
     }
-
-    if (options && Object.keys(options).length)
-      opts = options
 
     return d.toLocaleString(userLang, opts)
   }

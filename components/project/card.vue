@@ -3,8 +3,20 @@ const props = defineProps<{
   project: Project
 }>()
 
+const { date } = useUtils()
+
+const { findOne, content } = useMarkdownContent()
+await findOne(`projects/${props.project?.slug}`, {
+  // localized: true,
+  allowFailed: true,
+})
+
 const domain = computed(() => {
-  let url = props.project.links?.main
+  let url
+
+  if (props.project.links?.length)
+    url = props.project.links[0]?.url
+
   if (!url && props.project.repositories?.length)
     url = props.project.repositories[0]?.url
 
@@ -19,6 +31,9 @@ const domain = computed(() => {
   <li class="group relative flex flex-col items-start rounded-md">
     <div
       class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
+    />
+    <div
+      class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 border border-zinc-200 dark:border-zinc-700 sm:rounded-2xl sm:-inset-x-6"
     />
     <div class="flex items-center justify-between w-full">
       <div
@@ -44,24 +59,30 @@ const domain = computed(() => {
         </div>
       </div>
     </div>
-    <div class="mt-6 text-base text-zinc-800 dark:text-zinc-100 w-full">
+    <div class="mt-6 text-base text-zinc-800 dark:text-zinc-100 w-full relative z-10">
       <div class="flex items-center justify-between w-full">
         <div>
-          <h2 class="font-semibold">
-            {{ project.title }}
-          </h2>
+          <div class="flex items-center space-x-2">
+            <h2 class="font-semibold">
+              {{ project.title }}
+            </h2>
+            <SvgIcon v-if="project.isFavorite" name="heart" class="w-4 h-4 text-red-600 dark:text-red-400" title="Fav" />
+          </div>
           <p class="text-gray-600 dark:text-gray-400">
-            {{ project.type }}
+            <span>{{ $t(`project.types.${project.type}`) }}</span>
+            <span class="mx-1">-</span>
+            <time :datetime="project.createdAt?.toString()">{{ date(project.createdAt, 'date', {
+              date: {
+                year: 'numeric',
+                month: 'short',
+              },
+            }) }}</time>
           </p>
-        </div>
-        <div v-if="project.isFavorite" title="Fav">
-          <SvgIcon name="heart" class="w-5 h-5 text-red-600 dark:text-red-400" />
         </div>
       </div>
     </div>
     <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      Creating technology to empower civilians to explore space on their own
-      terms.
+      {{ content?.description }}
     </p>
     <p
       v-if="domain"

@@ -1,20 +1,19 @@
 import type { H3Event } from 'h3'
-import { localeHead } from 'vue-i18n-routing'
 
-export const getJson = <T>(json: object): T => {
+export function getJson<T>(json: object): T {
   const data: T = JSON.parse(JSON.stringify(json))
 
   return data
 }
 
-export const sortByDate = (a: any, b: any) => {
+export function sortByDate(a: any, b: any) {
   const dateA = new Date(a.dateBegin).getTime()
   const dateB = new Date(b.dateBegin).getTime()
 
   return dateA > dateB ? 1 : -1
 }
 
-const sortByKey = (array: any[], key: string) => {
+function sortByKey(array: any[], key: string) {
   return array.sort((a, b) => {
     const x = a[key]
     const y = b[key]
@@ -22,7 +21,7 @@ const sortByKey = (array: any[], key: string) => {
   })
 }
 
-const shuffle = <T>(a: any[]): T[] => {
+function shuffle<T>(a: any[]): T[] {
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]]
@@ -30,7 +29,7 @@ const shuffle = <T>(a: any[]): T[] => {
   return a
 }
 
-export const queryBuilder = <T>(event: H3Event, data: T[]): T[] => {
+export function queryBuilder<T>(event: H3Event, data: T[]): T[] {
   if (event.node.req.url) {
     const config = useRuntimeConfig()
 

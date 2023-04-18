@@ -5,6 +5,7 @@ interface Options {
   where?: QueryBuilderWhere
   limit?: number
   first?: boolean
+  allowFailed?: boolean
 }
 
 interface HeadContent {
@@ -34,9 +35,9 @@ interface HeadContent {
   // title: string
 }
 
-interface Content extends ParsedContent, HeadContent {}
+export interface Content extends ParsedContent, HeadContent {}
 
-const optsDefault: Options = { localized: false, where: { _draft: false }, first: false }
+const optsDefault: Options = { localized: false, where: { _draft: false }, first: false, allowFailed: false }
 
 export function useMarkdownContent() {
   const contents = ref<Content[]>()
@@ -44,8 +45,8 @@ export function useMarkdownContent() {
 
   const addMetaHead = (articles: Content[]) => {
     const nuxtApp = useNuxtApp()
-    const locale = nuxtApp.vueApp.config.globalProperties.$i18n.locale
-    const fallbackLocale = nuxtApp.vueApp.config.globalProperties.$i18n.fallbackLocale
+    const locale = nuxtApp.vueApp.config.globalProperties.$i18n.locale ?? 'en'
+    const fallbackLocale = nuxtApp.vueApp.config.globalProperties.$i18n.fallbackLocale ?? 'en'
 
     articles.forEach((article) => {
       const fullPath = article._file?.replace(/\.md$/, '')
@@ -77,8 +78,10 @@ export function useMarkdownContent() {
     if (options.limit)
       documents = documents.limit(options.limit)
 
-    if (options.localized)
+    if (options.localized) {
       documents = documents.locale(locale.value)
+      console.log(documents)
+    }
 
     documents = documents.sort({
       createdAt: -1,
@@ -116,7 +119,7 @@ export function useMarkdownContent() {
     const document = documents[0] ? documents[0] : undefined
     content.value = document
 
-    if (!document) {
+    if (!document && !options.allowFailed) {
       const router = useRouter()
       router.push({ name: '404' })
     }

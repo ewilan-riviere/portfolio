@@ -4,16 +4,10 @@ declare interface DeveloperLight {
 }
 
 interface Links {
-  main?: string
-  android?: string
-  ios?: string
-  api?: string
-}
-
-interface Repository {
   url: string
   type: string
-  isPrivate: boolean
+  isPrivate?: boolean
+  label?: string
 }
 
 declare interface Project {
@@ -25,14 +19,13 @@ declare interface Project {
   image?: string
   typeColor?: string
   technologies?: string[]
-  languages?: string[]
   context?: 'personal' | 'enterprise' | 'school'
   contextColor?: string
   type?: 'website' | 'app' | 'api' | 'library'
   createdAt?: Date
   status?: number
   developers?: DeveloperLight[]
-  links?: Links
-  repositories?: Repository[]
+  links?: Links[]
+  repositories?: Links[]
   features?: string[]
 }

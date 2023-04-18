@@ -34,10 +34,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 defineEmits(['click'])
 
-// typeof import("../../nuxt-typed-link/src/runtime/component-i18n.vue")['default']
-// const typedLink = () => import('../../../nuxt-typed-link/src/runtime/component-i18n.vue')
-// console.log(typedLink)
-
 const tag = ref('button')
 const isLink = ref(false)
 const toLink = ref('/')

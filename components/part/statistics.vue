@@ -11,22 +11,25 @@ const experience = currentDate.getFullYear() - startDate.getFullYear()
 
 const items: {
   title: string
-  value: string | number
+  value: string
+  params?: Record<string, string | number>
   icon: IconType
 }[] = [
   {
-    title: 'Master\'s degree',
-    value: '+5',
+    title: 'statistics.education.label',
+    value: 'statistics.education.value',
     icon: 'statistics/education',
   },
   {
-    title: 'Projects',
-    value: projects.length,
+    title: 'statistics.projects.label',
+    value: 'statistics.projects.value',
+    params: { number: projects.length },
     icon: 'statistics/projects',
   },
   {
-    title: 'Experience years',
-    value: `+${experience}`,
+    title: 'statistics.experience.label',
+    value: 'statistics.experience.value',
+    params: { number: experience },
     icon: 'statistics/experience',
   },
 ]
@@ -48,12 +51,12 @@ const items: {
           <dt
             class="truncate text-sm font-medium text-gray-500 dark:text-gray-400"
           >
-            {{ item.title }}
+            {{ $t(item.title) }}
           </dt>
           <dd
             class="mt-1 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100"
           >
-            {{ item.value }}
+            {{ $t(item.value, item.params ?? {}) }}
           </dd>
         </div>
       </div>

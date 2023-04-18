@@ -29,7 +29,7 @@
       Send me a message and I'll get back to you as soon as possible.
     </p>
     <div class="mt-6 flex justify-end">
-      <app-button color="white" :to="{ name: 'about', hash: '#contact' }">
+      <app-button color="white" :to="{ name: 'contact' }">
         Contact me
       </app-button>
     </div>
