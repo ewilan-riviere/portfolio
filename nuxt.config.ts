@@ -14,7 +14,7 @@ export default defineNuxtConfig({
 
   extends: [
     '@nuxt-themes/docus',
-    'nuxt-seo-kit', // https://github.com/harlan-zw/nuxt-seo-kit
+    // 'nuxt-seo-kit', // https://github.com/harlan-zw/nuxt-seo-kit
   ],
   modules: [
     '@nuxt/devtools', // https://devtools.nuxtjs.org

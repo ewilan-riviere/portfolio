@@ -4,6 +4,7 @@
 [![Tailwind CSS][tailwind-version-src]][tailwind-version-href]
 [![Content][content-version-src]][content-version-href]
 [![i18n][i18n-version-src]][i18n-version-href]
+
 [![tests][tests-src]][tests-href]
 [![license][license-src]][license-href]
 
@@ -50,6 +51,15 @@ pnpm preview
   - [@nuxt/devtools](https://devtools.nuxtjs.org/)
   - [nuxt-svg-transformer](https://github.com/kiwilan/nuxt-svg-transformer)
   - [nuxt-typed-link](https://github.com/kiwilan/nuxt-typed-link)
+
+## Resume size
+
+To reduce the size of the resume, you can use `ps2pdf` to convert the PDF to a smaller size.
+
+```bash
+sudo apt-get install ghostscript
+ps2pdf resume.pdf resume-ps2pdf.pdf
+```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
