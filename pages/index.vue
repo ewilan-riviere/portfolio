@@ -23,7 +23,7 @@ useHead({
     <home-gallery :projects="projects" />
     <layout-container>
       <img src="/images/placeholder.webp" alt="">
-      <img src="/images/bookshelves.webp" alt="">
+      <img src="/projects/bookshelves.webp" alt="">
       <div v-animate class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
         <div class="flex flex-col gap-16">
           <articles-card v-for="article in articles" :key="article._id" :article="article" type="home" />
