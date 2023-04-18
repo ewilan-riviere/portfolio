@@ -7,6 +7,13 @@ const { socials } = useMainStore()
 await findOne('about', {
   localized: true,
 })
+
+const { t } = useI18n()
+
+useHead({
+  titleTemplate: '%s - Ewilan Rivière',
+  title: t('head.about'),
+})
 </script>
 
 <template>

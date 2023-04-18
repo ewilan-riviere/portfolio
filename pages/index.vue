@@ -8,6 +8,13 @@ await findAll('articles', {
     draft: false,
   },
 })
+
+const { t } = useI18n()
+
+useHead({
+  titleTemplate: '%s - Ewilan Rivière',
+  title: t('head.home'),
+})
 </script>
 
 <template>

@@ -1,9 +1,16 @@
 <script lang="ts" setup>
 const { findAll, contents: articles } = useMarkdownContent()
+const { t } = useI18n()
+
 await findAll('articles', {
   where: {
     draft: false,
   },
+})
+
+useHead({
+  titleTemplate: '%s - Ewilan Rivière',
+  title: t('head.blog'),
 })
 </script>
 

@@ -8,6 +8,11 @@ const slug = params.slug as string
 
 const project = ref<Project>()
 project.value = projects.find(p => p.slug === slug)
+
+useHead({
+  titleTemplate: '%s - Ewilan Rivière',
+  title: project.value?.title,
+})
 </script>
 
 <template>

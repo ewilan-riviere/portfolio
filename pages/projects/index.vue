@@ -2,6 +2,12 @@
 import { useMainStore } from '~/store/main'
 
 const { projects } = useMainStore()
+const { t } = useI18n()
+
+useHead({
+  titleTemplate: '%s - Ewilan Rivière',
+  title: t('head.projects'),
+})
 </script>
 
 <template>

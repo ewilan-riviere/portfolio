@@ -23,14 +23,16 @@
           class="stroke-zinc-400 dark:stroke-zinc-500"
         />
       </svg>
-      <span class="ml-3">Contact</span>
+      <span class="ml-3">
+        {{ $t('home.contact.title') }}
+      </span>
     </h2>
     <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      Send me a message and I'll get back to you as soon as possible.
+      {{ $t('home.contact.subtitle') }}
     </p>
     <div class="mt-6 flex justify-end">
       <app-button color="white" :to="{ name: 'contact' }">
-        Contact me
+        {{ $t('home.contact.button') }}
       </app-button>
     </div>
   </div>

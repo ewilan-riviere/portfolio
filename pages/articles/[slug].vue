@@ -4,6 +4,11 @@ const { findOne, content: article } = useMarkdownContent()
 await findOne(fullPath)
 
 const { date } = useUtils()
+
+useHead({
+  titleTemplate: '%s - Ewilan Rivière',
+  title: article.value?.title,
+})
 </script>
 
 <template>

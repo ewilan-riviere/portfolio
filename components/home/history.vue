@@ -38,10 +38,12 @@ const toggle = ref(false)
             class="stroke-zinc-400 dark:stroke-zinc-500"
           />
         </svg>
-        <span class="ml-3"> Work & Education </span>
+        <span class="ml-3">
+          {{ $t('home.experience.title') }}
+        </span>
       </h2>
     </div>
-    <field-toggle v-model="toggle" label="See work" flexible class="mt-4" />
+    <field-toggle v-model="toggle" :label="$t('home.experience.toggle')" flexible class="mt-4" />
     <div>
       <ol v-if="toggle" class="mt-6 space-y-3">
         <home-history-item
@@ -64,7 +66,7 @@ const toggle = ref(false)
       :href="getCVPath"
       target="_blank"
     >
-      Download CV
+      {{ $t('home.experience.download-cv') }}
       <svg
         viewBox="0 0 16 16"
         fill="none"
