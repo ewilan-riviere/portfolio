@@ -7,7 +7,7 @@ interface SocialItem {
 
 declare interface About {
   name: string
-  professional-title: string
+  'professional-title': string
   title: string
   subtitle: string
   text: string
