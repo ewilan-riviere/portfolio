@@ -21,11 +21,11 @@ function loaded(loaded: boolean) {
           {{ about?.name }}
         </h1>
         <div
-          class="max-w-lg mx-auto mt-3 text-lg md:text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl font-quicksand font-medium lg:text-3xl"
+          class="max-w-lg mx-auto mt-1 text-lg text-gray-800 dark:text-gray-200 sm:max-w-3xl font-quicksand font-medium"
         >
           {{ $t('about.professional-title') }}
         </div>
-        <blockquote class="italic text-lg mt-6">
+        <blockquote class="italic text-xl mt-3">
           « {{ $t('about.citation') }} »
         </blockquote>
         <home-social class="mt-5 mx-auto lg:mx-0 w-max" />
