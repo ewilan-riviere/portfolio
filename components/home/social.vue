@@ -15,7 +15,7 @@ const { socials } = useMainStore()
       class="block"
       :title="social.title"
     >
-      <div class="text-white hover:text-gray-300 dark:text-gray-200 hover:bg-gray-300 hover:bg-opacity-30 transition-colors rounded-md p-0.5">
+      <div class="text-black hover:text-gray-800  hover:bg-gray-100 hover:bg-opacity-30 transition-colors rounded-md p-0.5 dark:text-gray-200 dark:hover:text-gray-300 dark:hover:bg-gray-700">
         <svg-icon
           :name="social.icon"
           class="w-6 h-6"

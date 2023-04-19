@@ -23,7 +23,8 @@
     }
   },
   "about": {
-    "professionalTitle": "Manager of Digital and Data Solutions",
+    "professional-title": "Fullstack developer",
+    "citation": "Open source is the heart of our experience.",
     "title": "About me",
     "subtitle": "Tech enthusiast",
     "follow": "Follow on {social}",

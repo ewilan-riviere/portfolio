@@ -23,9 +23,12 @@ function loaded(loaded: boolean) {
         <div
           class="max-w-lg mx-auto mt-3 text-lg md:text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl font-quicksand font-medium lg:text-3xl"
         >
-          {{ $t('about.professionalTitle') }}
+          {{ $t('about.professional-title') }}
         </div>
-        <home-social class="mt-3 mx-auto lg:mx-0 w-max" />
+        <blockquote class="italic text-lg mt-6">
+          « {{ $t('about.citation') }} »
+        </blockquote>
+        <home-social class="mt-5 mx-auto lg:mx-0 w-max" />
       </div>
       <div class="flex mt-10 lg:mt-0">
         <div

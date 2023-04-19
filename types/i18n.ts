@@ -12,7 +12,7 @@
 //       hello: string
 //     }
 //     about: {
-//       professionalTitle: string
+//       professional-title: string
 //     }
 //     title: string
 //     hero: {

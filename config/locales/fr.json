@@ -23,7 +23,8 @@
     }
   },
   "about": {
-    "professionalTitle": "Manageuse de solutions digitale et data",
+    "professional-title": "Développeuse fullstack",
+    "citation": "L'open-source est le coeur de notre métier.",
     "title": "À propos de moi",
     "subtitle": "Tech fan",
     "follow": "Suivez-moi sur {social}",
