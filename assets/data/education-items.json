@@ -27,11 +27,11 @@
     "dateBegin": "2018-09-01",
     "dateEnd": "2019-05-01",
     "isDraft": false,
-    "url": "https://code-academie.fr/",
+    "url": "https://face.bzh/nos-actions/formation/code-academie",
     "links": {
       "place": {
         "name": "Code Académie",
-        "link": "http://code-academie.fr"
+        "link": "https://face.bzh/nos-actions/formation/code-academie"
       },
       "promo": {
         "name": "Promo 3",

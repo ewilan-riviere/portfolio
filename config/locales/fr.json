@@ -119,6 +119,8 @@
     "title": "Une sélection de mes projets",
     "subtitle": "Personnels, professionnels et open-source",
     "created-at": "Créé le {date}",
+    "currently-in": "Actuellement en",
+    "type": "Type {type}",
     "details": {
       "developers": "Développeur·ses",
       "begin-date": "Date de début",
@@ -131,7 +133,6 @@
       "technologies": "Technologies"
     },
     "statuses": {
-      "currently-in": "Actuellement en",
       "concept": "Concept & prototype",
       "development": "Développement",
       "finish": "Finitions",
@@ -165,10 +166,15 @@
       "concept": "Concept & idées",
       "designer": "Designer"
     },
-    "links": {
-      "title": "Liens",
-      "repositories": "Dépôts",
+    "links-origin": {
+      "link": "Lien",
+      "repository": "Dépôt",
       "private": "Privé"
+    },
+    "links-type": {
+      "main": "Principal",
+      "android": "Android",
+      "ios": "iOS"
     }
   },
   "achievements": {

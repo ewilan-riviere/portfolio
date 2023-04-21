@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { useMainStore } from '~/store/main'
+import type { Developer } from '~/types/developer'
+import type { Project } from '~/types/project'
 
 const props = defineProps<{
   project: Project
@@ -25,10 +27,10 @@ currentDevelopers.forEach((element) => {
 
 <template>
   <ul class="space-y-2">
-    <li v-for="developer in list" :key="developer.slug" class="flex items-center space-x-2 relative">
+    <li v-for="developer in list" :key="developer.slug" class="flex items-center space-x-2 relative text-sm">
       <app-img
         :src="developer.avatar" :alt="developer.name"
-        class="w-10 h-10 rounded-full object-cover"
+        class="w-8 h-8 rounded-full object-cover"
       />
       <div>
         <a :href="developer.links?.primary" target="_blank" rel="noopener noreferrer" class="underline">
@@ -39,5 +41,3 @@ currentDevelopers.forEach((element) => {
     </li>
   </ul>
 </template>
-
-<style scoped></style>

@@ -104,7 +104,7 @@
   "statistics": {
     "education": {
       "label": "Education",
-      "value": "Master\"s degree"
+      "value": "Master's degree"
     },
     "projects": {
       "label": "Projects",
@@ -119,6 +119,8 @@
     "title": "A selection of my projects",
     "subtitle": "Personal, profesional and open-source",
     "created-at": "Created at {date}",
+    "currently-in": "Currently in",
+    "type": "Type {type}",
     "details": {
       "developers": "Developers",
       "begin-date": "Begin date",
@@ -131,7 +133,6 @@
       "technologies": "Technologies"
     },
     "statuses": {
-      "currently-in": "Currently in",
       "concept": "Concept & prototype",
       "development": "Development",
       "finish": "Finishes",
@@ -165,10 +166,15 @@
       "concept": "Concept & ideas",
       "designer": "Designer"
     },
-    "links": {
-      "title": "Links",
-      "repositories": "Repositories",
+    "links-origin": {
+      "link": "Link",
+      "repository": "Repository",
       "private": "Private"
+    },
+    "links-type": {
+      "main": "Main",
+      "android": "Android",
+      "ios": "iOS"
     }
   },
   "achievements": {

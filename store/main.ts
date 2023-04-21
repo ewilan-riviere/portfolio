@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia'
+import type { Developer } from '~/types/developer'
+import type { Project } from '~/types/project'
 import type { Technology } from '~/types/technology'
 import type { IconType } from '~~/.nuxt/svg-transformer'
 import type { RouteType } from '~~/.nuxt/typed-link'

@@ -29,7 +29,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       },
       {
         "slug": "mopi",
@@ -74,7 +74,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["laravel", "tailwind-css", "vue-js", "vite"]
@@ -103,7 +103,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ]
   },
@@ -133,7 +133,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["nuxt-js", "tailwind-css", "vite", "typescript"]
@@ -164,7 +164,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": [
@@ -201,7 +201,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ]
   },
@@ -231,7 +231,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ]
   },
@@ -261,7 +261,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["node-js", "fastify", "typescript"],
@@ -293,7 +293,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["node-js", "fastify", "typescript"],
@@ -325,7 +325,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["node-js", "typescript"],
@@ -357,7 +357,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["laravel", "php", "typescript"],
@@ -389,7 +389,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["php"],
@@ -421,7 +421,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["php"],
@@ -453,7 +453,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["nuxt-js", "typescript", "vue"],
@@ -485,7 +485,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["nuxt-js", "typescript", "vue"],
@@ -517,7 +517,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       }
     ],
     "technologies": ["fastify", "typescript"],
@@ -550,7 +550,7 @@
     "developers": [
       {
         "slug": "ewilan-riviere",
-        "role": "developer"
+        "role": "lead-developer"
       },
       {
         "slug": "julien-baylac",

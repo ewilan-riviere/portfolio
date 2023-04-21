@@ -1,3 +1,5 @@
+import type { DeveloperLight } from './project'
+
 interface Link {
   primary?: string
   github?: string
@@ -7,7 +9,7 @@ interface Link {
   twitter?: string
   mail?: string
 }
-declare interface Developer extends DeveloperLight {
+export interface Developer extends DeveloperLight {
   name: string
   avatar?: string
   links?: Link

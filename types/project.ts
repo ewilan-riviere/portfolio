@@ -1,16 +1,17 @@
-declare interface DeveloperLight {
+export interface DeveloperLight {
   slug: string
   role: string
 }
 
-interface Links {
+export interface ProjectLink {
   url: string
   type: string
   isPrivate?: boolean
   label?: string
+  origin?: string
 }
 
-declare interface Project {
+export interface Project {
   title: string
   slug: string
   isDraft?: boolean
@@ -25,7 +26,7 @@ declare interface Project {
   createdAt?: Date
   status?: number
   developers?: DeveloperLight[]
-  links?: Links[]
-  repositories?: Links[]
+  links?: ProjectLink[]
+  repositories?: ProjectLink[]
   features?: string[]
 }
