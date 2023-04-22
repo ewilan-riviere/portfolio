@@ -13,7 +13,7 @@
   "home": {
     "contact": {
       "title": "Contact",
-      "subtitle": "Send me a message and I\"ll get back to you as soon as possible.",
+      "subtitle": "Send me a message and I'll get back to you as soon as possible.",
       "button": "Contact me"
     },
     "experience": {
@@ -64,7 +64,7 @@
     },
     "role-play": {
       "label": "Role play",
-      "value": "I\"m beginner Game Master, but I love long-term campaigns."
+      "value": "I'm beginner Game Master, but I love long-term campaigns."
     },
     "video-games": {
       "label": "Video games",
@@ -72,7 +72,7 @@
     },
     "tv-shows": {
       "label": "TV shows",
-      "value": "I\"m watching science-fiction or fantasy TV shows or web series."
+      "value": "I'm watching science-fiction or fantasy TV shows or web series."
     }
   },
   "features": {
@@ -90,11 +90,11 @@
     },
     "experiments": {
       "title": "Tests & experiments",
-      "text": "Write tests to improve the maintainability of projects with a CI/CD. But also see what\"s new on the technologies I like and test them, then implement them in new projects."
+      "text": "Write tests to improve the maintainability of projects with a CI/CD. But also see what's new on the technologies I like and test them, then implement them in new projects."
     },
     "seo": {
       "title": "SEO",
-      "text": "Whether it\"s setting up `head` metadata, open graph, redirects, traffic analysis or ecodesign, SEO is important in every project."
+      "text": "Whether it's setting up `head` metadata, open graph, redirects, traffic analysis or ecodesign, SEO is important in every project."
     },
     "documentation": {
       "title": "Technical documentation",
@@ -237,7 +237,7 @@
   "contact": {
     "page-title": "Contact me",
     "page-subtitle": "Only nice messages!",
-    "title": "You\"ve send mail!",
+    "title": "You've send mail!",
     "subtitle": "If you want to contact me for a new project!",
     "form": {
       "name": "Name",
