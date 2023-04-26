@@ -26,6 +26,9 @@ defineProps<{
         <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
           {{ description }}
         </p>
+        <div class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          <slot name="header" />
+        </div>
       </div>
     </header>
     <div class="mt-16 sm:mt-20">

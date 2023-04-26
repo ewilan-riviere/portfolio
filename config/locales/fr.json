@@ -226,7 +226,14 @@
   },
   "blog": {
     "title": "Des guides utiles",
-    "subtitle": "À propos de tech, du web et de serveurs"
+    "subtitle": "À propos de tech, du web et de serveurs",
+    "article": {
+      "read-more": "Lire la suite",
+      "published-at": "Publié le {date}",
+      "updated-at": "Mis à jour le {date}",
+      "last-update": "Dernière mise à jour le {date}",
+      "tags": "Tags"
+    }
   },
   "contact": {
     "page-title": "Me contacter",

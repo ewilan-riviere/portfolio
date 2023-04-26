@@ -30,14 +30,15 @@ useHead({
                 :key="article._id"
                 class="flex items-start space-x-6"
               >
-                <div class="text-sm font-semibold text-zinc-800 dark:text-zinc-100 pr-16 w-40 space-y-3">
-                  {{ article.category }}
+                <div
+                  class="text-sm font-semibold text-zinc-800 dark:text-zinc-100 pr-16 w-40 space-y-3"
+                >
+                  <app-img :src="article.icon" :alt="article.title" class="w-20 h-20" />
+                  <div class="mt-1">
+                    {{ article.category }}
+                  </div>
                 </div>
-                <articles-card
-                  class="w-full"
-                  :article="article"
-                  type="home"
-                />
+                <articles-card class="w-full" :article="article" type="home" />
               </div>
             </div>
           </div>

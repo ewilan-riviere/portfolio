@@ -13,6 +13,27 @@ useHead({
 
 <template>
   <layout-page v-if="article" :title="article?.title" :description="article?.description">
+    <template #header>
+      <div class="text-base text-zinc-400 dark:text-zinc-300 mt-5">
+        <time
+          v-if="article.publishedAt"
+          :datetime="article.publishedAt?.toString()"
+          :class="{
+            'text-sm': article.updatedAt,
+          }"
+          class="block"
+        >
+          {{ $t(`blog.article.published-at`, { date: date(article.publishedAt, 'date') }) }}
+        </time>
+        <time
+          v-if="article.updatedAt"
+          :datetime="article.updatedAt?.toString()"
+          class="block mt-1 font-semibold text-lg"
+        >
+          {{ $t(`blog.article.updated-at`, { date: date(article.updatedAt, 'date') }) }}
+        </time>
+      </div>
+    </template>
     <div class="xl:relative">
       <div class="mx-auto max-w-2xl">
         <typed-link
@@ -35,26 +56,15 @@ useHead({
           </svg>
         </typed-link>
         <article>
+          <app-img :src="article.picture" :alt="article.title" class="w-full h-64 object-top object-cover" />
           <header class="flex flex-col">
             <h1
-              class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl sr-only"
+              class="sr-only"
             >
               {{ article.title }}
             </h1>
-            <time
-              v-if="article.createdAt"
-              :datetime="article.createdAt"
-              class="order-first flex items-center text-base text-zinc-400 dark:text-zinc-300"
-            >
-              <span
-                class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"
-              />
-              <span class="ml-3">
-                {{ date(article.createdAt, 'date') }}
-              </span>
-            </time>
           </header>
-          <div class="mt-8 prose-lg dark:prose-invert">
+          <div class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline">
             <ContentRenderer :value="article" />
           </div>
         </article>

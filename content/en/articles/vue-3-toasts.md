@@ -1,10 +1,10 @@
 ---
 title: Toasts on Vue 3
 description: Add toasts to Vue 3 / Nuxt 3
-picture: /blog/vue-3-toasts.webp
 category: vue
-tags: [vue,nuxt]
-date: 2022-07-08
+tags: [vue, nuxt]
+publishedAt: 2022-07-08
+updatedAt: 2023-04-26
 draft: true
 ---
 
@@ -15,13 +15,13 @@ This guide use Pinia as store [**pinia.vuejs.org**](https://pinia.vuejs.org) and
 ## Create store
 
 ```ts [store/toast.ts]
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
 /**
  * Manage toats global state
  * from: https://blog.aspiresys.pl/technology/toast-toasts-in-vue
  */
-export const useToastStore = defineStore('toast', {
+export const useToastStore = defineStore("toast", {
   state: () => ({
     toasts: [] as Toast[],
   }),
@@ -36,64 +36,64 @@ export const useToastStore = defineStore('toast', {
      * Add toast to list
      */
     addToast(payload: Toast) {
-      const toasts = this.toasts
-      toasts.push(payload)
-      this.timeoutToast(payload)
+      const toasts = this.toasts;
+      toasts.push(payload);
+      this.timeoutToast(payload);
 
       this.$patch({
         toasts,
-      })
+      });
     },
     /**
      * Set timeout to toast
      */
     timeoutToast(payload: Toast) {
       setTimeout(() => {
-        this.deleteToast(payload)
-      }, 4000)
+        this.deleteToast(payload);
+      }, 4000);
     },
     /**
      * Delete a toast
      */
     deleteToast(payload: Toast) {
-      const toasts = this.toasts
+      const toasts = this.toasts;
 
-      const index = toasts.findIndex((key) => key.id === payload.id)
-      toasts.splice(index, 1)
+      const index = toasts.findIndex((key) => key.id === payload.id);
+      toasts.splice(index, 1);
 
       this.$patch({
         toasts,
-      })
+      });
     },
   },
-})
+});
 ```
 
 ## Create interface
 
 ```ts [types/toast.d.ts]
-declare type ToastAuto = 'success' | 'error'
+declare type ToastAuto = "success" | "error";
 
 declare type ToastType =
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'information'
-  | 'default'
+  | "success"
+  | "warning"
+  | "error"
+  | "information"
+  | "default";
 
 declare interface Toast {
-  title: string
-  text?: string
-  type?: ToastType
-  date?: Date
-  id?: string
+  title: string;
+  text?: string;
+  type?: ToastType;
+  date?: Date;
+  id?: string;
 }
 ```
 
 ## Create composable (optional)
 
 ```ts [composables/useToast.ts]
-import { useToastStore } from '~~/store/toast'
+import { useToastStore } from "~~/store/toast";
 
 /**
  * Toast composable
@@ -103,30 +103,34 @@ export const useToast = () => {
    * Push toast to store
    */
   const pushToast = (toast: Toast) => {
-    const store = useToastStore()
-    store.addToast(toast)
-  }
+    const store = useToastStore();
+    store.addToast(toast);
+  };
 
   return {
     pushToast,
-  }
-}
+  };
+};
 ```
 
 ## Create components
 
 ```vue [components/app/toasts.vue]
 <script setup lang="ts">
-import AppToast from '@/components/app/toast.vue'
-import { useToastStore } from '~/store/toast'
+import AppToast from "@/components/app/toast.vue";
+import { useToastStore } from "~/store/toast";
 
-const toastStore = useToastStore()
+const toastStore = useToastStore();
 </script>
 
 <template>
   <div class="fixed top-0 right-0 z-50">
     <transition-group name="list" tag="section">
-      <app-toast v-for="(toast, id) in toastStore.toastsList" :key="id" :toast="toast" />
+      <app-toast
+        v-for="(toast, id) in toastStore.toastsList"
+        :key="id"
+        :toast="toast"
+      />
     </transition-group>
   </div>
 </template>
@@ -134,38 +138,38 @@ const toastStore = useToastStore()
 
 ```vue
 <script setup lang="ts">
-import SvgIcon from '@/components/svg-icon.vue'
-import { useToastStore } from '~/store/toast'
+import SvgIcon from "@/components/svg-icon.vue";
+import { useToastStore } from "~/store/toast";
 
 const props = defineProps<{
-  toast?: Toast
-}>()
+  toast?: Toast;
+}>();
 
-const type = props.toast?.type ? props.toast.type : 'default'
+const type = props.toast?.type ? props.toast.type : "default";
 const bgColor = computed(() => {
   const colors = {
-    success: 'bg-green-100',
-    warning: 'bg-orange-100',
-    error: 'bg-red-100',
-    information: 'bg-blue-100',
-    default: 'bg-blue-100',
-  }
-  return colors[type] || colors.default
-})
+    success: "bg-green-100",
+    warning: "bg-orange-100",
+    error: "bg-red-100",
+    information: "bg-blue-100",
+    default: "bg-blue-100",
+  };
+  return colors[type] || colors.default;
+});
 const color = computed(() => {
   const colors = {
-    success: 'text-green-400',
-    warning: 'text-orange-400',
-    error: 'text-red-400',
-    information: 'text-blue-400',
-    default: 'text-blue-400',
-  }
-  return colors[type]
-})
+    success: "text-green-400",
+    warning: "text-orange-400",
+    error: "text-red-400",
+    information: "text-blue-400",
+    default: "text-blue-400",
+  };
+  return colors[type];
+});
 const clear = () => {
-  const toast = useToastStore()
-  toast.deleteToast(props.toast!)
-}
+  const toast = useToastStore();
+  toast.deleteToast(props.toast!);
+};
 </script>
 
 <template>
@@ -229,39 +233,37 @@ module.exports = {
     extend: {
       keyframes: {
         life: {
-          '0%': { width: '100%' },
-          '100%': { width: '0%' },
+          "0%": { width: "100%" },
+          "100%": { width: "0%" },
         },
       },
       animation: {
-        life: 'life 1900ms linear forwards',
+        life: "life 1900ms linear forwards",
       },
     },
   },
-}
+};
 ```
 
 ## Usage
 
 ```vue [app.vue]
 <script setup lang="ts">
-import useToast from '~/composables/useToast.ts'
+import useToast from "~/composables/useToast.ts";
 
-const { pushToast } = useToast()
+const { pushToast } = useToast();
 const sendToast = () => {
   pushToast({
     title: "Hello",
     text: "This is a toast.",
-    type: "success"
-  })
-}
+    type: "success",
+  });
+};
 </script>
 
 <template>
   <div>
-    <button @click="sendToast">
-      Send toast
-    </button>
+    <button @click="sendToast">Send toast</button>
   </div>
 </template>
 ```

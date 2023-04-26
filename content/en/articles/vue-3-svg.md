@@ -4,7 +4,8 @@ description: Manage SVG on Vue 3 / Nuxt 3
 picture: /blog/vue-3-svg.svg
 category: vue
 tags: [vue, nuxt]
-createdAt: 2022-07-08
+publishedAt: 2022-07-08
+updatedAt: 2023-04-26
 draft: false
 ---
 
@@ -172,6 +173,6 @@ For Nuxt 3, you have to add `client-only`.
 </template>
 ```
 
-## Warning
-
+::alert{type=warning}
 Don't use subdirectories into `assets/icons`, because `build` will not compile nested SVG, put all your icons in root of `icons`.
+::

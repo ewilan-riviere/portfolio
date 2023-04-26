@@ -24,10 +24,13 @@ interface HeadContent {
   _slugFallbackLocale: string
   _slugLocale: string
   subtitle?: string
-  createdAt: string
   category?: string
   tags?: string[]
   tagsList?: string
+  //
+  publishedAt?: Date
+  createdAt: Date
+  updatedAt?: Date
   // _source: string
   // _type: string
   // createdAt: string
@@ -60,6 +63,13 @@ export function useMarkdownContent() {
       article._slug = `${path}`
       article._original = article._locale === fallbackLocale
       article._link = `${article._original ? '' : `/${article._locale}`}${fallbackPath}`
+
+      let base = article._path?.split('/') || []
+      base = base.filter(item => item !== '')
+      const name = base.pop()
+
+      article.picture = `/blog/${name}.jpg`
+      article.icon = `/blog/${name}-icon.webp`
 
       const formatter = new Intl.ListFormat(locale, { style: 'long', type: 'conjunction' })
       article.tagsList = article.tags ? formatter.format(article.tags) : undefined

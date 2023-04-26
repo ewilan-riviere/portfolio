@@ -232,7 +232,14 @@
   },
   "blog": {
     "title": "Some useful guides",
-    "subtitle": "About tech, web and servers"
+    "subtitle": "About tech, web and servers",
+    "article": {
+      "read-more": "Read more",
+      "published-at": "Published at {date}",
+      "updated-at": "Updated at {date}",
+      "last-update": "Last update {date}",
+      "tags": "Tags"
+    }
   },
   "contact": {
     "page-title": "Contact me",
