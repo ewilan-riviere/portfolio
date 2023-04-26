@@ -1,21 +1,29 @@
 <script lang="ts" setup>
+import { useMainStore } from '~/store/main'
 import type { RouteType } from '~~/.nuxt/typed-link'
 
 const currentYear = new Date().getFullYear()
+
+const { socials } = useMainStore()
+const list = socials.map((social) => {
+  return {
+    label: social.title,
+    href: social.href,
+  }
+})
 
 const items: {
   label: string
   to?: RouteType
   href?: string
+  translate?: boolean
 }[] = [
   {
     label: 'footer.contact-me',
     to: { name: 'contact' },
+    translate: true,
   },
-  {
-    label: 'footer.github',
-    href: 'https://github.com/ewilan-riviere',
-  },
+  ...list,
 ]
 </script>
 
@@ -52,7 +60,7 @@ const items: {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {{ $t(item.label) }}
+                      {{ item.translate ? $t(item.label) : item.label }}
                     </a>
                   </span>
                 </div>
@@ -68,5 +76,3 @@ const items: {
     </div>
   </footer>
 </template>
-
-<style scoped></style>

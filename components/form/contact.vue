@@ -4,6 +4,7 @@ const form = ref({
   email: '',
   message: '',
   conditions: false,
+  honeypot: false,
 })
 
 const isDev = import.meta.env.DEV
@@ -23,6 +24,7 @@ function test() {
     email: 'test@mail.com',
     message: 'test message',
     conditions: true,
+    honeypot: false,
   }
 }
 
@@ -44,7 +46,7 @@ async function submit() {
       email: form.value.email,
       message: form.value.message,
       conditions: form.value.conditions,
-      honeypot: true,
+      honeypot: form.value.honeypot,
     }),
   })
 
@@ -54,6 +56,7 @@ async function submit() {
       email: '',
       message: '',
       conditions: false,
+      honeypot: false,
     }
     termsAreOpened.value = false
 
@@ -130,6 +133,7 @@ async function submit() {
                 </span>
               </template>
             </field-toggle>
+            <input id="conditions-2" v-model="form.honeypot" type="checkbox" class="sr-only" name="conditions-2">
             <app-dialog :open="termsAreOpened" @close="termsAreOpened = false">
               <div class="p-6 prose dark:prose-invert">
                 <ContentRenderer :value="content" />
