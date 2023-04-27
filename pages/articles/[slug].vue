@@ -101,7 +101,7 @@ useHead({
           </h1>
         </header>
         <div
-          class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline max-w-xl"
+          class="mt-8 prose prose-xl dark:prose-invert prose-a:no-underline max-w-xl prose-a:hoverable"
         >
           <ContentRenderer :value="article" />
         </div>

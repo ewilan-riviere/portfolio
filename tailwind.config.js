@@ -99,6 +99,10 @@ module.exports = {
             'z-index': '2147483647',
           },
         },
+        '.hoverable': {
+          '@apply no-underline relative before:absolute before:content-[""] before:left-0 before:bottom-0 before:h-2 before:w-full before:-z-[1] before:transition-all before:duration-200 before:bg-primary-200 before:dark:bg-primary-800 before:bg-opacity-60 before:hover:bottom-0 before:hover:h-full':
+          {},
+        },
       })
     }),
     require('@tailwindcss/typography'),
