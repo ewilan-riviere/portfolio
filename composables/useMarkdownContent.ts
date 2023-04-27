@@ -1,44 +1,12 @@
 import type { ParsedContent, QueryBuilderWhere } from '@nuxt/content/dist/runtime/types'
+import type { HeadContent, Toc } from '~/types/content'
 
-interface Options {
+export interface Options {
   localized?: boolean
   where?: QueryBuilderWhere
   limit?: number
   first?: boolean
   allowFailed?: boolean
-}
-
-interface HeadContent {
-  // _dir: string
-  // _draft: boolean
-  // _empty: boolean
-  // _extension: string
-  // _file: string
-  // _id: string
-  _link: string
-  // _locale: string
-  // _original: boolean
-  // _partial: boolean
-  // _path: string
-  _slug: string
-  _slugFallbackLocale: string
-  _slugLocale: string
-  subtitle?: string
-  category?: string
-  tags?: string[]
-  tagsList?: string
-  //
-  publishedAt?: Date
-  createdAt: Date
-  updatedAt?: Date
-  //
-  legend?: string
-  origin?: string
-  // _source: string
-  // _type: string
-  // createdAt: string
-  // description: string
-  // title: string
 }
 
 export interface Content extends ParsedContent, HeadContent {}
@@ -48,6 +16,7 @@ const optsDefault: Options = { localized: false, where: { _draft: false }, first
 export function useMarkdownContent() {
   const contents = ref<Content[]>()
   const content = ref<Content>()
+  const toc = ref<Toc>()
 
   const addMetaHead = (articles: Content[]) => {
     const nuxtApp = useNuxtApp()
@@ -135,6 +104,8 @@ export function useMarkdownContent() {
       router.push({ name: '404' })
     }
 
+    toc.value = document?.body.toc
+
     return document
   }
 
@@ -153,5 +124,6 @@ export function useMarkdownContent() {
     content,
     getFullPath,
     getHead,
+    toc,
   }
 }

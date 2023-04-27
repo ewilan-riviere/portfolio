@@ -1,9 +1,15 @@
 <script lang="ts" setup>
 const { fullPath } = useRoute()
-const { findOne, content: article } = useMarkdownContent()
+const { findOne, content: article, toc } = useMarkdownContent()
 await findOne(fullPath)
 
 const { date } = useUtils()
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
 
 useHead({
   titleTemplate: '%s - Ewilan Rivière',
@@ -36,7 +42,7 @@ useHead({
         <time
           v-if="article.updatedAt"
           :datetime="article.updatedAt?.toString()"
-          class="block mt-1 font-semibold text-lg"
+          class="block mt-1 font-semibold"
         >
           {{
             $t(`blog.article.updated-at`, {
@@ -46,6 +52,7 @@ useHead({
         </time>
       </div>
     </template>
+
     <div class="xl:relative">
       <div class="mx-auto max-w-2xl">
         <typed-link
@@ -67,26 +74,38 @@ useHead({
             />
           </svg>
         </typed-link>
-        <article>
-          <app-img
-            :src="article.picture"
-            :alt="article.title"
-            class="w-full h-64 object-top object-cover rounded-md"
-            :legend="$t('legend', { from: article.legend })"
-            :origin="article.origin"
-          />
-          <header class="flex flex-col">
-            <h1 class="sr-only">
-              {{ article.title }}
-            </h1>
-          </header>
-          <div
-            class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline"
-          >
-            <ContentRenderer :value="article" />
-          </div>
-        </article>
       </div>
     </div>
+
+    <section class="lg:flex justify-between relative gap-x-10">
+      <div class="order-1 lg:order-2 sticky top-16 h-full">
+        <ArticlesToc :items="toc?.links" />
+        <button
+          class="rounded-full bg-gray-800 w-8 h-8 border border-gray-700 flex mx-auto mt-6 hover:bg-gray-700"
+          @click="scrollToTop()"
+        >
+          <SvgIcon name="arrow-up" class="w-4 h-4 m-auto" />
+        </button>
+      </div>
+      <div class="mx-auto">
+        <app-img
+          :src="article.picture"
+          :alt="article.title"
+          class="w-full h-64 object-top object-cover rounded-md"
+          :legend="$t('legend', { from: article.legend })"
+          :origin="article.origin"
+        />
+        <header class="flex flex-col">
+          <h1 class="sr-only">
+            {{ article.title }}
+          </h1>
+        </header>
+        <div
+          class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline max-w-xl"
+        >
+          <ContentRenderer :value="article" />
+        </div>
+      </div>
+    </section>
   </layout-page>
 </template>
