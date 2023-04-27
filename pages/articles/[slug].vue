@@ -12,9 +12,13 @@ useHead({
 </script>
 
 <template>
-  <layout-page v-if="article" :title="article?.title" :description="article?.description">
+  <layout-page
+    v-if="article"
+    :title="article?.title"
+    :description="article?.description"
+  >
     <template #header>
-      <div class="text-base text-zinc-400 dark:text-zinc-300 mt-5">
+      <div class="text-base text-zinc-500 dark:text-zinc-300 mt-5">
         <time
           v-if="article.publishedAt"
           :datetime="article.publishedAt?.toString()"
@@ -23,14 +27,22 @@ useHead({
           }"
           class="block"
         >
-          {{ $t(`blog.article.published-at`, { date: date(article.publishedAt, 'date') }) }}
+          {{
+            $t(`blog.article.published-at`, {
+              date: date(article.publishedAt, "date"),
+            })
+          }}
         </time>
         <time
           v-if="article.updatedAt"
           :datetime="article.updatedAt?.toString()"
           class="block mt-1 font-semibold text-lg"
         >
-          {{ $t(`blog.article.updated-at`, { date: date(article.updatedAt, 'date') }) }}
+          {{
+            $t(`blog.article.updated-at`, {
+              date: date(article.updatedAt, "date"),
+            })
+          }}
         </time>
       </div>
     </template>
@@ -56,15 +68,21 @@ useHead({
           </svg>
         </typed-link>
         <article>
-          <app-img :src="article.picture" :alt="article.title" class="w-full h-64 object-top object-cover" />
+          <app-img
+            :src="article.picture"
+            :alt="article.title"
+            class="w-full h-64 object-top object-cover rounded-md"
+            :legend="$t('legend', { from: article.legend })"
+            :origin="article.origin"
+          />
           <header class="flex flex-col">
-            <h1
-              class="sr-only"
-            >
+            <h1 class="sr-only">
               {{ article.title }}
             </h1>
           </header>
-          <div class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline">
+          <div
+            class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline"
+          >
             <ContentRenderer :value="article" />
           </div>
         </article>

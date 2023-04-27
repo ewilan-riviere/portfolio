@@ -31,6 +31,9 @@ interface HeadContent {
   publishedAt?: Date
   createdAt: Date
   updatedAt?: Date
+  //
+  legend?: string
+  origin?: string
   // _source: string
   // _type: string
   // createdAt: string

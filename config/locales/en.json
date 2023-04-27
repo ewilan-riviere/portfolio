@@ -3,6 +3,7 @@
   "messages": {
     "hello": "Hello, {name}!"
   },
+  "legend": "From {from}",
   "head": {
     "home": "Welcome",
     "about": "About me",
