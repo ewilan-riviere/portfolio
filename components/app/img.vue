@@ -63,7 +63,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <figure class="lazy-media pb-5">
+  <figure
+    :class="{
+      'pb-5': legend,
+    }"
+    class="lazy-media"
+  >
     <transition>
       <div
         v-if="!display"

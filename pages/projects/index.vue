@@ -13,7 +13,6 @@ useHead({
 <template>
   <layout-page :title="$t('project.title')" :description="$t('project.subtitle')">
     <part-statistics />
-    <!-- <app-masonry /> -->
     <div class="mt-14">
       <ul
         role="list"

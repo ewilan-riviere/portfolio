@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import type { Project } from '~/types/project'
+
 const props = defineProps<{
   project: Project
 }>()
@@ -36,19 +38,13 @@ const domain = computed(() => {
       class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 border border-zinc-200 dark:border-zinc-700 sm:rounded-2xl sm:-inset-x-6"
     />
     <div class="flex items-center justify-between w-full">
-      <div
-        class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-      >
+      <div class="relative z-10 flex h-12 w-12 items-center justify-center rounded-md bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <app-img
-          alt=""
-          loading="lazy"
-          decoding="async"
-          data-nimg="1"
-          class="h-12 w-12 object-cover"
-          style="color: transparent"
           :src="`/projects/${project.slug}-icon.webp`"
-          width="32"
-          height="32"
+          class="h-12 w-12 object-cover"
+          :alt="project.title"
+          width="48"
+          height="48"
         />
       </div>
       <div class="flex items-center space-x-1 border context-border rounded-full px-1.5 py-0.5">

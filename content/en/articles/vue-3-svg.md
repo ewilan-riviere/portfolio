@@ -1,7 +1,6 @@
 ---
 title: SVG on Vue 3
 description: Manage SVG on Vue 3 / Nuxt 3
-picture: /blog/vue-3-svg.svg
 category: vue
 tags: [vue, nuxt]
 publishedAt: 2022-07-08

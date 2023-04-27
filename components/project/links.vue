@@ -78,21 +78,33 @@ function removeHttp(url: string | undefined) {
 </script>
 
 <template>
-  <ul role="list" class="divide-y divide-white/5">
-    <li v-for="link in merge" :key="link.type" class="relative flex items-center space-x-4 py-4 px-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
+  <ul role="list" class="divide-y divide-white/5 border border-gray-200 dark:border-gray-800 rounded-md">
+    <li
+      v-for="link in merge"
+      :key="link.type"
+      class="relative flex items-center space-x-4 py-4 px-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+    >
       <div class="min-w-0 flex-auto">
         <div class="flex items-center gap-x-3">
-          <div class="flex-none rounded-full p-1">
-            <div class="h-2 w-2 rounded-full bg-current" />
-          </div>
-          <h2 class="min-w-0 text-sm font-semibold leading-6 text-black dark:text-white">
-            <a :href="link.url" target="_blank" rel="noopener noreferrer" class="flex gap-x-2">
-              <span class="whitespace-nowrap">{{ link.label ? link.label : removeHttp(link.url) }}</span>
+          <h2
+            class="min-w-0 text-sm font-semibold leading-6 text-black dark:text-white"
+          >
+            <a
+              :href="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex gap-x-2"
+            >
+              <span class="whitespace-nowrap">{{
+                link.label ? link.label : removeHttp(link.url)
+              }}</span>
               <span class="absolute inset-0" />
             </a>
           </h2>
         </div>
-        <div class="mt-3 flex items-center gap-x-2.5 text-xs leading-5 text-gray-500 dark:text-gray-400">
+        <div
+          class="mt-3 flex items-center gap-x-2.5 text-xs leading-5 text-gray-500 dark:text-gray-400"
+        >
           <p class="truncate">
             {{ $t(`project.links-type.${link.type}`) }}
           </p>
@@ -104,10 +116,17 @@ function removeHttp(url: string | undefined) {
           </p>
         </div>
       </div>
-      <div v-if="link.isPrivate" class="rounded-full flex-none py-1 px-2 text-xs font-medium ring-1 ring-inset">
-        {{ $t('project.links-origin.private') }}
+      <div
+        v-if="link.isPrivate"
+        class="rounded-full flex-none py-1 px-2 text-xs font-medium ring-1 ring-inset"
+      >
+        {{ $t("project.links-origin.private") }}
       </div>
-      <svg-icon name="chevron-right" class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+      <svg-icon
+        name="chevron-right"
+        class="h-5 w-5 flex-none text-gray-400"
+        aria-hidden="true"
+      />
     </li>
   </ul>
 </template>
