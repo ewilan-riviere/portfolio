@@ -35,7 +35,8 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "blog": "Blog"
+    "blog": "Blog",
+    "contact": "Contact me"
   },
   "app": {
     "color-mode": {
@@ -262,6 +263,7 @@
   "footer": {
     "contact-me": "Contact me",
     "mit-license": "MIT License",
-    "built-with": "Built with"
+    "built-with": "Built with",
+    "design-inspired": "Design inspired by"
   }
 }

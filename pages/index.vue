@@ -11,8 +11,11 @@ await findAll('articles', {
 
 const { t } = useI18n()
 
-useHead({
-  titleTemplate: '%s - Ewilan Rivière',
+// useHead({
+//   titleTemplate: '%s - Ewilan Rivière',
+//   title: t('head.home'),
+// })
+useMetadata({
   title: t('head.home'),
 })
 </script>
@@ -24,7 +27,7 @@ useHead({
     <layout-container>
       <div v-animate class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
         <div class="flex flex-col gap-16">
-          <articles-card v-for="article in articles" :key="article._id" :article="article" type="home" />
+          <articles-card-home v-for="article in articles" :key="article._id" :article="article" type="home" />
         </div>
         <div class="space-y-10 lg:pl-16 xl:pl-24">
           <home-newsletter />

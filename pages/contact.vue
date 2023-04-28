@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 const { t } = useI18n()
 
-useHead({
-  titleTemplate: '%s - Ewilan Rivière',
+useMetadata({
   title: t('head.contact'),
 })
 </script>

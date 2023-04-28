@@ -35,7 +35,8 @@
     "home": "Accueil",
     "about": "À propos",
     "projects": "Projets",
-    "blog": "Blog"
+    "blog": "Blog",
+    "contact": "Me contacter"
   },
   "app": {
     "color-mode": {
@@ -257,6 +258,7 @@
   "footer": {
     "contact-me": "Me contacter",
     "mit-license": "Licence MIT",
-    "built-with": "Carbure avec"
+    "built-with": "Carbure avec",
+    "design-inspired": "Design inspiré par"
   }
 }

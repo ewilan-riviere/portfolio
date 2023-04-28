@@ -10,8 +10,7 @@ await findOne('about', {
 
 const { t } = useI18n()
 
-useHead({
-  titleTemplate: '%s - Ewilan Rivière',
+useMetadata({
   title: t('head.about'),
 })
 </script>

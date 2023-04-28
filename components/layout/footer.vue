@@ -40,7 +40,7 @@ const items: {
                 class="flex flex-col items-center justify-between gap-6 sm:flex-row"
               >
                 <div
-                  class="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200"
+                  class="hidden lg:flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200"
                 >
                   <span
                     v-for="item in items"
@@ -68,6 +68,9 @@ const items: {
                   © 2021-{{ currentYear }}
                   Ewilan Rivière.
                 </p>
+              </div>
+              <div class="text-center mt-10 text-gray-600 dark:text-gray-400 text-sm">
+                {{ $t('footer.design-inspired') }} <a href="https://tailwindui.com/" target="_blank" rel="noopener noreferrer">Tailwind UI</a>
               </div>
             </div>
           </div>

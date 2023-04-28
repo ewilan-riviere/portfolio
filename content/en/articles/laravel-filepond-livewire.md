@@ -3,9 +3,9 @@ title: Laravel FilePond with Livewire
 description:
 category: php
 tags: [php, laravel, filepond, blade, livewire]
-publishedAt: 2023-04-27
-# updatedAt: 2023-04-26
-draft: true
+publishedAt: 2022-10-20
+updatedAt: 2023-04-27
+draft: false
 legend: Unsplash
 origin: https://unsplash.com/photos/XAkPN7aEGJM
 ---
@@ -39,7 +39,7 @@ You could write vanilla JavaScript if you want, I use Alpine.js because it's a g
 If you want to have final result, without details, you can find the source code of this gist on [GitHub](https://gist.github.com/ewilan-riviere/dfca491def1bb5aabf70e1649518b5f1).
 
 ::alert{type=warning}
-Don't forget to add `@stack` directives to your root Blade file, usually `resources/views/layouts/app.blade.php`. See [Let's start](#lets-start) section for more details.
+Don't forget to add `@stack` directives to your root Blade file, usually `resources/views/layouts/app.blade.php`. See [Let's start](#lets-start) section for more details. And `window.appUrlStorage` is a global variable to your application storage URL, usually `{{ config('app.url') }}/storage`. See [Add FilePond](#add-filepond) section for more details.
 ::
 
 ## Let's start
@@ -101,7 +101,7 @@ And now, FilePond is available, we can build our component:
 ></div>
 ```
 
-Into PHP file, we will add some properties:
+Into PHP file, we will add some properties, we will inject them into our Alpine.js to fill FilePond configuration options. You can add some options, see [FilePond documentation](https://pqina.nl/filepond/docs/) for more details.
 
 ```php [app/View/Components/Field/Upload.php]
 <?php
@@ -400,5 +400,171 @@ We will add File some options to FilePond:
 }"
 >
   ...
+</div>
+```
+
+### Some details
+
+Into global `model`, with `@entangle`, we can find all uploaded files. To handle existing files, we use previous method `URLtoFile()` to fetch the file from the storage. If multiple is enabled, we create an array, otherwise we create an array with just one file. `modelName` is binded with Livewire to handle the upload.
+
+```js
+let picture = model
+let files = []
+let exists = []
+if (model) {
+  if (isMultiple) {
+    currentList = model.map((picture) => `${window.appUrlStorage}/${picture}`);
+    await Promise.all(model.map(async (picture) => exists.push(await URLtoFile(picture))))
+  } else {
+    if (picture) {
+        exists.push(await URLtoFile(picture))
+    }
+  }
+}
+files = exists
+let modelName = '{{ $attributes->whereStartsWith('wire:model')->first() }}'
+```
+
+To send notifications when upload process is finished, we use [Filament notifications](https://filamentphp.com/docs/2.x/notifications/installation).
+
+```js
+const notify = () => {
+  new Notification()
+    .title("File uploaded")
+    .body(`You can save changes!`)
+    .success()
+    .seconds(1.5)
+    .send();
+};
+```
+
+And finally, we create FilePond instance with some options. First, we need to bind it to previous `input` element.
+
+```js
+const pond = FilePond.create($refs.{{ $attributes->get('ref') ?? 'input' }});
+```
+
+Now, we can add options from PHP file, you can add more options if you need it. You can see some Livewire methods with `@this.upload`, `@this.removeUpload` and `@this.removeFile`, it's really amazing to handle uploads with Livewire you need to add `Livewire\WithFileUploads` trait to your Livewire component. And with `onprocessfile()` event, we notify the user that the upload is finished.
+
+```js
+pond.setOptions({
+  allowMultiple: {{ $multiple ? 'true' : 'false' }},
+  server: {
+    process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+      @this.upload(modelName, file, load, error, progress)
+    },
+    revert: (filename, load) => {
+      @this.removeUpload(modelName, filename, load)
+    },
+    remove: (filename, load) => {
+      @this.removeFile(modelName, filename.name)
+      load();
+    },
+  },
+  allowImagePreview: {{ $preview ? 'true' : 'false' }},
+  imagePreviewMaxHeight: {{ $previewMax ? $previewMax : '256' }},
+  allowFileTypeValidation: {{ $validate ? 'true' : 'false' }},
+  acceptedFileTypes: {{ $accept ? $accept : 'null' }},
+  allowFileSizeValidation: {{ $validate ? 'true' : 'false' }},
+  maxFileSize: {!! $size ? "'" . $size . "'" : 'null' !!},
+  maxFiles: {{ $number ? $number : 'null' }},
+  required: {{ $required ? 'true' : 'false' }},
+  disabled: {{ $disabled ? 'true' : 'false' }},
+  onprocessfile: () => notify()
+});
+```
+
+To add existing files, we use `addFiles()` method.
+
+```js
+pond.addFiles(files);
+```
+
+And finally, we can add some events to handle errors and success messages.
+
+```js
+pond.on("addfile", (error, file) => {
+  if (error) {
+    console.log("Oh no");
+    return;
+  }
+});
+```
+
+You can see [FilePond documentation](https://pqina.nl/filepond/docs/) for more details.
+
+## Livewire component
+
+You can create a Livewire component to create a form with FilePond field.
+
+```bash
+php artisan make:livewire SettingsForm
+```
+
+You need `Livewire\WithFileUploads` trait to handle uploads and you can use `$rules` to add some validation rules for files. You have to set values with `mount()` method.
+
+```php [app/Http/Livewire/SettingsForm.php]
+<?php
+
+namespace App\Http\Livewire\Form\Settings;
+
+use Livewire\Component;
+use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
+class SettingsForm extends Component
+{
+    use WithFileUploads;
+
+    /** @var null|string */
+    public $avatar = '';
+
+    /** @var null|string[] */
+    public $gallery = [];
+
+    protected $rules = [
+      'avatar' => 'nullable|image|max:2048',
+      'gallery.*' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+    ];
+
+    public function mount()
+    {
+        /** @var User */
+        $user = Auth::user();
+
+        $this->avatar = $user->avatar;
+        $this->gallery = $user->gallery;
+    }
+
+    public function save()
+    {
+        $this->validate();
+
+        /** @var User */
+        $user = Auth::user();
+
+        // Save avatar and gallery
+    }
+
+    public function render()
+    {
+        //
+    }
+}
+```
+
+And finally, you can create a view with FilePond field.
+
+```html [resources/views/livewire/settings-form.blade.php]
+<div>
+  <x-field-upload name="avatar" label="Avatar" wire:model="avatar" />
+  <x-field-upload
+    name="gallery"
+    label="Gallery"
+    wire:model="gallery"
+    multiple
+  />
+  <button wire:click="save">Save</button>
 </div>
 ```

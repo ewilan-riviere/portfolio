@@ -54,7 +54,7 @@ const items: {
             {{ $t(item.title) }}
           </dt>
           <dd
-            class="mt-1 text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-100"
+            class="mt-1 text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100"
           >
             {{ $t(item.value, item.params ?? {}) }}
           </dd>

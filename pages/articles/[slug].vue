@@ -11,9 +11,10 @@ function scrollToTop() {
   })
 }
 
-useHead({
-  titleTemplate: '%s - Ewilan Rivière',
+useMetadata({
   title: article.value?.title,
+  image: article.value?.picture,
+  description: article.value?.description,
 })
 </script>
 
@@ -78,16 +79,16 @@ useHead({
     </div>
 
     <section class="lg:flex justify-between relative gap-x-10">
-      <div class="order-1 lg:order-2 sticky top-16 h-full">
+      <div class="order-1 lg:order-2 lg:sticky lg:top-16 h-full">
         <ArticlesToc :items="toc?.links" />
         <button
-          class="rounded-full bg-gray-800 w-8 h-8 border border-gray-700 flex mx-auto mt-6 hover:bg-gray-700"
+          class="hidden lg:flex rounded-full bg-gray-800 w-8 h-8 border border-gray-700 mx-auto mt-6 hover:bg-gray-700"
           @click="scrollToTop()"
         >
           <SvgIcon name="arrow-up" class="w-4 h-4 m-auto" />
         </button>
       </div>
-      <div class="mx-auto">
+      <div class="mx-auto mt-16 lg:mt-0">
         <app-img
           :src="article.picture"
           :alt="article.title"
@@ -100,6 +101,14 @@ useHead({
             {{ article.title }}
           </h1>
         </header>
+        <div class="border border-gray-100 dark:border-gray-800 rounded-md mt-10 p-4">
+          <div class="uppercase">
+            {{ article.category }}
+          </div>
+          <div v-if="article.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
+            {{ article.tags.map((tag) => `#${tag}`).join(' ') }}
+          </div>
+        </div>
         <div
           class="mt-8 prose prose-xl dark:prose-invert prose-a:no-underline max-w-xl prose-a:hoverable"
         >

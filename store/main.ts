@@ -36,6 +36,10 @@ export const useMainStore = defineStore('main', {
         title: 'blog',
         to: { name: 'articles' },
       },
+      {
+        title: 'contact',
+        to: { name: 'contact' },
+      },
     ] as {
       title: string
       to: RouteType

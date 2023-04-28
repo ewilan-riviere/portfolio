@@ -1,6 +1,6 @@
 import type { ComputedGetter } from 'vue'
+import type { UseHeadInput } from '@unhead/vue'
 import { useColorScheme } from './useColorScheme'
-import type { MetaObject } from '#app'
 
 interface HeadMeta {
   description?: string
@@ -9,11 +9,15 @@ interface HeadMeta {
   type?: string
   url?: string
   title?: string
+  autoPrefix?: boolean
 }
 
 export function useMetadata(meta?: HeadMeta) {
-  const appName = 'Ewilan Rivière - Portfolio'
+  const appName = 'Ewilan Rivière'
   const appDescription = 'Portfolio of Ewilan Rivière, developer'
+
+  if (!meta)
+    meta = {}
 
   let title = appName
   if (meta?.title)
@@ -24,15 +28,22 @@ export function useMetadata(meta?: HeadMeta) {
     description = `${meta.description.substring(0, 155 - 3)}...`
 
   let image = '/default.jpg'
-  if (meta?.image)
+  if (meta.image)
     image = meta.image
 
   const { fullPath } = useRoute()
-  const route = fullPath
+  let route = fullPath
 
   const { isDark } = useColorScheme()
 
-  const metadata: MetaObject | ComputedGetter<MetaObject> = {
+  if (meta?.autoPrefix || meta?.autoPrefix === undefined) {
+    const config = useRuntimeConfig()
+
+    image = `${config.public.siteUrl}${image}`
+    route = `${config.public.siteUrl}${route}`
+  }
+
+  const metadata: UseHeadInput | ComputedGetter<UseHeadInput> = {
     title,
     meta: [
       {

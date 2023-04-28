@@ -18,8 +18,7 @@ await findOne(`projects/${project.value?.slug}`, {
 })
 const status = projectStatuses.find(s => s.order === project.value?.status)?.slug
 
-useHead({
-  titleTemplate: '%s - Ewilan Rivière',
+useMetadata({
   title: project.value?.title,
 })
 </script>
