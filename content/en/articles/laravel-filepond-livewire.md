@@ -570,8 +570,8 @@ And finally, you can create a view with FilePond field.
 
 ```html [resources/views/livewire/settings-form.blade.php]
 <div>
-  <x-field-upload name="avatar" label="Avatar" wire:model="avatar" />
-  <x-field-upload
+  <x-field.upload name="avatar" label="Avatar" wire:model="avatar" />
+  <x-field.upload
     name="gallery"
     label="Gallery"
     wire:model="gallery"
