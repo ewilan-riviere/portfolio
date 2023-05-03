@@ -25,7 +25,7 @@ deploy-job:
     - echo "NUXT_PUBLIC_API_URL=$NUXT_PUBLIC_API_URL" >> .env
     - echo "NUXT_PUBLIC_MAIL_TO_ADDRESS=$NUXT_PUBLIC_MAIL_TO_ADDRESS" >> .env
     - npm install -g pnpm
-    - pnpm i
+    # - pnpm i
     # - echo "Building..."
     # - pnpm build
     - mkdir .output
@@ -43,9 +43,6 @@ deploy-job:
     - ssh $SSH_USER@$SSH_IP "
       . ~/.zshrc &&
       cd /home/ewilan/www/$CI_PROJECT_NAME &&
-      git pull &&
-      ls .output-new &&
-      rm -rf .output-new &&
       /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i"
   only:
     - main
