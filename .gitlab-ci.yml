@@ -39,13 +39,12 @@ deploy-job:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - rsync -azPhhr .output $SSH_USER@$SSH_IP:/home/ewilan/www/$CI_PROJECT_NAME
-  #   - ssh $SSH_USER@$SSH_IP "
-  #     . ~/.zshrc &&
-  #     cd /home/ewilan/www/$CI_PROJECT_NAME &&
-  #     git pull &&
-  #     /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i &&
-  #     /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm build &&
-  #     pm2 restart $PM2_NAME &&
-  #     notify main '$CI_PROJECT_TITLE deployed'"
+    - ssh $SSH_USER@$SSH_IP "
+      . ~/.zshrc &&
+      cd /home/ewilan/www/$CI_PROJECT_NAME &&
+      git pull &&
+      /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i &&
+      pm2 restart $PM2_NAME &&
+      notify main '$CI_PROJECT_TITLE deployed'"
   only:
     - main
