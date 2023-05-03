@@ -14,7 +14,7 @@ deploy-job:
   stage: deploy
   image: node:18.12.1
   before_script:
-    - apk add --update nodejs npm
+    - apt-get update -qq && apt-get install -y -qq sshpass
     - node -v
   # before_script:
   #   - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
