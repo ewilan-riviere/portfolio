@@ -44,7 +44,7 @@ deploy-job:
       . ~/.zshrc &&
       cd /home/ewilan/www/$CI_PROJECT_NAME &&
       git pull &&
-      ls .output &&
+      ls .output-new &&
       /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i"
   only:
     - main
