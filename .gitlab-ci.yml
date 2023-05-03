@@ -41,9 +41,12 @@ deploy-job:
     - ssh $SSH_USER@$SSH_IP "
       . ~/.zshrc &&
       cd /home/ewilan/www/$CI_PROJECT_NAME &&
+      git pull &&
+      /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i &&
       rm -rf .output &&
       mv .output-$CI_JOB_ID/.output .output &&
       rm -rf .output-* &&
-      /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i"
+      pm2 restart $PM2_NAME &&
+      notify main '$CI_PROJECT_TITLE deployed'"
   only:
     - main
