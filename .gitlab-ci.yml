@@ -12,7 +12,7 @@ variables:
 
 deploy-job:
   stage: deploy
-  image: alpine:latest
+  image: node:18.12.1
   before_script:
     - apk add --update nodejs npm
     - node -v
