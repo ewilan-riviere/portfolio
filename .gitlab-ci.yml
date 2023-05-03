@@ -25,11 +25,9 @@ deploy-job:
     - echo "NUXT_PUBLIC_API_URL=$NUXT_PUBLIC_API_URL" >> .env
     - echo "NUXT_PUBLIC_MAIL_TO_ADDRESS=$NUXT_PUBLIC_MAIL_TO_ADDRESS" >> .env
     - npm install -g pnpm
-    # - pnpm i
-    # - echo "Building..."
-    # - pnpm build
-    - mkdir .output
-    - cp README.md .output
+    - pnpm i
+    - echo "Building..."
+    - pnpm build
     - echo "Deploying..."
     - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
     - eval $(ssh-agent -s)
