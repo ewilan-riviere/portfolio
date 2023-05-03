@@ -10,7 +10,9 @@ legend: Unsplash
 origin: https://unsplash.com/photos/XAkPN7aEGJM
 ---
 
-## About FilePond
+## About
+
+### FilePond
 
 [FilePond](https://pqina.nl/filepond/) is a JavaScript library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience. When you want to build an image upload component in your Laravel application with Blade and [Livewire](https://laravel-livewire.com/), FilePond is a great choice.
 
