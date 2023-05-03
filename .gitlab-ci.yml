@@ -15,8 +15,7 @@ deploy-job:
   image: alpine:latest
   before_script:
     - apk add --update nodejs npm
-    - npm install -g pnpm
-    - pnpm
+    - node -v
   # before_script:
   #   - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
   #   - eval $(ssh-agent -s)
