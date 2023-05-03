@@ -7,11 +7,12 @@ defineProps<{
 
 const { fetchData } = useApi()
 const { shuffle } = useData()
-let projects = await fetchData<Project[]>('/api/projects', {
+const api = await fetchData<Project[]>('/api/projects', {
   'filter[isFavorite]': true,
   'context': 'personal',
 })
-projects = shuffle(projects)
+const projects = ref<Project[]>()
+projects.value = shuffle(api)
 </script>
 
 <template>

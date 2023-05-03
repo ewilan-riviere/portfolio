@@ -1,6 +1,7 @@
 import personalJson from '~/assets/data/projects/projects-personal.json'
 import professionalJson from '~/assets/data/projects/projects-professional.json'
 import schoolJson from '~/assets/data/projects/projects-school.json'
+import type { Project } from '~/types/project'
 
 export function useData() {
   const getJson = <T>(json: object): T => {
