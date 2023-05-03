@@ -29,7 +29,7 @@ deploy-job:
     # - echo "Building..."
     # - pnpm build
     - mkdir .output
-    - mv .nuxt .output/.nuxt
+    - cp README.md .output
     - echo "Deploying..."
     - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
     - eval $(ssh-agent -s)
