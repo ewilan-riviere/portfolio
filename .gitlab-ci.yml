@@ -27,8 +27,10 @@ deploy-job:
     - cat .env
     - npm install -g pnpm
     - pnpm i
-    - echo "Building..."
-    - pnpm build
+    # - echo "Building..."
+    # - pnpm build
+    - mkdir .output
+    - mv .nuxt .output/.nuxt
     - echo "Deploying..."
     - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
     - eval $(ssh-agent -s)
