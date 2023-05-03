@@ -16,6 +16,7 @@ deploy-job:
   before_script:
     - echo "Installing dependencies..."
     - apt-get update -qq && apt-get install -y -qq sshpass
+    - apt-get install -y -qq rsync
     - node -v
     - echo "Setup..."
     - git clone https://gitlab.com/ewilan-riviere/portfolio.git
