@@ -21,6 +21,8 @@ deploy-job:
     - git clone https://gitlab.com/ewilan-riviere/portfolio.git
     - cd portfolio
     - touch .env
+    - echo $NUXT_PUBLIC_SITE_URL
+    - echo $SSH_USER
     - echo "NUXT_PUBLIC_SITE_URL=$NUXT_PUBLIC_SITE_URL" >> .env
     - echo "NUXT_PUBLIC_API_URL=$NUXT_PUBLIC_API_URL" >> .env
     - echo "NUXT_PUBLIC_MAIL_TO_ADDRESS=$NUXT_PUBLIC_MAIL_TO_ADDRESS" >> .env
@@ -45,8 +47,6 @@ deploy-job:
       . ~/.zshrc &&
       cd /home/ewilan/www/$CI_PROJECT_NAME &&
       git pull &&
-      /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i &&
-      pm2 restart $PM2_NAME &&
-      notify main '$CI_PROJECT_TITLE deployed'"
+      /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i"
   only:
     - main
