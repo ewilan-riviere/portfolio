@@ -24,6 +24,7 @@ deploy-job:
     - echo "NUXT_PUBLIC_SITE_URL=$NUXT_PUBLIC_SITE_URL" >> .env
     - echo "NUXT_PUBLIC_API_URL=$NUXT_PUBLIC_API_URL" >> .env
     - echo "NUXT_PUBLIC_MAIL_TO_ADDRESS=$NUXT_PUBLIC_MAIL_TO_ADDRESS" >> .env
+    - cat .env
     - npm install -g pnpm
     - pnpm i
     - echo "Building..."
