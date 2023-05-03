@@ -46,8 +46,6 @@ deploy-job:
       cd /home/ewilan/www/$CI_PROJECT_NAME &&
       git pull &&
       /home/ewilan/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i &&
-      rm -rf .output &&
-      mv .output-new/.output .output &&
       pm2 restart $PM2_NAME &&
       notify main '$CI_PROJECT_TITLE deployed'"
   only:
