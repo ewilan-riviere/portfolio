@@ -5,9 +5,13 @@ import {
   runtimeConfigPublic,
 } from './runtime-config'
 
+const config = {
+  private: runtimeConfigPrivate,
+  public: runtimeConfigPublic,
+}
+
 export {
   head,
   modules,
-  runtimeConfigPublic,
-  runtimeConfigPrivate,
+  config,
 }

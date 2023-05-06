@@ -1,4 +1,4 @@
-import { head, modules } from './config'
+import { config, head, modules } from './config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -36,22 +36,9 @@ export default defineNuxtConfig({
   svgTransformer: modules.svgTransformer,
   typedLink: modules.typedLink,
 
-  // runtimeConfig: {
-  //   ...runtimeConfigPrivate,
-  //   public: runtimeConfigPublic,
-  // },
   runtimeConfig: {
-    public: {
-      baseUrl: process.env.NUXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
-      apiUrl: process.env.NUXT_PUBLIC_API_URL ?? 'http://app.toolbelt.test',
-      mailToAddress: process.env.NUXT_PUBLIC_MAIL_TO_ADDRESS ?? 'contact@email.com',
-
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-      siteName: 'Ewilan Rivière',
-      siteDescription: 'Welcome to my portfolio',
-      language: 'en', // prefer more explicit language codes like `en-AU` over `en`
-    },
-    secretKey: process.env.SECRET_KEY ?? '',
+    ...config.private,
+    public: config.public,
   },
 
   postcss: {
@@ -65,9 +52,5 @@ export default defineNuxtConfig({
 
   typescript: {
     shim: false,
-  },
-  devtools: {
-    enabled: true,
-    vscode: {},
   },
 })
