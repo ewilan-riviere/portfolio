@@ -396,6 +396,38 @@
     "features": []
   },
   {
+    "title": "PHP OPDS",
+    "slug": "php-opds",
+    "isFavorite": true,
+    "isDraft": false,
+    "isOpenSource": true,
+    "status": "4",
+    "formation": null,
+    "context": "personal",
+    "type": "library",
+    "createdAt": "2023-05-08",
+    "links": [
+      {
+        "url": "https://packagist.org/packages/kiwilan/php-opds",
+        "type": "main"
+      }
+    ],
+    "repositories": [
+      {
+        "url": "https://github.com/kiwilan/php-opds",
+        "type": "main"
+      }
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "lead-developer"
+      }
+    ],
+    "technologies": ["php"],
+    "features": []
+  },
+  {
     "title": "PHP Archive",
     "slug": "php-archive",
     "isFavorite": true,
