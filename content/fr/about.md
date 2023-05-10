@@ -3,7 +3,7 @@ title: Ewilan Rivière
 subtitle: Développeuse full-stack
 ---
 
-En tant que jeune développeuse, j'ai commencé à développer mes premiers projets réels avec Laravel (PHP), apprenant également à utiliser Git. Mais je suis aussi très intéressé par l'expérience utilisateur, ce qui me pousse à garder un lien avec le front-end avec Vue.js et Nuxt.js (JavaScript / TypeScript) avec des frameworks CSS comme Tailwind CSS. Je souhaite mettre en place le nécessaire pour le référencement, bien que je ne sois pas un expert dans ce domaine. Côté mobile, au-delà du web responsive, je fais du Flutter (Dart) afin de pouvoir déployer des applications sur Android et sur iOS.
+J'ai commencé à développer mes premiers projets réels avec Laravel (PHP), apprenant également à utiliser Git. Mais je suis aussi très intéressée par l'expérience utilisateur, ce qui me pousse à garder un lien avec le front-end avec Vue.js et Nuxt.js (JavaScript / TypeScript) avec des frameworks CSS comme Tailwind CSS. Je souhaite mettre en place le nécessaire pour le référencement, bien que je ne sois pas une experte dans ce domaine. Côté mobile, au-delà du web responsive, je fais du Flutter (Dart) afin de pouvoir déployer des applications sur Android et sur iOS.
 
 J'aime avoir des connaissances sur chaque partie de la chaîne, du développement local au déploiement sur un serveur (avec NGINX), ce qui m'amène à configurer assez souvent des serveurs Linux à la fois pour la production et le développement local. J'aime donc disposer d'outils efficaces, quel que soit l'environnement de développement (Linux, Windows ou macOS) pour pouvoir utiliser facilement telle ou telle version d'un langage.
 
