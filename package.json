@@ -9,6 +9,7 @@
     "name": "Ewilan Rivière",
     "url": "https://ewilan-riviere.com"
   },
+  "license": "MIT",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
