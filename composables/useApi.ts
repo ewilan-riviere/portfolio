@@ -1,4 +1,6 @@
 import type { NitroFetchRequest } from 'nitropack'
+import type { Developer } from '~/types/developer'
+import type { Project } from '~/types/project'
 import type { Technology } from '~/types/technology'
 import { useMainStore } from '~~/store/main'
 import type { HistoryItem } from '~~/types/history-item'
