@@ -107,9 +107,11 @@ const meta: Meta<any['link']>[] = [
   },
 ]
 const script: Script<any['script']>[] = [
-  // {
-  //   src: '/color-scheme.js',
-  // },
+  {
+    'src': 'https://umami.git-projects.xyz/gotur',
+    'async': true,
+    'data-website-id': '6083b054-d464-4a42-9da0-b092cf71bbf4',
+  },
 ]
 
 export default { link, meta, script }
