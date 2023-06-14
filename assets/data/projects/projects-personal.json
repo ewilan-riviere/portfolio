@@ -598,5 +598,37 @@
       "alpinejs"
     ],
     "features": []
+  },
+  {
+    "title": "PHP Audio",
+    "slug": "php-audio",
+    "isFavorite": true,
+    "isDraft": false,
+    "isOpenSource": true,
+    "status": "4",
+    "formation": null,
+    "context": "personal",
+    "type": "library",
+    "createdAt": "2023-06-03",
+    "links": [
+      {
+        "url": "https://packagist.org/packages/kiwilan/php-audio",
+        "type": "main"
+      }
+    ],
+    "repositories": [
+      {
+        "url": "https://github.com/kiwilan/php-audio",
+        "type": "main"
+      }
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "lead-developer"
+      }
+    ],
+    "technologies": ["php"],
+    "features": []
   }
 ]
