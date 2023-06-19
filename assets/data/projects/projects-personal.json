@@ -630,5 +630,69 @@
     ],
     "technologies": ["php"],
     "features": []
+  },
+  {
+    "title": "PHP RSS",
+    "slug": "php-rss",
+    "isFavorite": true,
+    "isDraft": false,
+    "isOpenSource": true,
+    "status": "4",
+    "formation": null,
+    "context": "personal",
+    "type": "library",
+    "createdAt": "2023-06-18",
+    "links": [
+      {
+        "url": "https://packagist.org/packages/kiwilan/php-rss",
+        "type": "main"
+      }
+    ],
+    "repositories": [
+      {
+        "url": "https://github.com/kiwilan/php-rss",
+        "type": "main"
+      }
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "lead-developer"
+      }
+    ],
+    "technologies": ["php"],
+    "features": []
+  },
+  {
+    "title": "PHP XML Reader",
+    "slug": "php-xml-reader",
+    "isFavorite": true,
+    "isDraft": false,
+    "isOpenSource": true,
+    "status": "4",
+    "formation": null,
+    "context": "personal",
+    "type": "library",
+    "createdAt": "2023-06-19",
+    "links": [
+      {
+        "url": "https://packagist.org/packages/kiwilan/php-xml-reader",
+        "type": "main"
+      }
+    ],
+    "repositories": [
+      {
+        "url": "https://github.com/kiwilan/php-xml-reader",
+        "type": "main"
+      }
+    ],
+    "developers": [
+      {
+        "slug": "ewilan-riviere",
+        "role": "lead-developer"
+      }
+    ],
+    "technologies": ["php"],
+    "features": []
   }
 ]
