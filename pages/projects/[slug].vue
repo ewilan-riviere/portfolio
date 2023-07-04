@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { marked } from 'marked'
 import { useMainStore } from '~/store/main'
 import type { Project } from '~/types/project'
 
@@ -12,11 +13,34 @@ const slug = params.slug as string
 const project = ref<Project>()
 project.value = projects.find(p => p.slug === slug)
 
+const readme = ref<string>()
+
 await findOne(`projects/${project.value?.slug}`, {
   // localized: true,
   allowFailed: true,
 })
 const status = projectStatuses.find(s => s.order === project.value?.status)?.slug
+
+async function fetchReadme(): Promise<string | undefined> {
+  if (!project.value?.isOpenSource)
+
+    return
+
+  const repository = project.value?.repositories?.find(r => r.type === 'main')
+  const url = repository?.url
+
+  if (!url?.includes('github.com'))
+    return
+
+  let readmeUrl = url.replace('github.com', 'raw.githubusercontent.com')
+  readmeUrl += '/main/README.md'
+
+  const readmeText = await fetch(readmeUrl).then(r => r.text())
+  readme.value = marked.parse(readmeText)
+
+  return readmeText
+}
+fetchReadme()
 
 useMetadata({
   title: project.value?.title,
@@ -62,6 +86,10 @@ useMetadata({
             class="w-full max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 object-contain"
           />
           <div class="mt-6 text-sm border border-gray-100 dark:border-gray-700 rounded-md p-4">
+            <div class="flex items-center space-x-1 mb-2">
+              <SvgIcon v-if="project.isOpenSource" name="open-source" class="w-7 h-7" title="Open source" />
+              <div>Open source</div>
+            </div>
             <div>
               {{ $t('project.created-at') }} <span class="text-indigo-600 dark:text-indigo-400">{{ date(project?.createdAt) }}</span>
             </div>
@@ -78,14 +106,12 @@ useMetadata({
           />
         </div>
       </div>
-      <!-- <hr class="pb-10 border-gray-200 dark:border-gray-700">
-      <div
-        v-if="content"
-      >
-        <div class="prose dark:prose-invert mx-auto lg:prose-lg border border-gray-200 dark:border-gray-700 rounded-md px-3 lg:px-6">
-          <ContentRenderer :value="content" />
+      <ClientOnly>
+        <hr class="pb-10 border-gray-200 dark:border-gray-700">
+        <div class="prose dark:prose-invert mx-auto p-6 lg:p-10">
+          <div v-html="readme" />
         </div>
-      </div> -->
+      </ClientOnly>
     </div>
   </layout-page>
 </template>
