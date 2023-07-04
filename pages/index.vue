@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import { useMainStore } from '~~/store/main'
-
-const { projects } = useMainStore()
 const { findAll, contents: articles } = useMarkdownContent()
 await findAll('articles', {
   where: {
@@ -23,17 +20,28 @@ useMetadata({
 <template>
   <div>
     <home-hero />
-    <home-gallery :projects="projects" />
+    <home-gallery />
     <layout-container>
-      <div v-animate class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-        <div class="flex flex-col gap-16">
-          <articles-card-home v-for="article in articles" :key="article._id" :article="article" type="home" />
+      <section v-animate class="max-w-xl lg:max-w-none">
+        <home-open-source class="pt-10 pb-24" />
+        <div class="mx-auto grid grid-cols-1 gap-y-20 lg:grid-cols-2">
+          <div class="flex flex-col gap-16">
+            <div>
+              <h2 class="text-3xl font-semibold">
+                {{ t('home.articles.title') }}
+              </h2>
+              <p class="mt-2">
+                {{ t('home.articles.subtitle') }}
+              </p>
+            </div>
+            <articles-card-home v-for="article in articles" :key="article._id" :article="article" type="home" />
+          </div>
+          <div class="space-y-10 lg:pl-16 xl:pl-24">
+            <home-newsletter />
+            <home-history />
+          </div>
         </div>
-        <div class="space-y-10 lg:pl-16 xl:pl-24">
-          <home-newsletter />
-          <home-history />
-        </div>
-      </div>
+      </section>
     </layout-container>
   </div>
 </template>
