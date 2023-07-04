@@ -24,6 +24,9 @@
     "test:watch": "vitest --watch",
     "coverage": "vitest run --coverage"
   },
+  "peerDependencies": {
+    "consola": "3.0.1"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.6",
     "@nuxt-themes/docus": "^1.13.0",
@@ -44,7 +47,6 @@
     "@vueuse/core": "^10.2.1",
     "@vueuse/nuxt": "^10.2.1",
     "autoprefixer": "^10.4.14",
-    "consola": "^3.2.2",
     "eslint": "^8.44.0",
     "happy-dom": "^9.20.3",
     "marked": "^5.1.0",
@@ -61,5 +63,8 @@
     "unplugin-vue-components": "^0.25.1",
     "vitest": "^0.32.4",
     "vue": "^3.3.4"
+  },
+  "dependencies": {
+    "consola": "3.0.1"
   }
 }
