@@ -21,6 +21,10 @@
       "title": "Expérience & Éducation",
       "toggle": "Professionnel",
       "download-cv": "Télécharger mon CV"
+    },
+    "articles": {
+      "title": "Articles",
+      "subtitle": "Mes derniers articles"
     }
   },
   "about": {

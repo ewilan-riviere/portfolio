@@ -21,6 +21,10 @@
       "title": "Work & Education",
       "toggle": "Work",
       "download-cv": "Download my CV"
+    },
+    "articles": {
+      "title": "Latest articles",
+      "subtitle": "My latest articles on my blog"
     }
   },
   "about": {
