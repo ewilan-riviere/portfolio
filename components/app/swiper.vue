@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // Import Swiper Vue.js components
 import { Swiper } from 'swiper/vue'
-import { Autoplay, Navigation, Pagination } from 'swiper'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import type { SwiperModule, SwiperOptions, Swiper as SwiperType } from 'swiper/types'
 
 // Import Swiper styles
