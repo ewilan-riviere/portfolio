@@ -1,31 +1,30 @@
 import path from 'node:path'
 import { defineConfig } from 'vitest/config'
 import Vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig({
   plugins: [
     Vue(),
-    AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        'vue-i18n',
-        // {
-        //   '#imports': [
-        //     'useNuxtApp',
-        //     'useBaseFetch',
-        //     'useRuntimeConfig',
-        //     'useState',
-        //     'useLazyAsyncData',
-        //     'useLocalisationOptions',
-        //     'useFavoriteLocalisation',
-        //     'useInputValidation',
-        //   ],
-        // },
-      ],
-    }),
+    // AutoImport({
+    //   imports: [
+    //     'vue',
+    //     'vue-router',
+    //     'vue-i18n',
+    //     // {
+    //     //   '#imports': [
+    //     //     'useNuxtApp',
+    //     //     'useBaseFetch',
+    //     //     'useRuntimeConfig',
+    //     //     'useState',
+    //     //     'useLazyAsyncData',
+    //     //     'useLocalisationOptions',
+    //     //     'useFavoriteLocalisation',
+    //     //     'useInputValidation',
+    //     //   ],
+    //     // },
+    //   ],
+    // }),
     Components({
       dirs: ['./components'],
       directoryAsNamespace: true,
