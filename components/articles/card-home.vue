@@ -17,7 +17,7 @@ const { date } = useUtils()
   <article
     class="group relative flex flex-col items-start"
   >
-    <h2
+    <h3
       class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100"
     >
       <div
@@ -31,7 +31,7 @@ const { date } = useUtils()
           {{ article.title }}
         </span>
       </nuxt-link>
-    </h2>
+    </h3>
     <div
       v-if="article.publishedAt"
       class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"

@@ -1,10 +1,6 @@
 <script lang="ts" setup>
 import type { Project } from '~/types/project'
 
-defineProps<{
-  projects: Project[]
-}>()
-
 const { fetchData } = useApi()
 const { shuffle } = useData()
 const api = await fetchData<Project[]>('/api/projects', {

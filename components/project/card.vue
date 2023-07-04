@@ -34,16 +34,19 @@ const domain = computed(() => {
     <div class="rounded-md p-4 h-full border border-gray-100 dark:border-gray-700">
       <div class="flex items-center justify-between">
         <app-img
-          :src="`/projects/${project.slug}-icon.webp`"
+          :src="`/images/projects/${project.slug}-icon.webp`"
           class="h-12 w-12 object-cover"
           :alt="project.title"
           width="48"
           height="48"
         />
-        <div class="flex items-center space-x-1 border context-border rounded-full px-1.5 py-0.5">
-          <div class="context-bg rounded-full w-2 h-2" />
-          <div class="text-xs">
-            {{ $t(`project.contexts.${project.context}`) }}
+        <div class="flex flex-wrap space-x-3">
+          <SvgIcon v-if="project.isOpenSource" name="open-source" class="w-5 h-5" title="Open source" />
+          <div class="flex items-center space-x-1 border context-border rounded-full px-1.5 py-0.5">
+            <div class="context-bg rounded-full w-2 h-2" />
+            <div class="text-xs">
+              {{ $t(`project.contexts.${project.context}`) }}
+            </div>
           </div>
         </div>
       </div>

@@ -40,8 +40,8 @@ export function useMarkdownContent() {
       base = base.filter(item => item !== '')
       const name = base.pop()
 
-      article.picture = `/blog/${name}.jpg`
-      article.icon = `/blog/${name}-icon.webp`
+      article.picture = `/images/blog/${name}.jpg`
+      article.icon = `/images/blog/${name}-icon.webp`
 
       const formatter = new Intl.ListFormat(locale, { style: 'long', type: 'conjunction' })
       article.tagsList = article.tags ? formatter.format(article.tags) : undefined
