@@ -4,7 +4,7 @@ declare interface Attributes {
   picture: string
 }
 
-declare interface Markdown {
+export interface Markdown {
   attributes?: Attributes
   body: string
 }

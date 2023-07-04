@@ -1,3 +1,5 @@
+import type { Project } from './project'
+
 interface Link {
   name: string
   link: string

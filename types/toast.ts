@@ -1,13 +1,13 @@
-declare type ToastAuto = 'success' | 'error'
+export type ToastAuto = 'success' | 'error'
 
-declare type ToastType =
+export type ToastType =
   | 'success'
   | 'warning'
   | 'error'
   | 'information'
   | 'default'
 
-declare interface Toast {
+export interface Toast {
   title: string
   text?: string
   type?: ToastType

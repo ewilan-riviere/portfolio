@@ -1,3 +1,3 @@
-declare interface Hobby {
+export interface Hobby {
   name: string
 }

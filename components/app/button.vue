@@ -77,7 +77,7 @@ const alignment = computed((): string => {
 
 watch(
   () => props.href || props.to,
-  (newVal) => {
+  () => {
     setupButton()
   },
 )

@@ -5,7 +5,7 @@ interface SocialItem {
   link: string
 }
 
-declare interface About {
+export interface About {
   name: string
   'professional-title': string
   title: string

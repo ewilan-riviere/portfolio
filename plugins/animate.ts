@@ -26,7 +26,7 @@ function useAnimate(el: HTMLElement, binding: DirectiveBinding<Options>) {
   }
   const duration = ref(options.duration ?? defaultOpts.duration)
   if (binding.arg)
-    duration.value = parseInt(binding.arg)
+    duration.value = Number.parseInt(binding.arg)
 
   const callback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
     entries.forEach((entry) => {

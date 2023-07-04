@@ -1,10 +1,10 @@
-declare interface Keyable {
+export interface Keyable {
   [key: string]: any
 }
 
 interface Query {}
 
-declare interface Route {
+export interface Route {
   name?: string
   params?: Keyable
   query?: Query
@@ -12,10 +12,4 @@ declare interface Route {
   queryList?: Keyable
 }
 
-declare type LocaleList = 'en' | 'fr'
-
-export interface TypedRoute {
-  name: import('@/assets/router').TypedRouteList
-  params?: import('@/assets/router/typed-router').TypedRouteParams[import('@/assets/router').TypedRouteList]
-  query?: Query
-}
+export type LocaleList = 'en' | 'fr'

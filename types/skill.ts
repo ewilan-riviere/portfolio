@@ -1,4 +1,4 @@
-declare interface Skill {
+export interface Skill {
   title: string
   slug: string
   icon?: string

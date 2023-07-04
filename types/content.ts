@@ -12,7 +12,7 @@ export interface TocItem {
   text: string
 }
 
-declare interface Guide {
+export interface Guide {
   title?: string
   subtitle?: string
   excerpt?: any

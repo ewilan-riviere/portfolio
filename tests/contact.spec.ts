@@ -1,5 +1,4 @@
 import { expect, it, vi } from 'vitest'
-import type { VueWrapper } from '@vue/test-utils'
 import { mount } from '@vue/test-utils'
 
 import ContactForm from '@/components/form/contact.vue'
@@ -21,9 +20,9 @@ vi.mock('#imports', () => {
   }
 })
 
-function findByText(wrap: VueWrapper, selector: string, text: RegExp) {
-  return wrap.findAll(selector).filter(n => n.text().match(text))
-}
+// function findByText(wrap: VueWrapper, selector: string, text: RegExp) {
+//   return wrap.findAll(selector).filter(n => n.text().match(text))
+// }
 
 it('mounts properly', () => {
   // const wrapper = mountTheForm()
@@ -31,8 +30,8 @@ it('mounts properly', () => {
   expect(wrapper).toBeTruthy()
   // expect(wrapper.text()).toContain('Submit')
 
-  const buttons = wrapper.findAll('button')
-  console.log(buttons)
+  // const buttons = wrapper.findAll('button')
+  // console.log(buttons)
 
   // expect(button?.exists()).toBeTruthy()
 

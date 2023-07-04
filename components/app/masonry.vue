@@ -5,9 +5,6 @@ for (let i = 1; i <= 25; i++) {
   const el = [i]
   bricks.push(`https://seeds.git-projects.xyz/api/pictures/random/${el}`)
 }
-
-const { fetchData } = useApi()
-const projects = await fetchData<Project[]>('/api/projects')
 </script>
 
 <template>

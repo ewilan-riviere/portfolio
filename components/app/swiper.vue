@@ -2,20 +2,13 @@
 // Import Swiper Vue.js components
 import { Swiper } from 'swiper/vue'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-import type { SwiperModule, SwiperOptions, Swiper as SwiperType } from 'swiper/types'
+import type { SwiperModule, SwiperOptions } from 'swiper/types'
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-
-function onSwiper(swiper: SwiperType) {
-  // console.log(swiper)
-}
-function onSlideChange() {
-  // console.log('slide change')
-}
 
 const modules: SwiperModule[] = [Pagination, Navigation, Autoplay]
 const main: SwiperOptions = {
@@ -64,8 +57,6 @@ const main: SwiperOptions = {
       :navigation="main.navigation"
       :pagination="main.pagination"
       :breakpoints="main.breakpoints"
-      @swiper="onSwiper"
-      @slide-change="onSlideChange"
     >
       <slot />
       <div class="swiper-pagination" />

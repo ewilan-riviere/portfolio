@@ -1,4 +1,4 @@
-declare interface ProjectStatus {
+export interface ProjectStatus {
   slug: string
   order: number
 }
