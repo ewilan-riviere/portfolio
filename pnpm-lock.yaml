@@ -62,6 +62,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.24)
+  consola:
+    specifier: ^3.2.2
+    version: 3.2.2
   eslint:
     specifier: ^8.44.0
     version: 8.44.0
