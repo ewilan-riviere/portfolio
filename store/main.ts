@@ -47,22 +47,6 @@ export const useMainStore = defineStore('main', {
     socials: [
       {
         label: 'about.follow',
-        title: 'Twitter',
-        href: 'https://twitter.com/ewilanriviere',
-        icon: 'social/twitter',
-        color: '#1DA1F2',
-        colorDark: '#1DA1F2',
-      },
-      {
-        label: 'about.follow',
-        title: 'Stack Overflow',
-        href: 'https://stackoverflow.com/users/11008206/ewilan-r?tab=profile',
-        icon: 'social/stackoverflow',
-        color: '#F48024',
-        colorDark: '#F48024',
-      },
-      {
-        label: 'about.follow',
         title: 'GitHub',
         href: 'https://github.com/ewilan-riviere',
         icon: 'social/github',
@@ -76,6 +60,22 @@ export const useMainStore = defineStore('main', {
         icon: 'social/gitlab',
         color: '#FC6D26',
         colorDark: '#FC6D26',
+      },
+      {
+        label: 'about.follow',
+        title: 'Twitter',
+        href: 'https://twitter.com/ewilanriviere',
+        icon: 'social/twitter',
+        color: '#1DA1F2',
+        colorDark: '#1DA1F2',
+      },
+      {
+        label: 'about.follow',
+        title: 'Stack Overflow',
+        href: 'https://stackoverflow.com/users/11008206/ewilan-r?tab=profile',
+        icon: 'social/stackoverflow',
+        color: '#F48024',
+        colorDark: '#F48024',
       },
       {
         label: 'about.follow',

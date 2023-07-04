@@ -25,7 +25,7 @@ export default defineEventHandler((event): Project[] => {
 
   const config = useRuntimeConfig()
   projects.forEach((project) => {
-    project.image = `${config.public.baseUrl}/projects/${project.slug}.webp`
+    project.image = `${config.public.baseUrl}/images/projects/${project.slug}.webp`
   })
 
   return queryBuilder<Project>(event, projects)
