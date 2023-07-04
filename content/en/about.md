@@ -11,8 +11,8 @@ I develop best in groups, preferring communication and help to isolated developm
 
 My favorite tools are :
 
-- IDE : Visual Studio Code
+- IDE : [Visual Studio Code](https://code.visualstudio.com/)
 - System: macOS (M1 chip), Android
-- Server: Linux Debian
-- Main technologies : Laravel, Vue.js, TypeScript, Node.js, Tailwind CSS
-- In addition : GitHub Copilot, TablePlus, Figma
+- Server: [Linux Debian](https://www.debian.org/)
+- Main technologies : [Laravel](https://laravel.com/), [Vue.js](https://vuejs.org/), [TypeScript](https://www.typescriptlang.org/), [Node.js](https://nodejs.org/en), [Tailwind CSS](https://tailwindcss.com/), [Vite](https://vitejs.dev/)
+- In addition : [GitHub Copilot](https://github.com/features/copilot), [TablePlus](https://tableplus.com/), [Figma](https://www.figma.com/), [Ray](https://myray.app/)
