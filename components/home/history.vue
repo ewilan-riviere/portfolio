@@ -5,7 +5,7 @@ const { workItems, educationItems } = useMainStore()
 
 const { locale } = useI18n()
 const getCVPath = computed(() => {
-  const defaultPath = '/projects/documents/ewilan-riviere-resume'
+  const defaultPath = '/documents/ewilan-riviere-resume'
   if (locale.value === 'en')
     return `${defaultPath}-en.pdf`
   if (locale.value === 'fr')
