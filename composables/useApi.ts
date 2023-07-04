@@ -7,6 +7,7 @@ import type { HistoryItem } from '~~/types/history-item'
 
 interface QueryParam {
   'filter[isDraft]'?: boolean | undefined
+  'filter[isOpenSource]'?: boolean | undefined
   'filter[isFavorite]'?: boolean | undefined
   'sort'?: string | undefined
   [key: string]: string | number | boolean | undefined
