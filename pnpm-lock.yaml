@@ -47,12 +47,6 @@ dependencies:
   marked:
     specifier: ^5.1.0
     version: 5.1.1
-  marked-gfm-heading-id:
-    specifier: ^3.0.4
-    version: 3.0.4(marked@5.1.1)
-  marked-mangle:
-    specifier: ^1.1.0
-    version: 1.1.0(marked@5.1.1)
   nuxt:
     specifier: 3.6.1
     version: 3.6.1(@types/node@20.4.1)(eslint@8.44.0)(rollup@3.26.2)(typescript@5.1.6)
@@ -6357,23 +6351,6 @@ packages:
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
-    dev: false
-
-  /marked-gfm-heading-id@3.0.4(marked@5.1.1):
-    resolution: {integrity: sha512-k22f+k8B449kRVXbi3OYxahI6t8HywKIF0wn0L0atzYhFHYRcJynLDekh+lcxcZkNnkEGRZOHuRfTcpjMjLqDw==}
-    peerDependencies:
-      marked: ^4 || ^5
-    dependencies:
-      github-slugger: 2.0.0
-      marked: 5.1.1
-    dev: false
-
-  /marked-mangle@1.1.0(marked@5.1.1):
-    resolution: {integrity: sha512-ed2W2gMB2HIBaYasBZveMFJfDRTL2OFycr0GgUSPcBSNl5dX+1r6lHG6u1eFXw7kej2hBTWa1m6YZqcfn4Coxw==}
-    peerDependencies:
-      marked: ^4 || ^5
-    dependencies:
-      marked: 5.1.1
     dev: false
 
   /marked@5.1.1:
