@@ -22,8 +22,8 @@ currentTechs.forEach((element: string) => {
 </script>
 
 <template>
-  <div class="flex flex-wrap space-x-2">
-    <project-technology v-for="tech in techs" :key="tech.slug" :technology="tech" />
+  <div>
+    {{ techs.map(t => t.title).join(', ') }}
   </div>
 </template>
 

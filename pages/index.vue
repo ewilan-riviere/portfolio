@@ -23,7 +23,6 @@ useMetadata({
     <home-gallery />
     <layout-container>
       <section v-animate class="max-w-xl lg:max-w-none">
-        <home-open-source class="pt-10 pb-24" />
         <div class="mx-auto grid grid-cols-1 gap-y-20 lg:grid-cols-2">
           <div class="flex flex-col gap-16">
             <div>
@@ -41,6 +40,7 @@ useMetadata({
             <home-history />
           </div>
         </div>
+        <home-open-source class="pt-10 pb-24" />
       </section>
     </layout-container>
   </div>

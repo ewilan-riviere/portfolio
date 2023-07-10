@@ -1,4 +1,8 @@
 import type { NitroFetchRequest } from 'nitropack'
+import type { About } from 'types/about'
+import type { Feature } from 'types/feature'
+import type { ProjectStatus } from 'types/project-statuses'
+import type { Skill } from 'types/skill'
 import type { Developer } from '~/types/developer'
 import type { Project } from '~/types/project'
 import type { Technology } from '~/types/technology'
@@ -8,6 +12,7 @@ import type { HistoryItem } from '~~/types/history-item'
 interface QueryParam {
   'filter[isDraft]'?: boolean | undefined
   'filter[isOpenSource]'?: boolean | undefined
+  'filter[isPackage]'?: boolean | undefined
   'filter[isFavorite]'?: boolean | undefined
   'sort'?: string | undefined
   [key: string]: string | number | boolean | undefined

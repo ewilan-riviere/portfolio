@@ -25,6 +25,10 @@
     "articles": {
       "title": "Latest articles",
       "subtitle": "My latest articles on my blog"
+    },
+    "open-source": {
+      "title": "Open-source packages",
+      "subtitle": "The open-source libraries that I have developed for various projects."
     }
   },
   "about": {
