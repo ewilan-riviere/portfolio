@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   extends: [
-    '@nuxt-themes/docus',
+    '@nuxt-themes/docus', // https://github.com/nuxt-themes/docus
     'nuxt-seo-kit', // https://github.com/harlan-zw/nuxt-seo-kit
   ],
   modules: [
@@ -29,10 +29,7 @@ export default defineNuxtConfig({
 
   colorMode: modules.colorMode,
   content: modules.content,
-  i18n: {
-    ...modules.i18n,
-    // vueI18n: './i18n.config.ts',
-  },
+  i18n: modules.i18n,
   svgTransformer: modules.svgTransformer,
   typedLink: modules.typedLink,
 

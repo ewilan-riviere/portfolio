@@ -63,13 +63,13 @@ ps2pdf resume.pdf resume-ps2pdf.pdf
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-[nuxt-version-src]: https://img.shields.io/badge/dynamic/json?label=Nuxt&query=devDependencies['nuxt']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&logo=nuxt.js&logoColor=ffffff&labelColor=18181b
+[nuxt-version-src]: https://img.shields.io/badge/dynamic/json?label=Nuxt&query=dependencies['nuxt']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&logo=nuxt.js&logoColor=ffffff&labelColor=18181b
 [nuxt-version-href]: https://nuxt.com
-[tailwind-version-src]: https://img.shields.io/badge/dynamic/json?label=Tailwind%20CSS&query=devDependencies['tailwindcss']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&labelColor=18181b
+[tailwind-version-src]: https://img.shields.io/badge/dynamic/json?label=Tailwind%20CSS&query=dependencies['tailwindcss']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&labelColor=18181b
 [tailwind-version-href]: https://tailwindcss.com/
-[content-version-src]: https://img.shields.io/badge/dynamic/json?label=@nuxt/content&query=devDependencies['@nuxt/content']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&labelColor=18181b
+[content-version-src]: https://img.shields.io/badge/dynamic/json?label=@nuxt/content&query=dependencies['@nuxt/content']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&labelColor=18181b
 [content-version-href]: https://content.nuxtjs.org/
-[i18n-version-src]: https://img.shields.io/badge/dynamic/json?label=@nuxtjs/i18n&query=devDependencies['@nuxtjs/i18n']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&labelColor=18181b
+[i18n-version-src]: https://img.shields.io/badge/dynamic/json?label=@nuxtjs/i18n&query=dependencies['@nuxtjs/i18n']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&labelColor=18181b
 [i18n-version-href]: https://v8.i18n.nuxtjs.org/
 [tests-src]: https://img.shields.io/github/actions/workflow/status/ewilan-riviere/portfolio/ci.yml?branch=main&label=tests&style=flat-square&colorA=18181B
 [tests-href]: https://github.com/ewilan-riviere/portfolio/actions/workflows/ci.yml

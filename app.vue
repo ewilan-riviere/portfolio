@@ -6,6 +6,7 @@ await fetchApi()
 <template>
   <NuxtLoadingIndicator color="#9333EA" />
   <NuxtLayout>
+    <SeoKit />
     <NuxtPage />
   </NuxtLayout>
 </template>

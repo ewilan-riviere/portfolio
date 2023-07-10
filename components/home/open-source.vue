@@ -18,16 +18,7 @@ const placeholder = '/images/placeholder.webp'
 
 <template>
   <div class="mx-auto grid gap-x-8 gap-y-20">
-    <div class="max-w-2xl">
-      <h2
-        class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl"
-      >
-        {{ $t('home.open-source.title') }}
-      </h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-        {{ $t('home.open-source.subtitle') }}
-      </p>
-    </div>
+    <home-title :title="$t('home.open-source.title')" :subtitle="$t('home.open-source.subtitle')" />
     <ul
       role="list"
       class="grid gap-x-8 gap-y-4 sm:grid-cols-2 sm:gap-y-6 xl:col-span-2"
