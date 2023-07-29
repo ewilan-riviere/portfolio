@@ -1,3 +1,4 @@
+/* eslint-disable n/prefer-global/process */
 const runtimeConfigPrivate = {
   secretKey: process.env.SECRET_KEY ?? '',
 }

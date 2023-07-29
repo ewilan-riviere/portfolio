@@ -12,6 +12,20 @@ export interface TocItem {
   text: string
 }
 
+export interface FrontMatterItem {
+  [key: string]: string
+}
+
+export interface ApiContent {
+  status: number
+  data: ApiContentItem[]
+}
+
+export interface ApiContentItem {
+  frontmatter?: FrontMatterItem
+  content?: string
+}
+
 export interface Guide {
   title?: string
   subtitle?: string

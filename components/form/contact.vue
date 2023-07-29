@@ -8,7 +8,7 @@ const form = ref({
 })
 
 const isDev = import.meta.env.DEV
-const { findOne, content } = useMarkdownContent()
+const { item } = await useContent('terms')
 
 const loading = ref(false)
 const send = ref(false)
@@ -27,10 +27,6 @@ function test() {
     honeypot: false,
   }
 }
-
-await findOne('terms', {
-  localized: true,
-})
 
 const config = useRuntimeConfig()
 async function submit() {
@@ -135,8 +131,8 @@ async function submit() {
             </field-toggle>
             <input id="conditions-2" v-model="form.honeypot" type="checkbox" class="sr-only" name="conditions-2">
             <app-dialog :open="termsAreOpened" @close="termsAreOpened = false">
-              <div class="p-6 prose dark:prose-invert">
-                <ContentRenderer :value="content" />
+              <div v-if="item" class="p-6 prose dark:prose-invert">
+                <div v-html="item.content" />
                 <div class="flex justify-end">
                   <app-button color="secondary" @click="termsAreOpened = false">
                     {{ $t('contact.form.understand') }}

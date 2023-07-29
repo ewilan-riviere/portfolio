@@ -1,12 +1,8 @@
 <script lang="ts" setup>
 import { useMainStore } from '@/store/main'
 
-const { findOne, content } = useMarkdownContent()
+const { frontmatter, content } = await useContent('about')
 const { socials } = useMainStore()
-
-await findOne('about', {
-  localized: true,
-})
 
 const { t } = useI18n()
 
@@ -37,13 +33,13 @@ useMetadata({
         <h1
           class="text-3xl font-semibold text-zinc-800 dark:text-zinc-100 sm:text-4xl"
         >
-          {{ content?.title }}
+          {{ frontmatter?.title }}
         </h1>
         <h2 class="text-xl font-semibold text-zinc-800 dark:text-zinc-100 mt-6">
-          {{ content?.subtitle }}
+          {{ frontmatter?.subtitle }}
         </h2>
-        <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 prose">
-          <ContentRenderer :value="content" />
+        <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 prose dark:prose-invert">
+          <div v-html="content" />
         </div>
       </div>
       <div class="lg:pl-20">

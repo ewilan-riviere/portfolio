@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { Content } from '~/composables/useMarkdownContent'
+import type { ContentItem } from '~/server/content/Content'
 
 interface Props {
-  article: Content
+  article: ContentItem
   type?: 'home' | 'article'
 }
 
@@ -23,19 +23,26 @@ const { date } = useUtils()
       <div
         class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
       />
-      <nuxt-link :to="article._link">
+      <typed-link
+        :to="{
+          name: 'articles-slug',
+          params: {
+            slug: article.slug as string,
+          },
+        }"
+      >
         <span
           class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl"
         />
         <span class="relative z-10">
           {{ article.title }}
         </span>
-      </nuxt-link>
+      </typed-link>
     </h3>
     <div
-      v-if="article.publishedAt"
+      v-if="article.frontmatter?.publishedAt"
       class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-      :datetime="article.publishedAt?.toString()"
+      :datetime="article.frontmatter?.publishedAt?.toString()"
     >
       <span
         class="absolute inset-y-0 left-0 flex items-center"
@@ -45,21 +52,21 @@ const { date } = useUtils()
       </span>
       <div class="space-x-1">
         <time
-          v-if="article.publishedAt"
-          :datetime="article.publishedAt?.toString()"
+          v-if="article.frontmatter?.publishedAt"
+          :datetime="article.frontmatter.publishedAt?.toString()"
         >
-          {{ date(article.publishedAt) }}
+          {{ date(article.frontmatter?.publishedAt) }}
         </time>
         <time
-          v-if="article.updatedAt"
-          :datetime="article.updatedAt?.toString()"
+          v-if="article.frontmatter?.updatedAt"
+          :datetime="article.frontmatter.updatedAt?.toString()"
         >
-          ({{ $t(`blog.article.last-update`, { date: date(article.updatedAt, 'date') }) }})
+          ({{ $t(`blog.article.last-update`, { date: date(article.frontmatter?.updatedAt, 'date') }) }})
         </time>
       </div>
     </div>
     <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-      {{ article.description }}
+      {{ article.frontmatter?.description }}
     </p>
     <div
       aria-hidden="true"

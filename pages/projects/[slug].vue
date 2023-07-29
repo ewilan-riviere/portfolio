@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { marked } from 'marked'
 import { useMainStore } from '~/store/main'
 import type { Project } from '~/types/project'
 
 const { projects, projectStatuses } = useMainStore()
-const { findOne, content } = useMarkdownContent()
 const { params } = useRoute()
 const { date } = useUtils()
+
+const { frontmatter } = await useContent(`projects/${params.slug}`)
 
 const slug = params.slug as string
 
@@ -14,11 +14,6 @@ const project = ref<Project>()
 project.value = projects.find(p => p.slug === slug)
 
 const readme = ref<string>()
-
-await findOne(`projects/${project.value?.slug}`, {
-  // localized: true,
-  allowFailed: true,
-})
 const status = projectStatuses.find(s => s.order === project.value?.status)?.slug
 
 async function fetchReadme(): Promise<string | undefined> {
@@ -36,7 +31,9 @@ async function fetchReadme(): Promise<string | undefined> {
   readmeUrl += '/main/README.md'
 
   const readmeText = await fetch(readmeUrl).then(r => r.text())
-  readme.value = marked.parse(readmeText)
+  const html = await useMarked(readmeText)
+
+  readme.value = html.value
 
   return readmeText
 }
@@ -65,7 +62,7 @@ useMetadata({
           <div class="lg:pr-4">
             <div class="lg:max-w-lg">
               <p class="text-lg leading-8 text-gray-700 dark:text-gray-300">
-                {{ content?.description }}
+                {{ frontmatter?.description }}
               </p>
               <project-developers
                 :project="project"
@@ -83,7 +80,7 @@ useMetadata({
         >
           <app-img
             :src="project.image" :alt="project.title"
-            class="w-full max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 object-contain"
+            class="w-full max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 object-contain h-52"
           />
           <div class="mt-6 text-sm border border-gray-100 dark:border-gray-700 rounded-md p-4">
             <div class="flex items-center space-x-1 mb-2">

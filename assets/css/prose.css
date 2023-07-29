@@ -1,5 +1,14 @@
 .prose pre {
-  @apply bg-gray-800 !text-base;
+  @apply bg-gray-800 !text-base p-0;
+}
+.prose code {
+  @apply before:content-[] after:content-[] bg-gray-700 p-0.5 rounded-md;
+}
+.prose a img {
+  @apply m-3;
+}
+.prose img {
+  @apply max-h-64;
 }
 .prose .prose-code .filename {
   color: #fff !important;

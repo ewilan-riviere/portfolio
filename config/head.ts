@@ -93,6 +93,7 @@ const meta: Meta<any['link']>[] = [
   {
     hid: 'og:url',
     property: 'og:url',
+    // eslint-disable-next-line n/prefer-global/process
     content: process.env.NUXT_PUBLIC_SITE_URL,
   },
   {

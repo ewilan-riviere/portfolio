@@ -1,12 +1,6 @@
 <script lang="ts" setup>
-const { findAll, contents: articles } = useMarkdownContent()
+const { items } = await useContentAll('articles')
 const { t } = useI18n()
-
-await findAll('articles', {
-  where: {
-    draft: false,
-  },
-})
 
 useMetadata({
   title: t('head.blog'),
@@ -21,8 +15,8 @@ useMetadata({
       >
         <div class="space-y-8 max-w-4xl">
           <articles-card
-            v-for="article in articles"
-            :key="article._id"
+            v-for="article in items"
+            :key="article.slug"
             :article="article"
           />
         </div>

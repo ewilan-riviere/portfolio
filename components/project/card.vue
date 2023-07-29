@@ -7,11 +7,11 @@ const props = defineProps<{
 
 const { date } = useUtils()
 
-const { findOne, content } = useMarkdownContent()
-await findOne(`projects/${props.project?.slug}`, {
-  // localized: true,
-  allowFailed: true,
-})
+// const { findOne, content } = useMarkdownContent()
+// await findOne(`projects/${props.project?.slug}`, {
+//   // localized: true,
+//   allowFailed: true,
+// })
 
 const domain = computed(() => {
   let url
@@ -69,7 +69,7 @@ const domain = computed(() => {
         </p>
       </div>
       <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
-        {{ content?.description }}
+        <!-- {{ content?.description }} -->
       </p>
       <div class="py-5" />
       <div class="absolute bottom-4">

@@ -56,7 +56,7 @@ Now you will have two files, PHP file in `app/View/Components/Field/Upload.php` 
 
 Before anything, you have to add [Blade directives `@stack`](https://laravel.com/docs/10.x/blade#stacks) to your root Blade file, usually `resources/views/layouts/app.blade.php`:
 
-```html [resources/views/layouts/app.blade.php]
+```blade [resources/views/layouts/app.blade.php]
 <head>
   <!-- ... -->
   @stack('head')

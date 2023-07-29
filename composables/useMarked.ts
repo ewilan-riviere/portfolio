@@ -2,10 +2,13 @@ import { marked } from 'marked'
 import hls from 'highlight.js'
 import 'highlight.js/styles/night-owl.css'
 
-export async function useMarkdownHtml(markdown: string) {
+export async function useMarked(markdown: string | undefined) {
   const html = ref<string>()
 
   async function parse() {
+    if (!markdown)
+      return
+
     const rawHtml = marked.parse(markdown, { mangle: false, headerIds: false })
     html.value = rawHtml
     replacesCodeBlocks()
@@ -39,9 +42,13 @@ export async function useMarkdownHtml(markdown: string) {
   }
 
   function decodeHtmlEntities(html: string): string {
-    const txt = document.createElement('textarea')
-    txt.innerHTML = html
-    return txt.value
+    // eslint-disable-next-line n/prefer-global/process
+    if (process.client)
+      return html
+
+    // const txt = document.createElement('textarea')
+    // txt.innerHTML = html
+    return html
   }
 
   return html

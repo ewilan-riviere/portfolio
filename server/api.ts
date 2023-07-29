@@ -30,54 +30,66 @@ function shuffle<T>(a: any[]): T[] {
 }
 
 export function queryBuilder<T>(event: H3Event, data: T[]): T[] {
-  if (event.node.req.url) {
-    const config = useRuntimeConfig()
+  if (!event.node.req.url)
+    return []
 
-    const url = `${config.public.baseUrl}${event.node.req.url}`
-    const params = new URL(url).searchParams
+  const config = useRuntimeConfig()
 
-    for (const query of params.keys()) {
-      const value = params.get(query)
-      if (!value)
-        continue
+  const url = `${config.public.baseUrl}${event.node.req.url}`
+  const params = new URL(url).searchParams
 
-      const isFilter = query.startsWith('filter')
-      const isSort = query.startsWith('sort')
-      const isLimit = query.startsWith('limit')
-      const isShuffle = query.startsWith('shuffle')
-      const isOther = !isFilter && !isSort && !isLimit && !isShuffle
+  for (const query of params.keys()) {
+    const value = params.get(query)
+    if (!value)
+      continue
 
-      let qvalue: string | undefined | boolean = value
-      if (value === 'true' || value === 'false')
-        value === 'true' ? (qvalue = true) : (qvalue = false)
+    const isFilter = query.startsWith('filter')
+    const isSort = query.startsWith('sort')
+    const isLimit = query.startsWith('limit')
+    const isShuffle = query.startsWith('shuffle')
+    const isOther = !isFilter && !isSort && !isLimit && !isShuffle
 
-      if (isFilter) {
-        const type = query.split('[')[1].split(']')[0]
-        data = data.filter((item: any) => item[type] === qvalue)
-      }
+    let qvalue: string | undefined | boolean = value
+    if (value === 'true' || value === 'false')
+      value === 'true' ? (qvalue = true) : (qvalue = false)
 
-      if (isSort) {
-        let reverse = false
-        if (typeof qvalue === 'string' && qvalue.startsWith('-')) {
-          reverse = true
-          qvalue = qvalue.replace('-', '')
-        }
-
-        data = sortByKey(data, qvalue as string)
-        if (reverse)
-          data.reverse()
-      }
-
-      if (isLimit)
-        data = data.slice(0, Number(qvalue))
-
-      if (isShuffle)
-        data = shuffle(data)
-
-      if (isOther)
-        data = data.filter((item: any) => item[query] === qvalue)
+    if (isFilter) {
+      const type = query.split('[')[1].split(']')[0]
+      data = data.filter((item: any) => item[type] === qvalue)
     }
+
+    if (isSort) {
+      let reverse = false
+      if (typeof qvalue === 'string' && qvalue.startsWith('-')) {
+        reverse = true
+        qvalue = qvalue.replace('-', '')
+      }
+
+      data = sortByKey(data, qvalue as string)
+      if (reverse)
+        data.reverse()
+    }
+
+    if (isLimit)
+      data = data.slice(0, Number(qvalue))
+
+    if (isShuffle)
+      data = shuffle(data)
+
+    if (isOther)
+      data = data.filter((item: any) => item[query] === qvalue)
   }
 
   return data
+}
+
+export function queryParams(event: H3Event): URLSearchParams | undefined {
+  if (!event.node.req.url)
+    return
+
+  const config = useRuntimeConfig()
+  const url = `${config.public.baseUrl}${event.node.req.url}`
+
+  const params = new URL(url).searchParams
+  return params
 }

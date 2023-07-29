@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-const { fullPath } = useRoute()
-const { findOne, content: article, toc } = useMarkdownContent()
-await findOne(fullPath)
+const { params } = useRoute()
+const { item, html } = await useContent(`articles/${params.slug}`)
 
 const { date } = useUtils()
 function scrollToTop() {
@@ -10,44 +9,45 @@ function scrollToTop() {
     behavior: 'smooth',
   })
 }
+const picture = computed(() => `/images/blog/${item.value?.slug}.jpg`)
 
 useMetadata({
-  title: article.value?.title,
-  image: article.value?.picture,
-  description: article.value?.description,
+  title: item.value?.title,
+  image: item.value?.frontmatter?.picture,
+  description: item.value?.frontmatter?.description,
 })
 </script>
 
 <template>
   <layout-page
-    v-if="article"
-    :title="article?.title"
-    :description="article?.description"
+    v-if="item"
+    :title="item?.title"
+    :description="item.frontmatter?.description"
   >
     <template #header>
       <div class="text-base text-zinc-500 dark:text-zinc-300 mt-5">
         <time
-          v-if="article.publishedAt"
-          :datetime="article.publishedAt?.toString()"
+          v-if="item.frontmatter?.publishedAt"
+          :datetime="item.frontmatter.publishedAt?.toString()"
           :class="{
-            'text-sm': article.updatedAt,
+            'text-sm': item.frontmatter.updatedAt,
           }"
           class="block"
         >
           {{
             $t(`blog.article.published-at`, {
-              date: date(article.publishedAt, "date"),
+              date: date(item.frontmatter?.publishedAt, "date"),
             })
           }}
         </time>
         <time
-          v-if="article.updatedAt"
-          :datetime="article.updatedAt?.toString()"
+          v-if="item.frontmatter?.updatedAt"
+          :datetime="item.frontmatter.updatedAt?.toString()"
           class="block mt-1 font-semibold"
         >
           {{
             $t(`blog.article.updated-at`, {
-              date: date(article.updatedAt, "date"),
+              date: date(item.frontmatter.updatedAt, "date"),
             })
           }}
         </time>
@@ -80,7 +80,7 @@ useMetadata({
 
     <section class="lg:flex justify-between relative gap-x-10">
       <div class="order-1 lg:order-2 lg:sticky lg:top-16 h-full">
-        <ArticlesToc :items="toc?.links" />
+        <!-- <ArticlesToc :items="toc?.links" /> -->
         <button
           class="hidden lg:flex rounded-full bg-gray-800 w-8 h-8 border border-gray-700 mx-auto mt-6 hover:bg-gray-700"
           @click="scrollToTop()"
@@ -90,29 +90,29 @@ useMetadata({
       </div>
       <div class="mx-auto mt-16 lg:mt-0">
         <app-img
-          :src="article.picture"
-          :alt="article.title"
+          :src="picture"
+          :alt="item.title"
           class="w-full h-64 object-top object-cover rounded-md"
-          :legend="$t('legend', { from: article.legend })"
-          :origin="article.origin"
+          :legend="$t('legend', { from: item.frontmatter?.legend })"
+          :origin="item.frontmatter?.origin"
         />
         <header class="flex flex-col">
           <h1 class="sr-only">
-            {{ article.title }}
+            {{ item.title }}
           </h1>
         </header>
         <div class="border border-gray-100 dark:border-gray-800 rounded-md mt-10 p-4">
           <div class="uppercase">
-            {{ article.category }}
+            {{ item.frontmatter?.category }}
           </div>
-          <div v-if="article.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
+          <!-- <div v-if="article.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
             {{ article.tags.map((tag) => `#${tag}`).join(' ') }}
-          </div>
+          </div> -->
         </div>
         <div
           class="mt-8 prose prose-xl dark:prose-invert prose-a:no-underline max-w-xl prose-a:hoverable"
         >
-          <ContentRenderer :value="article" />
+          <Content :content="html" />
         </div>
       </div>
     </section>

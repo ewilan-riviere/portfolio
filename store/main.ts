@@ -1,10 +1,7 @@
 import { defineStore } from 'pinia'
-import type { Developer } from '~/types/developer'
-import type { Project } from '~/types/project'
-import type { Technology } from '~/types/technology'
+import type { About, Developer, Feature, HistoryItem, Hobby, Project, ProjectStatus, Skill, Technology } from 'types'
 import type { IconType } from '~~/.nuxt/svg-transformer'
 import type { RouteType } from '~~/.nuxt/typed-link'
-import type { HistoryItem } from '~~/types/history-item'
 
 export const useMainStore = defineStore('main', {
   state: () => ({

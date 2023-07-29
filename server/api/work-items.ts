@@ -1,5 +1,5 @@
 import { getJson, queryBuilder } from '../api'
-import type { HistoryItem } from '~~/types/history-item'
+import type { HistoryItem } from '~~/types'
 import json from '~~/assets/data/work-items.json'
 import type { IconType } from '~~/.nuxt/svg-transformer'
 
