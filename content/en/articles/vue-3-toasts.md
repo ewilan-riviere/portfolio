@@ -5,7 +5,7 @@ category: vue
 tags: [vue, nuxt]
 publishedAt: 2022-07-08
 updatedAt: 2023-04-26
-draft: true
+_draft: true
 ---
 
 ::alert{type=info}

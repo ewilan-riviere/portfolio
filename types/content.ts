@@ -26,6 +26,25 @@ export interface ApiContentItem {
   content?: string
 }
 
+export interface Document {
+  _dir: string
+  _draft: boolean
+  _empty: boolean
+  _extension: string
+  _file: string
+  _id: string
+  _locale: string
+  _partial: boolean
+  _path: string
+  _source: string
+  _type: string
+  body: any
+  _slug: string
+  _link: string
+  title?: string
+  [key: string]: any
+}
+
 export interface Guide {
   title?: string
   subtitle?: string

@@ -12,7 +12,6 @@ useMetadata({
 <template>
   <layout-page :title="$t('project.title')" :description="$t('project.subtitle')">
     <part-statistics />
-    <hr class="border-gray-100 dark:border-gray-700 mt-10">
     <div class="mt-10">
       <ul
         role="list"

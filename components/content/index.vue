@@ -15,6 +15,5 @@ onMounted(() => {
 <template>
   <div>
     <div v-if="ready" v-html="html" />
-    <!-- <ContentRender :content="content" /> -->
   </div>
 </template>

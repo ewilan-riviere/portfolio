@@ -1,11 +1,5 @@
 <script lang="ts" setup>
-const { items } = await useContentAll('articles')
-// const { findAll, contents: articles } = useMarkdownContent()
-// await findAll('articles', {
-//   where: {
-//     draft: false,
-//   },
-// })
+const { documents } = await useMarkdown('articles')
 
 const { t } = useI18n()
 
@@ -28,7 +22,7 @@ useMetadata({
         <div class="mx-auto grid grid-cols-1 gap-y-20 lg:grid-cols-2">
           <div class="flex flex-col gap-16">
             <home-title :title="t('home.articles.title')" :subtitle="t('home.articles.subtitle')" />
-            <articles-card-home v-for="article in items" :key="article.slug" :article="article" type="home" />
+            <articles-card-home v-for="article in documents" :key="article._slug" :document="article" type="home" />
           </div>
           <div class="space-y-10 lg:pl-16 xl:pl-24">
             <home-newsletter />

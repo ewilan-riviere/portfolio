@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { params } = useRoute()
-const { item, html } = await useContent(`articles/${params.slug}`)
+const { document } = await useMarkdown(`articles/${params.slug}`)
 
 const { date } = useUtils()
 function scrollToTop() {
@@ -9,45 +9,45 @@ function scrollToTop() {
     behavior: 'smooth',
   })
 }
-const picture = computed(() => `/images/blog/${item.value?.slug}.jpg`)
+const picture = computed(() => `/images/blog/${document?._slug}.jpg`)
 
 useMetadata({
-  title: item.value?.title,
-  image: item.value?.frontmatter?.picture,
-  description: item.value?.frontmatter?.description,
+  title: document?.title,
+  image: picture.value,
+  description: document?.description,
 })
 </script>
 
 <template>
   <layout-page
-    v-if="item"
-    :title="item?.title"
-    :description="item.frontmatter?.description"
+    v-if="document"
+    :title="document.title"
+    :description="document.frontmatter?.description"
   >
     <template #header>
       <div class="text-base text-zinc-500 dark:text-zinc-300 mt-5">
         <time
-          v-if="item.frontmatter?.publishedAt"
-          :datetime="item.frontmatter.publishedAt?.toString()"
+          v-if="document.publishedAt"
+          :datetime="document.publishedAt?.toString()"
           :class="{
-            'text-sm': item.frontmatter.updatedAt,
+            'text-sm': document.updatedAt,
           }"
           class="block"
         >
           {{
             $t(`blog.article.published-at`, {
-              date: date(item.frontmatter?.publishedAt, "date"),
+              date: date(document.publishedAt, "date"),
             })
           }}
         </time>
         <time
-          v-if="item.frontmatter?.updatedAt"
-          :datetime="item.frontmatter.updatedAt?.toString()"
+          v-if="document.updatedAt"
+          :datetime="document.updatedAt?.toString()"
           class="block mt-1 font-semibold"
         >
           {{
             $t(`blog.article.updated-at`, {
-              date: date(item.frontmatter.updatedAt, "date"),
+              date: date(document.updatedAt, "date"),
             })
           }}
         </time>
@@ -80,7 +80,7 @@ useMetadata({
 
     <section class="lg:flex justify-between relative gap-x-10">
       <div class="order-1 lg:order-2 lg:sticky lg:top-16 h-full">
-        <!-- <ArticlesToc :items="toc?.links" /> -->
+        <ArticlesToc :items="document.body.toc?.links" />
         <button
           class="hidden lg:flex rounded-full bg-gray-800 w-8 h-8 border border-gray-700 mx-auto mt-6 hover:bg-gray-700"
           @click="scrollToTop()"
@@ -91,28 +91,28 @@ useMetadata({
       <div class="mx-auto mt-16 lg:mt-0">
         <app-img
           :src="picture"
-          :alt="item.title"
+          :alt="document.title"
           class="w-full h-64 object-top object-cover rounded-md"
-          :legend="$t('legend', { from: item.frontmatter?.legend })"
-          :origin="item.frontmatter?.origin"
+          :legend="$t('legend', { from: document.legend })"
+          :origin="document.origin"
         />
         <header class="flex flex-col">
           <h1 class="sr-only">
-            {{ item.title }}
+            {{ document.title }}
           </h1>
         </header>
         <div class="border border-gray-100 dark:border-gray-800 rounded-md mt-10 p-4">
           <div class="uppercase">
-            {{ item.frontmatter?.category }}
+            {{ document.category }}
           </div>
-          <!-- <div v-if="article.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
-            {{ article.tags.map((tag) => `#${tag}`).join(' ') }}
-          </div> -->
+          <div v-if="document.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
+            {{ document.tags.map((tag: string) => `#${tag}`).join(' ') }}
+          </div>
         </div>
         <div
           class="mt-8 prose prose-xl dark:prose-invert prose-a:no-underline max-w-xl prose-a:hoverable"
         >
-          <Content :content="html" />
+          <ContentRenderer :value="document" />
         </div>
       </div>
     </section>

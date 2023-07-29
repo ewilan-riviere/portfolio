@@ -8,7 +8,7 @@ const form = ref({
 })
 
 const isDev = import.meta.env.DEV
-const { item } = await useContent('terms')
+const { document } = await useMarkdown('terms')
 
 const loading = ref(false)
 const send = ref(false)
@@ -131,8 +131,8 @@ async function submit() {
             </field-toggle>
             <input id="conditions-2" v-model="form.honeypot" type="checkbox" class="sr-only" name="conditions-2">
             <app-dialog :open="termsAreOpened" @close="termsAreOpened = false">
-              <div v-if="item" class="p-6 prose dark:prose-invert">
-                <div v-html="item.content" />
+              <div v-if="document" class="p-6 prose dark:prose-invert">
+                <ContentRenderer :value="document" />
                 <div class="flex justify-end">
                   <app-button color="secondary" @click="termsAreOpened = false">
                     {{ $t('contact.form.understand') }}

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-const { items } = await useContentAll('articles')
+const { documents } = await useMarkdown('articles')
+
 const { t } = useI18n()
 
 useMetadata({
@@ -15,8 +16,8 @@ useMetadata({
       >
         <div class="space-y-8 max-w-4xl">
           <articles-card
-            v-for="article in items"
-            :key="article.slug"
+            v-for="article in documents"
+            :key="article._id"
             :article="article"
           />
         </div>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { ContentItem } from '~/server/content/Content'
+import type { Document } from 'types'
 
 interface Props {
-  article: ContentItem
+  article: Document
   type?: 'home' | 'article'
 }
 
@@ -11,23 +11,10 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { date } = useUtils()
-const tags = computed(() => {
-  let tags = props.article.frontmatter?.tags || ''
-  tags = tags.slice(1)
-  tags = tags.slice(0, -1)
-
-  let items: string[] = []
-  if (tags)
-    items = tags.split(',')
-
-  for (let i = 0; i < items.length; i++) {
-    const element = items[i]
-    items[i] = element.trim()
-  }
-
-  return items
+const tags = computed((): string[] => {
+  return props.article.tags ?? []
 })
-const icon = computed(() => `/images/blog/${props.article.slug}-icon.webp`)
+const icon = computed(() => `/images/blog/${props.article._slug}-icon.webp`)
 </script>
 
 <template>
@@ -36,15 +23,15 @@ const icon = computed(() => `/images/blog/${props.article.slug}-icon.webp`)
       <app-img :src="icon" :alt="article.title" class="w-20 h-20 object-contain" />
       <div class="flex">
         <div class="uppercase text-sm italic font-semibold mx-auto mt-2">
-          {{ article.frontmatter?.category }}
+          {{ article.category }}
         </div>
       </div>
     </div>
     <div class="group-hover:bg-gray-50 dark:group-hover:bg-gray-800 rounded-md p-5 w-full transition-colors">
       <time
-        v-if="article.frontmatter?.publishedAt"
+        v-if="article.publishedAt"
         class="relative z-10 order-first mb-2 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5"
-        :datetime="article.frontmatter?.publishedAt.toString()"
+        :datetime="article.publishedAt.toString()"
       >
         <span
           class="absolute inset-y-0 left-0 flex items-center"
@@ -52,18 +39,18 @@ const icon = computed(() => `/images/blog/${props.article.slug}-icon.webp`)
         >
           <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
         </span>
-        {{ date(article.frontmatter?.publishedAt) }}
-        <span v-if="article.frontmatter?.updatedAt" class="font-semibold ml-2">
-          ({{ $t('blog.article.updated-at', { date: date(article.frontmatter?.updatedAt) }) }})
+        {{ date(article.publishedAt) }}
+        <span v-if="article.updatedAt" class="font-semibold ml-2">
+          ({{ $t('blog.article.updated-at', { date: date(article.updatedAt) }) }})
         </span>
       </time>
       <h2>
         {{ article.title }}
       </h2>
       <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        {{ article.frontmatter?.description }}
+        {{ article.description }}
       </p>
-      <div v-if="article.frontmatter?.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
+      <div v-if="article.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
         {{ tags.map((tag) => `#${tag}`).join(' ') }}
       </div>
       <div
@@ -85,13 +72,8 @@ const icon = computed(() => `/images/blog/${props.article.slug}-icon.webp`)
         </svg>
       </div>
     </div>
-    <typed-link
-      :to="{
-        name: 'articles-slug',
-        params: {
-          slug: article.slug as string,
-        },
-      }" class="absolute inset-0 z-10"
+    <nuxt-link
+      :to="article._link" class="absolute inset-0 z-10"
     />
   </div>
 </template>

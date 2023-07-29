@@ -1,43 +1,18 @@
 <script lang="ts" setup>
+import type { Project } from 'types'
 import { useMainStore } from '~/store/main'
-import type { Project } from '~/types/project'
 
 const { projects, projectStatuses } = useMainStore()
 const { params } = useRoute()
 const { date } = useUtils()
 
-const { frontmatter } = await useContent(`projects/${params.slug}`)
-
 const slug = params.slug as string
-
 const project = ref<Project>()
 project.value = projects.find(p => p.slug === slug)
 
-const readme = ref<string>()
+const repository = project.value?.repositories?.find(r => r.type === 'main')
+const { html } = await useGithubReadme(repository?.url, project.value?.isOpenSource)
 const status = projectStatuses.find(s => s.order === project.value?.status)?.slug
-
-async function fetchReadme(): Promise<string | undefined> {
-  if (!project.value?.isOpenSource)
-
-    return
-
-  const repository = project.value?.repositories?.find(r => r.type === 'main')
-  const url = repository?.url
-
-  if (!url?.includes('github.com'))
-    return
-
-  let readmeUrl = url.replace('github.com', 'raw.githubusercontent.com')
-  readmeUrl += '/main/README.md'
-
-  const readmeText = await fetch(readmeUrl).then(r => r.text())
-  const html = await useMarked(readmeText)
-
-  readme.value = html.value
-
-  return readmeText
-}
-fetchReadme()
 
 useMetadata({
   title: project.value?.title,
@@ -62,7 +37,7 @@ useMetadata({
           <div class="lg:pr-4">
             <div class="lg:max-w-lg">
               <p class="text-lg leading-8 text-gray-700 dark:text-gray-300">
-                {{ frontmatter?.description }}
+                <!-- {{ frontmatter?.description }} -->
               </p>
               <project-developers
                 :project="project"
@@ -106,7 +81,7 @@ useMetadata({
       <ClientOnly>
         <hr class="pb-10 border-gray-200 dark:border-gray-700">
         <div class="prose dark:prose-invert mx-auto p-6 lg:p-10">
-          <div v-html="readme" />
+          <div v-html="html" />
         </div>
       </ClientOnly>
     </div>

@@ -38,7 +38,7 @@ const dateEnd = computed(() => props.item.dateEnd ? new Date(props.item.dateEnd)
         <dt class="sr-only">
           Date
         </dt>
-        <dd class="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label="2019 until Present">
+        <dd v-if="type === 'work'" class="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label="2019 until Present">
           <time :datetime="dateBegin.toString()">{{ dateBegin.getFullYear() }}</time>
           <span v-if="dateEnd && dateBegin.getFullYear() !== dateEnd.getFullYear()">
             <span aria-hidden="true">—</span>
