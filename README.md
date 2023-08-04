@@ -8,7 +8,7 @@
 [![tests][tests-src]][tests-href]
 [![license][license-src]][license-href]
 
-My portfolio, built with [Nuxt 3](https://nuxtjs.org) and [Tailwind CSS](https://tailwindcss.com/).
+My portfolio, built with [Nuxt 3](https://nuxtjs.org) SSR and [Tailwind CSS](https://tailwindcss.com/).
 
 Available at [ewilan-riviere.com](https://ewilan-riviere.com).
 
