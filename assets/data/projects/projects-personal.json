@@ -564,50 +564,6 @@
     "features": []
   },
   {
-    "title": "Koguart",
-    "slug": "koguart",
-    "isFavorite": true,
-    "isDraft": true,
-    "isOpenSource": false,
-    "status": "2",
-    "formation": null,
-    "context": "personal",
-    "type": "website",
-    "createdAt": "2022-07-01",
-    "links": [
-      {
-        "url": "https://recette.koguart.com",
-        "type": "main"
-      }
-    ],
-    "repositories": [
-      {
-        "url": "https://gitlab.com/koguart/koguart",
-        "type": "main",
-        "isPrivate": true
-      }
-    ],
-    "developers": [
-      {
-        "slug": "ewilan-riviere",
-        "role": "lead-developer"
-      },
-      {
-        "slug": "julien-baylac",
-        "role": "developer"
-      }
-    ],
-    "technologies": [
-      "laravel",
-      "filament",
-      "livewire",
-      "php",
-      "typescript",
-      "alpinejs"
-    ],
-    "features": []
-  },
-  {
     "title": "PHP Audio",
     "slug": "php-audio",
     "isFavorite": true,
