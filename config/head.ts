@@ -111,7 +111,7 @@ const script: Script<any['script']>[] = [
   {
     'src': 'https://umami.git-projects.xyz/gotur',
     'async': true,
-    'data-website-id': '6083b054-d464-4a42-9da0-b092cf71bbf4',
+    'data-website-id': 'a2476eda-9867-4ca1-9d97-49a2529f2790',
   },
 ]
 
