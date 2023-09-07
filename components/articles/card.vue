@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Document } from 'types'
+import type { Document } from '~/types'
 
 interface Props {
   article: Document

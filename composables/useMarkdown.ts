@@ -1,5 +1,5 @@
 import type { QueryBuilderWhere } from '@nuxt/content/dist/runtime/types'
-import type { Document } from 'types'
+import type { Document } from '~/types'
 
 export interface Options {
   localized?: boolean

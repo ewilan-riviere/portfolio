@@ -1,5 +1,5 @@
 import type { ContentItem } from 'server/content/Content'
-import type { ApiContent, ApiContentItem } from 'types'
+import type { ApiContent, ApiContentItem } from '~/types'
 
 export async function useContentAll<T = ContentItem>(path: string) {
   const items = ref<ContentItem[]>([])

@@ -1,5 +1,5 @@
-import type { Skill } from 'types'
 import { getJson } from '../api'
+import type { Skill } from '~/types'
 import skillsFrameworks from '~/assets/data/skills/frameworks.json'
 import skillsLanguages from '~/assets/data/skills/languages.json'
 import skillsTalking from '~/assets/data/skills/talking.json'

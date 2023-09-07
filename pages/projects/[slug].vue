@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Project } from 'types'
+import type { Project } from '~/types'
 import { useMainStore } from '~/store/main'
 
 const { projects, projectStatuses } = useMainStore()

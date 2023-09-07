@@ -15,6 +15,7 @@ export interface Project {
   title: string
   slug: string
   isDraft?: boolean
+  isDeprecated?: boolean
   isOpenSource?: boolean
   isFavorite?: boolean
   image?: string

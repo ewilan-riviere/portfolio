@@ -1,5 +1,5 @@
 import type { NitroFetchRequest } from 'nitropack'
-import type { About, Developer, Feature, HistoryItem, Project, ProjectStatus, Skill, Technology } from 'types'
+import type { About, Developer, Feature, HistoryItem, Project, ProjectStatus, Skill, Technology } from '~/types'
 import { useMainStore } from '~~/store/main'
 
 interface QueryParam {

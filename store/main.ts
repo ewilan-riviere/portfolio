@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { About, Developer, Feature, HistoryItem, Hobby, Project, ProjectStatus, Skill, Technology } from 'types'
+import type { About, Developer, Feature, HistoryItem, Hobby, Project, ProjectStatus, Skill, Technology } from '~/types'
 import type { IconType } from '~~/.nuxt/svg-transformer'
 import type { RouteType } from '~~/.nuxt/typed-link'
 

@@ -1,6 +1,6 @@
 import { readFile, readdir, stat } from 'node:fs/promises'
 import { join } from 'node:path'
-import type { FrontMatterItem } from 'types'
+import type { FrontMatterItem } from '~/types'
 
 interface QueryParam {
   path: string
