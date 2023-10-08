@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import type { RouteType } from '~/.nuxt/TypedLink'
 import type { SvgName } from '#icons'
 
 interface Props {
@@ -80,7 +79,11 @@ watch(
 </script>
 
 <template>
-  <router-link v-slot="{ href: hrefSlot, navigate }" :to="toLink" custom>
+  <router-link
+    v-slot="{ href: hrefSlot, navigate }"
+    :to="toLink"
+    custom
+  >
     <a
       v-if="isLink"
       :href="hrefSlot"
@@ -126,16 +129,34 @@ watch(
           />
         </svg>
       </span>
-      <span :class="[{ 'space-x-2': icon }, alignment]" class="flex items-center">
-        <SvgIcon v-if="icon" :name="icon" class="h-5 w-5" />
+      <span
+        :class="[{ 'space-x-2': icon }, alignment]"
+        class="flex items-center"
+      >
+        <SvgIcon
+          v-if="icon"
+          :name="icon"
+          class="h-5 w-5"
+        />
         <span class="inline-block">
           <slot />
         </span>
       </span>
-      <span v-if="href" class="ml-1 block">
-        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <span
+        v-if="href"
+        class="ml-1 block"
+      >
+        <svg
+          class="h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
           <path
-            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
           />
         </svg>

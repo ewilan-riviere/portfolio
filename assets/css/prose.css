@@ -4,6 +4,9 @@
 .prose a img {
   @apply m-0.5;
 }
+.prose a code {
+  @apply !py-0;
+}
 .prose img {
   @apply max-h-64;
 }
