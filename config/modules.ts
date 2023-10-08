@@ -23,29 +23,13 @@ const content: NuxtConfig['content'] = {
   },
 }
 
+// https://i18n.nuxtjs.org/
 const i18n: NuxtConfig['i18n'] = {
-  // eslint-disable-next-line n/prefer-global/process
-  baseUrl: process.env.NUXT_PUBLIC_SITE_URL,
-  locales: [
-    {
-      code: 'en',
-      iso: 'en-US',
-      name: 'English',
-    },
-    {
-      code: 'fr',
-      iso: 'fr-FR',
-      name: 'Français',
-    },
-  ],
+  baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+  locales: [{ code: 'en', iso: 'en-US', name: 'English' }, { code: 'fr', iso: 'fr-FR', name: 'Français' }],
   defaultLocale: 'en',
+  vueI18n: './i18n.config.ts',
 }
-
-// const schemaOrg: object = {
-//   disableRuntimeScriptsWhenSSR: true,
-//   canonicalHost: 'https://ewilan-riviere.com',
-//   defaultLanguage: 'en-US',
-// }
 
 // https://github.com/kiwilan/unplugin-svg-transformer
 const svgTransformer: NuxtConfig['svgTransformer'] = {

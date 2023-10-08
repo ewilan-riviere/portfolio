@@ -3,7 +3,6 @@ import { useMainStore } from '@/store/main'
 
 const { document } = await useMarkdown('about')
 const { socials } = useMainStore()
-
 const { t } = useI18n()
 
 useMetadata({
@@ -12,7 +11,7 @@ useMetadata({
 </script>
 
 <template>
-  <layout-page :title="$t('about.title')" :description="$t('about.subtitle')">
+  <LayoutPage :title="$t('about.title')" :description="$t('about.subtitle')">
     <div
       class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
     >
@@ -44,7 +43,7 @@ useMetadata({
       </div>
       <div class="lg:pl-20">
         <ul role="list">
-          <about-social
+          <AboutSocial
             v-for="(social, id) in socials"
             :key="id"
             :social="social"
@@ -52,8 +51,8 @@ useMetadata({
         </ul>
       </div>
     </div>
-    <about-skills class="mt-10" />
-    <about-hobbies class="mt-10" />
-    <about-features class="mt-10" />
-  </layout-page>
+    <AboutSkills class="mt-10" />
+    <AboutHobbies class="mt-10" />
+    <AboutFeatures class="mt-10" />
+  </LayoutPage>
 </template>

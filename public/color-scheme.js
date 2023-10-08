@@ -4,7 +4,7 @@ const csLocal = 'color-scheme'
 /**
  * Get color scheme from local storage
  *
- * @returns {string | undefined}
+ * @returns {string | undefined} 'dark' | 'light' | undefined
  */
 const getStorage = () => localStorage.getItem(csLocal) ?? undefined
 
@@ -15,25 +15,26 @@ const getStorage = () => localStorage.getItem(csLocal) ?? undefined
  *
  * @returns {void}
  */
-const setStorage = (value) => localStorage.setItem(csLocal, value)
+const setStorage = value => localStorage.setItem(csLocal, value)
 
 /**
  * Get system preference
- * @returns {'dark' | 'light'}
+ * @returns {'dark' | 'light'} 'dark' | 'light'
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
  *
  */
-const getSystemPreferences = () =>
-  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+function getSystemPreferences() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light'
+}
 
 /**
  * If `color-scheme` is not set, check system preference and set it
  */
-const checkStorage = () => {
-  const scheme =
-    getStorage() === undefined ? getSystemPreferences() : getStorage()
+function checkStorage() {
+  const scheme
+    = getStorage() === undefined ? getSystemPreferences() : getStorage()
   setStorage(scheme ?? 'light')
 }
 
@@ -45,7 +46,7 @@ const checkStorage = () => {
  * @example
  * setColorMode('dark')
  */
-const setColorMode = (scheme) => {
+function setColorMode(scheme) {
   root.classList.remove('light', 'dark')
   root.classList.add(scheme)
   setStorage(scheme)

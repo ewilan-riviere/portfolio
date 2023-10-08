@@ -19,10 +19,10 @@ useMetadata({
 </script>
 
 <template>
-  <layout-page
+  <LayoutPage
     v-if="document"
     :title="document.title"
-    :description="document.frontmatter?.description"
+    :description="document.description"
   >
     <template #header>
       <div class="text-base text-zinc-500 dark:text-zinc-300 mt-5">
@@ -56,7 +56,7 @@ useMetadata({
 
     <div class="xl:relative">
       <div class="mx-auto max-w-2xl">
-        <typed-link
+        <TypedLink
           :to="{ name: 'articles' }"
           aria-label="Go back to articles"
           class="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
@@ -74,22 +74,22 @@ useMetadata({
               stroke-linejoin="round"
             />
           </svg>
-        </typed-link>
+        </TypedLink>
       </div>
     </div>
 
     <section class="lg:flex justify-between relative gap-x-10">
       <div class="order-1 lg:order-2 lg:sticky lg:top-16 h-full">
-        <ArticlesToc :items="document.body.toc?.links" />
+        <ArticleToc :items="document.body.toc?.links" />
         <button
-          class="hidden lg:flex rounded-full bg-gray-800 w-8 h-8 border border-gray-700 mx-auto mt-6 hover:bg-gray-700"
+          class="hidden lg:flex rounded-full bg-gray-50 dark:bg-gray-800 w-8 h-8 border border-gray-100 dark:border-gray-700 mx-auto mt-6 hover:bg-gray-100 dark:hover:bg-gray-700"
           @click="scrollToTop()"
         >
           <SvgIcon name="arrow-up" class="w-4 h-4 m-auto" />
         </button>
       </div>
       <div class="mx-auto mt-16 lg:mt-0">
-        <app-img
+        <AppImg
           :src="picture"
           :alt="document.title"
           class="w-full h-64 object-top object-cover rounded-md"
@@ -110,11 +110,11 @@ useMetadata({
           </div>
         </div>
         <div
-          class="mt-8 prose prose-xl dark:prose-invert prose-a:no-underline max-w-xl prose-a:hoverable"
+          class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline max-w-2xl prose-a:hoverable"
         >
-          <ContentRenderer :value="document" />
+        <ContentRenderer :value="document" />
         </div>
       </div>
     </section>
-  </layout-page>
+  </LayoutPage>
 </template>

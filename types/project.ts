@@ -14,6 +14,9 @@ export interface ProjectLink {
 export interface Project {
   title: string
   slug: string
+  description: string
+  repository?: string
+  home?: string
   isDraft?: boolean
   isDeprecated?: boolean
   isOpenSource?: boolean

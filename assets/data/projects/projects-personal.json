@@ -2,6 +2,9 @@
   {
     "title": "Bookshelves",
     "slug": "bookshelves",
+    "description": "Web application to handle eBooks. ",
+    "repository": "https://github.com/bookshelves-project/bookshelves",
+    "home": "https://bookshelves.ink",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -52,6 +55,9 @@
   {
     "title": "Markdown Interpreter",
     "slug": "markdown-interpreter",
+    "description": "Web app to convert Markdown into HTML and reverse.",
+    "repository": "https://github.com/ewilan-riviere/markdown-interpreter",
+    "home": "https://markdown-tools.git-projects.xyz",
     "isFavorite": false,
     "isDeprecated": false,
     "isDraft": false,
@@ -63,7 +69,7 @@
     "createdAt": "2020-06-20",
     "links": [
       {
-        "url": "https://md-interpreter.git-projects.xyz",
+        "url": "https://markdown-tools.git-projects.xyz",
         "type": "main"
       }
     ],
@@ -82,37 +88,11 @@
     "technologies": ["laravel", "tailwind-css", "vue-js", "vite"]
   },
   {
-    "title": "MarkdownThis",
-    "slug": "markdown-this",
-    "isFavorite": false,
-    "isDeprecated": false,
-    "isDraft": true,
-    "isOpenSource": true,
-    "status": "1",
-    "formation": null,
-    "context": "personal",
-    "type": "website",
-    "createdAt": "2020-11-05",
-    "repositories": [
-      {
-        "url": "https://gitlab.com/ewilan-riviere/markdown-this-back",
-        "type": "back"
-      },
-      {
-        "url": "https://gitlab.com/ewilan-riviere/markdown-this-front",
-        "type": "front"
-      }
-    ],
-    "developers": [
-      {
-        "slug": "ewilan-riviere",
-        "role": "lead-developer"
-      }
-    ]
-  },
-  {
     "title": "Memorandum",
     "slug": "memorandum",
+    "description": "Blog & documentation.",
+    "repository": "https://github.com/ewilan-riviere/memorandum",
+    "home": "https://memorandum.ewilan-riviere.com",
     "isFavorite": false,
     "isDeprecated": false,
     "isDraft": false,
@@ -145,6 +125,9 @@
   {
     "title": "Portfolio",
     "slug": "portfolio",
+    "description": "Ewilan Rivière's portfolio, Nuxt 3 SSR app.",
+    "repository": "https://github.com/ewilan-riviere/portfolio",
+    "home": "https://ewilan-riviere.com",
     "isFavorite": false,
     "isDeprecated": false,
     "isDraft": false,
@@ -181,70 +164,11 @@
     ]
   },
   {
-    "title": "Roazhon StarBus",
-    "slug": "roazhon-star-bus",
-    "isFavorite": false,
-    "isDeprecated": false,
-    "isDraft": true,
-    "isOpenSource": true,
-    "status": "1",
-    "formation": null,
-    "context": "personal",
-    "type": "website",
-    "createdAt": "2020-10-24",
-    "links": [
-      {
-        "url": "http://roazhon-star-bus.git-projects.xyz",
-        "type": "main"
-      }
-    ],
-    "repositories": [
-      {
-        "url": "https://gitlab.com/ewilan-riviere/roazhon-star-bus",
-        "type": "main"
-      }
-    ],
-    "developers": [
-      {
-        "slug": "ewilan-riviere",
-        "role": "lead-developer"
-      }
-    ]
-  },
-  {
-    "title": "Skyscale",
-    "slug": "skyscale",
-    "isFavorite": false,
-    "isDeprecated": false,
-    "isDraft": true,
-    "isOpenSource": true,
-    "status": "3",
-    "formation": null,
-    "context": "personal",
-    "type": "website",
-    "createdAt": "2020-10-30",
-    "links": [
-      {
-        "url": "https://skyscale.git-projects.xyz",
-        "type": "main"
-      }
-    ],
-    "repositories": [
-      {
-        "url": "https://gitlab.com/ewilan-riviere/skyscale",
-        "type": "main"
-      }
-    ],
-    "developers": [
-      {
-        "slug": "ewilan-riviere",
-        "role": "lead-developer"
-      }
-    ]
-  },
-  {
     "title": "Seeds",
     "slug": "seeds",
+    "description": "API to use random pictures with seeders.",
+    "repository": "https://github.com/kiwilan/seeds",
+    "home": "https://seeds.git-projects.xyz",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -278,6 +202,9 @@
   {
     "title": "Fastify Utils",
     "slug": "fastify-utils",
+    "description": "Collection of utilities for fastify framework, built to improve DX.",
+    "repository": "https://github.com/kiwilan/fastify-utils",
+    "home": "https://github.com/kiwilan/fastify-utils#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -312,6 +239,9 @@
   {
     "title": "Kiwilan's Node.js Filesystem",
     "slug": "kiwilan-node-filesystem",
+    "description": "Node package to improve native filesystem with Laravel like helpers.",
+    "repository": "https://github.com/kiwilan/node-filesystem",
+    "home": "https://github.com/kiwilan/node-filesystem#readme",
     "isFavorite": false,
     "isDeprecated": false,
     "isDraft": false,
@@ -346,6 +276,9 @@
   {
     "title": "Typescriptable for Laravel",
     "slug": "typescriptable-laravel",
+    "description": "PHP package for Laravel to type Eloquent models, routes, Spatie Settings with autogenerated TypeScript.",
+    "repository": "https://github.com/kiwilan/typescriptable-laravel",
+    "home": "https://github.com/kiwilan/typescriptable-laravel#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -380,6 +313,9 @@
   {
     "title": "PHP eBook",
     "slug": "php-ebook",
+    "description": "PHP package to read metadata and extract covers from eBooks, comics and audiobooks.",
+    "repository": "https://github.com/kiwilan/php-ebook",
+    "home": "https://github.com/kiwilan/php-ebook#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -414,6 +350,9 @@
   {
     "title": "PHP OPDS",
     "slug": "php-opds",
+    "description": "PHP package to create OPDS feed (Open Publication Distribution System) for eBooks.",
+    "repository": "https://github.com/kiwilan/php-opds",
+    "home": "https://github.com/kiwilan/php-opds#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -448,6 +387,9 @@
   {
     "title": "PHP Archive",
     "slug": "php-archive",
+    "description": "PHP package to handle archives with unified API and hybrid solution, designed to works with eBooks.",
+    "repository": "https://github.com/kiwilan/php-archive",
+    "home": "https://github.com/kiwilan/php-archive#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -480,8 +422,11 @@
     "features": []
   },
   {
-    "title": "Nuxt SVG transformer",
-    "slug": "nuxt-svg-transformer",
+    "title": "Unplugin SVG transformer",
+    "slug": "unplugin-svg-transformer",
+    "description": "Import easily your SVG. Powered by unplugin.",
+    "repository": "https://github.com/kiwilan/unplugin-svg-transformer",
+    "home": "https://github.com/kiwilan/unplugin-svg-transformer#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -494,13 +439,13 @@
     "createdAt": "2022-11-27",
     "links": [
       {
-        "url": "https://nuxt-svg-transformer.netlify.app",
+        "url": "https://github.com/kiwilan/unplugin-svg-transformer#readme",
         "type": "main"
       }
     ],
     "repositories": [
       {
-        "url": "https://github.com/kiwilan/nuxt-svg-transformer",
+        "url": "https://github.com/kiwilan/unplugin-svg-transformer",
         "type": "main"
       }
     ],
@@ -510,46 +455,15 @@
         "role": "lead-developer"
       }
     ],
-    "technologies": ["nuxt-js", "typescript", "vue"],
-    "features": []
-  },
-  {
-    "title": "Nuxt Typed link",
-    "slug": "nuxt-typed-link",
-    "isFavorite": false,
-    "isDeprecated": false,
-    "isDraft": false,
-    "isOpenSource": true,
-    "isPackage": true,
-    "status": "4",
-    "formation": null,
-    "context": "personal",
-    "type": "library",
-    "createdAt": "2022-11-30",
-    "links": [
-      {
-        "url": "https://www.npmjs.com/package/nuxt-typed-link",
-        "type": "main"
-      }
-    ],
-    "repositories": [
-      {
-        "url": "https://github.com/kiwilan/nuxt-typed-link",
-        "type": "main"
-      }
-    ],
-    "developers": [
-      {
-        "slug": "ewilan-riviere",
-        "role": "lead-developer"
-      }
-    ],
-    "technologies": ["nuxt-js", "typescript", "vue"],
+    "technologies": ["javascript", "vue-js", "nuxt-js", "typescript"],
     "features": []
   },
   {
     "title": "Social oEmbed",
     "slug": "social-oembed",
+    "description": "API to offer OpenGraph meta or oEmbed media.",
+    "repository": "https://github.com/kiwilan/social-oembed",
+    "home": "https://social-oembed.git-projects.xyz",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -583,6 +497,9 @@
   {
     "title": "PHP Audio",
     "slug": "php-audio",
+    "description": "PHP package to parse and update audio files metadata, with JamesHeinrich/getID3.",
+    "repository": "https://github.com/kiwilan/php-audio",
+    "home": "https://github.com/kiwilan/php-audio#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -617,6 +534,9 @@
   {
     "title": "PHP RSS",
     "slug": "php-rss",
+    "description": "PHP package to generate RSS feeds with presets.",
+    "repository": "https://github.com/kiwilan/php-rss",
+    "home": "https://github.com/kiwilan/php-rss#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -650,6 +570,9 @@
   {
     "title": "PHP XML Reader",
     "slug": "php-xml-reader",
+    "description": "PHP package to read XML with nice API.",
+    "repository": "https://github.com/kiwilan/php-xml-reader",
+    "home": "https://github.com/kiwilan/php-xml-reader#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -684,6 +607,9 @@
   {
     "title": "PHP HTTP Pool",
     "slug": "php-http-pool",
+    "description": "PHP package with easy-to-use GuzzleHttp pool wrapper to make concurrent requests.",
+    "repository": "https://github.com/kiwilan/php-http-pool",
+    "home": "https://github.com/kiwilan/php-http-pool#readme",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,
@@ -718,6 +644,9 @@
   {
     "title": "Feedrender",
     "slug": "feedrender",
+    "description": "API to render HTML from RSS feed. Built for podcast feeds, powered by unjs/h3.",
+    "repository": "https://github.com/kiwilan/feedrender",
+    "home": "https://feedrender.git-projects.xyz/",
     "isFavorite": true,
     "isDeprecated": false,
     "isDraft": false,

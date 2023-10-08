@@ -1,4 +1,4 @@
-<svg width="635" height="216" viewBox="0 0 635 216" fill="currentColor"
+<svg viewBox="0 0 635 216" fill="currentColor"
   xmlns="http://www.w3.org/2000/svg">
   <g clip-path="url(#clip0_1701_81)">
     <path
@@ -14,9 +14,4 @@
       />
     </g>
   </g>
-  <defs>
-    <clipPath id="clip0_1701_81">
-      <rect width="635" height="216" fill="white" />
-    </clipPath>
-  </defs>
 </svg>
