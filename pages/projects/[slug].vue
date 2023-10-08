@@ -12,37 +12,17 @@ const project = ref<Project>()
 project.value = projects.find(p => p.slug === slug)
 
 const { git, type } = await useGitApi(project.value?.api)
-console.log(git)
-console.log(type)
 
 const status = projectStatuses.find(s => s.order === project.value?.status)?.slug
-// const { ContentRenderer } = await useMarkdoc({ input: readmeContents.value, type: 'contents', component: true })
 
 const description = ref<string>()
-description.value = `${t(`project.contexts.${project.value?.context}`)} - ${t(`project.types.${project.value?.type}`)}`
+const context = project.value?.context ? t(`project.contexts.${project.value?.context}`) : 'Unknown'
+const gitType = type === 'github' ? 'GitHub' : 'GitLab'
+description.value = `${context} - ${t(`project.types.${project.value?.type}`)} - ${gitType}`
 
 useMetadata({
   title: project.value?.title,
 })
-
-// import type { Project } from '~/types'
-// import { useMainStore } from '~/store/main'
-
-// const { projects, projectStatuses } = useMainStore()
-// const { params } = useRoute()
-// const { date } = useUtils()
-
-// const slug = params.slug as string
-// const project = ref<Project>()
-// project.value = projects.find(p => p.slug === slug)
-
-// const repository = project.value?.repositories?.find(r => r.type === 'main')
-// const { html } = await useGithubReadme(repository?.url, project.value?.isOpenSource)
-// const status = projectStatuses.find(s => s.order === project.value?.status)?.slug
-
-// useMetadata({
-//   title: project.value?.title,
-// })
 </script>
 
 <template>
@@ -131,9 +111,11 @@ useMetadata({
             rel="noopener noreferrer"
           >{{ git?.readme_url }}</a>
         </p>
-        <div class="border p-5 dark:border-gray-700 border-gray-200 rounded-md">
-          <div v-html="git?.readme" />
-        </div>
+        <ClientOnly>
+          <div class="border p-5 dark:border-gray-700 border-gray-200 rounded-md">
+            <div v-html="git?.readme" />
+          </div>
+        </ClientOnly>
       </div>
     </div>
   </LayoutPage>

@@ -30,6 +30,12 @@ export default defineNuxtConfig({
   content: modules.content,
   i18n: modules.i18n,
   svgTransformer: modules.svgTransformer,
+  linkChecker: {
+    failOn404: false,
+    exclude: [
+      '/projects/**',
+    ],
+  },
 
   runtimeConfig: {
     ...config.private,
@@ -50,12 +56,13 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    // prerender: {
-    //   ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json'],
-    // },
+    prerender: {
+      crawlLinks: true,
+      ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json'],
+    },
   },
 
   build: {
     // transpile: ['pinceau']
-  }
+  },
 })
