@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useMainStore } from '~~/store/main'
+import { useMainStore } from '~/store/main'
 
 const { workItems, educationItems } = useMainStore()
 
@@ -32,7 +32,7 @@ const tabs = [
   >
     <div class="flex items-center justify-between">
       <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <svg-icon name="bag" class="h-6 w-6 flex-none" />
+        <SvgIcon name="bag" class="h-6 w-6 flex-none" />
         <span class="ml-3">
           {{ $t("home.experience.title") }}
         </span>

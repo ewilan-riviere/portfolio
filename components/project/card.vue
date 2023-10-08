@@ -7,23 +7,9 @@ const props = defineProps<{
 
 const { date } = useUtils()
 
-// const { findOne, content } = useMarkdownContent()
-// await findOne(`projects/${props.project?.slug}`, {
-//   // localized: true,
-//   allowFailed: true,
-// })
-
 const domain = computed(() => {
-  let url
-
-  if (props.project.links?.length)
-    url = props.project.links[0]?.url
-
-  if (!url && props.project.repositories?.length)
-    url = props.project.repositories[0]?.url
-
-  if (url && url.startsWith('https://'))
-    return new URL(url).hostname
+  if (props.project.home && props.project.home.startsWith('https://'))
+    return new URL(props.project.home).hostname
 
   return undefined
 })
@@ -33,7 +19,7 @@ const domain = computed(() => {
   <li class="group hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md p-1 relative">
     <div class="rounded-md p-4 h-full border border-gray-100 dark:border-gray-700">
       <div class="flex items-center justify-between">
-        <app-img
+        <AppImg
           :src="`/images/projects/${project.slug}-icon.webp`"
           class="h-12 w-12 object-cover"
           :alt="project.title"
@@ -69,7 +55,7 @@ const domain = computed(() => {
         </p>
       </div>
       <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
-        <!-- {{ content?.description }} -->
+        {{ project?.description }}
       </p>
       <div class="py-5" />
       <div class="absolute bottom-4">

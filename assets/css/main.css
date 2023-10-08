@@ -1,5 +1,6 @@
-@import 'custom';
-@import 'prose';
+@import "highlight.js/styles/github-dark.css";
+@import "custom";
+@import "prose";
 
 @tailwind base;
 @tailwind components;

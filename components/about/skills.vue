@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { SwiperSlide } from 'swiper/vue'
-import { useMainStore } from '~~/store/main'
-import type { Technology } from '~~/types/technology'
+import { useMainStore } from '~/store/main'
+import type { Technology } from '~/types/technology'
 
 const { technologies } = useMainStore()
 const { shuffle } = useData()
@@ -15,7 +15,7 @@ const technos = computed(() => shuffle<Technology>(technologies))
       {{ $t('about.technologies') }}
     </h2>
     <ClientOnly>
-      <app-swiper>
+      <AppSwiper>
         <SwiperSlide
           v-for="technology in technos"
           :key="technology.slug"
@@ -24,13 +24,13 @@ const technos = computed(() => shuffle<Technology>(technologies))
             <span class="sr-only">
               {{ technology.title }}
             </span>
-            <svg-icon
+            <SvgIcon
               :name="technology.icon"
               class="shrink-0 w-48 h-20 rounded-lg text-gray-400 dark:text-gray-200 mx-auto"
             />
           </div>
         </SwiperSlide>
-      </app-swiper>
+      </AppSwiper>
     </ClientOnly>
   </section>
 </template>

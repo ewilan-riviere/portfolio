@@ -12,7 +12,6 @@ export function useColorScheme() {
     if (!isDark.value)
       root.add('light')
 
-    // eslint-disable-next-line n/prefer-global/process
     if (process.client)
       localStorage.setItem(csStorage, isDark.value ? 'dark' : 'light')
   }

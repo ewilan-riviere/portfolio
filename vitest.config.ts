@@ -33,9 +33,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
-    coverage: {
-      provider: 'c8',
-    },
     deps: {
       inline: [/@nuxt\/test-utils-edge/],
     },

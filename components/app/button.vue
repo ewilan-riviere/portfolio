@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { RouteType } from '~/.nuxt/typed-link'
-import type { IconType } from '~/.nuxt/svg-transformer'
+// import type { RouteType } from '~/.nuxt/TypedLink'
+import type { SvgName } from '#icons'
 
 interface Props {
   color?: 'primary' | 'secondary' | 'white' | 'danger'
@@ -8,10 +8,10 @@ interface Props {
   align?: 'left' | 'center' | 'right'
   size?: 'sm' | 'md' | 'lg'
   href?: string
-  to?: RouteType
+  to?: any
   disabled?: boolean
   download?: boolean
-  icon?: IconType
+  icon?: SvgName
   loading?: boolean
   outlined?: boolean
   hideLabel?: boolean
@@ -50,13 +50,9 @@ function setupButton() {
     tag.value = 'a'
     if (typeof useLocalePath === 'function') {
       const localePath = useLocalePath()
-      // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
-      // @ts-ignore RouteType not compatible with RouteLocation
       toLink.value = localePath(props.to)
     }
     else {
-      // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
-      // @ts-ignore RouteType not compatible with RouteLocation
       toLink.value = props.to
     }
     isLink.value = true
@@ -131,7 +127,7 @@ watch(
         </svg>
       </span>
       <span :class="[{ 'space-x-2': icon }, alignment]" class="flex items-center">
-        <svg-icon v-if="icon" :name="icon" class="h-5 w-5" />
+        <SvgIcon v-if="icon" :name="icon" class="h-5 w-5" />
         <span class="inline-block">
           <slot />
         </span>

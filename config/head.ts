@@ -83,7 +83,7 @@ const meta: Meta<any['link']>[] = [
   {
     hid: 'google-site-verification',
     name: 'google-site-verification',
-    content: 'HlYyBKngNkGks_Ys_Yebcn0UcKoCz1o-XMxuCzgMmuk',
+    content: process.env.GOOGLE_SITE_TOKEN,
   },
   {
     hid: 'og:type',
@@ -93,7 +93,6 @@ const meta: Meta<any['link']>[] = [
   {
     hid: 'og:url',
     property: 'og:url',
-    // eslint-disable-next-line n/prefer-global/process
     content: process.env.NUXT_PUBLIC_SITE_URL,
   },
   {
@@ -109,9 +108,12 @@ const meta: Meta<any['link']>[] = [
 ]
 const script: Script<any['script']>[] = [
   {
-    'src': 'https://umami.git-projects.xyz/gotur',
+    'src': process.env.UMAMI_URL,
     'async': true,
-    'data-website-id': 'a2476eda-9867-4ca1-9d97-49a2529f2790',
+    'data-website-id': process.env.UMAMI_ID ?? '',
+  },
+  {
+    src: '/color-scheme.js',
   },
 ]
 

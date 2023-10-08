@@ -7,7 +7,7 @@ useMetadata({
 </script>
 
 <template>
-  <layout-page :title="$t('contact.page-title')" :description="$t('contact.page-subtitle')">
+  <LayoutPage :title="$t('contact.page-title')" :description="$t('contact.page-subtitle')">
     <form-contact class="mt-6" />
-  </layout-page>
+  </LayoutPage>
 </template>

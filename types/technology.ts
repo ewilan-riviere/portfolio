@@ -9,5 +9,5 @@ export interface Technology {
   type: string
   isFavorite: boolean
   isDisplay: boolean
-  icon: import('~~/.nuxt/svg-transformer').IconType
+  icon: import('~/.nuxt/svg-transformer').IconType
 }

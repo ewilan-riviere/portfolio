@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
-import { useMainStore } from '~~/store/main'
+import { useMainStore } from '~/store/main'
 
 const sidebar = ref(false)
 const layer = ref(false)
@@ -67,11 +67,11 @@ onClickOutside(target, () => {
           @click="closeSidebar"
         >
           <span class="sr-only">Close sidebar</span>
-          <!-- <svg-icon name="cross" class="h-6 w-6 text-white" /> -->
+          <!-- <SvgIcon name="cross" class="h-6 w-6 text-white" /> -->
         </button>
       </div>
       <div class="flex flex-shrink-0 items-center px-4">
-        <nuxt-link
+        <NuxtLink
           to="/"
           class="inline-flex h-8 w-auto items-center"
           active-class="active-logo"
@@ -80,35 +80,35 @@ onClickOutside(target, () => {
             class="inline-flex items-center"
             @click="closeSidebar"
           >
-            <svg-icon
+            <SvgIcon
               name="logo/classic"
               class="w-auto h-8 transition-all duration-100 sm:h-10 group-hover:home-logo-shadow"
             />
             <div class="mt-2 ml-3 dark:text-gray-100">
-              <svg-icon
+              <SvgIcon
                 name="logo/text"
                 class="h-6 w-auto"
               />
             </div>
           </span>
-        </nuxt-link>
+        </NuxtLink>
       </div>
       <div class="mt-5 h-0 flex-1 overflow-y-auto">
         <nav class="px-2">
           <div class="space-y-2">
-            <typed-link
+            <TypedLink
               v-for="(item, id) in navbar"
               :key="id"
               :to="item.to"
               class="link group"
               @click="closeSidebar"
             >
-              <!-- <svg-icon
+              <!-- <SvgIcon
                 :name="`nav-${link.icon}`"
                 class="w-6 h-6"
               /> -->
               <div>{{ $t(`nav.${item.title}`) }}</div>
-            </typed-link>
+            </TypedLink>
             <!-- <hr class="border-gray-700 dark:border-gray-300"> -->
             <!-- <a
               v-for="(link, id) in navigation.external"
@@ -119,7 +119,7 @@ onClickOutside(target, () => {
               class="link group"
               @click="closeSidebar"
             >
-              <svg-icon
+              <SvgIcon
                 :name="`nav-${link.icon}`"
                 class="w-6 h-6"
               />

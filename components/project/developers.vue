@@ -28,7 +28,7 @@ currentDevelopers.forEach((element) => {
 <template>
   <ul class="space-y-2">
     <li v-for="developer in list" :key="developer.slug" class="flex items-center space-x-2 relative text-sm">
-      <app-img
+      <AppImg
         :src="developer.avatar" :alt="developer.name"
         class="w-8 h-8 rounded-full object-cover"
       />

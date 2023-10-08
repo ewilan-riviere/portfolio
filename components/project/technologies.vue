@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Project } from 'types/project'
+import type { Project } from '~/types/project'
 import { useMainStore } from '~/store/main'
 import type { Technology } from '~/types/technology'
 
@@ -23,7 +23,11 @@ currentTechs.forEach((element: string) => {
 
 <template>
   <div class="flex flex-wrap space-x-2">
-    <project-technology v-for="tech in techs" :key="tech.slug" :technology="tech" />
+    <ProjectTechnology
+      v-for="tech in techs"
+      :key="tech.slug"
+      :technology="tech"
+    />
   </div>
 </template>
 

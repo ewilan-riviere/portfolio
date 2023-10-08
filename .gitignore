@@ -1,15 +1,24 @@
-node_modules
-*.log*
+# Nuxt dev/build outputs
+.output
+.data
 .nuxt
 .nitro
 .cache
-.output
-.env
 dist
 
-assets/icons/cache
+# Node dependencies
+node_modules
 
-assets/svg-transformer-list.ts
+# Logs
+logs
+*.log
+
+# Misc
 .DS_Store
-.unlighthouse
-coverage
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example

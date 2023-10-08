@@ -14,7 +14,7 @@ defineProps<{
       }"
       class="max-w-2xl flex items-center"
     >
-      <app-img
+      <AppImg
         v-if="image"
         :src="image" :alt="title"
         class="h-24 w-24 object-cover rounded-md"

@@ -134,9 +134,9 @@ async function submit() {
               <div v-if="document" class="p-6 prose dark:prose-invert">
                 <ContentRenderer :value="document" />
                 <div class="flex justify-end">
-                  <app-button color="secondary" @click="termsAreOpened = false">
+                  <AppButton color="secondary" @click="termsAreOpened = false">
                     {{ $t('contact.form.understand') }}
-                  </app-button>
+                  </AppButton>
                 </div>
               </div>
             </app-dialog>
@@ -156,12 +156,12 @@ async function submit() {
                 <Transition>
                   <app-loading v-if="loading" />
                 </Transition>
-                <app-button v-if="isDev" @click="test">
+                <AppButton v-if="isDev" @click="test">
                   test
-                </app-button>
-                <app-button type="submit">
+                </AppButton>
+                <AppButton type="submit">
                   {{ $t('contact.form.submit') }}
-                </app-button>
+                </AppButton>
               </div>
             </div>
           </form>

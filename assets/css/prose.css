@@ -1,23 +1,27 @@
-.prose pre {
-  @apply bg-gray-800 !text-base p-0;
-}
-.prose code {
-  @apply before:content-[] after:content-[] bg-gray-700 p-0.5 rounded-md;
-}
 .prose a img {
-  @apply m-3;
+  @apply m-0.5;
 }
+
+.prose p a {
+  @apply inline-flex;
+}
+
+.prose p a code {
+  @apply py-0;
+}
+
+.prose pre {
+  @apply bg-gray-600 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.prose code {
+  @apply before:content-[] after:content-[] bg-gray-100 dark:bg-gray-700 p-1 rounded-md font-medium;
+}
+
 .prose img {
   @apply max-h-64;
 }
+
 .prose .prose-code .filename {
   color: #fff !important;
-}
-.prose p {
-  @apply !text-base;
-  text-align: justify;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }

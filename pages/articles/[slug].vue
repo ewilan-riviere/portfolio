@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { params } = useRoute()
-const { document } = await useMarkdown(`articles/${params.slug}`)
+const { frontmatter, file, headings, ContentRenderer } = await useMarkdoc({ input: (params.slug as string), type: 'api', component: true })
 
 const { date } = useUtils()
 function scrollToTop() {
@@ -9,45 +9,45 @@ function scrollToTop() {
     behavior: 'smooth',
   })
 }
-const picture = computed(() => `/images/blog/${document?._slug}.jpg`)
+const picture = computed(() => `/images/blog/${file.value?.slug}.jpg`)
 
 useMetadata({
-  title: document?.title,
+  title: frontmatter.value?.title,
   image: picture.value,
-  description: document?.description,
+  description: frontmatter.value?.description,
 })
 </script>
 
 <template>
-  <layout-page
-    v-if="document"
-    :title="document.title"
-    :description="document.frontmatter?.description"
+  <LayoutPage
+    v-if="frontmatter"
+    :title="frontmatter.title"
+    :description="frontmatter.description"
   >
     <template #header>
       <div class="text-base text-zinc-500 dark:text-zinc-300 mt-5">
         <time
-          v-if="document.publishedAt"
-          :datetime="document.publishedAt?.toString()"
+          v-if="frontmatter.publishedAt"
+          :datetime="frontmatter.publishedAt?.toString()"
           :class="{
-            'text-sm': document.updatedAt,
+            'text-sm': frontmatter.updatedAt,
           }"
           class="block"
         >
           {{
             $t(`blog.article.published-at`, {
-              date: date(document.publishedAt, "date"),
+              date: date(frontmatter.publishedAt, "date"),
             })
           }}
         </time>
         <time
-          v-if="document.updatedAt"
-          :datetime="document.updatedAt?.toString()"
+          v-if="frontmatter.updatedAt"
+          :datetime="frontmatter.updatedAt?.toString()"
           class="block mt-1 font-semibold"
         >
           {{
             $t(`blog.article.updated-at`, {
-              date: date(document.updatedAt, "date"),
+              date: date(frontmatter.updatedAt, "date"),
             })
           }}
         </time>
@@ -56,7 +56,7 @@ useMetadata({
 
     <div class="xl:relative">
       <div class="mx-auto max-w-2xl">
-        <typed-link
+        <TypedLink
           :to="{ name: 'articles' }"
           aria-label="Go back to articles"
           class="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
@@ -74,47 +74,47 @@ useMetadata({
               stroke-linejoin="round"
             />
           </svg>
-        </typed-link>
+        </TypedLink>
       </div>
     </div>
 
     <section class="lg:flex justify-between relative gap-x-10">
       <div class="order-1 lg:order-2 lg:sticky lg:top-16 h-full">
-        <ArticlesToc :items="document.body.toc?.links" />
+        <ArticleToc :items="headings" />
         <button
-          class="hidden lg:flex rounded-full bg-gray-800 w-8 h-8 border border-gray-700 mx-auto mt-6 hover:bg-gray-700"
+          class="hidden lg:flex rounded-full bg-gray-50 dark:bg-gray-800 w-8 h-8 border border-gray-100 dark:border-gray-700 mx-auto mt-6 hover:bg-gray-100 dark:hover:bg-gray-700"
           @click="scrollToTop()"
         >
           <SvgIcon name="arrow-up" class="w-4 h-4 m-auto" />
         </button>
       </div>
       <div class="mx-auto mt-16 lg:mt-0">
-        <app-img
+        <AppImg
           :src="picture"
-          :alt="document.title"
+          :alt="frontmatter.title"
           class="w-full h-64 object-top object-cover rounded-md"
-          :legend="$t('legend', { from: document.legend })"
-          :origin="document.origin"
+          :legend="$t('legend', { from: frontmatter.legend })"
+          :origin="frontmatter.origin"
         />
         <header class="flex flex-col">
           <h1 class="sr-only">
-            {{ document.title }}
+            {{ frontmatter.title }}
           </h1>
         </header>
         <div class="border border-gray-100 dark:border-gray-800 rounded-md mt-10 p-4">
           <div class="uppercase">
-            {{ document.category }}
+            {{ frontmatter.category }}
           </div>
-          <div v-if="document.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
-            {{ document.tags.map((tag: string) => `#${tag}`).join(' ') }}
+          <div v-if="frontmatter.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
+            {{ frontmatter.tags.map((tag: string) => `#${tag}`).join(' ') }}
           </div>
         </div>
         <div
-          class="mt-8 prose prose-xl dark:prose-invert prose-a:no-underline max-w-xl prose-a:hoverable"
+          class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline max-w-2xl prose-a:hoverable"
         >
-          <ContentRenderer :value="document" />
+          <ContentRenderer />
         </div>
       </div>
     </section>
-  </layout-page>
+  </LayoutPage>
 </template>

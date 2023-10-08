@@ -18,7 +18,6 @@ const { about } = useMainStore()
       <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-3">
         <div v-for="hobby in about.hobbies" :key="hobby" class="sm:col-span-1">
           <dt class="flex items-center space-x-2">
-            <!-- <svg-icon :name="`hobbies/${hobby}` as IconType" class="h-6 w-6 text-gray-400" /> -->
             <span>{{ $t(`hobbies.${hobby}.label`) }}</span>
           </dt>
           <dd>

@@ -27,7 +27,7 @@ projects.value = shuffle(api)
         class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl border border-zinc-100 dark:border-zinc-700 block"
       >
         <div class="absolute inset-0 h-full w-full">
-          <app-img
+          <AppImg
             :src="project.image" :alt="project.title"
             class="h-full w-full object-cover"
           />

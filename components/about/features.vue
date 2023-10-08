@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMainStore } from '~~/store/main'
+import { useMainStore } from '~/store/main'
 
 const { features } = useMainStore()
 </script>
@@ -15,8 +15,8 @@ const { features } = useMainStore()
         class="text-center sm:flex sm:text-left lg:block lg:text-center"
       >
         <div class="sm:flex-shrink-0">
-          <div class="flow-root">
-            <svg-icon
+          <div class="flex">
+            <SvgIcon
               class="w-16 h-16 mx-auto"
               :name="feature.icon"
             />

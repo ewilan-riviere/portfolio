@@ -61,10 +61,10 @@ const main: SwiperOptions = {
       <slot />
       <div class="swiper-pagination" />
       <div class="swiper-button swiper-button-prev">
-        <svg-icon name="chevron-right" class="w-8 h-8" />
+        <SvgIcon name="chevron-right" class="w-8 h-8" />
       </div>
       <div class="swiper-button swiper-button-next">
-        <svg-icon name="chevron-right" class="w-8 h-8" />
+        <SvgIcon name="chevron-right" class="w-8 h-8" />
       </div>
     </Swiper>
   </div>

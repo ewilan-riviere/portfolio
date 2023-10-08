@@ -13,15 +13,16 @@ export * from './skill'
 export * from './technology'
 export * from './toast'
 
-declare module '@nuxt/schema' {
+declare module 'nuxt/schema' {
   interface RuntimeConfig {
-    secretKey: string
-    // @ts-expect-error Property 'public' does not exist on type 'RuntimeConfig'.
-    public: {
-      baseUrl: string
-      apiUrl: string
-      mailToAddress: string
-    }
+    discordWebhook: string
+    githubToken: string
+  }
+  interface PublicRuntimeConfig {
+    siteUrl: string
+    siteName: string
+    siteDescription: string
+    language: string
   }
 }
 

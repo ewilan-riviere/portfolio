@@ -8,5 +8,6 @@
   },
   "laravel-pint.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "dotenv.enableAutocloaking": false
+  "dotenv.enableAutocloaking": false,
+  "eslint.experimental.useFlatConfig": true
 }

@@ -38,13 +38,13 @@ watchEffect(() => {
                     {{ message }}
                   </p>
                   <div class="mt-6">
-                    <typed-link
+                    <TypedLink
                       :to="{ name: 'index' }"
                       class="text-base font-medium text-primary-600 hover:text-primary-500 dark:text-primary-500"
                     >
                       Go back home
                       <span aria-hidden="true"> &rarr;</span>
-                    </typed-link>
+                    </TypedLink>
                   </div>
                 </div>
               </div>

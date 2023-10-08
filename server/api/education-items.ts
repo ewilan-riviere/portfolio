@@ -1,12 +1,11 @@
 import { getJson, queryBuilder } from '../api'
-import type { HistoryItem } from '~~/types'
-import json from '~~/assets/data/education-items.json'
-import type { IconType } from '~~/.nuxt/svg-transformer'
+import type { HistoryItem } from '~/types'
+import json from '~/assets/data/education-items.json'
 
 export default defineEventHandler((event) => {
   const data = getJson<HistoryItem[]>(json)
   data.forEach((item) => {
-    item.icon = `history/${item.slug}` as IconType
+    item.icon = `history/${item.slug}` as SvgName
     if (item.dateEnd)
       item.isFinished = new Date(item.dateEnd) < new Date()
   })

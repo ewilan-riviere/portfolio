@@ -11,7 +11,7 @@ export function useData() {
   }
 
   const shuffle = <T>(a: T[] | undefined): T[] => {
-    if (!a)
+    if (!a || a.length === 0 || !Array.isArray(a))
       return []
 
     const shuffled = [...a]
@@ -45,7 +45,7 @@ export function useData() {
     // let limit = 0
     // if (event.req.url) {
     //   const config = useRuntimeConfig()
-    //   const url = `${config.public.baseUrl}${event.req.url}`
+    //   const url = `${config.public.siteUrl}${event.req.url}`
     //   const params = new URL(url).searchParams
     //   if (params.get('limit') !== null)
     //     limit = parseInt(params.get('limit')!)

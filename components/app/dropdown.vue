@@ -5,6 +5,7 @@ interface Props {
   align?: 'left' | 'right'
   arrow?: boolean
   autoClose?: boolean
+  triggerClass?: string
 }
 const props = withDefaults(defineProps<Props>(), {
   align: 'right',
@@ -32,10 +33,10 @@ const alignmentClasses = computed((): string => {
     class="relative h-full"
   >
     <span
-      class="h-full"
+      :class="triggerClass ? triggerClass : 'h-full'"
       @click="open = !open"
     >
-      <slot />
+      <slot name="trigger" />
     </span>
 
     <transition

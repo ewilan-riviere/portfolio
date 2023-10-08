@@ -1,4 +1,5 @@
 {
+  "welcome": "Welcome on Nuxt",
   "locale": "English",
   "messages": {
     "hello": "Hello, {name}!"
@@ -140,7 +141,8 @@
       "repositories-demo": "Repositories & demo",
       "features": "Features",
       "languages": "Languages",
-      "technologies": "Technologies"
+      "technologies": "Technologies",
+      "readme": "GitHub readme from"
     },
     "statuses": {
       "concept": "Concept & prototype",
@@ -177,7 +179,7 @@
       "designer": "Designer"
     },
     "links-origin": {
-      "link": "Link",
+      "home": "Homepage",
       "repository": "Repository",
       "private": "Private"
     },
