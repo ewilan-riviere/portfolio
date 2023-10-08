@@ -47,15 +47,9 @@ const i18n: NuxtConfig['i18n'] = {
 //   defaultLanguage: 'en-US',
 // }
 
-// https://github.com/kiwilan/nuxt-svg-transformer
+// https://github.com/kiwilan/unplugin-svg-transformer
 const svgTransformer: NuxtConfig['svgTransformer'] = {
-  title: false,
-  sizeInherit: true,
-}
-
-// https://github.com/kiwilan/nuxt-typed-link
-const typedLink: NuxtConfig['typedLink'] = {
-  i18n: true,
+  svg: { sizeInherit: true },
 }
 
 // https://color-mode.nuxtjs.org/
@@ -67,7 +61,6 @@ const modules = {
   content,
   i18n,
   svgTransformer,
-  typedLink,
   colorMode,
 }
 
