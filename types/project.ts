@@ -17,6 +17,7 @@ export interface Project {
   description: string
   repository?: string
   home?: string
+  api?: string
   isDraft?: boolean
   isDeprecated?: boolean
   isOpenSource?: boolean
@@ -24,7 +25,7 @@ export interface Project {
   image?: string
   typeColor?: string
   technologies?: string[]
-  context?: 'personal' | 'enterprise' | 'school'
+  context?: 'personal' | 'professional' | 'school'
   contextColor?: string
   type?: 'website' | 'app' | 'api' | 'library'
   createdAt?: Date

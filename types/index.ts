@@ -17,6 +17,7 @@ declare module 'nuxt/schema' {
   interface RuntimeConfig {
     discordWebhook: string
     githubToken: string
+    gitlabToken: string
   }
   interface PublicRuntimeConfig {
     siteUrl: string

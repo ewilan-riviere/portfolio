@@ -25,7 +25,7 @@ const content: NuxtConfig['content'] = {
 
 // https://i18n.nuxtjs.org/
 const i18n: NuxtConfig['i18n'] = {
-  baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+  siteUrl: process.env.NUXT_PUBLIC_BASE_URL,
   locales: [{ code: 'en', iso: 'en-US', name: 'English' }, { code: 'fr', iso: 'fr-FR', name: 'Français' }],
   defaultLocale: 'en',
   vueI18n: './i18n.config.ts',

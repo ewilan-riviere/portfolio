@@ -35,7 +35,7 @@ export function queryBuilder<T>(event: H3Event, data: T[]): T[] {
 
   const config = useRuntimeConfig()
 
-  const url = `${config.public.baseUrl}${event.node.req.url}`
+  const url = `${config.public.siteUrl}${event.node.req.url}`
   const params = new URL(url).searchParams
 
   for (const query of params.keys()) {
@@ -88,7 +88,7 @@ export function queryParams(event: H3Event): URLSearchParams | undefined {
     return
 
   const config = useRuntimeConfig()
-  const url = `${config.public.baseUrl}${event.node.req.url}`
+  const url = `${config.public.siteUrl}${event.node.req.url}`
 
   const params = new URL(url).searchParams
   return params

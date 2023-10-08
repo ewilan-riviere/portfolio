@@ -159,7 +159,7 @@
     },
     "contexts": {
       "personal": "Personal",
-      "enterprise": "Enterprise",
+      "professional": "professional",
       "school": "School"
     },
     "languages": {

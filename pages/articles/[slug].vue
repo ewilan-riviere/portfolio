@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { params } = useRoute()
-const { document } = await useMarkdown(`articles/${params.slug}`)
+const { document } = await useMarkdown(`articles/${(params as any).slug}`)
 
 const { date } = useUtils()
 function scrollToTop() {
@@ -85,7 +85,10 @@ useMetadata({
           class="hidden lg:flex rounded-full bg-gray-50 dark:bg-gray-800 w-8 h-8 border border-gray-100 dark:border-gray-700 mx-auto mt-6 hover:bg-gray-100 dark:hover:bg-gray-700"
           @click="scrollToTop()"
         >
-          <SvgIcon name="arrow-up" class="w-4 h-4 m-auto" />
+          <SvgIcon
+            name="arrow-up"
+            class="w-4 h-4 m-auto"
+          />
         </button>
       </div>
       <div class="mx-auto mt-16 lg:mt-0">
@@ -105,14 +108,17 @@ useMetadata({
           <div class="uppercase">
             {{ document.category }}
           </div>
-          <div v-if="document.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
+          <div
+            v-if="document.tags"
+            class="italic text-gray-600 dark:text-gray-400 mt-2"
+          >
             {{ document.tags.map((tag: string) => `#${tag}`).join(' ') }}
           </div>
         </div>
         <div
           class="mt-8 prose prose-lg dark:prose-invert prose-a:no-underline max-w-2xl prose-a:hoverable"
         >
-        <ContentRenderer :value="document" />
+          <ContentRenderer :value="document" />
         </div>
       </div>
     </section>

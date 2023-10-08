@@ -46,16 +46,16 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    componentIslands: false,
+    typedPages: true,
   },
 
   nitro: {
-    prerender: {
-      ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json'],
-    },
+    // prerender: {
+    //   ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json'],
+    // },
   },
 
-  typescript: {
-    shim: false,
-  },
+  build: {
+    // transpile: ['pinceau']
+  }
 })

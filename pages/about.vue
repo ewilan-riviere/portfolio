@@ -11,7 +11,10 @@ useMetadata({
 </script>
 
 <template>
-  <LayoutPage :title="$t('about.title')" :description="$t('about.subtitle')">
+  <LayoutPage
+    :title="$t('about.title')"
+    :description="$t('about.subtitle')"
+  >
     <div
       class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
     >

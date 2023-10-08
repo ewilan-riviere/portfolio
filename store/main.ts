@@ -1,7 +1,5 @@
 import { defineStore } from 'pinia'
 import type { About, Developer, Feature, HistoryItem, Hobby, Project, ProjectStatus, Skill, Technology } from '~/types'
-import type { IconType } from '~~/.nuxt/svg-transformer'
-import type { RouteType } from '~~/.nuxt/typed-link'
 
 export const useMainStore = defineStore('main', {
   state: () => ({
@@ -39,7 +37,7 @@ export const useMainStore = defineStore('main', {
       },
     ] as {
       title: string
-      to: RouteType
+      to: any
     }[],
     socials: [
       {
@@ -86,7 +84,7 @@ export const useMainStore = defineStore('main', {
       label: string
       title: string
       href: string
-      icon: IconType
+      icon: SvgName
       color: string
       colorDark: string
     }[],
