@@ -10,7 +10,10 @@ function loaded(loaded: boolean) {
 </script>
 
 <template>
-  <layout-container :margin="false" class="z-40">
+  <layout-container
+    :margin="false"
+    class="z-40"
+  >
     <div class="lg:flex items-center justify-between w-full space-x-0 lg:space-x-12 max-w-4xl mx-auto mt-16 mb-10">
       <div class="text-center lg:text-left">
         <SvgIcon

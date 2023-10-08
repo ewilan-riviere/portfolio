@@ -16,7 +16,11 @@ const { about } = useMainStore()
     </div>
     <div class="border-t border-gray-200 px-4 py-5 sm:px-6 dark:border-gray-600">
       <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-3">
-        <div v-for="hobby in about.hobbies" :key="hobby" class="sm:col-span-1">
+        <div
+          v-for="hobby in about.hobbies"
+          :key="hobby"
+          class="sm:col-span-1"
+        >
           <dt class="flex items-center space-x-2">
             <span>{{ $t(`hobbies.${hobby}.label`) }}</span>
           </dt>

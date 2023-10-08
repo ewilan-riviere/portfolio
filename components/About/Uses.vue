@@ -27,7 +27,11 @@ const items: { name: string; value: string; large?: boolean }[] = [
     </div>
     <div class="border-t border-gray-200 dark:border-gray-700 px-4 py-5 sm:px-6">
       <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-        <div v-for="item in items" :key="item.name" :class="item.large ? 'sm:col-span-2' : 'sm:col-span-1'">
+        <div
+          v-for="item in items"
+          :key="item.name"
+          :class="item.large ? 'sm:col-span-2' : 'sm:col-span-1'"
+        >
           <dt>
             Full name
           </dt>

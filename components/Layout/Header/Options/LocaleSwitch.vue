@@ -12,9 +12,16 @@ function localeTrans(lang: string) {
 
 <template>
   <div class="option option-left">
-    <app-dropdown auto-close class="h-full w-full" trigger-class="h-full w-full flex">
+    <app-dropdown
+      auto-close
+      class="h-full w-full"
+      trigger-class="h-full w-full flex"
+    >
       <template #trigger>
-        <button class="flex w-full" :title="$t('app.locale-switch')">
+        <button
+          class="flex w-full"
+          :title="$t('app.locale-switch')"
+        >
           <div
             class="absolute -top-2 -right-1 bg-gray-100 dark:bg-gray-800 opacity-70 text-black dark:text-white p-0.5 rounded-md z-10 w-5 h-5 flex"
             style="font-size: 0.55rem"
@@ -23,7 +30,10 @@ function localeTrans(lang: string) {
               {{ locale }}
             </div>
           </div>
-          <SvgIcon name="locale" class="icon" />
+          <SvgIcon
+            name="locale"
+            class="icon"
+          />
         </button>
       </template>
       <template #content>
@@ -42,7 +52,10 @@ function localeTrans(lang: string) {
               name="check"
               class="w-4 h-4"
             />
-            <span v-else class="w-4 h-4" />
+            <span
+              v-else
+              class="w-4 h-4"
+            />
           </NuxtLink>
         </div>
       </template>

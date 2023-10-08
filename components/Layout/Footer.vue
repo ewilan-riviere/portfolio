@@ -64,11 +64,21 @@ const items: {
                   </span>
                 </div>
                 <p class="text-sm text-zinc-400 dark:text-zinc-500 mx-auto lg:mx-0">
-                  © 2021-{{ currentYear }} <a href="https://github.com/ewilan-riviere" target="_blank" rel="noopener noreferrer" class="underline decoration-dashed">Ewilan Rivière</a>.
+                  © 2021-{{ currentYear }} <a
+                    href="https://github.com/ewilan-riviere"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="underline decoration-dashed"
+                  >Ewilan Rivière</a>.
                 </p>
               </div>
               <div class="text-center mt-10 text-gray-600 dark:text-gray-400 text-sm">
-                {{ $t('footer.design-inspired') }} <a href="https://tailwindui.com/" target="_blank" rel="noopener noreferrer" class="underline decoration-dashed">Tailwind UI</a>
+                {{ $t('footer.design-inspired') }} <a
+                  href="https://tailwindui.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline decoration-dashed"
+                >Tailwind UI</a>
               </div>
             </div>
           </div>

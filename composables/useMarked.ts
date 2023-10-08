@@ -42,7 +42,6 @@ export async function useMarked(markdown: string | undefined) {
   }
 
   function decodeHtmlEntities(html: string): string {
-    // eslint-disable-next-line n/prefer-global/process
     if (process.client)
       return html
 

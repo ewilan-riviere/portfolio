@@ -8,13 +8,27 @@ function toggle() {
 </script>
 
 <template>
-  <LayoutContainer :margin="false" fixed class="z-40">
-    <header :class="isScroll ? 'mt-1' : 'mt-6'" class="z-50 transition-all">
+  <LayoutContainer
+    :margin="false"
+    fixed
+    class="z-40"
+  >
+    <header
+      :class="isScroll ? 'mt-1' : 'mt-6'"
+      class="z-50 transition-all"
+    >
       <div class="mx-auto">
         <div class="relative">
           <div class="flex justify-between items-center">
-            <button class="hover:bg-gray-700 transition-colors p-1 rounded-full block lg:hidden" @click="toggle">
-              <SvgIcon name="menu" class="w-8 h-8 text-black dark:text-white" display="block" />
+            <button
+              class="hover:bg-gray-700 transition-colors p-1 rounded-full block lg:hidden"
+              @click="toggle"
+            >
+              <SvgIcon
+                name="menu"
+                class="w-8 h-8 text-black dark:text-white"
+                display="block"
+              />
             </button>
             <TypedLink
               :to="{

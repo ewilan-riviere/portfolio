@@ -16,7 +16,8 @@ defineProps<{
     >
       <AppImg
         v-if="image"
-        :src="image" :alt="title"
+        :src="image"
+        :alt="title"
         class="h-24 w-24 object-cover rounded-md"
       />
       <div>

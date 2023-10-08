@@ -8,8 +8,14 @@ const { isDark, toggle } = useColorScheme()
     :title="$t(`app.color-mode.${isDark ? 'light' : 'dark'}`)"
     @click="toggle"
   >
-    <SvgIcon name="sun" class="icon sun" />
-    <SvgIcon name="moon" class="icon moon" />
+    <SvgIcon
+      name="sun"
+      class="icon sun"
+    />
+    <SvgIcon
+      name="moon"
+      class="icon moon"
+    />
   </button>
 </template>
 

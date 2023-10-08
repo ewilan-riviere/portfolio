@@ -32,14 +32,20 @@ const tabs = [
   >
     <div class="flex items-center justify-between">
       <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <SvgIcon name="bag" class="h-6 w-6 flex-none" />
+        <SvgIcon
+          name="bag"
+          class="h-6 w-6 flex-none"
+        />
         <span class="ml-3">
           {{ $t("home.experience.title") }}
         </span>
       </h2>
     </div>
     <div class="mt-6">
-      <nav class="grid grid-cols-2 gap-4" aria-label="Tabs">
+      <nav
+        class="grid grid-cols-2 gap-4"
+        aria-label="Tabs"
+      >
         <button
           v-for="tab in tabs"
           :key="tab.slug"
@@ -54,7 +60,10 @@ const tabs = [
         </button>
       </nav>
       <div>
-        <ol v-if="tabActive === 'work'" class="mt-6 space-y-3">
+        <ol
+          v-if="tabActive === 'work'"
+          class="mt-6 space-y-3"
+        >
           <home-history-item
             v-for="item in workItems"
             :key="item.slug"
@@ -62,7 +71,10 @@ const tabs = [
             type="work"
           />
         </ol>
-        <ol v-if="tabActive === 'education'" class="mt-6 space-y-3">
+        <ol
+          v-if="tabActive === 'education'"
+          class="mt-6 space-y-3"
+        >
           <home-history-item
             v-for="item in educationItems"
             :key="item.slug"

@@ -7,10 +7,16 @@ defineProps<{
 
 <template>
   <div>
-    <h2 v-if="title" class="text-3xl font-semibold">
+    <h2
+      v-if="title"
+      class="text-3xl font-semibold"
+    >
       {{ title }}
     </h2>
-    <p v-if="subtitle" class="mt-2">
+    <p
+      v-if="subtitle"
+      class="mt-2"
+    >
       {{ subtitle }}
     </p>
   </div>

@@ -18,7 +18,10 @@ const placeholder = '/images/placeholder.webp'
 
 <template>
   <div class="mx-auto grid gap-x-8 gap-y-20">
-    <HomeTitle :title="$t('home.open-source.title')" :subtitle="$t('home.open-source.subtitle')" />
+    <HomeTitle
+      :title="$t('home.open-source.title')"
+      :subtitle="$t('home.open-source.subtitle')"
+    />
     <ul
       role="list"
       class="grid gap-x-8 gap-y-4 sm:grid-cols-2 sm:gap-y-6 xl:col-span-2"
@@ -31,10 +34,10 @@ const placeholder = '/images/placeholder.webp'
         <div class="flex items-center gap-x-6">
           <div class="h-16 w-16">
             <AppImg
-            class="h-16 w-16 rounded-md object-cover"
-            :src="project.image || placeholder"
-            :alt="project.title"
-          />
+              class="h-16 w-16 rounded-md object-cover"
+              :src="project.image || placeholder"
+              :alt="project.title"
+            />
           </div>
           <div>
             <h3
@@ -43,7 +46,7 @@ const placeholder = '/images/placeholder.webp'
               {{ project.title }}
             </h3>
             <p class="text-sm text-gray-600 dark:text-gray-400">
-              {{ project.description  }}
+              {{ project.description }}
             </p>
             <div
               v-if="project.technologies"

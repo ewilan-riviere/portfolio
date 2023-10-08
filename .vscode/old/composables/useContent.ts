@@ -19,7 +19,6 @@ export async function useContent(path: string) {
       slug: md.data.slug,
     }
 
-    // eslint-disable-next-line n/prefer-global/process
     if (process.client) {
       const { value } = await useMarked(md?.data.content)
       html.value = value

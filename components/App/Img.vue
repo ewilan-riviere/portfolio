@@ -92,7 +92,10 @@ onMounted(() => {
       class="hidden object-cover"
       loading="lazy"
     >
-    <figcaption v-if="legend" class="mt-3 flex text-sm text-gray-500 dark:text-gray-400">
+    <figcaption
+      v-if="legend"
+      class="mt-3 flex text-sm text-gray-500 dark:text-gray-400"
+    >
       <svg
         class="h-5 w-5 flex-none text-gray-400 dark:text-gray-500"
         viewBox="0 0 20 20"
@@ -105,7 +108,12 @@ onMounted(() => {
           clip-rule="evenodd"
         />
       </svg>
-      <a :href="origin" target="_blank" rel="noopener noreferrer" class="ml-2 underline underline-offset-2">
+      <a
+        :href="origin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ml-2 underline underline-offset-2"
+      >
         {{ legend }}
       </a>
     </figcaption>

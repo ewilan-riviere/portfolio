@@ -18,7 +18,11 @@ const src = computed(() => `/images/blog/${props.article._slug}-icon.webp`)
 <template>
   <div class="flex items-center relative group gap-x-6">
     <div>
-      <AppImg :src="src" :alt="article.title" class="w-20 h-20 object-contain" />
+      <AppImg
+        :src="src"
+        :alt="article.title"
+        class="w-20 h-20 object-contain"
+      />
       <div class="flex">
         <div class="uppercase text-sm italic font-semibold mx-auto mt-2">
           {{ article.category }}
@@ -38,7 +42,10 @@ const src = computed(() => `/images/blog/${props.article._slug}-icon.webp`)
           <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
         </span>
         {{ date(article.publishedAt) }}
-        <span v-if="article.updatedAt" class="font-semibold ml-2">
+        <span
+          v-if="article.updatedAt"
+          class="font-semibold ml-2"
+        >
           ({{ $t('blog.article.updated-at', { date: date(article.updatedAt) }) }})
         </span>
       </time>
@@ -48,7 +55,10 @@ const src = computed(() => `/images/blog/${props.article._slug}-icon.webp`)
       <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
         {{ article.description }}
       </p>
-      <div v-if="article.tags" class="italic text-gray-600 dark:text-gray-400 mt-2">
+      <div
+        v-if="article.tags"
+        class="italic text-gray-600 dark:text-gray-400 mt-2"
+      >
         {{ tags.map((tag) => `#${tag}`).join(' ') }}
       </div>
       <div

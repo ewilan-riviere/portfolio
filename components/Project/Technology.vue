@@ -12,7 +12,12 @@ defineProps<{
     <div class="text-sm">
       {{ technology.title }}
     </div>
-    <a :href="technology.link" target="_blank" rel="noopener noreferrer" class="inset-0 absolute" />
+    <a
+      :href="technology.link"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inset-0 absolute"
+    />
   </li>
 </template>
 

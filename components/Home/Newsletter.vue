@@ -31,7 +31,10 @@
       {{ $t('home.contact.subtitle') }}
     </p>
     <div class="mt-6 flex justify-end">
-      <AppButton color="white" :to="{ name: 'contact' }">
+      <AppButton
+        color="white"
+        :to="{ name: 'contact' }"
+      >
         {{ $t('home.contact.button') }}
       </AppButton>
     </div>

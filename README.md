@@ -36,22 +36,6 @@ Locally preview production build:
 pnpm preview
 ```
 
-## Modules
-
-- [tailwindcss](https://tailwindcss.com/docs/guides/nuxtjs)
-- [nuxt-seo-kit](https://github.com/harlan-zw/nuxt-seo-kit)
-- [@pinia/nuxt](https://pinia.vuejs.org/ssr/nuxt.html#installation)
-- Content
-  - [@nuxt-themes/typography](https://typography.nuxt.space/)
-  - [@nuxt/content](https://content.nuxtjs.org/)
-  - [@nuxt-themes/docus](https://docus.dev/)
-  - [@nuxtjs/i18n](https://v8.i18n.nuxtjs.org/)
-- Tools
-  - [@antfu/eslint-config](https://github.com/antfu/eslint-config)
-  - [@nuxt/devtools](https://devtools.nuxtjs.org/)
-  - [nuxt-svg-transformer](https://github.com/kiwilan/nuxt-svg-transformer)
-  - [nuxt-typed-link](https://github.com/kiwilan/nuxt-typed-link)
-
 ## Resume size
 
 To reduce the size of the resume, you can use `ps2pdf` to convert the PDF to a smaller size.

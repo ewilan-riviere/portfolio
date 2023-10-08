@@ -17,7 +17,10 @@ function scroll(id: string) {
 </script>
 
 <template>
-  <ul v-if="items" class="space-y-3">
+  <ul
+    v-if="items"
+    class="space-y-3"
+  >
     <li
       v-for="link in items"
       :key="link.id"
@@ -28,7 +31,10 @@ function scroll(id: string) {
       >
         {{ link.text }}
       </button>
-      <ArticleToc :items="link.children" class="pl-5 mt-2" />
+      <ArticleToc
+        :items="link.children"
+        class="pl-5 mt-2"
+      />
     </li>
   </ul>
 </template>

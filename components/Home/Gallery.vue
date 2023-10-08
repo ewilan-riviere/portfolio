@@ -28,7 +28,8 @@ projects.value = shuffle(api)
       >
         <div class="absolute inset-0 h-full w-full">
           <AppImg
-            :src="project.image" :alt="project.title"
+            :src="project.image"
+            :alt="project.title"
             class="h-full w-full object-cover"
           />
         </div>

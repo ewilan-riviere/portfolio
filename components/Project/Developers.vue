@@ -27,13 +27,23 @@ currentDevelopers.forEach((element) => {
 
 <template>
   <ul class="space-y-2">
-    <li v-for="developer in list" :key="developer.slug" class="flex items-center space-x-2 relative text-sm">
+    <li
+      v-for="developer in list"
+      :key="developer.slug"
+      class="flex items-center space-x-2 relative text-sm"
+    >
       <AppImg
-        :src="developer.avatar" :alt="developer.name"
+        :src="developer.avatar"
+        :alt="developer.name"
         class="w-8 h-8 rounded-full object-cover"
       />
       <div>
-        <a :href="developer.links?.primary" target="_blank" rel="noopener noreferrer" class="underline">
+        <a
+          :href="developer.links?.primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline"
+        >
           {{ developer.name }}
         </a>
         ({{ $t(`project.roles.${developer.role}`) }})

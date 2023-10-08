@@ -44,7 +44,12 @@ onMounted(() => {
     }"
     :title="label"
   >
-    <input v-model="toggled" type="checkbox" :required="required" class="sr-only">
+    <input
+      v-model="toggled"
+      type="checkbox"
+      :required="required"
+      class="sr-only"
+    >
     <div
       :class="{
         'order-2': reverse,
@@ -90,9 +95,16 @@ onMounted(() => {
           class="absolute inset-0 flex h-full w-full items-center justify-center transition-opacity"
           aria-hidden="true"
         >
-          <svg class="toggle-disabled h-3 w-3 text-gray-400 dark:text-gray-700" fill="none" viewBox="0 0 12 12">
+          <svg
+            class="toggle-disabled h-3 w-3 text-gray-400 dark:text-gray-700"
+            fill="none"
+            viewBox="0 0 12 12"
+          >
             <path
-              d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
               stroke-linejoin="round"
             />
           </svg>
@@ -106,7 +118,11 @@ onMounted(() => {
           class="absolute inset-0 flex h-full w-full items-center justify-center transition-opacity"
           aria-hidden="true"
         >
-          <svg class="toggle-enabled h-3 w-3 text-primary-600" fill="currentColor" viewBox="0 0 12 12">
+          <svg
+            class="toggle-enabled h-3 w-3 text-primary-600"
+            fill="currentColor"
+            viewBox="0 0 12 12"
+          >
             <path
               d="M3.707 5.293a1 1 0 00-1.414 1.414l1.414-1.414zM5 8l-.707.707a1 1 0 001.414 0L5 8zm4.707-3.293a1 1 0 00-1.414-1.414l1.414 1.414zm-7.414 2l2 2 1.414-1.414-2-2-1.414 1.414zm3.414 2l4-4-1.414-1.414-4 4 1.414 1.414z"
             />

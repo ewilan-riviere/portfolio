@@ -1,16 +1,16 @@
 {
-  "private": true,
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ewilan-riviere/portfolio"
-  },
+  "private": true,
   "author": {
     "email": "ewilan.riviere@gmail.com",
     "name": "Ewilan Rivière",
     "url": "https://ewilan-riviere.com"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewilan-riviere/portfolio"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -18,18 +18,11 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "start": "nuxt start",
-    "lint": "eslint . --ext .js,.ts,.vue --ignore-path .gitignore",
-    "lint:fix": "eslint . --fix --ext .js,.ts,.vue --ignore-path .gitignore",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "vitest --dom",
     "test:watch": "vitest --watch",
     "coverage": "vitest run --coverage"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "1.0.0-beta.21",
-    "@nuxt/devtools": "1.0.0-beta.0",
-    "@types/markdown-it": "^13.0.2",
-    "eslint": "^8.51.0",
-    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@nuxt-themes/docus": "^1.15.0",
@@ -58,5 +51,12 @@
     "unplugin-svg-transformer": "^1.0.31",
     "unplugin-vue-components": "^0.25.2",
     "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "1.0.0-beta.21",
+    "@nuxt/devtools": "1.0.0-beta.0",
+    "@types/markdown-it": "^13.0.2",
+    "eslint": "^8.51.0",
+    "typescript": "^5.2.2"
   }
 }
