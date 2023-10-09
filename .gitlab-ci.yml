@@ -14,27 +14,38 @@ deploy-job:
   stage: deploy
   image: node:18.17.0
   before_script:
-    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+    - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
+    - echo "Installing dependencies..."
+    - apt-get update -qq && apt-get install -y -qq sshpass
+    - apt-get install -y -qq rsync
+    - echo "Setup..."
+    - git clone https://gitlab.com/ewilan-riviere/portfolio.git
+    - cd portfolio
+    - scp $SSH_USER@$SSH_IP:/home/$SSH_USER/www/$CI_PROJECT_NAME/.env .env
+    - cat .env
+    - npm install -g pnpm
+    - pnpm i
+    - echo "Building..."
+    - pnpm build
+    - echo "Deploying..."
   script:
+    # SEE GITLAB VARIABLES FOR DEPLOYMENT
+    - rsync -azPhhr .output $SSH_USER@$SSH_IP:/home/$SSH_USER/www/$CI_PROJECT_NAME/.output-$CI_JOB_ID
     - ssh $SSH_USER@$SSH_IP "
       . ~/.zshrc &&
       cd /home/$SSH_USER/www/$CI_PROJECT_NAME &&
       git pull &&
       /home/$SSH_USER/.nvm/versions/node/v$NODE_VERSION/bin/pnpm i &&
-      /home/$SSH_USER/.nvm/versions/node/v$NODE_VERSION/bin/pnpm build &&
-      docker exec -it portfolio rm -rf node_modules
-      docker exec -it portfolio rm -rf .output
-      docker exec -it portfolio rm -rf .nuxt
-      docker cp .output portfolio:/usr/src/app/
       rm -rf .output &&
-      rm -rf .nuxt &&
-      rm -rf node_modules &&
+      mv .output-$CI_JOB_ID/.output .output &&
+      rm -rf .output-* &&
+      pm2 restart $PM2_NAME &&
       notifier '$CI_PROJECT_TITLE deployed'"
   only:
     - main
