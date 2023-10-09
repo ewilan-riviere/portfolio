@@ -39,6 +39,7 @@ deploy-job:
       . ~/.zshrc &&
       cd /home/$SSH_USER/www/$CI_PROJECT_NAME &&
       git pull &&
+      docker cp .output-$CI_JOB_ID $DOCKER_CONTAINER:/usr/src/app/.output-test &&
       docker restart $DOCKER_CONTAINER &&
       rm -rf .output-$CI_JOB_ID &&
       notifier '$CI_PROJECT_TITLE deployed'"
