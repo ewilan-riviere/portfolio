@@ -42,8 +42,8 @@ deploy-job:
       docker exec -it portfolio rm -rf node_modules &&
       docker exec -it portfolio rm -rf .output &&
       docker exec -it portfolio rm -rf .nuxt &&
-      docker cp .output portfolio:/usr/src/app/ &&
-      rm -rf .output &&
+      docker cp .output-$CI_JOB_ID portfolio:/usr/src/app/.output &&
+      rm -rf .output-$CI_JOB_ID &&
       notifier '$CI_PROJECT_TITLE deployed'"
   only:
     - main
