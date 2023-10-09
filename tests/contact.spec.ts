@@ -1,7 +1,7 @@
 import { expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 
-import ContactForm from '@/components/form/contact.vue'
+import ContactForm from '../components/Form/Contact.vue'
 
 // function mountTheForm() {
 //   const wrapper = mount(ContactForm, { props: {} })
