@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const { t } = useI18n()
 
-useMetadata({
+useSeoMeta({
   title: t('head.contact'),
 })
 </script>

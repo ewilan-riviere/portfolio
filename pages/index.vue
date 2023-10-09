@@ -2,7 +2,7 @@
 const { documents } = await useMarkdown('articles')
 const { t } = useI18n()
 
-useMetadata({
+useSeoMeta({
   title: t('head.home'),
 })
 </script>

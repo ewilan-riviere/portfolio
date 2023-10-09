@@ -4,7 +4,7 @@ import { useMainStore } from '~/store/main'
 const { projects } = useMainStore()
 const { t } = useI18n()
 
-useMetadata({
+useSeoMeta({
   title: t('head.projects'),
 })
 </script>

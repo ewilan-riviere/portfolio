@@ -1,11 +1,14 @@
-.prose p a {
-  @apply inline-flex;
+.prose a:has(img) {
+  @apply !inline-flex;
 }
 .prose a img {
   @apply m-0.5;
 }
-.prose a code {
-  @apply !py-0.5;
+/* .prose a:has(code) {
+  @apply !inline;
+} */
+.prose code {
+  @apply !py-0.5 !px-1;
 }
 .prose img {
   @apply max-h-64;

@@ -13,19 +13,14 @@ interface HeadMeta {
 }
 
 export function useMetadata(meta?: HeadMeta) {
-  const appName = 'Ewilan Rivière'
-  const appDescription = 'Portfolio of Ewilan Rivière, developer'
+  // const appDescription = 'Portfolio of Ewilan Rivière, developer'
 
   if (!meta)
     meta = {}
 
-  let title = appName
-  if (meta?.title)
-    title = `${meta.title} · ${appName}`
-
-  let description = appDescription
-  if (meta?.description)
-    description = `${meta.description.substring(0, 155 - 3)}...`
+  // let description = appDescription
+  // if (meta?.description)
+  //   description = `${meta.description.substring(0, 155 - 3)}...`
 
   let image = '/default.jpg'
   if (meta.image)
@@ -44,13 +39,15 @@ export function useMetadata(meta?: HeadMeta) {
   }
 
   const metadata: UseHeadInput | ComputedGetter<UseHeadInput> = {
-    title,
+    title: meta.title,
     meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: description,
-      },
+      meta?.description
+        ? {
+            hid: 'description',
+            name: 'description',
+            content: meta.description,
+          }
+        : {},
       {
         name: 'theme-color',
         content: isDark.value ? '#6c63ff' : '#564fcc',
@@ -60,36 +57,36 @@ export function useMetadata(meta?: HeadMeta) {
         property: 'og:url',
         content: route,
       },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: title,
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: description,
-      },
+      // {
+      //   hid: 'og:title',
+      //   property: 'og:title',
+      //   content: title,
+      // },
+      // {
+      //   hid: 'og:description',
+      //   property: 'og:description',
+      //   content: description,
+      // },
       {
         hid: 'og:image',
         property: 'og:image',
         content: image,
       },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: title,
-      },
-      {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: title,
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: description,
-      },
+      // {
+      //   hid: 'og:image:alt',
+      //   property: 'og:image:alt',
+      //   content: title,
+      // },
+      // {
+      //   hid: 'twitter:title',
+      //   name: 'twitter:title',
+      //   content: title,
+      // },
+      // {
+      //   hid: 'twitter:description',
+      //   name: 'twitter:description',
+      //   content: description,
+      // },
       {
         hid: 'twitter:image',
         name: 'twitter:image',

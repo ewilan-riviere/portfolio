@@ -6,13 +6,14 @@
   },
   "legend": "From {from}",
   "head": {
-    "home": "Welcome",
+    "home": "Welcome on Ewilan Rivière's portfolio",
     "about": "About me",
     "projects": "My projects",
     "blog": "My blog",
     "contact": "Contact me"
   },
   "home": {
+    "about": "Welcome to my portfolio, where you can discover my professional and personal projects, some of which are open-source.",
     "contact": {
       "title": "Contact",
       "subtitle": "Send me a message and I'll get back to you as soon as possible.",

@@ -6,13 +6,14 @@
   },
   "legend": "From {from}",
   "head": {
-    "home": "Bienvenue",
+    "home": "Bienvenue le portfolio d'Ewilan Rivière",
     "about": "À propos de moi",
     "projects": "Mes projets",
     "blog": "Mon blog",
     "contact": "Me contacter"
   },
   "home": {
+    "about": "Bienvenue sur mon portfolio, vous pouvez découvrir ici mes projets professionnels et personels, dont certains sont en open-source.",
     "contact": {
       "title": "Contact",
       "subtitle": "Envoyez-moi un message et je vous répondrai dès que possible.",

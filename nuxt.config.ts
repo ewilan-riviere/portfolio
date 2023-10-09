@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   extends: [
-    '@nuxt-themes/docus', // https://github.com/nuxt-themes/docus
+    '@nuxt-themes/elements', // https://www.npmjs.com/package/@nuxt-themes/elements
     'nuxt-seo-kit', // https://github.com/harlan-zw/nuxt-seo-kit
   ],
   modules: [
@@ -46,12 +46,17 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    typedPages: true,
+    // typedPages: true, // https://nuxt.com/blog/v3-5#fully-typed-pages
   },
 
   nitro: {
     prerender: {
       ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json'],
     },
+  },
+
+  typescript: {
+    includeWorkspace: true, // https://nuxt.com/docs/api/configuration/nuxt-config#includeworkspace
+    // shim: true, // https://nuxt.com/docs/api/configuration/nuxt-config#shim
   },
 })

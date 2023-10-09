@@ -5,7 +5,7 @@ const { document } = await useMarkdown('about')
 const { socials } = useMainStore()
 const { t } = useI18n()
 
-useMetadata({
+useSeoMeta({
   title: t('head.about'),
 })
 </script>

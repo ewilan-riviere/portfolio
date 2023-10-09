@@ -21,7 +21,14 @@ const gitType = type === 'github' ? 'GitHub' : 'GitLab'
 description.value = `${context} - ${t(`project.types.${project.value?.type}`)} - ${gitType}`
 
 useMetadata({
-  title: project.value?.title,
+  title: `${project.value?.title} - ${t('head.projects')}`,
+})
+
+useSeoMeta({
+  title: `${project.value?.title} - ${t('head.projects')}`,
+  ogImage: project.value?.image,
+  twitterImage: project.value?.image,
+  description: description.value,
 })
 </script>
 
@@ -73,15 +80,24 @@ useMetadata({
             class="w-full max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 object-cover h-52"
           />
           <div class="mt-6 text-sm border border-gray-100 dark:border-gray-700 rounded-md p-4">
-            <div class="flex items-center space-x-1 mb-2">
-              <SvgIcon
-                v-if="project.isOpenSource"
-                name="open-source"
-                class="w-7 h-7"
-                title="Open source"
-              />
-              <div>
-                Open source
+            <div
+              v-if="project.isOpenSource"
+              class="flex items-center mb-2 space-x-2"
+            >
+              <div class="flex items-center space-x-1">
+                <SvgIcon
+                  name="open-source"
+                  class="w-7 h-7"
+                  title="Open source"
+                />
+                <div>Open source</div>
+              </div>
+              <div class="flex items-center space-x-1">
+                <SvgIcon
+                  name="star"
+                  class="w-6 h-6"
+                />
+                <div>{{ git?.stars_count }}</div>
               </div>
             </div>
             <div>

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const { params } = useRoute()
+const { t } = useI18n()
 const { document } = await useMarkdown(`articles/${(params as any).slug}`)
 
 const { date } = useUtils()
@@ -11,9 +12,10 @@ function scrollToTop() {
 }
 const picture = computed(() => `/images/blog/${document?._slug}.jpg`)
 
-useMetadata({
-  title: document?.title,
-  image: picture.value,
+useSeoMeta({
+  title: `${document?.title} - ${t('head.blog')}`,
+  ogImage: picture.value,
+  twitterImage: picture.value,
   description: document?.description,
 })
 </script>

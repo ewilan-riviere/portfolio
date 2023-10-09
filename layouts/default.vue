@@ -1,12 +1,10 @@
 <script lang="ts" setup>
-const isDev = import.meta.env.DEV
+const isDev = computed(() => import.meta.env.DEV)
 </script>
 
 <template>
   <div
-    :class="{
-      'debug-screens': isDev,
-    }"
+    :class="{ 'debug-screens': isDev }"
     class="flex h-full flex-col bg-zinc-50 dark:bg-black"
   >
     <div class="fixed inset-0 flex justify-center sm:px-8">
@@ -15,13 +13,11 @@ const isDev = import.meta.env.DEV
       </div>
     </div>
     <div class="mb-28" />
-    <layout-header />
-    <layout-sidebar />
+    <LayoutHeader />
+    <LayoutSidebar />
     <main class="min-h-[60vh]">
       <slot />
     </main>
-    <layout-footer />
+    <LayoutFooter />
   </div>
 </template>
-
-<style scoped></style>

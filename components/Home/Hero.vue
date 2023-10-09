@@ -24,7 +24,7 @@ function loaded(loaded: boolean) {
           {{ about?.name }}
         </h1>
         <div
-          class="max-w-lg mx-auto mt-1 text-lg text-gray-800 dark:text-gray-200 sm:max-w-3xl font-quicksand font-medium"
+          class="max-w-lg mx-auto mt-3 text-lg text-gray-800 dark:text-gray-200 sm:max-w-3xl font-sans"
         >
           {{ $t('about.professional-title') }}
         </div>
@@ -32,6 +32,9 @@ function loaded(loaded: boolean) {
           « {{ $t('about.citation') }} »
         </blockquote>
         <home-social class="mt-5 mx-auto lg:mx-0 w-max" />
+        <p class="mt-5">
+          {{ $t('home.about') }}
+        </p>
       </div>
       <div class="flex mt-10 lg:mt-0">
         <div

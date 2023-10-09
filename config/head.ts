@@ -53,12 +53,12 @@ const meta: Meta<any['link']>[] = [
   {
     hid: 'publisher',
     name: 'publisher',
-    content: 'Ewilan Rivière Portfolio',
+    content: 'Ewilan Rivière',
   },
   {
     hid: 'copyright',
     name: 'copyright',
-    content: 'Ewilan Rivière Portfolio',
+    content: 'Ewilan Rivière',
   },
   {
     hid: 'og:site_name',
@@ -104,6 +104,16 @@ const meta: Meta<any['link']>[] = [
     hid: 'twitter:card',
     name: 'twitter:card',
     content: 'summary_large_image',
+  },
+  {
+    hid: 'og:image',
+    property: 'og:image',
+    content: `${process.env.NUXT_PUBLIC_SITE_URL}/default.jpg`,
+  },
+  {
+    hid: 'twitter:image',
+    name: 'twitter:image',
+    content: `${process.env.NUXT_PUBLIC_SITE_URL}/default.jpg`,
   },
 ]
 const script: Script<any['script']>[] = [
