@@ -442,14 +442,14 @@ let modelName = '{{ $attributes->whereStartsWith('wire:model')->first() }}'
 To send notifications when upload process is finished, we use [Filament notifications](https://filamentphp.com/docs/2.x/notifications/installation).
 
 ```js
-const notify = () => {
+function notify() {
   new Notification()
-    .title("File uploaded")
+    .title('File uploaded')
     .body(`You can save changes!`)
     .success()
     .seconds(1.5)
-    .send();
-};
+    .send()
+}
 ```
 
 And finally, we create FilePond instance with some options. First, we need to bind it to previous `input` element.
@@ -491,18 +491,16 @@ pond.setOptions({
 To add existing files, we use `addFiles()` method.
 
 ```js
-pond.addFiles(files);
+pond.addFiles(files)
 ```
 
 And finally, we can add some events to handle errors and success messages.
 
 ```js
-pond.on("addfile", (error, file) => {
-  if (error) {
-    console.log("Oh no");
-    return;
-  }
-});
+pond.on('addfile', (error, file) => {
+  if (error)
+    console.log('Oh no')
+})
 ```
 
 You can see [FilePond documentation](https://pqina.nl/filepond/docs/) for more details.

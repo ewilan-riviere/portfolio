@@ -39,21 +39,21 @@ yarn add vite-svg-loader -D
 ### Add to Vue 3
 
 ```ts [vite.config.ts]
-import svgLoader from "vite-svg-loader";
+import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
   plugins: [
     vue(),
     svgLoader(), // https://github.com/jpkleemans/vite-svg-loader#readme
   ],
-});
+})
 ```
 
 ### Add to Nuxt 3
 
 ```ts [nuxt.config.ts]
-import { defineNuxtConfig } from "nuxt";
-import svgLoader from "vite-svg-loader";
+import { defineNuxtConfig } from 'nuxt'
+import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   vite: {
@@ -61,7 +61,7 @@ export default defineNuxtConfig({
       svgLoader(), // https://github.com/jpkleemans/vite-svg-loader#readme
     ],
   },
-});
+})
 ```
 
 ## Add SVG for test
@@ -122,29 +122,32 @@ Watch out `../assets/icons/${props.name}.svg` because path is relative to my sta
 ```vue [components/svg-icon.vue]
 <script setup lang="ts">
 const props = defineProps<{
-  name?: string;
-}>();
+  name?: string
+}>()
 
 const currentIcon = computed(() =>
   defineAsyncComponent({
     loader: () => import(`../assets/icons/${props.name}.svg`),
     loadingComponent: {
-      template: "<span></span>",
+      template: '<span></span>',
     },
     errorComponent: {
-      template: "<span>error</span>",
+      template: '<span>error</span>',
     },
     delay: 200,
     timeout: 3000,
     suspensible: true,
   })
-);
-const attrs = useAttrs();
+)
+const attrs = useAttrs()
 </script>
 
 <template>
   <span>
-    <component :is="currentIcon" :class="attrs.class" />
+    <component
+      :is="currentIcon"
+      :class="attrs.class"
+    />
   </span>
 </template>
 ```
@@ -157,7 +160,10 @@ For Nuxt 3, you have to add `client-only`.
 <template>
   <span>
     <client-only>
-      <component :is="currentIcon" :class="attrs.class" />
+      <component
+        :is="currentIcon"
+        :class="attrs.class"
+      />
       <template #fallback />
     </client-only>
   </span>
@@ -169,7 +175,10 @@ For Nuxt 3, you have to add `client-only`.
 ```vue [app.vue]
 <template>
   <div>
-    <svg-icon name="github" class="w-6 h-6" />
+    <svg-icon
+      name="github"
+      class="w-6 h-6"
+    />
   </div>
 </template>
 ```
