@@ -42,6 +42,9 @@ deploy-job:
       docker exec $DOCKER_CONTAINER rm -rf node_modules &&
       docker exec $DOCKER_CONTAINER rm -rf .nuxt &&
       docker cp .output-$CI_JOB_ID $DOCKER_CONTAINER:/usr/src/app/ &&
+      docker exec $DOCKER_CONTAINER rm -rf .output &&
+      docker exec $DOCKER_CONTAINER mv .output-$CI_JOB_ID/.output .output &&
+      docker exec $DOCKER_CONTAINER rm -rf .output-$CI_JOB_ID &&
       docker restart $DOCKER_CONTAINER &&
       rm -rf .output-$CI_JOB_ID &&
       notifier '$CI_PROJECT_TITLE deployed'"
