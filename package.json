@@ -22,7 +22,8 @@
     "lint:fix": "eslint . --fix --ignore-pattern '.gitlab-ci.yml'",
     "test": "vitest --dom",
     "test:watch": "vitest --watch",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nuxt-themes/elements": "^0.9.5",
@@ -60,6 +61,7 @@
     "@vue/test-utils": "^2.4.1",
     "eslint": "^8.51.0",
     "happy-dom": "^12.9.0",
+    "husky": "^8.0.3",
     "typescript": "^5.2.2"
   }
 }
