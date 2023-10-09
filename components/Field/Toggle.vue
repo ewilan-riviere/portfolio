@@ -64,6 +64,10 @@ onMounted(() => {
       >
         {{ label }}
         <slot name="label" />
+        <span
+          v-if="required"
+          class="text-red-500"
+        >*</span>
       </span>
     </div>
     <button
