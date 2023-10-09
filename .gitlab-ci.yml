@@ -29,7 +29,7 @@ deploy-job:
     - echo "Building..."
     - pnpm build
     - echo "Deploying..."
-    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+    - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
@@ -37,6 +37,7 @@ deploy-job:
     - ssh-keyscan $SSH_IP >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
+    # SEE GITLAB VARIABLES FOR DEPLOYMENT
     - rsync -azPhhr .output $SSH_USER@$SSH_IP:/home/$SSH_USER/www/$CI_PROJECT_NAME/.output-$CI_JOB_ID
     - ssh $SSH_USER@$SSH_IP "
       . ~/.zshrc &&
