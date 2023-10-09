@@ -25,7 +25,11 @@ export default defineEventHandler(async (event) => {
     method: 'POST',
     body: JSON.stringify({
       username: body.project ? `[PROJECT] ${name}` : name,
-      content: body.message,
+      content: `- *Name*: ${body.name}
+- *Email*: ${body.email}
+- *Project*: ${body.project ? 'Yes' : 'No'}
+- *Message*:
+${body.message}`,
     }),
   })
 
