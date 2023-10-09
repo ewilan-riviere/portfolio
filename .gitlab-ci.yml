@@ -39,6 +39,7 @@ deploy-job:
       . ~/.zshrc &&
       cd /home/$SSH_USER/www/$CI_PROJECT_NAME &&
       git pull &&
+      docker exec -it $DOCKER_CONTAINER rm -rf node_modules &&
       notifier '$CI_PROJECT_TITLE deployed'"
   only:
     - main

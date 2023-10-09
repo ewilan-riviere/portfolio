@@ -7,9 +7,9 @@
 [![Content][content-version-src]][content-version-href]
 [![i18n][i18n-version-src]][i18n-version-href]
 
-[![tests][tests-src]][tests-href]
 [![license][license-src]][license-href]
 [![codecov][codecov-src]][codecov-href]
+[![tests][tests-src]][tests-href]
 [![pipeline status][pipeline-src]][pipeline-href]
 
 Ewilan Rivière's portfolio, [Nuxt 3](https://nuxt.com/) SSR app with [content](https://content.nuxt.com/) and [i18n](https://i18n.nuxtjs.org/). Analytics with [Umami](https://umami.is/) and contact form with [Discord](https://discord.com/).
