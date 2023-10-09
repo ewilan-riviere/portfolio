@@ -39,8 +39,11 @@ deploy-job:
       . ~/.zshrc &&
       cd /home/$SSH_USER/www/$CI_PROJECT_NAME &&
       git pull &&
-      docker exec $DOCKER_CONTAINER rm -rf .output-test &&
-      docker cp .output-$CI_JOB_ID $DOCKER_CONTAINER:/usr/src/app/.output-test &&
+      docker exec $DOCKER_CONTAINER rm -rf node_modules &&
+      docker exec $DOCKER_CONTAINER rm -rf .nuxt &&
+      docker exec $DOCKER_CONTAINER rm -rf .output &&
+      docker cp .output-$CI_JOB_ID $DOCKER_CONTAINER:/usr/src/app/ &&
+      docker exec $DOCKER_CONTAINER mv .output-$CI_JOB_ID .output &&
       docker restart $DOCKER_CONTAINER &&
       rm -rf .output-$CI_JOB_ID &&
       notifier '$CI_PROJECT_TITLE deployed'"
