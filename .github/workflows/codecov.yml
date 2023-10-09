@@ -19,6 +19,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm i -g pnpm
       - run: pnpm install
+      - run: pnpm build
       - run: pnpm coverage
 
       - name: Code coverage
