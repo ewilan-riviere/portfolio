@@ -13,3 +13,4 @@ assets/svg-transformer-list.ts
 .DS_Store
 .unlighthouse
 coverage
+icons.d.ts

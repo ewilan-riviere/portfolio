@@ -1,14 +1,18 @@
-FROM node:18.12.0-alpine
+FROM node:18.16.0-alpine
 
-# Remove any existing config files
-RUN rm /etc/nginx/conf.d/*
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-# Copy config files
-# *.conf files in "conf.d/" dir get included in main config
-COPY ./default.conf /etc/nginx/conf.d/
+RUN apk update && apk upgrade
+RUN apk add git
 
-# Expose the listening port
-EXPOSE 80
+COPY . /usr/src/app/
+RUN npm install -g pnpm
+RUN pnpm install
+RUN pnpm build
 
-# Launch NGINX
-CMD [ "nginx", "-g", "daemon off;" ]
+ENV HOST=0.0.0.0
+
+EXPOSE 3000
+
+CMD [ "pnpm", "start" ]
