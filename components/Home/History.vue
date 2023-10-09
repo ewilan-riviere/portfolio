@@ -13,7 +13,7 @@ const getCVPath = computed(() => {
   return `${defaultPath}-en.pdf`
 })
 
-const tabActive = ref('education')
+const tabActive = ref('work')
 const tabs = [
   {
     name: 'Education',
@@ -64,7 +64,7 @@ const tabs = [
           v-if="tabActive === 'work'"
           class="mt-6 space-y-3"
         >
-          <home-history-item
+          <HomeHistoryItem
             v-for="item in workItems"
             :key="item.slug"
             :item="item"
@@ -75,7 +75,7 @@ const tabs = [
           v-if="tabActive === 'education'"
           class="mt-6 space-y-3"
         >
-          <home-history-item
+          <HomeHistoryItem
             v-for="item in educationItems"
             :key="item.slug"
             :item="item"

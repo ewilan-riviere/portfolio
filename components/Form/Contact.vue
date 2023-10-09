@@ -99,6 +99,9 @@ async function submit() {
 
         <!-- Contact form -->
         <div class="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
+          <div>
+            <slot />
+          </div>
           <form
             class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
             @submit.prevent="submit"
@@ -122,6 +125,7 @@ async function submit() {
               multiline
               required
               class="sm:col-span-2"
+              :maxlength="2000"
             />
             <FieldToggle
               v-model="form.conditions"

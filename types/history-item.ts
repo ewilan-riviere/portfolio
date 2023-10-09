@@ -11,7 +11,7 @@ export interface HistoryItem {
   certificate?: string
   color?: string
   colorReversed?: string
-  icon: import('~/.nuxt/svg-transformer').IconType
+  icon: SvgName
   experienceType?: string
   dateBegin: Date
   dateEnd?: Date

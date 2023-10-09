@@ -1,5 +1,7 @@
 # Portfolio
 
+![banner](https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/public/portfolio.jpg)
+
 [![Nuxt][nuxt-version-src]][nuxt-version-href]
 [![Tailwind CSS][tailwind-version-src]][tailwind-version-href]
 [![Content][content-version-src]][content-version-href]
@@ -8,15 +10,21 @@
 [![tests][tests-src]][tests-href]
 [![license][license-src]][license-href]
 
-My portfolio, built with [Nuxt 3](https://nuxtjs.org) SSR and [Tailwind CSS](https://tailwindcss.com/).
+Ewilan Rivière's portfolio, [Nuxt 3](https://nuxt.com/) SSR app with [content](https://content.nuxt.com/) and [i18n](https://i18n.nuxtjs.org/).
 
 Available at [ewilan-riviere.com](https://ewilan-riviere.com).
 
-## Setup
+## Installation
+
+This is a [Nuxt 3](https://nuxt.com/) project.
+
+Download dependencies:
 
 ```bash
 pnpm i
 ```
+
+Start the development server:
 
 ```bash
 pnpm dev
@@ -36,7 +44,9 @@ Locally preview production build:
 pnpm preview
 ```
 
-## Resume size
+Use [NGINX](https://www.nginx.com/) and [pm2](https://pm2.keymetrics.io/) to run the production build with SSR.
+
+### Resume size
 
 To reduce the size of the resume, you can use `ps2pdf` to convert the PDF to a smaller size.
 
@@ -46,6 +56,10 @@ ps2pdf resume.pdf resume-ps2pdf.pdf
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## License
+
+[MIT License](./LICENSE)
 
 [nuxt-version-src]: https://img.shields.io/badge/dynamic/json?label=Nuxt&query=dependencies['nuxt']&url=https://raw.githubusercontent.com/ewilan-riviere/portfolio/main/package.json&message=v3&color=28cf8d&logo=nuxt.js&logoColor=ffffff&labelColor=18181b
 [nuxt-version-href]: https://nuxt.com

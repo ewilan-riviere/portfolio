@@ -17,7 +17,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "start": "node ./.output/server/index.mjs",
+    "start": "node .output/server/index.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest --dom",
@@ -48,7 +48,7 @@
     "swiper": "^10.3.1",
     "tailwindcss": "^3.3.3",
     "unplugin-auto-import": "^0.16.6",
-    "unplugin-svg-transformer": "^1.0.31",
+    "unplugin-svg-transformer": "file:~/unplugin-svg-transformer.tgz",
     "unplugin-vue-components": "^0.25.2",
     "vue": "^3.3.4"
   },
@@ -56,7 +56,10 @@
     "@antfu/eslint-config": "1.0.0-beta.21",
     "@nuxt/devtools": "1.0.0-beta.0",
     "@types/markdown-it": "^13.0.2",
+    "@vitest/coverage-v8": "^0.34.6",
+    "@vue/test-utils": "^2.4.1",
     "eslint": "^8.51.0",
+    "happy-dom": "^12.9.0",
     "typescript": "^5.2.2"
   }
 }

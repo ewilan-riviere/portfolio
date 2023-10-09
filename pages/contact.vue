@@ -11,6 +11,10 @@ useMetadata({
     :title="$t('contact.page-title')"
     :description="$t('contact.page-subtitle')"
   >
-    <FormContact class="mt-6" />
+    <FormContact class="mt-6">
+      <div class="prose dark:prose-invert word-wraping mx-auto mb-6">
+        {{ $t('contact.about') }}
+      </div>
+    </FormContact>
   </LayoutPage>
 </template>

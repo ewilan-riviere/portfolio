@@ -201,7 +201,8 @@
     "present": "présent",
     "types": {
       "school": "École",
-      "vocational": "Alternance"
+      "vocational": "Alternance",
+      "permanent": "CDI"
     }
   },
   "history-items": {
@@ -234,6 +235,14 @@
       "abstract": "Organiser un système d'information, acquérir les notions technologiques et méthodologiques fondamentales permettant la gestion d'un système d'information, gérer une équipe (management, conduite de réunion, recrutement), gérer un projet informatique.",
       "level": "Bac +5",
       "role": "Développeuse fullstack"
+    },
+    "useweb": {
+      "title": "Useweb",
+      "role": "Fullstack developer"
+    },
+    "freelance": {
+      "title": "Freelance",
+      "role": "Fullstack developer"
     }
   },
   "blog": {
@@ -252,7 +261,7 @@
     "page-subtitle": "Seulement les messages sympathiques!",
     "title": "Que diriez-vous d'un petit message ?",
     "subtitle": "Si vous souhaitez me contacter pour un nouveau project",
-    "terms": "",
+    "about": "Vous pouvez me contacter si vous avez des questions sur mon travail, si vous êtes développeur-se et que vous souhaitez des conseils ou si vous avez un projet nécessitant le développement d'une application web.",
     "form": {
       "name": "Nom",
       "email": "Email",

@@ -201,7 +201,8 @@
     "present": "present",
     "types": {
       "school": "School",
-      "vocational": "Vocational"
+      "vocational": "Vocational",
+      "permanent": "Permanent contract"
     }
   },
   "history-items": {
@@ -238,7 +239,10 @@
     "useweb": {
       "title": "Useweb",
       "abstract": "As fullstack developer, I work on the development of web applications, from the conception to the deployment. I also work on the maintenance of existing applications.",
-      "level": "Bac +5",
+      "role": "Fullstack developer"
+    },
+    "freelance": {
+      "title": "Freelance",
       "role": "Fullstack developer"
     }
   },
@@ -258,6 +262,7 @@
     "page-subtitle": "Only nice messages!",
     "title": "You've send mail!",
     "subtitle": "If you want to contact me for a new project!",
+    "about": "You can contact me if you have any questions about my work, if you're a developer and would like some advice, or if you have a project requiring the development of a web application.",
     "form": {
       "name": "Name",
       "email": "Email",

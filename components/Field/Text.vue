@@ -49,6 +49,10 @@ const value = computed<string>({
     emit('update:modelValue', val)
   },
 })
+
+const count = computed<number>(() => {
+  return value.value.length
+})
 </script>
 
 <template>
@@ -89,10 +93,17 @@ const value = computed<string>({
         :autocomplete="autocomplete"
         :aria-describedby="`${name}-description`"
         :required="required"
+        :maxlength="maxlength > 0 ? maxlength : ''"
       >
     </div>
+    <div class="flex mt-1">
+      <span
+        v-if="maxlength > 0"
+        class="ml-auto text-sm text-gray-600 dark:text-gray-300"
+      >{{ count }} / {{ maxlength }}</span>
+    </div>
     <div
-      id="email-description"
+      :id="`${name}-description`"
       class="mt-2 text-sm text-gray"
     >
       <slot />
@@ -100,7 +111,7 @@ const value = computed<string>({
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="css" scoped>
 .field {
   @apply block w-full rounded-md border-gray-300 placeholder-gray-500 border shadow-sm text-gray-900;
   @apply focus:border-primary-600 focus:ring-primary-600;

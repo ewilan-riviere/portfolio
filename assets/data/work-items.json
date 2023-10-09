@@ -5,9 +5,10 @@
     "certificate": null,
     "color": "#595ad4",
     "colorReversed": true,
-    "experienceType": "vocational",
+    "experienceType": "permanent",
     "dateBegin": "2019-10-01",
     "dateEnd": "2023-01-02",
+    "isFinished": true,
     "isDraft": false,
     "url": "https://www.useweb.fr/",
     "links": {
@@ -18,6 +19,25 @@
       "school": {
         "name": "ENI Ecole Informatique",
         "link": "https://www.eni-ecole.fr/formations/developpement/niveau-7-bac5-manager-de-solutions-digitales-et-data"
+      }
+    }
+  },
+  {
+    "slug": "freelance",
+    "image": "freelance.webp",
+    "certificate": null,
+    "color": "#6c63ff",
+    "colorReversed": true,
+    "experienceType": "permanent",
+    "dateBegin": "2023-01-02",
+    "dateEnd": null,
+    "isFinished": false,
+    "isDraft": false,
+    "url": "https://ewilan-riviere.com/",
+    "links": {
+      "place": {
+        "name": "GitHub",
+        "link": "https://github.com/ewilan-riviere"
       }
     }
   }

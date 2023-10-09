@@ -61,6 +61,7 @@ const dateEnd = computed(() => props.item.dateEnd ? new Date(props.item.dateEnd)
               {{ item.isFinished ? dateEnd.getFullYear() : $t('history.present') }}
             </time>
           </span>
+          <span v-if="!item.isFinished"><span aria-hidden="true">—</span>{{ $t('history.present') }}</span>
         </dd>
       </div>
       <div
