@@ -1,12 +1,15 @@
 ---
-version: '3'
+version: '3.3'
 services:
-  app:
-    container_name: portfolio
+  portfolio_dev:
+    container_name: portfolio_dev
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile.dev
+    image: portfolio_dev
+    command: npm run dev
+    volumes:
+    - .:/app
+    - /app/node_modules
     ports:
-      - '${DOCKER_COMPOSE_PORT}:3000'
-    env_file: .env
-    restart: always
+      - "3000:3000"

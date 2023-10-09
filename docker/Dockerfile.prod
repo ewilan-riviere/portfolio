@@ -1,12 +1,12 @@
 FROM node:18.16.0-alpine
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
 RUN apk update && apk upgrade
 RUN apk add git
 
-COPY . /usr/src/app/
+COPY . /app/
 RUN npm install -g pnpm
 RUN pnpm install
 RUN pnpm build
