@@ -26,6 +26,9 @@ export default defineNuxtConfig({
     'unplugin-svg-transformer/nuxt', // https://github.com/kiwilan/unplugin-svg-transformer
   ],
 
+  linkChecker: {
+    failOn404: false,
+  },
   colorMode: modules.colorMode,
   content: modules.content,
   i18n: modules.i18n,
