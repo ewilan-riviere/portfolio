@@ -19,7 +19,7 @@
     "postinstall": "nuxt prepare",
     "start": "node .output/server/index.mjs",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint . --fix --ignore-pattern '.gitlab-ci.yml'",
     "test": "vitest --dom",
     "test:watch": "vitest --watch",
     "coverage": "vitest run --coverage"

@@ -6,6 +6,7 @@
 stages:
   - deploy
 
+# eslint no-use-before-define: 0
 variables:
   NODE_VERSION: 18.17.0
   PM2_NAME: portfolio
@@ -40,9 +41,10 @@ deploy-job:
       cd /home/$SSH_USER/www/$CI_PROJECT_NAME &&
       git pull &&
       docker exec -it portfolio rm -rf node_modules &&
-      docker exec -it portfolio rm -rf .output &&
       docker exec -it portfolio rm -rf .nuxt &&
+      docker exec -it portfolio rm -rf .output &&
       docker cp .output-$CI_JOB_ID portfolio:/usr/src/app/.output &&
+      docker restart portfolio &&
       rm -rf .output-$CI_JOB_ID &&
       notifier '$CI_PROJECT_TITLE deployed'"
   only:
