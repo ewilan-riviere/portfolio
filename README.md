@@ -31,10 +31,6 @@ cp .env.example .env
 Docker compose will use the `.env` file to set environment variables.
 
 ```bash
-docker compose up -d
-```
-
-```bash
 docker compose build --no-cache
 docker compose down
 docker compose up -d
