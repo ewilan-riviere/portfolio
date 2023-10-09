@@ -34,7 +34,6 @@ deploy-job:
     - pnpm build
     - echo "Deploying..."
   script:
-    # SEE GITLAB VARIABLES FOR DEPLOYMENT
     - rsync -azPhhr .output $SSH_USER@$SSH_IP:/home/$SSH_USER/www/$CI_PROJECT_NAME/.output-$CI_JOB_ID
     - ssh $SSH_USER@$SSH_IP "
       . ~/.zshrc &&
