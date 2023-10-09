@@ -10,6 +10,7 @@
 [![tests][tests-src]][tests-href]
 [![license][license-src]][license-href]
 [![codecov][codecov-src]][codecov-href]
+[![pipeline status][pipeline-src]][pipeline-href]
 
 Ewilan Rivière's portfolio, [Nuxt 3](https://nuxt.com/) SSR app with [content](https://content.nuxt.com/) and [i18n](https://i18n.nuxtjs.org/). Analytics with [Umami](https://umami.is/) and contact form with [Discord](https://discord.com/).
 
@@ -109,3 +110,5 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 [license-href]: https://github.com/ewilan-riviere/portfolio/blob/main/LICENSE
 [codecov-src]: https://img.shields.io/codecov/c/gh/ewilan-riviere/portfolio/main?style=flat&colorA=18181B&colorB=28cf8d
 [codecov-href]: https://codecov.io/gh/ewilan-riviere/portfolio
+[pipeline-src]: https://gitlab.com/kiwilan/portfolio/badges/main/pipeline.svg
+[pipeline-href]: https://gitlab.com/kiwilan/portfolio
