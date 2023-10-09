@@ -24,7 +24,7 @@ function loaded(loaded: boolean) {
           {{ about?.name }}
         </h1>
         <div
-          class="max-w-xl mx-auto mt-3 text-lg text-gray-800 dark:text-gray-200 sm:max-w-3xl font-sans"
+          class="max-w-lg mx-auto mt-3 text-xl text-gray-800 dark:text-gray-200 sm:max-w-3xl font-sans"
         >
           {{ $t('about.professional-title') }}
         </div>
