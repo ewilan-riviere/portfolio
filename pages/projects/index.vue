@@ -23,6 +23,7 @@ useSeoMeta({
         <ProjectCard
           v-for="project in projects"
           :key="project.slug"
+          v-animate
           :project="project"
         />
       </ul>

@@ -25,6 +25,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt', // https://vueuse.org/guide/index.html#nuxt
     'unplugin-svg-transformer/nuxt', // https://github.com/kiwilan/unplugin-svg-transformer
   ],
+  plugins: [
+    '~/plugins/animate.ts',
+  ],
 
   linkChecker: {
     failOn404: false,

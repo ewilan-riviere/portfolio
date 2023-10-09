@@ -54,8 +54,17 @@ useSeoMeta({
         </ul>
       </div>
     </div>
-    <AboutSkills class="mt-10" />
-    <AboutHobbies class="mt-10" />
-    <AboutFeatures class="mt-10" />
+    <AboutSkills
+      v-animate
+      class="mt-10"
+    />
+    <AboutHobbies
+      v-animate
+      class="mt-10"
+    />
+    <AboutFeatures
+      v-animate
+      class="mt-10"
+    />
   </LayoutPage>
 </template>
