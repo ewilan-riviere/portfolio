@@ -16,11 +16,9 @@ Ewilan Rivière's portfolio, [Nuxt 3](https://nuxt.com/) SSR app with [content](
 
 Available at [ewilan-riviere.com](https://ewilan-riviere.com).
 
-## Docker
+## Docker installation
 
-You can use `docker compose` or `docker` to run the application.
-
-### Docker compose
+You can use `docker compose` to run the application with development configuration. For production, you can use `docker compose -f docker-compose.prod.yml up -d`.
 
 Create `.env` file
 
@@ -34,16 +32,6 @@ Docker compose will use the `.env` file to set environment variables.
 docker compose build --no-cache
 docker compose up -d
 ```
-
-### Docker image
-
-Build and run the docker image
-
-```bash
-docker build -t portfolio-app:latest .
-docker run -it -p 3000:3000 portfolio-app:latest
-```
-
 ## Installation
 
 This is a [Nuxt 3](https://nuxt.com/) project.
@@ -76,7 +64,7 @@ pnpm preview
 
 Use [NGINX](https://www.nginx.com/) and [pm2](https://pm2.keymetrics.io/) to run the production build with SSR.
 
-### Docker
+#### Docker in production
 
 With docker compose
 

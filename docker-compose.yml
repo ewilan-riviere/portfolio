@@ -5,7 +5,7 @@ services:
     container_name: portfolio_dev
     build:
       context: .
-      dockerfile: docker/Dockerfile.dev
+      dockerfile: Dockerfile
     image: portfolio_dev
     command: npm run dev
     volumes:

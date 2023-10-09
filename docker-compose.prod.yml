@@ -5,7 +5,7 @@ services:
     container_name: portfolio
     build:
       context: .
-      dockerfile: docker/Dockerfile.prod
+      dockerfile: Dockerfile.prod
     ports:
       - '${DOCKER_COMPOSE_PORT}:3000'
     env_file: .env
