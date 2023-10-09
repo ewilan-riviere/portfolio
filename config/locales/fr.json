@@ -10,7 +10,7 @@
     "about": "À propos de moi",
     "projects": "Mes projets",
     "blog": "Mon blog",
-    "contact": "Me contacter"
+    "contact": "Contact / Recrutement"
   },
   "home": {
     "about": "Bienvenue sur mon portfolio, vous pouvez découvrir ici mes projets professionnels et personels, dont certains sont en open-source.",
@@ -46,7 +46,7 @@
     "about": "À propos",
     "projects": "Projets",
     "blog": "Blog",
-    "contact": "Me contacter"
+    "contact": "Contacter / Recrutement"
   },
   "app": {
     "color-mode": {
@@ -263,20 +263,23 @@
     "title": "Que diriez-vous d'un petit message ?",
     "subtitle": "Si vous souhaitez me contacter pour un nouveau project",
     "about": "Vous pouvez me contacter si vous avez des questions sur mon travail, si vous êtes développeur-se et que vous souhaitez des conseils ou si vous avez un projet nécessitant le développement d'une application web.",
+    "hiring-message": "Si vous me contactez en vue d'un projet, n'hésitez pas à basculer le bouton correspondant en fin de formulaire, pour avoir une réponse le plus rapidement possible.",
+    "terms": "J'accepte que les informations insérées dans ce formulaire soient collectées et conservées pendant une durée maximale de deux ans, conformément au RGPD en vigueur en Europe.\n\nCes données seront utilisées uniquement pour me contacter et ne seront pas transmises à des tiers.\n\nElles seront détruites lorsque la période autorisée par le RGPD sera dépassée ou si j'en fais la demande par le biais de ce même formulaire.",
     "form": {
       "name": "Nom",
       "email": "Email",
-      "message": "Message",
+      "message": "Message / Projet",
       "characters": "caractères",
       "currently": "Actuellement",
       "accept": "J'accepte les",
       "terms": "termes et conditions",
       "understand": "Compris",
+      "is-project": "Je souhaite vous contacter pour un projet",
       "submit": "Parlons-en"
     }
   },
   "footer": {
-    "contact-me": "Me contacter",
+    "contact-me": "Contacter / Recrutement",
     "mit-license": "Licence MIT",
     "built-with": "Carbure avec",
     "design-inspired": "Design inspiré par"

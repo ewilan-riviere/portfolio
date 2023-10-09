@@ -36,14 +36,15 @@ const items: {
           <div class="relative px-4 sm:px-8 lg:px-12">
             <div class="mx-auto max-w-2xl lg:max-w-5xl">
               <div
-                class="flex flex-col items-center justify-between gap-6 sm:flex-row"
+                class="lg:flex flex-col items-center justify-between gap-6 sm:flex-row space-y-2 lg:space-y-0"
               >
                 <div
-                  class="hidden lg:flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200"
+                  class="block md:flex gap-6 md:text-sm font-medium text-zinc-800 dark:text-zinc-200"
                 >
-                  <span
+                  <div
                     v-for="item in items"
                     :key="item.label"
+                    class="md:inline"
                   >
                     <TypedLink
                       v-if="item.to"
@@ -61,7 +62,7 @@ const items: {
                     >
                       {{ item.translate ? $t(item.label) : item.label }}
                     </a>
-                  </span>
+                  </div>
                 </div>
                 <p class="text-sm text-zinc-400 dark:text-zinc-500 mx-auto lg:mx-0">
                   © 2021-{{ currentYear }} <a

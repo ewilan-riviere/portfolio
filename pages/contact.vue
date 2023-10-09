@@ -13,7 +13,8 @@ useSeoMeta({
   >
     <FormContact class="mt-6">
       <div class="prose dark:prose-invert word-wraping mx-auto mb-6">
-        {{ $t('contact.about') }}
+        <p>{{ $t('contact.about') }}</p>
+        <p>{{ $t('contact.hiring-message') }}</p>
       </div>
     </FormContact>
   </LayoutPage>

@@ -7,6 +7,7 @@ export default defineEventHandler(async (event) => {
     email: string
     message: string
     conditions: boolean
+    project: boolean
     honeypot: boolean
   }
 
@@ -19,10 +20,11 @@ export default defineEventHandler(async (event) => {
   }
 
   const { discordWebhook } = useRuntimeConfig()
+  const name = `${body.name} (${body.email})`
   const res = await ofetch.raw(discordWebhook, {
     method: 'POST',
     body: JSON.stringify({
-      username: body.email,
+      username: body.project ? `[PROJECT] ${name}` : name,
       content: body.message,
     }),
   })

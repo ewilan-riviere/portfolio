@@ -10,7 +10,7 @@
     "about": "About me",
     "projects": "My projects",
     "blog": "My blog",
-    "contact": "Contact me"
+    "contact": "Contact / Hiring"
   },
   "home": {
     "about": "Welcome to my portfolio, where you can discover my professional and personal projects, some of which are open-source.",
@@ -46,7 +46,7 @@
     "about": "About",
     "projects": "Projects",
     "blog": "Blog",
-    "contact": "Contact me"
+    "contact": "Contact / Hiring"
   },
   "app": {
     "color-mode": {
@@ -264,20 +264,23 @@
     "title": "You've send mail!",
     "subtitle": "If you want to contact me for a new project!",
     "about": "You can contact me if you have any questions about my work, if you're a developer and would like some advice, or if you have a project requiring the development of a web application.",
+    "hiring-message": "If you'd like to contact me about a project, don't hesitate to click on the corresponding button at the end of the form, to get an answer as quickly as possible.",
+    "terms": "I agree that the information inserted in this form will be collected and kept for a maximum of two years, in accordance with the GDPR in force in Europe.\n\nThis data will be used only to contact me and will not be transmitted to a third party.\n\nThey will be destroyed when the period authorized by the GDPR is exceeded or if I make the request by this same form.",
     "form": {
       "name": "Name",
       "email": "Email",
-      "message": "Message",
+      "message": "Message / Project",
       "characters": "characters",
       "currently": "Currently",
       "accept": "I accept the",
       "terms": "terms and conditions",
       "understand": "Understood",
+      "is-project": "I want to hire you for a project",
       "submit": "Let's talk"
     }
   },
   "footer": {
-    "contact-me": "Contact me",
+    "contact-me": "Contact / Hiring",
     "mit-license": "MIT License",
     "built-with": "Built with",
     "design-inspired": "Design inspired by"

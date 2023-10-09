@@ -4,11 +4,11 @@ const form = ref({
   email: '',
   message: '',
   conditions: false,
+  project: false,
   honeypot: false,
 })
 
 const isDev = import.meta.env.DEV
-const { document } = await useMarkdown('terms')
 
 const loading = ref(false)
 const send = ref(false)
@@ -24,6 +24,7 @@ function test() {
     email: 'test@mail.com',
     message: 'test message',
     conditions: true,
+    project: true,
     honeypot: false,
   }
 }
@@ -37,6 +38,7 @@ async function submit() {
       email: form.value.email,
       message: form.value.message,
       conditions: form.value.conditions,
+      project: form.value.project,
       honeypot: form.value.honeypot,
     },
   })
@@ -47,6 +49,7 @@ async function submit() {
       email: '',
       message: '',
       conditions: false,
+      project: false,
       honeypot: false,
     }
     termsAreOpened.value = false
@@ -120,8 +123,8 @@ async function submit() {
             />
             <FieldText
               v-model="form.message"
-              :name="$t('contact.form.message')"
-              label="Message"
+              name="message"
+              :label="$t('contact.form.message')"
               multiline
               required
               class="sm:col-span-2"
@@ -140,13 +143,21 @@ async function submit() {
                   {{ $t('contact.form.accept') }}
                 </span>
                 <span
-                  class="underline ml-1"
+                  class="underline ml-1 cursor-pointer"
                   @click="toggleTerms"
                 >
                   {{ $t('contact.form.terms') }}
                 </span>
               </template>
             </FieldToggle>
+            <FieldToggle
+              v-model="form.project"
+              name="project"
+              flexible
+              reverse
+              class="sm:col-span-2"
+              :label="$t('contact.form.is-project')"
+            />
             <input
               id="conditions-2"
               v-model="form.honeypot"
@@ -159,15 +170,13 @@ async function submit() {
               @close="termsAreOpened = false"
             >
               <div
-                v-if="document"
                 class="p-6 prose dark:prose-invert"
               >
-                <ContentRenderer :value="document" />
+                <p class="whitespace-pre-line">
+                  {{ $t('contact.terms') }}
+                </p>
                 <div class="flex justify-end">
-                  <AppButton
-                    color="secondary"
-                    @click="termsAreOpened = false"
-                  >
+                  <AppButton @click="termsAreOpened = false">
                     {{ $t('contact.form.understand') }}
                   </AppButton>
                 </div>
