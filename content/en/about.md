@@ -3,11 +3,11 @@ title: Hi, I'm Ewilan Rivière
 subtitle: Full-stack developer
 ---
 
-I started to develop my first real projects with Laravel (PHP), learning also to use Git. But I'm also very interested in the user experience, which pushes me to keep a link with the front-end with Vue.js and Nuxt.js (JavaScript / TypeScript) with CSS frameworks like Tailwind CSS. I want to implement the necessary for SEO, although I am not an expert in this field. On the mobile side, beyond web responsive, I do Flutter (Dart) in order to be able to deploy applications on Android and on iOS.
+I most often work with Laravel (and therefore PHP) for the back-end and front-end (for smaller projects). But for larger projects, I often use Vue.js/Nuxt.js in TypeScript for the front-end, with CSS frameworks like Tailwind CSS. For SEO, I take care of the most important aspects to enable crawlers to promote the website in the best possible way, accompanying this with tracking services like Umami or Matomo. On the mobile side, beyond responsive web, I work with Flutter (Dart) to be able to deploy applications on Android and iOS, or create desktop-type applications.
 
-I like to have knowledge on each part of the chain, from local development to deployment on a server (with NGINX), which leads me to configure quite often Linux servers for both production and local development. Therefore, I like to have efficient tools, whatever the development environment (Linux, Windows or macOS) to be able to easily use such or such version of a language.
+I like to have knowledge of every part of the chain, from local development to deployment on a server (NGINX, PM2, Docker), which leads me to configure Linux servers quite often for both production and local development. I like to have efficient tools at my disposal, whatever the development environment (Linux, Windows or macOS), so that I can easily use this or that version of a language. That's why I also develop open-source libraries for PHP and Node.js, to avoid repeating certain things from one project to the next.
 
-I develop best in groups, preferring communication and help to isolated development, as long as I have colleagues who also enjoy this way of working. I love to discuss technologies, I'm interested in the latest versions of the languages I use and I spend a lot of time reading documentation or making it, in Markdown of course. I always have too many projects on the go, but I also always have something to do!
+I develop best in groups, preferring communication to isolated development, provided I have colleagues who also appreciate this way of working. I like to discuss technologies, I'm interested in the latest versions of the languages I use and I spend a lot of time reading or making documentation, in Markdown of course. I always have too many projects on the go, but I always have something to do!
 
 My favorite tools are :
 
@@ -15,4 +15,4 @@ My favorite tools are :
 - System: macOS (M1 chip), Android
 - Server: [Linux Debian](https://www.debian.org/)
 - Main technologies : [Laravel](https://laravel.com/), [Vue.js](https://vuejs.org/), [TypeScript](https://www.typescriptlang.org/), [Node.js](https://nodejs.org/en), [Tailwind CSS](https://tailwindcss.com/), [Vite](https://vitejs.dev/)
-- In addition : [GitHub Copilot](https://github.com/features/copilot), [TablePlus](https://tableplus.com/), [Figma](https://www.figma.com/), [Ray](https://myray.app/)
+- In addition : [GitHub Copilot](https://github.com/features/copilot), [TablePlus](https://tableplus.com/), [Figma](https://www.figma.com/), [Ray](https://myray.app/), [Screaming Frog](https://www.screamingfrog.co.uk)
