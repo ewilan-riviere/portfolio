@@ -31,6 +31,9 @@ export default defineNuxtConfig({
 
   linkChecker: {
     failOn404: false,
+    exclude: [
+      'https://ewilan-riviere.com',
+    ],
   },
   colorMode: modules.colorMode,
   content: modules.content,
