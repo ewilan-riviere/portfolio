@@ -34,6 +34,8 @@ export default defineNuxtConfig({
     exclude: [
       'https://ewilan-riviere.com',
     ],
+    host: process.env.NUXT_PUBLIC_SITE_URL,
+    trailingSlash: false,
   },
   colorMode: modules.colorMode,
   content: modules.content,
