@@ -27,7 +27,7 @@ deploy-job:
     - echo "Setup..."
     - git clone https://gitlab.com/ewilan-riviere/portfolio.git
     - cd portfolio
-    - scp $SSH_USER@$SSH_IP:/home/$SSH_USER/www/$CI_PROJECT_NAME/.env .env
+    - scp -p $SSH_PORT $SSH_USER@$SSH_IP:/home/$SSH_USER/www/$CI_PROJECT_NAME/.env .env
     - npm install -g pnpm
     - pnpm i
     - echo "Building..."
