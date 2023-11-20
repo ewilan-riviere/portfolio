@@ -49,7 +49,7 @@ Don't forget to add `@stack` directives to your root Blade file, usually `resour
 First, we will create a new Blade component with the command:
 
 ```bash
-php artisan make:command Field/Upload
+php artisan make:component Field/Upload
 ```
 
 Now you will have two files, PHP file in `app/View/Components/Field/Upload.php` and Blade file in `resources/views/components/field/upload.blade.php` (if you have default `views.paths` in your `config/view.php`).
@@ -99,6 +99,10 @@ Now we can push (only once) FilePond CDN to our `head` and after `body` sections
 And now, FilePond is available, we can build our component:
 
 ```html [resources/views/components/field/upload.blade.php]
+@pushOnce('head')
+  // ...
+@endPushOnce
+
 <div
   class="relative"
   wire:ignore
@@ -113,6 +117,10 @@ And now, FilePond is available, we can build our component:
   }"
   x-init="async () => {}"
 ></div>
+
+@pushOnce('scripts')
+  // ...
+@endPushOnce
 ```
 
 Into PHP file, we will add some properties, we will inject them into our Alpine.js to fill FilePond configuration options. You can add some options, see [FilePond documentation](https://pqina.nl/filepond/docs/) for more details.
@@ -122,11 +130,15 @@ Into PHP file, we will add some properties, we will inject them into our Alpine.
 
 namespace App\View\Components\Field;
 
+use Closure;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
-class UploadFile extends Component
+class Upload extends Component
 {
+    /**
+     * Create a new component instance.
+     */
     public function __construct(
         public string $name = 'file',
         public bool|int $multiple = false,
@@ -144,9 +156,12 @@ class UploadFile extends Component
     ) {
     }
 
-    public function render(): View|string
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View|Closure|string
     {
-        return view('components.field.upload-file');
+        return view('components.field.upload');
     }
 }
 ```
@@ -154,7 +169,7 @@ class UploadFile extends Component
 So, in any Livewire form, you can use this component like this:
 
 ```html
-<x-field.upload-file
+<x-field.upload
   name="avatar"
   wire:model="avatar"
   multiple
@@ -190,7 +205,7 @@ We will set these options into FilePond to interact directly with the component.
 Before send data to Alpine.js, we will handle some props:
 
 ```php [app/View/Components/Field/Upload.php]
-public function render(): View|string
+public function render(): View|Closure|string
 {
     // Set boolean values
     if (! $this->multiple) {
@@ -240,7 +255,7 @@ public function render(): View|string
 
     $this->acceptHuman = implode(', ', $this->acceptHuman);
 
-    return view('components.field.upload-file');
+    return view('components.field.upload');
 }
 ```
 
@@ -248,35 +263,61 @@ public function render(): View|string
 
 Now, we can add some HTML to our component:
 
-```html [resources/views/components/field/upload-file.blade.php]
-<div class="relative" wire:ignore x-cloak x-data="...">
-  @if ($label)
-  <div class="flex items-center justify-between">
-    <label
-      class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100"
-      for="{{ $name }}"
-    >
-      {{ $label }} @if ($required)
-      <span class="text-red-500" title="Required">*</span>
-      @endif
-    </label>
-    <div class="text-xs text-gray-400">Size max: {{ $sizeHuman }}</div>
-  </div>
-  @endif
-  <div class="flex items-center justify-between text-xs text-gray-400">
-    <div>Formats: {{ $acceptHuman }}</div>
-    <div>
-      {{ $multiple ? 'Multiple' : 'Single' }} @if ($multiple)
-      <span>({{ $number }} files max)</span>
-      @endif
+```html [resources/views/components/field/upload.blade.php]
+<div
+  class="relative"
+  wire:ignore
+  x-cloak
+  x-data="{
+      model: @entangle($attributes->whereStartsWith('wire:model')->first()),
+      isMultiple: {{ $multiple ? 'true' : 'false' }},
+      current: undefined,
+      currentList: [],
+
+      async URLtoFile(path) {},
+  }"
+  x-init="async () => {}"
+>
+  <div
+    class="relative"
+    wire:ignore
+    x-cloak
+    x-data="..."
+  >
+    @if ($label)
+      <div class="flex items-center justify-between">
+        <label
+          class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100"
+          for="{{ $name }}"
+        >
+          {{ $label }} @if ($required)
+            <span
+              class="text-red-500"
+              title="Required"
+            >*</span>
+          @endif
+        </label>
+        <div class="text-xs text-gray-400">Size max: {{ $sizeHuman }}</div>
+      </div>
+    @endif
+    <div class="flex items-center justify-between text-xs text-gray-400">
+      <div>Formats: {{ $acceptHuman }}</div>
+      <div>
+        {{ $multiple ? 'Multiple' : 'Single' }} @if ($multiple)
+          <span>({{ $number }} files max)</span>
+        @endif
+      </div>
     </div>
+    <div class="mt-5">
+      <input
+        type="file"
+        x-ref="{{ $attributes->get('ref') ?? 'input' }}"
+      />
+    </div>
+    @error('image')
+      <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+    @enderror
   </div>
-  <div class="mt-5">
-    <input type="file" x-ref="{{ $attributes->get('ref') ?? 'input' }}" />
-  </div>
-  @error('image')
-  <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-  @enderror
 </div>
 ```
 
@@ -290,7 +331,7 @@ Now we can add FilePond to our component. But first, we need to add global metho
 
 ```html [resources/views/app.blade.php]
 <script>
-  window.appUrlStorage = "{{ config('app.url').'/storage' }}";
+  window.appUrlStorage = "{{ config('app.url') . '/storage' }}";
 </script>
 ```
 
@@ -298,7 +339,7 @@ Now we can add FilePond to our component. But first, we need to add global metho
 
 We just add a method to retrieve uploaded files, `URLtoFile()`.
 
-```html [resources/views/components/field/upload-file.blade.php]
+```html [resources/views/components/field/upload.blade.php]
 <div
   class="relative"
   wire:ignore
@@ -345,7 +386,7 @@ The method `URLtoFile()` will fetch the file from the storage and return a FileP
 
 We will add File some options to FilePond:
 
-```html [resources/views/components/field/upload-file.blade.php]
+```html [resources/views/components/field/upload.blade.php]
 <div
   class="..."
   x-data="{
@@ -569,7 +610,8 @@ class SettingsForm extends Component
 And finally, you can create a view with FilePond field.
 
 ```html [resources/views/livewire/settings-form.blade.php]
-<div>
+<form>
+  @csrf
   <x-field.upload name="avatar" label="Avatar" wire:model="avatar" />
   <x-field.upload
     name="gallery"
@@ -578,5 +620,5 @@ And finally, you can create a view with FilePond field.
     multiple
   />
   <button wire:click="save">Save</button>
-</div>
+</form>
 ```
