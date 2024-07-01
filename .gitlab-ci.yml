@@ -14,7 +14,7 @@ deploy-job:
   stage: deploy
   image: node:18.17.0
   before_script:
-    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+    - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
@@ -37,11 +37,11 @@ deploy-job:
     - rsync -azPhhr -e "ssh -p $SSH_PORT" .output $SSH_USER@$SSH_IP:/home/$SSH_USER/www/$CI_PROJECT_NAME/.output-$CI_JOB_ID
     - ssh -p $SSH_PORT $SSH_USER@$SSH_IP "
       . ~/.zshrc &&
-      cd /home/$SSH_USER/www/$CI_PROJECT_NAME &&
+      cd /var/www/$CI_PROJECT_NAME &&
       git pull &&
       docker exec $DOCKER_CONTAINER rm -rf node_modules &&
       docker exec $DOCKER_CONTAINER rm -rf .nuxt &&
-      docker cp .output-$CI_JOB_ID $DOCKER_CONTAINER:/app/ &&
+      docker cp .output-$CI_JOB_ID $DOCKER_CONTAINER:/usr/src/app/ &&
       docker exec $DOCKER_CONTAINER rm -rf .output &&
       docker exec $DOCKER_CONTAINER mv .output-$CI_JOB_ID/.output .output &&
       docker exec $DOCKER_CONTAINER rm -rf .output-$CI_JOB_ID &&
