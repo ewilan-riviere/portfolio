@@ -30,9 +30,9 @@ cp .env.example .env
 Docker compose will use the `.env` file to set environment variables.
 
 ```bash
-docker compose build --no-cache
-docker compose up -d
+docker compose up -d --build
 ```
+
 ## Installation
 
 This is a [Nuxt 3](https://nuxt.com/) project.
@@ -64,15 +64,6 @@ pnpm preview
 ```
 
 Use [NGINX](https://www.nginx.com/) and [pm2](https://pm2.keymetrics.io/) to run the production build with SSR.
-
-#### Docker in production
-
-With docker compose
-
-```bash
-docker compose -f docker-compose.prod.yml build --no-cache
-docker compose -f docker-compose.prod.yml up -d
-```
 
 ### Resume size
 

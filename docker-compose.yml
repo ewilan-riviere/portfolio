@@ -1,15 +1,21 @@
 ---
-version: '3.3'
 services:
-  portfolio_dev:
-    container_name: portfolio_dev
+  portfolio_app:
     build:
       context: .
       dockerfile: Dockerfile
-    image: portfolio_dev
-    command: npm run dev
-    volumes:
-      - .:/app
-      - /app/node_modules
+    container_name: portfolio
+    env_file: .env
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    container_name: portfolio-nginx
     ports:
-      - '3000:3000'
+      - "${APP_PORT}:80"
+    volumes:
+      - ./docker/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/error.html:/usr/share/nginx/html/error.html
+    depends_on:
+      - portfolio_app
+    restart: always
